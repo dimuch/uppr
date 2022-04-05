@@ -25,13 +25,18 @@ module.exports = {
   shutDownDB,
 };
 
-setInterval(makeConnectionDB, TIME_OUT_DB_PING);
+let init = true;
 
 function getDBPoolData() {
+  // if (init) {
+  //   setInterval(makeConnectionDB, TIME_OUT_DB_PING);
+  // }
+
   return db_pool;
 }
 
 function makeConnectionDB() {
+  console.log("update", new Date());
   return new Promise((resolve, reject) => {
     db_pool.getConnection(function (err, connection) {
       if (err) {
@@ -41,7 +46,7 @@ function makeConnectionDB() {
       }
       connection.ping();
       connection.release();
-
+      init = false;
       resolve("DB CONNECTION IS READY");
     });
   });

@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 2,
     justifyContent: "space-between",
     backgroundColor: "white",
-    display: "flex",
     boxShadow: "0px 10px 23px -6px rgba(0,0,0,0.1)",
 
     "& .wrapper": {

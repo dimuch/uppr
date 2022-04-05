@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Grid, Typography} from '@mui/material';
+import { Grid, Typography } from "@material-ui/core";
 import {getDate} from '../../../helpers/getDate';
 
 class SelectedSpecificCategory extends Component {
@@ -20,8 +20,6 @@ class SelectedSpecificCategory extends Component {
         }
 
         const allArticlesBySelectedCategory = [...latestArticle, ...otherLatestArticles];
-
-        console.log('allArticlesBySelectedCategory', allArticlesBySelectedCategory);
 
         return (
             <Grid container

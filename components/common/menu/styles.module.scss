@@ -1,11 +1,4 @@
-@import "../../../styles/scss/common/colors.scss";
-
-a {
-  &.active {
-    color: $blog-four-sticky;
-    text-decoration: underline;
-  }
-}
+@import "../../../styles/scss/common/colors";
 
 .upprMainMenu {
   display: flex;
@@ -25,5 +18,11 @@ a {
   & a {
     font-size: 0.8rem;
     text-decoration: none;
+
+  }
+  
+  .active {
+    color: $blog-four-sticky;
+    text-decoration: underline;
   }
 }

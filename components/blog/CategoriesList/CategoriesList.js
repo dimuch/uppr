@@ -1,43 +1,54 @@
-import React from 'react';
-import {fetchArticles, updateArticleCategories, updateSelectedCategory} from '../../../actions/articlesActions';
-import {func} from 'prop-types';
+import React, { useState } from "react";
+// import {
+//   fetchArticles,
+//   updateArticleCategories,
+//   updateSelectedCategory,
+// } from "../../../actions/articlesActions";
 
-export default function CategoriesList({items}) {
+import { func } from "prop-types";
 
-    const filterByCategories = (selectedArticleCategory) => {
-        const updatedArticleCategories = items.map(articleCategory => {
-            articleCategory.isSelected = false;
-            if(selectedArticleCategory.id === articleCategory.id){
-                articleCategory.isSelected = !articleCategory.isSelected
-            }
+import styles from "./styles.module.scss";
 
-            return articleCategory;
-        });
+export default function CategoriesList({ items }) {
+  const [articleCategories, setArticleCategories] = useState(items);
 
-        this.props.updateSelectedCategory(selectedArticleCategory.id);
-        this.props.fetchArticles(selectedArticleCategory.id);
-        this.props.updateArticleCategories(updatedArticleCategories);
-    }
+  const filterByCategories = (selectedArticleCategory) => {
+    const updatedArticleCategories = items.map((articleCategory) => {
+      articleCategory.isSelected = false;
+      if (selectedArticleCategory.id === articleCategory.id) {
+        articleCategory.isSelected = !articleCategory.isSelected;
+      }
 
+      return articleCategory;
+    });
 
-    if (!items?.length) {
-        return null;
-    }
+    setArticleCategories((state) => {
+      return updatedArticleCategories;
+    });
 
-    return (
-        <ul>
-            {
-                items.map(articleCategory => {
-                    return (
-                        <li key={articleCategory.id}
-                            className={articleCategory.isSelected ? 'selected' : ''}
-                            onClick={(e) => filterByCategories(articleCategory)}
-                        >
-                            {articleCategory.name}
-                        </li>
-                    )
-                })
-            }
-        </ul>
-    )
+    // this.props.updateSelectedCategory(selectedArticleCategory.id);
+    // this.props.fetchArticles(selectedArticleCategory.id);
+  };
+
+  if (!articleCategories?.length) {
+    return null;
+  }
+
+  return (
+    <ul className={styles.categoryList}>
+      {articleCategories.map((articleCategory) => {
+        const classCalc = !articleCategory.isSelected ? " " : styles.selected;
+
+        return (
+          <li
+            key={articleCategory.id}
+            className={`${styles.categoryListItem} ${classCalc}`}
+            onClick={(e) => filterByCategories(articleCategory)}
+          >
+            {articleCategory.name}
+          </li>
+        );
+      })}
+    </ul>
+  );
 }

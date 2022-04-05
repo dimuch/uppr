@@ -1,5 +1,5 @@
-import { getPaymentFormParams } from "./helpers/payment";
-import { createUUID } from "./helpers/uuid";
+import { getPaymentFormParams } from "../helpers/payment";
+import { createUUID } from "../helpers/uuid";
 
 const reqUrl = "https://www.liqpay.ua/api/3/checkout";
 // const reqUrl = "https://www.liqpay.ua/api/request";

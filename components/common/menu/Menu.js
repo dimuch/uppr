@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
+import Link from "next/link";
 
 import styles from "./styles.module.scss";
 
@@ -11,20 +12,22 @@ const Menu = ({ location }) => {
           <a href={"/"}>Домашня</a>
         </Typography>
         <Typography variant={"body1"} component={"li"}>
+          <Link href="/blog">
+            <a className={location === "/blog" ? styles.active : ""}>Блог</a>
+          </Link>
+        </Typography>
+        <Typography variant={"body1"} component={"li"}>
           <a
-            className={location === "/blog.html" ? "active" : ""}
-            href={"/blog.html"}
+            className={location === "/e-book" ? styles.active : ""}
+            href={"/e-book"}
           >
-            Блог
+            E-book
           </a>
         </Typography>
         <Typography variant={"body1"} component={"li"}>
-          <a href="">Послуги</a>
-        </Typography>
-        <Typography variant={"body1"} component={"li"}>
           <a
-            className={location === "/e-book.html" ? "active" : ""}
-            href={"/resources.html"}
+            className={location === "/e-resources" ? styles.active : ""}
+            href={"/resources"}
           >
             Resources
           </a>
@@ -43,7 +46,7 @@ const Menu = ({ location }) => {
           </a>
         </Typography>
         <Typography variant={"body1"} component={"li"}>
-          <a href={"/contact-us.html"}>Контакти</a>
+          <a href={"/contact-us"}>Контакти</a>
         </Typography>
       </ul>
     </div>
