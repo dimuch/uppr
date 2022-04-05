@@ -1,0 +1,39 @@
+@import "../../styles/scss/common/colors.scss";
+
+.upprBlogPage {
+  position: relative;
+}
+
+.upprPageContent {
+  max-width: initial;
+  padding: 0;
+  background-color: $page-background;
+}
+
+.upprBlogMainPicture {
+  img {
+    width: 100%;
+    max-height: 40vh;
+    object-fit: cover;
+    object-position: 0 58%;
+    filter: brightness(0.8);
+  }
+}
+
+.upprArticleCategories {
+  display: flex;
+  justify-content: center;
+  padding: 6rem 0 6rem;
+
+  // @import "CategoriesList/styles";
+}
+
+.upprArticlesContent {
+  max-width: 1240px;
+  padding: 0 1rem 6rem 1rem;
+  margin: auto;
+
+  // @import "SelectedAllCategories/styles";
+  // @import "SelectedSpecificCategory/styles";
+  // @import "Downloads/styles";
+}

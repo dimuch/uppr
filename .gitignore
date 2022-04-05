@@ -30,3 +30,10 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+#vscode
+.vscode
+
+.local-dev
+
+.idea

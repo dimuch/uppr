@@ -1,0 +1,29 @@
+@import "../../../styles/scss/common/colors.scss";
+
+a {
+  &.active {
+    color: $blog-four-sticky;
+    text-decoration: underline;
+  }
+}
+
+.upprMainMenu {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  list-style: none;
+  li {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    min-width: 4rem;
+    text-align: center;
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+  & a {
+    font-size: 0.8rem;
+    text-decoration: none;
+  }
+}

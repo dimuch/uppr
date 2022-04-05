@@ -1,0 +1,38 @@
+.wrapper{
+  box-shadow: 0 1px 3px 0 rgba(89, 98, 115, .12);
+}
+img {
+  width: 100%;
+  height: auto;
+}
+
+.uppr-article-details {
+  padding: 2rem 3.5rem .8rem;
+  background-color: $white;
+
+  h3{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  p{
+    margin-bottom: 1.5rem;
+    color: $article-description;
+  }
+
+  .summary-item{
+    color: $article-description;
+  }
+
+  .summary{
+    padding-top: 1.25rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid $item-border;
+  }
+
+  .read-more{
+    text-align: right;
+    color: $blog-four-sticky;
+  }
+}
