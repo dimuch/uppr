@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { Grid, Typography } from "@material-ui/core";
 import {getDate} from '../../../helpers/getDate';
+import Image from 'next/image';
 
 class SelectedSpecificCategory extends Component {
     constructor(props) {
@@ -44,7 +45,11 @@ class SelectedSpecificCategory extends Component {
                                     <Grid item xs={12} className="image">
                                         <Grid container alignContent={'center'}>
                                             <Grid item>
-                                                <img src={article.image} alt={article.title}/>
+                                                <Image src={article.image}
+                                                       alt={article.title}
+                                                       width="700"
+                                                       height="400"
+                                                />
                                             </Grid>
                                         </Grid>
                                     </Grid>

@@ -56,6 +56,7 @@ const howItWorks = [
 ];
 
 import compStyles from "./styles.module.scss";
+import Link from 'next/link';
 
 const Index = () => {
   return (
@@ -181,12 +182,12 @@ const Index = () => {
                 <TelegramIcon />
               </div>
               <Typography variant={"h4"}>Канал в телеграмі</Typography>
-              <a href="https://t.me/emailingskills" target="_blank">
+              <Link href="https://t.me/emailingskills" target="_blank" without rel="noreferrer">
                 <Typography variant={"button"}>
                   {" "}
                   Підписатись на канал{" "}
                 </Typography>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

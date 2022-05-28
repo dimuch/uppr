@@ -40,7 +40,7 @@ export default function Slider({data}) {
                 startOffset: (-0.75) * slideWidth,
             }
         })
-    }, []);
+    }, [data.length]);
 
     return (
         <div className={styles.slider}>
@@ -56,13 +56,21 @@ export default function Slider({data}) {
                     <div className={styles.slide} key={firstSlide.link}
                          ref={slideNode}
                     >
-                        <Image src={firstSlide.image} width={700} height={400}/>
+                        <Image src={firstSlide.image}
+                               width={700}
+                               height={400}
+                               alt={firstSlide.title}
+                        />
                     </div>
                     {
                         othersSlides.map(item => {
                             return (
                                 <div className={styles.slide} key={item.link}>
-                                    <Image src={item.image} width={700} height={400}/>
+                                    <Image src={item.image}
+                                           width={700}
+                                           height={400}
+                                           alt={item.title}
+                                    />
                                 </div>
                             )
                         })

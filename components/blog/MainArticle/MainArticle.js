@@ -4,6 +4,7 @@ import { Grid, Typography } from "@material-ui/core";
 import { getDate } from "../../../helpers/getDate";
 
 import styles from "./styles.module.scss";
+import Image from 'next/image';
 
 export default function MainArticle({ items }) {
   const [mainArticleData, setMainArticleData] = useState({
@@ -28,10 +29,13 @@ export default function MainArticle({ items }) {
       onClick={(e) => updateArticleViews(mainArticleData)}
     >
       <Grid item md={12}>
-        <img
+        <Image
           className={styles.image}
           src={mainArticleData.image}
+          width="700"
+          height="400"
           alt={mainArticleData.title}
+          layout='raw'
         />
       </Grid>
       <Grid

@@ -26,7 +26,10 @@ export default function FourStickyWorkSituations({articleData}) {
                                 {`${articleData.category.name}`}
                             </Link>
                         </div>
-                        <Image src={articleData.image} width="700" height="400"/>
+                        <Image src={articleData.image}
+                               width="700" height="400"
+                               alt="Main article picture"
+                        />
                         <Tags items={articleData.tags}/>
                     </div>
                 </div>
@@ -64,8 +67,11 @@ export default function FourStickyWorkSituations({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/four_sticky_situations_1.jpg" width="1400"
-                               height="425"/>
+                        <Image src="/assets/images/blog-articles/four_sticky_situations_1.jpg"
+                               width="1400"
+                               height="425"
+                               alt="Колега продовжує повторювати одну і ту саму помилку"
+                        />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -111,8 +117,11 @@ export default function FourStickyWorkSituations({articleData}) {
                     </h3>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/four_sticky_situations_4.jpg" width="1400"
-                               height="425"/>
+                        <Image src="/assets/images/blog-articles/four_sticky_situations_4.jpg"
+                               width="1400"
+                               height="425"
+                               alt="Колега не дотримується дедлайну (уже вкотре) лист?"
+                        />
                     </div>
 
                     <p className={styles.articleText}>
@@ -171,8 +180,11 @@ export default function FourStickyWorkSituations({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/four_sticky_situations_2.jpg" width="1400"
-                               height="425"/>
+                        <Image src="/assets/images/blog-articles/four_sticky_situations_2.jpg"
+                               width="1400"
+                               height="425"
+                               alt="Як не перепрацювати"
+                        />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -211,8 +223,11 @@ export default function FourStickyWorkSituations({articleData}) {
                     </div>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/four_sticky_situations_3.jpg" width="1400"
-                               height="425"/>
+                        <Image src="/assets/images/blog-articles/four_sticky_situations_3.jpg"
+                               width="1400"
+                               height="425"
+                               alt="Довгий незрозумілий імейл"
+                        />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>

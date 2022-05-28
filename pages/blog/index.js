@@ -12,6 +12,7 @@ import {
 
 import styles from './styles.module.scss';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Blog({
                                  articleCategories,
@@ -28,7 +29,12 @@ export default function Blog({
                 <Header search location={'/blog'}/>
                 <div className={`uppr-page-content ${styles.upprPageContent}`}>
                     <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
-                        <img src="/assets/images/blog_main.jpeg" alt="Main blog picture"/>
+                        <Image src="/assets/images/blog_main.jpeg"
+                               alt="Main blog picture"
+                               width="3000"
+                               height="2002"
+                               layout='raw'
+                        />
                     </div>
 
                     <div

@@ -2,6 +2,7 @@
 
 const nextConfig = {
   reactStrictMode: true,
+  experimental: { images: { layoutRaw: true } },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config = {

@@ -9,8 +9,9 @@ export default function Author({data}) {
             <div className={styles.authorImg}>
                 <Image
                     src="/assets/images/blog-articles/ivanka-tabachuk.jpg"
-                    width={130}
-                    height={130}
+                    width="130"
+                    height="130"
+                    alt="Іванка Табачук"
                 />
             </div>
             <div>

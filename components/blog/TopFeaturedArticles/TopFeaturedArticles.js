@@ -5,6 +5,7 @@ import { Grid, Typography } from "@material-ui/core";
 import { TopFeaturedArticlesIcon } from "../../common/icons/index";
 
 import styles from "./styles.module.scss";
+import Image from 'next/image';
 
 export default function TopFeaturedArticles({ items }) {
   const updateArticleViews = (article) => {};
@@ -47,10 +48,13 @@ export default function TopFeaturedArticles({ items }) {
                   <Grid item xs={5} className="image">
                     <Grid container alignContent={"center"}>
                       <Grid item>
-                        <img
+                        <Image
                           className={"article-image " + styles.articleImage}
                           src={article.image}
+                          width="700"
+                          height="400"
                           alt={article.title}
+                          layout='raw'
                         />
                       </Grid>
                     </Grid>

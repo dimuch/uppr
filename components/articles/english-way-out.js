@@ -28,7 +28,7 @@ export default function EnglishWayOut({articleData}) {
                                 {`${articleData.category.name}`}
                             </Link>
                         </div>
-                        <Image src={articleData.image} width="700" height="400"/>
+                        <Image src={articleData.image} width="700" height="400" alt="Main article picture"/>
                         <Tags items={articleData.tags}/>
                     </div>
                 </div>
@@ -44,7 +44,10 @@ export default function EnglishWayOut({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/englishway_4.jpg" width="1400" height="425"/>
+                        <Image src="/assets/images/blog-articles/englishway_4.jpg"
+                               width="1400" height="425"
+                               alt="Невже з цим не можна нічого зробити?"
+                        />
                     </div>
 
                     <p className={styles.articleText}>
@@ -79,7 +82,10 @@ export default function EnglishWayOut({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/englishway_1.jpg" width="1400" height="425"/>
+                        <Image src="/assets/images/blog-articles/englishway_1.jpg"
+                               width="1400" height="425"
+                               alt="Потрібно, а не хочу!"
+                        />
                     </div>
 
                     <p className={styles.articleText}>
@@ -161,7 +167,10 @@ export default function EnglishWayOut({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/englishway_5.jpg" width="1400" height="425"/>
+                        <Image src="/assets/images/blog-articles/englishway_5.jpg"
+                               width="1400" height="425"
+                               alt="Півгодини щодня - найкращий рецепт"
+                        />
                     </div>
 
                     <p className={styles.articleText}>
@@ -200,7 +209,10 @@ export default function EnglishWayOut({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/englishway_3.jpg" width="1400" height="425"/>
+                        <Image src="/assets/images/blog-articles/englishway_3.jpg"
+                               width="1400" height="425"
+                               alt="Усвідомити, що помилки - це нормально"
+                        />
                     </div>
 
                     <p className={styles.articleText}>
