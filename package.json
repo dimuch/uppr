@@ -5,9 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "mysql": "node mysql/mySQLClient.js"
+    "start": "next start -p 3000",
+    "lint": "next lint"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
