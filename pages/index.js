@@ -182,7 +182,9 @@ const Index = () => {
                 <TelegramIcon />
               </div>
               <Typography variant={"h4"}>Канал в телеграмі</Typography>
-              <Link href="https://t.me/emailingskills" target="_blank" without rel="noreferrer">
+              <Link href="https://t.me/emailingskills" passHref
+                    target="_blank" without rel="noreferrer"
+              >
                 <Typography variant={"button"}>
                   {" "}
                   Підписатись на канал{" "}
