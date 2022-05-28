@@ -1,16 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core";
+import React from "react";
+
+import styles from './styles.module.scss';
 
 const Video = ({ videoSrc }) => {
-  const styles = useStyles();
-  const [compStyles, setCompStyles] = useState();
-
-  useEffect(() => {
-    setCompStyles(styles);
-  }, []);
 
   return (
-    <div className={"uppr-intro-video " + compStyles?.introAsset}>
+    <div className={styles.upprIntroVideo}>
       <video
         controls={false}
         autoPlay
@@ -22,14 +17,5 @@ const Video = ({ videoSrc }) => {
     </div>
   );
 };
-
-const useStyles = makeStyles((theme) => ({
-  introAsset: {
-    "& video": {
-      width: "100%",
-      height: "auto",
-    },
-  },
-}));
 
 export default Video;

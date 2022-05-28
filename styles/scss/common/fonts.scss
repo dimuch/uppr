@@ -1,37 +1,6 @@
 @font-face {
-  font-family: "Futura-Demi-Bold";
-  src: url("/fonts/FuturaBQDemiBold.otf");
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "Futura-PT";
-  src: url("/fonts/FuturaPT-Book.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Futura-LT";
-  src: url("/fonts/FuturaPTLight.otf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Futura-Book";
-  src: url("/fonts/FuturaPT-Book.eot");
-  src: url("/fonts/FuturaPT-Book.eot?#iefix") format("embedded-opentype"),
-    url("/fonts/FuturaPT-Book.woff") format("woff"),
-    url("/fonts/FuturaPT-Book.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
   font-family: "Poiret-One";
-  src: url("/fonts/PoiretOne-Regular.ttf") format("truetype");
+  src: url("/fonts/PoiretOne.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -57,6 +26,56 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('/fonts/OpenSans-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSansSemiBold';
+  src: url('/fonts/OpenSans-Semibold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura-PT";
+  src: url("/fonts/FuturaPT-Book.eot");
+  src: url("/fonts/FuturaPT-Book.eot?#iefix")format("embedded-opentype"),
+  url("/fonts/FuturaPT-Book.woff") format("woff"),
+  url("/fonts/FuturaPT-Book.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Futura-LT";
+  src: url('/fonts/futura-pt-light.otf'),
+       url('/fonts/futura-pt-light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura-Demi-Bold";
+  src: url("/fonts/FuturaBQDemiBold.otf");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Futura-Demi';
+  src: url("/fonts/FuturaPT-Demi.eot");
+  src: url("/fonts/FuturaPT-Demi.eot?#iefix")format("embedded-opentype"),
+  url("/fonts/FuturaPT-Demi.woff") format("woff"),
+  url("/fonts/FuturaPT-Demi.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 //uppr icon font
 @font-face {

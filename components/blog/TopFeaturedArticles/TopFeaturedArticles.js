@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import { Grid, Typography } from "@material-ui/core";
 
@@ -7,10 +7,7 @@ import { TopFeaturedArticlesIcon } from "../../common/icons/index";
 import styles from "./styles.module.scss";
 
 export default function TopFeaturedArticles({ items }) {
-
-  //   if (items.length) {
-  //     return null;
-  //   }
+  const updateArticleViews = (article) => {};
 
   return (
     <Grid container className={"wrapper " + styles.wrapper}>
@@ -39,7 +36,7 @@ export default function TopFeaturedArticles({ items }) {
               <Grid
                 item
                 key={article.title}
-                onClick={(e) => this.updateArticleViews(article)}
+                onClick={(e) => updateArticleViews(article)}
               >
                 <Grid
                   container
@@ -60,7 +57,7 @@ export default function TopFeaturedArticles({ items }) {
                   </Grid>
                   <Grid item xs={7} className="title">
                     <a href={article.link}>
-                      <Typography variant={"p"}>{article.title}</Typography>
+                      <Typography>{article.title}</Typography>
                     </a>
                   </Grid>
                 </Grid>

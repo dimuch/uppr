@@ -1,5 +1,14 @@
-.uppr-logo{
+.upprLogo{
   display: flex;
   align-items: baseline;
-  text-decoration: none;
+  span{
+    font-size: 1rem;
+    strong {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.keepItSimple{
+  font-family: "Poiret-One", sans-serif;
 }

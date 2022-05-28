@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core";
+import React from "react";
 import { Typography } from "@material-ui/core";
 
 import Header from "../components/common/header/Header";
@@ -61,7 +60,7 @@ import compStyles from "./styles.module.scss";
 const Index = () => {
   return (
     <div className="uppr-home-page">
-      <Header />
+      <Header location={"/"}/>
       <Video videoSrc={"/assets/video/intro.mp4"} />
       <div className={"uppr-section " + compStyles?.section}>
         <div className={"uppr-section-title " + compStyles?.sectionTitle}>

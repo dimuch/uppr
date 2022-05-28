@@ -49,7 +49,7 @@ export default function Downloads({ items }) {
               </Grid>
               <Grid item xs={10} className="title">
                 <a href={`${article.detailsLink}/${article.id}`}>
-                  <Typography variant={"p"}>{article.caption}</Typography>
+                  <Typography>{article.caption}</Typography>
                 </a>
               </Grid>
             </Grid>

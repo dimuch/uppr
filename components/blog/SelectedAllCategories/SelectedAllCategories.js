@@ -4,6 +4,7 @@ import { Grid } from "@material-ui/core";
 import MainArticle from "../MainArticle/MainArticle";
 import TopFeaturedArticles from "../TopFeaturedArticles/TopFeaturedArticles";
 import Downloads from "../Downloads/Downloads";
+import Link from 'next/link';
 
 export default function SelectedAllCategories({
   latestArticle,
@@ -28,7 +29,7 @@ export default function SelectedAllCategories({
             <MainArticle items={latestArticle} />
           </Grid>
           <Grid item className="uppr-latest-articles">
-            Hi
+            <Link href={'/blog/articles/four-sticky-work-situations'}>four-sticky-work-situations</Link>
           </Grid>
         </Grid>
       </Grid>

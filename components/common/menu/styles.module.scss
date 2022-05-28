@@ -16,13 +16,14 @@
     }
   }
   & a {
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-decoration: none;
-
+    font-family: "Futura-LT", sans-serif;
   }
   
   .active {
     color: $blog-four-sticky;
     text-decoration: underline;
+    font-family: "Futura-Demi", sans-serif;
   }
 }

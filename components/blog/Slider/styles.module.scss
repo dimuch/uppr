@@ -1,0 +1,49 @@
+@import "../../../styles/scss/common/colors.scss";
+
+.slider{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.stepBack, .stepForward{
+  svg{
+    width: 2rem;
+    height: 2rem;
+  }
+  &:hover {
+    cursor: pointer;
+    svg {
+      fill: $blog-four-sticky;
+    }
+  }
+}
+
+.wrapper{
+  margin: 0 1rem;
+  overflow-x: hidden;
+}
+
+.slides{
+  display: flex;
+  align-content: center;
+  position: relative;
+  transition: all ease-out .3s;
+}
+
+.slide{
+  min-width: 45%;
+  height: auto;
+  padding: 0 1rem;
+  transition: all ease-out .3s;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  > span{
+    width: 100%;
+    height: auto;
+  }
+}

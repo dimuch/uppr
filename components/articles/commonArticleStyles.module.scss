@@ -1,0 +1,174 @@
+@import "../../styles/scss/common/colors";
+
+.article{
+  a {
+    color: $blog-four-sticky;
+  }
+}
+
+.maxWidthArticleTitleWrapper{
+  max-width: 80rem;
+  margin: auto;
+  padding:0 3rem;
+}
+
+.titleWrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.titleContent, .titleImage{
+  width: 50%;
+}
+
+.titleContent{
+  padding-right: 2rem;
+}
+
+.titleImage{
+  padding-left: 2rem;
+  position: relative;
+}
+
+.categoryBadge{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  left: auto;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  font-size: .75rem;
+  font-family: "OpenSans", sans-serif;
+  z-index: 5;
+}
+
+.title {
+  margin-bottom: 2rem;
+  font-family: "Futura-PT", sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.shortMessage{
+  font-family: "Futura-LT", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.maxWidthArticleSectionWrapper{
+  max-width: 60rem;
+  margin: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.footerContainer{
+  display: flex;
+  max-width: 60rem;
+  margin: auto;
+}
+
+.articleOddSection, .articleEvenSection{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.articleOddSection{
+  background-color: $articleOddSection;
+}
+
+.articleEvenSection{
+  background-color: $white;
+}
+
+.subTitle{
+  font-family: "Futura-PT", sans-serif;
+  font-size: 2.25rem;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin: 0;
+  color: $text;
+}
+
+.articleSubSubTitle{
+  font-family: "Futura-PT", sans-serif;
+  font-size: 1.75rem;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin: 0;
+  color: $text;
+}
+
+.articleText{
+  font-family: "Futura-PT", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: $text;
+  margin: 0;
+  padding-bottom: 1.25rem;
+
+  b{
+    font-family: "Futura-Demi", sans-serif;
+  }
+}
+
+.articlePicture{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.articlePhrase{
+  font-family: "Futura-PT", sans-serif;
+  font-size: 2.25rem;
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin: 0;
+}
+
+.delimiter{
+  padding-bottom: 2rem;
+  margin: 0;
+}
+
+.articleList {
+  margin: 0;
+  li{
+    padding-bottom: 1rem;
+  }
+}
+
+.frameWithExampleAndTitle{
+  border: 1px solid $blog-four-sticky;
+  max-width: 60rem;
+  margin: 1rem auto 2rem;
+
+  .exampleTitle{
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    margin: 0;
+    text-align: left;
+    font-family: 'Futura-LT', sans-serif;
+    font-size: 1.25rem;
+    color: #fff;
+    background-color: $blog-four-sticky;
+  }
+  .exampleText {
+    padding: 1rem;
+    font-family: 'Futura-LT', sans-serif;
+  }
+}
+
+p.articleText + ul.articleList{
+  margin-top: -.65rem;
+}
+
+.articleEvenSection + .articleEvenSection,
+.articleOddSection + .articleOddSection{
+  padding-top: 0;
+}

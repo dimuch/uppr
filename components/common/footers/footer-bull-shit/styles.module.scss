@@ -1,4 +1,4 @@
-.uppr-footer-bull-shit{
+.upprFooterBullShit{
   background-color: #f93b63;
   padding:  1rem 0;
   display: flex;
@@ -8,9 +8,10 @@
   p {
     text-transform: upperCase;
     color: white !important;
-    font-family: Futura-Book !important;
+    font-family: "Futura-Book", sans-serif;
   }
   a {
+    font-family: "Futura-Book", sans-serif;
     color: white !important;
     text-decoration: none;
     margin-left: 1rem;

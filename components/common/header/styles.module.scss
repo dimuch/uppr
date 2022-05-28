@@ -1,25 +1,32 @@
 @import "../../../styles/scss/common/colors";
 
-.uppr-header-wrapper {
+.upprheaderWrapper {
   align-items: center;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
   position: sticky;
   top: 0;
   z-index: 2;
+  height: 3rem;
+  display: flex;
   background-color: $white;
   -webkit-box-shadow: 0px 10px 23px -6px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 10px 23px -6px rgba(0, 0, 0, 0.1);
 
-  .wrapper {
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-    width: 100%;
-    max-width: 1200px;
-  }
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 100%;
+  max-width: 80rem;
 }
 
-.header-right-block {
+.headerLeftBlock{
+  display: flex;
+  align-items: center;
+}
+
+.headerRightBlock {
   display: flex;
   justify-content: flex-end;
   align-items: center;

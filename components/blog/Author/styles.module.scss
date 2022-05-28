@@ -1,0 +1,14 @@
+@import "../../../styles/scss/common/colors.scss";
+
+.author{
+  min-width: 12rem;
+  text-align: center;
+}
+
+.authorImg{
+  > span {
+    border-radius: 50%;
+    border: 1px solid red !important;
+    width: auto;
+  }
+}

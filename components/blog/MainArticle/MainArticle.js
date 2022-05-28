@@ -29,7 +29,7 @@ export default function MainArticle({ items }) {
     >
       <Grid item md={12}>
         <img
-          className="image"
+          className={styles.image}
           src={mainArticleData.image}
           alt={mainArticleData.title}
         />
