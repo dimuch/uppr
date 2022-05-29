@@ -12,6 +12,13 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+env:
+  NODE_ENV: ${{secrets.NODE_ENV}}
+  ITP_MYSQL_USER: ${{secrets.ITP_MYSQL_USER}}
+  ITP_MYSQL_PASSWORD: ${{secrets.ITP_MYSQL_PASSWORD}}
+  ITP_MYSQL_DATABASE: ${{secrets.ITP_MYSQL_DATABASE}}
+  ITP_MYSQL_URL: ${{secrets.ITP_MYSQL_URL}}
+  ITP_MYSQL_PORT: ${{secrets.ITP_MYSQL_PORT}}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -43,3 +50,22 @@ jobs:
         run: git clone https://github.com/dimuch/uppr.git
       - name: Install dependencies
         run: cd uppr && yarn install
+      - name: Build sources
+        run: yarn build
+  
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Copy build to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script_stop: true
+          script: |
+            pwd
+            ls -al
+            sudo scp -r .next ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{secrets.DEPLOY_DIRECTORY}}
