@@ -35,23 +35,19 @@ jobs:
       - name: Install nodejs, yarn
         run: | 
           node -v
-          yarn -v
           sudo curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
           sudo bash nodesource_setup.sh
           sudo apt install -y nodejs
           sudo apt-get install gcc g++ make
-          curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
-          echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-          sudo apt-get update && sudo apt-get install yarn
 
       - name: Create separate directory
         run: mkdir uppr_deploy && cd uppr_deploy
       - name: Cloning repo
         run: git clone https://github.com/dimuch/uppr.git
       - name: Install dependencies
-        run: cd uppr && sudo yarn install && sudo yarn add cross-env
+        run: cd uppr && sudo npm install
       - name: Build sources
-        run: sudo yarn build
+        run: sudo npm run build
   
   deploy:
     needs: build
