@@ -38,9 +38,9 @@ jobs:
       - name: Install yarn
         run: |
           npm install -g yarn
-
+          ls -al
       - name: Create separate directory
-        run: mkdir uppr_deploy && cd uppr_deploy &&  sudo yarn set version berry
+        run: sudo yarn set version berry
       - name: Cloning repo
         run: git clone https://github.com/dimuch/uppr.git && cd uppr
       - name: Install dependencies
