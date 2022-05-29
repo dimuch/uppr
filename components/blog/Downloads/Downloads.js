@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 
-import { Grid, Typography } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import * as Icons from "../../common/icons/index";
 
 import styles from "./styles.module.scss";
@@ -24,7 +24,7 @@ export default function Downloads({ items }) {
             <DownloadsSectionIcon />
           </Grid>
           <Grid item md={11} xs={10}>
-            <Typography variant={"h5"}>Downloads</Typography>
+            <h5>Downloads</h5>
           </Grid>
         </Grid>
       </Grid>
@@ -49,7 +49,7 @@ export default function Downloads({ items }) {
               </Grid>
               <Grid item xs={10} className="title">
                 <a href={`${article.detailsLink}/${article.id}`}>
-                  <Typography>{article.caption}</Typography>
+                  <span>{article.caption}</span>
                 </a>
               </Grid>
             </Grid>

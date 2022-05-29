@@ -1,5 +1,4 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
 
 import Header from "../components/common/header/Header";
 
@@ -66,11 +65,11 @@ const Index = () => {
       <div className={"uppr-section " + compStyles?.section}>
         <div className={"uppr-section-title " + compStyles?.sectionTitle}>
           <div className={compStyles.firstLine}>
-            <Typography variant={"h4"}>ДОСИТЬ БУТИ INTERMEDIATE!</Typography>
+            <h4>ДОСИТЬ БУТИ INTERMEDIATE!</h4>
           </div>
           <div className={compStyles.firstLine}>
-            <Typography variant={"h4"}>ТИ МОЖЕШ СТАТИ&nbsp;</Typography>
-            <UpprLogoText onlyLogo={true} baseTypography={3} />
+            <h4>ТИ МОЖЕШ СТАТИ&nbsp;</h4>
+            <UpprLogoText onlyLogo={true}/>
           </div>
         </div>
 
@@ -110,19 +109,11 @@ const Index = () => {
 
         <div className={"uppr-section-content"}>
           <div className={"uppr-comments " + compStyles?.comments}>
-            <Typography variant={"h4"}>
-              Ідеальна англійська не передається генетично.
-            </Typography>
-            <Typography variant={"h4"}>
-              Знання мови треба вдосконалювати самостійно.
-            </Typography>
+            <h4>Ідеальна англійська не передається генетично.</h4>
+            <h4>Знання мови треба вдосконалювати самостійно.</h4>
             <br />
-            <Typography variant={"h4"}>
-              Якщо ти застряв на рівні intermediate
-            </Typography>
-            <Typography variant={"h4"}>
-              та чекаєш знак згори &mdash; це він.
-            </Typography>
+            <h4>Якщо ти застряв на рівні intermediate</h4>
+            <h4>та чекаєш знак згори &mdash; це він.</h4>
           </div>
         </div>
 
@@ -133,7 +124,7 @@ const Index = () => {
             }
           >
             <div className={"uppr-how-it-works " + compStyles?.howItWorks}>
-              <Typography variant={"h4"}>ЯК МИ ПРАЦЮЄМО</Typography>
+              <h4>ЯК МИ ПРАЦЮЄМО</h4>
             </div>
           </div>
           <div>
@@ -164,7 +155,7 @@ const Index = () => {
                       </div>
                     </div>
                     <div className="uppr-content-right-side">
-                      <Typography variant={"h6"}>{item.content}</Typography>
+                      <h6>{item.content}</h6>
                     </div>
                   </li>
                 );
@@ -181,14 +172,13 @@ const Index = () => {
               <div className={compStyles.iconTelegram}>
                 <TelegramIcon />
               </div>
-              <Typography variant={"h4"}>Канал в телеграмі</Typography>
+              <h4>Канал в телеграмі</h4>
               <Link href="https://t.me/emailingskills" passHref
                     target="_blank" without rel="noreferrer"
               >
-                <Typography variant={"button"}>
-                  {" "}
-                  Підписатись на канал{" "}
-                </Typography>
+                <button>
+                  &nbsp;Підписатись на канал&nbsp;
+                </button>
               </Link>
             </div>
           </div>
@@ -196,10 +186,8 @@ const Index = () => {
 
         <div className={"uppr-section-content"}>
           <div className={"uppr-final-message " + compStyles?.finalMessage}>
-            <Typography variant={"h4"}>Розвиток - це просто.</Typography>
-            <Typography variant={"h4"}>
-              Будь простіше і записуйся на курс!
-            </Typography>
+            <h4>Розвиток - це просто.</h4>
+            <h4>Будь простіше і записуйся на курс!</h4>
           </div>
         </div>
         <FooterBullShit />
