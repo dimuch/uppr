@@ -28,9 +28,9 @@ module.exports = {
 let init = true;
 
 function getDBPoolData() {
-  // if (init) {
-  //   setInterval(makeConnectionDB, TIME_OUT_DB_PING);
-  // }
+  if (init) {
+    setInterval(makeConnectionDB, TIME_OUT_DB_PING);
+  }
 
   return db_pool;
 }

@@ -32,7 +32,7 @@ jobs:
         run: npm install npm -g
 
       - name: Cloning repo
-        run: git clone https://github.com/dimuch/uppr.git && cd uppr
+        run: pwd && git clone https://github.com/dimuch/uppr.git && cd uppr
 
       - name: Install dependencies
         run: sudo npm install
@@ -59,6 +59,8 @@ jobs:
           KEY: ${{ secrets.SSH_KEY }}
           PORT: ${{ secrets.SSH_PORT }}
           script: |
+            cd /var/www/uppr.com.ua
+            
             pm2 stop uppr.com.ua
             pm2 delete uppr.com.ua
             pm2 start npm --name "uppr.com.ua" -- start
