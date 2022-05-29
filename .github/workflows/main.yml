@@ -31,23 +31,22 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
 
-      - name: Install nodejs, yarn
-        run: | 
-          node -v
-          sudo curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
-          sudo bash nodesource_setup.sh
-          sudo apt install -y nodejs
-          sudo apt-get install gcc g++ make
+      - name: Install yarn
+        run: |
+          npm install -g yarn
 
       - name: Create separate directory
-        run: mkdir uppr_deploy && cd uppr_deploy
+        run: mkdir uppr_deploy && cd uppr_deploy &&  sudo yarn set version berry
       - name: Cloning repo
-        run: git clone https://github.com/dimuch/uppr.git
+        run: git clone https://github.com/dimuch/uppr.git && cd uppr
       - name: Install dependencies
-        run: cd uppr && sudo npm install
+        run: sudo yarn install
       - name: Build sources
-        run: sudo npm run build
+        run: sudo yarn build
   
   deploy:
     needs: build
