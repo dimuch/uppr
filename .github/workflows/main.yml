@@ -27,13 +27,15 @@ jobs:
 
       - name: Install nodejs, yarn
         run: | 
-          curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
-          bash nodesource_setup.sh
-          apt install nodejs
-          run: npm install -g yarn
+          node -v
+          yarn -v
+          sudo curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
+          sudo bash nodesource_setup.sh
+          sudo apt install nodejs
+          sudo npm install -g yarn
 
       - name: Create separate directory
-        run: mkdir uppr && cd uppr
+        run: mkdir uppr_deploy && cd uppr_deploy
       - name: Cloning repo
         run: git clone https://github.com/dimuch/uppr.git .
       - name: Install dependencies
