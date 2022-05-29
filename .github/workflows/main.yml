@@ -12,17 +12,6 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-env:
-  NODE_ENV: ${{secrets.NODE_ENV}}
-  ITP_MYSQL_USER: ${{secrets.ITP_MYSQL_USER}}
-  ITP_MYSQL_PASSWORD: ${{secrets.ITP_MYSQL_PASSWORD}}
-  ITP_MYSQL_DATABASE: ${{secrets.ITP_MYSQL_DATABASE}}
-  ITP_MYSQL_URL: ${{secrets.ITP_MYSQL_URL}}
-  ITP_MYSQL_PORT: ${{secrets.ITP_MYSQL_PORT}}
-  HOST: ${{ secrets.SSH_HOST }}
-  USERNAME: ${{ secrets.SSH_USER }}
-  KEY: ${{ secrets.SSH_KEY }}
-  PORT: ${{ secrets.SSH_PORT }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -40,16 +29,19 @@ jobs:
           node-version: 14
 
       - name: Install npm
-        run: node -v && npm install yarn -g && yarn set version berry
+        run: npm install npm -g
 
       - name: Cloning repo
         run: git clone https://github.com/dimuch/uppr.git && cd uppr
 
       - name: Install dependencies
-        run: sudo yarn install
+        run: sudo npm install
 
       - name: Build sources
-        run: sudo yarn build
+        run: sudo npm run build
+
+      - name: Build sources
+        run: sudo npm run build
 
       - name: Deploy to server
         uses: appleboy/scp-action@master
