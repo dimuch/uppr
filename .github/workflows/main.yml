@@ -49,7 +49,7 @@ jobs:
       - name: Cloning repo
         run: git clone https://github.com/dimuch/uppr.git
       - name: Install dependencies
-        run: cd uppr && yarn install
+        run: cd uppr && yarn install && yarn list
       - name: Build sources
         run: yarn build
   
