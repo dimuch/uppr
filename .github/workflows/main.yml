@@ -36,17 +36,21 @@ jobs:
           node-version: 14
 
       - name: Install yarn
-        run: |
-          npm install -g yarn
-          ls -al
+        run: npm install -g yarn
+
       - name: Create separate directory
         run: sudo yarn set version berry
+
       - name: Cloning repo
         run: git clone https://github.com/dimuch/uppr.git && cd uppr
+
       - name: Install dependencies
         run: sudo yarn install
+
       - name: Build sources
-        run: sudo yarn build
+        run: |
+          sudo yarn build
+          ls -al
   
   deploy:
     needs: build
