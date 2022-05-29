@@ -49,9 +49,9 @@ jobs:
       - name: Cloning repo
         run: git clone https://github.com/dimuch/uppr.git
       - name: Install dependencies
-        run: cd uppr && yarn install && yarn add next react react-dom cross-env
+        run: cd uppr && sudo yarn install && sudo yarn add cross-env
       - name: Build sources
-        run: yarn build
+        run: sudo yarn build
   
   deploy:
     needs: build
