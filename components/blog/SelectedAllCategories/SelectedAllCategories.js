@@ -1,10 +1,9 @@
 import React from "react";
 
-import { Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
 import MainArticle from "../MainArticle/MainArticle";
 import TopFeaturedArticles from "../TopFeaturedArticles/TopFeaturedArticles";
 import Downloads from "../Downloads/Downloads";
-import Link from 'next/link';
 
 export default function SelectedAllCategories({
   latestArticle,
@@ -27,9 +26,6 @@ export default function SelectedAllCategories({
         <Grid container>
           <Grid item className="uppr-main-article-block">
             <MainArticle items={latestArticle} />
-          </Grid>
-          <Grid item className="uppr-latest-articles">
-            <Link href={'/blog/articles/four-sticky-work-situations'}>four-sticky-work-situations</Link>
           </Grid>
         </Grid>
       </Grid>

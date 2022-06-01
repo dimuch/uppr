@@ -32,10 +32,10 @@ jobs:
         run: npm install npm -g
 
       - name: Cloning repo
-        run: pwd && git clone https://github.com/dimuch/uppr.git && cd uppr
+        run: pwd && git clone https://github.com/dimuch/uppr.git .
 
       - name: Install dependencies
-        run: sudo npm install
+        run: sudo npm install && sudo npm install sharp
 
       - name: Build sources
         run: sudo npm run build
@@ -51,15 +51,15 @@ jobs:
           source: './*'
           target: ${{secrets.DEPLOY_DIRECTORY}}
 
-      - name: Restarting uppr.com.ua server
-        uses: appleboy/ssh-action@master
-        with:
-          HOST: ${{ secrets.SSH_HOST }}
-          USERNAME: ${{ secrets.SSH_USER }}
-          KEY: ${{ secrets.SSH_KEY }}
-          PORT: ${{ secrets.SSH_PORT }}
-          script: |
-            cd /var/www/uppr.com.ua
-            pm2 stop uppr.com.ua
-            pm2 delete uppr.com.ua
-            pm2 start npm --name "uppr.com.ua" -- start
+#      - name: Restarting uppr.com.ua server
+#        uses: appleboy/ssh-action@master
+#        with:
+#          HOST: ${{ secrets.SSH_HOST }}
+#          USERNAME: ${{ secrets.SSH_USER }}
+#          KEY: ${{ secrets.SSH_KEY }}
+#          PORT: ${{ secrets.SSH_PORT }}
+#          script: |
+#            cd /var/www/uppr.com.ua
+#            pm2 stop uppr.com.ua
+#            pm2 delete uppr.com.ua
+#            pm2 start npm --name "uppr.com.ua" -- start

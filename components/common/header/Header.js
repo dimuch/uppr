@@ -10,7 +10,7 @@ const Header = ({ search, location }) => {
     <div className={styles.upprheaderWrapper}>
       <div className={styles.wrapper}>
         <div className={styles.headerLeftBlock}>
-          <UpprLogoText/>
+          <UpprLogoText isInText={false} isInHeader/>
         </div>
         <div className={styles.headerRightBlock}>
           {search && <Search />}

@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import Head from 'next/head'
+import React, {useState} from 'react';
 import Header from '../../components/common/header/Header';
 
 import CategoriesList from '../../components/blog/CategoriesList/CategoriesList';
@@ -11,7 +10,6 @@ import {
 } from '../../services/blogData';
 
 import styles from './styles.module.scss';
-import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Blog({
@@ -26,7 +24,7 @@ export default function Blog({
     return (
         <>
             <div className={styles.upprBlogPage}>
-                <Header search location={'/blog'}/>
+                <Header search location={'/blog'} />
                 <div className={`uppr-page-content ${styles.upprPageContent}`}>
                     <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
                         <Image src="/assets/images/blog_main.jpeg"

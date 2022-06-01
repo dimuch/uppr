@@ -1,3 +1,5 @@
+@import "../styles/scss/common/colors";
+
 .section {
   position: relative;
   margin-top: -18rem;
@@ -17,7 +19,11 @@
 
   h4 {
     font-weight: bold;
+    font-size: 2rem;
+    font-family: "Futura-Demi", sans-serif;
     color: white;
+    margin: 0;
+    padding-bottom: 1rem;
   }
 
   span {
@@ -80,7 +86,11 @@
   position: relative;
 
   h4 {
-    font-family: Futura-Book !important;
+    font-family: 'Futura-PT', sans-serif !important;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    margin: 0;
+    color: $text;
   }
 }
 
@@ -95,9 +105,11 @@
 
   h4 {
     text-transform: uppercase;
-    font-family: Museo-Sans-Cyrl-Bold !important;
+    font-family: Museo-Sans-Cyrl-Bold, sans-serif !important;
+    font-size: 2rem;
     background-color: #d4d4d4;
     padding: 1.25rem 1rem 1rem;
+    margin: 0;
   }
 }
 
@@ -110,8 +122,10 @@
   max-width: 82%;
 
   h6 {
-    font-family: Museo-Sans-Cyrl-Reg !important;
+    font-family: Museo-Sans-Cyrl-Reg, sans-serif !important;
     text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.5em;
   }
 }
 
@@ -159,8 +173,24 @@
   }
 }
 
+.telegramBlock{
+  h4 {
+    font-family: Museo-Sans-Cyrl-Reg, sans-serif !important;
+    font-size: 2.5rem;
+    padding: 1.25rem 1rem 1rem;
+    margin: 0;
+  }
+}
+
 .iconTelegram {
   margin: 0 auto 3rem;
+}
+
+.signIn{
+  margin-top: 2rem;
+  font-size: 2rem;
+  padding: 1.25rem 1rem 1rem;
+  font-family: Futura-PT, sans-serif;
 }
 
 .finalMessage {
@@ -172,7 +202,10 @@
   background-color: rgba(0, 0, 0, 0.4);
 
   h4 {
-    font-family: Museo-Sans-Cyrl-Bold !important;
+    font-family: Futura-PT, sans-serif !important;
     color: white;
+    line-height: 3rem;
+    font-size: 2rem;
+    margin: 0;
   }
 }

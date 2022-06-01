@@ -69,7 +69,7 @@ const Index = () => {
           </div>
           <div className={compStyles.firstLine}>
             <h4>ТИ МОЖЕШ СТАТИ&nbsp;</h4>
-            <UpprLogoText onlyLogo={true}/>
+            <UpprLogoText onlyLogo={true} isInText/>
           </div>
         </div>
 
@@ -168,7 +168,7 @@ const Index = () => {
           <div
             className={"uppr-telegram-channel " + compStyles?.telegramChannel}
           >
-            <div className="telegram-block">
+            <div className={compStyles.telegramBlock}>
               <div className={compStyles.iconTelegram}>
                 <TelegramIcon />
               </div>
@@ -176,7 +176,7 @@ const Index = () => {
               <Link href="https://t.me/emailingskills" passHref
                     target="_blank" without rel="noreferrer"
               >
-                <button>
+                <button className={compStyles.signIn}>
                   &nbsp;Підписатись на канал&nbsp;
                 </button>
               </Link>

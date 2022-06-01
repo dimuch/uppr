@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@mui/material";
 import * as Icons from "../../common/icons/index";
 
 import styles from "./styles.module.scss";
@@ -24,7 +24,7 @@ export default function Downloads({ items }) {
             <DownloadsSectionIcon />
           </Grid>
           <Grid item md={11} xs={10}>
-            <h5>Downloads</h5>
+              <Typography variant={"h5"}>Downloads</Typography>
           </Grid>
         </Grid>
       </Grid>
