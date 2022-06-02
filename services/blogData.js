@@ -69,6 +69,30 @@ export function getDownloadsDB(isAllDownloads = true) {
     });
 }
 
+export function getTagsDB() {
+    const getTags = `CALL getTags()`;
+    const connection = getDBPoolData();
+    return new Promise((resolve, reject) => {
+        connection.query(getTags, (err, rows, fields) => {
+            if (err) {
+                console.log('getDownloadsDB ERROR', err);
+                reject({data: []});
+            }
+
+            try {
+                const data = rows[0].map((item) => {
+                    return {
+                        ...item,
+                    };
+                });
+                resolve(data);
+            } catch (e) {
+                reject({data: []});
+            }
+        });
+    });
+}
+
 //getLatestArticlesByCategoryDB
 async function getLatestArticlesByCategoryDB(category) {
     const getLatestArticle = `CALL getLatestArticlesByCategory(${category})`;
@@ -164,7 +188,7 @@ export async function getArticleBaseDataByURL(articleURL) {
     });
 }
 
-//getArticlesDataByIdDB
+//getArticlesTagsById
 export async function getArticleTagsById(articleId) {
     const getArticleTagsById = `CALL getArticleTagsById(${articleId})`;
     const connection = getDBPoolData();
@@ -186,7 +210,7 @@ export async function getArticleTagsById(articleId) {
     });
 }
 
-//getArticlesDataByIdDB
+//getArticlesCategoryById
 export async function getArticleCategoryById(articleId) {
     const getArticleCategoryById = `CALL getArticleCategoryById(${articleId})`;
     const connection = getDBPoolData();
@@ -214,7 +238,7 @@ export async function getArticleCategoryById(articleId) {
     });
 }
 
-//getRelevantArticlesDB
+//getRelevantArticlesByCategory
 export async function getRelevantArticlesByCategory(categoryId) {
     const getRelevantArticlesByCategoryId = `CALL getRelevantArticlesByCategoryId(${categoryId})`;
     const connection = getDBPoolData();
@@ -237,4 +261,17 @@ export async function getRelevantArticlesByCategory(categoryId) {
             }
         });
     });
+}
+
+//getArticlesByCategoryDB
+export async function getArticlesByCategoryDB(){
+    const categories = await getArticlesCategoriesDB();
+
+    const articlesByCategory = await Promise.allSettled(
+        categories.slice(1).map(async (item) => {
+            return {name: item.name, articles: await getLatestArticlesByCategoryDB(item.id)}
+        })
+    );
+
+    return Array.from(articlesByCategory).map(item => item.value);
 }

@@ -50,8 +50,6 @@ export default function ArticlePageWrapper({articleData}) {
 };
 
 export async function getServerSideProps({resolvedUrl}) {
-    console.log('resolvedUrl', resolvedUrl);
-
     const articleData = await getArticlesDataByIdDB(resolvedUrl);
 
     return {

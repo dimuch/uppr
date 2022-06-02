@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 2rem;
   position: relative;
 }
 
@@ -23,7 +22,7 @@
 
 .wrapper{
   margin: 0 1rem;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .slides{
@@ -34,10 +33,12 @@
 }
 
 .slide{
-  min-width: 45%;
   height: auto;
   padding: 0 1rem;
   transition: all ease-out .3s;
+  &:first-of-type{
+    padding-left: 0;
+  }
   &:hover {
     cursor: pointer;
     transform: scale(1.05);
@@ -45,5 +46,12 @@
   > span{
     width: 100%;
     height: auto;
+    max-height: 70%;
   }
+}
+
+.slideTitle{
+  margin-top: .75rem;
+  font-size: 1.15rem;
+  font-family: "Futura-PT", sans-serif;
 }

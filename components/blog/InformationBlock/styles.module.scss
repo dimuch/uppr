@@ -1,0 +1,48 @@
+@import "../../../styles/scss/common/colors.scss";
+
+.wrapper {
+  box-shadow: 0 1px 3px 0 rgba(89, 98, 115, 0.12);
+}
+
+.upprSectionTitle {
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px 0 rgba(89, 98, 115, 0.12);
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
+.upprSectionContent{
+  padding: 1.25rem;
+  border-top: 1px solid $page-background;
+  box-shadow: 0 1px 3px 0 rgba(89, 98, 115, 0.12);
+
+}
+
+.tagItem{
+  padding: .25rem .75rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  border: 1px solid $item-border;
+  border-radius: .25rem;
+  transition: all ease-out .3s;
+  &:last-of-type{
+    margin-bottom: 0;
+  }
+
+  p{
+    font-family: "Futura-PT", sans-serif;
+    font-size: 1rem;
+  }
+  &:hover{
+    cursor: pointer;
+    background-color: $primary-200;
+  }
+}

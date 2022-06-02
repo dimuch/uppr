@@ -8,7 +8,7 @@ const defaultSliderConfig = {
     startOffset: 0,
 }
 
-export default function Slider({data}) {
+export default function Slider({data, slideWidth: slideImageWidth='45%'}) {
     const wrapperNode = useRef();
     const slideNode = useRef();
 
@@ -54,7 +54,7 @@ export default function Slider({data}) {
                      style={{left: slider.startOffset}}
                 >
                     <div className={styles.slide} key={firstSlide.link}
-                         ref={slideNode}
+                         ref={slideNode}  style={{minWidth: slideImageWidth}}
                     >
                         <Image src={firstSlide.image}
                                width={700}
@@ -65,12 +65,15 @@ export default function Slider({data}) {
                     {
                         othersSlides.map(item => {
                             return (
-                                <div className={styles.slide} key={item.link}>
+                                <div className={styles.slide} key={item.link} style={{minWidth: slideImageWidth}}>
                                     <Image src={item.image}
                                            width={700}
                                            height={400}
                                            alt={item.title}
                                     />
+                                    <div className={styles.slideTitle}>
+                                        {item.title}
+                                    </div>
                                 </div>
                             )
                         })

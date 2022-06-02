@@ -33,7 +33,7 @@ export default function Downloads({ items }) {
         md={12}
         className={"uppr-section-content " + styles.upprSectionContent}
       >
-        {items.map((article) => {
+        {items.slice(0,3).map((article) => {
           const Icon = Icons[article.icon];
           return (
             <Grid

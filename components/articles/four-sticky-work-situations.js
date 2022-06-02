@@ -200,7 +200,7 @@ export default function FourStickyWorkSituations({articleData}) {
 
                     <p className={styles.articleText}>
                         Як полегшити собі життя, виглядати професійно і не нахамити босу (хоч так хочеться:))?
-                        <br />
+                        <br/>
                         Пишемо:
                     </p>
 
@@ -209,13 +209,15 @@ export default function FourStickyWorkSituations({articleData}) {
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>
                             Thanks for your email, [name].
                             <br/>
-                            I’ll get started on this instantly. But in order to get back to you promptly, could you, please, help me prioritize the list below?
+                            I’ll get started on this instantly. But in order to get back to you promptly, could you,
+                            please, help me prioritize the list below?
                             <br/>
                             As I see it, [task] is the most urgent?
                             <br/>
                             Are any of the items just nice-to-have?
                             <br/>
-                            I expect it will take me [X days/hours] to pull this together, which may delay [other project].
+                            I expect it will take me [X days/hours] to pull this together, which may delay [other
+                            project].
                             <br/>
                             <br/>
                             Let me know as soon as you can, please.
@@ -242,7 +244,7 @@ export default function FourStickyWorkSituations({articleData}) {
 
                     <p className={styles.articleText}>
                         Як прояснити ситуацію?
-                        <br />
+                        <br/>
                         Пишемо:
                     </p>
 
@@ -253,7 +255,8 @@ export default function FourStickyWorkSituations({articleData}) {
                             <br/>
                             <br/>
                             Can you please give me a little more context on the situation here, and send over
-                            [the information about or data necessary to answer]? Once I have it, I’ll be able to respond.
+                            [the information about or data necessary to answer]? Once I have it, I’ll be able to
+                            respond.
                         </p>
                     </div>
 
@@ -266,7 +269,8 @@ export default function FourStickyWorkSituations({articleData}) {
                     </p>
 
                     <p className={styles.articleText}>
-                        Чи доводиться писати відповіді на такі імейли? В яких ще делікатних ситуаціях опиняєтеся на роботі?
+                        Чи доводиться писати відповіді на такі імейли? В яких ще делікатних ситуаціях опиняєтеся на
+                        роботі?
                     </p>
 
                 </div>
@@ -274,8 +278,12 @@ export default function FourStickyWorkSituations({articleData}) {
 
             <div className={styles.articleEvenSection}>
                 <div className={`${styles.footerContainer}`}>
-                    <Author data={articleData}/>
-                    <Slider data={articleData.relevantArticles}/>
+                    <div style={{width: '20%'}}>
+                        <Author data={articleData}/>
+                    </div>
+                    <div style={{width: '80%'}}>
+                        <Slider data={articleData.relevantArticles} slideWidth={'45%'}/>
+                    </div>
                 </div>
             </div>
         </div>
