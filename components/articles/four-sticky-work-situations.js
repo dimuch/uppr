@@ -2,37 +2,16 @@ import React from 'react';
 
 import styles from '../../components/articles/commonArticleStyles.module.scss';
 import Image from 'next/image';
-import Link from 'next/link';
-import Tags from '../../components/blog/Tags/Tags';
+
 import Author from '../blog/Author/Author';
 import Slider from '../blog/Slider/Slider';
+import ArticleHeader from '../blog/ArticleHeader/ArticleHeader';
 
 export default function FourStickyWorkSituations({articleData}) {
     return (
         <div className={styles.article}>
             <div className={styles.maxWidthArticleTitleWrapper}>
-                <div className={styles.titleWrapper}>
-                    <div className={styles.titleContent}>
-                        <h1 className={styles.title}
-                            style={{color: `#${articleData.article_color}`}}>{articleData.title}</h1>
-                        <p className={styles.shortMessage}>
-                            {articleData.description}
-                        </p>
-                    </div>
-                    <div className={styles.titleImage}>
-                        <div className={`${styles.categoryBadge}`}
-                             style={{backgroundColor: `#${articleData.category.color}`}}>
-                            <Link href={`/blog?search=${articleData.category.name}`}>
-                                {`${articleData.category.name}`}
-                            </Link>
-                        </div>
-                        <Image src={articleData.image}
-                               width="700" height="400"
-                               alt="Main article picture"
-                        />
-                        <Tags items={articleData.tags}/>
-                    </div>
-                </div>
+                <ArticleHeader articleData={articleData}/>
             </div>
 
 

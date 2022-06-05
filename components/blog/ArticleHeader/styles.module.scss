@@ -1,0 +1,50 @@
+@import "../../../styles/scss/common/colors.scss";
+.titleWrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.titleContent, .titleImage{
+  width: 50%;
+}
+
+.titleContent{
+  padding-right: 2rem;
+}
+
+.titleImage{
+  padding-left: 2rem;
+  position: relative;
+}
+
+.title{
+  margin-bottom: 2rem;
+  font-family: "Futura-PT", sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.shortMessage{
+  font-family: "Futura-LT", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.categoryBadge{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  left: auto;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  font-size: .75rem;
+  font-family: "OpenSans", sans-serif;
+  z-index: 5;
+  a {
+    color: $white;
+  }
+}

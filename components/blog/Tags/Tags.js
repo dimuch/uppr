@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 import styles from './styles.module.scss';
 
-export default function Tags({items}) {
+export default function Tags({items, location}) {
     return (
-        <ul className={styles.articleTags}>
+        <ul className={`${styles.articleTags} ${styles[location]}`}>
             {
                 items.map(item => {
                     return (

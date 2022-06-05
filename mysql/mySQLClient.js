@@ -7,7 +7,7 @@ const ITP_MYSQL_DATABASE = process.env.ITP_MYSQL_DATABASE;
 const ITP_MYSQL_URL = process.env.ITP_MYSQL_URL;
 const ITP_MYSQL_PORT = process.env.ITP_MYSQL_PORT;
 
-const TIME_OUT_DB_PING = 1000 * 15; //30sec
+const TIME_OUT_DB_PING = 1000 * 60 * 30; //30sec
 
 const db_pool = mysql.createPool({
   host: ITP_MYSQL_URL,
@@ -36,7 +36,6 @@ function getDBPoolData() {
 }
 
 function makeConnectionDB() {
-  console.log("update", new Date());
   return new Promise((resolve, reject) => {
     db_pool.getConnection(function (err, connection) {
       if (err) {

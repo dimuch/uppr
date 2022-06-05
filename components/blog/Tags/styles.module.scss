@@ -1,17 +1,17 @@
 @import "../../../styles/scss/common/colors.scss";
 
-.articleTags {
-  margin: 0;
-  li{
-    padding-bottom: 1rem;
-  }
-}
-
 .articleTags{
   margin-top: 1rem;
   padding-left: 0;
   display: flex;
   li {
+    padding-bottom: 1rem;
     padding-right: 2rem;
+  }
+}
+
+.header {
+  a {
+    color: $blog-four-sticky;
   }
 }

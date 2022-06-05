@@ -3,12 +3,9 @@ import {ArrowCircleRightOutlined, ArrowCircleLeftOutlined} from '@mui/icons-mate
 import Image from 'next/image';
 
 import styles from './styles.module.scss';
+import Link from 'next/link';
 
-const defaultSliderConfig = {
-    startOffset: 0,
-}
-
-export default function Slider({data, slideWidth: slideImageWidth='45%'}) {
+export default function Slider({data, slideWidth: slideImageWidth = '45%', location='footer'}) {
     const wrapperNode = useRef();
     const slideNode = useRef();
 
@@ -26,7 +23,7 @@ export default function Slider({data, slideWidth: slideImageWidth='45%'}) {
 
         setSlider((state) => ({
             ...state,
-            startOffset:  isLeftEnd > 1.25 * slider.allSliderWidth || isRightEnd > 1.25 * state.slideWidth ? -.75 * state.slideWidth : updatedStartOffset,
+            startOffset: isLeftEnd > 1.25 * slider.allSliderWidth || isRightEnd > 1.25 * state.slideWidth ? -.75 * state.slideWidth : updatedStartOffset,
         }))
     }
 
@@ -53,28 +50,39 @@ export default function Slider({data, slideWidth: slideImageWidth='45%'}) {
                 <div className={styles.slides}
                      style={{left: slider.startOffset}}
                 >
-                    <div className={styles.slide} key={firstSlide.link}
-                         ref={slideNode}  style={{minWidth: slideImageWidth}}
-                    >
-                        <Image src={firstSlide.image}
-                               width={700}
-                               height={400}
-                               alt={firstSlide.title}
-                        />
-                    </div>
+                    <Link href={firstSlide.link}>
+                        <div className={styles.slide} key={firstSlide.link}
+                             ref={slideNode} style={{minWidth: slideImageWidth}}
+                        >
+                            <Image src={firstSlide.image}
+                                   width={700}
+                                   height={400}
+                                   alt={firstSlide.title}
+                            />
+                            <div className={`${styles.slideTitle} ${styles[location]}`}>
+                                <Link href={firstSlide.link}>
+                                    {firstSlide.title}
+                                </Link>
+                            </div>
+                        </div>
+                    </Link>
                     {
                         othersSlides.map(item => {
                             return (
-                                <div className={styles.slide} key={item.link} style={{minWidth: slideImageWidth}}>
-                                    <Image src={item.image}
-                                           width={700}
-                                           height={400}
-                                           alt={item.title}
-                                    />
-                                    <div className={styles.slideTitle}>
-                                        {item.title}
+                                <Link href={item.link} key={item.link} >
+                                    <div className={styles.slide} style={{minWidth: slideImageWidth}}>
+                                        <Image src={item.image}
+                                               width={700}
+                                               height={400}
+                                               alt={item.title}
+                                        />
+                                        <div className={`${styles.slideTitle} ${styles[location]}`}>
+                                            <Link href={item.link}>
+                                                {item.title}
+                                            </Link>
+                                        </div>
                                     </div>
-                                </div>
+                                </Link>
                             )
                         })
                     }
