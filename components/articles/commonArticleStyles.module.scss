@@ -1,38 +1,38 @@
 @import "../../styles/scss/common/colors";
 
-.maxWidthArticleTitleWrapper{
+.maxWidthArticleTitleWrapper {
   max-width: 80rem;
   margin: auto;
-  padding:0 3rem;
+  padding: 0 3rem;
 }
 
-.maxWidthArticleSectionWrapper{
+.maxWidthArticleSectionWrapper {
   max-width: 60rem;
   margin: auto;
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-.footerContainer{
+.footerContainer {
   display: flex;
   max-width: 60rem;
   margin: auto;
 }
 
-.articleOddSection, .articleEvenSection{
+.articleOddSection, .articleEvenSection {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
 
-.articleOddSection{
+.articleOddSection {
   background-color: $articleOddSection;
 }
 
-.articleEvenSection{
+.articleEvenSection {
   background-color: $white;
 }
 
-.subTitle{
+.subTitle {
   font-family: "Futura-PT", sans-serif;
   font-size: 2.25rem;
   text-align: center;
@@ -42,7 +42,7 @@
   color: $text;
 }
 
-.articleSubSubTitle{
+.articleSubSubTitle {
   font-family: "Futura-PT", sans-serif;
   font-size: 1.75rem;
   text-align: center;
@@ -52,7 +52,7 @@
   color: $text;
 }
 
-.articleText{
+.articleText {
   font-family: "Futura-PT", sans-serif;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -60,17 +60,17 @@
   margin: 0;
   padding-bottom: 1.25rem;
 
-  b{
+  b {
     font-family: "Futura-Demi", sans-serif;
   }
 }
 
-.articlePicture{
+.articlePicture {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
 
-.articlePhrase{
+.articlePhrase {
   font-family: "Futura-PT", sans-serif;
   font-size: 2.25rem;
   text-align: center;
@@ -79,7 +79,7 @@
   margin: 0;
 }
 
-.delimiter{
+.delimiter {
   padding-bottom: 2rem;
   margin: 0;
 }
@@ -87,7 +87,8 @@
 .articleList {
   margin: 0;
   color: $text;
-  li{
+
+  li {
     padding-bottom: 1rem;
   }
 }
@@ -96,12 +97,12 @@
   list-style: auto;
 }
 
-.frameWithExampleAndTitle{
+.frameWithExampleAndTitle {
   border: 1px solid $blog-four-sticky;
   max-width: 60rem;
   margin: 1rem auto 2rem;
 
-  .exampleTitle{
+  .exampleTitle {
     padding: 0.5rem 0.5rem 0.5rem 1rem;
     margin: 0;
     text-align: left;
@@ -110,17 +111,33 @@
     color: #fff;
     background-color: $blog-four-sticky;
   }
+
   .exampleText {
     padding: 1rem;
     font-family: 'Futura-LT', sans-serif;
   }
 }
 
-.articleText + .articleList{
+.articleLink {
+  a {
+    color: $blog-four-sticky;
+  }
+}
+
+.articleText + .articleList {
   margin-top: -.65rem;
 }
 
 .articleEvenSection + .articleEvenSection,
-.articleOddSection + .articleOddSection{
+.articleOddSection + .articleOddSection {
   padding-top: 0;
+}
+
+.articlePicture50{
+  display: flex;
+  justify-content: space-between;
+  >span {
+    width: 49%!important;
+    height: auto;
+  }
 }

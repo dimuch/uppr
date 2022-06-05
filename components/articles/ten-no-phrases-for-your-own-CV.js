@@ -3,7 +3,6 @@ import React from 'react';
 import styles from '../../components/articles/commonArticleStyles.module.scss';
 
 import Image from 'next/image';
-import Link from 'next/link';
 
 import Author from '../blog/Author/Author';
 import Slider from '../blog/Slider/Slider';
@@ -33,7 +32,7 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
 
                     <p className={styles.articleText}>
                         Насправді, ваше резюме, як і профайл, на LinkedIn - це дуже хороша можливість виділитися і
-                        отримати бажану роботу/ посаду/ партнерство. Тому, чому б не видалити “вражаючі” (читай “нудні”)
+                        отримати бажану роботу/ посаду/ партнерство. Тому, чому б не видалити &quot;вражаючі&quot; (читай &quot;нудні&quot;)
                         фрази, які по-перше усі пишуть і по- друге, нічого по-суті не означають.
                     </p>
 
@@ -45,7 +44,7 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
                         style={{color: `#${articleData.article_color}`}}
                     >
                         <li>
-                            уберегти вас від таких от “подразників” у вигляді пустих фраз;
+                            уберегти вас від таких от &quot;подразників&quot; у вигляді пустих фраз;
                         </li>
                         <li>
                             рекрутерів - від руйнування нервових клітин.
@@ -97,7 +96,7 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
                     <p className={styles.articleText}>
                         <b>3.Results-driven, result-oriented/ result focused.</b> Замість того, щоб розповідати, що ви
                         орієнтуєтеся на результат, краще розкажіть безпосередньо про самі результати. Нехай цифри
-                        говорять про ваші результати, а не слова. І взагалі, намагайтеся писати поменше “води”, і
+                        говорять про ваші результати, а не слова. І взагалі, намагайтеся писати поменше &quot;води&quot;, і
                         побільше конкретики.
                     </p>
 
@@ -168,7 +167,7 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
                         робітничка,
                         який без натхнення, автоматично виконує щось, бо так написано в посадовій інструкції - не більше
                         і не менше. Якщо ви були відповідальним за щось - це зовсім не означає, що ви щось робили.
-                        Відповідальність вам “нав’язала” компанія. Напишіть краще, що ви конкретно робили,
+                        Відповідальність вам &quot;нав’язала&quot; компанія. Напишіть краще, що ви конкретно робили,
                         використовуючи сильні дієслова managed, led, arranged. Замість того, щоб писати Responsible for
                         training interns ..., просто напишіть Trained interns ...
                     </p>
@@ -193,7 +192,7 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
                     <h3 className={styles.articlePhrase} style={{color: `#${articleData.article_color}`}}>
-                        Хоч і мала написати всього 10. Не можу втриматися і не написати ще одне "слово" – спеціально для
+                        Хоч і мала написати всього 10. Не можу втриматися і не написати ще одне &quot;слово&quot; – спеціально для
                         ІТ-шників – ninja / unicorn / rock-star. Ще і досі зустрічаються ті, хто про себе так думає і
                         пише –
                         можливо на зорі ІТ це і було круто писати, але зараз це просто спішно!

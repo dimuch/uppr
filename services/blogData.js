@@ -150,7 +150,9 @@ async function getTop3ArticlesWithoutMainDB() {
 export async function getArticlesDataByIdDB(articleURL) {
     const baseArticleData = await getArticleBaseDataByURL(articleURL);
 
-    if(!baseArticleData.data) {
+    console.log('baseArticleData', baseArticleData);
+
+    if(!baseArticleData) {
         return {
             pageComponent: 'PageNotFound'
         }
@@ -176,7 +178,7 @@ export async function getArticleBaseDataByURL(articleURL) {
         connection.query(getArticlesDataById, (err, rows, fields) => {
             if (err) {
                 console.log('getArticlesDataById ERROR', err);
-                reject({data: []});
+                resolve(null);
             }
 
             try {
@@ -190,7 +192,7 @@ export async function getArticleBaseDataByURL(articleURL) {
                 resolve(data);
             } catch (e) {
                 console.log('getArticleBaseDataByURL CATCH ===> ', e);
-                resolve({data: null});
+                resolve(null);
             }
         });
     });
