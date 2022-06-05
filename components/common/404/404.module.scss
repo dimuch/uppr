@@ -1,0 +1,110 @@
+@import "../../../styles/scss/common/colors";
+
+.errorPage{
+  background-color: #f3f5f7;
+  margin: 0;
+  padding: 0;
+  color: $article-description;
+  font-weight: 800;
+  font-family: "Futura-PT", sans-serif;
+  font-size: 16px;
+}
+
+.rvGeneralError{
+  width: 20rem;
+  position: absolute;
+  top:10%;
+  bottom: 0; right: 0;
+  left:0; margin: auto;
+}
+.rvTitle{
+  display: inline-block;
+  margin-top: 90px;
+  color: $article-description;
+}
+.rvTitle h1{
+  font-size: 40px;
+}
+.rvTitle h3 {
+  font-size: 1.375em;
+  margin: 0 0 -20px;
+}
+.rvErrorImg{
+  float: right;
+  vertical-align: middle;
+  height: auto;
+  width: 38%;
+}
+.rvHrDivider{
+  margin-top: 20px;
+  height: 2px;
+  width: 100%;
+  background-color: $article-description;
+}
+.rvErrorMessage{
+  font-size: 1.05em;
+  font-weight: normal;
+  font-family: "Futura-Demi", sans-serif;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  color: $article-description;
+}
+.rvHomeLink a{
+  margin: 0;
+  font-size: 1.05em;
+  text-decoration: none;
+  color: #3091F6;
+  padding-bottom:20px;
+}
+
+@media all and (max-width: 767px){
+  .rvGeneralError{
+    width: 84%;
+    top: 8%;
+  }
+  .rvErrorImg{
+    float: left;
+    width: 60%;
+    margin-left: 0px;
+  }
+  .rvTitle{
+    margin-top: 10px;
+  }
+  .rvTitle h1{
+    font-weight: 800;
+    font-size: 2em;
+  }
+  .rvTitle h3{
+    font-weight: 800;
+    font-size: 1.3125em;
+  }
+  .rvErrorMessage, .rvHomeLink a{
+    font-size: 1em;
+  }
+}
+@media all and (max-width: 767px) and (orientation: landscape){
+  .rv-general-error{
+    top: 4%;
+  }
+  .rvErrorImg{
+    float: right;
+    margin-right: -20px;
+    width: 40%;
+  }
+  .rvTitle{
+    margin-top: 105px;
+  }
+}
+@media all and (max-width: 568px) and (orientation: landscape){
+  .rvErrorImg{
+    width: 35%;
+  }
+  .rvTitle{
+    margin-top: 55px;
+  }
+}
+@media all and (max-width: 480px) and (orientation: landscape){
+  .rvTitle{
+    margin-top: 35px;
+  }
+}

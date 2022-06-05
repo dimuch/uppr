@@ -149,6 +149,13 @@ async function getTop3ArticlesWithoutMainDB() {
 //getArticlesDataByIdDB
 export async function getArticlesDataByIdDB(articleURL) {
     const baseArticleData = await getArticleBaseDataByURL(articleURL);
+
+    if(!baseArticleData.data) {
+        return {
+            pageComponent: 'PageNotFound'
+        }
+    }
+
     const articleTags = await getArticleTagsById(baseArticleData.id);
     const articleCategory = await getArticleCategoryById(baseArticleData.id);
     const relevantArticles = await getRelevantArticlesByCategory(articleCategory.category.id);
@@ -182,7 +189,8 @@ export async function getArticleBaseDataByURL(articleURL) {
 
                 resolve(data);
             } catch (e) {
-                reject({data: []});
+                console.log('getArticleBaseDataByURL CATCH ===> ', e);
+                resolve({data: null});
             }
         });
     });

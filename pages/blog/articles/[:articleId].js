@@ -4,8 +4,14 @@ import Header from '../../../components/common/header/Header';
 import {getArticlesDataByIdDB} from '../../../services/blogData';
 import * as PageComponent from '../../../components/articles';
 
+const PAGE_NOT_FOUND='PageNotFound';
+
 export default function ArticlePageWrapper({articleData}) {
     const ArticlePage = PageComponent[articleData.pageComponent];
+
+    if(articleData.pageComponent === PAGE_NOT_FOUND){
+        return <ArticlePage />
+    }
 
     return (
         <>
