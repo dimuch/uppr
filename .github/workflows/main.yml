@@ -32,7 +32,7 @@ jobs:
         run: npm install npm -g
 
       - name: Cloning repo
-        run: pwd && git clone https://github.com/dimuch/uppr.git .
+        run: cd ../ && sudo rm -rf uppr && git clone https://github.com/dimuch/uppr.git .
 
       - name: Install dependencies
         run: sudo npm install && sudo npm install sharp
