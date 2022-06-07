@@ -50,9 +50,8 @@ jobs:
         with:
           source: './*'
           target: ${{secrets.DEPLOY_DIRECTORY}}
-          rm: true
 
-      - name: Restarting uppr.com.ua server
+      - name: Restarting server
         uses: appleboy/ssh-action@master
         with:
           HOST: ${{ secrets.SSH_HOST }}
