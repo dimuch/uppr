@@ -150,8 +150,6 @@ async function getTop3ArticlesWithoutMainDB() {
 export async function getArticlesDataByIdDB(articleURL) {
     const baseArticleData = await getArticleBaseDataByURL(articleURL);
 
-    console.log('baseArticleData', baseArticleData);
-
     if(!baseArticleData) {
         return {
             pageComponent: 'PageNotFound'

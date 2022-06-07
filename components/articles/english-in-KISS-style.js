@@ -19,46 +19,24 @@ export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
                 <div className={styles.maxWidthArticleSectionWrapper}>
                     <h2 className={styles.subTitle}>Англійська в стилі KISS. Акроніми 2</h2>
 
-                    <p className={`${styles.articleText} ${styles.articleLink}`}>
+                    <p className={styles.articleText}>
                         Продовжу раніше написаний&nbsp;
-                        <Link href="/blog/articles/english-in-KISS-style" target="_blank">
-                            пост про абревіатури
-                        </Link>,
-                        як один з супер інструментів для передачі ідей коротко та просто.
+                        <Link href="/blog/articles/english-in-KISS-style">пост про абревіатури</Link>&nbsp; як один з
+                        супер інструментів для передачі ідей
+                        коротко та просто
                     </p>
 
                     <p className={styles.articleText}>
-                        Про акроніми у діловому листування можна написати книгу, не те що два пости. Але ми обмежимося
-                        більш-менш адекватними та вживаними звичайними смертними, а не акронім-фріками, які знають, що
-                        значить WEG ( Wicked Evil Grin) та YYSSW (Yeah Yeah Sure Whatever). Хоча, хто зна, може це якась
-                        особлива таємна мова, вигадана для того, щоб лист ніхто не зрозумів, або і не читав, бо
-                        задовбешся ”гуглити “уже на другій лінійці.
+                        Але чи є в ній і досі сенс, і чи потрібно її використовувати кожного разу, коли надсилаєте
+                        вкладення?
                     </p>
                 </div>
             </div>
 
             <div className={styles.articleEvenSection}>
-                <div className={styles.maxWidthArticleSectionWrapper}>
-                    <h2 className={styles.subTitle}>Але, давайте повернемося до наших баранів, тобто акронімів,
-                        актуальних у бізнес імейлінгу
-                    </h2>
-
-                    <p className={styles.articleText}>
-
-
-
-
-
-                        
-
-
-                    </p>
-
-
-                    <h3 className={styles.articlePhrase} style={{color: `#${articleData.article_color}`}}>
-                        Короткі, &quot;розмовні&quot; імейлі - тренд!
-                    </h3>
-                </div>
+                <h3 className={styles.articlePhrase} style={{color: `#${articleData.article_color}`}}>
+                    Короткі, &quot;розмовні&quot; імейлі - тренд!
+                </h3>
             </div>
 
             <div className={styles.articleOddSection}>
