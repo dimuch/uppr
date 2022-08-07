@@ -240,8 +240,12 @@ export default function EnglishWayOut({articleData}) {
 
             <div className={styles.articleOddSection}>
                 <div className={`${styles.footerContainer}`}>
-                    <Author data={articleData}/>
-                    <Slider data={articleData.relevantArticles} />
+                    <div style={{width: '20%'}}>
+                        <Author data={articleData}/>
+                    </div>
+                    <div style={{width: '80%'}}>
+                        <Slider data={articleData.relevantArticles} slideWidth={'45%'}/>
+                    </div>
                 </div>
             </div>
 

@@ -40,7 +40,7 @@ export default function ArticleCard({item, isDescription=true}) {
                                 <Typography
                                     textAlign={'center'}
                                     variant={'h3'}
-                                    sx={linesLimiterConfig(3)}
+                                    sx={linesLimiterConfig(2)}
                                 >
                                     {item.title}
                                 </Typography>
