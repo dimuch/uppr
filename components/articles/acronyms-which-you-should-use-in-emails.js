@@ -32,7 +32,7 @@ export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
                         більш-менш адекватними та вживаними звичайними смертними, а не акронім-фріками, які знають, що
                         значить WEG ( Wicked Evil Grin) та YYSSW (Yeah Yeah Sure Whatever). Хоча, хто зна, може це якась
                         особлива таємна мова, вигадана для того, щоб лист ніхто не зрозумів, або і не читав, бо
-                        задовбешся ”гуглити “уже на другій лінійці.
+                        задовбешся "гуглити" уже на другій лінійці.
                     </p>
                 </div>
             </div>
@@ -43,159 +43,247 @@ export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
                         актуальних у бізнес імейлінгу
                     </h2>
 
-                    <p className={styles.articleText}>
+                    <div className={styles.articlePicture}>
+                        <Image src="/assets/images/blog-articles/acronyms_which_you_should_use_in_emails_1.jpg"
+                               width="1400"
+                               height="425"
+                               alt="Акроніми актуальні у бізнес імейлінгу"
+                        />
+                    </div>
 
-
-
-
-
-                        
-
-
-                    </p>
-
-
-                    <h3 className={styles.articlePhrase} style={{color: `#${articleData.article_color}`}}>
-                        Короткі, &quot;розмовні&quot; імейлі - тренд!
+                    <h3 className={styles.articleSubSubTitle}>
+                        EOM та NRN
                     </h3>
+
+                    <p className={styles.articleText}>
+                        <b>EOM</b> (End of Message) та <b>NRN</b> (No Reply Needed/Necessary) - чудові акроніми, які
+                        вбережуть вас від пустих імейлів-відповідей в стилі OK! Sounds good! No problem! Thanks for
+                        informing!
+                    </p>
+
+                    <p className={styles.articleText}>
+                        EOM пишуть в кінці теми листа як сигнал про те, що не потрібно відкривати лист взагалі.
+                        Економить час усім;).
+                    </p>
+
+                    <div className={styles.frameWithExampleAndTitle}>
+                        <p className={styles.exampleTitle}>Наприклад</p>
+                        <p className={`${styles.articleText}  ${styles.exampleText}`}>
+                            Meeting moved to 3 pm, same room. <b>EOM</b>
+                        </p>
+                    </div>
+
+                    <h3 className={styles.articleSubSubTitle}>
+                        LET
+                    </h3>
+
+                    <p className={styles.articleText}>
+                        <b>LET</b> (Leaving Early Today) інформує коворкерів про те, що усі питання до вас та з вами
+                        повинні бути вирішені раніше вказаного часу.
+                    </p>
+
+                    <div className={styles.frameWithExampleAndTitle}>
+                        <p className={styles.exampleTitle}>Наприклад</p>
+                        <p className={`${styles.articleText}  ${styles.exampleText}`}>
+                            Subject line: <b>LET</b>
+                            <br/>
+                            <br/>
+                            Hey, I’m leaving at 3 pm for a doctor. Reach out before if you need something.
+                        </p>
+                    </div>
+
+                    <h3 className={styles.articleSubSubTitle}>
+                        PRB EOD - ???
+                    </h3>
+
+                    <p className={styles.articleText}>
+                        <b>PRB EOD</b>- прохання відповісти уже нарешті)), особливо корисний, коли потрібно діяти в
+                        умовах обмеженого часу.
+                    </p>
+
+                    <div className={styles.frameWithExampleAndTitle}>
+                        <p className={styles.exampleTitle}>Наприклад</p>
+                        <p className={`${styles.articleText}  ${styles.exampleText}`}>
+                            Hey, can you take a look at this update, please? Need to send to the customer EOD.
+                            <br/>
+                            <b>PRB</b> 5 pm if you get the chance.
+                        </p>
+                    </div>
+
+                    <h3 className={styles.articleSubSubTitle}>
+                        HTH
+                    </h3>
+
+                    <p className={styles.articleText}>
+                        <b>HTH</b> (Hope That Helps) – чудова та, головне, коротка відповідь на подяку за вашу допомогу.
+                    </p>
+
+                    <div className={styles.frameWithExampleAndTitle}>
+                        <p className={styles.exampleTitle}>Наприклад</p>
+                        <p className={`${styles.articleText}  ${styles.exampleText}`}>
+                            No Problem! <b>HTH!</b>
+                            <br/>
+                            <br/>
+                            Thanks for your feedback yesterday! I seriously needed it. It made the project so much
+                            easier with your guidance.
+                        </p>
+                    </div>
+
+                    <div className={styles.articlePicture}>
+                        <Image src="/assets/images/blog-articles/acronyms_which_you_should_use_in_emails_4.jpg"
+                               width="1400"
+                               height="425"
+                               alt="Акроніми актуальні у бізнес імейлінгу"
+                        />
+                    </div>
+
+                    <h3 className={styles.articleSubSubTitle}>
+                        WFH
+                    </h3>
+
+                    <p className={styles.articleText}>
+                        <b>WFH</b> (Working From Home) - для повідомлення колег, що ви сьогодні працюєте віддалено
+                    </p>
+
+                    <div className={styles.frameWithExampleAndTitle}>
+                        <p className={styles.exampleTitle}>Наприклад</p>
+                        <p className={`${styles.articleText}  ${styles.exampleText}`}>
+                            Hey all,
+                            <br/>
+                            <br/>
+                            I’ll be <b>WFH</b> today and tomorrow. My 3-year-old has a nasty flu and sticking around to
+                            help him out.
+                        </p>
+                    </div>
                 </div>
             </div>
 
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-                    <p className={styles.articleText}>
-                        Моя відповідь, ні.
-                    </p>
+                    <h2 className={styles.subTitle}>А у випадку імейла-опуса ...</h2>
+
+                    <h3 className={styles.articleSubSubTitle}>
+                        TLTR
+                    </h3>
 
                     <p className={styles.articleText}>
-                        По-перше, <i>&quot;Please find attached&quot;</i> звучить застаріло та занадто формально. Плюс,
-                        існують альтернативи, більш розмовні та сучасні. Але про це - пізніше.
+                        <b>TLTR</b> (Too Long Too Read) – коли читати довжелезний лист колеги не має часу, а допомогти
+                        ви не проти.
                     </p>
 
-                    <p className={styles.articleText}>
-                        По-друге, ця фраза взагалі не потрібна в багатьох випадках. В імейлі і так видно, що там є атач.
-                    </p>
+                    <div className={styles.frameWithExampleAndTitle}>
+                        <p className={styles.exampleTitle}>Наприклад</p>
+                        <p className={`${styles.articleText}  ${styles.exampleText}`}>
+                            <b>TLTR.</b> I’m happy to help, just on a tight deadline.
+                            <br/>
+                            <br/>
+                            Can you summarize what you need from me and how I can help?
+                        </p>
+                    </div>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/please_find_attached_1.jpg"
+                        <Image src="/assets/images/blog-articles/acronyms_which_you_should_use_in_emails_3.jpg"
                                width="1400"
                                height="425"
-                               alt="Короткі, “розмовні” імейлі - тренд!"
+                               alt="Акроніми актуальні у бізнес імейлінгу"
                         />
                     </div>
 
-                    <p className={styles.articleText}>
-                        Але практично на кожній лекції, тренігу чи воркшопі, який я проводжу, неодмінно виникає тривала
-                        дискусія, щодо списку застарілих кліше, коли серед них опиняється &quot;Please find
-                        attached&quot;. Ідею
-                        про те, що бізнес став набагато більш персоналізованим за останні роки, і що бізнес комунікація
-                        відповідно підлаштовується, наприклад, світовою тенденцією до спрощення текстів (KISS принцип)
-                        та написання імейлів у більш розмовному стилі – ще більш-менш сприймають. Але от те, що це
-                        означає заміняти та уникати &quot;неживих&quot;, антикварних фраз, бо вони шкодять активній
-                        персоналізованій комунікації і створюють додаткову непотрібну відстань з читачем - прийняти
-                        важко.
-                    </p>
+                    <h3 className={styles.articleSubSubTitle}>
+                        TL;DR
+                    </h3>
 
                     <p className={styles.articleText}>
-                        Якраз на цьому моменті багато схвальних кивків чи нейтральних позіхів змінюються на скептичний
-                        подив та саркастичне &quot;хоч цю нам залиште.&quot;, а то і обурливе – &quot;я -
-                        незгоден.&quot;
+                        <b>TL;DR</b> (Too Long; Didn’t Read) - корисна абревіатура, коли ви все-таки не втрималися на
+                        написали
+                        імейл-опус, а переписувати не має ні сил, ні часу. Щоб читач не загубився в хащах деталей, а то
+                        і взагалі проігнорував цю купу символів - ставимо TL; DR; та пишемо коротке самері листа!
                     </p>
+
+                    <div className={styles.frameWithExampleAndTitle}>
+                        <p className={styles.exampleTitle}>Наприклад</p>
+                        <p className={`${styles.articleText}  ${styles.exampleText}`}>
+                            <b>TL;DR.</b> Can you guys please share this survey to help us get feedback from our users?
+                            <br/>
+                            <br/>
+                            So, I have a lot of ideas how we can improve communication. Firstly, we need to …
+                        </p>
+                    </div>
+
+                    <h3 className={styles.articleSubSubTitle}>
+                        Y/N - Yes or No?
+                    </h3>
+
+                    <p className={styles.articleText}>
+                        <b>Y/N - Yes or No?</b> – ваш читач оцінить можливість відповіcти на імейл однією літерою.
+                        Використовуйте, якщо вам достатньо або ствердної, або заперечної відповіді на запитання.
+                    </p>
+
+                    <div className={styles.frameWithExampleAndTitle}>
+                        <p className={styles.exampleTitle}>Наприклад</p>
+                        <p className={`${styles.articleText}  ${styles.exampleText}`}>
+                            <br/>
+                            So we’re good to launch this now or postpone everything to Thursday? <b>Y/N</b>
+                            <br/>
+                        </p>
+                    </div>
+
+                    <div className={styles.articlePicture}>
+                        <Image src="/assets/images/blog-articles/acronyms_which_you_should_use_in_emails_5.jpg"
+                               width="1400"
+                               height="425"
+                               alt="Акроніми актуальні у бізнес імейлінгу"
+                        />
+                    </div>
+
+                    <h3 className={styles.articleSubSubTitle}>
+                        LMK
+                    </h3>
+
+                    <p className={styles.articleText}>
+                        <b>LMK</b> (Let Me Know) - неформальний спосіб закінчити імейл, прохання, висловити свою думку.
+                    </p>
+
+                    <div className={styles.frameWithExampleAndTitle}>
+                        <p className={styles.exampleTitle}>Наприклад</p>
+                        <p className={`${styles.articleText}  ${styles.exampleText}`}>
+                            Wanna get coffee tomorrow at that new cafeteria around the corner?
+                            <br/>
+                            I heard their сupcake are amazing.
+                            <br/>
+                            <b>LMK</b>
+                        </p>
+                    </div>
+
+                    <h3 className={styles.articleSubSubTitle}>
+                        TYT
+                    </h3>
+
+                    <p className={styles.articleText}>
+                        <b>TYT</b> (Take Your Time) – використовується, коли вам потрібен фідбек, але не терміново.
+                    </p>
+
+                    <div className={styles.frameWithExampleAndTitle}>
+                        <p className={styles.exampleTitle}>Наприклад</p>
+                        <p className={`${styles.articleText}  ${styles.exampleText}`}>
+                            Ok thank you so much. Whenever you get to it is fine.
+                            <br/>
+                            <b>TYT</b>
+                            <br/>
+                            No problem. I’ll take a look at hit before the day is over.
+                        </p>
+                    </div>
                 </div>
             </div>
 
             <div className={styles.articleEvenSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-                    <h2 className={styles.subTitle}>
-                        Усі так пишуть
-                    </h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/please_find_attached_2.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Усі так пишуть"
-                        />
-                    </div>
-
                     <p className={styles.articleText}>
-                        Аргументація незгоди проста – фраза як фраза, і зовсім не застаріла, усі так пишуть, нейтіви в
-                        тому числі. А here is the [report], як альтернатива, нікуди не годиться - занадто неформально і
-                        взагалі не ввічливо так казати. Ще чого доброго, бос побачить і пожурить, чи клієнт
-                        поскаржиться, що це ви собі надумали фамільярничати.
+                        Але, пам&apos;ятаємо, що ціль – спростити, а не заплутати адресата.
                     </p>
-
                     <p className={styles.articleText}>
-                        ОК, загалом страхи зрозумілі, хоч і безпідставні.
+                        Які з цих акронімів Ви використовуєте? Що популярно серед Ваших колег?
                     </p>
-
-                    <p className={styles.articleText}>
-                        По-перше, я завжди наголошую, що усе потрібно розглядати лише в конкретному контексті, тому для
-                        написання хороших імейлів потрібно досконало володіти цим контекстом – розуміти, що за ситуація
-                        склалася, знати, хто ваш читач, і якого результату ви хочете досягти вашим імейлом в
-                        короткострокові та довгостроковій перспективі (мати імейл стратегію).
-                    </p>
-
-                    <p className={styles.articleText}>
-                        По-друге, все, що я розповідаю – не для того, що б наставити когось на &quot;шлях
-                        праведний&quot;, не
-                        претендую на істину останньої інстанції, і не роздаю індульгенції на мовні звороти, а просто
-                        ділюся своєю думкою та досвідом, який працював для мене у моїх ситуаціях, для того, щоб ви
-                        розуміли, що є альтернатива клішейному книжному спілкуванню. Щоб була можливість спробувати
-                        різні підходи і вибрати, що працює для вас.
-                    </p>
-                </div>
-            </div>
-
-            <div className={styles.articleOddSection}>
-                <div className={styles.maxWidthArticleSectionWrapper}>
-                    <h2 className={styles.subTitle}>
-                        Ввічливі слова - це ще не ввічливість
-                    </h2>
-
-                    <p className={styles.articleText}>
-                        Але основне, що призводить до такої реакції – це невірне розуміння неформальності та
-                        ввічливості. Роки школи, університету та курсів з матеріалами стандартизованих підручників та
-                        викладачами, більшість з яких не стикалася з реальними бізнес- кейсами та з живими клієнтами,
-                        змусили свято повірити, якщо ви не напічкаєте текст розкланюваннями, солодко-приторними could
-                        you be so kind, та нещирим at your earliest convenience, тощо, то тавро грубіяна – гарантовано.
-                        А неформальність часто сприймається як заклик усім підряд писати hey buddy та hugs and kisses.
-                        Проте, це обширна тема і про неї варто окремо писати.
-                    </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/please_find_attached_3.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Як не перепрацювати"
-                        />
-                    </div>
-                </div>
-            </div>
-
-            <div className={styles.articleEvenSection}>
-                <div className={styles.maxWidthArticleSectionWrapper}>
-                    <h2 className={styles.subTitle}>
-                        Індульгенція на &quot;Please find attached&quot;
-                    </h2>
-
-                    <p className={styles.articleText}>
-                        Якщо вам так подобається – пишіть &quot;Please find attached&quot;. Варто розуміти, що ця фраза
-                        сама по
-                        собі нічого не змінить, і чи є вона, чи її немає – однаково. Увесь текст/імейл і підхід повинні
-                        бути живим, розмовними, партнерськими, персоналізованими, сфокусованим на читачеві, проактивним
-                        та націленим на GJD. І одна фраза погоди не зробить.
-                    </p>
-
-                    <p className={styles.articleText}>
-                        Але якщо ви прагнете покращити та модернізувати ваш імейлінг, то одним з перших кроків має стати
-                        очистка письма від фрази типу &quot;Please find attached&quot;.
-                    </p>
-
-                    <p className={styles.articleText}>
-                        І насамкінець, обіцяні <Link href="/blog/articles/please-find-attached-2">альтернативи</Link>.
-                    </p>
-
                 </div>
             </div>
 

@@ -35,6 +35,7 @@
 .subTitle {
   font-family: "Futura-PT", sans-serif;
   font-size: 2.25rem;
+  line-height: 1.25;
   text-align: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -45,6 +46,7 @@
 .articleSubSubTitle {
   font-family: "Futura-PT", sans-serif;
   font-size: 1.75rem;
+  line-height: 1.5;
   text-align: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -93,8 +95,16 @@
   }
 }
 
+.enlargedFont {
+  font-size: 1.5rem;
+}
+
 .numberedList {
   list-style: auto;
+}
+
+.discList{
+  list-style-type: disc;
 }
 
 .frameWithExampleAndTitle {
@@ -118,6 +128,11 @@
   }
 }
 
+.frame{
+  padding: 1rem;
+  border: 2px dashed;
+}
+
 .articleLink {
   a {
     color: $blog-four-sticky;
@@ -131,6 +146,16 @@
 .articleEvenSection + .articleEvenSection,
 .articleOddSection + .articleOddSection {
   padding-top: 0;
+}
+
+.articleText.frame + .articleText {
+  padding-top: 2.5rem;
+}
+
+.articleList30 {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
 }
 
 .articlePicture50{

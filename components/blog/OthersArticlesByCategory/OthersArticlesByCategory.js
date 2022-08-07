@@ -10,8 +10,6 @@ export default function OthersArticlesByCategory() {
         fetch('/api/articles-by-category')
             .then(async (data) => {
                 const articlesByCategory = await data.json();
-                console.log(articlesByCategory);
-
                 setItems(articlesByCategory);
             })
 

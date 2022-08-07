@@ -8,7 +8,7 @@ import Author from '../blog/Author/Author';
 import Slider from '../blog/Slider/Slider';
 import ArticleHeader from '../blog/ArticleHeader/ArticleHeader';
 
-export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
+export default function EnglishInKISSStyle({articleData}) {
     return (
         <div className={styles.article}>
             <div className={styles.maxWidthArticleTitleWrapper}>
@@ -17,67 +17,19 @@ export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
 
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-                    <h2 className={styles.subTitle}>Англійська в стилі KISS. Акроніми 2</h2>
+                    <h2 className={styles.subTitle}>Англійська в стилі KISS. Абревіатури</h2>
 
                     <p className={styles.articleText}>
-                        Продовжу раніше написаний&nbsp;
-                        <Link href="/blog/articles/english-in-KISS-style">пост про абревіатури</Link>&nbsp; як один з
-                        супер інструментів для передачі ідей
-                        коротко та просто
+                        Перш за все нагадую, що <b>KISS</b> - це keep it short and simple. Отже, один з самих простих та
+                        дуже
+                        практичних інструментів <b>KISS</b> імейлів, який допомагає економити час та символи - це
+                        абревіатури.
                     </p>
 
                     <p className={styles.articleText}>
-                        Але чи є в ній і досі сенс, і чи потрібно її використовувати кожного разу, коли надсилаєте
-                        вкладення?
-                    </p>
-                </div>
-            </div>
-
-            <div className={styles.articleEvenSection}>
-                <h3 className={styles.articlePhrase} style={{color: `#${articleData.article_color}`}}>
-                    Короткі, &quot;розмовні&quot; імейлі - тренд!
-                </h3>
-            </div>
-
-            <div className={styles.articleOddSection}>
-                <div className={styles.maxWidthArticleSectionWrapper}>
-                    <p className={styles.articleText}>
-                        Моя відповідь, ні.
-                    </p>
-
-                    <p className={styles.articleText}>
-                        По-перше, <i>&quot;Please find attached&quot;</i> звучить застаріло та занадто формально. Плюс,
-                        існують альтернативи, більш розмовні та сучасні. Але про це - пізніше.
-                    </p>
-
-                    <p className={styles.articleText}>
-                        По-друге, ця фраза взагалі не потрібна в багатьох випадках. В імейлі і так видно, що там є атач.
-                    </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/please_find_attached_1.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Короткі, “розмовні” імейлі - тренд!"
-                        />
-                    </div>
-
-                    <p className={styles.articleText}>
-                        Але практично на кожній лекції, тренігу чи воркшопі, який я проводжу, неодмінно виникає тривала
-                        дискусія, щодо списку застарілих кліше, коли серед них опиняється &quot;Please find
-                        attached&quot;. Ідею
-                        про те, що бізнес став набагато більш персоналізованим за останні роки, і що бізнес комунікація
-                        відповідно підлаштовується, наприклад, світовою тенденцією до спрощення текстів (KISS принцип)
-                        та написання імейлів у більш розмовному стилі – ще більш-менш сприймають. Але от те, що це
-                        означає заміняти та уникати &quot;неживих&quot;, антикварних фраз, бо вони шкодять активній
-                        персоналізованій комунікації і створюють додаткову непотрібну відстань з читачем - прийняти
-                        важко.
-                    </p>
-
-                    <p className={styles.articleText}>
-                        Якраз на цьому моменті багато схвальних кивків чи нейтральних позіхів змінюються на скептичний
-                        подив та саркастичне &quot;хоч цю нам залиште.&quot;, а то і обурливе – &quot;я -
-                        незгоден.&quot;
+                        Звісно, про такі супер популярні, як <b>FW</b> (Forward), <b>BTW</b> (By The
+                        Way), <b>FYI</b> (For your Information), <b>THX</b> (Thanks), <b>PLS</b> (Please), я і згадувати
+                        не буду - усі їх знають та користуються.
                     </p>
                 </div>
             </div>
@@ -85,42 +37,13 @@ export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
             <div className={styles.articleEvenSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
                     <h2 className={styles.subTitle}>
-                        Усі так пишуть
-                    </h2>
+                        <span style={{color: `#${articleData.article_color}`}}>ASAP</span> насправді зовсім не так
+                        швидко як хотілося б!!!</h2>
 
-                    <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/please_find_attached_2.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Усі так пишуть"
-                        />
-                    </div>
-
-                    <p className={styles.articleText}>
-                        Аргументація незгоди проста – фраза як фраза, і зовсім не застаріла, усі так пишуть, нейтіви в
-                        тому числі. А here is the [report], як альтернатива, нікуди не годиться - занадто неформально і
-                        взагалі не ввічливо так казати. Ще чого доброго, бос побачить і пожурить, чи клієнт
-                        поскаржиться, що це ви собі надумали фамільярничати.
-                    </p>
-
-                    <p className={styles.articleText}>
-                        ОК, загалом страхи зрозумілі, хоч і безпідставні.
-                    </p>
-
-                    <p className={styles.articleText}>
-                        По-перше, я завжди наголошую, що усе потрібно розглядати лише в конкретному контексті, тому для
-                        написання хороших імейлів потрібно досконало володіти цим контекстом – розуміти, що за ситуація
-                        склалася, знати, хто ваш читач, і якого результату ви хочете досягти вашим імейлом в
-                        короткострокові та довгостроковій перспективі (мати імейл стратегію).
-                    </p>
-
-                    <p className={styles.articleText}>
-                        По-друге, все, що я розповідаю – не для того, що б наставити когось на &quot;шлях
-                        праведний&quot;, не
-                        претендую на істину останньої інстанції, і не роздаю індульгенції на мовні звороти, а просто
-                        ділюся своєю думкою та досвідом, який працював для мене у моїх ситуаціях, для того, щоб ви
-                        розуміли, що є альтернатива клішейному книжному спілкуванню. Щоб була можливість спробувати
-                        різні підходи і вибрати, що працює для вас.
+                    <p className={`${styles.articleText} ${styles.articleLink}`}>
+                        Єдине, що я не рекомендую, захоплюватися <b>ASAP</b> (хоча далеко не всі зі мною згодні). Чому?
+                        Моє
+                        ставлення до ASAP дивіться <Link href="https://www.youtube.com/watch?v=p5yTg0yJMGw">тут</Link>
                     </p>
                 </div>
             </div>
@@ -128,56 +51,103 @@ export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
                     <h2 className={styles.subTitle}>
-                        Ввічливі слова - це ще не ввічливість
+                        Які ще абревіатури можна використовувати і не боятися бути занадто неформальним чи збити читача
+                        з пантелику?
                     </h2>
 
                     <p className={styles.articleText}>
-                        Але основне, що призводить до такої реакції – це невірне розуміння неформальності та
-                        ввічливості. Роки школи, університету та курсів з матеріалами стандартизованих підручників та
-                        викладачами, більшість з яких не стикалася з реальними бізнес- кейсами та з живими клієнтами,
-                        змусили свято повірити, якщо ви не напічкаєте текст розкланюваннями, солодко-приторними could
-                        you be so kind, та нещирим at your earliest convenience, тощо, то тавро грубіяна – гарантовано.
-                        А неформальність часто сприймається як заклик усім підряд писати hey buddy та hugs and kisses.
-                        Проте, це обширна тема і про неї варто окремо писати.
+                        Коли необхідно вказати дедлайн, то до дати ще приписують <b>EOB</b> (End of Business Day -
+                        кінець
+                        робочого дня). Якщо можна сказати end, то можна сказати і start - <b>SOB</b> (Start of Business
+                        Day).
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/please_find_attached_3.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Як не перепрацювати"
-                        />
-                    </div>
+                    <p className={styles.articleText}>
+                        Інколи з датами можуть уточнювати годинні пояси. Це особливо актуально, якщо ви працюєте з
+                        клієнтами з США чи Китаю. Наприклад, <b>EOB CET</b> (Сentral European Time). Якщо ви пишете
+                        колегам,
+                        партнерам чи клієнтам, то достатньо буде написати <i>Please, reply today EOB</i>.
+                    </p>
+
+                    <p className={styles.articleText}>
+                        Використовують також абревіатури <b>EOW</b> (End of Week – кінець тижня) та <b>EOQ</b> (End of
+                        Quarter – кінець
+                        кварталу). Або уточнити і написати Q1 - перший квартал. <i>We need to finalize budgeting by
+                        EOQ1</i> чи
+                        написати в темі <i>goals review for Q1</i>.
+                    </p>
+                </div>
+            </div>
+
+            <div className={styles.articleEvenSection}>
+                <div className={styles.maxWidthArticleSectionWrapper}>
+                    <h3 className={`${styles.articleSubSubTitle} ${styles.articleLink}`}
+                        style={{color: `#${articleData.article_color}`}}>
+                        Можна в листах зустріти і TBD (To Be Determined) или TBA (To Be Announced), коли інформація по
+                        термінах та даті ще не відома. Маючи на увазі відпустку, пишуть не vacation, а PTO (paid time
+                        off),
+                        а якщо ви плануєте взяти додатковий вихідний, то пишете OOO (Out of office). EOM ми уже
+                        згадували,
+                        коли говорили про тему листа. Для тих, хто пропустив -- відео&nbsp;
+                        <Link href="https://www.youtube.com/watch?v=robO4iCpH8A&t=1s">
+                            напам&apos;ятайка
+                        </Link>
+                    </h3>
+                </div>
+            </div>
+
+            <div className={styles.articleOddSection}>
+                <div className={styles.maxWidthArticleSectionWrapper}>
+                    <h2 className={styles.subTitle}>
+                        Для листування з колегами також підійде:
+                    </h2>
+
+                    <ol className={`${styles.articleList} ${styles.numberedList} ${styles.enlargedFont}`}>
+                        <li>TMI – Too Much Information</li>
+                        <li>NP – No Problem</li>
+                        <li>YW – You are Welcome</li>
+                        <li>GJ – Good Job</li>
+                        <li>WBR – With Best Regards</li>
+                        <li>TIA – Thanks In Advance</li>
+                        <li>GLHF – Good Luck Have Fun</li>
+                        <li>LDL/LTL – Let’s Discuss Later/ Let’s talk later</li>
+                        <li>TTYL – Talk To You Later/Type To You</li>
+                    </ol>
                 </div>
             </div>
 
             <div className={styles.articleEvenSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
                     <h2 className={styles.subTitle}>
-                        Індульгенція на &quot;Please find attached&quot;
+                        Якщо ви фани месенджерів типу Skype, Slack, Viber, What’s up, то сміливо використовуйте:
                     </h2>
 
-                    <p className={styles.articleText}>
-                        Якщо вам так подобається – пишіть &quot;Please find attached&quot;. Варто розуміти, що ця фраза
-                        сама по
-                        собі нічого не змінить, і чи є вона, чи її немає – однаково. Увесь текст/імейл і підхід повинні
-                        бути живим, розмовними, партнерськими, персоналізованими, сфокусованим на читачеві, проактивним
-                        та націленим на GJD. І одна фраза погоди не зробить.
-                    </p>
-
-                    <p className={styles.articleText}>
-                        Але якщо ви прагнете покращити та модернізувати ваш імейлінг, то одним з перших кроків має стати
-                        очистка письма від фрази типу &quot;Please find attached&quot;.
-                    </p>
-
-                    <p className={styles.articleText}>
-                        І насамкінець, обіцяні <Link href="/blog/articles/please-find-attached-2">альтернативи</Link>.
-                    </p>
-
+                    <ol className={`${styles.articleList} ${styles.numberedList} ${styles.enlargedFont}`}>
+                        <li>2G2BT – Too good to be true</li>
+                        <li>J2LYK – Just To Let You Know</li>
+                        <li>B4N – Bye For Now</li>
+                        <li>G2g – Got To Go</li>
+                        <li>F2F – Face To Face</li>
+                        <li>AFK – Away From Keyboard</li>
+                        <li>AFC – Away From Computer</li>
+                        <li>BRB – Be Right Back</li>
+                        <li>SYS – See You Soon</li>
+                        <li>CU – See You – До зустрічі</li>
+                        <li>AFAIK – As Far As I Know</li>
+                    </ol>
                 </div>
             </div>
 
             <div className={styles.articleOddSection}>
+                <div className={styles.maxWidthArticleSectionWrapper}>
+                    <p className={styles.articleText}>
+                        Але, що занадто, то не здорово)). Не забувайте про золоте правило – завжди думати про читача і
+                        не перевантажувати лист надмірною кількістю абревіатур. Ціль – спростити, а не ускладнити імейл.
+                    </p>
+                </div>
+            </div>
+
+            <div className={styles.articleEvenSection}>
                 <div className={`${styles.footerContainer}`}>
                     <div style={{width: '20%'}}>
                         <Author data={articleData}/>
