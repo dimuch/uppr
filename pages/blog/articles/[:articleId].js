@@ -36,7 +36,7 @@ export default function ArticlePageWrapper({articleData}) {
                 <meta property="article:author" content="https://www.facebook.com/ivanna.tabachuk"/>
                 <meta property="og:title"
                       content={articleData.title + ' | ' + articleData.englishTitle + ' | UPPR Блог'}/>
-                <meta property="og:description" content="UPPR your english"/>
+                <meta property="og:description" content={articleData.description}/>
                 <meta property="og:image" content={articleData.image}/>
                 <meta property="og:image:width" content="700"/>
                 <meta property="og:image:height" content="400"/>

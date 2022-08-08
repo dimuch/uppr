@@ -9,6 +9,7 @@ export {default as BestIsNotAlwaysTheBest} from './best-is-not-always-the-best';
 export {default as EnglishLearningOrNewTypeOfProcrastination} from './english-learning-or-new-type-of-procrastination';
 export {default as FilmsOnEnglishKingsSpeech} from './films-on-english-kings-speech';
 export {default as FollowUpLetterFriendlyReminder} from './follow-up-letter-friendly-reminder';
+export {default as IAmWritingToInform} from './i-am-writing-to-inform';
 
 
 export {default as PageNotFound} from '../common/404/404';
