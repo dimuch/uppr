@@ -10,6 +10,7 @@ export {default as EnglishLearningOrNewTypeOfProcrastination} from './english-le
 export {default as FilmsOnEnglishKingsSpeech} from './films-on-english-kings-speech';
 export {default as FollowUpLetterFriendlyReminder} from './follow-up-letter-friendly-reminder';
 export {default as IAmWritingToInform} from './i-am-writing-to-inform';
+export {default as JunkPhrasesInEmails} from './junk-phrases-in-emails';
 
 
 export {default as PageNotFound} from '../common/404/404';

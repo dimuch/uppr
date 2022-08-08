@@ -69,7 +69,7 @@ export default function IAmWritingToInform({articleData}) {
             <div className={styles.articleEvenSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
                     <h2 className={styles.subTitle}>
-                        “Баги” в імейлі:
+                        &quot;Баги&quot; в імейлі:
                     </h2>
 
                     <p className={styles.articleText}>
@@ -137,7 +137,7 @@ export default function IAmWritingToInform({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/i_am_writing_to_inform_2.jpg"
+                        <Image src="/assets/images/blog-articles/i_am_writing_to_inform_1.jpg"
                                width="1400" height="425"
                                alt="І апдейт листа."
                         />
