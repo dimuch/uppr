@@ -34,11 +34,15 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                     </p>
 
                     <ol className={`${styles.articleList}`}>
-                        <li className={styles.discList} style={{color: `#${articleData.article_color}`}}>отримаєте
-                            задоволення;
+                        <li className={styles.discList} style={{color: `#${articleData.article_color}`}}>
+                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                                отримаєте задоволення;
+                            </p>
                         </li>
-                        <li className={styles.discList} style={{color: `#${articleData.article_color}`}}>збагатите свій
-                            вокабуляр розмовною лексикою (не задоволенням єдиним ;)).
+                        <li className={styles.discList} style={{color: `#${articleData.article_color}`}}>
+                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                                збагатите свій вокабуляр розмовною лексикою (не задоволенням єдиним ;)).
+                            </p>
                         </li>
                     </ol>
 
@@ -396,18 +400,22 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                         А для любителів того, що називається dive into читайте також:
                     </p>
 
-                    <ul className={`${styles.articleList} ${styles.articleLink}`}>
-                        <li className={styles.discList} style={{color: `#${articleData.article_color}`}}>
-                            <Link href="www.telegraph.co.uk/culture/film/8223897/The-Kings-Speech-the-real-story.html" target="_blank" rel="nofollow">
-                                The King&apos;s Speech: the real story
-                            </Link>
+                    <ul className={`${styles.articleList} ${styles.articleLink} ${styles.discList}`}>
+                        <li style={{color: `#${articleData.article_color}`}}>
+                            <p className={styles.articleText}>
+                                <Link href="www.telegraph.co.uk/culture/film/8223897/The-Kings-Speech-the-real-story.html" target="_blank" rel="nofollow">
+                                    The King&apos;s Speech: the real story
+                                </Link>
+                            </p>
                         </li>
-                        <li className={styles.discList} style={{color: `#${articleData.article_color}`}}>
-                            <Link href="www.telegraph.co.uk/culture/film/oscars/7155251/Colin-Firth-interview-for-A-Single-Man.html" target="_blank" rel="nofollow">
-                                Інтерв’ю
-                            </Link>
+                        <li  style={{color: `#${articleData.article_color}`}}>
+                            <p className={styles.articleText}>
+                                <Link href="www.telegraph.co.uk/culture/film/oscars/7155251/Colin-Firth-interview-for-A-Single-Man.html" target="_blank" rel="nofollow">
+                                    Інтерв’ю
+                                </Link>
                             &nbsp;
                             з Коліном Фертом
+                            </p>
                         </li>
                     </ul>
 

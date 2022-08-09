@@ -61,11 +61,13 @@ export default function JunkPhrasesInEmails({articleData}) {
                     </h3>
 
                     <p className={styles.articleText}>
-                        Звісно &quot;ви пишете &quot;. Це ж імейл. Captain Obvious. То навіщо ще раз писати очевидне? Чому одразу
+                        Звісно &quot;ви пишете &quot;. Це ж імейл. Captain Obvious. То навіщо ще раз писати очевидне?
+                        Чому одразу
                         не перейти
                         до суті і не написати все, що ви хочете сказати? Звісно, в багатьох ситуаціях pleasantry або
                         social opening
-                        в стилі &apos;Hope you are well&apos; допустимо і бажано. Але після цього не має сенсу &quot;розтікатися …&quot;
+                        в стилі &apos;Hope you are well&apos; допустимо і бажано. Але після цього не має
+                        сенсу &quot;розтікатися …&quot;
                     </p>
 
                     <p className={styles.articleText}>
@@ -73,7 +75,8 @@ export default function JunkPhrasesInEmails({articleData}) {
                         його відпустку
                         потрібно буде відкласти, чи написати лист kind-of-a-big-boss, то так і кортить зайти здалеку і
                         почати &quot;I have
-                        a question to ask …&quot;, &quot;I want to inform you…&quot;, чи &quot;I am writing to …&quot; . Тим більше, для багатьох
+                        a question to ask …&quot;, &quot;I want to inform you…&quot;, чи &quot;I am writing to …&quot; .
+                        Тим більше, для багатьох
                         це звучить
                         так ввічливо! А насправді, такий початок лише забирає місце в листі, відволікаючи увагу читача.
                     </p>
@@ -83,9 +86,11 @@ export default function JunkPhrasesInEmails({articleData}) {
                     </h3>
 
                     <p className={styles.articleText}>
-                        Якщо потрібно поставити запитання, то напишіть це запитання одразу. <i>Не &quot;I would like to know
+                        Якщо потрібно поставити запитання, то напишіть це запитання одразу. <i>Не &quot;I would like to
+                        know
                         when you are
-                        available on Monday.&quot;, а &quot;When are you available on Monday?&quot;</i> Якщо ціль відповісти на
+                        available on Monday.&quot;, а &quot;When are you available on Monday?&quot;</i> Якщо ціль
+                        відповісти на
                         запитання, чи надати
                         інформацію, то надавайте її, і відповідайте одразу. <i>Get right to the point!</i>
                     </p>
@@ -116,11 +121,14 @@ export default function JunkPhrasesInEmails({articleData}) {
                     </h3>
 
                     <p className={styles.articleText}>
-                        Часто чую (і що там грішити, сама так раніше думала), що <i>&quot;I&apos;m afraid&quot;</i> пом&apos;якшує фрази при
+                        Часто чую (і що там грішити, сама так раніше думала), що <i>&quot;I&apos;m
+                        afraid&quot;</i> пом&apos;якшує фрази при
                         передачі негативного
-                        месиджа чи неприємної новини, тому часто можна зустріти - <i>&quot;I&apos;m afraid we have chosen another
+                        месиджа чи неприємної новини, тому часто можна зустріти - <i>&quot;I&apos;m afraid we have
+                        chosen another
                         candidate for the
-                        job,&quot;</i> чи <i>&quot;I&apos;m afraid the task is done not at the level I&apos;ve expected.&quot;</i> Але <i>&quot;I&apos;m
+                        job,&quot;</i> чи <i>&quot;I&apos;m afraid the task is done not at the level I&apos;ve
+                        expected.&quot;</i> Але <i>&quot;I&apos;m
                         afraid&quot;</i> тільки погіршуєте
                         ситуацію. Почавши читати, людина уже знає результат і ще не дочитавши речення, засмучується.
                         Очікування смерті -
@@ -130,7 +138,8 @@ export default function JunkPhrasesInEmails({articleData}) {
                     <p className={styles.articleText}>
                         Набагато краще одразу презентувати факти прямолінійно. Напишіть просто <i>&quot;We have chosen
                         another candidate&quot;</i> чи
-                        <i>&quot;The task is done not at the level I would have expected.&quot;</i> Як показує практика, голі
+                        <i>&quot;The task is done not at the level I would have expected.&quot;</i> Як показує практика,
+                        голі
                         факти сприймаються менш емоційно
                         та сприяють об&apos;єктивному обговоренню ситуації.
                     </p>
@@ -151,14 +160,17 @@ export default function JunkPhrasesInEmails({articleData}) {
                     </p>
 
                     <p className={styles.articleText}>
-                        От, наприклад, &quot;unfortunately&quot;. Його вживають, коли людині шкода або вона хоче вибачитися. <i>&quot;Unfortunately,
+                        От, наприклад, &quot;unfortunately&quot;. Його вживають, коли людині шкода або вона хоче
+                        вибачитися. <i>&quot;Unfortunately,
                         we
-                        need to reschedule the meeting.&quot; &quot;Unfortunately, I will not be able to attend.&quot;</i> Явно
+                        need to reschedule the meeting.&quot; &quot;Unfortunately, I will not be able to
+                        attend.&quot;</i> Явно
                         негативне значення.
                     </p>
 
                     <p className={styles.articleText}>
-                        Чому б не написати щось більш заохочувальне? <i>&quot;I&apos;ll need to change the timing of our meeting.
+                        Чому б не написати щось більш заохочувальне? <i>&quot;I&apos;ll need to change the timing of our
+                        meeting.
                         If 2 p.m. works for
                         you, that would be great for me as well.&quot;</i>
                     </p>
@@ -178,11 +190,14 @@ export default function JunkPhrasesInEmails({articleData}) {
                     </h3>
 
                     <p className={styles.articleText}>
-                        Зовсім не менш зловживань в листах фразою <i>&quot;I hope&quot;</i>. Сама по собі &quot;надія&quot; ще он як добре,
-                        а от коли ви пишете: <i>&quot;I hope we&apos;ll meet our target,&quot;</i> ваша фраза звучить пасивно (навіть
+                        Зовсім не менш зловживань в листах фразою <i>&quot;I hope&quot;</i>. Сама по
+                        собі &quot;надія&quot; ще он як добре,
+                        а от коли ви пишете: <i>&quot;I hope we&apos;ll meet our target,&quot;</i> ваша фраза звучить
+                        пасивно (навіть
                         пасивно-агресивно), і лише додає
                         наліт невпевненості та безвідповідальності вашій персоні. До того ж, виглядає ніби ви ,чи то
-                        виправдовуєтеся, чи то захищаєтеся. Чому б не написати: <i>&quot;I really want us to meet our target,
+                        виправдовуєтеся, чи то захищаєтеся. Чому б не написати: <i>&quot;I really want us to meet our
+                        target,
                         and I know we can get
                         there&quot;?</i>
                     </p>
@@ -223,11 +238,34 @@ export default function JunkPhrasesInEmails({articleData}) {
                     </p>
 
                     <ul className={`${styles.articleList} ${styles.discList}`}>
-                        <li style={{color: `#${articleData.article_color}`}}>I don&apos;t have enough information to answer your question.</li>
-                        <li style={{color: `#${articleData.article_color}`}}>I don&apos;t have the information I need to give an answer. But I&apos;ll find it.</li>
-                        <li style={{color: `#${articleData.article_color}`}}>I don&apos;t have the data at hand, but I&apos;ll get it to you later today.</li>
-                        <li style={{color: `#${articleData.article_color}`}}>Good question. I&apos;ll find out.</li>
-                        <li style={{color: `#${articleData.article_color}`}}>Based on what we know today, my thoughts are…</li>
+                        <li style={{color: `#${articleData.article_color}`}}>
+                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                                I don&apos;t have enough information to answer your question.
+                            </p>
+                        </li>
+                        <li style={{color: `#${articleData.article_color}`}}>
+                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                                I don&apos;t have the information I need to
+                                give an answer. But I&apos;ll find it.
+                            </p>
+                        </li>
+                        <li style={{color: `#${articleData.article_color}`}}>
+                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                                I don&apos;t have the data at hand, but
+                                I&apos;ll get it to you later today.
+                            </p>
+                        </li>
+                        <li style={{color: `#${articleData.article_color}`}}>
+                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                                Good question. I&apos;ll find out.
+                            </p>
+                        </li>
+                        <li style={{color: `#${articleData.article_color}`}}>
+                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                                Based on what we know today, my thoughts
+                                are…
+                            </p>
+                        </li>
                     </ul>
 
                     <p className={styles.articleText}>
@@ -235,8 +273,16 @@ export default function JunkPhrasesInEmails({articleData}) {
                     </p>
 
                     <ul className={`${styles.articleList} ${styles.discList}`}>
-                        <li style={{color: `#${articleData.article_color}`}}>Let&apos;s have a quick brainstorm.</li>
-                        <li style={{color: `#${articleData.article_color}`}}>I know an expert who can help with this.</li>
+                        <li style={{color: `#${articleData.article_color}`}}>
+                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                                Let&apos;s have a quick brainstorm.
+                            </p>
+                        </li>
+                        <li style={{color: `#${articleData.article_color}`}}>
+                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                                I know an expert who can help with this.
+                            </p>
+                        </li>
                     </ul>
 
                     <div className={styles.articlePicture}>
@@ -256,20 +302,26 @@ export default function JunkPhrasesInEmails({articleData}) {
                     </h3>
 
                     <p className={styles.articleText}>
-                        Для мене залишається загадкою, чому і досі так багато людей закінчують імейл цією фразою. Мабуть, знову ж таки,
-                        думають, що вона допомагає звучати більш ввічливо? Але, якщо ваш лист був написаний у холодному, претензійному
-                        тоні, то ця фраза в кінці ситуацію не врятує. І правда в тому, що звучить вона жахливо заїжджено, і вказує не на
+                        Для мене залишається загадкою, чому і досі так багато людей закінчують імейл цією фразою.
+                        Мабуть, знову ж таки,
+                        думають, що вона допомагає звучати більш ввічливо? Але, якщо ваш лист був написаний у холодному,
+                        претензійному
+                        тоні, то ця фраза в кінці ситуацію не врятує. І правда в тому, що звучить вона жахливо
+                        заїжджено, і вказує не на
                         гарні манери, а на невпевненість автора.
                     </p>
 
                     <p className={styles.articleText}>
                         Коли я читаю, <i>&quot;if you have any questions, please don&apos;t hesitate to
-                        contact me,&quot;</i> одразу виникає думка, які у мене можуть бути питання? І чому у мене повинні бути запитання? Тут не
-                        вистачає якоїсь інформації? Чи автор сам не знає і хоче, щоб я допомогла додатковими запитаннями?
+                        contact me,&quot;</i> одразу виникає думка, які у мене можуть бути питання? І чому у мене
+                        повинні бути запитання? Тут не
+                        вистачає якоїсь інформації? Чи автор сам не знає і хоче, щоб я допомогла додатковими
+                        запитаннями?
                     </p>
 
                     <p className={styles.articleText}>
-                        Якщо ви пишете з думкою про читача, то ви опишете ситуацію максимально чітко і передбачите усі потенційні
+                        Якщо ви пишете з думкою про читача, то ви опишете ситуацію максимально чітко і передбачите усі
+                        потенційні
                         запитання.
                     </p>
 
@@ -280,17 +332,22 @@ export default function JunkPhrasesInEmails({articleData}) {
                     <ul className={`${styles.articleList} ${styles.discList}`}>
                         <li style={{color: `#${articleData.article_color}`}}>I suggest we proceed with the project.</li>
                         <li style={{color: `#${articleData.article_color}`}}>Let us discuss details at the meeting.</li>
-                        <li style={{color: `#${articleData.article_color}`}}>I&apos;ll look forward to your agreement.</li>
-                        <li style={{color: `#${articleData.article_color}`}}>I&apos;ll set up the schedule for our work together.</li>
+                        <li style={{color: `#${articleData.article_color}`}}>I&apos;ll look forward to your agreement.
+                        </li>
+                        <li style={{color: `#${articleData.article_color}`}}>I&apos;ll set up the schedule for our work
+                            together.
+                        </li>
                     </ul>
 
                     <p className={styles.articleText}>
-                        Такі заключні речення створять вам імідж впевненого в собі професіонала, чиїй думці можна довіряти, а
+                        Такі заключні речення створять вам імідж впевненого в собі професіонала, чиїй думці можна
+                        довіряти, а
                         рекомендаціям слідувати
                     </p>
 
                     <p className={styles.articleText}>
-                        Звісно, даний список далеко не вичерпний, але для початку шляху до усвідомленого імейлінгу згодиться.
+                        Звісно, даний список далеко не вичерпний, але для початку шляху до усвідомленого імейлінгу
+                        згодиться.
                     </p>
 
                 </div>

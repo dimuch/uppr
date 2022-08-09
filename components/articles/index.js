@@ -11,6 +11,7 @@ export {default as FilmsOnEnglishKingsSpeech} from './films-on-english-kings-spe
 export {default as FollowUpLetterFriendlyReminder} from './follow-up-letter-friendly-reminder';
 export {default as IAmWritingToInform} from './i-am-writing-to-inform';
 export {default as JunkPhrasesInEmails} from './junk-phrases-in-emails';
+export {default as LearningEnglishWithBlogs} from './learning-english-with-blogs';
 
 
 export {default as PageNotFound} from '../common/404/404';

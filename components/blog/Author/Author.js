@@ -12,6 +12,12 @@ export default function Author({data}) {
                     width="130"
                     height="130"
                     alt="Іванка Табачук"
+                    style={{
+                        borderWidth: '1px !important',
+                        borderStyle: 'solid  !important',
+                        borderColor: `#${data.article_color} !important`,
+                        borderRadius: '50%',
+                    }}
                 />
             </div>
             <div>

@@ -92,7 +92,7 @@ export default function IAmWritingToInform({articleData}) {
 
                     <ol className={`${styles.articleList} ${styles.numberedList} ${styles.articleLink}`}>
                         <li>
-                            <span className={styles.articleText}>
+                            <p className={styles.articleText}>
                                 Не потрібно писати <i><b>I am writing to inform.</b></i> Який сенс? Це ж імейл, Кеп.
                                 Звісно, ви пишете.
                                 <br/>
@@ -100,16 +100,16 @@ export default function IAmWritingToInform({articleData}) {
                                       target="_blank">
                                     Більше про фрази такого типу.
                                 </Link>
-                            </span>
+                            </p>
                         </li>
                         <li>
-                            <span className={styles.articleText}>
+                            <p className={styles.articleText}>
                                 <i><b>I also want to express (I want to ensure you)</b></i> - те саме, що й №1.
                                 Навіщо повідомляти про своє бажання? Одразу екпресіть та іншурте усе, що хотіли.
-                            </span>
+                            </p>
                         </li>
                         <li>
-                            <span className={styles.articleText}>
+                            <p className={styles.articleText}>
                                 <i><b>Can I also ask you to</b></i> - те саме, що і №2. Ставте своє запитання одразу. Або якщо
                                 все ще є страх неввічливості, можна написати щось типу <i><b>Let&apos;s please schedule my introduction to the team </b></i>
                                 чи <i><b>I&apos;d be thankful if you shortly introduce me to the team. When can we make it/ schedule it? Send me please team
@@ -117,14 +117,14 @@ export default function IAmWritingToInform({articleData}) {
                                 найкращий, тому що
                                 використовується наказовий спосіб, а це вважається не супер ввічливою формою звертання, якщо ви ще не близько
                                 знайомі. Тому, краще пом&apos;якшити за допомогою <i><b>can</b></i> чи <i><b>let's</b></i>
-                            </span>
+                            </p>
                         </li>
                         <li>
-                            <span className={styles.articleText}>
+                            <p className={styles.articleText}>
                                 <i><b>Please, also find attached my working plan</b></i> - пасивна конструкція,
                                 щоє далеко не самим вдалим варіантом у сучасному бізнес середовищі.
                                 Можна написати просто <i><b>Here is my working plan(attached)</b></i> або <i><b>I attach/enclose my working plan.</b></i>
-                            </span>
+                            </p>
                         </li>
                     </ol>
                 </div>
