@@ -106,9 +106,9 @@ export default function EnglishLearningOrNewTypeOfProcrastination({articleData})
                         а якщо ви плануєте взяти додатковий вихідний, то пишете OOO (Out of office). EOM ми уже
                         згадували,
                         коли говорили про тему листа. Для тих, хто пропустив -- відео&nbsp;
-                        <Link href="https://www.youtube.com/watch?v=robO4iCpH8A&t=1s">
+                        <a href="https://www.youtube.com/watch?v=robO4iCpH8A&t=1s" target="_blank" rel="noreferrer">
                             напам&apos;ятайка
-                        </Link>
+                        </a>
                     </h3>
                 </div>
             </div>

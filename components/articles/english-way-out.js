@@ -113,24 +113,24 @@ export default function EnglishWayOut({articleData}) {
 
                     <ul className={styles.articleList}>
                         <li>
-                            <Link href="https://www.youtube.com/user/fogyog" target="_blank">
+                            <a href="https://www.youtube.com/user/fogyog" target="_blank" rel="noreferrer">
                                 Надихаючий блог дівчини, що розмовляє 5 мовами
-                            </Link>
+                            </a>
                         </li>
                         <li>
-                            <Link href="https://www.youtube.com/user/fogyog" target="_blank">
+                            <a href="https://www.youtube.com/user/fogyog" target="_blank" rel="noreferrer">
                                 Цікавий сайт про все найтрендовіше у Мережі
-                            </Link>
+                            </a>
                         </li>
                         <li>
-                            <Link href="https://www.skillshare.com" target="_blank">
+                            <a href="https://www.skillshare.com" target="_blank" rel="noreferrer">
                                 Крута платформа для онлайн-навчання
-                            </Link>
+                            </a>
                         </li>
                         <li>
-                            <Link href="https://www.facebook.com/groups/849842931793374" target="_blank">
+                            <a href="https://www.facebook.com/groups/849842931793374" target="_blank" rel="noreferrer">
                                 Приєднуйтеся до нашої FB групи
-                            </Link>
+                            </a>
                         </li>
                     </ul>
                 </div>

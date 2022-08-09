@@ -61,9 +61,11 @@ export default function FollowUpLetterFriendlyReminder({articleData}) {
                         <b>Тема</b> такого <b>листа</b> (якщо вам хочеться пропустити тему - не робіть цього). Про
                         важливість та
                         правильний вибір теми листа можна більше послухати на нашому&nbsp;
-                        <Link href="https://www.youtube.com/watch?v=robO4iCpH8A&amp;t=2s" target="_blank">
+                        <a href="https://www.youtube.com/watch?v=robO4iCpH8A&amp;t=2s"
+                           target="_blank" rel="noreferrer"
+                        >
                             YouTube каналі
-                        </Link>.
+                        </a>.
                     </p>
 
                     <div className={styles.articlePicture}>
@@ -142,9 +144,11 @@ export default function FollowUpLetterFriendlyReminder({articleData}) {
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         Ті, хто відвідував мій тренінг чи слухав курс знають про
                         всю марність&nbsp;
-                        <Link href="https://www.youtube.com/watch?v=p5yTg0yJMGw" target="_blank">
+                        <a href="https://www.youtube.com/watch?v=p5yTg0yJMGw"
+                           target="_blank" rel="noreferrer"
+                        >
                             ASAP
-                        </Link>.
+                        </a>.
                     </p>
                 </div>
             </div>

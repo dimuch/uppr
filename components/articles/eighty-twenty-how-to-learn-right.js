@@ -148,11 +148,11 @@ export default function EightyTwentyHowToLearnRight({articleData}) {
                 <div className={styles.maxWidthArticleSectionWrapper}>
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         Наша рубрика на Instagram
-                        <Link href="https://www.instagram.com/uppr_english/"
-                              target="_blank"
+                        <a href="https://www.instagram.com/uppr_english/"
+                              target="_blank" rel="noreferrer"
                         >
                             10WaysToTell
-                        </Link>&nbsp;
+                        </a>&nbsp;
                         постійно поповнюється новими фразами такого типу.
                     </p>
 
@@ -228,7 +228,7 @@ export default function EightyTwentyHowToLearnRight({articleData}) {
 
             <div className={styles.articleOddSection}>
                 <div className={`${styles.footerContainer}`}>
-                    <div style={{width: '20%'}}>
+                    <div style={{width: "20%"}}>
                         <Author data={articleData}/>
                     </div>
                     <div style={{width: '80%'}}>

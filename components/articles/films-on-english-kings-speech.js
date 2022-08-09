@@ -379,9 +379,11 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                 <div className={styles.maxWidthArticleSectionWrapper}>
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         Послухайте промову короля та &nbsp;
-                        <Link href="https://drive.google.com/file/d/1SZ8utIJtgujsb1Uv3x0LNeh_9LMPU8D6/view" target="_blank">
+                        <a href="https://drive.google.com/file/d/1SZ8utIJtgujsb1Uv3x0LNeh_9LMPU8D6/view"
+                           target="_blank" rel="noreferrer"
+                        >
                             заповніть пропуски
-                        </Link>
+                        </a>
                     </p>
 
                     <p className={styles.articleText}>
@@ -389,9 +391,11 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                     </p>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
-                        <Link href="https://drive.google.com/file/d/1PxDaN_2CqVVTxBxPAhXmu131sg1fZiyF/view" target="_blank">
+                        <a href="https://drive.google.com/file/d/1PxDaN_2CqVVTxBxPAhXmu131sg1fZiyF/view"
+                           target="_blank" rel="noreferrer"
+                        >
                             Робимо вправи
-                        </Link>
+                        </a>
                         &nbsp;
                         після перегляду
                     </p>
@@ -403,16 +407,18 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                     <ul className={`${styles.articleList} ${styles.articleLink} ${styles.discList}`}>
                         <li style={{color: `#${articleData.article_color}`}}>
                             <p className={styles.articleText}>
-                                <Link href="www.telegraph.co.uk/culture/film/8223897/The-Kings-Speech-the-real-story.html" target="_blank" rel="nofollow">
+                                <a href="www.telegraph.co.uk/culture/film/8223897/The-Kings-Speech-the-real-story.html" target="_blank" rel="noreferrer">
                                     The King&apos;s Speech: the real story
-                                </Link>
+                                </a>
                             </p>
                         </li>
                         <li  style={{color: `#${articleData.article_color}`}}>
                             <p className={styles.articleText}>
-                                <Link href="www.telegraph.co.uk/culture/film/oscars/7155251/Colin-Firth-interview-for-A-Single-Man.html" target="_blank" rel="nofollow">
+                                <a href="www.telegraph.co.uk/culture/film/oscars/7155251/Colin-Firth-interview-for-A-Single-Man.html"
+                                   target="_blank" rel="noreferrer"
+                                >
                                     Інтерв’ю
-                                </Link>
+                                </a>
                             &nbsp;
                             з Коліном Фертом
                             </p>

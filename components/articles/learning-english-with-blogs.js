@@ -32,7 +32,7 @@ export default function LearningEnglishWithBlogs({articleData}) {
                     <p className={styles.articleText}>
                         З одного боку, це звучить жахливо, адже здається, що часу, щоб власне жити зовсім не
                         залишається. Але
-                        подивімося на це з іншого боку - можна ж не безцільно "висіти" в чаті або автоматично скролити
+                        подивімося на це з іншого боку - можна ж не безцільно &apos;висіти&apos; в чаті або автоматично скролити
                         стрічку новин
                         Фейсбук, а ... вчитися. До того ж, робити це дуже ненудним способом - читати блоги. Англійською.
                     </p>
@@ -69,7 +69,7 @@ export default function LearningEnglishWithBlogs({articleData}) {
                     <div className={styles.articlePicture}>
                         <Image src="/assets/images/blog-articles/learning_english_with_blogs_1.jpg"
                                width="1400" height="425"
-                               alt="Отже, самі &quot;капосні&quot; фрази у вашому листі"
+                               alt="Неминуче поліпшіть свою англійську."
                         />
                     </div>
 
@@ -94,9 +94,9 @@ export default function LearningEnglishWithBlogs({articleData}) {
                         </li>
                         <li style={{color: `#${articleData.article_color}`}}>
                             <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
-                                допомагають запам'ятати спеціалізовану
+                                допомагають запам&apos;ятати спеціалізовану
                                 лексику - якщо це блог про кулінарію, то зовсім скоро ви станете
-                                профі в знанні назв всіх круп, ягід, м'яса і приправ, а якщо про підприємництво - у
+                                профі в знанні назв всіх круп, ягід, м&apos;яса і приправ, а якщо про підприємництво - у
                                 бізнес-англійській;
                             </p>
                         </li>
@@ -104,7 +104,7 @@ export default function LearningEnglishWithBlogs({articleData}) {
                             <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
                                 дозволяють стати грамотним - навіть не
                                 маючи практики написання слів, ви самі того не відаючи, згодом
-                                зможете писати їх правильно, оскільки запам'ятали їх при читанні.
+                                зможете писати їх правильно, оскільки запам&apos;ятали їх при читанні.
                             </p>
                         </li>
                     </ol>
@@ -131,12 +131,12 @@ export default function LearningEnglishWithBlogs({articleData}) {
                     <div className={styles.articlePicture}>
                         <Image src="/assets/images/blog-articles/learning_english_with_blogs_5.jpg"
                                width="1400" height="425"
-                               alt="Отже, самі &quot;капосні&quot; фрази у вашому листі"
+                               alt="Пропоную кілька своїх ідей"
                         />
                     </div>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
-                        <a href={'https://www.grammarly.com/blog'} target="_blank" rel="noreferrer">>
+                        <a href={'https://www.grammarly.com/blog'} target="_blank" rel="noreferrer">
                             www.grammarly.com/blog
                         </a> - мій улюблений блог
                         англійською та про англійську і про нюанси граматики, про
@@ -146,7 +146,7 @@ export default function LearningEnglishWithBlogs({articleData}) {
                     </p>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
-                        <a href={'https://www.livestrong.com/blog/'} target="_blank" rel="noreferrer">>
+                        <a href={'https://www.livestrong.com/blog/'} target="_blank" rel="noreferrer">
                             www.livestrong.com/blog
                         </a> - блог про
                         здорове харчування та фітнес. Тут ви знайдете поради стосовно того,
@@ -163,7 +163,7 @@ export default function LearningEnglishWithBlogs({articleData}) {
                     </div>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
-                        <a href={'https://blog.todoist.com'} target="_blank" rel="noreferrer">>
+                        <a href={'https://blog.todoist.com'} target="_blank" rel="noreferrer">
                             blog.todoist.com
                         </a> - блог відомого todo-сайту з порадами щодо покращення продуктивності і
                         тайм-менеджменту, планування, а також мотивуючими порадами та історіями.
@@ -178,7 +178,7 @@ export default function LearningEnglishWithBlogs({articleData}) {
                     </p>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
-                        <a href={'https://www.helpscout.net/blog'} target="_blank" rel="noreferrer">>
+                        <a href={'https://www.helpscout.net/blog'} target="_blank" rel="noreferrer">
                             www.helpscout.net/blog
                         </a> - блог,
                         який навчає вмінню працювати в команді, поважати колег, організовувати
@@ -228,7 +228,7 @@ export default function LearningEnglishWithBlogs({articleData}) {
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         <a href={'https://www.inthefrow.com/'} target="_blank" rel="noreferrer">
                             www.inthefrow.com
-                        </a> - надихаючий блог дівчини, яка відрізняється особливою любов'ю і смаком до подорожей,
+                        </a> - надихаючий блог дівчини, яка відрізняється особливою любов&apos;ю і смаком до подорожей,
                         краси, їжі та моди.
                     </p>
 

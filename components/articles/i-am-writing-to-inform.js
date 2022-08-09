@@ -96,7 +96,7 @@ export default function IAmWritingToInform({articleData}) {
                                 Не потрібно писати <i><b>I am writing to inform.</b></i> Який сенс? Це ж імейл, Кеп.
                                 Звісно, ви пишете.
                                 <br/>
-                                <Link href="https://uppr.com.ua/blog/articles/junk-phrases-in-emails.html"
+                                <Link href="/blog/articles/junk-phrases-in-emails"
                                       target="_blank">
                                     Більше про фрази такого типу.
                                 </Link>
@@ -180,9 +180,11 @@ export default function IAmWritingToInform({articleData}) {
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         Читайте цю статтю англійською на&nbsp;
-                        <Link target="_blank" href="https://medium.com/@ivanka.tabachuk/case-study-i-am-writing-to-inform-or-old-school-classics-f390700eb0a6">
+                        <a href="https://medium.com/@ivanka.tabachuk/case-study-i-am-writing-to-inform-or-old-school-classics-f390700eb0a6"
+                           target="_blank" rel="noreferrer"
+                        >
                             Medium.com
-                        </Link>
+                        </a>
                     </p>
                 </div>
             </div>
