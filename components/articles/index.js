@@ -13,6 +13,7 @@ export {default as IAmWritingToInform} from './i-am-writing-to-inform';
 export {default as JunkPhrasesInEmails} from './junk-phrases-in-emails';
 export {default as LearningEnglishWithBlogs} from './learning-english-with-blogs';
 export {default as NeedOfTheDayOff} from './need-of-the-day-off';
+export {default as PleaseFindAttached2} from './please-find-attached-2';
 
 
 export {default as PageNotFound} from '../common/404/404';
