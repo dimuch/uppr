@@ -170,7 +170,7 @@ export default function LearningEnglishWithBlogs({articleData}) {
                     </p>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
-                        <a href={'https://techcrunch.com'} target="_blank" rel="noreferrer">>
+                        <a href={'https://techcrunch.com'} target="_blank" rel="noreferrer">
                             techcrunch.com
                         </a> - сайт-блог ведучого
                         технологічного медіа-ресурсу, присвяченого стартапам, огляду
