@@ -146,6 +146,19 @@
   }
 }
 
+.table{
+  width: 100%;
+  border-collapse:separate;
+  border-spacing:.5rem;
+  padding-bottom: 1.25rem;
+
+  th, td{
+    width: 50%;
+    padding-left: 1rem;
+    text-align: left;
+  }
+}
+
 .articleText + .articleList {
   margin-top: -.65rem;
 }
