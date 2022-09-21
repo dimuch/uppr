@@ -9,7 +9,7 @@ import Slider from '../../components/blog/Slider/Slider';
 import ArticleHeader from '../blog/ArticleHeader/ArticleHeader';
 
 
-export default function TenOddWordsInEmails({articleData}) {
+export default function WatchingCartoonsInEnglishFrozen({articleData}) {
     return (
         <div className={styles.article}>
             <div className={styles.maxWidthArticleTitleWrapper}>

@@ -33,7 +33,7 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                         Як відомо, про смаки не сперечаються, тому дивитися можна все, від чого ви:
                     </p>
 
-                    <ol className={`${styles.articleList}`}>
+                    `<ol className={`${styles.articleList}`}>
                         <li className={styles.discList} style={{color: `#${articleData.article_color}`}}>
                             <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
                                 отримаєте задоволення;
@@ -44,7 +44,7 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                                 збагатите свій вокабуляр розмовною лексикою (не задоволенням єдиним ;)).
                             </p>
                         </li>
-                    </ol>
+                    </ol>`
 
                     <p className={styles.articleText}>
                         На мій суб’єктивний смак, і так, що, обидва вище зазначені пункти виконувалися найкраще, підійде - &quot;Король говорить!&quot;
