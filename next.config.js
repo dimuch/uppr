@@ -17,9 +17,9 @@ const nextConfig = {
             fs: false,
             dns: false,
             child_process: false,
-            crypto: false,
-          },
-        },
+            crypto: false
+          }
+        }
       };
     }
 

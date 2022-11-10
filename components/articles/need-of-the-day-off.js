@@ -55,7 +55,7 @@ export default function NeedOfTheDayOff({articleData}) {
                     <p className={styles.articleText}>
                         Найперше і найголовніше - менеджера не інформують і не ставлять до відома (звісно, якщо це не
                         імейл про звільнення і то, в таки випадках є своя більш коректна процедура). І навіть, якщо ви
-                        з менеджером на “ти” і п'єте з ним пиво кожної п’ятниці, все одно - це діловий імейл і має бути
+                        з менеджером на “ти” і п&apos;єте з ним пиво кожної п&apos;ятниці, все одно - це діловий імейл і має бути
                         певна субординація.
                     </p>
 
@@ -107,7 +107,7 @@ export default function NeedOfTheDayOff({articleData}) {
                             <p className={styles.articleText}>
                                 Ви просите про day off, а не кажете, повідомляєте чи інформуєте. І у багатьох
                                 випадках вам мають повне право відмовити. Ніхто навмисно не буде псувати ваші плани,
-                                але про можливість відмови варто пам'ятати - допомагає тримати субординацію і формулювати
+                                але про можливість відмови варто пам&apos;ятати - допомагає тримати субординацію і формулювати
                                 імейли коректніше;).
                             </p>
                         </li>
@@ -121,7 +121,7 @@ export default function NeedOfTheDayOff({articleData}) {
                         </li>
                         <li style={{color: `#${articleData.article_color}`}}>
                             <p className={styles.articleText}>
-                                Подякуйте. Ви не зобов'язані пояснювати причину, чому вам потрібен day off,
+                                Подякуйте. Ви не зобов&apos;язані пояснювати причину, чому вам потрібен day off,
                                 але подякувати, якщо прохання задовільнили/не задовільнили - потрібно.
                             </p>
                         </li>
@@ -183,7 +183,7 @@ export default function NeedOfTheDayOff({articleData}) {
                         </li>
                         <li style={{color: `#${articleData.article_color}`}}>
                             <p className={styles.articleText}>
-                                A personal issue's come up, and I need a day off on. Can you pls approve?
+                                A personal issue&apos;s come up, and I need a day off on. Can you pls approve?
                             </p>
                         </li>
                         <li style={{color: `#${articleData.article_color}`}}>
