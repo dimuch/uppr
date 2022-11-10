@@ -18,20 +18,20 @@ const Menu = ({ location }) => {
             <a className={location === "/blog" ? styles.active : ""}>Блог</a>
           </Link>
         </li>
-        <li>
-          <Link href="/e-book">
-            <a className={location === "/e-book" ? styles.active : ""}>
-              E-book
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/e-resources">
-            <a className={location === "/e-resources" ? styles.active : ""}>
-              Resources
-            </a>
-          </Link>
-        </li>
+        {/*<li>*/}
+        {/*  <Link href="/e-book">*/}
+        {/*    <a className={location === "/e-book" ? styles.active : ""}>*/}
+        {/*      E-book*/}
+        {/*    </a>*/}
+        {/*  </Link>*/}
+        {/*</li>*/}
+        {/*<li>*/}
+        {/*  <Link href="/e-resources">*/}
+        {/*    <a className={location === "/e-resources" ? styles.active : ""}>*/}
+        {/*      Resources*/}
+        {/*    </a>*/}
+        {/*  </Link>*/}
+        {/*</li>*/}
         <li>
           <Link href="https://englishplus.com.ua">
             <a  target="_blank">Тренінг</a>
