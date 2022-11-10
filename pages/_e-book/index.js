@@ -70,30 +70,30 @@ export default function Ebook({ data, signature, orderId, resultPageId }) {
     <div className={styles.upprEBookPage}>
       <Header search location={"/e-book"} />
 
-      <form onSubmit={processPayment}>
-        <label htmlFor="email">
-          Email
-          <input
-            name="email"
-            id="email"
-            value={userEmail}
-            onChange={onChange}
-          />
-        </label>
-        <button type="submit" disabled={isDisabled}>
-          Buy
-        </button>
-      </form>
+      {/*<form onSubmit={processPayment}>*/}
+      {/*  <label htmlFor="email">*/}
+      {/*    Email*/}
+      {/*    <input*/}
+      {/*      name="email"*/}
+      {/*      id="email"*/}
+      {/*      value={userEmail}*/}
+      {/*      onChange={onChange}*/}
+      {/*    />*/}
+      {/*  </label>*/}
+      {/*  <button type="submit" disabled={isDisabled}>*/}
+      {/*    Buy*/}
+      {/*  </button>*/}
+      {/*</form>*/}
 
-      <div className={`uppr-page-content ${styles.upprPageContent}`}>
-        <form encType={encType} action={action}>
-          <input type="hidden" name="data" value={data} />
-          <input type="hidden" name="signature" value={signature} />
-          <button type="submit" ref={paymentSubmitBtnRef}>
-            Buy
-          </button>
-        </form>
-      </div>
+      {/*<div className={`uppr-page-content ${styles.upprPageContent}`}>*/}
+      {/*  <form encType={encType} action={action}>*/}
+      {/*    <input type="hidden" name="data" value={data} />*/}
+      {/*    <input type="hidden" name="signature" value={signature} />*/}
+      {/*    <button type="submit" ref={paymentSubmitBtnRef}>*/}
+      {/*      Buy*/}
+      {/*    </button>*/}
+      {/*  </form>*/}
+      {/*</div>*/}
     </div>
   );
 }
