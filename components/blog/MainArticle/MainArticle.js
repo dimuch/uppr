@@ -28,14 +28,14 @@ export default function MainArticle({ items }) {
       className={"wrapper " + styles.wrapper}
       onClick={(e) => updateArticleViews(mainArticleData)}
     >
-      <Grid item md={12}>
+      <Grid item md={12} style={{position:'relative'}}>
         <Image
           className={styles.image}
           src={mainArticleData.image}
           width="700"
           height="400"
           alt={mainArticleData.title}
-          layout='raw'
+          layout="responsive"
         />
       </Grid>
       <Grid

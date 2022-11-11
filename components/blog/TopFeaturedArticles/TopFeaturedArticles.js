@@ -42,24 +42,19 @@ export default function TopFeaturedArticles({ items }) {
                 <Grid
                   container
                   spacing={1}
-                  className="wrapper-article"
+                  className={styles.articleContainer}
                   alignContent={"center"}
                 >
-                  <Grid item xs={5} className="image">
-                    <Grid container alignContent={"center"}>
-                      <Grid item>
+                  <Grid item xs={5} className={styles.articleImage}>
                         <Image
-                          className={"article-image " + styles.articleImage}
                           src={article.image}
                           width="700"
                           height="400"
                           alt={article.title}
-                          layout='raw'
+                          layout="responsive"
                         />
-                      </Grid>
-                    </Grid>
                   </Grid>
-                  <Grid item xs={7} className="title">
+                  <Grid item xs={7} className={styles.articleTitle}>
                     <a href={article.link}>
                       <Typography>{article.title}</Typography>
                     </a>

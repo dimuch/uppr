@@ -19,7 +19,7 @@ export default function Blog({
                                  otherLatestArticles,
                                  top3Article,
                                  downloads,
-                                 tags
+                                 tags,
                              }) {
     const [selectedCategory, setSelectedCategory] = useState(0);
 
@@ -33,7 +33,7 @@ export default function Blog({
                                alt="Main blog picture"
                                width="3000"
                                height="2002"
-                               layout="raw"
+                               layout="responsive"
                         />
                     </div>
 

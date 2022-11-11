@@ -16,10 +16,10 @@ export default function ArticleCard({item, isDescription=true}) {
                     <Image
                         className={styles.image}
                         src={item.image}
+                        alt={item.title}
                         width="700"
                         height="400"
-                        alt={item.title}
-                        layout="raw"
+                        layout="responsive"
                     />
                 </Grid>
                 <Grid item md={12}>

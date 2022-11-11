@@ -11,8 +11,7 @@
 }
 
 .image {
-  width: 100% !important;
-  height: auto;
+    width: 100%;
 }
 
 .upprArticleDetails {
@@ -24,6 +23,7 @@
     border-radius: .25rem;
     margin: -2.2rem auto auto auto;
     color: $white;
+    z-index: 1;
 
     h6 {
       font-family: "Futura-PT", sans-serif;

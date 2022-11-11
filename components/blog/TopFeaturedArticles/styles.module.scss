@@ -26,9 +26,16 @@
   border-top: 1px solid $item-border;
 }
 
+.articleContainer{
+  padding: 0 1rem;
+}
+
 .articleImage{
-  width:80%;
-  height: auto;
-  margin: auto;
-  display: block;
+  min-width: 142px !important;
+  width: 100%;
+  max-width: 142px !important;
+}
+
+.articleTitle{
+  padding-left: .5rem;
 }

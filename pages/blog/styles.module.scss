@@ -11,12 +11,14 @@
 }
 
 .upprBlogMainPicture {
+  position: relative;
+
   img {
+    top: -64% !important;
     width: 100%;
-    height: auto;
-    max-height: 40vh;
+    min-height: 50% !important;
+    max-height: 50% !important;
     object-fit: cover;
-    object-position: 0 58%;
     filter: brightness(0.8);
   }
 }
@@ -25,6 +27,7 @@
   display: flex;
   justify-content: center;
   padding: 6rem 0 6rem;
+  margin-top: -34%;
 }
 
 .upprArticlesContent {
