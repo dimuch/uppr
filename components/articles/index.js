@@ -17,6 +17,7 @@ export {default as PleaseFindAttached2} from './please-find-attached-2';
 export {default as TenOddWordsInEmails} from './ten-odd-words-in-emails';
 export {default as WatchingCartoonsInEnglishFrozen} from './watching-cartoons-in-english-frozen';
 export {default as WatchingCartoonsInEnglishRio} from './watching-cartoons-in-english-rio';
+export {default as WatchingCartoonsInEnglishTangled} from './watching-cartoons-in-english-tangled';
 
 
 export {default as PageNotFound} from '../common/404/404';
