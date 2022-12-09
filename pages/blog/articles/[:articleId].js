@@ -39,7 +39,7 @@ export default function ArticlePageWrapper({articleData}) {
                 <meta property="og:image:width" content="700"/>
                 <meta property="og:image:height" content="400"/>
 
-                <meta name="google-site-verification" content="yDGTjvX6GdZpeESzdGtu4a3c72a_jUPXo0Q93S1dlvU"/>
+                <meta name="google-site-verification" content="8Ui50OggqnZ5J1RPshJXelSAYWMPvFGWv32MSzHHlJU" />
 
                 <script
                     type="application/ld+json"
