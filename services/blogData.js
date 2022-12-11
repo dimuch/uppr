@@ -283,3 +283,34 @@ export async function getArticlesByCategoryDB(){
 
     return Array.from(articlesByCategory).map(item => item.value);
 }
+
+//search articles by search text
+export async function searchInArticlesParamsDB(searchText) {
+    const searchInArticlesParams = `CALL searchInArticlesParams('${searchText}')`;
+    const data = await callDBWrapper(searchInArticlesParams);
+
+    return data;
+}
+
+async function callDBWrapper (procedure, mapper) {
+    const connection = getDBPoolData();
+    return new Promise((resolve, reject) => {
+        connection.query(procedure, (err, rows, fields) => {
+            if (err) {
+                console.log('ERROR stored procedure call', err);
+                reject([]);
+            }
+
+            try {
+                let result = [...rows[0]];
+                if(mapper) {
+                    result = result.map(mapper);
+                }
+
+                resolve(result);
+            } catch (e) {
+                reject([]);
+            }
+        });
+    });
+}
