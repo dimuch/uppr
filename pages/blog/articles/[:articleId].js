@@ -69,21 +69,21 @@ function addJsonLdData(articleData) {
             "@type": "BlogPosting",
             "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": `"${articleData.link}"`,
+                "@id": `${articleData.link}`,
                 "relatedLink": "https://uppr.com.ua/blog",
             },
-            "headline": `"${articleData.title} | UPPR Блог"`,
-            "url": `"${articleData.link}"`,
+            "headline": `${articleData.title} | UPPR Блог`,
+            "url": `${articleData.link}`,
             "image": {
                 "@type": "ImageObject",
-                "url": `"${articleData.image}"`,
+                "url": `${articleData.image}`,
                 "width": 700,
                 "height": 400,
             },
-            "datePublished": `"${articleData.published}"`,
+            "datePublished": `${articleData.published}`,
             "author": {
                 "@type": "Person",
-                "name": `"${articleData.author}"`,
+                "name": `${articleData.author}`,
             },
             "publisher": {
                 "@type": "Organization",
@@ -94,7 +94,7 @@ function addJsonLdData(articleData) {
                     "width": 503,
                 },
             },
-            "description": `"${articleData.description}"`
+            "description": `${articleData.description}`
         }),
     }
 }
