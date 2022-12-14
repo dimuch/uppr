@@ -18,6 +18,8 @@ export {default as TenOddWordsInEmails} from './ten-odd-words-in-emails';
 export {default as WatchingCartoonsInEnglishFrozen} from './watching-cartoons-in-english-frozen';
 export {default as WatchingCartoonsInEnglishRio} from './watching-cartoons-in-english-rio';
 export {default as WatchingCartoonsInEnglishTangled} from './watching-cartoons-in-english-tangled';
+export {default as ActionVerbsForResume} from './action-verbs-for-resume';
+export {default as Asap} from './asap';
 
 
 export {default as PageNotFound} from '../common/404/404';
