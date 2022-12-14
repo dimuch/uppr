@@ -64,35 +64,37 @@ export async function getServerSideProps({resolvedUrl}) {
 
 function addJsonLdData(articleData) {
     return {
-        __html: `{'@context': 'http://schema.org',
-            '@type': 'BlogPosting',
-            'mainEntityOfPage': {
-                '@type': 'WebPage',
-                '@id': '${articleData.link}',
-                'relatedLink': 'https://uppr.com.ua/blog',
+        __html: JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "BlogPosting",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": `"https://uppr.com.ua${articleData.link}"`,
+                "relatedLink": "https://uppr.com.ua/blog",
             },
-            'headline': '${articleData.title} | UPPR Блог',
-            'url': '${articleData.link}',
-            'image': {
-                '@type': 'ImageObject',
-                'url': '${articleData.image}',
-                'width': 700,
-                'height': 400,
+            "headline": `"${articleData.title} | UPPR Блог"`,
+            "url": `"https://uppr.com.ua${articleData.link}"`,
+            "image": {
+                "@type": "ImageObject",
+                "url": `"${articleData.image}"`,
+                "width": 700,
+                "height": 400,
             },
-            'datePublished': '${articleData.published}',
-            'author': {
-                '@type': 'Person',
-                'name': '${articleData.author}',
+            "datePublished": `"${articleData.published}"`,
+            "author": {
+                "@type": "Person",
+                "name": `"${articleData.author}"`,
             },
-            'publisher': {
-                '@type': 'Organization',
-                'name': '[UP]PR',
-                'logo': {
-                    '@type': 'ImageObject',
-                    'url': 'https://uppr.com.ua/assets/images/blog-articles/logo.jpg',
-                    'width': 503,
+            "publisher": {
+                "@type": "Organization",
+                "name": "[UP]PR",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://uppr.com.ua/assets/images/blog-articles/logo.jpg",
+                    "width": 503,
                 },
             },
-            'description': '${articleData.description}'}`,
+            "description": `"${articleData.description}"`
+        }),
     }
 }
