@@ -27,7 +27,7 @@ const Search = ({}) => {
     }
 
     useEffect(() => {
-        if(!searchText) {
+        if (!searchText) {
             setSearchResult(() => []);
             return;
         }
@@ -41,7 +41,7 @@ const Search = ({}) => {
     }, [searchText]);
 
     useEffect(() => {
-        if(!data) {
+        if (!data) {
             return
         }
 
@@ -49,7 +49,7 @@ const Search = ({}) => {
     }, [data]);
 
     useEffect(() => {
-        if(!error) {
+        if (!error) {
             return
         }
 
@@ -61,14 +61,15 @@ const Search = ({}) => {
 
     return (
         <div className={`${styles.upprSearchWrapper}`} ref={inputRef}>
-            <div className={`${styles.searchInputWrapper} ${!!searchResult.length ? styles.searchInputWrapperWithResult : ''}`}>
+            <div
+                className={`${styles.searchInputWrapper} ${!!searchResult.length ? styles.searchInputWrapperWithResult : ''}`}>
                 <input name="search"
                        placeholder="Пошук..."
                        onChange={makeSearch}
                        value={searchText}
                 />
                 <div className={styles.searchIcon}>
-                    {isLoading ? <LoaderIcon /> : <SearchIcon />}
+                    {isLoading ? <LoaderIcon/> : <SearchIcon/>}
                 </div>
             </div>
             {!!searchResult.length && (
@@ -77,7 +78,7 @@ const Search = ({}) => {
                         searchResult.map(article => {
                             return (
                                 <Grid container className={styles.searchResultItem} key={article.title}
-                                    alignItems={'center'}
+                                      alignItems={'center'}
                                 >
                                     <Grid item md={4}>
                                         <Image
@@ -90,7 +91,10 @@ const Search = ({}) => {
                                         />
                                     </Grid>
                                     <Grid item md={8}>
-                                        <a href={article.link} className={styles.searchResultItemLink}>
+                                        <a href={article.link}
+                                           target="_blank"
+                                           rel="noreferrer"
+                                           className={styles.searchResultItemLink}>
                                             <Typography
                                                 variant={'subtitle2'}
                                                 sx={linesLimiterConfig(2)}

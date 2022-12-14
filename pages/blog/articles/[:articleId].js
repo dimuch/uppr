@@ -16,7 +16,7 @@ export default function ArticlePageWrapper({articleData}) {
     return (
         <>
             <Head>
-                <title>{articleData.title} | {articleData.englishTitle} | UPPR Блог</title>
+                <title>{articleData.title} | UPPR Блог</title>
                 <meta name="description"
                       content={articleData.description}/>
                 <meta name="keywords" content="education on-line, english, business, writing, skills, emails"/>
@@ -38,7 +38,7 @@ export default function ArticlePageWrapper({articleData}) {
                 <meta property="og:image" content={articleData.image}/>
                 <meta property="og:image:width" content="700"/>
                 <meta property="og:image:height" content="400"/>
-
+                <link rel = "canonical" href={articleData.link} />
                 <meta name="google-site-verification" content="8Ui50OggqnZ5J1RPshJXelSAYWMPvFGWv32MSzHHlJU" />
 
                 <script
@@ -67,15 +67,14 @@ export async function getServerSideProps({resolvedUrl}) {
 
 function addJsonLdData(articleData) {
     return {
-        __html: `{
-            '@context': 'http://schema.org',
+        __html: `{'@context': 'http://schema.org',
             '@type': 'BlogPosting',
             'mainEntityOfPage': {
                 '@type': 'WebPage',
                 '@id': '${articleData.link}',
                 'relatedLink': 'https://uppr.com.ua/blog',
             },
-            'headline': '${articleData.title} | ${articleData.englishTitle} | UPPR Блог',
+            'headline': '${articleData.title} | UPPR Блог',
             'url': '${articleData.link}',
             'image': {
                 '@type': 'ImageObject',
@@ -97,7 +96,6 @@ function addJsonLdData(articleData) {
                     'width': 503,
                 },
             },
-            'description': '${articleData.description}'
-        }`,
+            'description': '${articleData.description}'}`,
     }
 }
