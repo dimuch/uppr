@@ -28,12 +28,12 @@ export default function ArticlePageWrapper({articleData}) {
                 <link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>
                 <link rel="icon" href="/favicon.png"/>
 
-                <meta property="og:url" content={articleData.link}/>
+                <meta property="og:url" content={'https://uppr.com.ua' + articleData.link}/>
                 <meta property="og:type" content="website"/>
                 <meta property="article:author" content="https://www.facebook.com/ivanna.tabachuk"/>
                 <meta property="og:title" content={articleData.title + '| UPPR Блог'}/>
                 <meta property="og:description" content={articleData.description}/>
-                <meta property="og:image" content={articleData.image}/>
+                <meta property="og:image" content={'https://uppr.com.ua' + articleData.image}/>
                 <meta property="og:image:width" content="700"/>
                 <meta property="og:image:height" content="400"/>
                 <link rel = "canonical" href={'https://uppr.com.ua' + articleData.link} />
@@ -69,11 +69,11 @@ function addJsonLdData(articleData) {
             "@type": "BlogPosting",
             "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": `"https://uppr.com.ua${articleData.link}"`,
+                "@id": `"${articleData.link}"`,
                 "relatedLink": "https://uppr.com.ua/blog",
             },
             "headline": `"${articleData.title} | UPPR Блог"`,
-            "url": `"https://uppr.com.ua${articleData.link}"`,
+            "url": `"${articleData.link}"`,
             "image": {
                 "@type": "ImageObject",
                 "url": `"${articleData.image}"`,
