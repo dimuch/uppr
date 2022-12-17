@@ -453,7 +453,7 @@ export default function TenOddWordsInEmails({articleData}) {
                     </p>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
-                        <a href="/articles/ten-odd-words-in-emails-2.html" target="_blank">
+                        <a href="/blog/articles/ten-odd-words-in-emails-2" target="_blank">
                             Ще 5 &quot;зайвих&quot; слів у наступній статті.
                         </a>
                     </p>

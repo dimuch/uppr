@@ -21,3 +21,6 @@ Allow: /blog/articles/ten-odd-words-in-emails
 Allow: /blog/articles/watching-cartoons-in-english-frozen
 Allow: /blog/articles/watching-cartoons-in-english-rio
 Allow: /blog/articles/watching-cartoons-in-english-tangled
+Allow: /blog/articles/action-verbs-for-resume
+Allow: /blog/articles/asap
+Allow: /blog/articles/ten-odd-words-in-emails-2
