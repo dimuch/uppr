@@ -2,7 +2,6 @@ import React from 'react';
 
 import styles from './commonArticleStyles.module.scss';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import Author from '../../components/blog/Author/Author';
 import Slider from '../../components/blog/Slider/Slider';
@@ -24,12 +23,12 @@ export default function TenOddWordsInEmails2({articleData}) {
                     </h2>
 
                     <p className={styles.articleText}>
-                        Продовжу про "зайві" слова в імейлах.
+                        Продовжу про &quot;зайві&quot; слова в імейлах.
                     </p>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         <a href="/blog/articles/ten-odd-words-in-emails" target="_blank" rel="noreferrer">5 я уже
-                            детально описала</a>, тепер ще 5, якими "грішать" сучасні імейлери;).
+                            детально описала</a>, тепер ще 5, якими &quot;грішать&quot; сучасні імейлери;).
                     </p>
 
                 </div>
@@ -49,7 +48,7 @@ export default function TenOddWordsInEmails2({articleData}) {
                     </div>
 
                     <p className={styles.articleText}>
-                        Як на мене, слово <i><b>"sorry"</b></i> настільки уже "заюзане" в сучасній комунікації, що
+                        Як на мене, слово <i><b>&quot;sorry&quot;</b></i> настільки уже &quot;заюзане&quot; в сучасній комунікації, що
                         втратило свою
                         щирість та початкове значення. Часто його взагалі не помічають. І ще частіше — використовують
                         просто так, аби було, без особливої потреби. Наприклад:
@@ -60,28 +59,28 @@ export default function TenOddWordsInEmails2({articleData}) {
                     </p>
 
                     <p className={styles.articleText}>
-                        Навіщо тут <i><b>"sorry"</b></i> ? За що вибачатися? Це скоріше вибачення за звичкою, ніж за
+                        Навіщо тут <i><b>&quot;sorry&quot;</b></i> ? За що вибачатися? Це скоріше вибачення за звичкою, ніж за
                         необхідністю.
                     </p>
 
                     <p className={styles.articleText}>
-                        <i><b>"I apologize,"</b></i> (з доповненнями типу <i><b>sincerely</b></i>) набагато рідше
+                        <i><b>&quot;I apologize,&quot;</b></i> (з доповненнями типу <i><b>sincerely</b></i>) набагато рідше
                         вживається, тому і має більшу
                         важливість та значущість. Та й звучить щиріше і … набагато професійніше.
                     </p>
 
                     <p className={styles.articleText}>
                         Недарма <i>Gmail plugin</i> <b>Just Not Sorry</b> користується популярністю і, якщо навести
-                        курсор на <i><b>"sorry"</b></i> у вашому імейлі, попереджає:
+                        курсор на <i><b>&quot;sorry&quot;</b></i> у вашому імейлі, попереджає:
                         <br/>
-                        <b><i>"Using ‘sorry’ frequently undermines your gravitas and makes you appear unfit for
-                            leadership".</i></b>
+                        <b><i>&quot;Using ‘sorry’ frequently undermines your gravitas and makes you appear unfit for
+                            leadership&quot;.</i></b>
                     </p>
 
 
                     <p className={styles.articleText}>
                         Отже, наступного разу перед тим, як вибачатися, зробіть паузу і подумайте, чи це справді те, що
-                        ви хочете зараз сказати? Якщо ні, розірвіть зачароване коло безкінечних <i><b>"sorry"</b></i>
+                        ви хочете зараз сказати? Якщо ні, розірвіть зачароване коло безкінечних <i><b>&quot;sorry&quot;</b></i>
                     </p>
                 </div>
             </div>
@@ -105,7 +104,7 @@ export default function TenOddWordsInEmails2({articleData}) {
                     </h3>
 
                     <p className={styles.articleText}>
-                        Звісно, ви знаєте, що <b>FYI</b> означає <b>"For Your Information"</b> і використовується, щоб
+                        Звісно, ви знаєте, що <b>FYI</b> означає <b>&quot;For Your Information&quot;</b> і використовується, щоб
                         поділитися
                         інформацією, яку ви вважаєте актуальною для адресата. В основних визначеннях фрази присутні
                         слова <b><i>additional, short, mention, announcement</i></b>. А <b>Quora</b>-мчани навіть
@@ -196,7 +195,7 @@ export default function TenOddWordsInEmails2({articleData}) {
                     </h3>
 
                     <p className={styles.articleText}>
-                        Якщо ви продовжуєте писати <b><i>"kindly"</i></b> у ваших імейлах (а це найчастіше трапляється у
+                        Якщо ви продовжуєте писати <b><i>&quot;kindly&quot;</i></b> у ваших імейлах (а це найчастіше трапляється у
                         фразах <b><i>kindly be advised/reminded/informed</i></b> ), то краще або викиньте його взагалі,
                         або
                         замініть. Від нього не лише віє нальотом вікторіанства, воно ще й звучить недоладно і в багатьох
@@ -235,14 +234,14 @@ export default function TenOddWordsInEmails2({articleData}) {
                     </p>
 
                     <p className={styles.articleText}>
-                        Так, знаю, усі хочуть здатися ввічливими та формальними, тому і пишуть <b><i>"kindly be
-                        advised"</i></b>.
+                        Так, знаю, усі хочуть здатися ввічливими та формальними, тому і пишуть <b><i>&quot;kindly be
+                        advised&quot;</i></b>.
                         Але чи насправді воно таке уже ввічливе? Чи ви справді виражаєте <b><i>kindness</i></b>,
                         коли пишете <b><i>kindly</i></b> ?
                     </p>
 
                     <p className={styles.articleText}>
-                        Просте <b><i>"please"</i></b> зовсім не менш ввічливе і підійде для багатьох ситуацій.
+                        Просте <b><i>&quot;please&quot;</i></b> зовсім не менш ввічливе і підійде для багатьох ситуацій.
                     </p>
 
                     <p className={styles.articleText}>
@@ -254,7 +253,7 @@ export default function TenOddWordsInEmails2({articleData}) {
                     </p>
 
                     <p className={styles.articleText}>
-                        До того ж, коли пишуть <b><i>"kindly be advised"</i></b>, часто нічого не радять,
+                        До того ж, коли пишуть <b><i>&quot;kindly be advised&quot;</i></b>, часто нічого не радять,
                         а просто інформують/розповідають. Тоді взагалі <b><i>double nonsense</i></b> писати цю фразу.
                     </p>
                 </div>
@@ -263,7 +262,7 @@ export default function TenOddWordsInEmails2({articleData}) {
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
                     <h2 className={styles.subTitle}>
-                        It's really, really so!
+                        It&apos;s really, really so!
                     </h2>
                     <div className={styles.articlePicture}>
                         <Image src="/assets/images/blog-articles/ten_odd_words_in_emails_2_6.jpg"
@@ -283,8 +282,8 @@ export default function TenOddWordsInEmails2({articleData}) {
                         Тож зрідка і пишіть maybe у ваших імейлах.
                     </p>
                     <p className={styles.articleText}>
-                        Погодьтеся, мало що так погано звучить, як <b><i>"I'll
-                        maybe have it done today by 3 pm"</i></b>.
+                        Погодьтеся, мало що так погано звучить, як <b><i>&quot;I&apos;ll
+                        maybe have it done today by 3 pm&quot;</i></b>.
                     </p>
                     <p className={styles.articleText}>
                         Те саме стосується <b><i>probably, perhaps</i></b> тощо.
