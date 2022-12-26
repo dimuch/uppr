@@ -21,6 +21,7 @@ export {default as WatchingCartoonsInEnglishTangled} from './watching-cartoons-i
 export {default as ActionVerbsForResume} from './action-verbs-for-resume';
 export {default as Asap} from './asap';
 export {default as TenOddWordsInEmails2} from './ten-odd-words-in-emails-2';
+export {default as PhotoZvitSpalahDnipro} from './photo-zvit-spalah-dnipro';
 
 
 export {default as PageNotFound} from '../common/404/404';

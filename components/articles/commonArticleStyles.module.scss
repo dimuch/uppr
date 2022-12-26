@@ -72,6 +72,18 @@
   padding-bottom: 2rem;
 }
 
+.pictureGrid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.picture50{
+  width: 48%;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
 .articlePhrase {
   font-family: "Futura-PT", sans-serif;
   font-size: 2.25rem;

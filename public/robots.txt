@@ -24,3 +24,4 @@ Allow: /blog/articles/watching-cartoons-in-english-tangled
 Allow: /blog/articles/action-verbs-for-resume
 Allow: /blog/articles/asap
 Allow: /blog/articles/ten-odd-words-in-emails-2
+Allow: /blog/articles/photo-zvit-spalah-dnipro
