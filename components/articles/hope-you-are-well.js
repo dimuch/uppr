@@ -67,14 +67,14 @@ export default function HopeYouAreWell({articleData}) {
 
                     <p className={styles.articleText}>
                         <b><i>Judith Kallos,</i></b> автор <a
-                        href="https://www.amazon.com/Email-Etiquette-Made-Judith-Kallos/dp/1430313811"/><i>"Email
-                        Etiquette Made Easy"</i> ділиться своєю думкою <b><i>“I get what you are saying: that it is too
+                        href="https://www.amazon.com/Email-Etiquette-Made-Judith-Kallos/dp/1430313811"/><i>&quot;Email
+                        Etiquette Made Easy&quot;</i> ділиться своєю думкою <b><i>“I get what you are saying: that it is too
                         common and then, in my opinion, not always sincere. Your opening greeting would be contingent on
                         how well you know the person, right?”</i></b>
                     </p>
 
                     <p className={styles.articleText}>
-                        <b><i> Catharine Hamm,</i></b> редактор <b><i>"Los Angeles Times"</i></b>, теж дратується, коли
+                        <b><i> Catharine Hamm,</i></b> редактор <b><i>&quot;Los Angeles Times&quot;</i></b>, теж дратується, коли
                         їй пишуть <b><i>“I hope you are well” - emails. “It is by God’s grace that I am well, but what
                         if I weren’t? To these people I say this: Building a relationship means helping me do my job,
                         not asking me
@@ -127,7 +127,7 @@ export default function HopeYouAreWell({articleData}) {
                     </p>
 
                     <p className={styles.articleText}>
-                        Чим замінити <b><i>"Hope this email finds you well"?</i></b>
+                        Чим замінити <b><i>&quot;Hope this email finds you well&quot;?</i></b>
                     </p>
                 </div>
             </div>
@@ -145,7 +145,7 @@ export default function HopeYouAreWell({articleData}) {
                     </p>
 
                     <p className={styles.articleText}>
-                        Подумайте: ви не витрачаєте часу, щоб це написати <b><i>"Hope this email finds you well"</i></b>,
+                        Подумайте: ви не витрачаєте часу, щоб це написати <b><i>&quot;Hope this email finds you well&quot;</i></b>,
                         а хтось — щоб це читати!
                     </p>
                 </div>
@@ -182,27 +182,27 @@ export default function HopeYouAreWell({articleData}) {
                     </p>
 
                     <p className={styles.articleText}>
-                        Побачили, що клієнт встановив новий персональний рекорд з бігу? Запитайте:<b><i>"How did you
-                        feel after your Sunday 10K?"</i></b>
+                        Побачили, що клієнт встановив новий персональний рекорд з бігу? Запитайте:<b><i>&quot;How did you
+                        feel after your Sunday 10K?&quot;</i></b>
                     </p>
 
                     <p className={styles.articleText}>
-                        Чи що він/вона займається садівництвом? - <b><i>"Hope you made most of the gardening weather
-                        this weekend."</i></b>
+                        Чи що він/вона займається садівництвом? - <b><i>&quot;Hope you made most of the gardening weather
+                        this weekend.&quot;</i></b>
                     </p>
 
                     <p className={styles.articleText}>
-                        Колега у відрядженні: <b><i>"I hope you’re keeping warm during this frost in New York."</i></b>
+                        Колега у відрядженні: <b><i>&quot;I hope you’re keeping warm during this frost in New York.&quot;</i></b>
                     </p>
 
                     <p className={styles.articleText}>
-                        Якщо не знайшли "зачіпки" (головне не писати якусь маячню, все має бути щиро, пам'ятаєте),
+                        Якщо не знайшли &quot;зачіпки&quot; (головне не писати якусь маячню, все має бути щиро, пам&apos;ятаєте),
                         нічого страшного, наступного разу пощастить, а поки дивіться пункт 1.
                     </p>
 
                     <p className={styles.articleText}>
                         І я зовсім не маю на увазі включати режим нишпорки і стежити. Але мати клієнтів та колег
-                        "в друзях" - хороша ідея і може стати у пригоді для побудови ділових стосунків та зробити внесок
+                        &quot;в друзях&quot; - хороша ідея і може стати у пригоді для побудови ділових стосунків та зробити внесок
                         у <b><i>ROR</i></b>
                     </p>
                 </div>
@@ -212,7 +212,7 @@ export default function HopeYouAreWell({articleData}) {
                 <div className={styles.maxWidthArticleSectionWrapper}>
 
                     <h3 className={styles.articleSubSubTitle}>
-                        #3. "I know you’re overloaded/overwhelmed/swamped, so I’ll be brief."
+                        #3. &quot;I know you’re overloaded/overwhelmed/swamped, so I’ll be brief.&quot;
                     </h3>
 
                     <p className={styles.articleText}>
