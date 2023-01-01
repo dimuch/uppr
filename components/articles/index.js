@@ -22,6 +22,8 @@ export {default as ActionVerbsForResume} from './action-verbs-for-resume';
 export {default as Asap} from './asap';
 export {default as TenOddWordsInEmails2} from './ten-odd-words-in-emails-2';
 export {default as PhotoZvitSpalahDnipro} from './photo-zvit-spalah-dnipro';
+export {default as StrongWordsInsteadOfVery} from './strong-words-instead-of-very';
+export {default as HopeYouAreWell} from './hope-you-are-well';
 
 
 export {default as PageNotFound} from '../common/404/404';

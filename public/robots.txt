@@ -25,3 +25,5 @@ Allow: /blog/articles/action-verbs-for-resume
 Allow: /blog/articles/asap
 Allow: /blog/articles/ten-odd-words-in-emails-2
 Allow: /blog/articles/photo-zvit-spalah-dnipro
+Allow: /blog/articles/strong-words-instead-of-very
+Allow: /blog/articles/hope-you-are-well
