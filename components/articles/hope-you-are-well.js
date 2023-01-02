@@ -223,7 +223,7 @@ export default function HopeYouAreWell({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/hope_you_are_well_3.jpg"
+                        <Image src="/assets/images/blog-articles/hope_you_are_well_4.jpg"
                                width="1400" height="425"
                                alt="I know you’re overloaded/overwhelmed/swamped"
                         />

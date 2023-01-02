@@ -27,3 +27,4 @@ Allow: /blog/articles/ten-odd-words-in-emails-2
 Allow: /blog/articles/photo-zvit-spalah-dnipro
 Allow: /blog/articles/strong-words-instead-of-very
 Allow: /blog/articles/hope-you-are-well
+Allow: /blog/articles/thank-you-for-the-interview
