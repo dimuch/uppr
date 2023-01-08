@@ -177,7 +177,7 @@ export default function BullshitFreeSalesEmails({articleData}) {
                             And we know how to help you decrease 20% of your overhead costs without losing existing
                             relationships, and without making use of specific vendors.
                             <br/>
-                            I realize you may not have time to discuss this now, but I'd be happy to share some thoughts
+                            I realize you may not have time to discuss this now, but I&apos;d be happy to share some thoughts
                             when you can find an hour or so.
                             <br/>
                             I was planning on calling you, [name], in a week. Let me know when would be good, or maybe
@@ -212,7 +212,7 @@ export default function BullshitFreeSalesEmails({articleData}) {
                             <br/>
                             <br/>
                             My company [Name of the company] has a track record of helping companies to reduce overhead
-                            cost and increase cash flow. We've recently worked with [company likely to be known to
+                            cost and increase cash flow. We&apos;ve recently worked with [company likely to be known to
                             prospect] and were able to reduce their expenses by 20%
                             <br/>
                             <br/>
