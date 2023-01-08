@@ -26,6 +26,7 @@ export {default as StrongWordsInsteadOfVery} from './strong-words-instead-of-ver
 export {default as HopeYouAreWell} from './hope-you-are-well';
 export {default as ThankYouForTheInterview} from './thank-you-for-the-interview';
 export {default as SubjectLine} from './subject-line';
+export {default as BullshitFreeSalesEmails} from './bullshit-free-sales-emails';
 
 
 export {default as PageNotFound} from '../common/404/404';
