@@ -26,7 +26,7 @@
 .upprArticleCategories {
   display: flex;
   justify-content: center;
-  padding: 6rem 0 6rem;
+  padding: 6rem 0;
   margin-top: -34%;
 }
 
@@ -34,4 +34,14 @@
   max-width: 1240px;
   padding: 0 1rem 6rem 1rem;
   margin: auto;
+}
+
+
+@media (max-width: 400px) {
+  .upprPageContent{
+    width: 100%;
+  }
+  .upprArticleCategories{
+    padding: 2rem 0;
+  }
 }

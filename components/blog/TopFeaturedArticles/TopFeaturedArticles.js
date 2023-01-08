@@ -6,6 +6,7 @@ import { TopFeaturedArticlesIcon } from "../../common/icons/index";
 
 import styles from "./styles.module.scss";
 import Image from 'next/image';
+import {linesLimiterConfig} from '../../../helpers/linesLimiterConfig';
 
 export default function TopFeaturedArticles({ items }) {
   const updateArticleViews = (article) => {};
@@ -45,7 +46,7 @@ export default function TopFeaturedArticles({ items }) {
                   className={styles.articleContainer}
                   alignContent={"center"}
                 >
-                  <Grid item xs={5} className={styles.articleImage}>
+                  <Grid item xs={12} sm={5} className={styles.articleImage}>
                         <Image
                           src={article.image}
                           width="700"
@@ -54,9 +55,11 @@ export default function TopFeaturedArticles({ items }) {
                           layout="responsive"
                         />
                   </Grid>
-                  <Grid item xs={7} className={styles.articleTitle}>
+                  <Grid item xs={12} sm={7} className={styles.articleTitle}>
                     <a href={article.link}>
-                      <Typography>{article.title}</Typography>
+                      <Typography>
+                          {article.title}
+                      </Typography>
                     </a>
                   </Grid>
                 </Grid>

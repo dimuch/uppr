@@ -13,7 +13,7 @@ export default function Downloads({ items }) {
   }
 
   return (
-    <Grid container className={"wrapper " + styles.wrapper}>
+    <div container className={"wrapper " + styles.wrapper}>
       <Grid
         item
         md={12}
@@ -48,7 +48,7 @@ export default function Downloads({ items }) {
                 <Icon />
               </Grid>
               <Grid item xs={10} className="title">
-                <a href={`${article.detailsLink}/${article.id}`}>
+                <a href={`${article.downloadLink}`}>
                   <span>{article.caption}</span>
                 </a>
               </Grid>
@@ -56,6 +56,6 @@ export default function Downloads({ items }) {
           );
         })}
       </Grid>
-    </Grid>
+    </div>
   );
 }

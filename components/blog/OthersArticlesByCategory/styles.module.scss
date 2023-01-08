@@ -112,3 +112,23 @@
   max-height: 370px;
   overflow-y: hidden;
 }
+
+
+@media (max-width: 600px) {
+  .wrapper{
+    margin: 2rem 0;
+  }
+
+  .title{
+    width: 100%;
+  }
+
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .item0, .item1, .item2, .item3, .item4 {
+    max-height: initial;
+  }
+}

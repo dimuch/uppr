@@ -12,7 +12,7 @@ export default function ArticleCard({item, isDescription=true}) {
     return (
         <a href={item.link}>
             <Grid container className={styles.wrapper}>
-                <Grid item md={12}>
+                <Grid item xs={12} style={{display: 'block'}}>
                     <Image
                         className={styles.image}
                         src={item.image}
@@ -35,7 +35,7 @@ export default function ArticleCard({item, isDescription=true}) {
                             </Typography>
 
                         </Grid>
-                        <Grid item className="title" md={12}>
+                        <Grid item className={styles.title} md={12}>
                             <a href={item.link}>
                                 <Typography
                                     textAlign={'center'}

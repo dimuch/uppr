@@ -51,3 +51,20 @@
     text-decoration: none;
   }
 }
+
+
+@media (max-width: 400px) {
+  .upprheaderWrapper{
+    height: auto;
+  }
+  .wrapper {
+    flex-wrap: wrap;
+  }
+
+  .headerRightBlock{
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    padding-left: 0;
+    margin: 2rem auto 1rem;
+  }
+}

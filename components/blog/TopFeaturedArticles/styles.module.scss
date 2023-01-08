@@ -38,4 +38,12 @@
 
 .articleTitle{
   padding-left: .5rem;
+  overflow: hidden;
+}
+
+
+@media (max-width: 600px) {
+  .articleImage{
+    max-width: 100% !important;
+  }
 }

@@ -77,3 +77,9 @@
   padding-bottom: .5rem !important;
   color: $blog-four-sticky;
 }
+
+@media (max-width: 400px) {
+  .upprSearchWrapper{
+    width: 100%;
+  }
+}

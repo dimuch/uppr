@@ -5,10 +5,11 @@ import MainArticle from '../MainArticle/MainArticle';
 import TopFeaturedArticles from '../TopFeaturedArticles/TopFeaturedArticles';
 import Downloads from '../Downloads/Downloads';
 
-import styles from './styles.module.scss';
 import OthersArticles from '../OthersArticles/OthersArticles';
 import InformationBlock from '../InformationBlock/InformationBlock';
 import OthersArticlesByCategory from '../OthersArticlesByCategory/OthersArticlesByCategory';
+
+import styles from './styles.module.scss';
 
 export default function SelectedAllCategories({
                                                   latestArticle,
@@ -32,20 +33,20 @@ export default function SelectedAllCategories({
 
     return (
         <>
-            <Grid
+            <div
                 container
                 spacing={3}
                 alignItems="flex-start"
-                className="uppr-all-articles"
+                className={styles.upprAllArticles}
             >
-                <Grid item md={8} className="uppr-articles-list">
+                <div item md={8} className="uppr-articles-list">
                     <MainArticle items={latestArticle}/>
-                </Grid>
-                <Grid item md={4} className="uppr-side-block">
+                </div>
+                <div item md={4} className={styles.upprSideBlock}>
                     <TopFeaturedArticles items={top3Article}/>
                     <Downloads items={downloads}/>
-                </Grid>
-            </Grid>
+                </div>
+            </div>
             <Grid container
                   spacing={3}
                   alignItems="flex-start"

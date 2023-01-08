@@ -9,7 +9,7 @@
 }
 
 .upprArticleDetails {
-  padding: 2rem 3.5rem 0.8rem;
+  padding: 2rem 3.5rem 1rem;
   background-color: $white;
 
   h3 {
@@ -36,5 +36,14 @@
   .readMore {
     text-align: right;
     color: $blog-four-sticky;
+  }
+}
+
+@media (max-width: 400px) {
+  .upprArticleDetails {
+    padding: 1rem;
+  }
+  .summary{
+    width: 100%;
   }
 }

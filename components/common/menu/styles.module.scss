@@ -10,6 +10,9 @@
     padding-left: 0.5rem;
     min-width: 4rem;
     text-align: center;
+    &:first-of-type {
+      padding-left: 0;
+    }
 
     &:last-of-type {
       padding-right: 0;
@@ -25,5 +28,12 @@
     color: $blog-four-sticky;
     text-decoration: underline;
     font-family: "Futura-Demi", sans-serif;
+  }
+}
+
+@media (max-width: 400px) {
+  .upprMainMenu{
+    padding-left: 0;
+    margin: 0 auto 2rem;
   }
 }

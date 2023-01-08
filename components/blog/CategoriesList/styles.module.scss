@@ -23,3 +23,10 @@
     color: $blog-four-sticky;
   }
 }
+
+@media (max-width: 400px) {
+  .categoryList{
+    padding: 1rem;
+    margin: 0;
+  }
+}

@@ -12,7 +12,7 @@ export default function OthersArticles({items, isInformationBlock}) {
     return (
         items.map(item => {
             return (
-                <Grid item md={4} key={item.link}>
+                <Grid item xs={12} sm={12} md={4} key={item.link}>
                     <ArticleCard item={item} />
                 </Grid>
             )
