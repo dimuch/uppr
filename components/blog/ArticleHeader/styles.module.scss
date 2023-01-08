@@ -1,5 +1,6 @@
 @import "../../../styles/scss/common/colors.scss";
-.titleWrapper{
+
+.titleWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,20 +8,20 @@
   margin-bottom: 3rem;
 }
 
-.titleContent, .titleImage{
+.titleContent, .titleImage {
   width: 50%;
 }
 
-.titleContent{
+.titleContent {
   padding-right: 2rem;
 }
 
-.titleImage{
+.titleImage {
   padding-left: 2rem;
   position: relative;
 }
 
-.title{
+.title {
   margin-bottom: 2rem;
   font-family: "Futura-PT", sans-serif;
   font-size: 2.5rem;
@@ -28,13 +29,13 @@
   text-transform: uppercase;
 }
 
-.shortMessage{
+.shortMessage {
   font-family: "Futura-LT", sans-serif;
   font-size: 1.5rem;
   line-height: 1.25;
 }
 
-.categoryBadge{
+.categoryBadge {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -44,7 +45,18 @@
   font-size: .75rem;
   font-family: "OpenSans", sans-serif;
   z-index: 5;
+
   a {
     color: $white;
+  }
+}
+
+@media (max-width: 1024px) {
+  .titleWrapper {
+    flex-direction: column-reverse;
+  }
+  .titleContent, .titleImage {
+    width: 100%;
+    padding: 0;
   }
 }

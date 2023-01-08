@@ -217,3 +217,21 @@
     height: auto;
   }
 }
+
+@media (max-width: 1024px) {
+  .maxWidthArticleSectionWrapper, .maxWidthArticleTitleWrapper{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .footerContainer{
+    display: block;
+    >div:nth-child(1){
+      width: 100% !important;
+      margin-bottom: 3rem;
+    }
+    >div:nth-child(2){
+      display: none;
+    }
+  }
+}

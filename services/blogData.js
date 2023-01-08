@@ -56,10 +56,8 @@ export function getDownloadsDB(isAllDownloads = true) {
 
             try {
                 const data = rows[0].map((item) => {
-                    console.log(item);
                     return {
                         ...item,
-                        downloadLink: '/assets/downloads/' + item.downloadLink.replace('https://uppr.com.ua/', ''),
                         publishedDate: new Date(item.publishedDate).toString(),
                     };
                 });
