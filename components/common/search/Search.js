@@ -6,7 +6,9 @@ import {LoaderIcon, SearchIcon} from '../icons';
 import Image from 'next/image';
 import {Grid, Typography} from '@mui/material';
 import {linesLimiterConfig} from '../../../helpers/linesLimiterConfig';
+
 import {useClickOutside} from '../hooks/clickOutside';
+import {useWindowSize} from '../hooks/screenSize';
 
 const SEARCH_REQ_URL = '/api/search?text='
 
@@ -17,13 +19,23 @@ const Search = ({}) => {
 
     const inputRef = useRef();
 
+    const screenSize = useWindowSize();
+    const [responsiveClass, setResponsiveClass] = useState('40%');
+
     const makeSearch = (event) => {
         const search = event.target.value;
         setSearchText(search);
     }
 
+    const onClickInside = () => {
+        setResponsiveClass(() => {
+            return screenSize.width < 650 ? '65%' : '40%';
+        })
+    }
+
     const closeSearchResults = () => {
         setSearchText(() => '');
+        setResponsiveClass(() => '40%');
     }
 
     useEffect(() => {
@@ -57,10 +69,13 @@ const Search = ({}) => {
 
     }, [error]);
 
-    useClickOutside(inputRef, closeSearchResults);
+    useClickOutside(inputRef, closeSearchResults, onClickInside);
 
     return (
-        <div className={`${styles.upprSearchWrapper}`} ref={inputRef}>
+        <div className={`${styles.upprSearchWrapper} ${styles.responsiveSearch}`}
+             ref={inputRef}
+             style={{maxWidth: responsiveClass}}
+        >
             <div
                 className={`${styles.searchInputWrapper} ${!!searchResult.length ? styles.searchInputWrapperWithResult : ''}`}>
                 <input name="search"

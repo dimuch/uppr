@@ -78,7 +78,7 @@ const Index = () => {
           <meta name="google-site-verification" content="8Ui50OggqnZ5J1RPshJXelSAYWMPvFGWv32MSzHHlJU" />
         </Head>
         <div className="uppr-home-page">
-          <Header location={"/"}/>
+          <Header location={"/"} search/>
           <Video videoSrc={"/assets/video/intro.mp4"} />
           <div className={"uppr-section " + compStyles?.section}>
             <div className={"uppr-section-title " + compStyles?.sectionTitle}>
@@ -146,7 +146,7 @@ const Index = () => {
                 </div>
               </div>
               <div>
-                <ul>
+                <ul className={compStyles.howItWorksList}>
                   {howItWorks.map((item, index) => {
                     return (
                       <li

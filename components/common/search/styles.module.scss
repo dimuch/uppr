@@ -78,8 +78,18 @@
   color: $blog-four-sticky;
 }
 
-@media (max-width: 400px) {
+.responsiveSearch{
+  transition: max-width ease-out .35s;
+}
+
+@media (max-width: 650px) {
   .upprSearchWrapper{
-    width: 100%;
+    max-width: 40%;
+  }
+  .responsiveSearch{
+    input{
+      padding-right: 0;
+      padding-left: 0;
+    }
   }
 }

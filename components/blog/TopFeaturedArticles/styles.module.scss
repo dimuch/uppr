@@ -42,11 +42,11 @@
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .articleImage{
     max-width: 100% !important;
   }
   .articleTitle{
-    margin-bottom: 2rem;
+    margin-bottom: 2rem !important;
   }
 }

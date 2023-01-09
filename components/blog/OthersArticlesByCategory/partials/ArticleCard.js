@@ -35,7 +35,7 @@ export default function ArticleCard({item, isDescription=true}) {
                             </Typography>
 
                         </Grid>
-                        <Grid item className={styles.title} md={12}>
+                        <Grid item className={styles.title} sm={12}>
                             <a href={item.link}>
                                 <Typography
                                     textAlign={'center'}

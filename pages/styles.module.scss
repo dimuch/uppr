@@ -173,7 +173,7 @@
   }
 }
 
-.telegramBlock{
+.telegramBlock {
   h4 {
     font-family: Museo-Sans-Cyrl-Reg, sans-serif !important;
     font-size: 2.5rem;
@@ -186,7 +186,7 @@
   margin: 0 auto 3rem;
 }
 
-.signIn{
+.signIn {
   margin-top: 2rem;
   font-size: 2rem;
   padding: 1.25rem 1rem 1rem;
@@ -207,5 +207,53 @@
     line-height: 3rem;
     font-size: 2rem;
     margin: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .section {
+    margin-top: -0.25rem;
+  }
+
+  .firstLine {
+    padding-bottom: 2rem;
+
+    h4 {
+      line-height: 1.5;
+    }
+  }
+
+  .sectionTitle {
+    text-align: center;
+  }
+
+  .howItWorksList{
+      padding-left: 0;
+  }
+
+  .howItWorksItem {
+    flex-direction: column;
+    max-width: initial;
+  }
+
+  .badgeList{
+    padding-left:0;
+  }
+
+  .comments{
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+
+  .howIconWrapperFirst{
+    margin-right: 0;
+  }
+
+  .iconTelegram{
+    margin: auto 7rem 5rem;
+  }
+
+  .finalMessage{
+    text-align: center;
   }
 }

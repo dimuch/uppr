@@ -6,3 +6,9 @@
     height: auto;
   }
 }
+
+@media (max-width: 650px) {
+  .upprIntroVideo{
+    top: 0;
+  }
+}

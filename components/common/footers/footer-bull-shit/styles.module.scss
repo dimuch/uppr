@@ -23,3 +23,12 @@
     transition: background-color ease-out .3s;
   }
 }
+
+@media (max-width: 650px) {
+  .upprFooterBullShit a {
+    display: block;
+    margin-top: 2rem;
+    text-align: center;
+    margin-left: 0;
+  }
+}

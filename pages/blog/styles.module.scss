@@ -37,11 +37,18 @@
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 650px) {
+  .upprBlogMainPicture{
+    img {
+      min-height: 100% !important;
+      max-height: 100% !important;
+    }
+  }
   .upprPageContent{
     width: 100%;
   }
   .upprArticleCategories{
+    margin-top: -20%;
     padding: 2rem 0;
   }
 }
