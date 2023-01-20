@@ -13,12 +13,9 @@ import InformationBlock from '../InformationBlock/InformationBlock';
 // const ARTICLES_BY_CATEGORY_URL = '/api/articles-by-category'
 
 export default function SelectedSpecificCategory({
-                                                     selectedCategory,
-                                                     latestArticle,
                                                      tags,
                                                      articlesByCategory,
                                                  }) {
-    // const {makeRequest, isLoading, error, data} = useMakeRequest();
 
     const firstRowOthersArticles = useMemo(() => {
         return articlesByCategory?.slice(0, 2) || [];

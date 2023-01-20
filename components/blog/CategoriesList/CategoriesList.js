@@ -31,7 +31,7 @@ export default function CategoriesList({ items, selectedCategory }) {
 
         if(selectedCategory === ALL) {
           return (
-              <Link href={`/blog`}
+              <a href={`/blog`}
                     key={articleCategory.id}
               >
                 <li
@@ -39,12 +39,12 @@ export default function CategoriesList({ items, selectedCategory }) {
                 >
                   {articleCategory.name}
                 </li>
-              </Link>
+              </a>
           );
         }
 
         return (
-            <Link href={`/blog/articles-by-category/${articleCategory.name.toLowerCase()}`}
+            <a href={`/blog/articles-by-category/${articleCategory.name.toLowerCase()}`}
                   key={articleCategory.id}
             >
               <li
@@ -52,7 +52,7 @@ export default function CategoriesList({ items, selectedCategory }) {
               >
                 {articleCategory.name}
               </li>
-            </Link>
+            </a>
         );
       })}
     </ul>
