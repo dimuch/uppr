@@ -7,7 +7,7 @@ import Header from '../header/Header';
 
 import styles from './404.module.scss';
 
-export default function PageNotFound() {
+export default function PageNotFound({redirectPage, redirectLink}) {
     return (
         <div className={styles.errorPage}>
             <Header search/>
@@ -27,7 +27,7 @@ export default function PageNotFound() {
                     Ви намагаєтесь перейти на неіснуючу сторінку. Перевірте посилання.
                 </p>
                 <p className={styles.rvHomeLink}>
-                    <Link href="/blog">На головну</Link>
+                    <Link href={redirectLink}>{redirectPage}</Link>
                 </p>
             </div>
         </div>

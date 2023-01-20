@@ -6,7 +6,7 @@ import Header from '../../components/common/header/Header';
 import CategoriesList from '../../components/blog/CategoriesList/CategoriesList';
 import SelectedAllCategories from '../../components/blog/SelectedAllCategories/SelectedAllCategories';
 import {
-    getArticles, getArticlesByCategoryDB, getArticlesByCategoryNameDB,
+    getArticles, getArticlesByCategoryDB,
     getArticlesCategoriesDB,
     getDownloadsDB, getTagsDB,
 } from '../../services/blogData';

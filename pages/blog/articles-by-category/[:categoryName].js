@@ -6,8 +6,18 @@ import styles from '../styles.module.scss';
 import CategoriesList from '../../../components/blog/CategoriesList/CategoriesList';
 import Image from 'next/image';
 import SelectedSpecificCategory from '../../../components/blog/SelectedSpecificCategory/SelectedSpecificCategory';
+import {useRouter} from 'next/router';
+import PageNotFound from '../../404';
 
 export default function ArticlePageWrapper({articlesByCategory, articleCategories, selectedCategory, tags}) {
+    const router = useRouter();
+
+    if (!articlesByCategory?.length) {
+        return (
+            <PageNotFound redirectLink={'/blog'} redirectPage={'Повернутись до блогу'}/>
+        )
+    }
+
     return (
         <>
             <Head>
