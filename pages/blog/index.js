@@ -6,7 +6,7 @@ import Header from '../../components/common/header/Header';
 import CategoriesList from '../../components/blog/CategoriesList/CategoriesList';
 import SelectedAllCategories from '../../components/blog/SelectedAllCategories/SelectedAllCategories';
 import {
-    getArticles,
+    getArticles, getArticlesByCategoryDB, getArticlesByCategoryNameDB,
     getArticlesCategoriesDB,
     getDownloadsDB, getTagsDB,
 } from '../../services/blogData';
@@ -21,9 +21,8 @@ export default function Blog({
                                  top3Article,
                                  downloads,
                                  tags,
+                                 articlesByCategories
                              }) {
-    const [selectedCategory, setSelectedCategory] = useState(0);
-
     return (
         <>
             <Head>
@@ -54,28 +53,16 @@ export default function Blog({
                         <CategoriesList items={articleCategories}/>
                     </div>
 
-                    {/* {selectedCategory !== 0 && (
-          <div className={`uppr-articles-content ${styles.upprArticlesContent}`}> */}
-                    {/* <SelectedSpecificCategory
-              latestArticle={latestArticle}
-              otherLatestArticles={otherLatestArticles}
-            /> */}
-                    {/* </div>
-        )} */}
-
-                    {selectedCategory === 0 && (
-                        <div
-                            className={`uppr-articles-content ${styles.upprArticlesContent}`}
-                        >
-                            <SelectedAllCategories
-                                latestArticle={latestArticle}
-                                otherLatestArticles={otherLatestArticles}
-                                top3Article={top3Article}
-                                downloads={downloads}
-                                tags={tags}
-                            />
-                        </div>
-                    )}
+                    <div className={`uppr-articles-content ${styles.upprArticlesContent}`}>
+                        <SelectedAllCategories
+                            latestArticle={latestArticle}
+                            otherLatestArticles={otherLatestArticles}
+                            top3Article={top3Article}
+                            downloads={downloads}
+                            tags={tags}
+                            articlesByCategories={articlesByCategories}
+                        />
+                    </div>
 
                 </div>
             </div>
@@ -83,11 +70,12 @@ export default function Blog({
     );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
     const articleCategories = await getArticlesCategoriesDB();
     const articles = await getArticles();
     const downloads = await getDownloadsDB();
     const tags = await getTagsDB();
+    const articlesByCategories = await getArticlesByCategoryDB();
 
     return {
         props: {
@@ -95,6 +83,7 @@ export async function getServerSideProps() {
             ...articles,
             downloads,
             tags,
+            articlesByCategories,
         },
     };
 }

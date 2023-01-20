@@ -1,52 +1,58 @@
-import React, { useState } from "react";
-// import {
-//   fetchArticles,
-//   updateArticleCategories,
-//   updateSelectedCategory,
-// } from "../../../actions/articlesActions";
-
-import { func } from "prop-types";
+import React  from "react";
+import Router, {useRouter} from 'next/router'
 
 import styles from "./styles.module.scss";
+import Link from 'next/link';
 
-export default function CategoriesList({ items }) {
-  const [articleCategories, setArticleCategories] = useState(items);
+const ALL = 'all';
+const ROOT_BLOG_PAGE = '/blog';
 
-  const filterByCategories = (selectedArticleCategory) => {
-    const updatedArticleCategories = items.map((articleCategory) => {
-      articleCategory.isSelected = false;
-      if (selectedArticleCategory.id === articleCategory.id) {
-        articleCategory.isSelected = !articleCategory.isSelected;
-      }
+export default function CategoriesList({ items, selectedCategory }) {
+  const router = useRouter();
+  const isRootBlogPage = router.pathname === ROOT_BLOG_PAGE;
 
-      return articleCategory;
-    });
 
-    setArticleCategories((state) => {
-      return updatedArticleCategories;
-    });
-
-    // this.props.updateSelectedCategory(selectedArticleCategory.id);
-    // this.props.fetchArticles(selectedArticleCategory.id);
-  };
-
-  if (!articleCategories?.length) {
+  if(!items?.length) {
     return null;
   }
 
+  if(selectedCategory === ALL) {
+    router.replace(ROOT_BLOG_PAGE);
+    return null;
+  }
+
+  items[0].isSelected = isRootBlogPage;
+
   return (
     <ul className={styles.categoryList}>
-      {articleCategories.map((articleCategory) => {
-        const classCalc = !articleCategory.isSelected ? " " : styles.selected;
+      {items.map((articleCategory) => {
+        const isSelected = articleCategory.isSelected || articleCategory.name.toLowerCase() === selectedCategory;
+        const classCalc = isSelected ? styles.selected : " ";
+
+        if(selectedCategory === ALL) {
+          return (
+              <Link href={`/blog`}
+                    key={articleCategory.id}
+              >
+                <li
+                    className={`${styles.categoryListItem} ${classCalc}`}
+                >
+                  {articleCategory.name}
+                </li>
+              </Link>
+          );
+        }
 
         return (
-          <li
-            key={articleCategory.id}
-            className={`${styles.categoryListItem} ${classCalc}`}
-            onClick={(e) => filterByCategories(articleCategory)}
-          >
-            {articleCategory.name}
-          </li>
+            <Link href={`/blog/articles-by-category/${articleCategory.name.toLowerCase()}`}
+                  key={articleCategory.id}
+            >
+              <li
+                className={`${styles.categoryListItem} ${classCalc}`}
+              >
+                {articleCategory.name}
+              </li>
+            </Link>
         );
       })}
     </ul>

@@ -271,6 +271,31 @@ export async function getRelevantArticlesByCategory(categoryId) {
     });
 }
 
+//getRelevantArticlesByCategory
+export async function getArticlesByCategoryNameDB(categoryName) {
+    const getRelevantArticlesByCategoryName = `CALL getRelevantArticlesByCategoryName('${categoryName}')`;
+    const connection = getDBPoolData();
+    return new Promise((resolve, reject) => {
+        connection.query(getRelevantArticlesByCategoryName, (err, rows, fields) => {
+            if (err) {
+                console.log('getRelevantArticlesByCategoryName ERROR', err);
+                reject({relevantArticles: []});
+            }
+
+            try {
+                const data = rows[0].map((item) => ({
+                    ...item,
+                    published: new Date(item.published).toString(),
+                }));
+
+                resolve(data);
+            } catch (e) {
+                reject( []);
+            }
+        });
+    });
+}
+
 //getArticlesByCategoryDB
 export async function getArticlesByCategoryDB(){
     const categories = await getArticlesCategoriesDB();

@@ -17,6 +17,7 @@ export default function SelectedAllCategories({
                                                   top3Article,
                                                   downloads,
                                                   tags,
+                                                  articlesByCategories
                                               }) {
     const firstRowOthersArticles = useMemo(() => {
         return otherLatestArticles.slice(0, 2);
@@ -68,7 +69,7 @@ export default function SelectedAllCategories({
                   spacing={3}
                   alignItems="flex-start"
                   className={styles.upprOthersArticles}>
-                <OthersArticlesByCategory/>
+                <OthersArticlesByCategory articlesByCategories={articlesByCategories}/>
             </Grid>
         </>
     );

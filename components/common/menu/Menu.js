@@ -102,8 +102,6 @@ const Menu = ({location}) => {
 
     useClickOutside(inputRef, onClickOutside, onClickInside);
 
-    console.log(responsiveClass);
-
     if (responsiveClass.isVisible) {
         return (
             <div className={`${styles.menuWrapper}`}

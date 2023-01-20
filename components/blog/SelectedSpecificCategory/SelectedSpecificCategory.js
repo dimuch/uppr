@@ -1,103 +1,52 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import { Grid, Typography } from "@mui/material";
-import {getDate} from '../../../helpers/getDate';
-import Image from 'next/image';
+import React, {useEffect, useMemo, useState} from 'react';
 
-class SelectedSpecificCategory extends Component {
-    constructor(props) {
-        super(props);
-    }
+import {Grid} from '@mui/material';
+import MainArticle from '../MainArticle/MainArticle';
 
-    componentDidMount() {
+import OthersArticles from '../OthersArticles/OthersArticles';
+import OthersArticlesByCategory from '../OthersArticlesByCategory/OthersArticlesByCategory';
 
-    }
+import styles from './styles.module.scss';
+import useMakeRequest from '../../common/hooks/makeRequest';
+import InformationBlock from '../InformationBlock/InformationBlock';
 
-    render() {
-        const {latestArticle, otherLatestArticles} = this?.props;
+// const ARTICLES_BY_CATEGORY_URL = '/api/articles-by-category'
 
-        if (!latestArticle || !otherLatestArticles) {
-            return null;
-        }
+export default function SelectedSpecificCategory({
+                                                     selectedCategory,
+                                                     latestArticle,
+                                                     tags,
+                                                     articlesByCategory,
+                                                 }) {
+    // const {makeRequest, isLoading, error, data} = useMakeRequest();
 
-        const allArticlesBySelectedCategory = [...latestArticle, ...otherLatestArticles];
+    const firstRowOthersArticles = useMemo(() => {
+        return articlesByCategory?.slice(0, 2) || [];
+    }, [articlesByCategory]);
 
-        return (
+    const secondRowOthersArticles = useMemo(() => {
+        return articlesByCategory?.slice(2, 5) || [];
+    }, [articlesByCategory]);
+
+    return (
+        <>
             <Grid container
-                  spacing={5}
+                  spacing={3}
                   alignItems="flex-start"
-                  className="uppr-specific-articles"
-            >
-                {
-                    allArticlesBySelectedCategory.map(article => {
-                        article.published = getDate(new Date(article.published));
-                        return (
-                            <Grid item xs={12} sm={6} md={4}
-                                  key={article.title}
-                                  onClick={(e) => this.updateArticleViews(article)}
-                            >
-                                <Grid container
-                                      alignContent={'center'}
-                                      className="wrapper-article"
-                                      wrap="wrap"
-                                      alignItems="stretch"
-                                >
-                                    <Grid item xs={12} className="image">
-                                        <Grid container alignContent={'center'}>
-                                            <Grid item>
-                                                <Image src={article.image}
-                                                       alt={article.title}
-                                                       width="700"
-                                                       height="400"
-                                                />
-                                            </Grid>
-                                        </Grid>
-                                    </Grid>
-                                    <Grid item xs={12} className="title">
-                                        <Grid container justifyContent={'center'}>
-                                            <Grid item xs={10} sm={10} md={10} justifyContent={'center'}>
-                                                <a href={article.link}>
-                                                    <Typography variant={'h6'} align={'center'}>
-                                                        {article.title}
-                                                    </Typography>
-                                                </a>
-                                            </Grid>
-                                        </Grid>
-                                    </Grid>
-                                    <Grid item xs={12} className="description">
-                                        <Grid container justifyContent={'center'}>
-                                            <Grid item xs={10} sm={10} md={10} justifyContent={'center'}>
-                                                <Typography align={'center'}>
-                                                    {article.description}
-                                                </Typography>
-                                            </Grid>
-                                        </Grid>
-                                    </Grid>
-                                    <Grid item xs={12} className="published">
-                                        <Grid container justifyContent={'center'}>
-                                            <Grid item xs={10} sm={10} md={10} justifyContent={'center'}>
-                                                <Typography variant={'subtitle2'} align={'center'}>
-                                                    {article.published}
-                                                </Typography>
-                                            </Grid>
-                                        </Grid>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        )
-                    })
-                }
+                  className={styles.upprOthersArticles}>
+                <OthersArticles
+                    items={firstRowOthersArticles}
+                />
+                <InformationBlock tags={tags}/>
             </Grid>
-        )
-    }
+            <Grid container
+                  spacing={3}
+                  alignItems="flex-start"
+                  className={styles.upprOthersArticles}>
+                <OthersArticles
+                    items={secondRowOthersArticles}
+                />
+            </Grid>
+        </>
+    );
 }
-
-function mapStateToProps(state) {
-    return {}
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {}
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(SelectedSpecificCategory);
