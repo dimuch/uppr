@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head'
 import Header from '../../../components/common/header/Header';
 import {getArticlesByCategoryNameDB, getArticlesCategoriesDB, getTagsDB} from '../../../services/blogData';
-import styles from './styles.module.scss';
+import styles from '../styles.module.scss';
 import CategoriesList from '../../../components/blog/CategoriesList/CategoriesList';
 import Image from 'next/image';
 import SelectedSpecificCategory from '../../../components/blog/SelectedSpecificCategory/SelectedSpecificCategory';
@@ -32,26 +32,28 @@ export default function ArticlePageWrapper({articlesByCategory, articleCategorie
             </Head>
             <div className={styles.upprBlogPage}>
                 <Header search location={'/blog'}/>
-                <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
-                    <Image src="/assets/images/blog_main.jpeg"
-                           alt="Main blog picture"
-                           width="3000"
-                           height="2002"
-                           layout="responsive"
-                    />
-                </div>
-                <div
-                    className={`uppr-article-categories ${styles.upprArticleCategories}`}
-                >
-                    <CategoriesList items={articleCategories} selectedCategory={selectedCategory}/>
-                </div>
+                <div className={`uppr-page-content ${styles.upprPageContent}`}>
+                    <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
+                        <Image src="/assets/images/blog_main.jpeg"
+                               alt="Main blog picture"
+                               width="3000"
+                               height="2002"
+                               layout="responsive"
+                        />
+                    </div>
+                    <div
+                        className={`uppr-article-categories ${styles.upprArticleCategories}`}
+                    >
+                        <CategoriesList items={articleCategories} selectedCategory={selectedCategory}/>
+                    </div>
 
-                <div className={`uppr-articles-content ${styles.upprArticlesContent}`}>
-                    <SelectedSpecificCategory
-                        articlesByCategory={articlesByCategory}
-                        selectedCategory={selectedCategory}
-                        tags={tags}
-                    />
+                    <div className={`uppr-articles-content ${styles.upprArticlesContent}`}>
+                        <SelectedSpecificCategory
+                            articlesByCategory={articlesByCategory}
+                            selectedCategory={selectedCategory}
+                            tags={tags}
+                        />
+                    </div>
                 </div>
             </div>
         </>
@@ -78,8 +80,8 @@ export async function getServerSideProps(context) {
         return {
             props: {
                 articleCategories,
-                articlesByCategory: []
-            }
+                articlesByCategory: [],
+            },
         };
     }
 }
