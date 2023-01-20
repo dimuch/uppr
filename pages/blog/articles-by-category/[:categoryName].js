@@ -7,17 +7,8 @@ import CategoriesList from '../../../components/blog/CategoriesList/CategoriesLi
 import Image from 'next/image';
 import SelectedSpecificCategory from '../../../components/blog/SelectedSpecificCategory/SelectedSpecificCategory';
 import PageNotFound from '../../404';
-import {useRouter} from 'next/router';
-
-const ALL = 'all';
 
 export default function ArticlePageWrapper({articlesByCategory, articleCategories, selectedCategory, tags}) {
-    const router = useRouter();
-
-    if(selectedCategory === ALL){
-        router.replace("/blog");
-    }
-
     if (!articlesByCategory?.length) {
         return (
             <PageNotFound redirectLink={'/blog'} redirectPage={'Повернутись до блогу'}/>

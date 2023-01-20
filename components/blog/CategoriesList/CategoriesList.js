@@ -11,13 +11,7 @@ export default function CategoriesList({ items, selectedCategory }) {
   const router = useRouter();
   const isRootBlogPage = router.pathname === ROOT_BLOG_PAGE;
 
-
   if(!items?.length) {
-    return null;
-  }
-
-  if(selectedCategory === ALL) {
-    router.replace(ROOT_BLOG_PAGE);
     return null;
   }
 
@@ -29,9 +23,9 @@ export default function CategoriesList({ items, selectedCategory }) {
         const isSelected = articleCategory.isSelected || articleCategory.name.toLowerCase() === selectedCategory;
         const classCalc = isSelected ? styles.selected : " ";
 
-        if(selectedCategory === ALL) {
+        if(articleCategory.name.toLowerCase() === ALL) {
           return (
-              <a href={`/blog`}
+              <Link href={`/blog`}
                     key={articleCategory.id}
               >
                 <li
@@ -39,12 +33,12 @@ export default function CategoriesList({ items, selectedCategory }) {
                 >
                   {articleCategory.name}
                 </li>
-              </a>
+              </Link>
           );
         }
 
         return (
-            <a href={`/blog/articles-by-category/${articleCategory.name.toLowerCase()}`}
+            <Link href={`/blog/articles-by-category/${articleCategory.name.toLowerCase()}`}
                   key={articleCategory.id}
             >
               <li
@@ -52,7 +46,7 @@ export default function CategoriesList({ items, selectedCategory }) {
               >
                 {articleCategory.name}
               </li>
-            </a>
+            </Link>
         );
       })}
     </ul>
