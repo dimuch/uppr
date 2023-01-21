@@ -21,11 +21,13 @@ export default function Blog({
                                  top3Article,
                                  downloads,
                                  tags,
-                                 articlesByCategories
+                                 articlesByCategories,
                              }) {
     return (
         <>
             <Head>
+                <html lang={"uk"} />
+                <title>UPPR | Блог</title>
                 <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8"/>
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
                 <meta name="viewport" content="width=device-width,initial-scale=1"/>

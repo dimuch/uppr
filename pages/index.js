@@ -62,6 +62,7 @@ const Index = () => {
   return (
       <>
         <Head>
+          <html lang={"uk"} />
           <title>UPPR Головна</title>
           <meta name="description"
                 content="Ресурс про англійську мову та як писати email"/>
