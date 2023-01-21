@@ -1,30 +1,63 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import {ArrowCircleRightOutlined, ArrowCircleLeftOutlined} from '@mui/icons-material';
 import Image from 'next/image';
 
-import styles from './styles.module.scss';
 import Link from 'next/link';
+import styles from './styles.module.scss';
 
-export default function Slider({data, slideWidth: slideImageWidth = '45%', location='footer'}) {
+function Slide({slideData, slideNode, slideImageWidth, location}) {
+    return (
+        <Link href={slideData.link}>
+            <div className={styles.slide} key={slideData.link}
+                 ref={slideNode} style={{minWidth: slideImageWidth}}
+            >
+                <Image src={slideData.image}
+                       width={700}
+                       height={400}
+                       alt={slideData.title}
+                />
+                <div className={`${styles.slideTitle} ${styles[location]}`}>
+                    <Link href={slideData.link}>
+                        {slideData.title}
+                    </Link>
+                </div>
+            </div>
+        </Link>
+    )
+}
+
+export default function Slider({data, slideWidth: slideImageWidth = '45%', location = 'footer'}) {
     const wrapperNode = useRef();
     const slideNode = useRef();
 
     const [slider, setSlider] = useState({
         startOffset: 0,
+        slides: data || [],
     });
 
-    const firstSlide = data[0];
-    const othersSlides = data.slice(1);
-
     const makeSlide = (step) => {
-        const updatedStartOffset = (slider.startOffset + step * slider.slideWidth) % (slider.allSliderWidth - 2 * slider.slideWidth);
-        const isLeftEnd = Math.abs((slider.startOffset + step * slider.slideWidth));
-        const isRightEnd = (slider.startOffset + 2 * slider.slideWidth);
+        // const updatedStartOffset = (slider.startOffset + step * slider.slideWidth) % (slider.allSliderWidth - 2 * slider.slideWidth);
+        // const isLeftEnd = Math.abs((slider.startOffset + step * slider.slideWidth));
+        // const isRightEnd = (slider.startOffset + 2 * slider.slideWidth);
 
-        setSlider((state) => ({
-            ...state,
-            startOffset: isLeftEnd > 1.25 * slider.allSliderWidth || isRightEnd > 1.25 * state.slideWidth ? -.75 * state.slideWidth : updatedStartOffset,
-        }))
+        setSlider((state) => {
+            let updatedSlides = [...state.slides];
+
+            if (step < 0) {
+                const first = updatedSlides.shift();
+                updatedSlides = [].concat(updatedSlides, first);
+            } else {
+                const last = updatedSlides.pop();
+                updatedSlides = [].concat(last, updatedSlides);
+            }
+
+            return {
+                ...state,
+                stepper: state.stepper + step,
+                slides: updatedSlides,
+                startOffset: 0, //updatedStartOffset, //isLeftEnd > slider.allSliderWidth || isRightEnd > state.slideWidth ? -state.slideWidth : updatedStartOffset,
+            }
+        })
     }
 
     useEffect(() => {
@@ -34,10 +67,16 @@ export default function Slider({data, slideWidth: slideImageWidth = '45%', locat
             return {
                 slideWidth: slideWidth,
                 allSliderWidth: slideWidth * data.length,
-                startOffset: (-0.75) * slideWidth,
+                startOffset: 0,
+                stepper: 0,
+                slides: data || [],
             }
         })
     }, [data.length]);
+
+    if(!slider?.slides?.length) {
+        return null;
+    }
 
     return (
         <div className={styles.slider}>
@@ -50,39 +89,12 @@ export default function Slider({data, slideWidth: slideImageWidth = '45%', locat
                 <div className={styles.slides}
                      style={{left: slider.startOffset}}
                 >
-                    <Link href={firstSlide.link}>
-                        <div className={styles.slide} key={firstSlide.link}
-                             ref={slideNode} style={{minWidth: slideImageWidth}}
-                        >
-                            <Image src={firstSlide.image}
-                                   width={700}
-                                   height={400}
-                                   alt={firstSlide.title}
-                            />
-                            <div className={`${styles.slideTitle} ${styles[location]}`}>
-                                <Link href={firstSlide.link}>
-                                    {firstSlide.title}
-                                </Link>
-                            </div>
-                        </div>
-                    </Link>
                     {
-                        othersSlides.map(item => {
+                        slider?.slides.map((item, index) => {
                             return (
-                                <Link href={item.link} key={item.link} >
-                                    <div className={styles.slide} style={{minWidth: slideImageWidth}}>
-                                        <Image src={item.image}
-                                               width={700}
-                                               height={400}
-                                               alt={item.title}
-                                        />
-                                        <div className={`${styles.slideTitle} ${styles[location]}`}>
-                                            <Link href={item.link}>
-                                                {item.title}
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </Link>
+                                <Slide key={item.link} slideData={item} slideNode={slideNode}
+                                       slideImageWidth={slideImageWidth}
+                                       location={location}/>
                             )
                         })
                     }

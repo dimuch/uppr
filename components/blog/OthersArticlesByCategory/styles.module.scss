@@ -113,6 +113,10 @@
   overflow-y: hidden;
 }
 
+.sliderWrapper{
+
+}
+
 
 @media (max-width: 650px) {
   .wrapper{
@@ -130,5 +134,9 @@
 
   .item0, .item1, .item2, .item3, .item4 {
     max-height: initial;
+  }
+
+  .sliderWrapper{
+    width: 100% !important;
   }
 }

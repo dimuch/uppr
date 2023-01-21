@@ -3,18 +3,9 @@ import {Grid} from '@mui/material';
 import AsSlider from './partials/AsSlider';
 import AsBlock from './partials/AsBlock';
 
+import styles from './styles.module.scss'
+
 export default function OthersArticlesByCategory({articlesByCategories}) {
-    // const [items, setItems] = useState([]);
-    //
-    // useEffect(() => {
-    //     fetch('/api/articles-by-category')
-    //         .then(async (data) => {
-    //             const articlesByCategory = await data.json();
-    //             setItems(articlesByCategory);
-    //         })
-    //
-    // }, []);
-    //
     if (!articlesByCategories.length) {
         return null;
     }
@@ -24,7 +15,7 @@ export default function OthersArticlesByCategory({articlesByCategories}) {
             const isSlider = (index+1) % 2 !== 0;
 
             return (
-                <Grid item key={item.name} sm={12}>
+                <Grid item key={item.name} sm={12} className={styles.sliderWrapper}>
                     {
                         isSlider ? (<AsSlider data={item}/>) : (<AsBlock data={item}/>)
                     }

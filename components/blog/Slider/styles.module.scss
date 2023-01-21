@@ -62,3 +62,10 @@
     color: $blog-four-sticky;
   }
 }
+
+@media (max-width: 650px) {
+  .slide {
+    min-width: 100% !important;
+    padding-right: 0;
+  }
+}
