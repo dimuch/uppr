@@ -11,20 +11,19 @@ import styles from '../styles.module.scss';
 export default function ArticleCard({item, isDescription=true}) {
     return (
         <a href={item.link}>
-            <Grid container className={styles.wrapper}>
-                <Grid item xs={12} style={{display: 'block'}}>
+            <Grid container={true} className={styles.wrapper}>
+                <Grid item xs={12}>
                     <Image
                         className={styles.image}
                         src={item.image}
                         alt={item.title}
                         width="700"
                         height="400"
-                        layout="responsive"
                     />
                 </Grid>
                 <Grid item md={12}>
                     <Grid
-                        container textAlign={'center'} alignItems={'center'}
+                        container={true} textAlign={'center'} alignItems={'center'}
                         className={styles.upprArticleDetails}
                     >
                         <Grid item className={styles.category}

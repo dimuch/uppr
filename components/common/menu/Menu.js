@@ -14,14 +14,10 @@ const MenuItems = ({location, isOpen}) => {
         <div className={`main-menu main-menu-desktop`}>
             <ul className={`uppr-main-menu ${styles.upprMainMenu} ${isOpen ? styles.upprMobileMainMenu : ''}`}>
                 <li>
-                    <Link href="/">
-                        <a className={location === '/' ? styles.active : ''}>Домашня</a>
-                    </Link>
+                    <Link href="/" className={location === '/' ? styles.active : ''}>Домашня</Link>
                 </li>
                 <li>
-                    <Link href="/blog">
-                        <a className={location === '/blog' ? styles.active : ''}>Блог</a>
-                    </Link>
+                    <Link href="/blog" className={location === '/blog' ? styles.active : ''}>Блог</Link>
                 </li>
                 {/*<li>*/}
                 {/*  <Link href="/e-book">*/}
@@ -38,21 +34,15 @@ const MenuItems = ({location, isOpen}) => {
                 {/*  </Link>*/}
                 {/*</li>*/}
                 <li>
-                    <Link href="https://englishplus.com.ua">
-                        <a target="_blank">Тренінг</a>
-                    </Link>
+                    <Link href="https://englishplus.com.ua" target="_blank">Тренінг</Link>
                 </li>
                 <li>
-                    <Link href="https://www.udemy.com/course/deschool-your-emails/">
-                        <a target="_blank">Онлайн курс</a>
-                    </Link>
+                        <Link href="https://www.udemy.com/course/deschool-your-emails/" target="_blank">Онлайн курс</Link>
                 </li>
                 <li>
-                    <Link href="/contact-us">
-                        <a className={location === '/contact-us' ? styles.active : ''}>
+                        <Link href="/contact-us" className={location === '/contact-us' ? styles.active : ''}>
                             Контакти
-                        </a>
-                    </Link>
+                        </Link>
                 </li>
             </ul>
         </div>

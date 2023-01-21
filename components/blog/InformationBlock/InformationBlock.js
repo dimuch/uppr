@@ -11,7 +11,7 @@ export default function InformationBlock({tags}) {
             item
             md={4}
         >
-            <Grid container alignItems="center"
+            <Grid container={true} alignItems="center"
                   className={styles.upprSectionTitle}
             >
                 <Grid item md={1} xs={2}>
@@ -22,7 +22,7 @@ export default function InformationBlock({tags}) {
                 </Grid>
             </Grid>
             <Grid
-                container
+                container={true}
                 justifyContent={'flex-start'}
                 alignItems={'center'}
                 className={'uppr-section-content ' + styles.upprSectionContent}

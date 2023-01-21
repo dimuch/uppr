@@ -21,7 +21,7 @@ export default function SelectedSpecificCategory({
 
     return (
         <>
-            <Grid container
+            <Grid container={true}
                   spacing={3}
                   alignItems="flex-start"
                   className={styles.upprOthersArticles}>
@@ -30,7 +30,7 @@ export default function SelectedSpecificCategory({
                 />
                 <InformationBlock tags={tags}/>
             </Grid>
-            <Grid container
+            <Grid container={true}
                   spacing={3}
                   alignItems="flex-start"
                   className={styles.upprOthersArticles}>

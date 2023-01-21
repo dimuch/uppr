@@ -92,7 +92,7 @@ const Search = ({}) => {
                     {
                         searchResult.map(article => {
                             return (
-                                <Grid container className={styles.searchResultItem} key={article.title}
+                                <Grid container={true} className={styles.searchResultItem} key={article.title}
                                       alignItems={'center'}
                                 >
                                     <Grid item md={4}>
@@ -102,7 +102,6 @@ const Search = ({}) => {
                                             alt={article.title}
                                             width="70"
                                             height="40"
-                                            layout="responsive"
                                         />
                                     </Grid>
                                     <Grid item md={8}>

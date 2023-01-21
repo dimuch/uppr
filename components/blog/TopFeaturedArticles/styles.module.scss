@@ -31,9 +31,13 @@
 }
 
 .articleImage{
-  min-width: 142px !important;
-  width: 100%;
-  max-width: 142px !important;
+  position: relative !important;
+  img{
+    padding-right: 1rem;
+    min-width: 142px !important;
+    max-width: 142px !important;
+    height: auto;
+  }
 }
 
 .articleTitle{

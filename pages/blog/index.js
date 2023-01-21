@@ -44,7 +44,6 @@ export default function Blog({
                                alt="Main blog picture"
                                width="3000"
                                height="2002"
-                               layout="responsive"
                         />
                     </div>
 

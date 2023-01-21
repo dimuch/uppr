@@ -9,21 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
-    "@mui/icons-material": "^5.8.0",
-    "@mui/material": "^5.8.1",
-    "clsx": "^1.1.1",
-    "eslint": "^8.16.0",
-    "eslint-config-next": "^12.1.6",
-    "mysql2": "^2.3.3",
-    "next": "^12.1.6",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.5",
+    "clsx": "^1.2.1",
+    "eslint": "^8.32.0",
+    "eslint-config-next": "^13.1.4",
+    "mysql2": "^3.0.1",
+    "next": "^13.1.4",
     "node-loader": "^2.0.0",
-    "npm": "^8.11.0",
+    "npm": "^9.3.1",
     "prop-types": "^15.8.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "sass": "^1.52.1",
-    "ssh2": "^1.10.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.57.1",
+    "ssh2": "^1.11.0"
   }
 }

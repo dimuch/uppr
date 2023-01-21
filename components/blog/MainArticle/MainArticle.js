@@ -24,7 +24,7 @@ export default function MainArticle({ items }) {
 
   return (
     <div
-      container
+      container={true}
       className={"wrapper " + styles.wrapper}
       onClick={(e) => updateArticleViews(mainArticleData)}
     >
@@ -35,11 +35,10 @@ export default function MainArticle({ items }) {
           width="700"
           height="400"
           alt={mainArticleData.title}
-          layout="responsive"
         />
       </Grid>
       <Grid
-        container
+        container={true}
         className={"uppr-article-details " + styles.upprArticleDetails}
       >
         <Grid item md={12} className="title">
@@ -51,9 +50,9 @@ export default function MainArticle({ items }) {
           <Typography>{mainArticleData.description}</Typography>
         </Grid>
         <Grid item md={12} className={"summary " + styles.summary}>
-          <Grid container justifyContent={'space-around'}>
+          <Grid container={true} justifyContent={'space-around'}>
             <Grid item md={10} className="left-part">
-              <Grid container>
+              <Grid container={true}>
                 <Typography
                   variant={"subtitle2"}
                   className={"summary-item " + styles.summaryItem}

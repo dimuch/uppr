@@ -8,7 +8,7 @@ const FooterBullShit = () => {
     <div className={styles.upprFooterBullShit}>
         <p>
             ЯК НЕ ПИСАТИ “БУЛШИТ” В ІМЕЙЛАХ&nbsp;
-            <Link
+            <Link legacyBehavior
               href="https://www.udemy.com/deschool-your-emails/?couponCode=UPPR_SITE"
               target="_blank"
             >

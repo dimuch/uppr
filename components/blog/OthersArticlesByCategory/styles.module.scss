@@ -4,6 +4,7 @@
   position: relative;
   box-shadow: 0 1px 3px 0 rgba(89, 98, 115, 0.12);
   transition: all ease-out .3s;
+
   &:hover {
     cursor: pointer !important;
     transform: scale(1.05) !important;
@@ -11,7 +12,8 @@
 }
 
 .image {
-    width: 100%;
+  width: 100%;
+  height: auto;
 }
 
 .upprArticleDetails {
@@ -113,21 +115,21 @@
   overflow-y: hidden;
 }
 
-.sliderWrapper{
+.sliderWrapper {
 
 }
 
 
 @media (max-width: 650px) {
-  .wrapper{
+  .wrapper {
     margin: 2rem 0;
   }
 
-  .title{
+  .title {
     width: 100%;
   }
 
-  .container{
+  .container {
     display: flex;
     flex-wrap: wrap;
   }
@@ -136,7 +138,7 @@
     max-height: initial;
   }
 
-  .sliderWrapper{
+  .sliderWrapper {
     width: 100% !important;
   }
 }

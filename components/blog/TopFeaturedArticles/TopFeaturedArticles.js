@@ -12,13 +12,13 @@ export default function TopFeaturedArticles({ items }) {
   const updateArticleViews = (article) => {};
 
   return (
-    <Grid container className={"wrapper " + styles.wrapper}>
+    <Grid container={true} className={"wrapper " + styles.wrapper}>
       <Grid
         item
         md={12}
         className={"uppr-section-title " + styles.upprSectionTitle}
       >
-        <Grid container alignItems="center">
+        <Grid container={true} alignItems="center">
           <Grid item md={1} xs={2}>
             <TopFeaturedArticlesIcon />
           </Grid>
@@ -32,7 +32,7 @@ export default function TopFeaturedArticles({ items }) {
         md={12}
         className={"uppr-section-content " + styles.upprSectionContent}
       >
-        <Grid container spacing={3}>
+        <Grid container={true} spacing={3}>
           {items.map((article) => {
             return (
               <Grid
@@ -41,7 +41,7 @@ export default function TopFeaturedArticles({ items }) {
                 onClick={(e) => updateArticleViews(article)}
               >
                 <Grid
-                  container
+                  container={true}
                   spacing={1}
                   className={styles.articleContainer}
                   alignContent={"center"}
@@ -52,7 +52,7 @@ export default function TopFeaturedArticles({ items }) {
                           width="700"
                           height="400"
                           alt={article.title}
-                          layout="responsive"
+                          // fill={true}
                         />
                   </Grid>
                   <Grid item xs={12} sm={7} className={styles.articleTitle}>
