@@ -26,7 +26,8 @@ export default function Blog({
     return (
         <>
             <Head>
-                <title>UPPR | Блог</title>
+                <html lang="uk" />
+                <title>{"UPPR | Блог"}</title>
                 <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8"/>
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
                 <meta name="viewport" content="width=device-width,initial-scale=1"/>

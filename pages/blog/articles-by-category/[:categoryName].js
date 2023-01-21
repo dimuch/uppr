@@ -18,6 +18,7 @@ export default function ArticlePageWrapper({articlesByCategory, articleCategorie
     return (
         <>
             <Head>
+                <html lang="uk" />
                 <title>Категорія {selectedCategory}</title>
                 <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8"/>
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
