@@ -72,7 +72,7 @@ export default function Slider({data, slideWidth: slideImageWidth = '45%', locat
                 slides: data || [],
             }
         })
-    }, [data.length]);
+    }, [data]);
 
     if(!slider?.slides?.length) {
         return null;

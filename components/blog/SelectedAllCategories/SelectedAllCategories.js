@@ -21,11 +21,11 @@ export default function SelectedAllCategories({
                                               }) {
     const firstRowOthersArticles = useMemo(() => {
         return otherLatestArticles.slice(0, 2);
-    }, []);
+    }, [otherLatestArticles]);
 
     const secondRowOthersArticles = useMemo(() => {
         return otherLatestArticles.slice(2, 5);
-    }, [])
+    }, [otherLatestArticles])
 
 
     if (!latestArticle) {

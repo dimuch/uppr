@@ -16,7 +16,6 @@ export default function ArticlePageWrapper({articleData}) {
     return (
         <>
             <Head>
-                <html lang={"uk"} />
                 <title>{articleData.title} | UPPR Блог</title>
                 <meta name="description" content={articleData.description}/>
                 <meta name="keywords" content="education on-line, english, business, writing, skills, emails"/>
