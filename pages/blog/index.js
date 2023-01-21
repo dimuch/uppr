@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Image from 'next/image';
+import Head from 'next/head';
 
 import Header from '../../components/common/header/Header';
 
@@ -12,7 +13,6 @@ import {
 } from '../../services/blogData';
 
 import styles from './styles.module.scss';
-import Head from 'next/head';
 
 export default function Blog({
                                  articleCategories,
