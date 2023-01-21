@@ -3,6 +3,11 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {},
+  images: {
+    domains: [
+      "uppr.com.ua",
+    ],
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config = {
