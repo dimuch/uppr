@@ -17,12 +17,6 @@ export default function MainArticle({ items }) {
     mainArticleData.views += 1;
   };
 
-  const [width, setWidth] = useState(3000);
-
-  useEffect(() => {
-    setWidth(window?.innerWidth)
-  }, [items]);
-
   if (!mainArticleData) {
     return null;
   }
@@ -37,10 +31,9 @@ export default function MainArticle({ items }) {
         <Image
           className={styles.image}
           src={mainArticleData.image}
-          width={width}
+          width="700"
           height="400"
           alt={mainArticleData.title}
-          loader={myLoader}
         />
       </Grid>
       <Grid
