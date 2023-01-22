@@ -47,7 +47,7 @@ export default function Blog({
                     <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
                         <Image src="/assets/images/blog_main.jpeg"
                                alt="Main blog picture"
-                               width={window?.innerWidth || '3000'}
+                               width={'3000'}
                                height="2002"
                                loader={myLoader}
                         />
