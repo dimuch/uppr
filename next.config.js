@@ -3,6 +3,9 @@
 const nextConfig = {
     reactStrictMode: true,
     experimental: {},
+    images: {
+        unoptimized: true,
+    },
     webpack: (config, {isServer}) => {
         if (!isServer) {
             config = {
