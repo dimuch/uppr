@@ -15,13 +15,13 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'uppr.com.ua',
                 port: '',
-                pathname: '/public/**'
+                pathname: '/'
             },
             {
                 protocol: 'http',
                 hostname: '127.0.0.1',
                 port: '3000',
-                pathname: '/public/**'
+                pathname: '/'
             }
         ]
     },
