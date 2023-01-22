@@ -48,7 +48,19 @@ const nextConfig = {
         // set the Content-Security-Policy header
         contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
         // limit of 50 objects
-        // remotePatterns: [],
+        remotePatterns: [
+            {
+                protocol: "http",
+                hostname: "127.0.0.1",
+                port: '3000',
+                pathname: '/public/**',
+            },{
+                protocol: "https",
+                hostname: "uppr.com.ua",
+                port: '',
+                pathname: '/public/**',
+            },
+        ],
         // when true, every image will be unoptimized
         unoptimized: false
     },
