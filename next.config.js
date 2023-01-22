@@ -15,8 +15,14 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'uppr.com.ua',
                 port: '',
-                pathname: '/public/**',
+                pathname: '/public/**'
             },
+            {
+                protocol: 'http',
+                hostname: '127.0.0.1',
+                port: '3000',
+                pathname: '/public/**'
+            }
         ]
     },
     webpack: (config, {isServer}) => {
