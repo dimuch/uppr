@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 
@@ -27,7 +27,12 @@ export default function Blog({
                                  tags,
                                  articlesByCategories,
                              }) {
+    const [width, setWidth] = useState(3000);
 
+    useEffect(() => {
+        console.log(window?.innerWidth);
+        setWidth(window?.innerWidth)
+    }, [tags]);
     return (
         <>
             <Head>
@@ -47,7 +52,7 @@ export default function Blog({
                     <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
                         <Image src="/assets/images/blog_main.jpeg"
                                alt="Main blog picture"
-                               width={'3000'}
+                               width={width}
                                height="2002"
                                loader={myLoader}
                         />
