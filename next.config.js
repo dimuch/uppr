@@ -9,7 +9,7 @@ const nextConfig = {
         // limit of 25 imageSizes values
         imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
         // limit of 50 domains values
-        domains: ['localhost:3000', 'uppr.com.ua'],
+        domains: ['127.0.0.1:3000', 'uppr.com.ua'],
         remotePatterns: [
             {
                 protocol: 'https',

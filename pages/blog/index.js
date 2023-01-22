@@ -15,7 +15,7 @@ import {
 import styles from './styles.module.scss';
 
 const myLoader = ({ src, width, quality }) => {
-    return `${src}`
+    return `${src}?w=${width}&q=${quality || 75}`
 }
 
 export default function Blog({
