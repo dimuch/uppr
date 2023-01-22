@@ -14,10 +14,6 @@ import {
 
 import styles from './styles.module.scss';
 
-const myLoader = ({ src, width, quality }) => {
-    return `${src}?w=${width}&q=${quality || 75}`
-}
-
 export default function Blog({
                                  articleCategories,
                                  latestArticle,
@@ -27,11 +23,6 @@ export default function Blog({
                                  tags,
                                  articlesByCategories,
                              }) {
-    const [width, setWidth] = useState(3000);
-
-    useEffect(() => {
-        setWidth(window?.innerWidth)
-    }, [tags]);
     return (
         <>
             <Head>
@@ -51,9 +42,8 @@ export default function Blog({
                     <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
                         <Image src="/assets/images/blog_main.jpeg"
                                alt="Main blog picture"
-                               width={width}
+                               width="3000"
                                height="2002"
-                               loader={myLoader}
                         />
                     </div>
 
