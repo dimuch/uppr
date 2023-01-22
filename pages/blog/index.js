@@ -14,6 +14,10 @@ import {
 
 import styles from './styles.module.scss';
 
+const myLoader = ({ src, width, quality }) => {
+    return `${src}`
+}
+
 export default function Blog({
                                  articleCategories,
                                  latestArticle,
@@ -23,6 +27,7 @@ export default function Blog({
                                  tags,
                                  articlesByCategories,
                              }) {
+
     return (
         <>
             <Head>
@@ -44,6 +49,7 @@ export default function Blog({
                                alt="Main blog picture"
                                width="3000"
                                height="2002"
+                               loader={myLoader}
                         />
                     </div>
 
