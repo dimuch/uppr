@@ -24,21 +24,6 @@ const nextConfig = {
         dangerouslyAllowSVG: false,
         // set the Content-Security-Policy header
         contentSecurityPolicy: 'default-src \'self\'; script-src \'none\'; sandbox;',
-        // limit of 50 objects
-        remotePatterns: [
-            {
-                protocol: 'http',
-                hostname: 'localhost',
-                port: '3000',
-                pathname: '/public/**',
-            },
-            {
-                protocol: 'https',
-                hostname: 'uppr.com.ua',
-                port: '',
-                pathname: '/public/**',
-            },
-        ],
         // when true, every image will be unoptimized
         unoptimized: false,
     },
