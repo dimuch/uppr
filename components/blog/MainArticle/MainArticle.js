@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from 'react';
 
 import { Grid, Typography } from "@mui/material";
 import { getDate } from "../../../helpers/getDate";
 
 import styles from "./styles.module.scss";
 import Image from 'next/image';
+import {myLoader} from '../../common/loader/loader';
 
 export default function MainArticle({ items }) {
   const [mainArticleData, setMainArticleData] = useState({
@@ -14,9 +15,13 @@ export default function MainArticle({ items }) {
 
   const updateArticleViews = (mainArticleData) => {
     mainArticleData.views += 1;
-
-    // this.props.updateArticleViews(mainArticleData);
   };
+
+  const [width, setWidth] = useState(3000);
+
+  useEffect(() => {
+    setWidth(window?.innerWidth)
+  }, [items]);
 
   if (!mainArticleData) {
     return null;
@@ -32,9 +37,10 @@ export default function MainArticle({ items }) {
         <Image
           className={styles.image}
           src={mainArticleData.image}
-          width="700"
+          width={width}
           height="400"
           alt={mainArticleData.title}
+          loader={myLoader}
         />
       </Grid>
       <Grid

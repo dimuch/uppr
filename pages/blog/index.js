@@ -30,7 +30,6 @@ export default function Blog({
     const [width, setWidth] = useState(3000);
 
     useEffect(() => {
-        console.log(window?.innerWidth);
         setWidth(window?.innerWidth)
     }, [tags]);
     return (
