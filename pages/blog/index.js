@@ -14,6 +14,7 @@ import {
 
 import styles from './styles.module.scss';
 
+const domainName = 'https://uppr.com.ua';
 export default function Blog({
                                  articleCategories,
                                  latestArticle,
@@ -47,7 +48,7 @@ export default function Blog({
                 <Header search location={'/blog'}/>
                 <div className={`uppr-page-content ${styles.upprPageContent}`}>
                     <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
-                        <Image src="/assets/images/blog_main.jpeg"
+                        <Image src={domainName + '/assets/images/blog_main.jpeg'}
                                alt="Main blog picture"
                                width="3000"
                                height="2002"
@@ -68,6 +69,7 @@ export default function Blog({
                             downloads={downloads}
                             tags={tags}
                             articlesByCategories={articlesByCategories}
+                            domainName={domainName}
                         />
                     </div>
 

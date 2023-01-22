@@ -17,7 +17,8 @@ export default function SelectedAllCategories({
                                                   top3Article,
                                                   downloads,
                                                   tags,
-                                                  articlesByCategories
+                                                  articlesByCategories,
+                                                  domainName
                                               }) {
     const firstRowOthersArticles = useMemo(() => {
         return otherLatestArticles.slice(0, 2);
@@ -44,7 +45,7 @@ export default function SelectedAllCategories({
                     <MainArticle items={latestArticle}/>
                 </div>
                 <div item md={4} className={styles.upprSideBlock}>
-                    <TopFeaturedArticles items={top3Article}/>
+                    <TopFeaturedArticles items={top3Article} domainName={domainName}/>
                     <Downloads items={downloads}/>
                 </div>
             </div>
@@ -53,7 +54,7 @@ export default function SelectedAllCategories({
                   alignItems="flex-start"
                   className={styles.upprOthersArticles}>
                 <OthersArticles
-                    items={firstRowOthersArticles}
+                    items={firstRowOthersArticles} domainName={domainName}
                 />
                 <InformationBlock tags={tags}/>
             </Grid>
@@ -62,14 +63,14 @@ export default function SelectedAllCategories({
                   alignItems="flex-start"
                   className={styles.upprOthersArticles}>
                 <OthersArticles
-                    items={secondRowOthersArticles}
+                    items={secondRowOthersArticles} domainName={domainName}
                 />
             </Grid>
             <Grid container={true}
                   spacing={3}
                   alignItems="flex-start"
                   className={styles.upprOthersArticles}>
-                <OthersArticlesByCategory articlesByCategories={articlesByCategories}/>
+                <OthersArticlesByCategory articlesByCategories={articlesByCategories} domainName={domainName}/>
             </Grid>
         </>
     );

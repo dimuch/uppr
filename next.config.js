@@ -3,6 +3,27 @@
 const nextConfig = {
     reactStrictMode: true,
     experimental: {},
+    webpack: (config, {isServer}) => {
+        if (!isServer) {
+            config = {
+                ...config,
+                resolve: {
+                    ...config.resolve,
+                    fallback: {
+                        ...(config?.resolve?.fallback || {}),
+                        tls: false,
+                        net: false,
+                        cardinal: false,
+                        fs: false,
+                        dns: false,
+                        child_process: false,
+                        crypto: false,
+                    },
+                },
+            };
+        }
+        return config;
+    },
     images: {
         // limit of 25 deviceSizes values
         deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -30,28 +51,6 @@ const nextConfig = {
         // remotePatterns: [],
         // when true, every image will be unoptimized
         unoptimized: false
-    },
-    webpack: (config, {isServer}) => {
-        if (!isServer) {
-            config = {
-                ...config,
-                resolve: {
-                    ...config.resolve,
-                    fallback: {
-                        ...(config?.resolve?.fallback || {}),
-                        tls: false,
-                        net: false,
-                        cardinal: false,
-                        fs: false,
-                        dns: false,
-                        child_process: false,
-                        crypto: false,
-                    },
-                },
-            };
-        }
-
-        return config;
     },
 };
 

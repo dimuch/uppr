@@ -8,13 +8,13 @@ import {linesLimiterConfig} from '../../../../helpers/linesLimiterConfig';
 
 import styles from '../styles.module.scss';
 
-export default function ArticleCard({item, isDescription=true}) {
+export default function ArticleCard({item, isDescription=true, domainName}) {
     return (
         <a href={item.link}>
             <Grid container={true} className={styles.wrapper}>
                 <Grid item xs={12}>
                     <Image
-                        className={styles.image}
+                        className={domainName + styles.image}
                         src={item.image}
                         alt={item.title}
                         width="700"

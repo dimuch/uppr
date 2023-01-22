@@ -7,7 +7,7 @@ import { TopFeaturedArticlesIcon } from "../../common/icons/index";
 import styles from "./styles.module.scss";
 import Image from 'next/image';
 
-export default function TopFeaturedArticles({ items }) {
+export default function TopFeaturedArticles({ items, domainName }) {
   const updateArticleViews = (article) => {};
 
   return (
@@ -47,11 +47,10 @@ export default function TopFeaturedArticles({ items }) {
                 >
                   <Grid item xs={12} sm={5} className={styles.articleImage}>
                         <Image
-                          src={article.image}
+                          src={domainName + article.image}
                           width="700"
                           height="400"
                           alt={article.title}
-                          // fill={true}
                         />
                   </Grid>
                   <Grid item xs={12} sm={7} className={styles.articleTitle}>
