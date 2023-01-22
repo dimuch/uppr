@@ -14,7 +14,7 @@ import {
 
 import styles from './styles.module.scss';
 
-const domainName = ' http://localhost:3000';
+const domainName = ' https://uppr.com.ua';
 export default function Blog({
                                  articleCategories,
                                  latestArticle,
