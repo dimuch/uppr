@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 
+import {useHasMounted} from '../../components/common/hooks/hasMounted';
 import Header from '../../components/common/header/Header';
-
 import CategoriesList from '../../components/blog/CategoriesList/CategoriesList';
 import SelectedAllCategories from '../../components/blog/SelectedAllCategories/SelectedAllCategories';
 import {
@@ -23,6 +23,13 @@ export default function Blog({
                                  tags,
                                  articlesByCategories,
                              }) {
+
+    const hasMounted = useHasMounted();
+
+    if (!hasMounted) {
+        return null;
+    }
+
     return (
         <>
             <Head>
@@ -79,8 +86,8 @@ export async function getServerSideProps(context) {
 
     return {
         props: {
-            articleCategories: articleCategories || [],
             ...articles,
+            articleCategories,
             downloads,
             tags,
             articlesByCategories,

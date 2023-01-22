@@ -1,14 +1,23 @@
 import React from 'react';
 import Head from 'next/head'
-import Header from '../../../components/common/header/Header';
-import {getArticlesByCategoryNameDB, getArticlesCategoriesDB, getTagsDB} from '../../../services/blogData';
-import styles from '../styles.module.scss';
-import CategoriesList from '../../../components/blog/CategoriesList/CategoriesList';
 import Image from 'next/image';
+
+import Header from '../../../components/common/header/Header';
+import {useHasMounted} from '../../../components/common/hooks/hasMounted';
+
+import {getArticlesByCategoryNameDB, getArticlesCategoriesDB, getTagsDB} from '../../../services/blogData';
+import CategoriesList from '../../../components/blog/CategoriesList/CategoriesList';
 import SelectedSpecificCategory from '../../../components/blog/SelectedSpecificCategory/SelectedSpecificCategory';
 import PageNotFound from '../../404';
 
+import styles from '../styles.module.scss';
+
 export default function ArticlePageWrapper({articlesByCategory, articleCategories, selectedCategory, tags}) {
+    const hasMounted = useHasMounted();
+
+    if (!hasMounted) {
+        return null;
+    }
     if (!articlesByCategory?.length) {
         return (
             <PageNotFound redirectLink={'/blog'} redirectPage={'Повернутись до блогу'}/>

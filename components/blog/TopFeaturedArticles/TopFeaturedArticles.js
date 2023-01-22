@@ -6,7 +6,6 @@ import { TopFeaturedArticlesIcon } from "../../common/icons/index";
 
 import styles from "./styles.module.scss";
 import Image from 'next/image';
-import {linesLimiterConfig} from '../../../helpers/linesLimiterConfig';
 
 export default function TopFeaturedArticles({ items }) {
   const updateArticleViews = (article) => {};
