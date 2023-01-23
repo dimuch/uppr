@@ -14,7 +14,7 @@ import {
 
 import styles from './styles.module.scss';
 
-const domainName = 'http://127.0.0.1:3000';
+const domainName = '';
 export default function Blog({
                                  articleCategories,
                                  latestArticle,

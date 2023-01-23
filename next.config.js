@@ -30,13 +30,13 @@ const nextConfig = {
         // limit of 25 imageSizes values
         imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
         // limit of 50 domains values
-        domains: ['127.0.0.1', 'localhost', 'uppr.com.ua'],
+        // domains: ['127.0.0.1', 'localhost', 'uppr.com.ua'],
         // path prefix for Image Optimization API, useful with `loader`
         path: '/_next/image',
         // loader can be 'default', 'imgix', 'cloudinary', 'akamai', or 'custom'
         loader: 'default',
         // file with `export default function loader({src, width, quality})`
-        // loaderFile: '',
+        // loaderFile: './components/common/loader/loader.js',
         // disable static imports for image files
         disableStaticImages: false,
         // minimumCacheTTL is in seconds, must be integer 0 or more
