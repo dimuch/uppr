@@ -30,9 +30,9 @@ const nextConfig = {
         // limit of 25 imageSizes values
         imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
         // limit of 50 domains values
-        // domains: ['127.0.0.1', 'localhost', 'uppr.com.ua'],
+        domains: ['127.0.0.1', 'localhost', 'uppr.com.ua'],
         // path prefix for Image Optimization API, useful with `loader`
-        path: '/',
+        path: '/public',
         // loader can be 'default', 'imgix', 'cloudinary', 'akamai', or 'custom'
         loader: 'default',
         // file with `export default function loader({src, width, quality})`
