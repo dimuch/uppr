@@ -25,6 +25,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.57.1",
-    "ssh2": "^1.11.0"
-  }
+    "ssh2": "^1.11.0",
+    "image-minimizer-webpack-plugin": "^3.8.1",
+    "sharp": "^0.31.3"
+  },
+  "devDependencies": {}
 }
