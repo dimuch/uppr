@@ -34,9 +34,9 @@ const nextConfig = {
         // path prefix for Image Optimization API, useful with `loader`
         // path: 'https://uppr.com.ua/_next/image',
         // loader can be 'default', 'imgix', 'cloudinary', 'akamai', or 'custom'
-        loader: 'custom',
+        loader: 'default',
         // file with `export default function loader({src, width, quality})`
-        loaderFile: './components/common/loader/loader.js',
+        // loaderFile: './components/common/loader/loader.js',
         // disable static imports for image files
         disableStaticImages: false,
         // minimumCacheTTL is in seconds, must be integer 0 or more
@@ -53,25 +53,25 @@ const nextConfig = {
                 protocol: "http",
                 hostname: " localhost",
                 port: '3000',
-                pathname: '/**',
+                pathname: '/public/**',
             },
             {
                 protocol: "http",
                 hostname: "127.0.0.1",
                 port: '3000',
-                pathname: '/**',
+                pathname: '/public/**',
             },
             {
                 protocol: "http",
                 hostname: "0.0.0.0",
                 port: '3000',
-                pathname: '/**',
+                pathname: '/public/**',
             },
             {
                 protocol: "https",
                 hostname: "uppr.com.ua",
                 port: '',
-                pathname: '/**',
+                pathname: '/public/**',
             },
         ],
         // when true, every image will be unoptimized
