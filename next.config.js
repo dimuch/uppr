@@ -62,6 +62,12 @@ const nextConfig = {
                 pathname: '/**',
             },
             {
+                protocol: "http",
+                hostname: "0.0.0.0",
+                port: '3000',
+                pathname: '/**',
+            },
+            {
                 protocol: "https",
                 hostname: "uppr.com.ua",
                 port: '',
