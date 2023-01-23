@@ -32,11 +32,11 @@ const nextConfig = {
         // limit of 50 domains values
         // domains: ['127.0.0.1', 'localhost', 'uppr.com.ua'],
         // path prefix for Image Optimization API, useful with `loader`
-        path: '/_next/image',
+        path: 'https://uppr.com.ua/_next/image',
         // loader can be 'default', 'imgix', 'cloudinary', 'akamai', or 'custom'
-        loader: 'custom',
+        loader: 'default',
         // file with `export default function loader({src, width, quality})`
-        loaderFile: './components/common/loader/loader.js',
+        // loaderFile: './components/common/loader/loader.js',
         // disable static imports for image files
         disableStaticImages: false,
         // minimumCacheTTL is in seconds, must be integer 0 or more
