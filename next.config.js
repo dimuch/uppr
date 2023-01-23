@@ -32,7 +32,7 @@ const nextConfig = {
         // limit of 50 domains values
         // domains: ['127.0.0.1', 'localhost', 'uppr.com.ua'],
         // path prefix for Image Optimization API, useful with `loader`
-        // path: 'https://uppr.com.ua/_next/image',
+        path: '/_next/image',
         // loader can be 'default', 'imgix', 'cloudinary', 'akamai', or 'custom'
         loader: 'custom',
         // file with `export default function loader({src, width, quality})`
