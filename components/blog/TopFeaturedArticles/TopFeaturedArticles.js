@@ -5,7 +5,7 @@ import { Grid, Typography } from "@mui/material";
 import { TopFeaturedArticlesIcon } from "../../common/icons/index";
 
 import styles from "./styles.module.scss";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 export default function TopFeaturedArticles({ items, domainName }) {
   const updateArticleViews = (article) => {};
@@ -51,7 +51,10 @@ export default function TopFeaturedArticles({ items, domainName }) {
                           width="700"
                           height="400"
                           alt={article.title}
-                        />
+                          style={{
+                            maxWidth: "100%",
+                            height: "auto"
+                          }} />
                   </Grid>
                   <Grid item xs={12} sm={7} className={styles.articleTitle}>
                     <a href={article.link}>

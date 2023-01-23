@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../../components/blog/Author/Author';
@@ -24,10 +24,15 @@ export default function BullshitFreeSalesEmails({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/bullshit_free_sales_emails_9.jpg"
-                               width="1400" height="425"
-                               alt="Що ж зробити, щоб зменшити кількість bullsh*t?"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/bullshit_free_sales_emails_9.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Що ж зробити, щоб зменшити кількість bullsh*t?"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -84,10 +89,15 @@ export default function BullshitFreeSalesEmails({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/bullshit_free_sales_emails_6.jpg"
-                               width="1400" height="425"
-                               alt="Основна помилка — одразу намагатися щось продати."
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/bullshit_free_sales_emails_6.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Основна помилка — одразу намагатися щось продати."
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -150,10 +160,15 @@ export default function BullshitFreeSalesEmails({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/bullshit_free_sales_emails_4.jpg"
-                               width="1400" height="425"
-                               alt="І трохи практики."
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/bullshit_free_sales_emails_4.jpg"
+                            width="1400"
+                            height="425"
+                            alt="І трохи практики."
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <div className={styles.frameWithExampleAndTitle}>
@@ -270,5 +285,5 @@ export default function BullshitFreeSalesEmails({articleData}) {
             </div>
 
         </div>
-    )
+    );
 };

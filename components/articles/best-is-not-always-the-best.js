@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from '../../components/articles/commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../blog/Author/Author';
@@ -34,11 +34,15 @@ export default function BestIsNotAlwaysTheBest({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/best_is_not_always_the_best_2.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Thanks? For what?"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/best_is_not_always_the_best_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Thanks? For what?"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
                 </div>
             </div>
@@ -93,11 +97,15 @@ export default function BestIsNotAlwaysTheBest({articleData}) {
                     <h2 className={styles.subTitle}>А для прихильників більш неформальної комунікації</h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/best_is_not_always_the_best_1.jpg"
-                               width="1400"
-                               height="425"
-                               alt="А для прихильників більш неформальної комунікації<"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/best_is_not_always_the_best_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="А для прихильників більш неформальної комунікації<"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
                 </div>
             </div>
@@ -138,11 +146,15 @@ export default function BestIsNotAlwaysTheBest({articleData}) {
                     <h2 className={styles.subTitle}>А коли дійсно є за що бути thank you</h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/best_is_not_always_the_best_3.jpg"
-                               width="1400"
-                               height="425"
-                               alt="А коли дійсно є за що бути thank you"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/best_is_not_always_the_best_3.jpg"
+                            width="1400"
+                            height="425"
+                            alt="А коли дійсно є за що бути thank you"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -207,5 +219,5 @@ export default function BestIsNotAlwaysTheBest({articleData}) {
                 </div>
             </div>
         </div>
-    )
+    );
 };

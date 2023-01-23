@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../../components/blog/Author/Author';
@@ -38,10 +38,15 @@ export default function HopeYouAreWell({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/hope_you_are_well_1.jpg"
-                               width="1400" height="425"
-                               alt="hope you are well"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/hope_you_are_well_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="hope you are well"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                 </div>
@@ -97,10 +102,15 @@ export default function HopeYouAreWell({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/hope_you_are_well_2.jpg"
-                               width="1400" height="425"
-                               alt="hope you are well"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/hope_you_are_well_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt="hope you are well"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -164,10 +174,15 @@ export default function HopeYouAreWell({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/hope_you_are_well_3.jpg"
-                               width="1400" height="425"
-                               alt="Щось щире та персональне"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/hope_you_are_well_3.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Щось щире та персональне"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -223,10 +238,15 @@ export default function HopeYouAreWell({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/hope_you_are_well_4.jpg"
-                               width="1400" height="425"
-                               alt="I know you’re overloaded/overwhelmed/swamped"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/hope_you_are_well_4.jpg"
+                            width="1400"
+                            height="425"
+                            alt="I know you’re overloaded/overwhelmed/swamped"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
 
@@ -284,5 +304,5 @@ export default function HopeYouAreWell({articleData}) {
             </div>
 
         </div>
-    )
+    );
 };

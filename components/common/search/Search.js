@@ -3,7 +3,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import styles from './styles.module.scss';
 import useMakeRequest from '../hooks/makeRequest';
 import {LoaderIcon, SearchIcon} from '../icons';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import {Grid, Typography} from '@mui/material';
 import {linesLimiterConfig} from '../../../helpers/linesLimiterConfig';
 
@@ -102,7 +102,10 @@ const Search = ({}) => {
                                             alt={article.title}
                                             width="70"
                                             height="40"
-                                        />
+                                            style={{
+                                                maxWidth: "100%",
+                                                height: "auto"
+                                            }} />
                                     </Grid>
                                     <Grid item md={8}>
                                         <a href={article.link}
@@ -118,7 +121,7 @@ const Search = ({}) => {
                                         </a>
                                     </Grid>
                                 </Grid>
-                            )
+                            );
                         })
                     }
                 </div>

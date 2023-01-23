@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import styles from './styles.module.scss';
 
@@ -17,8 +17,9 @@ export default function Author({data}) {
                         borderStyle: 'solid  !important',
                         borderColor: `#${data.article_color} !important`,
                         borderRadius: '50%',
-                    }}
-                />
+                        maxWidth: "100%",
+                        height: "auto"
+                    }} />
             </div>
             <div>
                 <p className="para-text">
@@ -26,5 +27,5 @@ export default function Author({data}) {
                 </p>
             </div>
         </div>
-    )
+    );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../../components/blog/Author/Author';
@@ -53,10 +53,15 @@ export default function SubjectLine({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/subject_line_1.jpg"
-                               width="1400" height="425"
-                               alt="Subject Line у стилі KISS"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/subject_line_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Subject Line у стилі KISS"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -92,10 +97,15 @@ export default function SubjectLine({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/subject_line_2.jpg"
-                               width="1400" height="425"
-                               alt="Subject Line у стилі KISS"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/subject_line_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Subject Line у стилі KISS"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -160,10 +170,15 @@ export default function SubjectLine({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/subject_line_7.jpg"
-                               width="1400" height="425"
-                               alt="Тема може бути цілим листом!"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/subject_line_7.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Тема може бути цілим листом!"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -274,10 +289,15 @@ export default function SubjectLine({articleData}) {
                         Найефективніший інструмент KISS-імейлів?
                     </h2>
 
-                    <Image src="/assets/images/blog-articles/subject_line_8.jpg"
-                           width="1400" height="425"
-                           alt="Найефективніший інструмент KISS-імейлів?"
-                    />
+                    <Image
+                        src="/assets/images/blog-articles/subject_line_8.jpg"
+                        width="1400"
+                        height="425"
+                        alt="Найефективніший інструмент KISS-імейлів?"
+                        style={{
+                            maxWidth: "100%",
+                            height: "auto"
+                        }} />
 
                     <p className={styles.articleText}>
                         І наостанок про тему листа: чому вона належить до найефективніших інструментів KISS-імейлів?
@@ -352,10 +372,15 @@ export default function SubjectLine({articleData}) {
                         </p>
                     </div>
 
-                    <Image src="/assets/images/blog-articles/subject_line_5.jpg"
-                           width="1400" height="425"
-                           alt="Найефективніший інструмент KISS-імейлів?"
-                    />
+                    <Image
+                        src="/assets/images/blog-articles/subject_line_5.jpg"
+                        width="1400"
+                        height="425"
+                        alt="Найефективніший інструмент KISS-імейлів?"
+                        style={{
+                            maxWidth: "100%",
+                            height: "auto"
+                        }} />
 
                     <p className={styles.delimiter}></p>
 
@@ -408,5 +433,5 @@ export default function SubjectLine({articleData}) {
             </div>
 
         </div>
-    )
+    );
 };

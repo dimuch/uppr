@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from '../../components/articles/commonArticleStyles.module.scss';
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import Author from '../blog/Author/Author';
 import Slider from '../blog/Slider/Slider';
@@ -74,11 +74,15 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/ten_no_phrases_for_your_own_CV_1.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Усі так пишуть"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/ten_no_phrases_for_your_own_CV_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Усі так пишуть"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -113,11 +117,15 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/ten_no_phrases_for_your_own_CV_2.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Detail-oriented"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/ten_no_phrases_for_your_own_CV_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Detail-oriented"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -138,11 +146,15 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/ten_no_phrases_for_your_own_CV_3.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Leadership abilities"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/ten_no_phrases_for_your_own_CV_3.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Leadership abilities"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -161,11 +173,15 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/ten_no_phrases_for_your_own_CV_4.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Leadership abilities"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/ten_no_phrases_for_your_own_CV_4.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Leadership abilities"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -257,5 +273,5 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
                 </div>
             </div>
         </div>
-    )
+    );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../../components/blog/Author/Author';
@@ -55,10 +55,15 @@ export default function WatchingCartoonsInEnglishFrozen({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/watching_cartoons_in_english_frozen_1.jpg"
-                               width="1400" height="425"
-                               alt="Frozen Heroes"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/watching_cartoons_in_english_frozen_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Frozen Heroes"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -117,10 +122,15 @@ export default function WatchingCartoonsInEnglishFrozen({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/watching_cartoons_in_english_frozen_2.jpg"
-                               width="1400" height="425"
-                               alt="Frozen Heroes"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/watching_cartoons_in_english_frozen_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Frozen Heroes"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -350,5 +360,5 @@ export default function WatchingCartoonsInEnglishFrozen({articleData}) {
             </div>
 
         </div>
-)
+    );
 };

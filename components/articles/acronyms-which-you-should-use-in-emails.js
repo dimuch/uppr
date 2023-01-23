@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from '../../components/articles/commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../blog/Author/Author';
@@ -44,11 +44,15 @@ export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/acronyms_which_you_should_use_in_emails_1.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Акроніми актуальні у бізнес імейлінгу"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/acronyms_which_you_should_use_in_emails_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Акроніми актуальні у бізнес імейлінгу"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -130,11 +134,15 @@ export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
                     </div>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/acronyms_which_you_should_use_in_emails_4.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Акроніми актуальні у бізнес імейлінгу"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/acronyms_which_you_should_use_in_emails_4.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Акроніми актуальні у бізнес імейлінгу"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -182,11 +190,15 @@ export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
                     </div>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/acronyms_which_you_should_use_in_emails_3.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Акроніми актуальні у бізнес імейлінгу"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/acronyms_which_you_should_use_in_emails_3.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Акроніми актуальні у бізнес імейлінгу"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -229,11 +241,15 @@ export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
                     </div>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/acronyms_which_you_should_use_in_emails_5.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Акроніми актуальні у бізнес імейлінгу"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/acronyms_which_you_should_use_in_emails_5.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Акроніми актуальні у бізнес імейлінгу"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -298,5 +314,5 @@ export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
                 </div>
             </div>
         </div>
-    )
+    );
 };

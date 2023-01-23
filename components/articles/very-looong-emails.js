@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from '../../components/articles/commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../blog/Author/Author';
@@ -55,11 +55,15 @@ export default function VeryLooongEmails({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/please_find_attached_1.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Короткі, “розмовні” імейлі - тренд!"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/please_find_attached_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Короткі, “розмовні” імейлі - тренд!"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -87,11 +91,15 @@ export default function VeryLooongEmails({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/please_find_attached_2.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Усі так пишуть"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/please_find_attached_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Усі так пишуть"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -139,11 +147,15 @@ export default function VeryLooongEmails({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/please_find_attached_3.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Як не перепрацювати"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/please_find_attached_3.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Як не перепрацювати"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
                 </div>
             </div>
@@ -184,5 +196,5 @@ export default function VeryLooongEmails({articleData}) {
                 </div>
             </div>
         </div>
-    )
+    );
 };

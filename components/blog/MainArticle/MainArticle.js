@@ -4,7 +4,7 @@ import { Grid, Typography } from "@mui/material";
 import { getDate } from "../../../helpers/getDate";
 
 import styles from "./styles.module.scss";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import {myLoader} from '../../common/loader/loader';
 
 export default function MainArticle({ items }) {
@@ -34,7 +34,10 @@ export default function MainArticle({ items }) {
           width="700"
           height="400"
           alt={mainArticleData.title}
-        />
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
       </Grid>
       <Grid
         container={true}

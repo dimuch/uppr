@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../../components/blog/Author/Author';
@@ -52,10 +52,15 @@ export default function IAmWritingToInform({articleData}) {
                     </div>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/i_am_writing_to_inform_2.jpg"
-                               width="1400" height="425"
-                               alt=" So, Dear Mr Williams…"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/i_am_writing_to_inform_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt=" So, Dear Mr Williams…"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -137,10 +142,15 @@ export default function IAmWritingToInform({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/i_am_writing_to_inform_1.jpg"
-                               width="1400" height="425"
-                               alt="І апдейт листа."
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/i_am_writing_to_inform_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="І апдейт листа."
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -201,5 +211,5 @@ export default function IAmWritingToInform({articleData}) {
             </div>
 
         </div>
-    )
+    );
 };

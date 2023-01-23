@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Tags from '../Tags/Tags';
@@ -23,12 +23,17 @@ export default function ArticleHeader({articleData}) {
                         {`${articleData.category.name}`}
                     </Link>
                 </div>
-                <Image src={articleData.image}
-                       width="700" height="400"
-                       alt="Main article picture"
-                />
+                <Image
+                    src={articleData.image}
+                    width="700"
+                    height="400"
+                    alt="Main article picture"
+                    style={{
+                        maxWidth: "100%",
+                        height: "auto"
+                    }} />
                 <Tags items={articleData.tags} location={'header'}/>
             </div>
         </div>
-    )
+    );
 }

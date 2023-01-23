@@ -1,7 +1,7 @@
 import React from 'react';
 import {Grid, Typography} from '@mui/material';
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import {getDate} from '../../../../helpers/getDate';
 import {linesLimiterConfig} from '../../../../helpers/linesLimiterConfig';
@@ -19,7 +19,10 @@ export default function ArticleCard({item, isDescription=true, domainName}) {
                         alt={item.title}
                         width="700"
                         height="400"
-                    />
+                        style={{
+                            maxWidth: "100%",
+                            height: "auto"
+                        }} />
                 </Grid>
                 <Grid item md={12}>
                     <Grid
@@ -70,5 +73,5 @@ export default function ArticleCard({item, isDescription=true, domainName}) {
                 </Grid>
             </Grid>
         </a>
-    )
+    );
 }

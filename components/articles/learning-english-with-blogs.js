@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../../components/blog/Author/Author';
@@ -67,10 +67,15 @@ export default function LearningEnglishWithBlogs({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/learning_english_with_blogs_1.jpg"
-                               width="1400" height="425"
-                               alt="Неминуче поліпшіть свою англійську."
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/learning_english_with_blogs_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Неминуче поліпшіть свою англійську."
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -129,10 +134,15 @@ export default function LearningEnglishWithBlogs({articleData}) {
                     </h3>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/learning_english_with_blogs_5.jpg"
-                               width="1400" height="425"
-                               alt="Пропоную кілька своїх ідей"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/learning_english_with_blogs_5.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Пропоную кілька своїх ідей"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
@@ -156,10 +166,15 @@ export default function LearningEnglishWithBlogs({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/learning_english_with_blogs_3.jpg"
-                               width="1400" height="425"
-                               alt="Отже, самі &quot;капосні&quot; фрази у вашому листі"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/learning_english_with_blogs_3.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Отже, самі &quot;капосні&quot; фрази у вашому листі"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
@@ -190,10 +205,15 @@ export default function LearningEnglishWithBlogs({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/learning_english_with_blogs_2.jpg"
-                               width="1400" height="425"
-                               alt="Отже, самі &quot;капосні&quot; фрази у вашому листі"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/learning_english_with_blogs_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Отже, самі &quot;капосні&quot; фрази у вашому листі"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
@@ -242,10 +262,15 @@ export default function LearningEnglishWithBlogs({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/learning_english_with_blogs_4.jpg"
-                               width="1400" height="425"
-                               alt="Отже, самі &quot;капосні&quot; фрази у вашому листі"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/learning_english_with_blogs_4.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Отже, самі &quot;капосні&quot; фрази у вашому листі"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
@@ -292,5 +317,5 @@ export default function LearningEnglishWithBlogs({articleData}) {
             </div>
 
         </div>
-    )
+    );
 };

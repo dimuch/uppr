@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../../components/blog/Author/Author';
@@ -69,10 +69,15 @@ export default function FollowUpLetterFriendlyReminder({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/follow_up_letter_friendly_reminder_2.jpg"
-                               width="1400" height="425"
-                               alt="Невже з цим не можна нічого зробити?"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/follow_up_letter_friendly_reminder_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Невже з цим не можна нічого зробити?"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -167,10 +172,15 @@ export default function FollowUpLetterFriendlyReminder({articleData}) {
                         менш часо-затратним.
                     </p>
 
-                    <Image src="/assets/images/blog-articles/follow_up_letter_friendly_reminder_3.jpg"
-                           width="1400" height="425"
-                           alt="Невже з цим не можна нічого зробити?"
-                    />
+                    <Image
+                        src="/assets/images/blog-articles/follow_up_letter_friendly_reminder_3.jpg"
+                        width="1400"
+                        height="425"
+                        alt="Невже з цим не можна нічого зробити?"
+                        style={{
+                            maxWidth: "100%",
+                            height: "auto"
+                        }} />
 
                 </div>
             </div>
@@ -195,5 +205,5 @@ export default function FollowUpLetterFriendlyReminder({articleData}) {
             </div>
 
         </div>
-    )
+    );
 };

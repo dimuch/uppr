@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from '../../components/articles/commonArticleStyles.module.scss';
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import Author from '../blog/Author/Author';
 import Slider from '../blog/Slider/Slider';
@@ -156,16 +156,24 @@ export default function EightyTwentyHowToLearnRight({articleData}) {
                     </p>
 
                     <div className={`${styles.articlePicture} ${styles.articlePicture50}`}>
-                        <Image src="/assets/images/blog-articles/eighty_twenty_how_to_learn_right_1.jpg"
-                               width={800}
-                               height={800}
-                               alt="10WaysToTell"
-                        />
-                        <Image src="/assets/images/blog-articles/eighty_twenty_how_to_learn_right_2.jpg"
-                               width={800}
-                               height={800}
-                               alt="10WaysToTell"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/eighty_twenty_how_to_learn_right_1.jpg"
+                            width={800}
+                            height={800}
+                            alt="10WaysToTell"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
+                        <Image
+                            src="/assets/images/blog-articles/eighty_twenty_how_to_learn_right_2.jpg"
+                            width={800}
+                            height={800}
+                            alt="10WaysToTell"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -236,5 +244,5 @@ export default function EightyTwentyHowToLearnRight({articleData}) {
                 </div>
             </div>
         </div>
-    )
+    );
 };

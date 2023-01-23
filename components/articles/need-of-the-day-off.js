@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../../components/blog/Author/Author';
@@ -24,10 +24,15 @@ export default function NeedOfTheDayOff({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/need_of_the_day_off_6.jpg"
-                               width="1400" height="425"
-                               alt="facepalm"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/need_of_the_day_off_6.jpg"
+                            width="1400"
+                            height="425"
+                            alt="facepalm"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -74,10 +79,15 @@ export default function NeedOfTheDayOff({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/need_of_the_day_off_2.jpg"
-                               width="1400" height="425"
-                               alt="Якщо потрібен day off"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/need_of_the_day_off_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Якщо потрібен day off"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -152,10 +162,15 @@ export default function NeedOfTheDayOff({articleData}) {
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/need_of_the_day_off_5.jpg"
-                               width="1400" height="425"
-                               alt="А тепер про шаблони"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/need_of_the_day_off_5.jpg"
+                            width="1400"
+                            height="425"
+                            alt="А тепер про шаблони"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
@@ -237,10 +252,15 @@ export default function NeedOfTheDayOff({articleData}) {
                     </ul>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/need_of_the_day_off_3.jpg"
-                               width="1400" height="425"
-                               alt="А тепер про шаблони"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/need_of_the_day_off_3.jpg"
+                            width="1400"
+                            height="425"
+                            alt="А тепер про шаблони"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
 
@@ -266,5 +286,5 @@ export default function NeedOfTheDayOff({articleData}) {
             </div>
 
         </div>
-    )
+    );
 };

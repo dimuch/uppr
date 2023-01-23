@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../../components/blog/Author/Author';
@@ -24,10 +24,15 @@ export default function TenOddWordsInEmails({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/ten_odd_words_in_emails_4.jpg"
-                               width="1400" height="425"
-                               alt="Той випадок, коли less is more"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/ten_odd_words_in_emails_4.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Той випадок, коли less is more"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -54,10 +59,15 @@ export default function TenOddWordsInEmails({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/ten_odd_words_in_emails_2.jpg"
-                               width="1400" height="425"
-                               alt="The most useless word in the English language"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/ten_odd_words_in_emails_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt="The most useless word in the English language"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -204,10 +214,15 @@ export default function TenOddWordsInEmails({articleData}) {
                 <div className={styles.maxWidthArticleSectionWrapper}>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/ten_odd_words_in_emails_3.jpg"
-                               width="1400" height="425"
-                               alt="Just"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/ten_odd_words_in_emails_3.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Just"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -334,10 +349,15 @@ export default function TenOddWordsInEmails({articleData}) {
                 <div className={styles.maxWidthArticleSectionWrapper}>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/ten_odd_words_in_emails_6.jpg"
-                               width="1400" height="425"
-                               alt="Really"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/ten_odd_words_in_emails_6.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Really"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -473,5 +493,5 @@ export default function TenOddWordsInEmails({articleData}) {
             </div>
 
         </div>
-    )
+    );
 };

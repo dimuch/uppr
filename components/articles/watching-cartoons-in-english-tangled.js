@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import Author from '../../components/blog/Author/Author';
 import Slider from '../../components/blog/Slider/Slider';
@@ -31,10 +31,15 @@ export default function WatchingCartoonsInEnglishTangled({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/watching_cartoons_in_english_tangled_5.jpg"
-                               width="1400" height="425"
-                               alt="Tangled"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/watching_cartoons_in_english_tangled_5.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Tangled"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
                 </div>
             </div>
@@ -114,10 +119,15 @@ export default function WatchingCartoonsInEnglishTangled({articleData}) {
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/watching_cartoons_in_english_tangled_1.jpg"
-                               width="1400" height="425"
-                               alt="Tangled"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/watching_cartoons_in_english_tangled_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Tangled"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -161,10 +171,15 @@ export default function WatchingCartoonsInEnglishTangled({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/watching_cartoons_in_english_tangled_3.jpg"
-                               width="1400" height="425"
-                               alt="Tangled"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/watching_cartoons_in_english_tangled_3.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Tangled"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -237,10 +252,15 @@ export default function WatchingCartoonsInEnglishTangled({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/watching_cartoons_in_english_tangled_6.jpg"
-                               width="1400" height="425"
-                               alt="Rio"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/watching_cartoons_in_english_tangled_6.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Rio"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                 </div>
@@ -337,10 +357,15 @@ export default function WatchingCartoonsInEnglishTangled({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/watching_cartoons_in_english_tangled_4.jpg"
-                               width="1400" height="425"
-                               alt="Rio"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/watching_cartoons_in_english_tangled_4.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Rio"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
@@ -397,5 +422,5 @@ export default function WatchingCartoonsInEnglishTangled({articleData}) {
             </div>
 
         </div>
-    )
+    );
 };

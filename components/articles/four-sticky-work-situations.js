@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from '../../components/articles/commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import Author from '../blog/Author/Author';
 import Slider from '../blog/Slider/Slider';
@@ -46,11 +46,15 @@ export default function FourStickyWorkSituations({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/four_sticky_situations_1.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Колега продовжує повторювати одну і ту саму помилку"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/four_sticky_situations_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Колега продовжує повторювати одну і ту саму помилку"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -96,11 +100,15 @@ export default function FourStickyWorkSituations({articleData}) {
                     </h3>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/four_sticky_situations_4.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Колега не дотримується дедлайну (уже вкотре) лист?"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/four_sticky_situations_4.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Колега не дотримується дедлайну (уже вкотре) лист?"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -159,11 +167,15 @@ export default function FourStickyWorkSituations({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/four_sticky_situations_2.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Як не перепрацювати"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/four_sticky_situations_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Як не перепрацювати"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -204,11 +216,15 @@ export default function FourStickyWorkSituations({articleData}) {
                     </div>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/four_sticky_situations_3.jpg"
-                               width="1400"
-                               height="425"
-                               alt="Довгий незрозумілий імейл"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/four_sticky_situations_3.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Довгий незрозумілий імейл"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -266,5 +282,5 @@ export default function FourStickyWorkSituations({articleData}) {
                 </div>
             </div>
         </div>
-    )
+    );
 };

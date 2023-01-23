@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../../components/blog/Author/Author';
@@ -26,10 +26,15 @@ export default function EnglishWayOut({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/englishway_4.jpg"
-                               width="1400" height="425"
-                               alt="Невже з цим не можна нічого зробити?"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/englishway_4.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Невже з цим не можна нічого зробити?"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -64,10 +69,15 @@ export default function EnglishWayOut({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/englishway_1.jpg"
-                               width="1400" height="425"
-                               alt="Потрібно, а не хочу!"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/englishway_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Потрібно, а не хочу!"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -149,10 +159,15 @@ export default function EnglishWayOut({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/englishway_5.jpg"
-                               width="1400" height="425"
-                               alt="Півгодини щодня - найкращий рецепт"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/englishway_5.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Півгодини щодня - найкращий рецепт"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -191,10 +206,15 @@ export default function EnglishWayOut({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/englishway_3.jpg"
-                               width="1400" height="425"
-                               alt="Усвідомити, що помилки - це нормально"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/englishway_3.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Усвідомити, що помилки - це нормально"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -250,5 +270,5 @@ export default function EnglishWayOut({articleData}) {
             </div>
 
         </div>
-    )
+    );
 };

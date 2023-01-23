@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import Author from '../../components/blog/Author/Author';
 import Slider from '../../components/blog/Slider/Slider';
@@ -41,10 +41,15 @@ export default function TenOddWordsInEmails2({articleData}) {
                     </h3>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/ten_odd_words_in_emails_2_7.jpg"
-                               width="1400" height="425"
-                               alt="Sorry"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/ten_odd_words_in_emails_2_7.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Sorry"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -93,10 +98,15 @@ export default function TenOddWordsInEmails2({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/ten_odd_words_in_emails_2_5.jpg"
-                               width="1400" height="425"
-                               alt="No action is required? - What?"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/ten_odd_words_in_emails_2_5.jpg"
+                            width="1400"
+                            height="425"
+                            alt="No action is required? - What?"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -184,10 +194,15 @@ export default function TenOddWordsInEmails2({articleData}) {
 
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/ten_odd_words_in_emails_2_2.jpg"
-                               width="1400" height="425"
-                               alt="Kindly"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/ten_odd_words_in_emails_2_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Kindly"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -265,10 +280,15 @@ export default function TenOddWordsInEmails2({articleData}) {
                         It&apos;s really, really so!
                     </h2>
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/ten_odd_words_in_emails_2_6.jpg"
-                               width="1400" height="425"
-                               alt="Really"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/ten_odd_words_in_emails_2_6.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Really"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -327,5 +347,5 @@ export default function TenOddWordsInEmails2({articleData}) {
             </div>
 
         </div>
-    )
+    );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../../components/blog/Author/Author';
@@ -73,10 +73,15 @@ export default function PleaseFindAttached2({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/please_find_attached_2_1.jpg"
-                               width="1400" height="425"
-                               alt="Якщо потрібен day off"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/please_find_attached_2_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Якщо потрібен day off"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle} id="file-without-explanation">
@@ -152,10 +157,15 @@ export default function PleaseFindAttached2({articleData}) {
                     </div>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/please_find_attached_2_2.jpg"
-                               width="1400" height="425"
-                               alt="Якщо потрібен day off"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/please_find_attached_2_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Якщо потрібен day off"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
                 </div>
             </div>
@@ -260,10 +270,15 @@ export default function PleaseFindAttached2({articleData}) {
                     </div>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/please_find_attached_2_3.jpg"
-                               width="1400" height="425"
-                               alt="Якщо потрібен day off"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/please_find_attached_2_3.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Якщо потрібен day off"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
                 </div>
             </div>
@@ -377,5 +392,5 @@ export default function PleaseFindAttached2({articleData}) {
             </div>
 
         </div>
-)
+    );
 };

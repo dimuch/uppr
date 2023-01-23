@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../../components/blog/Author/Author';
@@ -101,10 +101,15 @@ export default function WatchingCartoonsInEnglishRio({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/watching_cartoons_in_english_rio_1.jpg"
-                               width="1400" height="425"
-                               alt="Rio"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/watching_cartoons_in_english_rio_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Rio"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
                 </div>
             </div>
@@ -171,10 +176,15 @@ export default function WatchingCartoonsInEnglishRio({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/watching_cartoons_in_english_rio_2.jpg"
-                               width="1400" height="425"
-                               alt="Rio phrases"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/watching_cartoons_in_english_rio_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Rio phrases"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -297,5 +307,5 @@ export default function WatchingCartoonsInEnglishRio({articleData}) {
             </div>
 
         </div>
-    )
+    );
 };

@@ -1,6 +1,6 @@
 import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import {ArrowCircleRightOutlined, ArrowCircleLeftOutlined} from '@mui/icons-material';
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import Link from 'next/link';
 import styles from './styles.module.scss';
@@ -11,11 +11,15 @@ function Slide({slideData, slideNode, slideImageWidth, location}) {
             <div className={styles.slide} key={slideData.link}
                  ref={slideNode} style={{minWidth: slideImageWidth}}
             >
-                <Image src={slideData.image}
-                       width={700}
-                       height={400}
-                       alt={slideData.title}
-                />
+                <Image
+                    src={slideData.image}
+                    width={700}
+                    height={400}
+                    alt={slideData.title}
+                    style={{
+                        maxWidth: "100%",
+                        height: "auto"
+                    }} />
                 <div className={`${styles.slideTitle} ${styles[location]}`}>
                     <Link href={slideData.link}>
                         {slideData.title}
@@ -23,7 +27,7 @@ function Slide({slideData, slideNode, slideImageWidth, location}) {
                 </div>
             </div>
         </Link>
-    )
+    );
 }
 
 export default function Slider({data, slideWidth: slideImageWidth = '45%', location = 'footer'}) {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from '../../components/articles/commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../blog/Author/Author';
@@ -107,10 +107,15 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/films_on_english_kings_speech_4.jpg"
-                               width="1400" height="425"
-                               alt="Британська вимова, та культура, аристократизм та манірність, продумані діалоги та монологи..."
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/films_on_english_kings_speech_4.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Британська вимова, та культура, аристократизм та манірність, продумані діалоги та монологи..."
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -155,10 +160,15 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/films_on_english_kings_speech_5.jpg"
-                               width="1400" height="425"
-                               alt="Британська вимова, та культура, аристократизм та манірність, продумані діалоги та монологи..."
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/films_on_english_kings_speech_5.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Британська вимова, та культура, аристократизм та манірність, продумані діалоги та монологи..."
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -216,10 +226,15 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                     <h2 className={styles.subTitle}>Bloody well</h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/films_on_english_kings_speech_1.jpg"
-                               width="1400" height="425"
-                               alt="Bloody well"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/films_on_english_kings_speech_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Bloody well"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -315,10 +330,15 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/films_on_english_kings_speech_2.jpg"
-                               width="1400" height="425"
-                               alt="Але і без формальних словечок теж не обійшлося."
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/films_on_english_kings_speech_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Але і без формальних словечок теж не обійшлося."
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                 </div>
@@ -367,10 +387,15 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/films_on_english_kings_speech_3.jpg"
-                               width="1400" height="425"
-                               alt="Але і без формальних словечок теж не обійшлося."
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/films_on_english_kings_speech_3.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Але і без формальних словечок теж не обійшлося."
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
                 </div>
             </div>
@@ -438,5 +463,5 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                 </div>
             </div>
         </div>
-    )
+    );
 };

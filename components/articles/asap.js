@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from '../../components/articles/commonArticleStyles.module.scss';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Author from '../blog/Author/Author';
@@ -71,10 +71,15 @@ export default function Asap({articleData}) {
                     </h2>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/asap_1.jpg"
-                               width="1400" height="425"
-                               alt="asap альтернативи"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/asap_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="asap альтернативи"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>
@@ -133,10 +138,15 @@ export default function Asap({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/asap_4.jpg"
-                               width="1400" height="425"
-                               alt="знаючи дедлайн, можна планувати!"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/asap_4.jpg"
+                            width="1400"
+                            height="425"
+                            alt="знаючи дедлайн, можна планувати!"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -178,10 +188,15 @@ export default function Asap({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/asap_3.jpg"
-                               width="1400" height="425"
-                               alt="asap альтернативи"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/asap_3.jpg"
+                            width="1400"
+                            height="425"
+                            alt="asap альтернативи"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -203,10 +218,15 @@ export default function Asap({articleData}) {
                     </p>
 
                     <div className={styles.articlePicture}>
-                        <Image src="/assets/images/blog-articles/asap_2.jpg"
-                               width="1400" height="425"
-                               alt="asap альтернативи"
-                        />
+                        <Image
+                            src="/assets/images/blog-articles/asap_2.jpg"
+                            width="1400"
+                            height="425"
+                            alt="asap альтернативи"
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                     </div>
 
                     <p className={styles.articleText}>
@@ -255,5 +275,5 @@ export default function Asap({articleData}) {
                 </div>
             </div>
         </div>
-    )
+    );
 };

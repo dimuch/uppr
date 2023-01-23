@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import Header from '../header/Header';
@@ -12,12 +12,16 @@ export default function PageNotFound({redirectPage, redirectLink}) {
         <div className={styles.errorPage}>
             <Header search/>
             <div className={styles.rvGeneralError}>
-                <Image className={styles.rvErrorImg}
-                       src='/assets/images/404.svg'
-                       width="402"
-                       height="386"
-                       alt='Page Not Found'
-                />
+                <Image
+                    className={styles.rvErrorImg}
+                    src='/assets/images/404.svg'
+                    width="402"
+                    height="386"
+                    alt='Page Not Found'
+                    style={{
+                        maxWidth: "100%",
+                        height: "auto"
+                    }} />
                 <div className={styles.rvTitle}>
                     <h3>Ooooopppss</h3>
                     <h1>Сторінка відсутня</h1>
@@ -31,5 +35,5 @@ export default function PageNotFound({redirectPage, redirectLink}) {
                 </p>
             </div>
         </div>
-    )
+    );
 };
