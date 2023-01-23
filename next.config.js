@@ -34,9 +34,9 @@ const nextConfig = {
         // path prefix for Image Optimization API, useful with `loader`
         path: '/_next/image',
         // loader can be 'default', 'imgix', 'cloudinary', 'akamai', or 'custom'
-        loader: 'default',
+        loader: 'custom',
         // file with `export default function loader({src, width, quality})`
-        // loaderFile: './components/common/loader/loader.js',
+        loaderFile: './components/common/loader/loader.js',
         // disable static imports for image files
         disableStaticImages: false,
         // minimumCacheTTL is in seconds, must be integer 0 or more
