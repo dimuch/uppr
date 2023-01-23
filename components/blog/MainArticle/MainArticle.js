@@ -4,7 +4,7 @@ import { Grid, Typography } from "@mui/material";
 import { getDate } from "../../../helpers/getDate";
 
 import styles from "./styles.module.scss";
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import {myLoader} from '../../common/loader/loader';
 
 export default function MainArticle({ items }) {

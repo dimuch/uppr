@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './commonArticleStyles.module.scss';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 import Author from '../../components/blog/Author/Author';
 import Slider from '../../components/blog/Slider/Slider';

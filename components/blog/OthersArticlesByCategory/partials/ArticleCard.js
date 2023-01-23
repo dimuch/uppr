@@ -1,7 +1,7 @@
 import React from 'react';
 import {Grid, Typography} from '@mui/material';
 
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 import {getDate} from '../../../../helpers/getDate';
 import {linesLimiterConfig} from '../../../../helpers/linesLimiterConfig';

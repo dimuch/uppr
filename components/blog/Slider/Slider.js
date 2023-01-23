@@ -1,6 +1,6 @@
 import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import {ArrowCircleRightOutlined, ArrowCircleLeftOutlined} from '@mui/icons-material';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 import Link from 'next/link';
 import styles from './styles.module.scss';

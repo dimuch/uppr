@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Head from 'next/head';
 
 import {useHasMounted} from '../../components/common/hooks/hasMounted';
@@ -51,7 +51,7 @@ export default function Blog({
                         <Image src={domainName + '/assets/images/blog_main.jpeg'}
                                alt="Main blog picture"
                                width="3000"
-                               height="2002"
+                               height="1700"
                         />
                     </div>
 

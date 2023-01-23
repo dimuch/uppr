@@ -13,11 +13,14 @@
 .upprBlogMainPicture {
   position: relative;
 
+  span{
+    display: initial !important;
+  }
   img {
-    width: 100%;
-    object-fit: cover;
     filter: brightness(.8);
-    height: 45vh;
+    object-fit: cover;
+    width: 100% !important;
+    height: 45vh !important;
     object-position: 0;
   }
 }

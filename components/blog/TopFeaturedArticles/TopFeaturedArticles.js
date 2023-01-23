@@ -5,7 +5,7 @@ import { Grid, Typography } from "@mui/material";
 import { TopFeaturedArticlesIcon } from "../../common/icons/index";
 
 import styles from "./styles.module.scss";
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 export default function TopFeaturedArticles({ items, domainName }) {
   const updateArticleViews = (article) => {};

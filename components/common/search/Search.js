@@ -3,7 +3,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import styles from './styles.module.scss';
 import useMakeRequest from '../hooks/makeRequest';
 import {LoaderIcon, SearchIcon} from '../icons';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import {Grid, Typography} from '@mui/material';
 import {linesLimiterConfig} from '../../../helpers/linesLimiterConfig';
 
