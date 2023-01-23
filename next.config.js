@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 const nextConfig = {
     reactStrictMode: true,
@@ -19,6 +20,29 @@ const nextConfig = {
                         child_process: false,
                         crypto: false,
                     },
+                },
+                optimization: {
+                    minimizer: [
+                        new ImageMinimizerPlugin({
+                            minimizer: {
+                                implementation: ImageMinimizerPlugin.sharpMinify,
+                            },
+                            generator: [
+                                {
+                                    // You can apply generator using `?as=webp`, you can use any name and provide more options
+                                    preset: "webp",
+                                    implementation: ImageMinimizerPlugin.sharpGenerate,
+                                    options: {
+                                        encodeOptions: {
+                                            webp: {
+                                                quality: 90,
+                                            },
+                                        },
+                                    },
+                                },
+                            ],
+                        }),
+                    ],
                 },
             };
         }
