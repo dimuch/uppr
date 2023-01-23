@@ -32,13 +32,13 @@ const nextConfig = {
         // limit of 50 domains values
         // domains: ['127.0.0.1', 'localhost', 'uppr.com.ua'],
         // path prefix for Image Optimization API, useful with `loader`
-        path: '/_next/image',
+        // path: '/_next/image',
         // loader can be 'default', 'imgix', 'cloudinary', 'akamai', or 'custom'
-        loader: 'default',
+        // loader: 'default',
         // file with `export default function loader({src, width, quality})`
         // loaderFile: './components/common/loader/loader.js',
         // disable static imports for image files
-        disableStaticImages: false,
+        // disableStaticImages: false,
         // minimumCacheTTL is in seconds, must be integer 0 or more
         minimumCacheTTL: 60,
         // ordered list of acceptable optimized image formats (mime types)
@@ -48,34 +48,34 @@ const nextConfig = {
         // set the Content-Security-Policy header
         contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
         // limit of 50 objects
-        remotePatterns: [
-            {
-                protocol: "http",
-                hostname: " localhost",
-                port: '3000',
-                pathname: '/public/**',
-            },
-            {
-                protocol: "http",
-                hostname: "127.0.0.1",
-                port: '3000',
-                pathname: '/public/**',
-            },
-            {
-                protocol: "http",
-                hostname: "0.0.0.0",
-                port: '3000',
-                pathname: '/public/**',
-            },
-            {
-                protocol: "https",
-                hostname: "uppr.com.ua",
-                port: '',
-                pathname: '/public/**',
-            },
-        ],
+        // remotePatterns: [
+        //     {
+        //         protocol: "http",
+        //         hostname: " localhost",
+        //         port: '3000',
+        //         pathname: '/public/**',
+        //     },
+        //     {
+        //         protocol: "http",
+        //         hostname: "127.0.0.1",
+        //         port: '3000',
+        //         pathname: '/public/**',
+        //     },
+        //     {
+        //         protocol: "http",
+        //         hostname: "0.0.0.0",
+        //         port: '3000',
+        //         pathname: '/public/**',
+        //     },
+        //     {
+        //         protocol: "https",
+        //         hostname: "uppr.com.ua",
+        //         port: '',
+        //         pathname: '/public/**',
+        //     },
+        // ],
         // when true, every image will be unoptimized
-        unoptimized: false
+        // unoptimized: false
     },
 };
 
