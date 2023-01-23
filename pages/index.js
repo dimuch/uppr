@@ -57,6 +57,7 @@ const howItWorks = [
 
 import compStyles from "./styles.module.scss";
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Index = () => {
   return (
@@ -79,6 +80,7 @@ const Index = () => {
         </Head>
         <div className="uppr-home-page">
           <Header location={"/"} search/>
+          <Image src={"/assets/images/blog-articles/four_sticky_situations_main.jpg"} alt={"asdfasdf"} />
           <Video videoSrc={"/assets/video/intro.mp4"} />
           <div className={"uppr-section " + compStyles?.section}>
             <div className={"uppr-section-title " + compStyles?.sectionTitle}>
