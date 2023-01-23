@@ -51,14 +51,21 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: "http",
+                hostname: " localhost",
+                port: '3000',
+                pathname: '/**',
+            },
+            {
+                protocol: "http",
                 hostname: "127.0.0.1",
                 port: '3000',
-                pathname: '/public/**',
-            },{
+                pathname: '/**',
+            },
+            {
                 protocol: "https",
                 hostname: "uppr.com.ua",
                 port: '',
-                pathname: '/public/**',
+                pathname: '/**',
             },
         ],
         // when true, every image will be unoptimized
