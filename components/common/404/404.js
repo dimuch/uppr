@@ -14,7 +14,7 @@ export default function PageNotFound({redirectPage, redirectLink}) {
             <div className={styles.rvGeneralError}>
                 <Image
                     className={styles.rvErrorImg}
-                    src='/assets/images/404.svg'
+                    src='/assets/404.svg'
                     width="402"
                     height="386"
                     alt='Page Not Found'
