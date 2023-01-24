@@ -79,13 +79,20 @@ const nextConfig = {
                     },
                 },
             }
-            return {...config, ...addOn};
         }
-
         return {...config, ...addOn};
     },
     images:{
-        unoptimized: true
+        unoptimized: false,
+        formats: ['image/avif', 'image/webp'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'uppr.com.ua',
+                port: '',
+                pathname: '/assets/images/**/*',
+            },
+        ],
     }
 };
 
