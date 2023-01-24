@@ -83,6 +83,9 @@ const nextConfig = {
         }
 
         return {...config, ...addOn};
+    },
+    images:{
+        unoptimized: true
     }
 };
 
