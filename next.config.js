@@ -82,7 +82,6 @@ const nextConfig = {
         }
         return {...config, ...addOn};
     },
-    bas
     images:{
         unoptimized: false,
         formats: ['image/avif', 'image/webp'],
