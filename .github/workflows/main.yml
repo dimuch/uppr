@@ -41,7 +41,7 @@ jobs:
         run: sudo npm run build
 
       - name: Copy optimized images
-        run: cp .next/public/assets/images/blog-articles ../../../../../public/assets/images/blog-articles
+        run: cp -r .next/public/assets/images/blog-articles ../../../../../public/assets/images/blog-articles
 
       - name: Deploy to server
         uses: appleboy/scp-action@master

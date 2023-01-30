@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from '../../components/articles/commonArticleStyles.module.scss';
-import Image from "next/image";
+import Image from 'next/image';
 import Link from 'next/link';
 
 import Author from '../blog/Author/Author';
@@ -17,115 +17,114 @@ export default function VeryLooongEmails({articleData}) {
 
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-                    <h2 className={styles.subTitle}>Чи є сенс кожного разу писати &quot;please find attached&quot;?</h2>
+                    <h2 className={styles.subTitle}>
+                        Your email isn’t getting read because it is too long
+                    </h2>
                     <p className={styles.articleText}>
-                        Серед усіх цих пропозицій, пітчів, узгоджень, апдейтів та контрактів, вкладення доводиться
-                        надсилати та отримувати не то що кожного дня, а мало чи не кожної години. І найчастіша текстовка
-                        до імейлу з вкладенням залишається така звична для нас фраза <i>&quot;Please find attached.&quot;</i> Або
-                        інші її варіації, типу <i>&quot;Attached please find,&quot;</i>, <i>&quot;Please kindly find the attached
-                        file&quot; </i>, <i>&quot;Enclosed please find,&quot;</i>, <i>&quot;Please find attached herewith.&quot;</i>
+                        Готова побитися об заклад, що є. І скоріше за все, ці імейли дооовгі й нечіткі. Чи ви не можете
+                        розібратися, що взагалі від вас хочуть. Чи довго (читайте — складно) відповідати.
                     </p>
 
                     <p className={styles.articleText}>
-                        Але чи є в ній і досі сенс, і чи потрібно її використовувати кожного разу, коли надсилаєте
-                        вкладення?
+                        <i>
+                            "One of the top reasons your email isn’t getting read is because it is too long," — говорить
+                            експерт з менеджменту Сraig Jarrow.
+                        </i>
+                    </p>
+
+                    <p className={styles.articleText}>
+                        Ще при спілкуванні англійською наживо більшості вистачає глузду коротко формулювати свої думки
+                        (а якщо ні, то принаймні працюють над цим чи розуміють потребу). Або співрозмовник "допомагає"
+                        не розтікатися думкою, перебиваючи "потік свідомості" або банально рівень недостатній для довгих
+                        та складних зворотів. А от коли діло доходить до імейлів, то тут дають собі волю розгулятися.
+                    </p>
+
+                    <p className={styles.articleText}>
+                        І щонайгірше — особливо коли англійська на високому рівні — то впихають невпихуване. Бо навіщо
+                        її стільки
+                        років вчили (не для того мама квіточку ростила), щоб тепер формулювати коротко і просто?! Як це
+                        так писати
+                        по суті? А як же синоніми? А звороти (завороти)? А розкланювання? Ні, тут викладають усе, що
+                        знають або
+                        нагуглили. І повторюють по декілька разів, щоб точно "дійшло" до адресата.
+                    </p>
+
+                    <div className={styles.articlePicture}>
+                        <Image
+                            src="/assets/images/blog-articles/very_looong_emails_1.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Your email isn’t getting read because it is too long"
+                            style={{
+                                maxWidth: '100%',
+                                height: 'auto',
+                            }}/>
+                    </div>
+
+                    <p className={styles.articleText}>
+                        1. <b>Але це <i>time waste</i> чистої води.</b> Подвійний причому. Ви марнуєте час, щоб написати
+                        цей <i> bullsh*t</i>, протилежна сторона — щоб це прочитати. А ніхто, і ви в тому числі, не хоче
+                        витрачати свій безцінний час, блукаючи хащами хитромудрих зворотів, пафосних ментальних
+                        конструкцій чи банальних нудотних формальностей. Тому не марнуйте час і місце на екрані на
+                        непотрібні беззмістовні фрази.
+                    </p>
+
+                    <p className={styles.articleText}>
+                        І зрештою спробуйте поставити себе на місце читача вашого дооовгого імейлу. У вас самих є час це
+                        все читати, розбирати ще й відповідати?
+                        <br/>
+                        Ага, отож-бо й воно.
+                    </p>
+
+                    <p className={styles.articleText}>
+                        Тобто у довгого імейлу від самого початку набагато менше шансів, що:
+                        <br/>
+                        &nbsp;&nbsp;a) його прочитають
+                        <br/>
+                        &nbsp;&nbsp;б) його прочитають уважно.
                     </p>
                 </div>
             </div>
 
             <div className={styles.articleEvenSection}>
-                <h3 className={styles.articlePhrase} style={{color: `#${articleData.article_color}`}}>
-                    Короткі, &quot;розмовні&quot; імейлі - тренд!
-                </h3>
-            </div>
-
-            <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
+                    <h2 className={styles.subTitle}>
+                        Зайняті люди пишуть короткі імейли
+                    </h2>
+
                     <p className={styles.articleText}>
                         Моя відповідь, ні.
                     </p>
 
-                    <p className={styles.articleText}>
-                        По-перше, <i>&quot;Please find attached&quot;</i> звучить застаріло та занадто формально. Плюс,
-                        існують альтернативи, більш розмовні та сучасні. Але про це - пізніше.
-                    </p>
-
-                    <p className={styles.articleText}>
-                        По-друге, ця фраза взагалі не потрібна в багатьох випадках. В імейлі і так видно, що там є атач.
-                    </p>
-
                     <div className={styles.articlePicture}>
                         <Image
-                            src="/assets/images/blog-articles/please_find_attached_1.jpg"
+                            src="/assets/images/blog-articles/very_looong_emails_2.jpg"
                             width="1400"
                             height="425"
-                            alt="Короткі, “розмовні” імейлі - тренд!"
+                            alt="Зайняті люди пишуть короткі імейли"
                             style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
+                                maxWidth: '100%',
+                                height: 'auto',
+                            }}/>
                     </div>
 
                     <p className={styles.articleText}>
-                        Але практично на кожній лекції, тренігу чи воркшопі, який я проводжу, неодмінно виникає тривала
-                        дискусія, щодо списку застарілих кліше, коли серед них опиняється &quot;Please find attached&quot;. Ідею
-                        про те, що бізнес став набагато більш персоналізованим за останні роки, і що бізнес комунікація
-                        відповідно підлаштовується, наприклад, світовою тенденцією до спрощення текстів (KISS принцип)
-                        та написання імейлів у більш розмовному стилі – ще більш-менш сприймають. Але от те, що це
-                        означає заміняти та уникати &quot;неживих&quot;, антикварних фраз, бо вони шкодять активній
-                        персоналізованій комунікації і створюють додаткову непотрібну відстань з читачем - прийняти
-                        важко.
+                        2. А ще подумайте, <b>хто зазвичай пише найкоротші імейли?</b> Зайняті люди. Так от, щоб про вас
+                        так думали, казали та вважали вас таким, не потрібно постійно повторювати, що у вас немає часу
+                        чи що ви зайняті. Покажіть себе на ділі! Прислів'я "справи говорять голосніше за слова"
+                        залишається актуальним до сьогодні. І в імейлінгу також.
                     </p>
 
                     <p className={styles.articleText}>
-                        Якраз на цьому моменті багато схвальних кивків чи нейтральних позіхів змінюються на скептичний
-                        подив та саркастичне &quot;хоч цю нам залиште.&quot;, а то і обурливе – &quot;я - незгоден.&quot;
-                    </p>
-                </div>
-            </div>
-
-            <div className={styles.articleEvenSection}>
-                <div className={styles.maxWidthArticleSectionWrapper}>
-                    <h2 className={styles.subTitle}>
-                        Усі так пишуть
-                    </h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/please_find_attached_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Усі так пишуть"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
-                    <p className={styles.articleText}>
-                        Аргументація незгоди проста – фраза як фраза, і зовсім не застаріла, усі так пишуть, нейтіви в
-                        тому числі. А here is the [report], як альтернатива, нікуди не годиться - занадто неформально і
-                        взагалі не ввічливо так казати. Ще чого доброго, бос побачить і пожурить, чи клієнт
-                        поскаржиться, що це ви собі надумали фамільярничати.
+                        3. Доведено, що психологічно <b>довгі імейли також збільшують тривожність </b> у читача: чи все
+                        я зрозумів(ла)? чи на всі деталі звернув(ла) увагу? чи не пропустив(ла) я чогось важливого? А
+                        тривожна — це малоефективна та неуважна людина + ніхто не любить себе так почувати. Тож як до
+                        вас будуть ставитися, якщо ви зі своїми імейлами тільки посилюєте цю тривожність?
                     </p>
 
                     <p className={styles.articleText}>
-                        ОК, загалом страхи зрозумілі, хоч і безпідставні.
-                    </p>
-
-                    <p className={styles.articleText}>
-                        По-перше, я завжди наголошую, що усе потрібно розглядати лише в конкретному контексті, тому для
-                        написання хороших імейлів потрібно досконало володіти цим контекстом – розуміти, що за ситуація
-                        склалася, знати, хто ваш читач, і якого результату ви хочете досягти вашим імейлом в
-                        короткострокові та довгостроковій перспективі (мати імейл стратегію).
-                    </p>
-
-                    <p className={styles.articleText}>
-                        По-друге, все, що я розповідаю – не для того, що б наставити когось на &quot;шлях праведний&quot;, не
-                        претендую на істину останньої інстанції, і не роздаю індульгенції на мовні звороти, а просто
-                        ділюся своєю думкою та досвідом, який працював для мене у моїх ситуаціях, для того, щоб ви
-                        розуміли, що є альтернатива клішейному книжному спілкуванню. Щоб була можливість спробувати
-                        різні підходи і вибрати, що працює для вас.
+                        4. Не забувайте, що багато хто читає листи зі смартфону, а довгі скроли усіх дратують, якщо
+                        звісно палець не стомиться раніше.
                     </p>
                 </div>
             </div>
@@ -133,55 +132,125 @@ export default function VeryLooongEmails({articleData}) {
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
                     <h2 className={styles.subTitle}>
-                        Ввічливі слова - це ще не ввічливість
+                        Може, краще поговорити?
                     </h2>
 
                     <p className={styles.articleText}>
-                        Але основне, що призводить до такої реакції – це невірне розуміння неформальності та
-                        ввічливості. Роки школи, університету та курсів з матеріалами стандартизованих підручників та
-                        викладачами, більшість з яких не стикалася з реальними бізнес- кейсами та з живими клієнтами,
-                        змусили свято повірити, якщо ви не напічкаєте текст розкланюваннями, солодко-приторними could
-                        you be so kind, та нещирим at your earliest convenience, тощо, то тавро грубіяна – гарантовано.
-                        А неформальність часто сприймається як заклик усім підряд писати hey buddy та hugs and kisses.
-                        Проте, це обширна тема і про неї варто окремо писати.
+                        Якщо ваш імейл переходить до стадії дооовгого, то запитайте себе: може, краще поговорити з
+                        людиною?
                     </p>
 
                     <div className={styles.articlePicture}>
                         <Image
-                            src="/assets/images/blog-articles/please_find_attached_3.jpg"
+                            src="/assets/images/blog-articles/very_looong_emails_3.jpg"
                             width="1400"
                             height="425"
-                            alt="Як не перепрацювати"
+                            alt="Зайняті люди пишуть короткі імейли"
                             style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
+                                maxWidth: '100%',
+                                height: 'auto',
+                            }}/>
                     </div>
+
+                    <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                        На мою думку, основні причини дооовгих імейлів:
+                    </p>
+
+                    <ul className={`${styles.articleList}`}>
+                        <li className={styles.discList}>
+                            <p className={styles.articleText}>
+                                <b>Про випендрьож з англійською я вже казала.</b> Прикро, але буває.
+                            </p>
+                        </li>
+                        <li className={styles.discList}>
+                            <p className={styles.articleText}>
+                                <b>Ви самі не розумієте, що хочете сказати.</b> Ось це найбільший "капець" і з ним
+                                найважче боротися. Бо відомо, що <i>clear writing = clear thinking</i>, а останнє так
+                                швидко не зміниш.
+                            </p>
+                        </li>
+                        <li className={styles.discList}>
+                            <p className={styles.articleText}>
+                                <b>Ви — спамер.</b>
+                                Це частіше трапляється у великих корпораціях. Для того, щоб створити ілюзію постійної
+                                зайнятості та звершення великих справ. Або тому, що “всі так роблять”, працівники
+                                грішать написанням довгих апдейтів, щоб тримати інших в курсі (keep in the loop).
+                            </p>
+                        </li>
+                        <li className={styles.discList}>
+                            <p className={styles.articleText}>
+                                <b>FYI.</b> Замість того, щоб коротко пояснити чи підсумувати те, що адресатові потрібно
+                                знати, форвардите полотна історії, пересилаючи навіть те, що не потрібно знати.
+                                Більшого <i>disrespect</i> годі й вигадати, але <i>who cares?</i>
+                            </p>
+                        </li>
+                    </ul>
+
+                    <div className={styles.articlePicture}>
+                        <Image
+                            src="/assets/images/blog-articles/very_looong_emails_5.jpg"
+                            width="1400"
+                            height="425"
+                            alt="Зайняті люди пишуть короткі імейли"
+                            style={{
+                                maxWidth: '100%',
+                                height: 'auto',
+                            }}/>
+                    </div>
+
+                    <ul className={`${styles.articleList}`}>
+                        <li className={styles.discList}>
+                            <p className={styles.articleText}>
+                                <b>Це мав би бути не імейл.</b> Не потрібно писати імейл, якщо краще зустрітися, Чи
+                                зателефонувати. Інколи набагато швидше та продуктивніше скористатися іншим засобом
+                                спілкування.
+                            </p>
+                        </li>
+                        <li className={styles.discList}>
+                            <p className={styles.articleText}>
+                                <b>Варто написати кілька імейлів.</b> Золоте правило: одна тема — один імейл. Не
+                                навалюйте усе до купи та не змішуйте мухи з котлетами, бо комусь це розгрібати. А
+                                зрештою ви теж постраждаєте, якщо розгребуть неправильно чи не те, чи проігнорують.
+                            </p>
+                        </li>
+                        <li className={styles.discList}>
+                            <p className={styles.articleText}>
+                                <b>Ви не редагуєте/вичитуєте свої імейли.</b> Ось це — те, що я називаю “потік
+                                свідомості” (нехай вибачить мені Джеймс Джойс), коли ви виливаєте на адресата свою думку
+                                в тому вигляді, в якому вона з'явилася у вас в голові. Хотілося б сподіватися, що
+                                більшість мислять структурно, але зазвичай там хаос. Найкраще, що ви можете зробити —
+                                стати собі найприскіпливішим редактором та критиком.
+                            </p>
+                        </li>
+                        <li className={styles.discList}>
+                            <p className={styles.articleText}>
+                                <b>У вас є СТРАХ:</b>
+                                <br/>
+                                &nbsp;&nbsp;а) виглядати непрофесійно,
+                                <br/>
+                                &nbsp;&nbsp;б)звучати формально/неввічливо,
+                                <br/>
+                                &nbsp;&nbsp;в) що вас не зрозуміють, якщо ви напишете коротко.
+                            </p>
+                        </li>
+                    </ul>
+
                 </div>
             </div>
 
             <div className={styles.articleEvenSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
+                    <p className={styles.articleText}>
+                        Остання — мабуть, найпоширеніша причина, але про неї іншим разом.
+                    </p>
                     <h2 className={styles.subTitle}>
-                        Індульгенція на &quot;Please find attached&quot;
+                        А вам вдається контролювати довжину своїх імейлів?
                     </h2>
 
-                    <p className={styles.articleText}>
-                        Якщо вам так подобається – пишіть &quot;Please find attached&quot;. Варто розуміти, що ця фраза сама по
-                        собі нічого не змінить, і чи є вона, чи її немає – однаково. Увесь текст/імейл і підхід повинні
-                        бути живим, розмовними, партнерськими, персоналізованими, сфокусованим на читачеві, проактивним
-                        та націленим на GJD. І одна фраза погоди не зробить.
+                    <p className={`${styles.articleText} ${styles.articleLink}`} >
+                        Читайте цю статтю англійською на <a rel="noreferrer" target="_blank"
+                                                            href="https://medium.com/@ivannatabachuk/your-very-looong-emails-833993e350fc">Medium.com</a>
                     </p>
-
-                    <p className={styles.articleText}>
-                        Але якщо ви прагнете покращити та модернізувати ваш імейлінг, то одним з перших кроків має стати
-                        очистка письма від фрази типу &quot;Please find attached&quot;.
-                    </p>
-
-                    <p className={styles.articleText}>
-                        І насамкінець, обіцяні <Link href='/blog/articles/please-find-attached-2'>альтернативи</Link>.
-                    </p>
-
                 </div>
             </div>
 
@@ -196,5 +265,5 @@ export default function VeryLooongEmails({articleData}) {
                 </div>
             </div>
         </div>
-    );
+);
 };
