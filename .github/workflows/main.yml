@@ -39,11 +39,11 @@ jobs:
       - name: Build sources
         run: sudo npm run build
 
-      - name: Current dir
-        run: ls -al
-
-      - name: Copy optimized images
-        run: cp -r ./.next/public/assets/images/blog-articles ./public/assets/images/blog-articles
+#      - name: Current dir
+#        run: ls -al
+#
+#      - name: Copy optimized images
+#        run: cp -r ./.next/public/assets/images/blog-articles ./public/assets/images/blog-articles
 
       - name: Deploy to server
         uses: appleboy/scp-action@master
