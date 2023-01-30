@@ -2,7 +2,6 @@ import React from 'react';
 
 import styles from '../../components/articles/commonArticleStyles.module.scss';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import Author from '../blog/Author/Author';
 import Slider from '../blog/Slider/Slider';
@@ -27,15 +26,15 @@ export default function VeryLooongEmails({articleData}) {
 
                     <p className={styles.articleText}>
                         <i>
-                            "One of the top reasons your email isn’t getting read is because it is too long," — говорить
+                            &quot;One of the top reasons your email isn’t getting read is because it is too long,&quot; — говорить
                             експерт з менеджменту Сraig Jarrow.
                         </i>
                     </p>
 
                     <p className={styles.articleText}>
                         Ще при спілкуванні англійською наживо більшості вистачає глузду коротко формулювати свої думки
-                        (а якщо ні, то принаймні працюють над цим чи розуміють потребу). Або співрозмовник "допомагає"
-                        не розтікатися думкою, перебиваючи "потік свідомості" або банально рівень недостатній для довгих
+                        (а якщо ні, то принаймні працюють над цим чи розуміють потребу). Або співрозмовник &quot;допомагає&quot;
+                        не розтікатися думкою, перебиваючи &quot;потік свідомості&quot; або банально рівень недостатній для довгих
                         та складних зворотів. А от коли діло доходить до імейлів, то тут дають собі волю розгулятися.
                     </p>
 
@@ -46,7 +45,7 @@ export default function VeryLooongEmails({articleData}) {
                         так писати
                         по суті? А як же синоніми? А звороти (завороти)? А розкланювання? Ні, тут викладають усе, що
                         знають або
-                        нагуглили. І повторюють по декілька разів, щоб точно "дійшло" до адресата.
+                        нагуглили. І повторюють по декілька разів, щоб точно &quot;дійшло&quot; до адресата.
                     </p>
 
                     <div className={styles.articlePicture}>
@@ -111,7 +110,7 @@ export default function VeryLooongEmails({articleData}) {
                     <p className={styles.articleText}>
                         2. А ще подумайте, <b>хто зазвичай пише найкоротші імейли?</b> Зайняті люди. Так от, щоб про вас
                         так думали, казали та вважали вас таким, не потрібно постійно повторювати, що у вас немає часу
-                        чи що ви зайняті. Покажіть себе на ділі! Прислів'я "справи говорять голосніше за слова"
+                        чи що ви зайняті. Покажіть себе на ділі! Прислів&apos;я &quot;справи говорять голосніше за слова&quot;
                         залишається актуальним до сьогодні. І в імейлінгу також.
                     </p>
 
@@ -145,7 +144,7 @@ export default function VeryLooongEmails({articleData}) {
                             src="/assets/images/blog-articles/very_looong_emails_3.jpg"
                             width="1400"
                             height="425"
-                            alt="Зайняті люди пишуть короткі імейли"
+                            alt="Може, краще поговорити?"
                             style={{
                                 maxWidth: '100%',
                                 height: 'auto',
@@ -164,7 +163,7 @@ export default function VeryLooongEmails({articleData}) {
                         </li>
                         <li className={styles.discList}>
                             <p className={styles.articleText}>
-                                <b>Ви самі не розумієте, що хочете сказати.</b> Ось це найбільший "капець" і з ним
+                                <b>Ви самі не розумієте, що хочете сказати.</b> Ось це найбільший &quot;капець&quot; і з ним
                                 найважче боротися. Бо відомо, що <i>clear writing = clear thinking</i>, а останнє так
                                 швидко не зміниш.
                             </p>
@@ -217,7 +216,7 @@ export default function VeryLooongEmails({articleData}) {
                             <p className={styles.articleText}>
                                 <b>Ви не редагуєте/вичитуєте свої імейли.</b> Ось це — те, що я називаю “потік
                                 свідомості” (нехай вибачить мені Джеймс Джойс), коли ви виливаєте на адресата свою думку
-                                в тому вигляді, в якому вона з'явилася у вас в голові. Хотілося б сподіватися, що
+                                в тому вигляді, в якому вона з&apos;явилася у вас в голові. Хотілося б сподіватися, що
                                 більшість мислять структурно, але зазвичай там хаос. Найкраще, що ви можете зробити —
                                 стати собі найприскіпливішим редактором та критиком.
                             </p>
