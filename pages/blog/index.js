@@ -48,7 +48,7 @@ export default function Blog({
             <div className={`uppr-page-content ${styles.upprPageContent}`}>
                 <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
                     <Image
-                        src={domainName + '/assets/images/blog_main.webp'}
+                        src={domainName + '/assets/images/blog-articles/blog_main.webp'}
                         alt="Main blog picture"
                         width="3000"
                         height="1700"
