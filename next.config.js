@@ -7,60 +7,61 @@ const nextConfig = {
     reactStrictMode: true,
     experimental: {},
     webpack: (config, {isServer}) => {
-        const addOn = {
-            module: {
-                ...config.module,
-                rules: [].concat(config.module.rules,
-                    [
-                        {
-                            test: /\.(jpe?g|png|gif|svg)$/i,
-                            type: 'asset',
-                        },
-                        {
-                            test: /\.(jpe?g|png|gif|svg)$/i,
-                            use: [
-                                {
-                                    loader: ImageMinimizerPlugin.loader,
-                                    options: {
-                                        severityError: 'warning',
-                                        minimizerOptions: {
-                                            plugins: ['gifsicle'],
-                                        },
-                                    },
-                                },
-                            ],
-                        },
-                    ])
-            },
-            optimization: {
-                ...config.optimization,
-                minimizer: [].concat(config.optimization.minimizer,
-                    [
-                        new ImageMinimizerPlugin({
-                            minimizer: {
-                                implementation: ImageMinimizerPlugin.sharpMinify,
-                            },
-                            generator: [
-                                {
-                                    type: "asset",
-                                    implementation: ImageMinimizerPlugin.sharpGenerate,
-                                    options: {
-                                        encodeOptions: {
-                                            webp: {
-                                                quality: 90,
-                                            },
-                                        },
-                                    },
-                                },
-                            ],
-                        }),
-                    ]
-                )
-            },
-            plugins: [].concat(...config.plugins, [
-                new CopyPlugin({ patterns: ["./public/assets/images/**/*"] })
-            ])
-        };
+        const addOn = {};
+        // const addOn = {
+        //     module: {
+        //         ...config.module,
+        //         rules: [].concat(config.module.rules,
+        //             [
+        //                 {
+        //                     test: /\.(jpe?g|png|gif|svg)$/i,
+        //                     type: 'asset',
+        //                 },
+        //                 {
+        //                     test: /\.(jpe?g|png|gif|svg)$/i,
+        //                     use: [
+        //                         {
+        //                             loader: ImageMinimizerPlugin.loader,
+        //                             options: {
+        //                                 severityError: 'warning',
+        //                                 minimizerOptions: {
+        //                                     plugins: ['gifsicle'],
+        //                                 },
+        //                             },
+        //                         },
+        //                     ],
+        //                 },
+        //             ])
+        //     },
+        //     optimization: {
+        //         ...config.optimization,
+        //         minimizer: [].concat(config.optimization.minimizer,
+        //             [
+        //                 new ImageMinimizerPlugin({
+        //                     minimizer: {
+        //                         implementation: ImageMinimizerPlugin.sharpMinify,
+        //                     },
+        //                     generator: [
+        //                         {
+        //                             type: "asset",
+        //                             implementation: ImageMinimizerPlugin.sharpGenerate,
+        //                             options: {
+        //                                 encodeOptions: {
+        //                                     webp: {
+        //                                         quality: 90,
+        //                                     },
+        //                                 },
+        //                             },
+        //                         },
+        //                     ],
+        //                 }),
+        //             ]
+        //         )
+        //     },
+        //     plugins: [].concat(...config.plugins, [
+        //         new CopyPlugin({ patterns: ["./public/assets/images/**/*"] })
+        //     ])
+        // };
 
         if (!isServer) {
             config = {
