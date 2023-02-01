@@ -7,61 +7,60 @@ const nextConfig = {
     reactStrictMode: true,
     experimental: {},
     webpack: (config, {isServer}) => {
-        const addOn = {};
-        // const addOn = {
-        //     module: {
-        //         ...config.module,
-        //         rules: [].concat(config.module.rules,
-        //             [
-        //                 {
-        //                     test: /\.(jpe?g|png|gif|svg)$/i,
-        //                     type: 'asset',
-        //                 },
-        //                 {
-        //                     test: /\.(jpe?g|png|gif|svg)$/i,
-        //                     use: [
-        //                         {
-        //                             loader: ImageMinimizerPlugin.loader,
-        //                             options: {
-        //                                 severityError: 'warning',
-        //                                 minimizerOptions: {
-        //                                     plugins: ['gifsicle'],
-        //                                 },
-        //                             },
-        //                         },
-        //                     ],
-        //                 },
-        //             ])
-        //     },
-        //     optimization: {
-        //         ...config.optimization,
-        //         minimizer: [].concat(config.optimization.minimizer,
-        //             [
-        //                 new ImageMinimizerPlugin({
-        //                     minimizer: {
-        //                         implementation: ImageMinimizerPlugin.sharpMinify,
-        //                     },
-        //                     generator: [
-        //                         {
-        //                             type: "asset",
-        //                             implementation: ImageMinimizerPlugin.sharpGenerate,
-        //                             options: {
-        //                                 encodeOptions: {
-        //                                     webp: {
-        //                                         quality: 90,
-        //                                     },
-        //                                 },
-        //                             },
-        //                         },
-        //                     ],
-        //                 }),
-        //             ]
-        //         )
-        //     },
-        //     plugins: [].concat(...config.plugins, [
-        //         new CopyPlugin({ patterns: ["./public/assets/images/**/*"] })
-        //     ])
-        // };
+        const addOn = {
+            module: {
+                ...config.module,
+                rules: [].concat(config.module.rules,
+                    [
+                        {
+                            test: /\.(jpe?g|png|gif|svg)$/i,
+                            type: 'asset',
+                        },
+                        {
+                            test: /\.(jpe?g|png|gif|svg)$/i,
+                            use: [
+                                {
+                                    loader: ImageMinimizerPlugin.loader,
+                                    options: {
+                                        severityError: 'warning',
+                                        minimizerOptions: {
+                                            plugins: ['gifsicle'],
+                                        },
+                                    },
+                                },
+                            ],
+                        },
+                    ])
+            },
+            optimization: {
+                ...config.optimization,
+                minimizer: [].concat(config.optimization.minimizer,
+                    [
+                        new ImageMinimizerPlugin({
+                            minimizer: {
+                                implementation: ImageMinimizerPlugin.sharpMinify,
+                            },
+                            generator: [
+                                {
+                                    type: "asset",
+                                    implementation: ImageMinimizerPlugin.sharpGenerate,
+                                    options: {
+                                        encodeOptions: {
+                                            webp: {
+                                                quality: 90,
+                                            },
+                                        },
+                                    },
+                                },
+                            ],
+                        }),
+                    ]
+                )
+            },
+            plugins: [].concat(...config.plugins, [
+                new CopyPlugin({ patterns: ["./public/assets/images/**/*"] })
+            ])
+        };
 
         if (!isServer) {
             config = {
@@ -91,11 +90,11 @@ const nextConfig = {
         // limit of 25 imageSizes values
         imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
         // path prefix for Image Optimization API, useful with `loader`
-        path: '/_next/image',
+        // path: '/_next/image',
         // loader can be 'default', 'imgix', 'cloudinary', 'akamai', or 'custom'
-        loader: 'default',
+        loader: 'custom',
         // file with `export default function loader({src, width, quality})`
-        // loaderFile: './components/common/loader/loader.js',
+        loaderFile: './components/common/loader/loader.js',
         // disable static imports for image files
         disableStaticImages: false,
         // minimumCacheTTL is in seconds, must be integer 0 or more
