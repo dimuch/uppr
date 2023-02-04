@@ -88,6 +88,11 @@ export async function getServerSideProps(context) {
     const tags = await getTagsDB();
     const articlesByCategories = await getArticlesByCategoryDB();
 
+    context.res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=604800, stale-while-revalidate=59'
+    )
+
     return {
         props: {
             ...articles,

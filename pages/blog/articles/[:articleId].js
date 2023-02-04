@@ -52,8 +52,13 @@ export default function ArticlePageWrapper({articleData}) {
     )
 };
 
-export async function getServerSideProps({resolvedUrl}) {
+export async function getServerSideProps({res,resolvedUrl}) {
     const articleData = await getArticlesDataByIdDB(resolvedUrl);
+
+    res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=604800, stale-while-revalidate=59'
+    )
 
     return {
         props: {

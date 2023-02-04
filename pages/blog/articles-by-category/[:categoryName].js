@@ -70,8 +70,13 @@ export default function ArticlePageWrapper({articlesByCategory, articleCategorie
 
 export async function getServerSideProps(context) {
     const articleCategories = await getArticlesCategoriesDB();
-
     const categoryName = context.params[':categoryName'];
+
+    context.res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=604800, stale-while-revalidate=59'
+    )
+
     try {
         const tags = await getTagsDB();
         const articlesByCategory = await getArticlesByCategoryNameDB(categoryName);
