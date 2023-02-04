@@ -22,24 +22,24 @@ export default function ThanksInAdvance({articleData}) {
                     <h2 className={styles.subTitle}></h2>
 
                     <p className={styles.articleText}>
-                        <i>"Thanks in Advance"</i> - ще одна суперечлива фраза. Досить часто її пишуть в кінці
+                        <i>&quot;Thanks in Advance&quot;</i> - ще одна суперечлива фраза. Досить часто її пишуть в кінці
                         імейлу-прохання, але водночас опитування показують, що для багатьох вона звучить грубо,
                         егоїстично та <i>careless</i>.
                     </p>
 
                     <p className={styles.articleText}>
-                        І таких людей можна зрозуміти, якщо придивитися пильніше та задуматися. Написавши <i>"Thanks in
-                        advance", "Thank you for your consideration" чи "Thank you in advance for your help"</i>, ви,
+                        І таких людей можна зрозуміти, якщо придивитися пильніше та задуматися. Написавши <i>&quot;Thanks in
+                        advance&quot;, &quot;Thank you for your consideration&quot; чи &quot;Thank you in advance for your help&quot;</i>, ви,
                         по-перше, припускаєте, що ваш читач беззаперечно виконає ваше прохання, що уже само собою
                         самовпевнено.
                     </p>
 
                     <p className={styles.articleText}>
-                        А по-друге, владою наданою ... (хтозна-ким) ви скасовуєте право адресата сказати 'Ні'!
+                        А по-друге, владою наданою ... (хтозна-ким) ви скасовуєте право адресата сказати &apos;Ні&apos;!
                     </p>
 
                     <p className={styles.articleText}>
-                        От чому <i>"Thanks in advance"</i> сприймається <i>disrespectful та careless</i>, і якщо ви
+                        От чому <i>&quot;Thanks in advance&quot;</i> сприймається <i>disrespectful та careless</i>, і якщо ви
                         дбаєте про <i> ROR (ReturnOnRelationship)</i> - краще використовуйте альтернативи.
                     </p>
 
@@ -56,9 +56,9 @@ export default function ThanksInAdvance({articleData}) {
                     </div>
 
                     <p className={styles.articleText}>
-                        Звісно, все залежить від контексту, але <i>"Thank you in advance"</i> досить часто читається
-                        як <i>"I expect you to do this"</i>, і від цього нікуди не дінешся. Тому, щоб не звучати
-                        самовпевнено та безцеремонно, заміняємо більш "безпечними" опціями:
+                        Звісно, все залежить від контексту, але <i>&quot;Thank you in advance&quot;</i> досить часто читається
+                        як <i>&quot;I expect you to do this&quot;</i>, і від цього нікуди не дінешся. Тому, щоб не звучати
+                        самовпевнено та безцеремонно, заміняємо більш &quot;безпечними&quot; опціями:
                     </p>
                     <ul className={`${styles.articleList}`}>
                         <li>
@@ -79,8 +79,8 @@ export default function ThanksInAdvance({articleData}) {
                                 <i style={{color: `#${articleData.article_color}`}}>2. Thanks for considering this/my
                                     request</i>
                                 <br/>
-                                Таке завершення може чудово спрацювати, оскільки немає нав'язаних
-                                очікувань про обов'язковість виконання. Акцент на тому, що навіть думки "стосовно" і то
+                                Таке завершення може чудово спрацювати, оскільки немає нав&apos;язаних
+                                очікувань про обов&apos;язковість виконання. Акцент на тому, що навіть думки &quot;стосовно&quot; і то
                                 будуть цінні. Але все одно рекомендую доповнити такий варіант хоч мінімальним <i>CTA</i>,
                                 а то можуть <i>consider...</i> і так нічого не зробити;).
                             </p>
@@ -104,7 +104,7 @@ export default function ThanksInAdvance({articleData}) {
                             <p className={styles.articleText}>
                                 <i style={{color: `#${articleData.article_color}`}}>3. In any case, thank you</i>
                                 <br/>
-                                Ще один спосіб сказати, що <i>“Whether you agree or not, I value your consideration”</i>.
+                                Ще один спосіб сказати, що <i>&quot;Whether you agree or not, I value your consideration&quot;</i>.
                             </p>
                         </li>
                         <li>
@@ -146,7 +146,7 @@ export default function ThanksInAdvance({articleData}) {
                             <p className={styles.articleText}>
                                 <i style={{color: `#${articleData.article_color}`}}>10. Thanks</i>
                                 <br/>
-                                І врешті-решт, можна просто написати "дякую”.
+                                І врешті-решт, можна просто написати &quot;дякую&quot;.
                             </p>
                         </li>
                     </ul>
@@ -157,7 +157,7 @@ export default function ThanksInAdvance({articleData}) {
             <div className={styles.articleEvenSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
                     <h2 className={styles.subTitle}>
-                        Але чи справді фраза "thanks in advance" є універсальним злом?
+                        Але чи справді фраза &quot;thanks in advance&quot; є універсальним злом?
                     </h2>
 
                     <div className={styles.articlePicture}>
@@ -173,7 +173,7 @@ export default function ThanksInAdvance({articleData}) {
                     </div>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
-                        Так-от, є два випадки, коли я вважаю <i>"thanks in advance”</i> припустимим, і сама його
+                        Так-от, є два випадки, коли я вважаю <i>&quot;thanks in advance&quot;</i> припустимим, і сама його
                         використовую.
                     </p>
 
@@ -249,11 +249,11 @@ export default function ThanksInAdvance({articleData}) {
                     </div>
 
                     <p className={styles.articleText}>
-                        От і все. А писати <i>"thanks in advance”</i> після кожного прохання, тому що так
+                        От і все. А писати <i>&quot;thanks in advance&quot;</i> після кожного прохання, тому що так
                         нормально/треба/мається на увазі/всі вам зобов’язані/повинні - не варто. Але якщо ви все таки
-                        (як і більшість) належите до прихильників та шанувальників <i>“thanks in advance”</i>, які й
+                        (як і більшість) належите до прихильників та шанувальників <i>&quot;thanks in advance&quot;</i>, які й
                         чути не хочуть про те, що вона звучить вимогливо та вказує на відсутність поваги, то погляньте
-                        на приклад, як паршивенько може виглядати ось це <i>“thanks in advance”</i> у здавалося б
+                        на приклад, як паршивенько може виглядати ось це <i>&quot;thanks in advance&quot;</i> у здавалося б
                         звичайному імейлі і тільки підлити масла у вогонь.
                     </p>
 
@@ -299,8 +299,8 @@ export default function ThanksInAdvance({articleData}) {
 
                     <p className={styles.articleText}>
                         І от наш умовний Паша мало того, що офіційно підтверджує, що він лінтюх із безладом
-                        в <i>Inbox</i> (легше комусь написати й делегувати, ніж самому “поритися” в недавніх листах).
-                        Так ще й оцим <i>“thanks in advance”</i> демонструє Его завбільшки з <i>open-space</i>, бо
+                        в <i>Inbox</i> (легше комусь написати й делегувати, ніж самому &quot;поритися&quot; в недавніх листах).
+                        Так ще й оцим <i>&quot;thanks in advance&quot;</i> демонструє Его завбільшки з <i>open-space</i>, бо
                         навіть не припускає, що його прохання можуть не виконати (#нумижколеги та #щоцеважко). Він уже і
                         подякував наперед, ніби воно виконане.
                     </p>
@@ -345,7 +345,7 @@ export default function ThanksInAdvance({articleData}) {
                         Щоб ви зробили в такій ситуації?
                     </p>
                     <p className={styles.articleText}>
-                        (Не розглядаємо варіант, що Паша видалив CVs чи не отримував їх раніше - <i>it's not the
+                        (Не розглядаємо варіант, що Паша видалив CVs чи не отримував їх раніше - <i>it&apos;s not the
                         case</i>).
                     </p>
 
