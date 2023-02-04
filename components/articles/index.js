@@ -29,6 +29,7 @@ export {default as SubjectLine} from './subject-line';
 export {default as BullshitFreeSalesEmails} from './bullshit-free-sales-emails';
 export {default as VeryLooongEmails} from './very-looong-emails';
 export {default as GetYourEmailsRead} from './get-your-emails-read';
+export {default as ThanksInAdvance} from './thanks-in-advance';
 
 
 export {default as PageNotFound} from '../common/404/404';

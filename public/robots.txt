@@ -36,4 +36,5 @@ Allow: /blog/articles-by-category/emails
 Allow: /blog/articles-by-category/hr
 Allow: /blog/articles-by-category/business%20english
 Allow: /blog/articles/very_looong_emails
-Allow: blog/articles/get-your-emails-read
+Allow: /blog/articles/get-your-emails-read
+Allow: /blog/articles/thanks-in-advance
