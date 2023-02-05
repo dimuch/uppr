@@ -39,3 +39,4 @@ Allow: /blog/articles/very_looong_emails
 Allow: /blog/articles/get-your-emails-read
 Allow: /blog/articles/thanks-in-advance
 Allow: /blog/articles/kiss-emails
+Allow: /blog/articles/captain-obvious-is-writing

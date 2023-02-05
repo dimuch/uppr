@@ -31,6 +31,7 @@ export {default as VeryLooongEmails} from './very-looong-emails';
 export {default as GetYourEmailsRead} from './get-your-emails-read';
 export {default as ThanksInAdvance} from './thanks-in-advance';
 export {default as KissEmails} from './kiss-emails';
+export {default as CaptainObviousIsWriting} from './captain-obvious-is-writing';
 
 
 export {default as PageNotFound} from '../common/404/404';

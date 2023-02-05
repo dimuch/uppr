@@ -126,6 +126,14 @@
   list-style-type: disc;
 }
 
+.dashList{
+  p:before {
+    content: "-";
+    text-indent: -0.75rem;
+    display: inline-block;
+  }
+}
+
 .frameWithExampleAndTitle {
   border: 1px solid $blog-four-sticky;
   max-width: 60rem;
