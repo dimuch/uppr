@@ -44,7 +44,7 @@ export default function StupidEmailsIntroductions({articleData}) {
                     </h3>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
-                        Найбільший <i>{facepalm}</i>. Інші &quot;зайві&quot; фрази хоч чимось замінити можна, і хоч якусь роль в
+                        Найбільший <i>&#123;facepalm&#125;</i>. Інші &quot;зайві&quot; фрази хоч чимось замінити можна, і хоч якусь роль в
                         імейлі вони виконують, і певне смислове навантаження несуть.
                     </p>
 
