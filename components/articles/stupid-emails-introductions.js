@@ -135,8 +135,8 @@ export default function StupidEmailsIntroductions({articleData}) {
                     </p>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
-                        Ну, а якщо так уже вам потрібен цей reminder чи notice, винесіть його <a
-                        href="/blog/articles/subject-line">в тему в квадратних дужках</a>. І не забруднюйте свої імейли
+                        Ну, а якщо так уже вам потрібен цей reminder чи notice, винесіть його
+                        <a href="/blog/articles/subject-line" target="_blank" rel="noreferrer">в тему в квадратних дужках</a>. І не забруднюйте свої імейли
                         зайвими символами, їх же ж комусь читати.
                     </p>
                 </div>
