@@ -35,6 +35,7 @@ export {default as CaptainObviousIsWriting} from './captain-obvious-is-writing';
 export {default as ToMeetOrNotToMeet} from './to-meet-or-not-to-meet';
 export {default as ContextIsTheKing} from './context-is-the-king';
 export {default as StupidEmailsIntroductions} from './stupid-emails-introductions';
+export {default as CaseStudyCanUCatchMeUp} from './case-study-can-u-catch-me-up';
 
 
 export {default as PageNotFound} from '../common/404/404';
