@@ -1,7 +1,7 @@
 @import "../../../styles/scss/common/colors.scss";
 
 .upprOthersArticles{
-  padding-top: 1.5rem;
+  padding-top: 2rem;
 }
 
 .upprAllArticles{
@@ -9,7 +9,7 @@
   align-items: stretch;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: min-content;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .upprSideBlock{

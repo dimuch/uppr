@@ -76,10 +76,10 @@
 
 .container {
   display: grid;
-  gap: 1.5rem;
+  gap: 2.5rem;
   grid-template-columns: [first] 25% [second] auto [third] 25%;
   grid-template-rows: [r-1] 7% [r-2] auto [r-3] auto [r-4] 7%;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .item0 {
