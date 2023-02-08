@@ -6,7 +6,7 @@ import ArticleHeader from '../blog/ArticleHeader/ArticleHeader';
 
 import styles from './commonArticleStyles.module.scss';
 
-export default function CaseStudyDeliveryDirectorFailemail({articleData}) {
+export default function CaseStudyDeliveryDirectorFailEmail({articleData}) {
     return (
         <div className={styles.article}>
             <div className={styles.maxWidthArticleTitleWrapper}>

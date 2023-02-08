@@ -219,9 +219,7 @@ export default function SubjectLine({articleData}) {
                                 <br/>
                                 - <i>Please call me when you are free.</i>
                                 <br/>
-                                - <i>Employee Survey: Please take by <Link
-                                href="/blog/articles/acronyms-which-you-should-use-in-emails"
-                                target="_blank" rel={'noreferrer'}>EOD</Link></i>
+                                - <i>Employee Survey: Please take by <a href="/blog/articles/acronyms-which-you-should-use-in-emails" target="_blank" rel="noreferrer">EOD</a></i>
                             </p>
                         </li>
                         <li>
@@ -341,10 +339,9 @@ export default function SubjectLine({articleData}) {
 
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
-                        <b>2.</b> Пишете імейл із атачем? Замість того, щоб писати застаріле <Link
-                        href={'/blog/articles/please-find-attached'} target={'_blank'} rel={'noreferrer'}>Please find
-                        attached</Link> чи навіть дещо кращі <Link href={'/blog/articles/please-find-attached-2'}
-                                                                   target={'_blank'} rel={'noreferrer'}>замінники</Link>,
+                        <b>2.</b> Пишете імейл із атачем? Замість того, щоб писати застаріле <a
+                        href={'/blog/articles/please-find-attached'}  target="_blank" rel="noreferrer">Please find
+                        attached</a> чи навіть дещо кращі <a href='/blog/articles/please-find-attached-2' target="_blank" rel="noreferrer">замінники</a>,
                         назвіть імейл іменем вкладення, а в тексті листа напишіть необхідну інформацію.
                     </p>
 

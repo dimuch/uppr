@@ -75,7 +75,7 @@ export function getTagsDB() {
     return new Promise((resolve, reject) => {
         connection.query(getTags, (err, rows, fields) => {
             if (err) {
-                console.log('getDownloadsDB ERROR', err);
+                console.log('getTagsDB ERROR', err);
                 reject({data: []});
             }
 
@@ -175,7 +175,7 @@ export async function getArticleBaseDataByURL(articleURL) {
     return new Promise((resolve, reject) => {
         connection.query(getArticlesDataById, (err, rows, fields) => {
             if (err) {
-                console.log('getArticlesDataById ERROR', err);
+                console.log('getArticleBaseDataByURL ERROR', err);
                 resolve(null);
             }
 
@@ -184,7 +184,7 @@ export async function getArticleBaseDataByURL(articleURL) {
 
                 const data = {
                     ...tempData[0],
-                    published: new Date(tempData[0].published).toString(),
+                    published: new Date(tempData[0]?.published).toString(),
                 }
 
                 resolve(data);
@@ -203,7 +203,7 @@ export async function getArticleTagsById(articleId) {
     return new Promise((resolve, reject) => {
         connection.query(getArticleTagsById, (err, rows, fields) => {
             if (err) {
-                console.log('getArticlesDataById ERROR', err);
+                console.log('getArticleTagsById ERROR', err);
                 reject({tags: []});
             }
 
@@ -225,7 +225,7 @@ export async function getArticleCategoryById(articleId) {
     return new Promise((resolve, reject) => {
         connection.query(getArticleCategoryById, (err, rows, fields) => {
             if (err) {
-                console.log('getArticlesDataById ERROR', err);
+                console.log('getArticleCategoryById ERROR', err);
                 reject({category: {}});
             }
 
@@ -253,7 +253,7 @@ export async function getRelevantArticlesByCategory(categoryId) {
     return new Promise((resolve, reject) => {
         connection.query(getRelevantArticlesByCategoryId, (err, rows, fields) => {
             if (err) {
-                console.log('getArticlesDataById ERROR', err);
+                console.log('getRelevantArticlesByCategory ERROR', err);
                 reject({relevantArticles: []});
             }
 
@@ -278,7 +278,7 @@ export async function getArticlesByCategoryNameDB(categoryName) {
     return new Promise((resolve, reject) => {
         connection.query(getRelevantArticlesByCategoryName, (err, rows, fields) => {
             if (err) {
-                console.log('getRelevantArticlesByCategoryName ERROR', err);
+                console.log('getArticlesByCategoryNameDB ERROR', err);
                 reject({relevantArticles: []});
             }
 

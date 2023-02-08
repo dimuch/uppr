@@ -7,7 +7,7 @@ import styles from './styles.module.scss';
 
 function Slide({slideData, slideNode, slideImageWidth, location}) {
     return (
-        <Link href={slideData.link}>
+        <a href={slideData.link}  target="_blank" rel="noreferrer">
             <div className={styles.slide} key={slideData.link}
                  ref={slideNode} style={{minWidth: slideImageWidth}}
             >
@@ -21,12 +21,12 @@ function Slide({slideData, slideNode, slideImageWidth, location}) {
                         height: "auto"
                     }} />
                 <div className={`${styles.slideTitle} ${styles[location]}`}>
-                    <Link href={slideData.link}>
+                    <a href={slideData.link} target="_blank" rel="noreferrer">
                         {slideData.title}
-                    </Link>
+                    </a>
                 </div>
             </div>
-        </Link>
+        </a>
     );
 }
 

@@ -21,9 +21,9 @@ export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         Продовжу раніше написаний&nbsp;
-                        <Link href="/blog/articles/english-in-KISS-style" target="_blank">
+                        <a href="/blog/articles/english-in-KISS-style" target="_blank" rel="noreferrer">
                             пост про абревіатури
-                        </Link>,
+                        </a>,
                         як один з супер інструментів для передачі ідей коротко та просто.
                     </p>
 

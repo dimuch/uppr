@@ -101,10 +101,9 @@ export default function IAmWritingToInform({articleData}) {
                                 Не потрібно писати <i><b>I am writing to inform.</b></i> Який сенс? Це ж імейл, Кеп.
                                 Звісно, ви пишете.
                                 <br/>
-                                <Link href="/blog/articles/junk-phrases-in-emails"
-                                      target="_blank">
+                                <a href="/blog/articles/junk-phrases-in-emails" target="_blank" rel="noreferrer">
                                     Більше про фрази такого типу.
-                                </Link>
+                                </a>
                             </p>
                         </li>
                         <li>

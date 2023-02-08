@@ -179,7 +179,7 @@ export default function PleaseFindAttached({articleData}) {
                     </p>
 
                     <p className={styles.articleText}>
-                        І насамкінець, обіцяні <Link href='/blog/articles/please-find-attached-2'>альтернативи</Link>.
+                        І насамкінець, обіцяні <a href='/blog/articles/please-find-attached-2'  target="_blank" rel="noreferrer">альтернативи</a>.
                     </p>
 
                 </div>
