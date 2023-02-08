@@ -43,5 +43,5 @@ Allow: /blog/articles/captain-obvious-is-writing
 Allow: /blog/articles/to-meet-or-not-to-meet
 Allow: /blog/articles/context-is-the-king
 Allow: /blog/articles/stupid-emails-introductions
-Allow: /blog/articles/case-study-can-u-catch-me-up
+Allow: /blog/articles/case-study-delivery-director-failemail
 
