@@ -37,6 +37,7 @@ export {default as ContextIsTheKing} from './context-is-the-king';
 export {default as StupidEmailsIntroductions} from './stupid-emails-introductions';
 export {default as CaseStudyCanUCatchMeUp} from './case-study-can-u-catch-me-up';
 export {default as CaseStudyDeliveryDirectorFailEmail} from './case-study-delivery-director-fail-email';
+export {default as NotSureIfYouSawMyLastEmail} from './not-sure-if-you-saw-my-last-email';
 
 
 export {default as PageNotFound} from '../common/404/404';

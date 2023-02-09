@@ -44,4 +44,5 @@ Allow: /blog/articles/to-meet-or-not-to-meet
 Allow: /blog/articles/context-is-the-king
 Allow: /blog/articles/stupid-emails-introductions
 Allow: /blog/articles/case-study-delivery-director-fail-email
+Allow: /blog/articles/not-sure-if-you-saw-my-last-email
 
