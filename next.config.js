@@ -84,7 +84,7 @@ const nextConfig = {
     },
     images:{
         unoptimized: false,
-        formats: ['image/avif', 'image/webp'],
+        formats: ['image/webp','image/avif'],
         // limit of 25 deviceSizes values
         deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
         // limit of 25 imageSizes values
