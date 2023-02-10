@@ -72,13 +72,13 @@
   padding-bottom: 2rem;
 }
 
-.pictureGrid{
+.pictureGrid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.picture50{
+.picture50 {
   width: 48%;
   padding-top: .5rem;
   padding-bottom: .5rem;
@@ -103,12 +103,12 @@
   margin: 0;
   color: $text;
 
-  li{
+  li {
     .articleText {
       padding-bottom: 0;
     }
 
-    &:last-of-type{
+    &:last-of-type {
       padding-bottom: 1rem;
     }
   }
@@ -122,11 +122,11 @@
   list-style: auto;
 }
 
-.discList{
+.discList {
   list-style-type: disc;
 }
 
-.dashList{
+.dashList {
   p:before {
     content: "-";
     text-indent: -0.75rem;
@@ -155,12 +155,12 @@
   }
 }
 
-.articleIframeContainer{
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-    margin-bottom: 1rem;
+.articleIframeContainer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  margin-bottom: 1rem;
 
   iframe {
     position: absolute;
@@ -173,7 +173,7 @@
   }
 }
 
-.frame{
+.frame {
   padding: 1rem;
   border: 2px dashed;
 }
@@ -184,13 +184,13 @@
   }
 }
 
-.table{
+.table {
   width: 100%;
-  border-collapse:separate;
-  border-spacing:.5rem;
+  border-collapse: separate;
+  border-spacing: .5rem;
   padding-bottom: 1.25rem;
 
-  th, td{
+  th, td {
     width: 50%;
     padding-left: 1rem;
     text-align: left;
@@ -217,29 +217,41 @@
   flex-direction: row;
 }
 
-.articlePicture50{
+.articlePicture50 {
   display: flex;
   justify-content: space-between;
-  >span {
-    width: 49%!important;
+
+  > span {
+    width: 49% !important;
     height: auto;
   }
 }
 
+.authorBlock {
+  width: 20%;
+}
+
+.relevantArticles {
+  width: 80%;
+}
+
 @media (max-width: 1024px) {
-  .maxWidthArticleSectionWrapper, .maxWidthArticleTitleWrapper{
+  .maxWidthArticleSectionWrapper, .maxWidthArticleTitleWrapper {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
-  .footerContainer{
+  .footerContainer {
     display: block;
-    >div:nth-child(1){
-      width: 100% !important;
+
+    .authorBlock {
+      width: 100%;
       margin-bottom: 3rem;
     }
-    >div:nth-child(2){
-      display: none;
+
+    .relevantArticles {
+      width: 100%;
+      padding: 2rem;
     }
   }
 }

@@ -1,8 +1,7 @@
 import React from 'react';
 
-import Author from '../../components/blog/Author/Author';
-import Slider from '../../components/blog/Slider/Slider';
 import ArticleHeader from '../blog/ArticleHeader/ArticleHeader';
+import ArticleFooter from '../blog/ArticleFooter/ArticleFooter';
 
 import styles from './commonArticleStyles.module.scss';
 
@@ -270,7 +269,7 @@ export default function ProfessionalFollowUpDontWriteATrash({articleData}) {
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>
                             <i>Thanks for your time. Glad we got an opportunity to speak about X.</i>,
                             <br/>
-                            <i>So, we decided/discussed that you will do X and I will do Y by the end of next week.</i>.
+                            <i>So, we decided/discussed that you will do X and I will do Y by the end of next week.</i>
                         </p>
                     </div>
 
@@ -285,14 +284,7 @@ export default function ProfessionalFollowUpDontWriteATrash({articleData}) {
             </div>
 
             <div className={styles.articleEvenSection}>
-                <div className={`${styles.footerContainer}`}>
-                    <div style={{width: '20%'}}>
-                        <Author data={articleData}/>
-                    </div>
-                    <div style={{width: '80%'}}>
-                        <Slider data={articleData.relevantArticles}/>
-                    </div>
-                </div>
+                <ArticleFooter articleData={articleData} />
             </div>
 
         </div>

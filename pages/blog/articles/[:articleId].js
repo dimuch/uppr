@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Head from 'next/head'
 import Header from '../../../components/common/header/Header';
 import {getArticlesDataByIdDB} from '../../../services/blogData';
@@ -48,6 +48,7 @@ export default function ArticlePageWrapper({articleData}) {
             <Header search location={'/blog'}/>
 
             <ArticlePage articleData={articleData}/>
+
         </>
     )
 };

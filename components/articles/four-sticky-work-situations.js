@@ -1,11 +1,10 @@
 import React from 'react';
-
-import styles from '../../components/articles/commonArticleStyles.module.scss';
 import Image from "next/image";
 
-import Author from '../blog/Author/Author';
-import Slider from '../blog/Slider/Slider';
 import ArticleHeader from '../blog/ArticleHeader/ArticleHeader';
+import ArticleFooter from '../blog/ArticleFooter/ArticleFooter';
+
+import styles from './commonArticleStyles.module.scss';
 
 export default function FourStickyWorkSituations({articleData}) {
     return (
@@ -272,14 +271,7 @@ export default function FourStickyWorkSituations({articleData}) {
             </div>
 
             <div className={styles.articleEvenSection}>
-                <div className={`${styles.footerContainer}`}>
-                    <div style={{width: '20%'}}>
-                        <Author data={articleData}/>
-                    </div>
-                    <div style={{width: '80%'}}>
-                        <Slider data={articleData.relevantArticles} slideWidth={'45%'}/>
-                    </div>
-                </div>
+                <ArticleFooter articleData={articleData}/>
             </div>
         </div>
     );

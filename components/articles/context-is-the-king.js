@@ -1,11 +1,9 @@
 import React from 'react';
 
-import styles from './commonArticleStyles.module.scss';
-
-import Author from '../../components/blog/Author/Author';
-import Slider from '../../components/blog/Slider/Slider';
 import ArticleHeader from '../blog/ArticleHeader/ArticleHeader';
+import ArticleFooter from '../blog/ArticleFooter/ArticleFooter';
 
+import styles from './commonArticleStyles.module.scss';
 
 export default function ContextIsTheKing({articleData}) {
     return (
@@ -206,14 +204,7 @@ export default function ContextIsTheKing({articleData}) {
             </div>
 
             <div className={styles.articleEvenSection}>
-                <div className={`${styles.footerContainer}`}>
-                    <div style={{width: '20%'}}>
-                        <Author data={articleData}/>
-                    </div>
-                    <div style={{width: '80%'}}>
-                        <Slider data={articleData.relevantArticles}/>
-                    </div>
-                </div>
+                <ArticleFooter articleData={articleData}/>
             </div>
 
         </div>

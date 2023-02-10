@@ -1,12 +1,10 @@
 import React from 'react';
-
-import styles from '../../components/articles/commonArticleStyles.module.scss';
-
 import Image from "next/image";
 
-import Author from '../blog/Author/Author';
-import Slider from '../blog/Slider/Slider';
 import ArticleHeader from '../blog/ArticleHeader/ArticleHeader';
+import ArticleFooter from '../blog/ArticleFooter/ArticleFooter';
+
+import styles from './commonArticleStyles.module.scss';
 
 export default function EightyTwentyHowToLearnRight({articleData}) {
     return (
@@ -234,14 +232,7 @@ export default function EightyTwentyHowToLearnRight({articleData}) {
 
 
             <div className={styles.articleOddSection}>
-                <div className={`${styles.footerContainer}`}>
-                    <div style={{width: "20%"}}>
-                        <Author data={articleData}/>
-                    </div>
-                    <div style={{width: '80%'}}>
-                        <Slider data={articleData.relevantArticles} slideWidth={'35%'}/>
-                    </div>
-                </div>
+                <ArticleFooter articleData={articleData}/>
             </div>
         </div>
     );

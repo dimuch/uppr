@@ -3,7 +3,7 @@ import React from 'react';
 import {Grid} from '@mui/material';
 import ArticleCard from '../OthersArticlesByCategory/partials/ArticleCard';
 
-export default function OthersArticles({items, domainName}) {
+export default function OthersArticles({items, domainName, isDescription=true}) {
 
     if (!items) {
         return null;
@@ -13,7 +13,7 @@ export default function OthersArticles({items, domainName}) {
         items.map(item => {
             return (
                 <Grid item xs={12} sm={12} md={4} key={item.link}>
-                    <ArticleCard item={item} domainName={domainName}/>
+                    <ArticleCard item={item} domainName={domainName} isDescription={isDescription}/>
                 </Grid>
             )
         })
