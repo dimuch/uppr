@@ -46,4 +46,5 @@ Allow: /blog/articles/stupid-emails-introductions
 Allow: /blog/articles/case-study-delivery-director-fail-email
 Allow: /blog/articles/not-sure-if-you-saw-my-last-email
 Allow: /blog/articles/professional-follow-up-dont-write-a-trash
+Allow: /blog/articles/case-study-followup-failemail-typical-bug
 

@@ -60,10 +60,6 @@ export default function ProfessionalFollowUpDontWriteATrash({articleData}) {
                         робота, ніж ви їм як фахівець. І питання не в тому, добре це чи погано, а в тому, щоб бачити
                         реальний стан речей та діяти відповідно.
                     </p>
-
-                    <p className={`${styles.articleText} ${styles.articleLink}`}>
-
-                    </p>
                 </div>
             </div>
 

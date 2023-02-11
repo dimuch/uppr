@@ -28,7 +28,7 @@ export default function CategoriesList({items, selectedCategory}) {
 
                 return (
                     <li className={`${styles.categoryListItem} ${classCalc}`} key={articleCategory.id}>
-                        <a href={hrefLink} target="_blank" rel="noreferrer">
+                        <a href={hrefLink} rel="noreferrer">
                             {articleCategory.name}
                         </a>
                     </li>

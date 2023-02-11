@@ -39,6 +39,7 @@ export {default as CaseStudyCanUCatchMeUp} from './case-study-can-u-catch-me-up'
 export {default as CaseStudyDeliveryDirectorFailEmail} from './case-study-delivery-director-fail-email';
 export {default as NotSureIfYouSawMyLastEmail} from './not-sure-if-you-saw-my-last-email';
 export {default as ProfessionalFollowUpDontWriteATrash} from './professional-follow-up-dont-write-a-trash';
+export {default as CaseStudyFollowupFailEmailTypicalBug} from './case-study-followup-failemail-typical-bug';
 
 
 export {default as PageNotFound} from '../common/404/404';
