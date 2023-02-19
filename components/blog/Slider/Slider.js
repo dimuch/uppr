@@ -1,12 +1,11 @@
-import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {ArrowCircleRightOutlined, ArrowCircleLeftOutlined} from '@mui/icons-material';
-import Image from "next/image";
 
-import Link from 'next/link';
 import styles from './styles.module.scss';
+import loader from '../../common/loader/loader';
 
 function Slide({slideData, slideNode, slideImageWidth, location}) {
-    const width = window.innerWidth;
+    const width = window.innerWidth > 700 ? Math.round(window.innerWidth / 3) : window.innerWidth;
     const height = Math.round(width * 4 / 7);
 
     return (
@@ -14,8 +13,8 @@ function Slide({slideData, slideNode, slideImageWidth, location}) {
             <div className={styles.slide} key={slideData.link}
                  ref={slideNode} style={{minWidth: slideImageWidth}}
             >
-                <Image
-                    src={slideData.image}
+                <img
+                    src={loader({src:slideData.image, width: width})}
                     width={width}
                     height={height}
                     alt={slideData.title}
