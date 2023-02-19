@@ -21,7 +21,7 @@ export default function MainArticle({ items }) {
     return null;
   }
 
-  const width = window.innerWidth;
+  const width = window.innerWidth * 2 / 3;
   const height = width * 4 / 7;
 
   return (

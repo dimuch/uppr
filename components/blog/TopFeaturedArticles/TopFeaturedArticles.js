@@ -10,7 +10,7 @@ import Image from "next/image";
 export default function TopFeaturedArticles({ items, domainName }) {
   const updateArticleViews = (article) => {};
 
-    const width = window.innerWidth;
+    const width = window.innerWidth/2;
     const height = Math.round(width * 4 / 7);
 
   return (
@@ -21,10 +21,10 @@ export default function TopFeaturedArticles({ items, domainName }) {
         className={"uppr-section-title " + styles.upprSectionTitle}
       >
         <Grid container={true} alignItems="center">
-          <Grid item md={1} xs={2}>
-            <TopFeaturedArticlesIcon />
-          </Grid>
-          <Grid item md={11} xs={10}>
+          {/*<Grid item md={1} xs={2}>*/}
+          {/*  <TopFeaturedArticlesIcon />*/}
+          {/*</Grid>*/}
+          <Grid item md={12} xs={12}>
             <Typography variant={"h5"}>Top featured</Typography>
           </Grid>
         </Grid>
@@ -49,7 +49,7 @@ export default function TopFeaturedArticles({ items, domainName }) {
                   alignContent={"center"}
                 >
                   <Grid item xs={12} sm={5} className={styles.articleImage}>
-                        <img
+                        <Image
                           src={domainName + article.image}
                           width={width}
                           height={height}

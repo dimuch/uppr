@@ -9,7 +9,7 @@ import {linesLimiterConfig} from '../../../../helpers/linesLimiterConfig';
 import styles from '../styles.module.scss';
 
 export default function ArticleCard({item, isDescription=true, domainName}) {
-    const width = window.innerWidth;
+    const width = window.innerWidth / 3;
     const height = Math.round(width * 4 / 7);
     return (
         <a href={item.link}>
@@ -24,7 +24,8 @@ export default function ArticleCard({item, isDescription=true, domainName}) {
                         style={{
                             maxWidth: "100%",
                             height: "auto"
-                        }} />
+                        }}
+                    />
                 </Grid>
                 <Grid item md={12}>
                     <Grid
