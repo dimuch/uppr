@@ -7,6 +7,9 @@ import {getDate} from '../../../../helpers/getDate';
 import {linesLimiterConfig} from '../../../../helpers/linesLimiterConfig';
 
 import styles from '../styles.module.scss';
+import loader from '../../../common/loader/loader';
+
+
 
 export default function ArticleCard({item, isDescription=true, domainName}) {
     const width = window.innerWidth / 3;
@@ -15,9 +18,9 @@ export default function ArticleCard({item, isDescription=true, domainName}) {
         <a href={item.link}>
             <Grid container={true} className={styles.wrapper}>
                 <Grid item xs={12}>
-                    <Image
+                    <img
                         className={domainName + styles.image}
-                        src={item.image}
+                        src={loader(item.image)}
                         alt={item.title}
                         width={width}
                         height={height}
