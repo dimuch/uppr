@@ -9,7 +9,7 @@ export default function loader({ src, width, quality }){
     }
 
     const fileName = srcParts.pop();
-    const srcPartsWithScreenWidth = [].concat(srcParts, [sizes[widthIndexToApply]]);
+    const srcPartsWithScreenWidth = [].concat(srcParts, ['responsive'], [sizes[widthIndexToApply]]);
     const updatedSrcParts = [].concat(srcPartsWithScreenWidth, [fileName]);
     const updatedSrc = updatedSrcParts.join('/');
 
