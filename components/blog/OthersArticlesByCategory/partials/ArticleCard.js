@@ -20,7 +20,7 @@ export default function ArticleCard({item, isDescription=true, domainName}) {
                 <Grid item xs={12}>
                     <img
                         className={domainName + styles.image}
-                        src={loader(item.image)}
+                        src={loader({src:item.image, width: width})}
                         alt={item.title}
                         width={width}
                         height={height}
