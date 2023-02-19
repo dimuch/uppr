@@ -6,6 +6,9 @@ import Link from 'next/link';
 import styles from './styles.module.scss';
 
 function Slide({slideData, slideNode, slideImageWidth, location}) {
+    const width = window.innerWidth;
+    const height = Math.round(width * 4 / 7);
+
     return (
         <a href={slideData.link}  target="_blank" rel="noreferrer">
             <div className={styles.slide} key={slideData.link}
@@ -13,8 +16,8 @@ function Slide({slideData, slideNode, slideImageWidth, location}) {
             >
                 <Image
                     src={slideData.image}
-                    width={700}
-                    height={400}
+                    width={width}
+                    height={height}
                     alt={slideData.title}
                     style={{
                         maxWidth: "100%",

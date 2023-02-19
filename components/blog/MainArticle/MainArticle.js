@@ -21,8 +21,8 @@ export default function MainArticle({ items }) {
     return null;
   }
 
-  const width = window?.innerWidth
-  console.log(111, width);
+  const width = window.innerWidth;
+  const height = width * 4 / 7;
 
   return (
     <div
@@ -35,7 +35,7 @@ export default function MainArticle({ items }) {
           className={styles.image}
           src={mainArticleData.image}
           width={width}
-          height={Math.round(width * 4 / 7)}
+          height={height}
           alt={mainArticleData.title}
           style={{
             maxWidth: "100%",

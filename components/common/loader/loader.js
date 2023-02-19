@@ -13,6 +13,5 @@ export default function loader({ src, width, quality }){
     const updatedSrcParts = [].concat(srcPartsWithScreenWidth, [fileName]);
     const updatedSrc = updatedSrcParts.join('/');
 
-    console.log('width', width, widthIndexToApply, updatedSrc);
     return `${updatedSrc.replace('.jpg', '.webp')}`
 }

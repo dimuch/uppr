@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head'
-import Image from "next/image";
+import Image from 'next/image';
 
 import Header from '../../../components/common/header/Header';
 import {useHasMounted} from '../../../components/common/hooks/hasMounted';
@@ -24,6 +24,9 @@ export default function ArticlePageWrapper({articlesByCategory, articleCategorie
         )
     }
 
+    const width = window.innerWidth;
+    const height = Math.round(width * 4 / 7);
+
     return <>
         <Head>
             <title>Категорія {selectedCategory}</title>
@@ -41,14 +44,14 @@ export default function ArticlePageWrapper({articlesByCategory, articleCategorie
             <div className={`uppr-page-content ${styles.upprPageContent}`}>
                 <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
                     <Image
-                        src="/assets/images/blog_main.jpeg"
+                        src={'/assets/images/blog-articles/blog_main.webp'}
                         alt="Main blog picture"
-                        width="3000"
-                        height="2002"
+                        width={width}
+                        height={height}
                         style={{
-                            maxWidth: "100%",
-                            height: "auto"
-                        }} />
+                            maxWidth: '100%',
+                            height: 'auto',
+                        }}/>
                 </div>
                 <div
                     className={`uppr-article-categories ${styles.upprArticleCategories}`}
@@ -74,7 +77,7 @@ export async function getServerSideProps(context) {
 
     context.res.setHeader(
         'Cache-Control',
-        'public, s-maxage=604800, stale-while-revalidate=59'
+        'public, s-maxage=604800, stale-while-revalidate=59',
     )
 
     try {

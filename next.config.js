@@ -86,9 +86,9 @@ const nextConfig = {
         unoptimized: false,
         formats: ['image/webp','image/avif'],
         // limit of 25 deviceSizes values
-        // deviceSizes: [320, 420, 640, 750, 828, 1080, 1200, 1920],
+        deviceSizes: [320, 420, 640, 750, 828, 1080, 1200, 1920],
         // limit of 25 imageSizes values
-        // imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+        imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
         // path prefix for Image Optimization API, useful with `loader`
         // path: '/_next/image',
         // loader can be 'default', 'imgix', 'cloudinary', 'akamai', or 'custom'

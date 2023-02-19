@@ -8,6 +8,10 @@ import Tags from '../Tags/Tags';
 import styles from './styles.module.scss';
 
 export default function ArticleHeader({articleData}) {
+
+    const width = window.innerWidth;
+    const height = Math.round(width * 4 / 7);
+
     return (
         <div className={styles.titleWrapper}>
             <div className={styles.titleContent}>
@@ -25,8 +29,8 @@ export default function ArticleHeader({articleData}) {
                 </div>
                 <Image
                     src={articleData.image}
-                    width="700"
-                    height="400"
+                    width={width}
+                    height={height}
                     alt="Main article picture"
                     style={{
                         maxWidth: "100%",

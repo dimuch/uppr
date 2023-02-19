@@ -10,6 +10,9 @@ import Image from "next/image";
 export default function TopFeaturedArticles({ items, domainName }) {
   const updateArticleViews = (article) => {};
 
+    const width = window.innerWidth;
+    const height = Math.round(width * 4 / 7);
+
   return (
     <Grid container={true} className={"wrapper " + styles.wrapper}>
       <Grid
@@ -48,8 +51,8 @@ export default function TopFeaturedArticles({ items, domainName }) {
                   <Grid item xs={12} sm={5} className={styles.articleImage}>
                         <Image
                           src={domainName + article.image}
-                          width="700"
-                          height="400"
+                          width={width}
+                          height={height}
                           alt={article.title}
                           style={{
                             maxWidth: "100%",

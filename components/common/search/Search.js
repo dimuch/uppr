@@ -100,8 +100,8 @@ const Search = ({}) => {
                                             className={styles.searchResultItemImage}
                                             src={article.image}
                                             alt={article.title}
-                                            width="70"
-                                            height="40"
+                                            width="140"
+                                            height="80"
                                             style={{
                                                 maxWidth: "100%",
                                                 height: "auto"

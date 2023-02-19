@@ -31,6 +31,8 @@ export default function Blog({
         return null;
     }
 
+    const width = window.innerWidth;
+    const height = Math.round(width * 4 / 7);
     return <>
         <Head>
             <title>{"UPPR | Блог"}</title>
@@ -50,8 +52,8 @@ export default function Blog({
                     <Image
                         src={domainName + '/assets/images/blog-articles/blog_main.webp'}
                         alt="Main blog picture"
-                        width="3000"
-                        height="1700"
+                        width={width}
+                        height={height}
                         style={{
                             maxWidth: "100%",
                             height: "auto"
