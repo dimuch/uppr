@@ -10,14 +10,18 @@ fs.readdirSync(sourceImagesDirectory).forEach(file => {
     const resultPromised = imagesSizes.map((imageSize) => {
         const imageHeightPerWidth = Math.round(imageSize * proportionScale);
         const destinationFolder = `${sourceImagesDirectory}/${destinationImagesDirectory}/${imageSize}`;
-
-        if (!fs.existsSync(destinationFolder)) {
-            fs.mkdirSync(destinationFolder);
+        try {
+            if (!fs.existsSync(destinationFolder)) {
+                fs.mkdirSync(destinationFolder);
+            }
+        } catch (e) {
+            console.log(111, e);
         }
 
         return sharp(`${sourceImagesDirectory}/${file}`)
             .resize(imageSize, imageHeightPerWidth) // width, height
-            .toFile(`${destinationFolder}/${file}`);
+            .webp({})
+            .toFile(`${destinationFolder}/${file.replace('.jpg', '.webp')}`);
     })
 
     const result = Array.from(Promise.allSettled(resultPromised)).map(item => item.value);

@@ -13,7 +13,7 @@ export default function loader({ src, width, quality }){
     const updatedSrcParts = [].concat(srcPartsWithScreenWidth, [fileName]);
     const updatedSrc = updatedSrcParts.join('/');
 
-    return `${updatedSrc}`;
+    // return `${updatedSrc}`;
 
-    // return `${updatedSrc.replace('.jpg', '.webp')}`
+    return `${updatedSrc.replace('.jpg', '.webp')}`
 }
