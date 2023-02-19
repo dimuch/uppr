@@ -33,7 +33,7 @@
   float: right;
   vertical-align: middle;
   height: auto;
-  width: 38%;
+  //width: 38%;
 }
 .rvHrDivider{
   margin-top: 20px;
@@ -89,7 +89,7 @@
   .rvErrorImg{
     float: right;
     margin-right: -20px;
-    width: 40%;
+    //width: 40%;
   }
   .rvTitle{
     margin-top: 105px;
@@ -97,7 +97,7 @@
 }
 @media all and (max-width: 568px) and (orientation: landscape){
   .rvErrorImg{
-    width: 35%;
+    //width: 35%;
   }
   .rvTitle{
     margin-top: 55px;

@@ -18,10 +18,7 @@ export default function PageNotFound({redirectPage, redirectLink}) {
                     width="402"
                     height="386"
                     alt='Page Not Found'
-                    style={{
-                        maxWidth: "100%",
-                        height: "auto"
-                    }} />
+                />
                 <div className={styles.rvTitle}>
                     <h3>Ooooopppss</h3>
                     <h1>Сторінка відсутня</h1>
