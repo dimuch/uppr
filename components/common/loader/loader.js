@@ -7,16 +7,16 @@ export default function loader({ src, width, quality }){
         return src;
     }
 
-    let widthIndexToApply = sizes.findIndex(item => {
+    let widthIndexToApply = sizes.find(item => {
         return item >= width
     });
 
-    if(widthIndexToApply === -1) {
-        widthIndexToApply = sizes.length - 1;
+    if(!widthIndexToApply) {
+        widthIndexToApply = sizes.length - 2;
     }
 
     const fileName = srcParts.pop();
-    const srcPartsWithScreenWidth = [].concat(srcParts, ['responsive'], [sizes[widthIndexToApply]]);
+    const srcPartsWithScreenWidth = [].concat(srcParts, ['responsive'], [widthIndexToApply]);
     const updatedSrcParts = [].concat(srcPartsWithScreenWidth, [fileName]);
     const updatedSrc = updatedSrcParts.join('/');
 

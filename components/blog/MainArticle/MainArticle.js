@@ -3,9 +3,9 @@ import React, {useEffect, useState} from 'react';
 import { Grid, Typography } from "@mui/material";
 import { getDate } from "../../../helpers/getDate";
 
+import loader from '../../common/loader/loader';
+
 import styles from "./styles.module.scss";
-import Image from "next/image";
-import {myLoader} from '../../common/loader/loader';
 
 export default function MainArticle({ items }) {
   const [mainArticleData, setMainArticleData] = useState({
@@ -21,8 +21,8 @@ export default function MainArticle({ items }) {
     return null;
   }
 
-  const width = window.innerWidth * 2 / 3;
-  const height = width * 4 / 7;
+  const width = Math.round(window.innerWidth * 2 / 3);
+  const height = Math.round(width * 4 / 7);
 
   return (
     <div
@@ -31,9 +31,9 @@ export default function MainArticle({ items }) {
       onClick={(e) => updateArticleViews(mainArticleData)}
     >
       <Grid item md={12} style={{position:'relative'}}>
-        <Image
+        <img
           className={styles.image}
-          src={mainArticleData.image}
+          src={loader({src:mainArticleData.image, width: width})}
           width={width}
           height={height}
           alt={mainArticleData.title}

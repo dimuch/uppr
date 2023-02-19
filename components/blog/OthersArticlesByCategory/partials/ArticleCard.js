@@ -1,13 +1,11 @@
 import React from 'react';
 import {Grid, Typography} from '@mui/material';
 
-import Image from "next/image";
-
+import loader from '../../../common/loader/loader';
 import {getDate} from '../../../../helpers/getDate';
 import {linesLimiterConfig} from '../../../../helpers/linesLimiterConfig';
 
 import styles from '../styles.module.scss';
-import loader from '../../../common/loader/loader';
 
 export default function ArticleCard({item, isDescription=true, domainName}) {
     const width = window.innerWidth > 700 ? window.innerWidth / 3 : window.innerWidth;

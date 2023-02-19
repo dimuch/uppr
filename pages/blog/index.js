@@ -13,6 +13,7 @@ import {
 } from '../../services/blogData';
 
 import styles from './styles.module.scss';
+import loader from '../../components/common/loader/loader';
 
 const domainName = '';
 export default function Blog({
@@ -33,6 +34,7 @@ export default function Blog({
 
     const width = window.innerWidth;
     const height = Math.round(width * 4 / 7);
+
     return <>
         <Head>
             <title>{"UPPR | Блог"}</title>
@@ -49,8 +51,8 @@ export default function Blog({
             <Header search location={'/blog'}/>
             <div className={`uppr-page-content ${styles.upprPageContent}`}>
                 <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
-                    <Image
-                        src={domainName + '/assets/images/blog-articles/blog_main.webp'}
+                    <img
+                        src={loader({src:'/assets/images/blog-articles/blog_main.webp', width: width})}
                         alt="Main blog picture"
                         width={width}
                         height={height}

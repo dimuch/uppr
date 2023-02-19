@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 
-import Image from "next/image";
 import Link from 'next/link';
 
 import Tags from '../Tags/Tags';
+import loader from '../../common/loader/loader';
 
 import styles from './styles.module.scss';
 
@@ -11,8 +11,9 @@ export default function ArticleHeader({articleData}) {
     const [imgDimensions, setImgDimensions] = useState({width:700, height:400});
 
     useEffect(() => {
-        const width = window.innerWidth;
+        const width = window.innerWidth > 700 ? Math.round(window.innerWidth / 3) : window.innerWidth;
         const height = Math.round(width * 4 / 7);
+
         setImgDimensions(() => ({width, height}));
     }, []);
 
@@ -31,11 +32,11 @@ export default function ArticleHeader({articleData}) {
                         {`${articleData.category.name}`}
                     </Link>
                 </div>
-                <Image
-                    src={articleData.image}
+                <img
+                    src={loader({src:articleData.image, width: imgDimensions.width})}
                     width={imgDimensions?.width}
                     height={imgDimensions?.height}
-                    alt="Main article picture"
+                    alt={articleData.title}
                     style={{
                         maxWidth: "100%",
                         height: "auto"

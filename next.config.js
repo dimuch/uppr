@@ -85,7 +85,7 @@ const nextConfig = {
         return {...config, ...addOn};
     },
     images:{
-        unoptimized: false,
+        unoptimized: true,
         formats: ['image/webp','image/avif'],
         // limit of 25 deviceSizes values
         deviceSizes: [320, 420, 640, 750, 828, 1080, 1200, 1920],
