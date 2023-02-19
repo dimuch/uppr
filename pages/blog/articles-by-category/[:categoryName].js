@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head'
-import Image from 'next/image';
 
 import Header from '../../../components/common/header/Header';
 import {useHasMounted} from '../../../components/common/hooks/hasMounted';
@@ -9,6 +8,7 @@ import {getArticlesByCategoryNameDB, getArticlesCategoriesDB, getTagsDB} from '.
 import CategoriesList from '../../../components/blog/CategoriesList/CategoriesList';
 import SelectedSpecificCategory from '../../../components/blog/SelectedSpecificCategory/SelectedSpecificCategory';
 import PageNotFound from '../../404';
+import loader from '../../../components/common/loader/loader';
 
 import styles from '../styles.module.scss';
 
@@ -43,15 +43,15 @@ export default function ArticlePageWrapper({articlesByCategory, articleCategorie
             <Header search location={'/blog'}/>
             <div className={`uppr-page-content ${styles.upprPageContent}`}>
                 <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
-                    <Image
-                        src={'/assets/images/blog-articles/blog_main.webp'}
+                    <img
+                        src={loader({src:'/assets/images/blog-articles/blog_main.webp', width: width})}
                         alt="Main blog picture"
                         width={width}
                         height={height}
                         style={{
-                            maxWidth: '100%',
-                            height: 'auto',
-                        }}/>
+                            maxWidth: "100%",
+                            height: "auto"
+                        }} />
                 </div>
                 <div
                     className={`uppr-article-categories ${styles.upprArticleCategories}`}

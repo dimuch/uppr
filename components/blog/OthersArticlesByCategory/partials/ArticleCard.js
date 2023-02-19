@@ -15,15 +15,11 @@ export default function ArticleCard({item, isDescription=true, domainName}) {
             <Grid container={true} className={styles.wrapper}>
                 <Grid item xs={12}>
                     <img
-                        className={domainName + styles.image}
+                        className={styles.image}
                         src={loader({src:item.image, width: width})}
                         alt={item.title}
                         width={width}
                         height={height}
-                        style={{
-                            width: "100%",
-                            height: "auto"
-                        }}
                     />
                 </Grid>
                 <Grid item md={12}>
