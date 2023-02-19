@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 import loader from '../../common/loader/loader';
 
 function Slide({slideData, slideNode, slideImageWidth, location}) {
-    const width = window.innerWidth > 700 ? Math.round(window.innerWidth / 3) : window.innerWidth;
+    const width = window.innerWidth > 850 ? Math.round(window.innerWidth / 3) : window.innerWidth;
     const height = Math.round(width * 4 / 7);
 
     return (
@@ -19,7 +19,7 @@ function Slide({slideData, slideNode, slideImageWidth, location}) {
                     height={height}
                     alt={slideData.title}
                     style={{
-                        maxWidth: "100%",
+                        width: "100%",
                         height: "auto"
                     }} />
                 <div className={`${styles.slideTitle} ${styles[location]}`}>

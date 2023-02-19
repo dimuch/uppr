@@ -10,7 +10,7 @@ export default function TopFeaturedArticles({items, domainName}) {
     const updateArticleViews = (article) => {
     };
 
-    const width = window.innerWidth > 700 ? Math.round(window.innerWidth / 3) : window.innerWidth;
+    const width = window.innerWidth > 850 ? Math.round(window.innerWidth / 3) : window.innerWidth;
     const height = Math.round(width * 4 / 7);
 
     return (
@@ -55,7 +55,7 @@ export default function TopFeaturedArticles({items, domainName}) {
                                             height={height}
                                             alt={article.title}
                                             style={{
-                                                maxWidth: '100%',
+                                                width: '100%',
                                                 height: 'auto',
                                             }}/>
                                     </Grid>

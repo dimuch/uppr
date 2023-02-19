@@ -8,7 +8,7 @@ import {linesLimiterConfig} from '../../../../helpers/linesLimiterConfig';
 import styles from '../styles.module.scss';
 
 export default function ArticleCard({item, isDescription=true, domainName}) {
-    const width = window.innerWidth > 700 ? window.innerWidth / 3 : window.innerWidth;
+    const width = window.innerWidth > 850 ? window.innerWidth / 3 : window.innerWidth;
     const height = Math.round(width * 4 / 7);
     return (
         <a href={item.link}>
@@ -21,7 +21,7 @@ export default function ArticleCard({item, isDescription=true, domainName}) {
                         width={width}
                         height={height}
                         style={{
-                            maxWidth: "100%",
+                            width: "100%",
                             height: "auto"
                         }}
                     />

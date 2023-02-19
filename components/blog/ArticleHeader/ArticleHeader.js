@@ -11,7 +11,7 @@ export default function ArticleHeader({articleData}) {
     const [imgDimensions, setImgDimensions] = useState({width:700, height:400});
 
     useEffect(() => {
-        const width = window.innerWidth > 700 ? Math.round(window.innerWidth / 3) : window.innerWidth;
+        const width = window.innerWidth > 850 ? Math.round(window.innerWidth / 3) : window.innerWidth;
         const height = Math.round(width * 4 / 7);
 
         setImgDimensions(() => ({width, height}));
@@ -38,7 +38,7 @@ export default function ArticleHeader({articleData}) {
                     height={imgDimensions?.height}
                     alt={articleData.title}
                     style={{
-                        maxWidth: "100%",
+                        width: "100%",
                         height: "auto"
                     }} />
                 <Tags items={articleData.tags} location={'header'}/>
