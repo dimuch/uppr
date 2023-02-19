@@ -49,7 +49,7 @@ export default function TopFeaturedArticles({ items, domainName }) {
                   alignContent={"center"}
                 >
                   <Grid item xs={12} sm={5} className={styles.articleImage}>
-                        <Image
+                        <img
                           src={domainName + article.image}
                           width={width}
                           height={height}
