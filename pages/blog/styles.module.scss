@@ -26,6 +26,30 @@
   }
 }
 
+.titleTextWrapper{
+  position: absolute;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: $white;
+  .pageTitleSeparator{
+    width: 2.5rem;
+    height: .25rem;
+    background-color: white;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .pageSubTitle{
+    font-family: "OpenSansSemiBold", sans-serif;
+  }
+}
+
 .upprArticleCategories {
   display: flex;
   justify-content: center;

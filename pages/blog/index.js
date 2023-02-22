@@ -14,6 +14,7 @@ import {
 
 import styles from './styles.module.scss';
 import loader from '../../components/common/loader/loader';
+import {Typography} from '@mui/material';
 
 const domainName = '';
 export default function Blog({
@@ -57,6 +58,11 @@ export default function Blog({
                         width={width}
                         height={height}
                     />
+                    <div className={styles.titleTextWrapper}>
+                        <Typography variant={"h3"}>My Blog</Typography>
+                        <div className={styles.pageTitleSeparator}></div>
+                        <Typography className={styles.pageSubTitle}>You are never too good to email better!</Typography>
+                    </div>
                 </div>
 
                 <div
