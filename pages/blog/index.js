@@ -91,7 +91,7 @@ export async function getServerSideProps(context) {
 
     context.res.setHeader(
         'Cache-Control',
-        'public, s-maxage=604800, stale-while-revalidate=59'
+        'public'
     )
 
     return {
