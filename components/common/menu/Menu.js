@@ -63,7 +63,7 @@ const Menu = ({location}) => {
         setResponsiveClass((prevState) => {
             return {
                 ...prevState,
-                width: '65%',
+                width: '40%',
                 isOpen: true,
             };
         })
@@ -84,7 +84,7 @@ const Menu = ({location}) => {
 
         const isVisible = screenSize.width < 650;
         setResponsiveClass(() => ({
-            width: isVisible ? '40%': '65%',
+            width: isVisible ? '40%': '40%',
             isVisible: isVisible,
             isOpen: false,
         }));
