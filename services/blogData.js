@@ -109,8 +109,10 @@ async function getLatestArticlesByCategoryDB(category) {
                     return {
                         ...item,
                         published: new Date(item.published).toString(),
+                        publishedOrder: new Date(item.published).getTime(),
                     };
-                });
+                })
+                    .sort((prev, next) => (next.publishedOrder - prev.publishedOrder))
                 resolve(data);
             } catch (e) {
                 reject({data: []});
@@ -150,9 +152,9 @@ async function getTop3ArticlesWithoutMainDB() {
 export async function getArticlesDataByIdDB(articleURL) {
     const baseArticleData = await getArticleBaseDataByURL(articleURL);
 
-    if(!baseArticleData) {
+    if (!baseArticleData) {
         return {
-            pageComponent: 'PageNotFound'
+            pageComponent: 'PageNotFound',
         }
     }
 
@@ -236,7 +238,7 @@ export async function getArticleCategoryById(articleId) {
                     category: {
                         name: data[0].name,
                         color: data[0].categoryColor,
-                        id:data[0].article_category,
+                        id: data[0].article_category,
                     },
                 });
             } catch (e) {
@@ -290,20 +292,20 @@ export async function getArticlesByCategoryNameDB(categoryName) {
 
                 resolve(data);
             } catch (e) {
-                reject( []);
+                reject([]);
             }
         });
     });
 }
 
 //getArticlesByCategoryDB
-export async function getArticlesByCategoryDB(){
+export async function getArticlesByCategoryDB() {
     const categories = await getArticlesCategoriesDB();
 
     const articlesByCategory = await Promise.allSettled(
         categories.slice(1).map(async (item) => {
             return {name: item.name, articles: await getLatestArticlesByCategoryDB(item.id)}
-        })
+        }),
     );
 
     return Array.from(articlesByCategory).map(item => item.value);
@@ -317,7 +319,7 @@ export async function searchInArticlesParamsDB(searchText) {
     return data;
 }
 
-async function callDBWrapper (procedure, mapper) {
+async function callDBWrapper(procedure, mapper) {
     const connection = getDBPoolData();
     return new Promise((resolve, reject) => {
         connection.query(procedure, (err, rows, fields) => {
@@ -328,7 +330,7 @@ async function callDBWrapper (procedure, mapper) {
 
             try {
                 let result = [...rows[0]];
-                if(mapper) {
+                if (mapper) {
                     result = result.map(mapper);
                 }
 

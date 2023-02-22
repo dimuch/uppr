@@ -1,6 +1,4 @@
 /** @type {import('next').NextConfig} */
-const RemoveServiceWorkerPlugin = require('webpack-remove-serviceworker-plugin');
-
 const nextConfig = {
     reactStrictMode: true,
     experimental: {},
