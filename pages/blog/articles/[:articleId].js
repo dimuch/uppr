@@ -3,11 +3,18 @@ import Head from 'next/head'
 import Header from '../../../components/common/header/Header';
 import {getArticlesDataByIdDB} from '../../../services/blogData';
 import * as PageComponent from '../../../components/articles';
+    import {useHasMounted} from '../../../components/common/hooks/hasMounted';
 
 const PAGE_NOT_FOUND='PageNotFound';
 
 export default function ArticlePageWrapper({articleData}) {
     const ArticlePage = PageComponent[articleData.pageComponent];
+
+    const hasMounted = useHasMounted();
+
+    if (!hasMounted) {
+        return null;
+    }
 
     if(articleData.pageComponent === PAGE_NOT_FOUND){
         return <ArticlePage />
