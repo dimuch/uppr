@@ -17,10 +17,11 @@
     display: initial !important;
   }
   img {
-    filter: brightness(.8);
+    filter: brightness(.65);
     object-fit: cover;
-    width: 100% !important;
-    height: 45vh !important;
+    width: 100% ;
+    height: auto;
+    max-height: 45vh;
     object-position: 0;
   }
 }
@@ -42,7 +43,7 @@
 @media (max-width: 960px) {
   .upprBlogMainPicture{
     img {
-      height: 30vh;
+      height: 25vh;
     }
   }
 }
@@ -54,11 +55,16 @@
   .upprArticleCategories{
     padding: 2rem 0;
   }
-}
-@media (max-width: 400px) {
   .upprBlogMainPicture{
     img {
       height: 20vh;
+    }
+  }
+}
+@media (max-width: 420px) {
+  .upprBlogMainPicture{
+    img {
+      height: 15vh;
     }
   }
 }

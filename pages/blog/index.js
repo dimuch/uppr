@@ -33,7 +33,7 @@ export default function Blog({
     }
 
     const width = window.innerWidth;
-    const height = Math.round(width * 4 / 7);
+    const height = Math.round(width * 17 / 30);
 
     return <>
         <Head>
@@ -56,10 +56,7 @@ export default function Blog({
                         alt="Main blog picture"
                         width={width}
                         height={height}
-                        style={{
-                            maxWidth: "100%",
-                            height: "auto"
-                        }} />
+                    />
                 </div>
 
                 <div
