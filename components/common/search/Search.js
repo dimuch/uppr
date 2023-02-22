@@ -20,7 +20,7 @@ const Search = ({}) => {
     const inputRef = useRef();
 
     const screenSize = useWindowSize();
-    const [responsiveClass, setResponsiveClass] = useState('40%');
+    const [responsiveClass, setResponsiveClass] = useState('65%');
 
     const makeSearch = (event) => {
         const search = event.target.value;
@@ -29,13 +29,13 @@ const Search = ({}) => {
 
     const onClickInside = () => {
         setResponsiveClass(() => {
-            return screenSize.width < 650 ? '65%' : '40%';
+            return screenSize.width < 650 ? '65%' : '65%';
         })
     }
 
     const closeSearchResults = () => {
         setSearchText(() => '');
-        setResponsiveClass(() => '40%');
+        setResponsiveClass(() => '65%');
     }
 
     useEffect(() => {

@@ -26,7 +26,7 @@
   
   .active {
     color: $blog-four-sticky;
-    text-decoration: underline;
+    text-decoration: none;
     font-family: "Futura-Demi", sans-serif;
   }
 }
@@ -38,9 +38,9 @@
   margin: 0 auto;
   text-align: left;
   background-color: white;
-  width: 100%;
-  left: 0;
-  top: 2.25rem;
+  width: 10rem;
+  left: 10rem;
+  top: -0.5rem;
   border: 1px solid $item-border;
   border-radius: .5rem;
   li {
@@ -56,24 +56,18 @@
 
 .menuWrapper{
   display: flex;
-  border: 1px solid $item-border;
-  border-radius: 1rem;
   padding: 0.4rem 1rem 0.5rem;
   position: relative;
   transition: width ease-out .35s;
 }
 
 @media (max-width: 650px) {
-  .mobileMenu{
-    padding-right: 1rem;
-  }
-
   .menuIcon{
     position: absolute;
     right: .5rem;
-    width: 1.5rem;
-    height: 1.25rem;
-    top: .6rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    top: -.125rem;
   }
 
 }

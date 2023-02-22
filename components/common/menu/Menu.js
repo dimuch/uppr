@@ -98,9 +98,6 @@ const Menu = ({location}) => {
                  style={{width: responsiveClass.width}}
                  ref={inputRef}
             >
-                <div className={`main-menu main-menu-desktop ${styles.mobileMenu}`}>
-                    Меню
-                </div>
                 <div className={styles.menuIcon}>
                     <MenuIcon/>
                 </div>

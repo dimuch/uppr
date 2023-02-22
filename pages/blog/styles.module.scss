@@ -21,7 +21,7 @@
     object-fit: cover;
     width: 100% ;
     height: auto;
-    max-height: 45vh;
+    max-height: 53vh;
     object-position: 0;
   }
 }
@@ -43,7 +43,7 @@
 @media (max-width: 960px) {
   .upprBlogMainPicture{
     img {
-      height: 25vh;
+      height: 40vh;
     }
   }
 }
@@ -57,14 +57,14 @@
   }
   .upprBlogMainPicture{
     img {
-      height: 20vh;
+      height: 28vh;
     }
   }
 }
 @media (max-width: 420px) {
   .upprBlogMainPicture{
     img {
-      height: 15vh;
+      height: 16vh;
     }
   }
 }
