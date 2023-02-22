@@ -67,7 +67,7 @@
 @media (max-width: 960px) {
   .upprBlogMainPicture{
     img {
-      height: 40vh;
+      height: 28vh;
     }
   }
 }
@@ -90,5 +90,11 @@
     img {
       height: 16vh;
     }
+  }
+  .pageTitle{
+    font-size: 1.5rem !important;
+  }
+  .pageSubTitle{
+    font-size: .8rem !important;
   }
 }

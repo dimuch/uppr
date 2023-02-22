@@ -59,7 +59,7 @@ export default function Blog({
                         height={height}
                     />
                     <div className={styles.titleTextWrapper}>
-                        <Typography variant={"h3"}>My Blog</Typography>
+                        <Typography variant={"h3"} className={styles.pageTitle}>My Blog</Typography>
                         <div className={styles.pageTitleSeparator}></div>
                         <Typography className={styles.pageSubTitle}>You are never too good to email better!</Typography>
                     </div>
