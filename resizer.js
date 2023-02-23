@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const sourceImagesDirectory = './public/assets/images/blog-articles';
 const destinationImagesDirectory = 'responsive';
-const imagesSizes = [320, 420, 640, 750, 828, 1080, 1200, 1920];
+const imagesSizes = [320, 394, 420, 640, 750, 828, 1080, 1200, 1920];
 
 fs.readdirSync(sourceImagesDirectory).forEach(file => {
     const resultPromised = imagesSizes.map(async(imageSize) => {
