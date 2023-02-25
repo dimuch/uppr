@@ -1,9 +1,9 @@
 const sharp = require('sharp');
 const fs = require('fs');
+const {sizes: imagesSizes} = require('./imageSizes');
 
 const sourceImagesDirectory = './public/assets/images/blog-articles';
 const destinationImagesDirectory = 'responsive';
-const imagesSizes = [320, 394, 420, 640, 750, 828, 1080, 1200, 1920];
 
 fs.readdirSync(sourceImagesDirectory).forEach(file => {
     const resultPromised = imagesSizes.map(async(imageSize) => {

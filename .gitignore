@@ -39,3 +39,6 @@ yarn-error.log*
 
 .idea
 yarn.lock
+
+#static images
+/public/assets/images/blog-articles/responsive/**/*
