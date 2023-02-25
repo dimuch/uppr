@@ -18,11 +18,8 @@
   }
   img {
     filter: brightness(.65);
-    object-fit: cover;
-    width: 100% ;
+    width: 100%;
     height: auto;
-    max-height: 60vh;
-    object-position: 0;
   }
 }
 
@@ -63,15 +60,6 @@
   margin: auto;
 }
 
-
-@media (max-width: 960px) {
-  .upprBlogMainPicture{
-    img {
-      height: 28vh;
-    }
-  }
-}
-
 @media (max-width: 650px) {
   .upprPageContent{
     width: 100%;
@@ -79,18 +67,8 @@
   .upprArticleCategories{
     padding: 2rem 0;
   }
-  .upprBlogMainPicture{
-    img {
-      height: 28vh;
-    }
-  }
 }
 @media (max-width: 420px) {
-  .upprBlogMainPicture{
-    img {
-      height: 17vh;
-    }
-  }
   .pageTitle{
     font-size: 1.5rem !important;
   }
