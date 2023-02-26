@@ -14,7 +14,8 @@ export async function getArticlesCategoriesDB() {
                 const data = [{id: 0, name: 'All', isSelected: true}, ...rows[0]];
 
                 resolve(data);
-            } catch (e) {
+            } catch (err) {
+                console.log('getArticlesCategoriesDB ERROR', err);
                 reject({data: []});
             }
         });
@@ -62,14 +63,15 @@ export function getDownloadsDB(isAllDownloads = true) {
                     };
                 });
                 resolve(data);
-            } catch (e) {
+            } catch (err) {
+                console.log('getDownloadsDB ERROR', err);
                 reject({data: []});
             }
         });
     });
 }
 
-export function getTagsDB() {
+export function getTagsDB(preselectedTag='') {
     const getTags = `CALL getTags()`;
     const connection = getDBPoolData();
     return new Promise((resolve, reject) => {
@@ -83,10 +85,12 @@ export function getTagsDB() {
                 const data = rows[0].map((item) => {
                     return {
                         ...item,
+                        selected: preselectedTag.includes(item.name),
                     };
                 });
                 resolve(data);
-            } catch (e) {
+            } catch (err) {
+                console.log('getTagsDB ERROR', err);
                 reject({data: []});
             }
         });
@@ -114,7 +118,8 @@ async function getLatestArticlesByCategoryDB(category) {
                 })
                     .sort((prev, next) => (next.publishedOrder - prev.publishedOrder))
                 resolve(data);
-            } catch (e) {
+            } catch (err) {
+                console.log('getLatestArticlesByCategoryDB ERROR', err);
                 reject({data: []});
             }
         });
@@ -141,7 +146,8 @@ async function getTop3ArticlesWithoutMainDB() {
                 });
 
                 resolve(data);
-            } catch (e) {
+            } catch (err) {
+                console.log('getTop3ArticlesWithoutMainDB ERROR', err);
                 reject({data: []});
             }
         });
@@ -309,6 +315,56 @@ export async function getArticlesByCategoryDB() {
     );
 
     return Array.from(articlesByCategory).map(item => item.value);
+}
+
+//getArticlesByTagsNameDB
+export async function getArticlesByTagsNameDB(tags='') {
+    const tagsAsString = !tags ? [] : tags?.split(',')
+        .map(tag => {
+            return `'${tag}'`;
+        })
+        .join(',');
+
+    const selectClause = `
+        SELECT DISTINCT Articles.id, Articles.article_color, Articles.title, Articles.englishTitle,
+          Articles.published, Articles.link, Articles.description, Articles.image, Articles.views,
+          Articles.is_section_main_image, Articles.author, Articles.pageComponent, Categories.name, Categories.categoryColor
+        FROM uppr_ssr.articles AS Articles
+        LEFT JOIN uppr_ssr.article_tags AS ArticlesByTags 
+        ON Articles.id=ArticlesByTags.article_id
+        LEFT JOIN uppr_ssr.tags AS Tags
+        ON ArticlesByTags.atricle_tag_id=Tags.id
+        LEFT JOIN uppr_ssr.articles_by_categories AS ArticlesByCategories
+        ON ArticlesByCategories.article_id = Articles.id
+        LEFT JOIN uppr_ssr.categories AS Categories
+        ON ArticlesByCategories.article_category = Categories.id
+    `;
+    const whereClause = tagsAsString.length > 0 ? `WHERE Tags.name IN (${tagsAsString})` : ``;
+    const orderClause = `ORDER BY Articles.published DESC;`;
+
+    const getArticlesByTagsName = `${selectClause} ${whereClause} ${orderClause}`;
+
+    const connection = await getDBPoolData();
+    return new Promise((resolve, reject) => {
+        connection.query(getArticlesByTagsName, (err, rows, fields) => {
+            if (err) {
+                console.log('getArticlesByTagsNameDB ERROR', err);
+                reject({data: []});
+            }
+
+            try {
+                const data = rows.map((item) => ({
+                    ...item,
+                    published: new Date(item.published).toString(),
+                }));
+
+                resolve(data);
+            } catch (err) {
+                console.log('getArticlesByTagsNameDB ERROR', err);
+                reject({data: []});
+            }
+        });
+    });
 }
 
 //search articles by search text

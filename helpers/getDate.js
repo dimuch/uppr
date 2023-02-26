@@ -1,7 +1,7 @@
 export function getDate(date) {
   const monthNames = [
     "Січень",
-    "Дютий",
+    "Лютий",
     "Березень",
     "Квітень",
     "Травень",

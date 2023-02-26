@@ -4,6 +4,7 @@ import {Grid, Typography} from '@mui/material';
 import TagIcon from '@mui/icons-material/Tag';
 
 import styles from './styles.module.scss';
+import Link from 'next/link';
 
 export default function InformationBlock({tags}) {
     return (
@@ -33,9 +34,11 @@ export default function InformationBlock({tags}) {
                             <Grid item key={item.name}
                                   className={styles.tagItem}
                             >
-                                <Typography variant={'body2'}>
-                                    {item.name}
-                                </Typography>
+                                <Link href={`/blog/post-tag?selectedTag=${item.name}`}>
+                                    <Typography variant={'body2'}>
+                                        {item.name}
+                                    </Typography>
+                                </Link>
                             </Grid>
                         )
                     })

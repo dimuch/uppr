@@ -18,6 +18,7 @@ export default function ArticlePageWrapper({articlesByCategory, articleCategorie
     if (!hasMounted) {
         return null;
     }
+
     if (!articlesByCategory?.length) {
         return (
             <PageNotFound redirectLink={'/blog'} redirectPage={'Повернутись до блогу'}/>

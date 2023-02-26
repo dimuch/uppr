@@ -4,7 +4,7 @@ export const linesLimiterConfig = (linesQty) => {
         overflow: 'hidden',
         WebkitBoxOrient: 'vertical',
         WebkitLineClamp: linesQty,
-        minHeight: 2 * linesQty + 'rem',
+        minHeight: 2.5 * linesQty + 'rem',
         paddingBottom: '0 !important',
         overflowY: 'hidden',
     }

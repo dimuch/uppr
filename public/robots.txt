@@ -30,11 +30,6 @@ Allow: /blog/articles/hope-you-are-well
 Allow: /blog/articles/thank-you-for-the-interview
 Allow: /blog/articles/subject-line
 Allow: /blog/articles/bullshit-free-sales-emails
-Allow: /blog/articles-by-category/case%20study
-Allow: /blog/articles-by-category/kiss
-Allow: /blog/articles-by-category/emails
-Allow: /blog/articles-by-category/hr
-Allow: /blog/articles-by-category/business%20english
 Allow: /blog/articles/very-looong-emails
 Allow: /blog/articles/get-your-emails-read
 Allow: /blog/articles/thanks-in-advance
@@ -87,4 +82,9 @@ Allow: /articles/not-sure-if-you-saw-my-last-email.html
 Allow: /articles/professional-follow-up-dont-write-a-trash.html
 Allow: /articles/case-study-followup-failemail-typical-bug.html
 Allow: /articles/reader-eXperience-RX.html
-
+Allow: /blog/articles-by-category/case%20study
+Allow: /blog/articles-by-category/kiss
+Allow: /blog/articles-by-category/emails
+Allow: /blog/articles-by-category/hr
+Allow: /blog/articles-by-category/business%20english
+Allow: /blog/post-tag

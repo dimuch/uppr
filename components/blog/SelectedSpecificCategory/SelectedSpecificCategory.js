@@ -12,11 +12,11 @@ export default function SelectedSpecificCategory({
                                                  }) {
 
     const firstRowOthersArticles = useMemo(() => {
-        return articlesByCategory?.slice(0, 2) || [];
+        return !tags?.length ? articlesByCategory?.slice(0, 3) : (articlesByCategory?.slice(0, 2) || []);
     }, [articlesByCategory]);
 
     const secondRowOthersArticles = useMemo(() => {
-        return articlesByCategory?.slice(2, 5) || [];
+        return !tags?.length ? articlesByCategory?.slice(3) : (articlesByCategory?.slice(2) || []);
     }, [articlesByCategory]);
 
     return (
@@ -28,7 +28,7 @@ export default function SelectedSpecificCategory({
                 <OthersArticles
                     items={firstRowOthersArticles}
                 />
-                <InformationBlock tags={tags}/>
+                {tags?.length > 0 && <InformationBlock tags={tags}/>}
             </Grid>
             <Grid container={true}
                   spacing={3}
