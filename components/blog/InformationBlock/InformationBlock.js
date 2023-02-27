@@ -15,9 +15,6 @@ export default function InformationBlock({tags}) {
             <Grid container={true} alignItems="center"
                   className={styles.upprSectionTitle}
             >
-                {/*<Grid item md={1} xs={2}>*/}
-                {/*    <TagIcon/>*/}
-                {/*</Grid>*/}
                 <Grid item md={12} xs={12}>
                     <Typography variant={'h5'}>Tags</Typography>
                 </Grid>

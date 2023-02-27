@@ -1,14 +1,14 @@
 import React from 'react';
 import Head from 'next/head'
 
-import Header from '../../../components/common/header/Header';
 import {useHasMounted} from '../../../components/common/hooks/hasMounted';
 
-import {getArticlesByCategoryNameDB, getArticlesCategoriesDB, getTagsDB} from '../../../services/blogData';
+import Header from '../../../components/common/header/Header';
 import CategoriesList from '../../../components/blog/CategoriesList/CategoriesList';
 import SelectedSpecificCategory from '../../../components/blog/SelectedSpecificCategory/SelectedSpecificCategory';
+import TopBlogImage from '../../../components/blog/TopBlogImage/TopBlogImage';
 import PageNotFound from '../../404';
-import loader from '../../../components/common/loader/loader';
+import {getArticlesByCategoryNameDB, getArticlesCategoriesDB, getTagsDB} from '../../../services/blogData';
 
 import styles from '../styles.module.scss';
 
@@ -25,9 +25,6 @@ export default function ArticlePageWrapper({articlesByCategory, articleCategorie
         )
     }
 
-    const width = window.innerWidth;
-    const height = Math.round(width * 4 / 7);
-
     return <>
         <Head>
             <title>Категорія {selectedCategory}</title>
@@ -43,17 +40,7 @@ export default function ArticlePageWrapper({articlesByCategory, articleCategorie
         <div className={styles.upprBlogPage}>
             <Header search location={'/blog'}/>
             <div className={`uppr-page-content ${styles.upprPageContent}`}>
-                <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
-                    <img
-                        src={loader({src:'/assets/images/blog-articles/blog_main.webp', width: width})}
-                        alt="Main blog picture"
-                        width={width}
-                        height={height}
-                        style={{
-                            maxWidth: "100%",
-                            height: "auto"
-                        }} />
-                </div>
+                <TopBlogImage />
                 <div
                     className={`uppr-article-categories ${styles.upprArticleCategories}`}
                 >

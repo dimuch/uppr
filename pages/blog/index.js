@@ -4,6 +4,7 @@ import Head from 'next/head';
 
 import {useHasMounted} from '../../components/common/hooks/hasMounted';
 import Header from '../../components/common/header/Header';
+import TopBlogImage from '../../components/blog/TopBlogImage/TopBlogImage';
 import CategoriesList from '../../components/blog/CategoriesList/CategoriesList';
 import SelectedAllCategories from '../../components/blog/SelectedAllCategories/SelectedAllCategories';
 import {
@@ -13,8 +14,6 @@ import {
 } from '../../services/blogData';
 
 import styles from './styles.module.scss';
-import loader from '../../components/common/loader/loader';
-import {Typography} from '@mui/material';
 
 const domainName = '';
 export default function Blog({
@@ -33,9 +32,6 @@ export default function Blog({
         return null;
     }
 
-    const width = window.innerWidth;
-    const height = Math.round(width * 17 / 30);
-
     return <>
         <Head>
             <title>{"UPPR | Блог"}</title>
@@ -51,23 +47,9 @@ export default function Blog({
         <div className={styles.upprBlogPage}>
             <Header search location={'/blog'}/>
             <div className={`uppr-page-content ${styles.upprPageContent}`}>
-                <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
-                    <img
-                        src={loader({src:'/assets/images/blog-articles/blog_main.webp', width: width})}
-                        alt="Main blog picture"
-                        width={width}
-                        height={height}
-                    />
-                    <div className={styles.titleTextWrapper}>
-                        <Typography variant={"h3"} className={styles.pageTitle}>My Blog</Typography>
-                        <div className={styles.pageTitleSeparator}></div>
-                        <Typography className={styles.pageSubTitle}>You are never too good to email better!</Typography>
-                    </div>
-                </div>
+                <TopBlogImage />
 
-                <div
-                    className={`uppr-article-categories ${styles.upprArticleCategories}`}
-                >
+                <div className={`uppr-article-categories ${styles.upprArticleCategories}`}>
                     <CategoriesList items={articleCategories}/>
                 </div>
 

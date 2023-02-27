@@ -1,20 +1,20 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import Head from 'next/head'
 
-import Header from '../../../components/common/header/Header';
 import {useHasMounted} from '../../../components/common/hooks/hasMounted';
 
-import {getArticlesByTagsNameDB, getTagsDB} from '../../../services/blogData';
+import Header from '../../../components/common/header/Header';
 import PageNotFound from '../../404';
-import loader from '../../../components/common/loader/loader';
-
 import TagsAsSwitchers from '../../../components/blog/TagsAsSwitchers/TagsAsSwitchers';
 import useMakeRequest from '../../../components/common/hooks/makeRequest';
+import SelectedSpecificCategory from '../../../components/blog/SelectedSpecificCategory/SelectedSpecificCategory';
+import {LoaderIcon} from '../../../components/common/icons';
+
+import {getArticlesByTagsNameDB, getTagsDB} from '../../../services/blogData';
+import TopBlogImage from '../../../components/blog/TopBlogImage/TopBlogImage';
 
 import styles from './styles.module.scss';
-import SelectedSpecificCategory from '../../../components/blog/SelectedSpecificCategory/SelectedSpecificCategory';
 
-import {LoaderIcon} from '../../../components/common/icons';
 
 const SEARCH_REQ_URL = '/api/articles-by-tags?selectedTag=';
 
@@ -68,9 +68,6 @@ export default function ArticlePageWrapper({articlesByTags, articleTags}) {
         )
     }
 
-    const width = window.innerWidth;
-    const height = Math.round(width * 4 / 7);
-
     return <>
         <Head>
             <title>Статті по тегах</title>
@@ -86,17 +83,7 @@ export default function ArticlePageWrapper({articlesByTags, articleTags}) {
         <div className={styles.upprBlogPage}>
             <Header search location={'/blog'}/>
             <div className={`uppr-page-content ${styles.upprPageContent}`}>
-                <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
-                    <img
-                        src={loader({src:'/assets/images/blog-articles/blog_main.webp', width: width})}
-                        alt="Main blog picture"
-                        width={width}
-                        height={height}
-                        style={{
-                            maxWidth: "100%",
-                            height: "auto"
-                        }} />
-                </div>
+                <TopBlogImage />
                 <div
                     className={`uppr-article-categories ${styles.upprArticleCategories}`}>
                     <TagsAsSwitchers
