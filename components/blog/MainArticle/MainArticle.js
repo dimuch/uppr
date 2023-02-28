@@ -21,6 +21,8 @@ export default function MainArticle({ items }) {
     return null;
   }
 
+  console.log('mainArticleData', mainArticleData);
+
   const width = Math.round(window.innerWidth * 2 / 3);
   const height = Math.round(width * 4 / 7);
 
@@ -31,6 +33,14 @@ export default function MainArticle({ items }) {
       onClick={(e) => updateArticleViews(mainArticleData)}
     >
       <Grid item md={12} style={{position:'relative'}}>
+        <div className={styles.category}
+              style={{backgroundColor: `#${mainArticleData.categoryColor}`}}
+        >
+          <Typography variant={'subtitle2'}>
+            {mainArticleData?.name?.toUpperCase()}
+          </Typography>
+
+        </div>
         <img
           className={styles.image}
           src={loader({src:mainArticleData.image, width: width})}

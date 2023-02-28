@@ -32,10 +32,25 @@
     color: $article-description;
   }
 
-
   .readMore {
     text-align: right;
     color: $blog-four-sticky;
+  }
+}
+
+.category {
+  padding: .15rem .75rem;
+  border-radius: .25rem;
+  margin: auto;
+  color: $white;
+  z-index: 1;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  h6 {
+    font-family: "Futura-PT", sans-serif;
+    font-size: .7rem;
   }
 }
 

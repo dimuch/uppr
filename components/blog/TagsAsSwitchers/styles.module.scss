@@ -1,5 +1,11 @@
 @import "../Tags/styles.module";
 
-.articleTags{
+.articleTags {
   justify-content: center;
+}
+
+.tagItem {
+  font-size: 1rem;
+  background-color: transparent;
+  font-family: 'Futura-LT';
 }
