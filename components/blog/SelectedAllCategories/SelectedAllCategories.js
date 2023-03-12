@@ -37,7 +37,7 @@ export default function SelectedAllCategories({
         <>
             <div
                 container={true}
-                spacing={5}
+                spacing={4}
                 alignItems="flex-start"
                 className={styles.upprAllArticles}
             >
@@ -50,7 +50,7 @@ export default function SelectedAllCategories({
                 </div>
             </div>
             <Grid container={true}
-                  spacing={5}
+                  spacing={4}
                   alignItems="flex-start"
                   className={styles.upprOthersArticles}>
                 <OthersArticles
@@ -59,7 +59,7 @@ export default function SelectedAllCategories({
                 <InformationBlock tags={tags}/>
             </Grid>
             <Grid container={true}
-                  spacing={5}
+                  spacing={4}
                   alignItems="flex-start"
                   className={styles.upprOthersArticles}>
                 <OthersArticles
@@ -67,7 +67,7 @@ export default function SelectedAllCategories({
                 />
             </Grid>
             <Grid container={true}
-                  spacing={3}
+                  spacing={4}
                   alignItems="flex-start"
                   className={styles.upprOthersArticles}>
                 <OthersArticlesByCategory articlesByCategories={articlesByCategories} domainName={domainName}/>

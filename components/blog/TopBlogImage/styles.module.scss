@@ -10,8 +10,9 @@
     filter: brightness(.65);
     width: 100%;
     height: auto;
-    max-height: 50vh;
+    max-height: 55vh;
     object-fit: cover;
+    transform: translate3d(0, -4%, 0);
   }
 }
 
