@@ -12,11 +12,18 @@
   gap: 2rem;
 }
 
+.upprArticleList{
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgb(89 98 115 / 12%);
+}
+
 .upprSideBlock{
   display: grid;
   height: 100%;
   grid-template-rows: min-content min-content;
   gap: 1rem;
+  //box-shadow: 0 1px 3px 0 rgb(89 98 115 / 12%);
 }
 
 @media (max-width: 1024px) {

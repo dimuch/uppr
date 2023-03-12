@@ -41,7 +41,7 @@ export default function SelectedAllCategories({
                 alignItems="flex-start"
                 className={styles.upprAllArticles}
             >
-                <div item md={8} className="uppr-articles-list">
+                <div item md={8} className={styles.upprArticleList}>
                     <MainArticle items={latestArticle}/>
                 </div>
                 <div item md={4} className={styles.upprSideBlock}>
