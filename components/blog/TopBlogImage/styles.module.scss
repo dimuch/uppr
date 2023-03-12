@@ -2,17 +2,21 @@
 
 .upprBlogMainPicture {
   position: relative;
+  padding: 15% 0 14%;
+  min-height: 421px;
+  overflow: hidden;
 
   span{
     display: initial !important;
   }
   img {
-    filter: brightness(.65);
+    position: absolute;
+    margin: auto;
+    height: 100%;
     width: 100%;
-    height: auto;
-    max-height: 55vh;
+    top: 0%;
+    filter: brightness(.65);
     object-fit: cover;
-    transform: translate3d(0, -4%, 0);
   }
 }
 
@@ -37,6 +41,19 @@
 
   .pageSubTitle{
     font-family: "OpenSansSemiBold", sans-serif;
+  }
+}
+
+@media (max-width: 1024px) {
+  .upprBlogMainPicture {
+    padding: 17% 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .upprBlogMainPicture {
+    min-height: 200px;
+    padding: 15% 0 14%;
   }
 }
 

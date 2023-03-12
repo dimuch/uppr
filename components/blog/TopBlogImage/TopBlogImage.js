@@ -7,12 +7,12 @@ import styles from './styles.module.scss';
 export default function TopBlogImage () {
 
   const width = window.innerWidth;
-  const height = Math.round(width * 17 / 30);
+  const height = Math.round(width / 1.5);
 
   return (
     <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
       <img
-          src={loader({src:'/assets/images/blog-articles/blog_main.webp', width: width})}
+          src={loader({src:'/assets/images/blog-articles/image_main.jpg', width: width})}
           alt="Main blog picture"
           width={width}
           height={height}
