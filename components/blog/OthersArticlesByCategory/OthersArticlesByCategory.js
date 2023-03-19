@@ -15,11 +15,11 @@ export default function OthersArticlesByCategory({articlesByCategories}) {
             const isSlider = (index+1) % 2 !== 0;
 
             return (
-                <Grid item key={item.name} sm={12} className={styles.sliderWrapper}>
+                <div item key={item.name} sm={12} className={styles.sliderWrapper}>
                     {
                         isSlider ? (<AsSlider data={item}/>) : (<AsBlock data={item}/>)
                     }
-                </Grid>
+                </div>
             )
         })
     )

@@ -14,8 +14,8 @@ export default function TopFeaturedArticles({items, domainName}) {
     const height = Math.round(width * 4 / 7);
 
     return (
-        <Grid container={true} className={'wrapper ' + styles.wrapper}>
-            <Grid
+        <div container={true} className={'wrapper ' + styles.wrapper}>
+            <div
                 item
                 md={12}
                 className={'uppr-section-title ' + styles.upprSectionTitle}
@@ -28,8 +28,8 @@ export default function TopFeaturedArticles({items, domainName}) {
                         <Typography variant={'h5'}>Top featured</Typography>
                     </Grid>
                 </Grid>
-            </Grid>
-            <Grid
+            </div>
+            <div
                 item
                 md={12}
                 className={'uppr-section-content ' + styles.upprSectionContent}
@@ -71,7 +71,7 @@ export default function TopFeaturedArticles({items, domainName}) {
                         );
                     })}
                 </Grid>
-            </Grid>
-        </Grid>
+            </div>
+        </div>
     );
 }

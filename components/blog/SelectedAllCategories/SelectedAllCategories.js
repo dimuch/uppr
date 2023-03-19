@@ -35,43 +35,29 @@ export default function SelectedAllCategories({
 
     return (
         <>
-            <div
-                container={true}
-                spacing={4}
-                alignItems="flex-start"
-                className={styles.upprAllArticles}
-            >
-                <div item md={8} className={styles.upprArticleList}>
+            <div className={styles.upprAllArticles}>
+                <div className={styles.upprArticleList}>
                     <MainArticle items={latestArticle}/>
                 </div>
-                <div item md={4} className={styles.upprSideBlock}>
+                <div className={styles.upprSideBlock}>
                     <TopFeaturedArticles items={top3Article} domainName={domainName}/>
                     <Downloads items={downloads}/>
                 </div>
             </div>
-            <Grid container={true}
-                  spacing={4}
-                  alignItems="flex-start"
-                  className={styles.upprOthersArticles}>
+            <div className={styles.upprOthersArticles}>
                 <OthersArticles
                     items={firstRowOthersArticles} domainName={domainName}
                 />
                 <InformationBlock tags={tags}/>
-            </Grid>
-            <Grid container={true}
-                  spacing={4}
-                  alignItems="flex-start"
-                  className={styles.upprOthersArticles}>
+            </div>
+            <div className={styles.upprOthersArticles}>
                 <OthersArticles
                     items={secondRowOthersArticles} domainName={domainName}
                 />
-            </Grid>
-            <Grid container={true}
-                  spacing={4}
-                  alignItems="flex-start"
-                  className={styles.upprOthersArticles}>
+            </div>
+            <div className={styles.upprOthersArticles1}>
                 <OthersArticlesByCategory articlesByCategories={articlesByCategories} domainName={domainName}/>
-            </Grid>
+            </div>
         </>
     );
 }

@@ -21,18 +21,14 @@ export default function MainArticle({ items }) {
     return null;
   }
 
-  console.log('mainArticleData', mainArticleData);
-
   const width = Math.round(window.innerWidth * 2 / 3);
   const height = Math.round(width * 4 / 7);
 
   return (
     <div
-      container={true}
-      className={"wrapper " + styles.wrapper}
       onClick={(e) => updateArticleViews(mainArticleData)}
     >
-      <Grid item md={12} style={{position:'relative'}}>
+      <div style={{position:'relative'}}>
         <div className={styles.category}
               style={{backgroundColor: `#${mainArticleData.categoryColor}`}}
         >
@@ -47,12 +43,9 @@ export default function MainArticle({ items }) {
           width={width}
           height={height}
           alt={mainArticleData.title}
-          style={{
-            maxWidth: "100%",
-            height: "auto"
-          }} />
-      </Grid>
-      <Grid
+        />
+      </div>
+      <div
         container={true}
         className={"uppr-article-details " + styles.upprArticleDetails}
       >
@@ -88,7 +81,7 @@ export default function MainArticle({ items }) {
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
+      </div>
     </div>
   );
 }

@@ -12,9 +12,9 @@ export default function OthersArticles({items, domainName, isDescription=true}) 
     return (
         items.map(item => {
             return (
-                <Grid item xs={12} sm={6} md={4} key={item.link}>
+                <div item xs={12} sm={6} md={4} key={item.link}>
                     <ArticleCard item={item} domainName={domainName} isDescription={isDescription}/>
-                </Grid>
+                </div>
             )
         })
     )

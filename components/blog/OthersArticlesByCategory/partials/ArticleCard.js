@@ -12,7 +12,7 @@ export default function ArticleCard({item, isDescription=true, domainName}) {
     const height = Math.round(width * 4 / 7);
     return (
         <a href={item.link}>
-            <Grid container={true} className={styles.wrapper}>
+            <div container={true} className={styles.wrapper}>
                 <Grid item xs={12}>
                     <img
                         className={styles.image}
@@ -69,7 +69,7 @@ export default function ArticleCard({item, isDescription=true, domainName}) {
                         </Grid>
                     </Grid>
                 </Grid>
-            </Grid>
+            </div>
         </a>
     );
 }
