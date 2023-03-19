@@ -12,7 +12,7 @@ export default function AsSlider({data}) {
             <div className={styles.sectionTitleSplitter} />
             <p className={styles.shadowTitle}>{name}</p>
 
-            <Slider data={articles} slideWidth={'35%'}/>
+            <Slider data={articles} location={'blog'}/>
         </>
     )
 }

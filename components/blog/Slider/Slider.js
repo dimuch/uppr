@@ -4,24 +4,22 @@ import {ArrowCircleRightOutlined, ArrowCircleLeftOutlined} from '@mui/icons-mate
 import styles from './styles.module.scss';
 import loader from '../../common/loader/loader';
 
-function Slide({slideData, slideNode, slideImageWidth, location}) {
-    const width = window.innerWidth > 850 ? Math.round(window.innerWidth / 3) : window.innerWidth;
+function Slide({slideData, slideNode, location}) {
+    const imageScaler = location === 'footer' ? 7 : 4.35;
+    const width = window.innerWidth > 850 ? Math.round(window.innerWidth / imageScaler) : window.innerWidth / 2;
     const height = Math.round(width * 4 / 7);
 
     return (
         <a href={slideData.link}  target="_blank" rel="noreferrer">
             <div className={styles.slide} key={slideData.link}
-                 ref={slideNode} style={{minWidth: slideImageWidth}}
+                 ref={slideNode}
             >
                 <img
                     src={loader({src:slideData.image, width: width})}
                     width={width}
                     height={height}
                     alt={slideData.title}
-                    style={{
-                        width: "100%",
-                        height: "auto"
-                    }} />
+                />
                 <div className={`${styles.slideTitle} ${styles[location]}`}>
                     <a href={slideData.link} target="_blank" rel="noreferrer">
                         {slideData.title}
@@ -32,7 +30,7 @@ function Slide({slideData, slideNode, slideImageWidth, location}) {
     );
 }
 
-export default function Slider({data, slideWidth: slideImageWidth = '45%', location = 'footer'}) {
+export default function Slider({data, location = 'footer'}) {
     const wrapperNode = useRef();
     const slideNode = useRef();
 
@@ -42,10 +40,6 @@ export default function Slider({data, slideWidth: slideImageWidth = '45%', locat
     });
 
     const makeSlide = (step) => {
-        // const updatedStartOffset = (slider.startOffset + step * slider.slideWidth) % (slider.allSliderWidth - 2 * slider.slideWidth);
-        // const isLeftEnd = Math.abs((slider.startOffset + step * slider.slideWidth));
-        // const isRightEnd = (slider.startOffset + 2 * slider.slideWidth);
-
         setSlider((state) => {
             let updatedSlides = [...state.slides];
 
@@ -61,7 +55,7 @@ export default function Slider({data, slideWidth: slideImageWidth = '45%', locat
                 ...state,
                 stepper: state.stepper + step,
                 slides: updatedSlides,
-                startOffset: 0, //updatedStartOffset, //isLeftEnd > slider.allSliderWidth || isRightEnd > state.slideWidth ? -state.slideWidth : updatedStartOffset,
+                startOffset: 0,
             }
         })
     }
@@ -98,9 +92,11 @@ export default function Slider({data, slideWidth: slideImageWidth = '45%', locat
                     {
                         slider?.slides.map((item, index) => {
                             return (
-                                <Slide key={item.link} slideData={item} slideNode={slideNode}
-                                       slideImageWidth={slideImageWidth}
-                                       location={location}/>
+                                <Slide key={item.link}
+                                       slideData={item}
+                                       slideNode={slideNode}
+                                       location={location}
+                                />
                             )
                         })
                     }

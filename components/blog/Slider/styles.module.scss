@@ -37,9 +37,11 @@
   transition: all ease-out .3s;
   padding: 0 2rem;
   img{
-    min-width: 15rem;
-    width: 100%;
-    height: auto;
+    //min-width: 50%;
+    //width: 100%;
+    //height: auto;
+    //object-fit: cover;
+    //width: 33%;
   }
   &:first-of-type{
     padding-left: 0;

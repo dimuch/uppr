@@ -62,8 +62,8 @@
 }
 
 .section {
-  margin-bottom: 2rem;
   margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 .sectionTitle {
@@ -75,15 +75,16 @@
   text-align: center;
 }
 
-.sectionTitleSplitter{
+.sectionTitleSplitter {
   margin: auto;
   margin-bottom: 2rem;
   width: 2.5rem;
   border: 2px solid #cbd0df;
 }
 
-.shadowTitle{
+.shadowTitle {
   margin: 0;
+  margin-bottom: -40px;
   text-align: center;
   font-size: 8rem;
   font-family: "Futura-PT", sans-serif;
@@ -160,5 +161,9 @@
 
   .sliderWrapper {
     width: 100% !important;
+  }
+
+  .shadowTitle {
+    display: none;
   }
 }

@@ -7,7 +7,7 @@ import {linesLimiterConfig} from '../../../../helpers/linesLimiterConfig';
 
 import styles from '../styles.module.scss';
 
-export default function ArticleCard({item, isDescription=true, domainName}) {
+export default function ArticleCard({item, isDescription=true}) {
     const width = window.innerWidth > 850 ? Math.round(window.innerWidth / 3) : window.innerWidth;
     const height = Math.round(width * 4 / 7);
     return (
@@ -64,7 +64,7 @@ export default function ArticleCard({item, isDescription=true, domainName}) {
                                 variant={'subtitle2'}
                                 className={'summary-item ' + styles.summaryItem}
                             >
-                                Опубліковано: {getDate(new Date(item.published))}
+                                {getDate(new Date(item.published))}
                             </Typography>
                         </Grid>
                     </Grid>

@@ -1,6 +1,6 @@
 import React from 'react';
 import AsSlider from './partials/AsSlider';
-import AsBlock from './partials/AsBlock';
+import AsThreeInRowBlock from './partials/AsThreeInRowBlock';
 
 import styles from './styles.module.scss'
 
@@ -14,9 +14,9 @@ export default function OthersArticlesByCategory({articlesByCategories}) {
             const isSlider = (index+1) % 2 !== 0;
 
             return (
-                <div item key={item.name} sm={12} className={styles.sliderWrapper}>
+                <div className={styles.sliderWrapper} key={`${index}-${Math.random()}`}>
                     {
-                        isSlider ? (<AsSlider data={item}/>) : (<AsBlock data={item}/>)
+                        isSlider ? (<AsSlider data={item}/>) : (<AsThreeInRowBlock data={item}/>)
                     }
                 </div>
             )
