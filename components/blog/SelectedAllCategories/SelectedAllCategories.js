@@ -55,7 +55,7 @@ export default function SelectedAllCategories({
                     items={secondRowOthersArticles} domainName={domainName}
                 />
             </div>
-            <div className={styles.upprOthersArticles1}>
+            <div>
                 <OthersArticlesByCategory articlesByCategories={articlesByCategories} domainName={domainName}/>
             </div>
         </>

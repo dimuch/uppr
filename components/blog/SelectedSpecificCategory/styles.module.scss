@@ -1,8 +1,11 @@
 @import "../../../styles/scss/common/colors.scss";
 
 .upprOthersArticles{
-  padding-top: 2rem;
-  align-items: stretch !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: min-content;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .upprAllArticles{
@@ -21,8 +24,9 @@
 }
 
 @media (max-width: 1024px) {
-  .upprAllArticles{
+  .upprOthersArticles{
     grid-template-columns: 1fr;
+    margin-bottom: 0;
   }
   .upprSideBlock{
     grid-template-columns: 1fr 1fr;
@@ -31,8 +35,9 @@
 }
 
 @media (max-width: 650px) {
-  .upprAllArticles{
+  .upprOthersArticles{
     grid-template-columns: 1fr;
+    margin-bottom: 0;
   }
   .upprSideBlock{
     grid-template-columns: 1fr;

@@ -63,15 +63,32 @@
 
 .section {
   margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .sectionTitle {
+  margin-top: 5rem;
+  margin-bottom: 2.25rem;
   font-size: 3rem;
   font-family: "Futura-PT", sans-serif;
   text-transform: capitalize;
+  text-align: center;
+}
+
+.sectionTitleSplitter{
+  margin: auto;
   margin-bottom: 2rem;
-  //border-bottom: 2px solid $item-border;
+  width: 2.5rem;
+  border: 2px solid #cbd0df;
+}
+
+.shadowTitle{
+  margin: 0;
+  text-align: center;
+  font-size: 8rem;
+  font-family: "Futura-PT", sans-serif;
+  text-transform: uppercase;
+  color: rgba(230, 232, 239, 0.5);
 }
 
 .container {
@@ -116,7 +133,7 @@
 }
 
 .sliderWrapper {
-
+  position: relative;
 }
 
 

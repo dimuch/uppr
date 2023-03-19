@@ -21,23 +21,17 @@ export default function SelectedSpecificCategory({
 
     return (
         <>
-            <Grid container={true}
-                  spacing={3}
-                  alignItems="flex-start"
-                  className={styles.upprOthersArticles}>
+            <div className={styles.upprOthersArticles}>
                 <OthersArticles
                     items={firstRowOthersArticles}
                 />
                 {tags?.length > 0 && <InformationBlock tags={tags}/>}
-            </Grid>
-            <Grid container={true}
-                  spacing={3}
-                  alignItems="flex-start"
-                  className={styles.upprOthersArticles}>
+            </div>
+            <div className={styles.upprOthersArticles}>
                 <OthersArticles
                     items={secondRowOthersArticles}
                 />
-            </Grid>
+            </div>
         </>
     );
 }

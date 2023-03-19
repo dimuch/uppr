@@ -15,6 +15,8 @@ export default function AsBlock({data}) {
     return (
         <>
             <p className={styles.sectionTitle}>{name}</p>
+            <div className={styles.sectionTitleSplitter} />
+            <p className={styles.shadowTitle}>{name}</p>
             {
                 splitArticlesBy5Qty.map((chunk, chunkIndex) => {
                     return (

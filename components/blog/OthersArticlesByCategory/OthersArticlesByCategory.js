@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import {Grid} from '@mui/material';
+import React from 'react';
 import AsSlider from './partials/AsSlider';
 import AsBlock from './partials/AsBlock';
 
