@@ -65,7 +65,7 @@ export default function MainArticle({ items }) {
                   variant={"subtitle2"}
                   className={"summary-item " + styles.summaryItem}
                 >
-                  Опубліковано: {mainArticleData.published}
+                  {mainArticleData.published}
                 </Typography>
               </Grid>
             </Grid>

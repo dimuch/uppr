@@ -1,13 +1,14 @@
 @import "../../../styles/scss/common/colors.scss";
 
 .wrapper{
+  height: 100%;
   margin-bottom: 1rem;
   box-shadow: 0 1px 3px 0 rgba(89, 98, 115, .12);
   background-color: $page-background;
 }
 
 .upprSectionTitle{
-  padding: 1.25rem;
+  padding: 0 1.25rem 1.25rem;
   background-color: $page-background;
   svg {
     width: 1.5rem;
@@ -21,8 +22,8 @@
 }
 
 .upprSectionContent{
+  width: 100%;
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
   border-top: 1px solid $item-border;
 }
 

@@ -8,7 +8,7 @@
 }
 
 .upprSectionTitle {
-  padding: 1.25rem;
+  padding: 0 1.25rem 1.25rem;
   background-color: $page-background;
   svg {
     width: 1.5rem;
@@ -32,7 +32,6 @@
 
 .upprSectionContent {
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
   border-top: 1px solid $item-border;
 }
 

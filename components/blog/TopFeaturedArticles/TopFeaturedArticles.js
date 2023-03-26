@@ -15,15 +15,8 @@ export default function TopFeaturedArticles({items, domainName}) {
 
     return (
         <div container={true} className={'wrapper ' + styles.wrapper}>
-            <div
-                item
-                md={12}
-                className={'uppr-section-title ' + styles.upprSectionTitle}
-            >
+            <div className={'uppr-section-title ' + styles.upprSectionTitle}>
                 <Grid container={true} alignItems="center">
-                    {/*<Grid item md={1} xs={2}>*/}
-                    {/*  <TopFeaturedArticlesIcon />*/}
-                    {/*</Grid>*/}
                     <Grid item md={12} xs={12}>
                         <Typography variant={'h5'}>Top featured</Typography>
                     </Grid>
@@ -40,6 +33,7 @@ export default function TopFeaturedArticles({items, domainName}) {
                             <Grid
                                 item
                                 key={article.title}
+                                xs={12}
                                 onClick={(e) => updateArticleViews(article)}
                             >
                                 <Grid
