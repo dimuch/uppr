@@ -15,7 +15,6 @@
     height: 100%;
     width: 100%;
     top: 0%;
-    filter: brightness(.65);
     object-fit: cover;
   }
 }
@@ -31,6 +30,7 @@
   flex-direction: column;
   align-items: center;
   color: $white;
+  background: linear-gradient(180deg, rgba(22, 26, 37, 0.4), rgba(22, 26, 37, 0.4));
   .pageTitleSeparator{
     width: 2.5rem;
     height: .25rem;
