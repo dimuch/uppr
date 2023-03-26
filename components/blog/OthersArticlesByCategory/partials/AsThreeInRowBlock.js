@@ -19,14 +19,14 @@ export default function AsThreeInRowBlock({data}) {
     }, [articles])
 
     const handleClick = () => {
-        setIsLoading(true);
+        setIsLoading((state => !state));
         setTimeout(() => {
-            setIsLoading(true);
-            setIsShowMorePressed(true);
+            setIsLoading((state => !state));
+            setIsShowMorePressed(!isShowMorePressed);
         }, 1500);
     }
 
-    const isShowMoreVisible = !isShowMorePressed && secondRowOthersArticles?.length > 0;
+    const isShowMoreVisible = secondRowOthersArticles?.length > 0;
 
     return (
         <div className={styles.section}>
@@ -50,6 +50,7 @@ export default function AsThreeInRowBlock({data}) {
                 )
             }
 
+
             {
                 isShowMoreVisible && (
                     <div className={styles.showMoreBtn}
@@ -62,11 +63,13 @@ export default function AsThreeInRowBlock({data}) {
                             )
                         }
                         {
-                            !isLoading && <Typography>See all posts</Typography>
+                            !isLoading && <Typography>{!isShowMorePressed ? 'See all posts' : 'Show less'}</Typography>
                         }
                     </div>
+
                 )
             }
+
 
         </div>
     )

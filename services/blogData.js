@@ -116,7 +116,6 @@ async function getLatestArticlesByCategoryDB(category) {
                         publishedOrder: new Date(item.published).getTime(),
                     };
                 })
-                    .sort((prev, next) => (next.publishedOrder - prev.publishedOrder))
                 resolve(data);
             } catch (err) {
                 console.log('getLatestArticlesByCategoryDB ERROR', err);
