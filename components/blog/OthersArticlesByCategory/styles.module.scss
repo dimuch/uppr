@@ -14,10 +14,11 @@
 .image {
   width: 100%;
   height: auto;
+  max-height: 208px;
 }
 
 .upprArticleDetails {
-  padding: 1rem;
+  padding: 1rem 2.5rem 1.5rem;
   background-color: $white;
 
   .category {

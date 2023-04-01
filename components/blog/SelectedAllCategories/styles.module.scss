@@ -32,10 +32,11 @@
 
 @media (max-width: 1024px) {
   .upprOthersArticles{
-    grid-template-columns: 1fr;
+    padding-top: 0;
   }
   .upprAllArticles{
     grid-template-columns: 1fr;
+    grid-gap: 3rem;
   }
   .upprSideBlock{
     grid-template-columns: 1fr 1fr;
@@ -45,6 +46,10 @@
 }
 
 @media (max-width: 650px) {
+  .upprOthersArticles{
+    display: block;
+    padding-top: 0;
+  }
   .upprAllArticles{
     grid-template-columns: 1fr;
   }

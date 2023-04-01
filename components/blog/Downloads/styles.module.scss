@@ -3,12 +3,13 @@
 .wrapper {
   height: 100%;
   margin-bottom: 1rem;
-  box-shadow: 0 1px 3px 0 rgba(89, 98, 115, 0.12);
   background-color: $page-background;
 }
 
 .upprSectionTitle {
-  padding: 0 1.25rem 1.25rem;
+  margin: 0 0 0.5rem 0.5rem !important;
+  padding: 0 0 1.25rem 0;
+  border-bottom: 1px solid $item-border;
   background-color: $page-background;
   svg {
     width: 1.5rem;
@@ -22,7 +23,7 @@
 }
 
 .wrapperDownload {
-  padding: 1rem;
+  padding: 0 0 1rem 0;
 
   svg {
     width: 1.5rem;
@@ -31,8 +32,8 @@
 }
 
 .upprSectionContent {
-  padding-top: 1.5rem;
-  border-top: 1px solid $item-border;
+  padding-top: 1.25rem;
+  margin: 0 0 0.5rem 0.5rem !important;
 }
 
 .articleImage {

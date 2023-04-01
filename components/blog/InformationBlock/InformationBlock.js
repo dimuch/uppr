@@ -11,7 +11,6 @@ export default function InformationBlock({tags}) {
         <Grid
             item
             md={4}
-            style={{boxShadow: '0 1px 3px 0 rgba(89, 98, 115, 0.12)'}}
         >
             <Grid container={true} alignItems="center"
                   className={styles.upprSectionTitle}

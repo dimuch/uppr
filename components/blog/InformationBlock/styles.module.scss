@@ -1,12 +1,9 @@
 @import "../../../styles/scss/common/colors.scss";
 
-.wrapper {
-  box-shadow: 0 1px 3px 0 rgba(89, 98, 115, 0.12);
-}
-
 .upprSectionTitle {
-  padding: 1.25rem;
-  box-shadow: 0 1px 3px 0 rgba(89, 98, 115, 0.12);
+  margin: 0 0 0.5rem 0.5rem !important;
+  padding: 0 0 1.25rem 0;
+  border-bottom: 1px solid $item-border;
 
   svg {
     width: 1.5rem;
@@ -20,8 +17,8 @@
 }
 
 .upprSectionContent{
-  padding: 1.25rem 1.25rem 0.25rem;
-  border-top: 1px solid $page-background;
+  padding-top: 1.25rem;
+  margin: 0 0 0.5rem 0.5rem !important;
 }
 
 .tagItem{
@@ -33,7 +30,7 @@
   transition: all ease-out .3s;
 
   p{
-    font-family: "Futura-PT", sans-serif;
+    font-family: "Futura-LT", sans-serif;
     font-size: 1rem;
   }
   &:hover{

@@ -25,7 +25,7 @@ export default function MainArticle({ items }) {
   const height = Math.round(width * 4 / 7);
 
   return (
-    <div
+    <div className={styles.mainArticleWrappper}
       onClick={(e) => updateArticleViews(mainArticleData)}
     >
       <div style={{position:'relative'}}>
@@ -58,7 +58,7 @@ export default function MainArticle({ items }) {
           <Typography>{mainArticleData.description}</Typography>
         </Grid>
         <Grid item md={12} className={"summary " + styles.summary}>
-          <Grid container={true} justifyContent={'space-around'}>
+          <Grid container={true} justifyContent={'space-between'}>
             <Grid item md={10} className="left-part">
               <Grid container={true}>
                 <Typography

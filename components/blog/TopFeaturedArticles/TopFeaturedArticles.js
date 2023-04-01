@@ -22,11 +22,7 @@ export default function TopFeaturedArticles({items, domainName}) {
                     </Grid>
                 </Grid>
             </div>
-            <div
-                item
-                md={12}
-                className={'uppr-section-content ' + styles.upprSectionContent}
-            >
+            <div className={'uppr-section-content ' + styles.upprSectionContent}>
                 <Grid container={true} spacing={3}>
                     {items.map((article) => {
                         return (
@@ -42,7 +38,7 @@ export default function TopFeaturedArticles({items, domainName}) {
                                     className={styles.articleContainer}
                                     alignContent={'center'}
                                 >
-                                    <Grid item xs={12} sm={5} className={styles.articleImage}>
+                                    <Grid item xs={5} sm={5} className={styles.articleImage}>
                                         <img
                                             src={loader({src:article.image, width: width})}
                                             width={width}
@@ -53,7 +49,7 @@ export default function TopFeaturedArticles({items, domainName}) {
                                                 height: 'auto',
                                             }}/>
                                     </Grid>
-                                    <Grid item xs={12} sm={7} className={styles.articleTitle}>
+                                    <Grid item xs={5} sm={7} className={styles.articleTitle}>
                                         <a href={article.link}>
                                             <Typography>
                                                 {article.title}

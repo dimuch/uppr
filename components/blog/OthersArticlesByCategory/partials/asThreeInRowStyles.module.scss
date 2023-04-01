@@ -65,11 +65,15 @@
 
 @media (max-width: 1024px) {
   .upprOthersArticles{
-    grid-template-columns: 1fr;
+    padding-top: 0;
   }
 }
 
 @media (max-width: 650px) {
+  .upprOthersArticles{
+    display: block;
+    padding-top: 0;
+  }
   .shadowTitle{
     display: none;
   }
