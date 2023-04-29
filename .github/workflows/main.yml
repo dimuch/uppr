@@ -42,12 +42,11 @@ jobs:
 
       - name: Deploy to server
         uses: appleboy/scp-action@master
-        env:
+        with:
           HOST: ${{ secrets.SSH_HOST }}
           USERNAME: ${{ secrets.SSH_USER }}
           KEY: ${{ secrets.SSH_KEY }}
           PORT: ${{ secrets.SSH_PORT }}
-        with:
           source: './*'
           target: ${{secrets.DEPLOY_DIRECTORY}}
 
