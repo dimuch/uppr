@@ -8,6 +8,7 @@ import InstagramIcon from '../../common/icons/instagram-icon';
 import FacebookIcon from '../../common/icons/facebook-icon';
 import TelegramIcon from '../../common/icons/telegram-svgrepo-com';
 import LinkedInIcon from '../../common/icons/linkedin-icon';
+import TelegramAlternativeIcon from '../../common/icons/telegram-icon';
 
 export default function InformationBlock({tags}) {
   return (
@@ -80,7 +81,7 @@ export default function InformationBlock({tags}) {
           <a href="https://t.me/emailingskills"
              target="_blank" rel="noreferrer"
           >
-            <TelegramIcon/>
+            <TelegramAlternativeIcon/>
           </a>
         </div>
       </div>

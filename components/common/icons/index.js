@@ -8,3 +8,4 @@ export { default as MenuIcon } from './menu-icon';
 export { default as InstagramIcon } from './instagram-icon';
 export { default as FacebookIcon } from './facebook-icon';
 export { default as LinkedInIcon } from './linkedin-icon';
+export { default as TelegramAlternativeIcon } from './telegram-icon';
