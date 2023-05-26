@@ -1,0 +1,153 @@
+@import "../../../styles/scss/common/colors.scss";
+
+.wrapper {
+  position: absolute;
+  display: flex;
+  flex-wrap: nowrap;
+  min-height: 350px;
+  margin: auto;
+  padding-bottom: 8rem;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  left: 50%;
+  transform: translate(-50%);
+  overflow: clip;
+
+  a {
+    display: block;
+    margin: auto .5rem;
+    img{
+      min-width: 12rem;
+      max-width: 16rem;
+      height: auto;
+    }
+    &:hover{
+      scale: 1.05;
+    }
+  }
+
+  .leftFirst {
+    opacity: 0;
+    transform: translate(25%);
+    transition: all .25s ease-in,
+    opacity .35s ease-in;
+
+  }
+
+  .leftSecond {
+    opacity: 0;
+    transform: translate(25%);
+    transition: all .25s ease-in .2s,
+    opacity .35s ease-in .2s;
+  }
+
+  .centerImage {
+    position: relative;
+    display: block;
+    scale: .9;
+    opacity: 0;
+    padding: 2rem;
+    margin: .5rem;
+    transform: translate(0);
+    transition: all .25s ease-in .3s, opacity .35s ease-in .3s;
+    z-index: 5;
+    min-width: 18rem;
+    max-width: 20rem;
+    height: auto;
+    background-image: linear-gradient(135deg, #ff9f2e, #f723c4);
+    svg {
+      opacity: .16;
+      path{
+        fill: $white;
+      }
+    }
+    &:hover{
+      scale: 1.05;
+    }
+  }
+
+  .rightSecond{
+    opacity: 0;
+    transform: translate(-25%);
+    transition: all .25s ease-in  .2s, opacity .35s ease-in  .2s;
+  }
+
+  .rightFirst{
+    opacity: 0;
+    transform: translate(-25%);
+    transition: all .25s ease-in, opacity .35s ease-in;
+  }
+}
+
+.wrapperOpacityIn {
+  .leftFirst {
+    opacity: 1;
+    transform: translate(0);
+    transition: all .25s ease-in .2s, opacity .35s ease-in .2s;
+  }
+
+  .leftSecond {
+    opacity: 1;
+    transform: translate(0);
+    transition: all .25s ease-in, opacity .35s ease-in;
+  }
+
+  .centerImage {
+    width: 22%;
+    scale: 1;
+    opacity: 1;
+    transition: all .25s ease-in, opacity .35s ease-in;
+  }
+
+  .rightSecond{
+    opacity: 1;
+    transform: translate(0);
+    transition: all .25s ease-in, opacity .35s ease-in;
+  }
+
+  .rightFirst{
+    opacity: 1;
+    transform: translate(0);
+    transition: all .25s ease-in .2s, opacity .35s ease-in  .2s;
+  }
+}
+
+.instaCaption{
+  position: absolute;
+  color: $white;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.section{
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.sectionTitle {
+  margin-top: 8rem;
+  margin-bottom: 2.25rem;
+  font-size: 3rem;
+  font-family: "Futura-PT", sans-serif;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.sectionTitleSplitter{
+  margin: auto;
+  margin-bottom: 2rem;
+  width: 2.5rem;
+  border: 2px solid #cbd0df;
+}
+
+.shadowTitle{
+  margin: 0;
+  margin-bottom: -70px;
+  text-align: center;
+  font-size: 8rem;
+  font-family: "Futura-PT", sans-serif;
+  text-transform: uppercase;
+  color: rgba(230, 232, 239, 0.5);
+}
