@@ -36,26 +36,26 @@ export default function InstagramImages() {
         <p className={styles.shadowTitle}>Follow</p>
 
         <div className={wrapperAnimateClass} ref={wrapperRef}>
-          <a href="https://www.instagram.com/p/CQLLQydrEJD/"
+          <a href="https://www.instagram.com/p/CZJnrA_thVZ/"
              target="_blank" rel="noreferrer"
              className={styles.leftFirst}>
             <img
               src="/assets/images/blog-articles/instagram-5.jpg" width={640} height={640} alt={'image-4'}
             />
           </a>
-          <a href="https://www.instagram.com/p/CsgdEOdt1Y9/"
+          <a href="https://www.instagram.com/p/CUrofxnLrCy/"
              target="_blank" rel="noreferrer"
              className={styles.leftFirst}
           >
             <img
-              src="/assets/images/blog-articles/instagram-1.jpg" width={640} height={640} alt={'image-1'}
+              src="/assets/images/blog-articles/instagram-2.jpg" width={640} height={640} alt={'image-1'}
             />
           </a>
-          <a href="https://www.instagram.com/p/CbH6Q1ch8Dq/"
+          <a href="https://www.instagram.com/p/CsgdEOdt1Y9/"
              target="_blank" rel="noreferrer"
              className={styles.leftSecond}>
             <img
-              src="/assets/images/blog-articles/instagram-2.jpg" width={640} height={640} alt={'image-2'}
+              src="/assets/images/blog-articles/instagram-1.jpg" width={640} height={640} alt={'image-2'}
             />
           </a>
           <a href="https://www.instagram.com/ivanna.tabachuk"
@@ -87,7 +87,7 @@ export default function InstagramImages() {
             />
           </a>
 
-          <a href="https://www.instagram.com/p/CPh-1uArYjy/"
+          <a href="https://www.instagram.com/p/CYqsOzXIEPC/"
              target="_blank" rel="noreferrer"
              className={styles.rightFirst}
           >
