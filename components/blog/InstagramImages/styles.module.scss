@@ -94,7 +94,6 @@
   }
 
   .centerImage {
-    width: 22%;
     scale: 1;
     opacity: 1;
     transition: all .25s ease-in, opacity .35s ease-in;
@@ -150,4 +149,27 @@
   font-family: "Futura-PT", sans-serif;
   text-transform: uppercase;
   color: rgba(230, 232, 239, 0.5);
+}
+
+@media (max-width: 1024px) {
+  .shadowTitle {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .wrapper{
+    a {
+      img{
+        min-width: 10rem;
+        max-width: 12rem;
+        height: auto;
+      }
+    }
+
+    .centerImage {
+      min-width: 14rem;
+      max-width: 16rem;
+    }
+  }
 }
