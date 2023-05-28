@@ -3,6 +3,7 @@ import styles from '../../articles/commonArticleStyles.module.scss';
 import Author from '../Author/Author';
 import Slider from '../Slider/Slider';
 import OthersArticles from '../OthersArticles/OthersArticles';
+import InstagramImages from '../InstagramImages/InstagramImages';
 
 export default function ArticleFooter({articleData}) {
     let width;
@@ -14,6 +15,7 @@ export default function ArticleFooter({articleData}) {
         return null;
     }
     return (
+      <>
         <div className={`${styles.footerContainer}`}>
             <div className={styles.authorBlock}>
                 <Author data={articleData}/>
@@ -36,5 +38,7 @@ export default function ArticleFooter({articleData}) {
                 )
             }
         </div>
+        <InstagramImages />
+      </>
     )
 }
