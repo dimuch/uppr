@@ -161,14 +161,12 @@
     margin-top: 3rem;
     margin-bottom: 2rem;
     text-decoration: none;
-    padding: 1rem 3rem;
-    border: 1px solid #95a6b8;
     cursor: pointer;
     background-color: transparent;
     transition: background-color ease-out 0.3s;
 
-    &:hover {
-      background-color: #e1e6eb;
+    &:hover, &:hover button {
+      cursor: pointer;
     }
   }
 }

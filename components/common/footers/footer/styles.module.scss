@@ -1,0 +1,33 @@
+@import "../../../../styles/scss/common/colors";
+
+.section{
+  background-color: $white;
+  box-shadow: 0PX -2PX 7PX -2px rgba(0, 0, 0, 0.1);
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding: 2rem 1rem;
+}
+
+.headerLeftBlock{
+  display: flex;
+  align-items: center;
+}
+
+.headerRightBlock {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 3rem;
+}
+
+.link{
+  font-family: "Futura-LT", sans-serif;
+}
+.link ~ .link{
+  margin-left: 1rem;
+}

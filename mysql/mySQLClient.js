@@ -22,6 +22,7 @@ const db_pool = mysql.createPool({
 
 module.exports = {
   getDBPoolData,
+  dbCallWrapper,
   shutDownDB,
 };
 
@@ -50,6 +51,30 @@ function makeConnectionDB() {
     });
   });
 }
+
+async function dbCallWrapper(query, mapper) {
+  return new Promise((resolve, reject) => {
+    db_pool.query(query, (err, rows, fields) => {
+      if (err) {
+        console.log('ERROR dbCallWrapper', err);
+        reject({data: []});
+      }
+
+      try {
+        let result = rows[0];
+        if (mapper) {
+          result = mapper(rows);
+        }
+
+        resolve(result);
+      } catch (err) {
+        console.log('ERROR dbCallWrapper', err);
+        reject([]);
+      }
+    });
+  });
+}
+
 
 function shutDownDB() {
   return new Promise((resolve, reject) => {
