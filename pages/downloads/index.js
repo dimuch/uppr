@@ -18,8 +18,6 @@ export default function Downloads({downloadsByCategories}) {
     return null;
   }
 
-  console.log('downloadsByCategories', downloadsByCategories);
-
   const width = window.innerWidth > 875 ? Math.round(window.innerWidth / 3) : window.innerWidth;
   const height = Math.round(width * 22 / 27);
 

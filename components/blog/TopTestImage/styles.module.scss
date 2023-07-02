@@ -1,0 +1,70 @@
+@import "../../../styles/scss/common/colors.scss";
+
+.upprBlogMainPicture {
+  position: relative;
+  padding: 15% 0 14%;
+  min-height: 421px;
+  overflow: hidden;
+
+  span{
+    display: initial !important;
+  }
+  img {
+    position: absolute;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    object-fit: cover;
+  }
+}
+
+.titleTextWrapper{
+  position: absolute;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: $white;
+  background: linear-gradient(180deg, rgba(22, 26, 37, 0.4), rgba(22, 26, 37, 0.4));
+  .pageTitleSeparator{
+    width: 2.5rem;
+    height: .25rem;
+    background-color: white;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .pageSubTitle{
+    font-family: "OpenSansSemiBold", sans-serif;
+  }
+}
+
+@media (max-width: 1024px) {
+  .upprBlogMainPicture {
+    padding: 17% 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .upprBlogMainPicture {
+    min-height: 200px;
+    padding: 15% 0 14%;
+    img {
+      scale: 1.5;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .pageTitle{
+    font-size: 1.5rem !important;
+  }
+  .pageSubTitle{
+    font-size: .8rem !important;
+  }
+}
