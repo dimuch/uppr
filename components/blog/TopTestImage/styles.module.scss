@@ -3,7 +3,7 @@
 .upprBlogMainPicture {
   position: relative;
   padding: 15% 0 14%;
-  min-height: 421px;
+  min-height: 550px;
   overflow: hidden;
 
   span{
@@ -15,7 +15,22 @@
     height: 100%;
     width: 100%;
     top: 0%;
+    scale: 1.15;
     object-fit: cover;
+  }
+  .shadow {
+    position: absolute;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    background: linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9));
+  }
+  .wave {
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    bottom: -.25rem
   }
 }
 
@@ -30,7 +45,7 @@
   flex-direction: column;
   align-items: center;
   color: $white;
-  background: linear-gradient(180deg, rgba(22, 26, 37, 0.4), rgba(22, 26, 37, 0.4));
+  //background: linear-gradient(180deg, rgba(22, 26, 37, 0.4), rgba(22, 26, 37, 0.4));
   .pageTitleSeparator{
     width: 2.5rem;
     height: .25rem;
@@ -44,27 +59,51 @@
   }
 }
 
-@media (max-width: 1024px) {
-  .upprBlogMainPicture {
-    padding: 17% 0;
+.pageTitle {
+  width: 50%;
+  font-size: 3rem;
+  line-height: 1.25;
+  font-family: Raleway-Regular, sans-serif;
+  text-align: center;
+  margin-top: -4rem;
+}
+
+.ctaButton{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: .75rem 1.75rem;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px hsla(0, 0%, 100%, 0.4);
+  border-radius: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  font-family: Raleway-Regular, sans-serif;
+  cursor: pointer;
+  &:hover{
+    box-shadow: inset 0 0 0 2px #fff;
   }
 }
 
 @media (max-width: 650px) {
   .upprBlogMainPicture {
-    min-height: 200px;
-    padding: 15% 0 14%;
-    img {
-      scale: 1.5;
-    }
+    min-height: 60vh;
+  }
+  .pageTitle{
+    line-height: 1.5;
+    margin-bottom: 2rem;
   }
 }
 
 @media (max-width: 420px) {
   .pageTitle{
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
+    line-height: 1.5;
   }
   .pageSubTitle{
     font-size: .8rem !important;
+  }
+  .ctaButton{
+    font-size: 1rem;
   }
 }

@@ -2,21 +2,18 @@ import React from 'react';
 import Head from 'next/head';
 
 import Header from '../../components/common/header/Header';
-import TopTestImage from '../../components/blog/TopTestImage/TopBlogImage';
+import Test from '../../components/test/Test';
 import {useHasMounted} from '../../components/common/hooks/hasMounted';
 
 import styles from './styles.module.scss';
 
-const domainName = '';
-export default function Test() {
-  const hasMounted = useHasMounted();
+// const domainName = '';
 
+const TestPage = () => {
+  const hasMounted = useHasMounted();
   if (!hasMounted) {
     return null;
   }
-
-  const width = window.innerWidth > 875 ? Math.round(window.innerWidth / 3) : window.innerWidth;
-  const height = Math.round(width * 22 / 27);
 
   return <>
     <Head>
@@ -31,11 +28,13 @@ export default function Test() {
       <link rel="icon" href="/favicon.png"/>
     </Head>
 
-    <div className={styles.upprBlogPage}>
-      <Header search location={'/downloads'}/>
-      <div className={`uppr-page-content ${styles.upprPageContent}`}>
-        <TopTestImage/>
+    <div className={styles.upprTestPage}>
+      <Header search location={'/test'}/>
+      <div className={styles.testBody}>
+        <Test/>
       </div>
     </div>
   </>;
-}
+};
+
+export default TestPage;

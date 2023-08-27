@@ -64,9 +64,6 @@ const Search = ({}) => {
         if (!error) {
             return
         }
-
-        console.log('error', error);
-
     }, [error]);
 
     useClickOutside(inputRef, closeSearchResults, onClickInside);
