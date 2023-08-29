@@ -3,7 +3,6 @@ import {Typography} from '@mui/material';
 
 import OthersArticles from '../../OthersArticles/OthersArticles';
 import styles from './asThreeInRowStyles.module.scss'
-import {imageLoaderIcon} from '../../../common/icons';
 
 export default function AsThreeInRowBlock({data}) {
     const {name, articles} = data;

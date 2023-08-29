@@ -29,7 +29,7 @@ const Test = () => {
 
   const [step, setStep] = useState(0);
   const questions = useMemo(() => emailEffectivenessTest(), []);
-  const nextStepQuestions = useMemo(() => questions[step], [step]);
+  const nextStepQuestions = useMemo(() => questions[step], [step, questions]);
 
   const [answers, setAnswer] = useState(DEFAULT_ANSWERS);
 
