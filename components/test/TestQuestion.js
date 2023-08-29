@@ -16,6 +16,7 @@ export default function TestQuestion({question, questionNumber, answer, onOption
           <TestQuestionTitle
             questionTitle={question.questionTitle}
             questionNumber={questionNumber}
+            isComplex
           />
         </FormControl>
         <ol>

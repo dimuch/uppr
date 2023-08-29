@@ -13,6 +13,13 @@ const LEVELS = {
 }
 
 
+export const DEFAULT_ANSWERS = new Array(QUESTIONS_QUANTITY).fill([DEFAULT_TEST_ANSWER]);
+
+export const DEFAULT_TEST_RESULT = {
+  message: '',
+  title: '',
+  isTestSubmitted: false,
+}
 export const getLevelParams = (level) => LEVELS[level];
 
 export const isQuestionNumberDefault = (subQuestionNumber) => (
@@ -28,6 +35,7 @@ export const emailEffectivenessTest = () => {
         <p className={styles.questionBody}>
           <i>
             Hi Julie,
+            <br/>
             <br/>
             Big thanks for your job.
             <br/>

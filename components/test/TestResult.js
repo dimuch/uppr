@@ -2,34 +2,36 @@ import React from 'react';
 import styles from './styles.module.scss';
 import {Typography} from '@mui/material';
 import Button from '@mui/material/Button';
+import {DEFAULT_TEST_RESULT} from './service';
 
 
-export default function TestResult({result}) {
+export default function TestResult({result, resetResults}) {
+
   return (
     <div className={styles.testResult}>
       <div className={styles.testResultBody}>
         <hr/>
         <div className={styles.testResultCaption}>
-          <Typography>
+          <p>
             Your email level:
-          </Typography>
+          </p>
         </div>
         <div className={styles.testResultTitle}>
-          <Typography variant='h4'>
+          <p>
             {result.title}
-          </Typography>
+          </p>
         </div>
         <div className={styles.testResultMessage}>
-          <Typography>
+          <p>
             {result.message}
-          </Typography>
+          </p>
         </div>
 
         <div className={styles.testResultControls}>
           <div>&nbsp;</div>
           <Button
             variant="outlined"
-            color="secondary"
+            onClick={resetResults}
           >
             Пройти ще раз
           </Button>

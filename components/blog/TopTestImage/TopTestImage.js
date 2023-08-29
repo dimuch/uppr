@@ -25,12 +25,17 @@ export default function TopTestImage () {
       </div>
       <div className={styles.titleTextWrapper}>
         <h2 className={styles.pageTitle} >
+          <img
+            src='/assets/images/uppr.png'
+            alt="UPPR Logo"
+            width={100}
+          />
           Wanna check if your emails are effective and modern enough?
         </h2>
         <a href="#test"
            className={styles.ctaButton} onClick={() => {}}
         >
-            Pass the test
+            Pass the Test
         </a>
       </div>
     </div>

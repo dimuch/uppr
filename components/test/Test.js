@@ -1,7 +1,6 @@
 import React, {useMemo, useState} from 'react';
 import {useHasMounted} from '../common/hooks/hasMounted';
 
-import {Typography} from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
@@ -14,7 +13,8 @@ import {
   DEFAULT_TEST_ANSWER,
   QUESTIONS_QUANTITY,
   TEST_ANSWERS,
-  emailEffectivenessTest, isQuestionNumberDefault, getLevelParams,
+  DEFAULT_TEST_RESULT,
+  emailEffectivenessTest, isQuestionNumberDefault, getLevelParams, DEFAULT_ANSWERS,
 } from './service';
 
 import {Wave} from '../common/icons';
@@ -31,13 +31,9 @@ const Test = () => {
   const questions = useMemo(() => emailEffectivenessTest(), []);
   const nextStepQuestions = useMemo(() => questions[step], [step]);
 
-  const [answers, setAnswer] = useState(new Array(QUESTIONS_QUANTITY).fill([DEFAULT_TEST_ANSWER]));
+  const [answers, setAnswer] = useState(DEFAULT_ANSWERS);
 
-  const [result, setResult] = useState({
-    message: '',
-    title: '',
-    isTestSubmitted: false,
-  });
+  const [result, setResult] = useState(DEFAULT_TEST_RESULT);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -49,9 +45,6 @@ const Test = () => {
     const copyAnswers = [...answers].map(item => [...item]);
     const subIndex =  isQuestionNumberDefault(subQuestionNumber) ? subQuestionNumber : 0;
     copyAnswers[questionNumber][subIndex] = index;
-
-    console.log('copyAnswers', copyAnswers);
-
     setAnswer(() => {
       return copyAnswers;
     })
@@ -59,7 +52,6 @@ const Test = () => {
 
   const onTestSubmit = () => {
     const userAnswers =  answers.flat(Infinity)
-    console.log('submited', userAnswers);
     let userResult = 0;
     TEST_ANSWERS.forEach((answer, index) => {
       userResult += (+(answer === userAnswers[index]));
@@ -78,8 +70,6 @@ const Test = () => {
       message='';
     }
 
-    console.log(message);
-
     setIsLoading(() => true);
 
     setTimeout(() => {
@@ -92,14 +82,18 @@ const Test = () => {
     }, 800);
   }
 
+  const resetResults = () => {
+    setResult(DEFAULT_TEST_RESULT);
+    setStep(0);
+    setAnswer(DEFAULT_ANSWERS);
+  }
+
   const selectedOptions = answers
     .slice(0, step * CHUNK + CHUNK)
     .filter(answer => answer[0] !== DEFAULT_TEST_ANSWER);
   const isNextButtonAvailable = (step < questions.length - 1);
   const isNextButtonDisabled = (selectedOptions.length !== (step + 1) * CHUNK);
   const isSubmitButtonDisabled = (selectedOptions.length !== QUESTIONS_QUANTITY);
-
-  console.log(selectedOptions.length, QUESTIONS_QUANTITY, selectedOptions.length !== QUESTIONS_QUANTITY);
 
   if (!hasMounted) {
     return null;
@@ -139,7 +133,7 @@ const Test = () => {
                     variant="outlined"
                     onClick={() => onStepChange(-1)}
                   >
-                    Попередній крок
+                    Back
                   </Button>
                 )
               }
@@ -151,21 +145,19 @@ const Test = () => {
               {isNextButtonAvailable && (
                 <Button
                   variant="outlined"
-                  color="success"
                   onClick={() => onStepChange(1)}
                   disabled={isNextButtonDisabled}
                 >
-                  Наступний крок
+                  Next
                 </Button>
               )}
               {!isNextButtonAvailable && (
                 <Button
                   variant="outlined"
-                  color="secondary"
                   onClick={onTestSubmit}
                   disabled={isSubmitButtonDisabled}
                 >
-                  Надіслати
+                  Get Results
                 </Button>
               )}
             </Stack>
@@ -175,7 +167,10 @@ const Test = () => {
     }
     {
       result.isTestSubmitted && (
-        <TestResult result={result}/>
+        <TestResult
+          result={result}
+          resetResults={resetResults}
+        />
       )
     }
   </>;

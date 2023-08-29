@@ -51,7 +51,11 @@
   padding-top: 1rem;
   font-family: Raleway-Regular, sans-serif;
   font-size: 1.25rem;
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
+}
+
+.questionTitleNested {
+  margin-bottom: 0;
 }
 
 .questionBody {
@@ -59,8 +63,8 @@
   font-size: 1rem;
   margin-left: 2.5rem;
   margin-top: 0;
-  margin-bottom: .5rem;
-  line-height: 1.75;
+  margin-bottom: 1rem;
+  line-height: 1.35;
 }
 
 .subQuestionList {
@@ -68,8 +72,8 @@
   margin-top: 18px;
 }
 
-.optionListItem{
-  label{
+.optionListItem {
+  label {
     align-items: start;
   }
 }
@@ -79,17 +83,50 @@
     font-family: Raleway-Regular, sans-serif;
     font-size: 1rem;
     line-height: 1.75;
-    padding-top: 2px;
+    padding-top: .125rem;
+    padding-bottom: 0;
+  }
+  svg {
+    width: 1rem ;
   }
 }
 
 .stepButtons {
   margin-top: 4rem;
   justify-content: space-between;
+  button {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: .75rem 1.75rem;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    font-family: Raleway-Regular, sans-serif;
+    cursor: pointer;
+    text-transform: capitalize;
+    color: $text;
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box;
+    border: 2px solid transparent;
+    &:hover {
+      background: linear-gradient(white, white) padding-box,
+      linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box;
+      border: 2px solid transparent;
+    }
+    &:disabled{
+      background: linear-gradient(white, white) padding-box,
+      linear-gradient(to right, $text, $text) border-box;
+      border: 2px solid transparent;
+    }
+  }
 }
+
 
 .testResultCaption {
   margin-bottom: 1.5rem;
+  font-family: Raleway-Regular, sans-serif;
+  line-height: 1.25;
 }
 
 .testResult {
@@ -122,18 +159,24 @@
     width: 100%;
     height: 4px;
     margin-top: 0;
-    margin-bottom: 2rem;
-    background-color: #4298b4;
+    margin-bottom: 4rem;
+    background: linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9));
   }
 }
 
 .testResultTitle {
   margin-bottom: 2rem;
+  font-family: Raleway-Regular, sans-serif;
+  line-height: 1.25;
 }
 
 .testResultMessage {
   padding-left: 2rem;
   padding-right: 2rem;
+  font-family: Raleway-Regular, sans-serif;
+  line-height: 1.25;
+  width: 80%;
+  margin: auto;
 }
 
 .testResultControls {
@@ -145,6 +188,26 @@
   bottom: 0;
   padding: 1.5rem 2rem;
   border-top: 1px solid #DDDFE2;
+  button {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: .75rem 1.75rem;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    font-family: Raleway-Regular, sans-serif;
+    cursor: pointer;
+    text-transform: capitalize;
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box;
+    border: 2px solid transparent;
+    &:hover {
+      background: linear-gradient(white, white) padding-box,
+      linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box;
+      border: 2px solid transparent;
+    }
+  }
 }
 
 @media (max-width: 650px) {
