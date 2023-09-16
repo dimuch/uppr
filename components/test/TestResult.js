@@ -1,12 +1,25 @@
 import React from 'react';
-import styles from './styles.module.scss';
-import {Typography} from '@mui/material';
 import Button from '@mui/material/Button';
-import {DEFAULT_TEST_RESULT} from './service';
+import FollowMeBlock from '../blog/FollowMeBlock/FollowMeBlock';
+import Yoyryk from './userMailLevelComponents/Yoyryk';
+import Boryk from './userMailLevelComponents/Boryk';
+
+import styles from './styles.module.scss';
+
+const LEVELS = {
+  'Yoyryk' : Yoyryk,
+  'Boryk' :  Boryk,
+  'Proffi' : () => (<>Velit scelerisque in dictum non consectetur a erat nam at. Erat velit scelerisque in dictum non consectetur.</>)
+}
+
 
 
 export default function TestResult({result, resetResults}) {
+  const customStyles = {
+    socialSectionContent: styles.socialSectionContent
+  };
 
+  const Component = LEVELS[result.title];
   return (
     <div className={styles.testResult}>
       <div className={styles.testResultBody}>
@@ -21,19 +34,18 @@ export default function TestResult({result, resetResults}) {
             {result.title}
           </p>
         </div>
-        <div className={styles.testResultMessage}>
-          <p>
-            {result.message}
-          </p>
-        </div>
+
+        <Component />
 
         <div className={styles.testResultControls}>
-          <div>&nbsp;</div>
+          <div>
+            <FollowMeBlock showTitle={false} customStyles={customStyles}/>
+          </div>
           <Button
             variant="outlined"
             onClick={resetResults}
           >
-            Пройти ще раз
+            Try Again
           </Button>
         </div>
       </div>

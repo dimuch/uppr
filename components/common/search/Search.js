@@ -76,7 +76,7 @@ const Search = ({}) => {
             <div
                 className={`${styles.searchInputWrapper} ${!!searchResult.length ? styles.searchInputWrapperWithResult : ''}`}>
                 <input name="search"
-                       placeholder="Пошук..."
+                       placeholder="Search..."
                        onChange={makeSearch}
                        value={searchText}
                 />

@@ -1,32 +1,22 @@
-import {Typography} from '@mui/material';
 
-const DUMMY_COMPONENT = () => <></>;
+export const DUMMY_COMPONENT = () => <></>;
 export const CHUNK = 4;
 export const QUESTIONS_QUANTITY = 12;
 export const TEST_ANSWERS = [2, 1, 3, 1, 1, 2, 1, 1, 1, 1, 1, 0, 1, 0, 3];
 export const DEFAULT_TEST_ANSWER = -1;
-
-const LEVELS = {
- 'Yoyryk' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In egestas erat imperdiet sed euismod nisi porta. Dui ut ornare lectus sit amet est placerat in egestas. Tincidunt nunc pulvinar sapien et. Dictum non consectetur a erat nam at lectus urna duis. Nibh venenatis cras sed felis. Adipiscing commodo elit at imperdiet. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat. Egestas egestas fringilla phasellus faucibus scelerisque. Et egestas quis ipsum suspendisse ultrices gravida. Egestas congue quisque egestas diam in. Gravida rutrum quisque non tellus orci ac auctor.',
- 'Boryk' : 'Odio tempor orci dapibus ultrices in iaculis nunc sed. Nam libero justo laoreet sit amet cursus sit amet dictum. Pretium nibh ipsum consequat nisl. Maecenas accumsan lacus vel facilisis volutpat. Sit amet cursus sit amet dictum sit amet. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae. Ut ornare lectus sit amet est placerat. Interdum velit euismod in pellentesque massa placerat duis ultricies.',
- 'Proffi' : 'Velit scelerisque in dictum non consectetur a erat nam at. Erat velit scelerisque in dictum non consectetur. Sed cras ornare arcu dui vivamus arcu felis bibendum ut. Ultricies mi quis hendrerit dolor magna eget est. At imperdiet dui accumsan sit. Egestas purus viverra accumsan in nisl nisi scelerisque eu. Lorem ipsum dolor sit amet consectetur adipiscing. Rutrum tellus pellentesque eu tincidunt tortor. Sagittis orci a scelerisque purus semper eget duis at. Mauris in aliquam sem fringilla. Nunc sed id semper risus in hendrerit gravida rutrum quisque. Mi proin sed libero enim sed faucibus turpis in eu. Ut sem nulla pharetra diam sit amet nisl suscipit.',
-}
-
-
 export const DEFAULT_ANSWERS = new Array(QUESTIONS_QUANTITY).fill([DEFAULT_TEST_ANSWER]);
 
 export const DEFAULT_TEST_RESULT = {
-  message: '',
   title: '',
   isTestSubmitted: false,
 }
-export const getLevelParams = (level) => LEVELS[level];
 
 export const isQuestionNumberDefault = (subQuestionNumber) => (
   subQuestionNumber !== DEFAULT_TEST_ANSWER
 );
 
 import styles from './styles.module.scss';
+
 export const emailEffectivenessTest = () => {
   const questions = [
     {

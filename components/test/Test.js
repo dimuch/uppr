@@ -14,10 +14,9 @@ import {
   QUESTIONS_QUANTITY,
   TEST_ANSWERS,
   DEFAULT_TEST_RESULT,
-  emailEffectivenessTest, isQuestionNumberDefault, getLevelParams, DEFAULT_ANSWERS,
+  emailEffectivenessTest, isQuestionNumberDefault, DEFAULT_ANSWERS,
 } from './service';
 
-import {Wave} from '../common/icons';
 import DataLoader from '../common/dataLoader/DataLoader';
 import styles from './styles.module.scss';
 
@@ -32,7 +31,6 @@ const Test = () => {
   const nextStepQuestions = useMemo(() => questions[step], [step, questions]);
 
   const [answers, setAnswer] = useState(DEFAULT_ANSWERS);
-
   const [result, setResult] = useState(DEFAULT_TEST_RESULT);
 
   const [isLoading, setIsLoading] = useState(false);
@@ -43,7 +41,7 @@ const Test = () => {
 
   const onOptionSelect = (index, questionNumber, subQuestionNumber) => {
     const copyAnswers = [...answers].map(item => [...item]);
-    const subIndex =  isQuestionNumberDefault(subQuestionNumber) ? subQuestionNumber : 0;
+    const subIndex = isQuestionNumberDefault(subQuestionNumber) ? subQuestionNumber : 0;
     copyAnswers[questionNumber][subIndex] = index;
     setAnswer(() => {
       return copyAnswers;
@@ -51,23 +49,20 @@ const Test = () => {
   }
 
   const onTestSubmit = () => {
-    const userAnswers =  answers.flat(Infinity)
+    const userAnswers = answers.flat(Infinity)
     let userResult = 0;
     TEST_ANSWERS.forEach((answer, index) => {
       userResult += (+(answer === userAnswers[index]));
     });
 
     let title = 'Proffi';
-    let message = '';
 
-    if(userResult<=5) {
-      title='Yoyryk';
-      message='';
+    if (userResult <= 5) {
+      title = 'Yoyryk';
     }
 
-    if(userResult>5 && userResult <= 10) {
-      title='Boryk';
-      message='';
+    if (userResult > 5 && userResult <= 10) {
+      title = 'Boryk';
     }
 
     setIsLoading(() => true);
@@ -76,7 +71,6 @@ const Test = () => {
       setIsLoading(() => false);
       setResult(() => ({
         title,
-        message: getLevelParams(title),
         isTestSubmitted: true,
       }))
     }, 800);
@@ -100,7 +94,7 @@ const Test = () => {
   }
 
   return <>
-    <DataLoader isLoading={isLoading} />
+    <DataLoader isLoading={isLoading}/>
     {
       !result.isTestSubmitted && (
         <div className={styles.upprPageContentWrapper}>
@@ -108,7 +102,7 @@ const Test = () => {
             <TopTestImage/>
           </div>
           <div className={styles.wave}></div>
-          <div className={styles.upprContent} id="test" >
+          <div className={styles.upprContent} id="test">
             <ol>
               {
                 nextStepQuestions.map((nextQuestion, index) => {

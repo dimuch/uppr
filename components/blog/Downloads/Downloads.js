@@ -20,9 +20,6 @@ export default function Downloads({ items }) {
         className={"uppr-section-title " + styles.upprSectionTitle}
       >
         <Grid container={true} spacing={1} alignItems="center">
-          {/*<Grid item md={1} xs={2}>*/}
-          {/*  <DownloadsSectionIcon />*/}
-          {/*</Grid>*/}
           <Grid item md={12} xs={12}>
               <Typography variant={"h5"}>Downloads</Typography>
           </Grid>

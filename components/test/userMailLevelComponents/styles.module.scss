@@ -1,0 +1,36 @@
+@import "../../../styles/scss/common/colors.scss";
+
+.testResultMessage {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-family: Raleway-Regular, sans-serif;
+  width: 85%;
+  margin: auto;
+  text-align: justify;
+  max-height: 45%;
+  overflow-y: scroll;
+  line-height: 1.5;
+  h4 {
+    font-family: Raleway-Bold,sans-serif;
+    margin-top:  2rem;
+  }
+  h4+p {
+    margin-top: -1.25rem;
+  }
+  p+ul, p+ol, h4+ul {
+    margin-top: -1rem;
+    padding-left: 2rem;
+    list-style: disc;
+  }
+  p+p{
+    margin-top: -1rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .testResultMessage {
+    width: 100%;
+    max-height: 62%;
+  }
+
+}
