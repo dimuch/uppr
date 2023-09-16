@@ -8,7 +8,7 @@ import Header from "../components/common/header/Header";
 import Video from "../components/common/video/Video";
 import UpprLogoText from "../components/common/uppr-logo-as-text/UpprLogoText";
 
-import TelegramIcon from "../components/common/icons/telegram-svgrepo-com";
+import TelegramIcon from "../components/common/icons/telegram-icon-2";
 import FooterBullShit from "../components/common/footers/footer-bull-shit/Footer";
 
 const bagdeItems = [

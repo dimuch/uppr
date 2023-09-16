@@ -6,7 +6,7 @@ import {useWindowSize} from '../hooks/screenSize';
 
 import styles from './styles.module.scss';
 import {useClickOutside} from '../hooks/clickOutside';
-import {MenuIcon} from '../icons';
+import {HomeIcon} from '../icons';
 
 
 const MenuItems = ({location, isOpen}) => {
@@ -14,7 +14,9 @@ const MenuItems = ({location, isOpen}) => {
     <div className={`main-menu main-menu-desktop`}>
       <ul className={`uppr-main-menu ${styles.upprMainMenu} ${isOpen ? styles.upprMobileMainMenu : ''}`}>
         <li>
-          <Link href="/" className={location === '/' ? styles.active : ''}>Домашня</Link>
+          <Link href="/" className={location === '/' ? styles.active : ''}>
+            <HomeIcon className={styles.homeIcon} />
+          </Link>
         </li>
         <li>
           <Link href="/blog" className={location === '/blog' ? styles.active : ''}>Блог</Link>
