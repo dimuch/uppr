@@ -7,7 +7,7 @@ import styles from './styles.module.scss';
 import InstagramIcon from '../../common/icons/instagram-icon';
 import FacebookIcon from '../../common/icons/facebook-icon';
 import LinkedInIcon from '../../common/icons/linkedin-icon';
-import TelegramAlternativeIcon from '../../common/icons/telegram-icon';
+import TelegramIcon2 from '../../common/icons/telegram-icon-2';
 
 export default function FollowMeBlock({showTitle = true, customStyles={socialSectionContent:''}}) {
   const wrapperItemsBlockClassName =
@@ -55,7 +55,7 @@ export default function FollowMeBlock({showTitle = true, customStyles={socialSec
           <a href="https://t.me/emailingskills"
              target="_blank" rel="noreferrer"
           >
-            <TelegramAlternativeIcon/>
+            <TelegramIcon2/>
           </a>
         </div>
       </div>

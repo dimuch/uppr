@@ -1,15 +1,12 @@
 @import "../../../styles/scss/common/colors.scss";
 
 .testResultMessage {
-  padding-left: 2rem;
-  padding-right: 2rem;
   font-family: Raleway-Regular, sans-serif;
   width: 85%;
   margin: auto;
   text-align: justify;
-  max-height: 45%;
-  overflow-y: scroll;
   line-height: 1.5;
+  padding-bottom: 3rem;
   h4 {
     font-family: Raleway-Bold,sans-serif;
     margin-top:  2rem;
@@ -30,7 +27,6 @@
 @media (max-width: 650px) {
   .testResultMessage {
     width: 100%;
-    max-height: 62%;
   }
 
 }

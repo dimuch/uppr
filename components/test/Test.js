@@ -55,14 +55,14 @@ const Test = () => {
       userResult += (+(answer === userAnswers[index]));
     });
 
-    let title = 'Proffi';
+    let title = 'Senior';
 
     if (userResult <= 5) {
-      title = 'Yoyryk';
+      title = 'Junior';
     }
 
     if (userResult > 5 && userResult <= 10) {
-      title = 'Boryk';
+      title = 'Middle';
     }
 
     setIsLoading(() => true);

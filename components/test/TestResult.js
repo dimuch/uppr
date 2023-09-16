@@ -7,9 +7,9 @@ import Boryk from './userMailLevelComponents/Boryk';
 import styles from './styles.module.scss';
 
 const LEVELS = {
-  'Yoyryk' : Yoyryk,
-  'Boryk' :  Boryk,
-  'Proffi' : () => (<>Velit scelerisque in dictum non consectetur a erat nam at. Erat velit scelerisque in dictum non consectetur.</>)
+  'Junior' : Yoyryk,
+  'Middle' :  Boryk,
+  'Senior' : () => (<>Velit scelerisque in dictum non consectetur a erat nam at. Erat velit scelerisque in dictum non consectetur.</>)
 }
 
 
@@ -39,7 +39,10 @@ export default function TestResult({result, resetResults}) {
 
         <div className={styles.testResultControls}>
           <div>
-            <FollowMeBlock showTitle={false} customStyles={customStyles}/>
+            <FollowMeBlock
+              showTitle={false}
+              customStyles={customStyles}
+            />
           </div>
           <Button
             variant="outlined"
