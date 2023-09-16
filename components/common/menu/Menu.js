@@ -6,7 +6,7 @@ import {useWindowSize} from '../hooks/screenSize';
 
 import styles from './styles.module.scss';
 import {useClickOutside} from '../hooks/clickOutside';
-import {HomeIcon} from '../icons';
+import {HomeIcon, MenuIcon} from '../icons';
 
 
 const MenuItems = ({location, isOpen}) => {
