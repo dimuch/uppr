@@ -20,9 +20,9 @@ export default function Boryk() {
         Get straight to the point. Seriously.
       </p>
       <p>
-        No one needs pointless introductory phrases or formalities that don't add value but add extra symbols to your
-        email. You do not need to start your email with "I am writing just to let you know…", I want to inform you…" ,
-        "A short reminder about..." and the like. It is an email after all, not a high school essay or scientific
+        No one needs pointless introductory phrases or formalities that don&apos;t add value but add extra symbols to your
+        email. You do not need to start your email with &quot;I am writing just to let you know…&quot;, I want to inform you…&quot; ,
+        &quot;A short reminder about...&quot; and the like. It is an email after all, not a high school essay or scientific
         thesis. So, as they say in Hollywood — cut to the chase.
       </p>
       
@@ -39,12 +39,12 @@ export default function Boryk() {
       <p>
         These phrases sound too detached and far from adding sincerity to your message, though they have been rolling
         around for decades. No one, including you, wants to spend their precious time wandering in the thickets of
-        sophisticated figures of speech, pretentious mental constructions, or grey, tedious formalities. So don't waste
-        your reader's time and space on the screen; use more modern wording, and make reading your message easy by being
+        sophisticated figures of speech, pretentious mental constructions, or grey, tedious formalities. So don&apos;t waste
+        your reader&apos;s time and space on the screen; use more modern wording, and make reading your message easy by being
         clear, efficient, and enjoyable.
       </p>
       <p>
-        "The key is to write in a natural style as if you are having a conversation," says Shirley Taylor, the author of
+        &quot;The key is to write in a natural style as if you are having a conversation,&quot; says Shirley Taylor, the author of
         Model Business Letters, Emails and Other Business Documents.
       </p>
 
@@ -83,8 +83,8 @@ export default function Boryk() {
         be simple.
       </p>
       <p>
-        Compare: 'help' and 'assistance', or 'get' and 'receive or obtain'. Both 'help' and ‘get' are much shorter words
-        and mean the same as their equivalents. The same story is with ‘need’ and ‘require.' Informal language is not
+        Compare: &apos;help&apos; and &apos;assistance&apos;, or &apos;get&apos; and &apos;receive or obtain&apos;. Both &apos;help&apos; and ‘get&apos; are much shorter words
+        and mean the same as their equivalents. The same story is with ‘need’ and ‘require.&apos; Informal language is not
         just shorter but also easier to read and perceived.
       </p>
 
@@ -92,17 +92,17 @@ export default function Boryk() {
         Habit #5. Stop using vague Subject Lines
       </h4>
       <p>
-        Your message is not the only one in your reader's inbox. A clear Subject Line can help busy professionals decide
+        Your message is not the only one in your reader&apos;s inbox. A clear Subject Line can help busy professionals decide
         if the content of your email is worth their valuable time. 64% of people are reported to open an email because
         of the subject line.
       </p>
       <p>
-        By writing "Hello," "Questions," "Important", or any other bullsh*t instead of a valid subject line right from
+        By writing &quot;Hello,&quot; &quot;Questions,&quot; &quot;Important&quot;, or any other bullsh*t instead of a valid subject line right from
         the start, you miss an excellent opportunity to shorten your email, as well as create an image of yourself as a
-        sound professional who cares about others' time. As a rule, compose a Subject Line that summarises your email
-        content and limit it to 35-40 characters. Examples of effective subject lines could be "Update on Company
-        results in the second quarter 2023", "Notes from department meeting on Payroll procedure August 2023", and "A
-        day off on 4 November".
+        sound professional who cares about others&apos; time. As a rule, compose a Subject Line that summarises your email
+        content and limit it to 35-40 characters. Examples of effective subject lines could be &quot;Update on Company
+        results in the second quarter 2023&quot;, &quot;Notes from department meeting on Payroll procedure August 2023&quot;, and &quot;A
+        day off on 4 November&quot;.
       </p>
 
     </div>
