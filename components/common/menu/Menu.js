@@ -22,8 +22,8 @@ const MenuItems = ({location, isOpen}) => {
           <Link href="/blog" className={location === '/blog' ? styles.active : ''}>Блог</Link>
         </li>
         <li>
-          <Link href="/downloads" className={location === '/downloads' ? styles.active : ''}>
-            Downloads
+          <Link href="/test" className={location === '/test' ? styles.active : ''}>
+            Test
           </Link>
         </li>
         <li>

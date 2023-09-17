@@ -88,3 +88,4 @@ Allow: /blog/articles-by-category/emails
 Allow: /blog/articles-by-category/hr
 Allow: /blog/articles-by-category/business%20english
 Allow: /blog/post-tag
+Allow: /test
