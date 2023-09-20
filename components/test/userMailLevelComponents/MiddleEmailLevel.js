@@ -24,9 +24,9 @@ export default function MiddleEmailLevel() {
         Get straight to the point. Seriously.
       </p>
       <p>
-        No one needs pointless introductory phrases or formalities that don't add value but add extra symbols to your
-        email. You do not need to start your email with "I am writing just to let you know…", I want to inform you…" ,
-        "A short reminder about..." and the like. It is an email after all, not a high school essay. As they say in
+        No one needs pointless introductory phrases or formalities that don&apos;t add value but add extra symbols to your
+        email. You do not need to start your email with &quot;I am writing just to let you know…&quot;, I want to inform you…&quot; ,
+        &quot;A short reminder about...&quot; and the like. It is an email after all, not a high school essay. As they say in
         Hollywood — cut to the chase.
       </p>
 
@@ -41,12 +41,12 @@ export default function MiddleEmailLevel() {
         <li>If you have any questions, please do not hesitate to contact me.</li>
       </ul>
       <p>
-        These phrases sound too detached and far from adding sincerity to your message. So don't waste your reader's
+        These phrases sound too detached and far from adding sincerity to your message. So don&apos;t waste your reader&apos;s
         time and screen space; use more modern wording, and make reading your message easy by being clear, efficient,
         and enjoyable.
       </p>
       <p>
-        "The key is to write in a natural style as if you are having a conversation," says Shirley Taylor, the author of
+        &quot;The key is to write in a natural style as if you are having a conversation,&quot; says Shirley Taylor, the author of
         Model Business Letters, Emails and Other Business Documents.
       </p>
 
@@ -70,8 +70,8 @@ export default function MiddleEmailLevel() {
       </h4>
       <p>
         The expansion of social networks to business practices made them more personalised, customised, and, therefore,
-        informal. Compare: 'help' and 'assistance', or 'get' and 'receive or obtain'. Both 'help' and ‘get' are much
-        shorter words and mean the same as their equivalents. The same story is with ‘need’ and ‘require.' Informal
+        informal. Compare: &apos;help&apos; and &apos;assistance&apos;, or &apos;get&apos; and &apos;receive or obtain&apos;. Both &apos;help&apos; and ‘get&apos; are much
+        shorter words and mean the same as their equivalents. The same story is with ‘need’ and ‘require.&apos; Informal
         language is not just shorter but also easier to read and perceived.
       </p>
 
