@@ -1,38 +1,47 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import FollowMeBlock from '../blog/FollowMeBlock/FollowMeBlock';
-import Yoyryk from './userMailLevelComponents/Yoyryk';
-import Boryk from './userMailLevelComponents/Boryk';
+import JuniorEmailLevel from './userMailLevelComponents/JuniorEmailLevel';
+import MiddleEmailLevel from './userMailLevelComponents/MiddleEmailLevel';
+import SeniorEmailLevel from './userMailLevelComponents/SeniorEmailLevel';
 
 import styles from './styles.module.scss';
+import loader from '../common/loader/loader';
 
 const LEVELS = {
-  'Junior' : Yoyryk,
-  'Middle' :  Boryk,
-  'Senior' : () => (<>Velit scelerisque in dictum non consectetur a erat nam at. Erat velit scelerisque in dictum non consectetur.</>)
+  'Junior' : JuniorEmailLevel,
+  'Middle' : MiddleEmailLevel,
+  'Senior' : SeniorEmailLevel,
 }
 
-
+const LEVELS_IMAGES = {
+  'Junior' : '/assets/images/blog-articles/junior-email-level.jpg',
+  'Middle' : '/assets/images/blog-articles/middle-email-level.jpg',
+  'Senior' : '/assets/images/blog-articles/senior-email-level.jpg',
+}
 
 export default function TestResult({result, resetResults}) {
+  const width = window.innerWidth;
+  const height = Math.round(width / 1.5);
+
   const customStyles = {
     socialSectionContent: styles.socialSectionContent
   };
 
   const Component = LEVELS[result.title];
+  const imageHref = LEVELS_IMAGES[result.title];
+
   return (
     <div className={styles.testResult}>
       <div className={styles.testResultBody}>
         <hr/>
         <div className={styles.testResultCaption}>
-          <p>
-            Your email level:
-          </p>
-        </div>
-        <div className={styles.testResultTitle}>
-          <p>
-            {result.title}
-          </p>
+          <img
+            src={loader({src:imageHref, width: width})}
+            alt="Main test result"
+            width={width}
+            height={height}
+          />
         </div>
 
         <Component />

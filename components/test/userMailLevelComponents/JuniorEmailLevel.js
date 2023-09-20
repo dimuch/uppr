@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './styles.module.scss';
 
-export default function Yoyryk() {
+export default function JuniorEmailLevel() {
   return (
     <div className={styles.testResultMessage}>
       <p>

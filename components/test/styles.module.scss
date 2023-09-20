@@ -125,9 +125,13 @@
 
 
 .testResultCaption {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   font-family: Raleway-Regular, sans-serif;
   line-height: 1.25;
+  img {
+    width: 13%;
+    height: auto;
+  }
 }
 
 .testResult {
@@ -140,7 +144,7 @@
 .testResultBody {
   margin: auto;
   text-align: center;
-  width: 90vw;
+  width: 65vw;
   background-color: white;
   border-radius: .5rem;
   box-shadow: rgba(29, 36, 50, 0.1) 0px 10px 40px 0px;
@@ -171,7 +175,7 @@
   width: 100%;
 
   bottom: 0;
-  padding: 1.5rem 2rem;
+  padding: 2rem;
   border-top: 1px solid #DDDFE2;
 
   button {
@@ -200,12 +204,11 @@
 .socialSectionContent {
   padding: 0 !important;
 
-  .socialLink{
     a{
-      width: 2.5rem;
-      padding: .5rem;
+      width: 2.5rem !important;
+      height: 2.5rem !important;
+      padding: .6rem !important;
     }
-  }
 }
 
 @media (max-width: 650px) {
