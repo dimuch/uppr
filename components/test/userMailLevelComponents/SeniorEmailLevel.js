@@ -17,7 +17,7 @@ export default function SeniorEmailLevel() {
       </p>
       <p>&nbsp;</p>
       <p>
-        It looks like you`&apos;ve got the idea of how to craft compelling email texts that are easy to read and reply to and
+        It looks like you&apos;ve got the idea of how to craft compelling email texts that are easy to read and reply to and
         attempt to write like a human, not Chat GPT. You understand that busy people want short emails and that less is
         a new more.
         You implement this knowledge by making every word work for you and deleting everything that brings no value to
