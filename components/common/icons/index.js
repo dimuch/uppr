@@ -12,4 +12,3 @@ export { default as TelegramIcon2} from './telegram-icon-2';
 export { default as TelegramAlternativeIcon } from './telegram-icon';
 export { default as HomeIcon } from './home-icon';
 export { default as Wave } from './wave';
-export { default as ArrowBackIcon } from './arrowBack-icon';
