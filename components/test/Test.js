@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useEffect, useMemo, useRef, useState} from 'react';
 import {useHasMounted} from '../common/hooks/hasMounted';
 
 import Stack from '@mui/material/Stack';
@@ -41,8 +41,13 @@ const Test = () => {
   const [userResultParams, setUserResultParams] = useState({});
   const [result, setResult] = useState(DEFAULT_TEST_RESULT);
 
+  const firstQuestionRef = useRef();
+
   const onStepChange = (diff) => {
     setStep(() => (step + diff));
+    setTimeout(() => {
+      firstQuestionRef.current.scrollIntoView({behavior: 'smooth'})
+    }, 200)
   }
 
   const onOptionSelect = (index, questionNumber, subQuestionNumber) => {
@@ -137,7 +142,7 @@ const Test = () => {
             <TopTestImage isPassTestButton={true}/>
           </div>
           <div className={styles.wave}></div>
-          <div className={styles.upprContent} id="test">
+          <div className={styles.upprContent} id="test" ref={firstQuestionRef}>
             <ol>
               {
                 nextStepQuestions.map((nextQuestion, index) => {

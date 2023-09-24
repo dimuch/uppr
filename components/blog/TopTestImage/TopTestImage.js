@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import loader from '../../common/loader/loader';
 import {Typography} from '@mui/material';
 
@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 
 export default function TopTestImage ({isPassTestButton}) {
 
+  const [isTryTestVisible, setIsTryTestVisible] = useState(true);
   const width = window.innerWidth;
   const height = Math.round(width / 1.5);
 
@@ -33,9 +34,9 @@ export default function TopTestImage ({isPassTestButton}) {
           Wanna check if your emails are effective and modern enough?
         </h2>
         {
-          isPassTestButton && (
+          isPassTestButton && isTryTestVisible && (
             <a href="#test"
-               className={styles.ctaButton} onClick={() => {}}
+               className={styles.ctaButton} onClick={() => setIsTryTestVisible(false)}
             >
               Pass the Test
             </a>
