@@ -9,7 +9,7 @@ import {isQuestionNumberDefault} from './service';
 
 const alphabetOrder = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
-const TestOptionsList = ({questionNumber, subQuestionNumber, questionOptions, answer, onOptionSelect}) => {
+const TestOptionsList = ({questionNumber, subQuestionNumber, questionOptions, answer, correctAnswer, onOptionSelect}) => {
   const hasMounted = useHasMounted();
 
   if (!hasMounted) {
@@ -18,10 +18,12 @@ const TestOptionsList = ({questionNumber, subQuestionNumber, questionOptions, an
 
   const startIndex = 0;
   const questionLabel = alphabetOrder.slice(startIndex, startIndex + questionOptions.length);
-  const value = isQuestionNumberDefault(subQuestionNumber) ? answer[subQuestionNumber] : answer;
+  const isDefault = isQuestionNumberDefault(subQuestionNumber);
+  const value = isDefault ? parseInt(answer[subQuestionNumber]) : parseInt(answer);
+  const correctValue = isDefault ? parseInt(correctAnswer[subQuestionNumber]) : parseInt(correctAnswer);
 
   return (
-    <ol className={isQuestionNumberDefault(subQuestionNumber) ? styles.subQuestionList : ''}>
+    <ol className={isDefault ? styles.subQuestionList : ''}>
       <RadioGroup
         aria-labelledby="test-options"
         defaultValue={value}
@@ -31,8 +33,18 @@ const TestOptionsList = ({questionNumber, subQuestionNumber, questionOptions, an
         {
           questionOptions.map((option, index) => {
             const label = <span>{questionLabel[index]}.&nbsp;&nbsp;&nbsp;{option}</span>
+            let listItemClassname = styles.optionListItem;
+            if(correctValue !== -1) {
+              console.log(89898, value, correctValue, index);
+              if(correctValue !== value && value === index) {
+                listItemClassname = `${styles.optionListItem} ${styles.optionListItemWrong}`
+              }
+              if (correctValue === index) {
+                listItemClassname = `${styles.optionListItem} ${styles.optionListItemCorrect}`
+              }
+            }
             return (
-              <li key={`${option}${index}`} className={styles.optionListItem}>
+              <li key={`${option}${index}`} className={listItemClassname}>
                 <FormControlLabel
                   value={index}
                   control={<Radio/>}

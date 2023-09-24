@@ -1,12 +1,12 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import FollowMeBlock from '../blog/FollowMeBlock/FollowMeBlock';
 import JuniorEmailLevel from './userMailLevelComponents/JuniorEmailLevel';
 import MiddleEmailLevel from './userMailLevelComponents/MiddleEmailLevel';
 import SeniorEmailLevel from './userMailLevelComponents/SeniorEmailLevel';
 
 import styles from './styles.module.scss';
 import loader from '../common/loader/loader';
+import Link from 'next/link';
 
 const LEVELS = {
   'Junior' : JuniorEmailLevel,
@@ -24,12 +24,10 @@ export default function TestResult({result, resetResults}) {
   const width = window.innerWidth;
   const height = Math.round(width / 1.5);
 
-  const customStyles = {
-    socialSectionContent: styles.socialSectionContent
-  };
-
   const Component = LEVELS[result.title];
   const imageHref = LEVELS_IMAGES[result.title];
+
+  console.log('answer ========> ', result);
 
   return (
     <div className={styles.testResult}>
@@ -47,12 +45,15 @@ export default function TestResult({result, resetResults}) {
         <Component />
 
         <div className={styles.testResultControls}>
-          <div>
-            <FollowMeBlock
-              showTitle={false}
-              customStyles={customStyles}
-            />
-          </div>
+          <Link
+            href={{
+              pathname: '/test/results',
+              query: result,
+            }}
+          >
+            See Results
+          </Link>
+
           <Button
             variant="outlined"
             onClick={resetResults}

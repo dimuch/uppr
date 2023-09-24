@@ -1,4 +1,4 @@
-import {getDBPoolData} from '../mysql/mySQLClient';
+import {dbCallWrapper, getDBPoolData} from '../mysql/mySQLClient';
 
 export async function getArticlesCategoriesDB() {
     const getArticlesCategories = `CALL getArticlesCategories()`;
@@ -369,30 +369,7 @@ export async function getArticlesByTagsNameDB(tags='') {
 //search articles by search text
 export async function searchInArticlesParamsDB(searchText) {
     const searchInArticlesParams = `CALL searchInArticlesParams('${searchText}')`;
-    const data = await callDBWrapper(searchInArticlesParams);
+    const data = await dbCallWrapper(searchInArticlesParams);
 
     return data;
-}
-
-async function callDBWrapper(procedure, mapper) {
-    const connection = getDBPoolData();
-    return new Promise((resolve, reject) => {
-        connection.query(procedure, (err, rows, fields) => {
-            if (err) {
-                console.log('ERROR stored procedure call', err);
-                reject([]);
-            }
-
-            try {
-                let result = [...rows[0]];
-                if (mapper) {
-                    result = result.map(mapper);
-                }
-
-                resolve(result);
-            } catch (e) {
-                reject([]);
-            }
-        });
-    });
 }

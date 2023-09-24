@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import {useHasMounted} from '../common/hooks/hasMounted';
 
 import Stack from '@mui/material/Stack';
@@ -18,22 +18,28 @@ import {
 } from './service';
 
 import DataLoader from '../common/dataLoader/DataLoader';
+import useMakeRequest, {POST_REQ_METHOD} from '../common/hooks/makeRequest';
+
 import styles from './styles.module.scss';
+import PageNotFound from '../common/404/404';
 
 const domainName = '';
+const UPDATE_STAT_INFO = '/api/test'
 const random = Math.random();
+const DEFAULT_REDIRECTS_PARAMS = {redirectLink: '/test', redirectPage: 'Повернутись до тесту'};
+
 
 const Test = () => {
   const hasMounted = useHasMounted();
+  const {makeRequest, isLoading, error, data} = useMakeRequest();
 
   const [step, setStep] = useState(0);
   const questions = useMemo(() => emailEffectivenessTest(), []);
   const nextStepQuestions = useMemo(() => questions[step], [step, questions]);
 
   const [answers, setAnswer] = useState(DEFAULT_ANSWERS);
+  const [userResultParams, setUserResultParams] = useState({});
   const [result, setResult] = useState(DEFAULT_TEST_RESULT);
-
-  const [isLoading, setIsLoading] = useState(false);
 
   const onStepChange = (diff) => {
     setStep(() => (step + diff));
@@ -48,7 +54,7 @@ const Test = () => {
     })
   }
 
-  const onTestSubmit = () => {
+  const onTestSubmit = async () => {
     const userAnswers = answers.flat(Infinity)
     let userResult = 0;
     TEST_ANSWERS.forEach((answer, index) => {
@@ -65,16 +71,36 @@ const Test = () => {
       title = 'Middle';
     }
 
-    setIsLoading(() => true);
+    setUserResultParams(() => ({
+      title,
+      score: userResult,
+      answer: userAnswers,
+    }))
 
-    setTimeout(() => {
-      setIsLoading(() => false);
-      setResult(() => ({
-        title,
-        isTestSubmitted: true,
-      }))
-    }, 800);
+    await makeRequest(UPDATE_STAT_INFO, POST_REQ_METHOD, {
+      answer: JSON.stringify(userAnswers),
+      title,
+      score: userResult,
+    });
   }
+
+  useEffect(() => {
+    if (!data) {
+      return
+    }
+
+    setResult(() => ({
+      ...userResultParams,
+      isTestSubmitted: true,
+    }));
+
+  }, [data]);
+
+  useEffect(() => {
+    if (!error) {
+      return
+    }
+  }, [error]);
 
   const resetResults = () => {
     setResult(DEFAULT_TEST_RESULT);
@@ -93,13 +119,22 @@ const Test = () => {
     return null;
   }
 
+  if (error) {
+    return (
+      <PageNotFound
+        redirectLink={DEFAULT_REDIRECTS_PARAMS.redirectLink}
+        redirectPage={DEFAULT_REDIRECTS_PARAMS.redirectPage}
+      />
+    )
+  }
+
   return <>
     <DataLoader isLoading={isLoading}/>
     {
       !result.isTestSubmitted && (
         <div className={styles.upprPageContentWrapper}>
           <div className={`uppr-page-content ${styles.upprPageContent}`}>
-            <TopTestImage/>
+            <TopTestImage isPassTestButton={true}/>
           </div>
           <div className={styles.wave}></div>
           <div className={styles.upprContent} id="test">

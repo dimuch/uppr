@@ -1,8 +1,13 @@
 import React from 'react';
 
 import styles from './styles.module.scss';
+import FollowMeBlock from '../../blog/FollowMeBlock/FollowMeBlock';
 
 export default function SeniorEmailLevel() {
+  const customStyles = {
+    socialSectionContent: styles.socialSectionContent,
+  };
+
   return (
     <div className={styles.testResultMessage}>
       <p>
@@ -30,6 +35,12 @@ export default function SeniorEmailLevel() {
       <p>
         So, well done! Nothing more to add! Just keep on and share your super skills with others!
       </p>
+
+      <p>&nbsp;</p>
+      <FollowMeBlock
+        showTitle={false}
+        customStyles={customStyles}
+      />
     </div>
   )
 }

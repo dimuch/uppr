@@ -4,62 +4,34 @@ import FormControl from '@mui/material/FormControl';
 
 import TestOptionsList from '../../components/test/TestOptionsList';
 import TestQuestionTitle from './TestQuestionTitle';
-import {DEFAULT_TEST_ANSWER} from './service';
+import {DEFAULT_ANSWERS, DEFAULT_TEST_ANSWER} from './service';
+import ComplexTestQuestionComponent from './TestQuestionComponents/ComplexTestQuestionComponent';
+import SimpleTestQuestionComponent from './TestQuestionComponents/SimpleTestQuestionComponent';
 
 const randomKey = Math.random();
 
-export default function TestQuestion({question, questionNumber, answer, onOptionSelect}) {
+export default function TestQuestion({question, questionNumber, answer, correctAnswer= DEFAULT_ANSWERS, onOptionSelect}) {
   if (question?.isComplex) {
     return (
-      <li key={randomKey + questionNumber}>
-        <FormControl>
-          <TestQuestionTitle
-            questionTitle={question.questionTitle}
-            questionNumber={questionNumber}
-            isComplex
-          />
-        </FormControl>
-        <ol>
-          {
-            question.questionOptions.map((nextQuestion, index) => {
-              return (
-                <TestQuestion
-                  key={`${randomKey}-${questionNumber}-${index}`}
-                  questionNumber={`${questionNumber}_${index}`}
-                  question={nextQuestion}
-                  answer={answer}
-                  onOptionSelect={onOptionSelect}
-                />
-              )
-            })
-          }
-        </ol>
-      </li>
-    );
+      <ComplexTestQuestionComponent
+        isComplex
+        question={question}
+        questionNumber={questionNumber}
+        onOptionSelect={onOptionSelect}
+        answer={answer}
+        correctAnswer={correctAnswer}
+      />
+    )
   }
 
-  const [mainQuestionNumber=0, subQuestionNumber = DEFAULT_TEST_ANSWER] = questionNumber.toString().split('_');
-  const QuestionBodyComp = question?.questionBody;
-
   return (
-    <li key={randomKey + mainQuestionNumber}>
-      <FormControl>
-        <TestQuestionTitle
-          questionTitle={question.questionTitle}
-          questionNumber={mainQuestionNumber}
-          subQuestionNumber={subQuestionNumber}
-        />
-
-        <QuestionBodyComp/>
-
-        <TestOptionsList
-          questionOptions={question.questionOptions}
-          questionNumber={mainQuestionNumber - 1}
-          subQuestionNumber={subQuestionNumber}
-          answer={answer}
-          onOptionSelect={onOptionSelect}
-        />
-      </FormControl>
-    </li>
+    <SimpleTestQuestionComponent
+      question={question}
+      questionNumber={questionNumber}
+      onOptionSelect={onOptionSelect}
+      answer={answer}
+      correctAnswer={correctAnswer}
+    />
   )
+
 };

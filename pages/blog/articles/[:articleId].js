@@ -1,9 +1,9 @@
-    import React, {useState} from 'react';
+import React, {useState} from 'react';
 import Head from 'next/head'
 import Header from '../../../components/common/header/Header';
 import {getArticlesDataByIdDB} from '../../../services/blogData';
 import * as PageComponent from '../../../components/articles';
-    import {useHasMounted} from '../../../components/common/hooks/hasMounted';
+import {useHasMounted} from '../../../components/common/hooks/hasMounted';
 
 const PAGE_NOT_FOUND='PageNotFound';
 

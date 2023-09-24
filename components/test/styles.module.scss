@@ -75,6 +75,22 @@
   }
 }
 
+.optionListItemCorrect {
+  label {
+    color: green;
+    span {
+      font-family: Raleway-Bold, sans-serif;
+    }
+  }
+}
+
+.optionListItemWrong {
+  label {
+    color: darkred !important;
+  }
+}
+
+
 .questionOptionText {
   span {
     font-family: Raleway-Regular, sans-serif;
@@ -178,6 +194,13 @@
   padding: 2rem;
   border-top: 1px solid #DDDFE2;
 
+  a {
+    font-family: Raleway-Bold, sans-serif;
+    background: linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   button {
     display: flex;
     align-content: center;
@@ -199,16 +222,6 @@
       border: 2px solid transparent;
     }
   }
-}
-
-.socialSectionContent {
-  padding: 0 !important;
-
-    a{
-      width: 2.5rem !important;
-      height: 2.5rem !important;
-      padding: .6rem !important;
-    }
 }
 
 @media (max-width: 650px) {
@@ -236,6 +249,4 @@
       padding-right: 1.25rem;
     }
   }
-
 }
-

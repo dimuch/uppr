@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 const DEFAULT_REQ_METHOD = 'GET';
-const POST_REQ_METHOD = 'POST';
+export const POST_REQ_METHOD = 'POST';
 const DEFAULT_REQ_PARAMS = {};
 
 

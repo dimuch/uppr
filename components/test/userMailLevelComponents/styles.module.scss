@@ -24,6 +24,17 @@
   }
 }
 
+.socialSectionContent {
+  justify-content: center !important;
+  padding: 1rem 0 !important;
+
+  a{
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    padding: .6rem !important;
+  }
+}
+
 @media (max-width: 650px) {
   .testResultMessage {
     width: 100%;

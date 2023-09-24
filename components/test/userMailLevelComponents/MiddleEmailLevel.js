@@ -1,8 +1,13 @@
 import React from 'react';
 
 import styles from './styles.module.scss';
+import FollowMeBlock from '../../blog/FollowMeBlock/FollowMeBlock';
 
 export default function MiddleEmailLevel() {
+  const customStyles = {
+    socialSectionContent: styles.socialSectionContent,
+  };
+
   return (
     <div className={styles.testResultMessage}>
       <p>
@@ -84,6 +89,12 @@ export default function MiddleEmailLevel() {
       <h4>
         Good luck and effective emails!
       </h4>
+
+      <p>&nbsp;</p>
+      <FollowMeBlock
+        showTitle={false}
+        customStyles={customStyles}
+      />
     </div>
   )
 }

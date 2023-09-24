@@ -6,7 +6,7 @@ import {Wave} from '../../common/icons';
 import styles from './styles.module.scss';
 import Button from '@mui/material/Button';
 
-export default function TopTestImage () {
+export default function TopTestImage ({isPassTestButton}) {
 
   const width = window.innerWidth;
   const height = Math.round(width / 1.5);
@@ -32,11 +32,15 @@ export default function TopTestImage () {
           />
           Wanna check if your emails are effective and modern enough?
         </h2>
-        <a href="#test"
-           className={styles.ctaButton} onClick={() => {}}
-        >
-            Pass the Test
-        </a>
+        {
+          isPassTestButton && (
+            <a href="#test"
+               className={styles.ctaButton} onClick={() => {}}
+            >
+              Pass the Test
+            </a>
+          )
+        }
       </div>
     </div>
   )

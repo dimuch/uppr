@@ -52,7 +52,7 @@ function makeConnectionDB() {
   });
 }
 
-async function dbCallWrapper(query, mapper) {
+export async function dbCallWrapper(query, mapper) {
   return new Promise((resolve, reject) => {
     db_pool.query(query, (err, rows, fields) => {
       if (err) {
@@ -61,7 +61,8 @@ async function dbCallWrapper(query, mapper) {
       }
 
       try {
-        let result = rows[0];
+        let result = rows && rows[0] || [];
+
         if (mapper) {
           result = mapper(rows);
         }
