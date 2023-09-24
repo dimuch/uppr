@@ -16,9 +16,6 @@ const TestPageResults = ({userAnswers}) => {
     return null;
   }
 
-  console.log('=======> ', userAnswers);
-
-
   if(!userAnswers.length) {
     return (
       <PageNotFound

@@ -24,10 +24,8 @@ export default function TestResult({result, resetResults}) {
   const width = window.innerWidth;
   const height = Math.round(width / 1.5);
 
-  const Component = LEVELS[result.title];
+  const Component = LEVELS['Senior'];
   const imageHref = LEVELS_IMAGES[result.title];
-
-  console.log('answer ========> ', result);
 
   return (
     <div className={styles.testResult}>
@@ -51,7 +49,7 @@ export default function TestResult({result, resetResults}) {
               query: result,
             }}
           >
-            See Results
+            &larr; See Results
           </Link>
 
           <Button

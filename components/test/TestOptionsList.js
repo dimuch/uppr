@@ -35,7 +35,6 @@ const TestOptionsList = ({questionNumber, subQuestionNumber, questionOptions, an
             const label = <span>{questionLabel[index]}.&nbsp;&nbsp;&nbsp;{option}</span>
             let listItemClassname = styles.optionListItem;
             if(correctValue !== -1) {
-              console.log(89898, value, correctValue, index);
               if(correctValue !== value && value === index) {
                 listItemClassname = `${styles.optionListItem} ${styles.optionListItemWrong}`
               }

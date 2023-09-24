@@ -75,7 +75,7 @@ export default function MainArticle({ items }) {
                   variant={"subtitle2"}
                   className={"read-more " + styles.readMore}
                 >
-                  Читати &rArr;
+                  Читати &rarr;
                 </Typography>
               </a>
             </Grid>

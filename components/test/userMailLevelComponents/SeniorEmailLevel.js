@@ -10,10 +10,10 @@ export default function SeniorEmailLevel() {
 
   return (
     <div className={styles.testResultMessage}>
-      <p>
+      <p className={styles.messageCenter}>
         High five!
       </p>
-      <p>
+      <p className={styles.messageCenter}>
         Nice to e-meet you, an effective emailer!
       </p>
       <p>&nbsp;</p>

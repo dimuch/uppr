@@ -150,7 +150,7 @@ const questions = [
         questionTitle: null,
         questionBody: DUMMY_COMPONENT,
         questionOptions: [
-          'I am planning to do/ …. Is that okay?',
+          'I am planning to do   ...   Is that okay?',
           'Let me know if you have a different opinion.',
         ],
       },

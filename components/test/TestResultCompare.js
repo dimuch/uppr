@@ -11,9 +11,6 @@ export default function TestResultsCompare({answers = DEFAULT_ANSWERS}) {
   const correctAnswers = useMemo(() => getCorrectAnswers(), []);
   const questions = useMemo(() => allQuestions(), []);
 
-  console.log('correctAnswers ======> ', correctAnswers);
-  console.log('answers ======> ', answers);
-
   return (
     <div className={styles.upprPageContentWrapper}>
       <div className={`uppr-page-content ${styles.upprPageContent}`}>
