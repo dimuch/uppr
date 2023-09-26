@@ -24,7 +24,7 @@ export default function TestResult({result, resetResults}) {
   const width = window.innerWidth;
   const height = Math.round(width / 1.5);
 
-  const Component = LEVELS['Senior'];
+  const Component = LEVELS[result.title];
   const imageHref = LEVELS_IMAGES[result.title];
 
   return (
