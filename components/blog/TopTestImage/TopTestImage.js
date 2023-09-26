@@ -38,7 +38,7 @@ export default function TopTestImage ({isPassTestButton}) {
             <a href="#test"
                className={styles.ctaButton} onClick={() => setIsTryTestVisible(false)}
             >
-              Pass the Test
+              Take the Test
             </a>
           )
         }
