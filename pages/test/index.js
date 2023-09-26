@@ -17,7 +17,12 @@ const TestPage = () => {
 
   return <>
     <Head>
-      <title>{'UPPR | Test'}</title>
+      <title>{'UPPR | Email Level Test'}</title>
+      <meta property="og:title" content="Email Level Test" />
+      <meta property="og:type" content="product" />
+      <meta property="og:url" content="https://uppr.com.ua/test" />
+      <meta property="og:image" content="/assets/images/blog-articles/responsive/1680/test.webp" />
+
       <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8"/>
       <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
       <meta name="viewport" content="width=device-width,initial-scale=1"/>
