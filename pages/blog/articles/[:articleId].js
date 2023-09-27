@@ -22,11 +22,6 @@ export default function ArticlePageWrapper({articleData}) {
     return <ArticlePage/>
   }
 
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push('js', new Date());
-  window.dataLayer.push('config', 'G-564415Q0CP');
-  window.dataLayer.push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-
   return (
     <>
       <Head>
