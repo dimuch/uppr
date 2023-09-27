@@ -72,7 +72,8 @@ export default function ArticlePageWrapper({articleData}) {
 };
 
 export async function getServerSideProps({res, resolvedUrl}) {
-  const articleData = await getArticlesDataByIdDB(resolvedUrl);
+  const articleURL = resolvedUrl.split('?')[0];
+  const articleData = await getArticlesDataByIdDB(articleURL);
 
   res.setHeader(
     'Cache-Control',
