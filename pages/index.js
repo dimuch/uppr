@@ -215,8 +215,6 @@ const Index = () => {
         </div>
 
         <GoogleStat />
-
-
       </>
   );
 };
