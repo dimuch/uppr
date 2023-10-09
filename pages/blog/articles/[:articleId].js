@@ -59,14 +59,6 @@ export default function ArticlePageWrapper({articleData}) {
       <ArticlePage articleData={articleData}/>
 
       <GoogleStat />
-
-      <Helmet>
-        <noscript>
-          {
-            `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCZ6H3M" height="0" width="0" style="display:none;visibility:hidden" />`
-          }
-        </noscript>
-      </Helmet>
     </>
   )
 };

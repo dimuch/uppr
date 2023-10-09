@@ -12,8 +12,9 @@ import {
   getDownloadsDB, getTagsDB,
 } from '../../services/blogData';
 
-import styles from './styles.module.scss';
+import GoogleStat from '../../components/common/googleCtat/GoogleStat';
 import Footer from '../../components/common/footers/footer/Footer';
+import styles from './styles.module.scss';
 
 const domainName = '';
 export default function Blog({
@@ -70,6 +71,8 @@ export default function Blog({
         <Footer/>
       </div>
     </div>
+
+    <GoogleStat />
   </>;
 }
 

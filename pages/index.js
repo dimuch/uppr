@@ -11,6 +11,9 @@ import UpprLogoText from "../components/common/uppr-logo-as-text/UpprLogoText";
 import TelegramIcon from "../components/common/icons/telegram-icon-2";
 import FooterBullShit from "../components/common/footers/footer-bull-shit/Footer";
 
+import GoogleStat from '../components/common/googleCtat/GoogleStat';
+import compStyles from "./styles.module.scss";
+
 const bagdeItems = [
   {
     icon: "icon-open-book",
@@ -56,8 +59,6 @@ const howItWorks = [
       "Ніхто не стоїть над тобою з указкою та не нав'язує нудні вправи.Ти самостійно обираєш домашнє завдання і працюєш в комфортному для тебе режимі.",
   },
 ];
-
-import compStyles from "./styles.module.scss";
 
 const Index = () => {
   return (
@@ -212,6 +213,8 @@ const Index = () => {
             <FooterBullShit />
           </div>
         </div>
+
+        <GoogleStat />
       </>
   );
 };

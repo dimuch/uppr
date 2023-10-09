@@ -13,6 +13,7 @@ import {LoaderIcon} from '../../../components/common/icons';
 import {getArticlesByTagsNameDB, getTagsDB} from '../../../services/blogData';
 import TopBlogImage from '../../../components/blog/TopBlogImage/TopBlogImage';
 
+import GoogleStat from '../../../components/common/googleCtat/GoogleStat';
 import styles from './styles.module.scss';
 
 
@@ -103,6 +104,7 @@ export default function ArticlePageWrapper({articlesByTags, articleTags}) {
                 )}
             </div>
         </div>
+        <GoogleStat />
     </>;
 };
 
