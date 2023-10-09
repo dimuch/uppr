@@ -5,6 +5,7 @@ import Header from '../../components/common/header/Header';
 import Test from '../../components/test/Test';
 import {useHasMounted} from '../../components/common/hooks/hasMounted';
 
+import GoogleStat from '../../components/common/googleCtat/GoogleStat';
 import styles from './styles.module.scss';
 
 // const domainName = '';
@@ -41,6 +42,8 @@ const TestPage = () => {
         <Test/>
       </div>
     </div>
+
+    <GoogleStat />
   </>;
 };
 
