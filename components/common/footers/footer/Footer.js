@@ -7,7 +7,7 @@ import FollowMeBlock from '../../../blog/FollowMeBlock/FollowMeBlock';
 import { HomeIcon } from '../../icons';
 import TopFeaturedArticlesItems from '../../../blog/TopFeaturedArticles/TopFeaturedArticlesITems';
 
-const Footer = ({ top3Article=[] }) => {
+const Footer = ({ top3Article= []  }) => {
   return (
     <div className={styles.section}>
       <div className={styles.wrapper}>
