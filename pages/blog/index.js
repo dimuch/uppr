@@ -68,7 +68,10 @@ export default function Blog({
 
       </div>
       <div className={styles.footer}>
-        <Footer/>
+        <Footer
+          top3Article={top3Article}
+          domainName={domainName}
+        />
       </div>
     </div>
 

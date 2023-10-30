@@ -7,10 +7,14 @@ import {useHasMounted} from '../../components/common/hooks/hasMounted';
 
 import GoogleStat from '../../components/common/googleCtat/GoogleStat';
 import styles from './styles.module.scss';
+import {
+  getArticles,
+} from '../../services/blogData';
+import Footer from '../../components/common/footers/footer/Footer';
 
 // const domainName = '';
 
-const TestPage = () => {
+const TestPage = ({top3Article}) => {
   const hasMounted = useHasMounted();
   if (!hasMounted) {
     return null;
@@ -39,12 +43,30 @@ const TestPage = () => {
     <div className={styles.upprTestPage}>
       <Header search location={'/test'}/>
       <div className={styles.testBody}>
-        <Test/>
+        <Test />
       </div>
+      <Footer
+        top3Article={top3Article}
+      />
     </div>
 
     <GoogleStat />
   </>;
 };
-
 export default TestPage;
+
+export async function getServerSideProps(context) {
+  const articles = await getArticles();
+
+  context.res.setHeader(
+    'Cache-Control',
+    'public',
+  )
+
+  return {
+    props: {
+      ...articles,
+    },
+  };
+}
+
