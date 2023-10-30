@@ -5,8 +5,14 @@ import { Grid, Typography } from '@mui/material';
 import loader from '../../common/loader/loader';
 
 import styles from './styles.module.scss';
+import { useHasMounted } from '../../common/hooks/hasMounted';
 
 export default function TopFeaturedArticlesItems( {items} ) {
+  const hasMounted = useHasMounted();
+  if (!hasMounted) {
+    return null;
+  }
+
   const width = window.innerWidth > 850 ? Math.round(window.innerWidth / 3) : window.innerWidth;
   const height = Math.round(width * 4 / 7);
 

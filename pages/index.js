@@ -13,6 +13,8 @@ import FooterBullShit from "../components/common/footers/footer-bull-shit/Footer
 
 import GoogleStat from '../components/common/googleCtat/GoogleStat';
 import compStyles from "./styles.module.scss";
+import Footer from '../components/common/footers/footer/Footer';
+import { getArticles } from '../services/blogData';
 
 const bagdeItems = [
   {
@@ -60,7 +62,7 @@ const howItWorks = [
   },
 ];
 
-const Index = () => {
+const Index = ({top3Article}) => {
   return (
       <>
         <Head>
@@ -211,6 +213,9 @@ const Index = () => {
               </div>
             </div>
             <FooterBullShit />
+            <Footer
+              top3Article={top3Article}
+            />
           </div>
         </div>
 
@@ -220,3 +225,18 @@ const Index = () => {
 };
 
 export default Index;
+
+export async function getServerSideProps(context) {
+  const articles = await getArticles();
+
+  context.res.setHeader(
+    'Cache-Control',
+    'public',
+  )
+
+  return {
+    props: {
+      ...articles,
+    },
+  };
+}
