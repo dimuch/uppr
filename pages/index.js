@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 
 import Head from 'next/head'
 import Link from 'next/link';
@@ -15,6 +15,9 @@ import GoogleStat from '../components/common/googleCtat/GoogleStat';
 import compStyles from "./styles.module.scss";
 import Footer from '../components/common/footers/footer/Footer';
 import { getArticles } from '../services/blogData';
+import styles from "./styles.module.scss";
+import loader from '../components/common/loader/loader';
+import Button from '@mui/material/Button';
 
 const bagdeItems = [
   {
@@ -63,6 +66,16 @@ const howItWorks = [
 ];
 
 const Index = ({top3Article}) => {
+const Index = () => {
+  const [imgDimensions, setImgDimensions] = useState({width:700, height:400});
+
+  useEffect(() => {
+    const width = window.innerWidth > 850 ? Math.round(window.innerWidth / 3) : window.innerWidth;
+    const height = Math.round(width * 4 / 7);
+
+    setImgDimensions(() => ({width, height}));
+  }, []);
+
   return (
       <>
         <Head>
@@ -83,129 +96,164 @@ const Index = ({top3Article}) => {
         </Head>
         <div className="uppr-home-page">
           <Header location={"/"} search/>
-          <Video videoSrc={"/assets/video/intro.mp4"} />
-          <div className={"uppr-section " + compStyles?.section}>
-            <div className={"uppr-section-title " + compStyles?.sectionTitle}>
-              <div className={compStyles.firstLine}>
-                <h4>ДОСИТЬ БУТИ INTERMEDIATE!</h4>
-              </div>
-              <div className={compStyles.firstLine}>
-                <h4>ТИ МОЖЕШ СТАТИ&nbsp;</h4>
-                <UpprLogoText onlyLogo={true} isInText/>
-              </div>
-            </div>
-
-            <div className={"uppr-section-content"}>
-              <div
-                className={"uppr-learning-strategy " + compStyles?.sectionContent}
+          <div className={`${styles.screen} ${styles.screenFirst}`}>
+            <div className={`${styles.column} ${styles.leftColumn}`}>
+              <h1>
+                There's a better way to write
+              </h1>
+              <h4>
+                Make your writing shine with our all-in-one AI tool, wherever you write.
+              </h4>
+              <Button
+                variant="outlined"
               >
-                <ul className={compStyles?.badgeList}>
-                  {bagdeItems.map((item, index) => {
-                    return (
-                      <li className={"uppr-badge " + compStyles?.badge} key={index}>
-                        <div
-                          className={"uppr-icon-wrapper " + compStyles?.iconWrapper}
-                        >
-                          <div className={"uppr-font-icon " + item.icon} />
-                        </div>
-                        <div
-                          className={
-                            "badge-first-line " + compStyles?.badgeFirstLine
-                          }
-                        >
-                          {item.firstLine}
-                        </div>
-                        <div
-                          className={
-                            "badge-second-line " + compStyles?.badgeSecondLine
-                          }
-                        >
-                          {item.secondLine}
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
+                Get started
+              </Button>
+            </div>
+            <div className={`${styles.column} ${styles.rightColumn}`}>
+              <img
+                src={loader({src:'/assets/images/others/test.png', width: imgDimensions.width})}
+                width={imgDimensions?.width}
+                height={imgDimensions?.height}
+                alt={'Main UPPR page'}
+              />
             </div>
 
-            <div className={"uppr-section-content"}>
-              <div className={"uppr-comments " + compStyles?.comments}>
-                <h4>Ідеальна англійська не передається генетично.</h4>
-                <h4>Знання мови треба вдосконалювати самостійно.</h4>
-                <br />
-                <h4>Якщо ти застряв на рівні intermediate</h4>
-                <h4>та чекаєш знак згори &mdash; це він.</h4>
-              </div>
-            </div>
+          </div>
+          <div className={`${styles.screen} ${styles.screenSecond}`}>
 
-            <div className={"uppr-section-content"}>
-              <div
-                className={
-                  "uppr-how-it-works-wrapper " + compStyles?.howItWorksWrapper
-                }
-              >
-                <div className={"uppr-how-it-works " + compStyles?.howItWorks}>
-                  <h4>ЯК МИ ПРАЦЮЄМО</h4>
-                </div>
-              </div>
-              <div>
-                <ul className={compStyles.howItWorksList}>
-                  {howItWorks.map((item, index) => {
-                    return (
-                      <li
-                        key={index}
-                        className={
-                          "uppr-how-it-works-item " + compStyles?.howItWorksItem
-                        }
-                      >
-                        <div className="uppr-content-left-side">
-                          <div
-                            className={
-                              "uppr-icon-wrapper " + compStyles.howIconWrapperFirst
-                            }
-                          >
-                            <div className={"uppr-font-icon icon-hexagon-icon"} />
-                            <div
-                              className={
-                                "uppr-icon-wrapper " +
-                                compStyles.howIconWrapperSecond
-                              }
-                            >
-                              <div className={"uppr-font-icon " + item.icon} />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="uppr-content-right-side">
-                          <h6>{item.content}</h6>
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </div>
+          </div>
 
-            <div className={"uppr-section-content"}>
-              <div
-                className={"uppr-telegram-channel " + compStyles?.telegramChannel}
-              >
-                <div className={compStyles.telegramBlock}>
-                  <div className={compStyles.iconTelegram}>
-                    <TelegramIcon />
-                  </div>
-                  <h4>Канал в телеграмі</h4>
-                  <Link href="https://t.me/emailingskills" passHref
-                        target="_blank" without rel="noreferrer"
-                  >
-                    <button className={compStyles.signIn}>
-                      &nbsp;Підписатись на канал&nbsp;
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+          {/*<div className={"uppr-section " + styles?.section}>*/}
+          {/*  <div className={"uppr-section-title " + styles?.sectionTitle}>*/}
+          {/*    <div className={styles.firstLine}>*/}
+          {/*      <h4>ДОСИТЬ БУТИ INTERMEDIATE!</h4>*/}
+          {/*    </div>*/}
+          {/*    <div className={styles.firstLine}>*/}
+          {/*      <h4>ТИ МОЖЕШ СТАТИ&nbsp;</h4>*/}
+          {/*      <UpprLogoText onlyLogo={true} isInText/>*/}
+          {/*    </div>*/}
+          {/*  </div>*/}
 
+          {/*  <div className={"uppr-section-content"}>*/}
+          {/*    <div*/}
+          {/*      className={"uppr-learning-strategy " + styles?.sectionContent}*/}
+          {/*    >*/}
+          {/*      <ul className={styles?.badgeList}>*/}
+          {/*        {bagdeItems.map((item, index) => {*/}
+          {/*          return (*/}
+          {/*            <li className={"uppr-badge " + styles?.badge} key={index}>*/}
+          {/*              <div*/}
+          {/*                className={"uppr-icon-wrapper " + styles?.iconWrapper}*/}
+          {/*              >*/}
+          {/*                <div className={"uppr-font-icon " + item.icon} />*/}
+          {/*              </div>*/}
+          {/*              <div*/}
+          {/*                className={*/}
+          {/*                  "badge-first-line " + styles?.badgeFirstLine*/}
+          {/*                }*/}
+          {/*              >*/}
+          {/*                {item.firstLine}*/}
+          {/*              </div>*/}
+          {/*              <div*/}
+          {/*                className={*/}
+          {/*                  "badge-second-line " + styles?.badgeSecondLine*/}
+          {/*                }*/}
+          {/*              >*/}
+          {/*                {item.secondLine}*/}
+          {/*              </div>*/}
+          {/*            </li>*/}
+          {/*          );*/}
+          {/*        })}*/}
+          {/*      </ul>*/}
+          {/*    </div>*/}
+          {/*  </div>*/}
+
+          {/*  <div className={"uppr-section-content"}>*/}
+          {/*    <div className={"uppr-comments " + styles?.comments}>*/}
+          {/*      <h4>Ідеальна англійська не передається генетично.</h4>*/}
+          {/*      <h4>Знання мови треба вдосконалювати самостійно.</h4>*/}
+          {/*      <br />*/}
+          {/*      <h4>Якщо ти застряв на рівні intermediate</h4>*/}
+          {/*      <h4>та чекаєш знак згори &mdash; це він.</h4>*/}
+          {/*    </div>*/}
+          {/*  </div>*/}
+
+          {/*  <div className={"uppr-section-content"}>*/}
+          {/*    <div*/}
+          {/*      className={*/}
+          {/*        "uppr-how-it-works-wrapper " + styles?.howItWorksWrapper*/}
+          {/*      }*/}
+          {/*    >*/}
+          {/*      <div className={"uppr-how-it-works " + styles?.howItWorks}>*/}
+          {/*        <h4>ЯК МИ ПРАЦЮЄМО</h4>*/}
+          {/*      </div>*/}
+          {/*    </div>*/}
+          {/*    <div>*/}
+          {/*      <ul className={styles.howItWorksList}>*/}
+          {/*        {howItWorks.map((item, index) => {*/}
+          {/*          return (*/}
+          {/*            <li*/}
+          {/*              key={index}*/}
+          {/*              className={*/}
+          {/*                "uppr-how-it-works-item " + styles?.howItWorksItem*/}
+          {/*              }*/}
+          {/*            >*/}
+          {/*              <div className="uppr-content-left-side">*/}
+          {/*                <div*/}
+          {/*                  className={*/}
+          {/*                    "uppr-icon-wrapper " + styles.howIconWrapperFirst*/}
+          {/*                  }*/}
+          {/*                >*/}
+          {/*                  <div className={"uppr-font-icon icon-hexagon-icon"} />*/}
+          {/*                  <div*/}
+          {/*                    className={*/}
+          {/*                      "uppr-icon-wrapper " +*/}
+          {/*                      styles.howIconWrapperSecond*/}
+          {/*                    }*/}
+          {/*                  >*/}
+          {/*                    <div className={"uppr-font-icon " + item.icon} />*/}
+          {/*                  </div>*/}
+          {/*                </div>*/}
+          {/*              </div>*/}
+          {/*              <div className="uppr-content-right-side">*/}
+          {/*                <h6>{item.content}</h6>*/}
+          {/*              </div>*/}
+          {/*            </li>*/}
+          {/*          );*/}
+          {/*        })}*/}
+          {/*      </ul>*/}
+          {/*    </div>*/}
+          {/*  </div>*/}
+
+          {/*  <div className={"uppr-section-content"}>*/}
+          {/*    <div*/}
+          {/*      className={"uppr-telegram-channel " + styles?.telegramChannel}*/}
+          {/*    >*/}
+          {/*      <div className={styles.telegramBlock}>*/}
+          {/*        <div className={styles.iconTelegram}>*/}
+          {/*          <TelegramIcon />*/}
+          {/*        </div>*/}
+          {/*        <h4>Канал в телеграмі</h4>*/}
+          {/*        <Link href="https://t.me/emailingskills" passHref*/}
+          {/*              target="_blank" without rel="noreferrer"*/}
+          {/*        >*/}
+          {/*          <button className={styles.signIn}>*/}
+          {/*            &nbsp;Підписатись на канал&nbsp;*/}
+          {/*          </button>*/}
+          {/*        </Link>*/}
+          {/*      </div>*/}
+          {/*    </div>*/}
+          {/*  </div>*/}
+
+          {/*  <div className={"uppr-section-content"}>*/}
+          {/*    <div className={"uppr-final-message " + styles?.finalMessage}>*/}
+          {/*      <h4>Розвиток - це просто.</h4>*/}
+          {/*      <h4>Будь простіше і записуйся на курс!</h4>*/}
+          {/*    </div>*/}
+          {/*  </div>*/}
+          {/*  <FooterBullShit />*/}
+          {/*</div>*/}
             <div className={"uppr-section-content"}>
               <div className={"uppr-final-message " + compStyles?.finalMessage}>
                 <h4>Розвиток - це просто.</h4>
@@ -217,7 +265,6 @@ const Index = ({top3Article}) => {
               top3Article={top3Article}
             />
           </div>
-        </div>
 
         <GoogleStat />
       </>
