@@ -22,6 +22,7 @@ import useMakeRequest, {POST_REQ_METHOD} from '../common/hooks/makeRequest';
 
 import styles from './styles.module.scss';
 import PageNotFound from '../common/404/404';
+import Footer from '../common/footers/footer/Footer';
 
 const domainName = '';
 const UPDATE_STAT_INFO = '/api/test'
@@ -29,7 +30,7 @@ const random = Math.random();
 const DEFAULT_REDIRECTS_PARAMS = {redirectLink: '/test', redirectPage: 'Повернутись до тесту'};
 
 
-const Test = () => {
+const Test = ({}) => {
   const hasMounted = useHasMounted();
   const {makeRequest, isLoading, error, data} = useMakeRequest();
 
