@@ -20,7 +20,7 @@ const resizeImage = async(file, imageSize, sourceDirectory) => {
   return sharp(`${sourceDirectory}/${file}`)
     .resize(imageSize, imageHeightPerWidth) // width, height
     .webp({})
-    .toFile(`${destinationFolder}/${file.replace(/jpg|png/, 'webp')}`)
+    .toFile(`${destinationFolder}/${file.replace(/jpg|png|jpeg/, 'webp')}`)
     .then(() => console.log(`${file} ==> ok`))
     .catch(() => console.log(`${file} ==> error`))
 };
@@ -28,7 +28,7 @@ const resizeImage = async(file, imageSize, sourceDirectory) => {
 const blogResizing = () => {
   const sourceDirectory = './public/assets/images/blog-articles';
   fs.readdirSync(sourceDirectory).forEach(file => {
-      const resultPromised = imagesSizes.map(async(imageSize) => await resizeImage(imageSize, sourceDirectory));
+      const resultPromised = imagesSizes.map(async(imageSize) => await resizeImage(file, imageSize, sourceDirectory));
       return Promise.allSettled(resultPromised);
   });
 }
@@ -41,5 +41,5 @@ const othersImagesResizing = () => {
   });
 }
 
-blogResizing();
+// blogResizing();
 othersImagesResizing();

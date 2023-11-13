@@ -1,16 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
-import Head from 'next/head'
-import Link from 'next/link';
-
-import Header from "../components/common/header/Header";
-
-import Video from "../components/common/video/Video";
-import UpprLogoText from "../components/common/uppr-logo-as-text/UpprLogoText";
-
-import TelegramIcon from "../components/common/icons/telegram-icon-2";
-import FooterBullShit from "../components/common/footers/footer-bull-shit/Footer";
-
+import Head from 'next/head';
+import Header from '../components/common/header/Header';
 import GoogleStat from '../components/common/googleCtat/GoogleStat';
 import compStyles from "./styles.module.scss";
 import Footer from '../components/common/footers/footer/Footer';
@@ -18,256 +8,234 @@ import { getArticles } from '../services/blogData';
 import styles from "./styles.module.scss";
 import loader from '../components/common/loader/loader';
 import Button from '@mui/material/Button';
+import { TypeAnimation } from 'react-type-animation';
+import FooterBullShit from '../components/common/footers/footer-bull-shit/Footer';
 
 const bagdeItems = [
   {
-    icon: "icon-open-book",
-    firstLine: "навчайся",
-    secondLine: "за принципом Agile",
+    icon: 'icon-open-book',
+    firstLine: 'навчайся',
+    secondLine: 'за принципом Agile',
   },
   {
-    icon: "icon-clock",
-    firstLine: "встигай",
-    secondLine: "усе за 1.5 години",
+    icon: 'icon-clock',
+    firstLine: 'встигай',
+    secondLine: 'усе за 1.5 години',
   },
   {
-    icon: "icon-list",
-    firstLine: "обирай",
-    secondLine: "домашнє завдання",
+    icon: 'icon-list',
+    firstLine: 'обирай',
+    secondLine: 'домашнє завдання',
   },
   {
-    icon: "icon-settings-1",
-    firstLine: "аналізуй",
-    secondLine: "вивчений матеріал",
+    icon: 'icon-settings-1',
+    firstLine: 'аналізуй',
+    secondLine: 'вивчений матеріал',
   },
   {
-    icon: "icon-transfer",
-    firstLine: "закріплюй",
-    secondLine: "знання на практиці",
+    icon: 'icon-transfer',
+    firstLine: 'закріплюй',
+    secondLine: 'знання на практиці',
   },
 ];
 
 const howItWorks = [
   {
-    icon: "icon-mustache-icon",
+    icon: 'icon-mustache-icon',
     content:
-      "Відчуй на собі ефективність гнучкого Agile-принципу, який допомагає як в розробці програмного забезпечення, так і у навчанні. Готовий до змін та самовдосконалення? Тоді цей курс для Тебе!",
+      'Відчуй на собі ефективність гнучкого Agile-принципу, який допомагає як в розробці програмного забезпечення, так і у навчанні. Готовий до змін та самовдосконалення? Тоді цей курс для Тебе!',
   },
   {
-    icon: "icon-settings-1",
+    icon: 'icon-settings-1',
     content:
-      "Кожен модудь поділений на 5 етапів-ітерацій та передбачає проведення стендап-мітингів та ретроспективи.Це дає змогу отримати зворотній зв'язок та одразу вносити корективи у процес навчання.",
+      'Кожен модудь поділений на 5 етапів-ітерацій та передбачає проведення стендап-мітингів та ретроспективи.Це дає змогу отримати зворотній зв\'язок та одразу вносити корективи у процес навчання.',
   },
   {
-    icon: "icon-thumb-icon",
+    icon: 'icon-thumb-icon',
     content:
-      "Ніхто не стоїть над тобою з указкою та не нав'язує нудні вправи.Ти самостійно обираєш домашнє завдання і працюєш в комфортному для тебе режимі.",
+      'Ніхто не стоїть над тобою з указкою та не нав\'язує нудні вправи.Ти самостійно обираєш домашнє завдання і працюєш в комфортному для тебе режимі.',
   },
 ];
 
 const Index = ({top3Article}) => {
-const Index = () => {
-  const [imgDimensions, setImgDimensions] = useState({width:700, height:400});
+  const [isCursor, setIsCursor] = useState(true);
+  const [isLast, setIsLast] = useState(false);
+  const [isCursorLast, setCursorIsLast] = useState(true);
+
+  const [imgDimensions, setImgDimensions] = useState({width: 700, height: 400});
 
   useEffect(() => {
     const width = window.innerWidth > 850 ? Math.round(window.innerWidth / 3) : window.innerWidth;
     const height = Math.round(width * 4 / 7);
 
-    setImgDimensions(() => ({width, height}));
+    setImgDimensions(() => ( {width, height} ));
   }, []);
 
   return (
-      <>
-        <Head>
-          <title>UPPR Головна</title>
-          <meta name="description"
-                content="Ресурс про англійську мову та як писати email"/>
-          <meta name="keywords" content="education on-line, english, business, writing, skills, emails"/>
-          <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8"/>
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-          <meta name="viewport" content="width=device-width,initial-scale=1"/>
-          <meta name="apple-mobile-web-app-capable" content="yes"/>
-          <meta name="apple-mobile-web-app-status-bar-style" content="yes"/>
-          <link rel="apple-touch-icon" href="/favicon.png" type="image/x-icon"/>
-          <link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>
-          <link rel="icon" href="/favicon.png"/>
+    <>
+      <Head>
+        <title>UPPR Головна</title>
+        <meta name="description"
+              content="Ресурс про англійську мову та як писати email"/>
+        <meta name="keywords" content="education on-line, english, business, writing, skills, emails"/>
+        <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="yes"/>
+        <link rel="apple-touch-icon" href="/favicon.png" type="image/x-icon"/>
+        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>
+        <link rel="icon" href="/favicon.png"/>
 
-          <meta name="google-site-verification" content="8Ui50OggqnZ5J1RPshJXelSAYWMPvFGWv32MSzHHlJU" />
-        </Head>
-        <div className="uppr-home-page">
-          <Header location={"/"} search/>
-          <div className={`${styles.screen} ${styles.screenFirst}`}>
-            <div className={`${styles.column} ${styles.leftColumn}`}>
-              <h1>
-                There's a better way to write
-              </h1>
-              <h4>
-                Make your writing shine with our all-in-one AI tool, wherever you write.
-              </h4>
-              <Button
-                variant="outlined"
-              >
-                Get started
-              </Button>
-            </div>
-            <div className={`${styles.column} ${styles.rightColumn}`}>
-              <img
-                src={loader({src:'/assets/images/others/test.png', width: imgDimensions.width})}
-                width={imgDimensions?.width}
-                height={imgDimensions?.height}
-                alt={'Main UPPR page'}
+        <meta name="google-site-verification" content="8Ui50OggqnZ5J1RPshJXelSAYWMPvFGWv32MSzHHlJU"/>
+      </Head>
+      <div className="uppr-home-page">
+        <Header location={'/'} search/>
+        <div className={`${styles.screen} ${styles.screenFirst}`}>
+          <div className={`${styles.column} ${styles.leftColumn}`}>
+            <h1
+              className={isCursor ? '' : styles.customTypeAnimationCursor1}
+            >
+              <TypeAnimation
+                sequence={[
+                  200,
+                  'There\'s a better way to write',
+                  () => {
+                    setIsCursor(false);
+                    setIsLast(true);
+                  },
+                ]}
+                speed={20}
               />
-            </div>
+            </h1>
+            {
+              isLast && (
+                <>
+                  &nbsp;&nbsp;&nbsp;
+                  <h1
+                    className={isCursorLast ? styles.emailWord : `${styles.emailWord} ${styles.customTypeAnimationCursor2}`}
+                  >
+                    <TypeAnimation
+                      sequence={[
+                        300,
+                        'emails',
+                        () => setCursorIsLast(false),
+                      ]}
+                      speed={20}
+                    />
+                  </h1>
+                </>
+              )
+            }
+            <h4>
+              Make your writing shine with our all-in-one AI tool, wherever you write.
+            </h4>
+            <Button
+              variant="outlined"
+            >
+              Get started
+            </Button>
+          </div>
+          <div className={`${styles.column} ${styles.rightColumn}`}>
+            <img
+              className={styles.mainSectionImage}
+              src={loader({src: '/assets/images/others/lady.png', width: imgDimensions.width})}
+              width={imgDimensions?.width}
+              height={imgDimensions?.height}
+              alt={'Main UPPR page'}
+            />
+            <img
+              className={`${styles.backgroundImage1}`}
+              src={loader({src: '/assets/images/others/email.png', width: imgDimensions.width})}
+              width={imgDimensions?.width}
+              height={imgDimensions?.height}
+              alt={'Email example'}
+            />
+            <img
+              className={`${styles.backgroundImage2}`}
+              src={loader({src: '/assets/images/others/gmail.png', width: imgDimensions.width})}
+              width={imgDimensions?.width}
+              height={imgDimensions?.height}
+              alt={'Email example'}
+            />
+            <img
+              className={`${styles.backgroundImage3}`}
+              src={loader({src: '/assets/images/others/gmail.png', width: imgDimensions.width})}
+              width={imgDimensions?.width}
+              height={imgDimensions?.height}
+              alt={'Email example'}
+            />
+            <img
+              className={`${styles.backgroundImage4}`}
+              src={loader({src: '/assets/images/others/slack3.png', width: imgDimensions.width})}
+              width={imgDimensions?.width}
+              height={imgDimensions?.height}
+              alt={'Email example'}
+            />
 
           </div>
-          <div className={`${styles.screen} ${styles.screenSecond}`}>
 
+        </div>
+        <div className={`${styles.screen} ${styles.screenSecond}`}>
+          <div
+            className={styles.phraseWrapper}
+          >
+            <span className={styles.quotes}>
+              &ldquo;
+            </span>
+            <h2>
+              Easy Reading Is Damn Hard Writing
+            </h2>
+            <span className={styles.quotes}>
+              &rdquo;
+            </span>
+            <h4>
+              Nathaniel Hawthorne.
+            </h4>
           </div>
+        </div>
 
-          {/*<div className={"uppr-section " + styles?.section}>*/}
-          {/*  <div className={"uppr-section-title " + styles?.sectionTitle}>*/}
-          {/*    <div className={styles.firstLine}>*/}
-          {/*      <h4>ДОСИТЬ БУТИ INTERMEDIATE!</h4>*/}
-          {/*    </div>*/}
-          {/*    <div className={styles.firstLine}>*/}
-          {/*      <h4>ТИ МОЖЕШ СТАТИ&nbsp;</h4>*/}
-          {/*      <UpprLogoText onlyLogo={true} isInText/>*/}
-          {/*    </div>*/}
-          {/*  </div>*/}
-
-          {/*  <div className={"uppr-section-content"}>*/}
-          {/*    <div*/}
-          {/*      className={"uppr-learning-strategy " + styles?.sectionContent}*/}
-          {/*    >*/}
-          {/*      <ul className={styles?.badgeList}>*/}
-          {/*        {bagdeItems.map((item, index) => {*/}
-          {/*          return (*/}
-          {/*            <li className={"uppr-badge " + styles?.badge} key={index}>*/}
-          {/*              <div*/}
-          {/*                className={"uppr-icon-wrapper " + styles?.iconWrapper}*/}
-          {/*              >*/}
-          {/*                <div className={"uppr-font-icon " + item.icon} />*/}
-          {/*              </div>*/}
-          {/*              <div*/}
-          {/*                className={*/}
-          {/*                  "badge-first-line " + styles?.badgeFirstLine*/}
-          {/*                }*/}
-          {/*              >*/}
-          {/*                {item.firstLine}*/}
-          {/*              </div>*/}
-          {/*              <div*/}
-          {/*                className={*/}
-          {/*                  "badge-second-line " + styles?.badgeSecondLine*/}
-          {/*                }*/}
-          {/*              >*/}
-          {/*                {item.secondLine}*/}
-          {/*              </div>*/}
-          {/*            </li>*/}
-          {/*          );*/}
-          {/*        })}*/}
-          {/*      </ul>*/}
-          {/*    </div>*/}
-          {/*  </div>*/}
-
-          {/*  <div className={"uppr-section-content"}>*/}
-          {/*    <div className={"uppr-comments " + styles?.comments}>*/}
-          {/*      <h4>Ідеальна англійська не передається генетично.</h4>*/}
-          {/*      <h4>Знання мови треба вдосконалювати самостійно.</h4>*/}
-          {/*      <br />*/}
-          {/*      <h4>Якщо ти застряв на рівні intermediate</h4>*/}
-          {/*      <h4>та чекаєш знак згори &mdash; це він.</h4>*/}
-          {/*    </div>*/}
-          {/*  </div>*/}
-
-          {/*  <div className={"uppr-section-content"}>*/}
-          {/*    <div*/}
-          {/*      className={*/}
-          {/*        "uppr-how-it-works-wrapper " + styles?.howItWorksWrapper*/}
-          {/*      }*/}
-          {/*    >*/}
-          {/*      <div className={"uppr-how-it-works " + styles?.howItWorks}>*/}
-          {/*        <h4>ЯК МИ ПРАЦЮЄМО</h4>*/}
-          {/*      </div>*/}
-          {/*    </div>*/}
-          {/*    <div>*/}
-          {/*      <ul className={styles.howItWorksList}>*/}
-          {/*        {howItWorks.map((item, index) => {*/}
-          {/*          return (*/}
-          {/*            <li*/}
-          {/*              key={index}*/}
-          {/*              className={*/}
-          {/*                "uppr-how-it-works-item " + styles?.howItWorksItem*/}
-          {/*              }*/}
-          {/*            >*/}
-          {/*              <div className="uppr-content-left-side">*/}
-          {/*                <div*/}
-          {/*                  className={*/}
-          {/*                    "uppr-icon-wrapper " + styles.howIconWrapperFirst*/}
-          {/*                  }*/}
-          {/*                >*/}
-          {/*                  <div className={"uppr-font-icon icon-hexagon-icon"} />*/}
-          {/*                  <div*/}
-          {/*                    className={*/}
-          {/*                      "uppr-icon-wrapper " +*/}
-          {/*                      styles.howIconWrapperSecond*/}
-          {/*                    }*/}
-          {/*                  >*/}
-          {/*                    <div className={"uppr-font-icon " + item.icon} />*/}
-          {/*                  </div>*/}
-          {/*                </div>*/}
-          {/*              </div>*/}
-          {/*              <div className="uppr-content-right-side">*/}
-          {/*                <h6>{item.content}</h6>*/}
-          {/*              </div>*/}
-          {/*            </li>*/}
-          {/*          );*/}
-          {/*        })}*/}
-          {/*      </ul>*/}
-          {/*    </div>*/}
-          {/*  </div>*/}
-
-          {/*  <div className={"uppr-section-content"}>*/}
-          {/*    <div*/}
-          {/*      className={"uppr-telegram-channel " + styles?.telegramChannel}*/}
-          {/*    >*/}
-          {/*      <div className={styles.telegramBlock}>*/}
-          {/*        <div className={styles.iconTelegram}>*/}
-          {/*          <TelegramIcon />*/}
-          {/*        </div>*/}
-          {/*        <h4>Канал в телеграмі</h4>*/}
-          {/*        <Link href="https://t.me/emailingskills" passHref*/}
-          {/*              target="_blank" without rel="noreferrer"*/}
-          {/*        >*/}
-          {/*          <button className={styles.signIn}>*/}
-          {/*            &nbsp;Підписатись на канал&nbsp;*/}
-          {/*          </button>*/}
-          {/*        </Link>*/}
-          {/*      </div>*/}
-          {/*    </div>*/}
-          {/*  </div>*/}
-
-          {/*  <div className={"uppr-section-content"}>*/}
-          {/*    <div className={"uppr-final-message " + styles?.finalMessage}>*/}
-          {/*      <h4>Розвиток - це просто.</h4>*/}
-          {/*      <h4>Будь простіше і записуйся на курс!</h4>*/}
-          {/*    </div>*/}
-          {/*  </div>*/}
-          {/*  <FooterBullShit />*/}
-          {/*</div>*/}
-            <div className={"uppr-section-content"}>
-              <div className={"uppr-final-message " + compStyles?.finalMessage}>
-                <h4>Розвиток - це просто.</h4>
-                <h4>Будь простіше і записуйся на курс!</h4>
-              </div>
-            </div>
-            <FooterBullShit />
-            <Footer
-              top3Article={top3Article}
+        <div className={`${styles.screen} ${styles.screenThird}`}>
+          <div
+            className={styles.firstColumn}
+          >
+            <h2>
+              We Create Delightful  Webflow Templates for Creatives
+            </h2>
+          </div>
+          <div
+            className={styles.secondColumn}
+          >
+            <img
+              className={`${styles.backgroundImage1}`}
+              src={loader({src: '/assets/images/others/ivanka.jpg', width: imgDimensions.width})}
+              width={imgDimensions?.width}
+              height={imgDimensions?.height}
+              alt={'Email example'}
             />
           </div>
+          <div
+            className={styles.thirdColumn}
+          >
+            <h2>
+              We Create Delightful  Webflow Templates for Creatives
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div className={"uppr-section-content"}>
+        <div className={"uppr-final-message " + compStyles?.finalMessage}>
+          <h4>Розвиток - це просто.</h4>
+          <h4>Будь простіше і записуйся на курс!</h4>
+        </div>
+      </div>
+      <FooterBullShit />
+      <Footer
+        top3Article={top3Article}
+      />
 
-        <GoogleStat />
-      </>
+      <GoogleStat/>
+    </>
   );
 };
 
