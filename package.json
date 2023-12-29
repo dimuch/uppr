@@ -10,6 +10,10 @@
     "lint": "next lint",
     "update:images": "node utils/resizer.js"
   },
+  "engines" : {
+    "npm" : ">=9.6.6",
+    "node" : ">=20.2.0"
+  },
   "dependencies": {
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.11.0",
