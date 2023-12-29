@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
-    experimental: {},
+    experimental: {
+      serverComponentsExternalPackages: ["mysql2"],
+    },
     webpack: (config, {isServer}) => {
         const addOn = {};
 
