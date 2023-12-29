@@ -37,21 +37,21 @@ export default function FollowMeBlock({showTitle = true, customStyles={socialSec
             <InstagramIcon/>
           </a>
         </div>
-        <div item xs={3} className={styles.socialLink}>
+        <div className={styles.socialLink}>
           <a href="https://www.facebook.com/ivanna.tabachuk"
              target="_blank" rel="noreferrer"
           >
             <FacebookIcon/>
           </a>
         </div>
-        <div item xs={3} className={styles.socialLink}>
+        <div className={styles.socialLink}>
           <a href="https://www.linkedin.com/in/ivannatabachuk"
              target="_blank" rel="noreferrer"
           >
             <LinkedInIcon/>
           </a>
         </div>
-        <div item xs={3} className={styles.socialLink}>
+        <div className={styles.socialLink}>
           <a href="https://t.me/emailingskills"
              target="_blank" rel="noreferrer"
           >
