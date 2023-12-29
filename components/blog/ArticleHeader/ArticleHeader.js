@@ -32,10 +32,8 @@ export default function ArticleHeader( {articleData} ) {
       </div>
 
       <div className={styles.titleContent}>
-        <h1 className={styles.title}
-            style={{color: `#${articleData.article_color}`}}>{articleData.title}</h1>
-        <p className={styles.shortMessage}
-           style={{color: `#${articleData.article_color}`}}>{articleData.description}</p>
+        <h1 className={styles.title}>{articleData.title}</h1>
+        <p className={styles.shortMessage}>{articleData.description}</p>
       </div>
       <div className={styles.titleImage}>
         <img
@@ -48,34 +46,14 @@ export default function ArticleHeader( {articleData} ) {
             height: 'auto',
           }}/>
         <Tags items={articleData.tags} location={'header'}/>
+            <MouseParallaxContainer globalFactorX={0.1} globalFactorY={0.1} className={styles.parallaxWrapper}>
+              <MouseParallaxChild factorX={0.3} factorY={0.5} className={`${styles.squareTopLeft} ${styles.rotate}` } />
+              <MouseParallaxChild factorX={0.7} factorY={0.8} className={styles.circleTopRight} />
+              <MouseParallaxChild factorX={0.3} factorY={0.5} className={styles.circleBottomLeft} />
+              <MouseParallaxChild factorX={0.7} factorY={0.8} className={`${styles.triangleBottomRight} ${styles.rotate}`} />
+            </MouseParallaxContainer>
       </div>
 
-      {/*<MouseParallaxContainer globalFactorX={0.1} globalFactorY={0.1}>*/}
-      {/*  <MouseParallaxChild*/}
-      {/*    factorX={0.3}*/}
-      {/*    factorY={0.5}*/}
-      {/*    style={{*/}
-      {/*        position: 'absolute',*/}
-      {/*        left: '-7%',*/}
-      {/*        top: '20%',*/}
-      {/*        width: '28px',*/}
-      {/*        height: '28px',*/}
-      {/*        border: '3px solid #ff9c2d',*/}
-      {/*        transform: 'rotate(23deg)',*/}
-      {/*    }}*/}
-      {/*  >*/}
-      {/*    <div className={`${styles.squareTopLeft} ${styles.rotate}` }></div>*/}
-      {/*  </MouseParallaxChild>*/}
-      {/*  <MouseParallaxChild factorX={0.7} factorY={0.8}>*/}
-      {/*    <div className={styles.circleTopRight}></div>*/}
-      {/*  </MouseParallaxChild>*/}
-      {/*  <MouseParallaxChild factorX={0.3} factorY={0.5}>*/}
-      {/*    <div className={`${styles.circleBottomLeft} ${styles.rotate}` }></div>*/}
-      {/*  </MouseParallaxChild>*/}
-      {/*  <MouseParallaxChild factorX={0.7} factorY={0.8}>*/}
-      {/*    <div className={`${styles.triangleBottomRight} ${styles.rotate}`}></div>*/}
-      {/*  </MouseParallaxChild>*/}
-      {/*</MouseParallaxContainer>*/}
     </div>
   );
 }

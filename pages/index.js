@@ -128,7 +128,7 @@ const Index = ({top3Article}) => {
               )
             }
             <h4>
-              Make your writing shine with our all-in-one AI tool, wherever you write.
+              Make your writing shine, wherever you write.
             </h4>
             <Button
               variant="outlined"
@@ -153,7 +153,7 @@ const Index = ({top3Article}) => {
             />
             <img
               className={`${styles.backgroundImage2}`}
-              src={loader({src: '/assets/images/others/gmail.png', width: imgDimensions.width})}
+              src={loader({src: '/assets/images/others/email-2.png', width: imgDimensions.width})}
               width={imgDimensions?.width}
               height={imgDimensions?.height}
               alt={'Email example'}
@@ -167,7 +167,7 @@ const Index = ({top3Article}) => {
             />
             <img
               className={`${styles.backgroundImage4}`}
-              src={loader({src: '/assets/images/others/slack3.png', width: imgDimensions.width})}
+              src={loader({src: '/assets/images/others/slack4.png', width: imgDimensions.width})}
               width={imgDimensions?.width}
               height={imgDimensions?.height}
               alt={'Email example'}
@@ -195,40 +195,40 @@ const Index = ({top3Article}) => {
           </div>
         </div>
 
-        <div className={`${styles.screen} ${styles.screenThird}`}>
-          <div
-            className={styles.firstColumn}
-          >
-            <h2>
-              We Create Delightful  Webflow Templates for Creatives
-            </h2>
-          </div>
-          <div
-            className={styles.secondColumn}
-          >
-            <img
-              className={`${styles.backgroundImage1}`}
-              src={loader({src: '/assets/images/others/ivanka.jpg', width: imgDimensions.width})}
-              width={imgDimensions?.width}
-              height={imgDimensions?.height}
-              alt={'Email example'}
-            />
-          </div>
-          <div
-            className={styles.thirdColumn}
-          >
-            <h2>
-              We Create Delightful  Webflow Templates for Creatives
-            </h2>
-          </div>
-        </div>
+        {/*<div className={`${styles.screen} ${styles.screenThird}`}>*/}
+        {/*  <div*/}
+        {/*    className={styles.firstColumn}*/}
+        {/*  >*/}
+        {/*    <h2>*/}
+        {/*      We Create Delightful  Webflow Templates for Creatives*/}
+        {/*    </h2>*/}
+        {/*  </div>*/}
+        {/*  <div*/}
+        {/*    className={styles.secondColumn}*/}
+        {/*  >*/}
+        {/*    <img*/}
+        {/*      className={`${styles.backgroundImage1}`}*/}
+        {/*      src={loader({src: '/assets/images/others/ivanka.jpg', width: imgDimensions.width})}*/}
+        {/*      width={imgDimensions?.width}*/}
+        {/*      height={imgDimensions?.height}*/}
+        {/*      alt={'Email example'}*/}
+        {/*    />*/}
+        {/*  </div>*/}
+        {/*  <div*/}
+        {/*    className={styles.thirdColumn}*/}
+        {/*  >*/}
+        {/*    <h2>*/}
+        {/*      We Create Delightful  Webflow Templates for Creatives*/}
+        {/*    </h2>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
       </div>
-      <div className={"uppr-section-content"}>
-        <div className={"uppr-final-message " + compStyles?.finalMessage}>
-          <h4>Розвиток - це просто.</h4>
-          <h4>Будь простіше і записуйся на курс!</h4>
-        </div>
-      </div>
+      {/*<div className={"uppr-section-content"}>*/}
+      {/*  <div className={"uppr-final-message " + compStyles?.finalMessage}>*/}
+      {/*    <h4>Розвиток - це просто.</h4>*/}
+      {/*    <h4>Будь простіше і записуйся на курс!</h4>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
       <FooterBullShit />
       <Footer
         top3Article={top3Article}

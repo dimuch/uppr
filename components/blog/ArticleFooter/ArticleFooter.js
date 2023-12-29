@@ -5,7 +5,7 @@ import Slider from '../Slider/Slider';
 import OthersArticles from '../OthersArticles/OthersArticles';
 import InstagramImages from '../InstagramImages/InstagramImages';
 
-export default function ArticleFooter({articleData}) {
+export default function ArticleFooter( {articleData}) {
     let width;
     if (typeof window !== 'undefined') {
         width = (window?.outerWidth);
@@ -20,23 +20,6 @@ export default function ArticleFooter({articleData}) {
             <div className={styles.authorBlock}>
                 <Author data={articleData}/>
             </div>
-            {
-                width > 1024 && (
-                    <div className={styles.relevantArticles}>
-                        <Slider data={articleData.relevantArticles}/>
-                    </div>
-                )
-            }
-            {
-                width < 1024 && (
-                    <div className={styles.relevantArticles}>
-                        <h2 className={styles.subTitle}>
-                            Статті по темі
-                        </h2>
-                        <OthersArticles items={articleData.relevantArticles} isDescription={false}/>
-                    </div>
-                )
-            }
         </div>
         <InstagramImages />
       </>

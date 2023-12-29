@@ -41,5 +41,5 @@ const othersImagesResizing = () => {
   });
 }
 
-// blogResizing();
+blogResizing();
 othersImagesResizing();

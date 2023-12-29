@@ -1,25 +1,24 @@
-import React, {useEffect, useState} from 'react';
-import Head from 'next/head'
+import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
 import Header from '../../../components/common/header/Header';
-import {getArticlesDataByIdDB} from '../../../services/blogData';
+import { getArticlesDataByIdDB } from '../../../services/blogData';
 import * as PageComponent from '../../../components/articles';
-import {useHasMounted} from '../../../components/common/hooks/hasMounted';
+import { useHasMounted } from '../../../components/common/hooks/hasMounted';
 import GoogleStat from '../../../components/common/googleCtat/GoogleStat';
-import {Helmet} from 'react-helmet';
 
 const PAGE_NOT_FOUND = 'PageNotFound';
 
-export default function ArticlePageWrapper({articleData}) {
+export default function ArticlePageWrapper( {articleData} ) {
   const ArticlePage = PageComponent[articleData.pageComponent];
 
   const hasMounted = useHasMounted();
 
-  if (!hasMounted) {
+  if ( !hasMounted ) {
     return null;
   }
 
-  if (articleData.pageComponent === PAGE_NOT_FOUND) {
-    return <ArticlePage/>
+  if ( articleData.pageComponent === PAGE_NOT_FOUND ) {
+    return <ArticlePage/>;
   }
 
   return (
@@ -55,22 +54,23 @@ export default function ArticlePageWrapper({articleData}) {
       </Head>
 
       <Header search location={'/blog'}/>
+      <div style={{overflow: 'hidden'}}>
+        <ArticlePage articleData={articleData}/>
+      </div>
 
-      <ArticlePage articleData={articleData}/>
-
-      <GoogleStat />
+      <GoogleStat/>
     </>
-  )
+  );
 };
 
-export async function getServerSideProps({res, resolvedUrl}) {
+export async function getServerSideProps( {res, resolvedUrl} ) {
   const articleURL = resolvedUrl.split('?')[0];
   const articleData = await getArticlesDataByIdDB(articleURL);
 
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=604800, stale-while-revalidate=59',
-  )
+  );
 
   return {
     props: {
@@ -79,7 +79,7 @@ export async function getServerSideProps({res, resolvedUrl}) {
   };
 }
 
-function addJsonLdData(articleData) {
+function addJsonLdData( articleData ) {
   return {
     __html: JSON.stringify({
       '@context': 'https://schema.org/',
@@ -113,5 +113,5 @@ function addJsonLdData(articleData) {
       },
       'description': `${articleData.description}`,
     }),
-  }
+  };
 }

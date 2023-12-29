@@ -4,12 +4,12 @@
   position: relative;
   justify-content: space-between;
   align-items: center;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  padding-top: 5rem;
+  padding-bottom: 1rem;
 }
 
 .titleContent {
-  padding-right: 2rem;
+  padding-right: 0;
 }
 
 .titleImage {
@@ -17,39 +17,54 @@
 }
 
 .title {
-  margin-bottom: 2rem;
-  font-family: "Futura-PT", sans-serif;
-  font-size: 2.5rem;
-  line-height: 1.5;
-  text-transform: uppercase;
+  font-size: 2rem;
+  font-family: 'Raleway-Bold', sans-serif;
+  line-height: 2.5rem;
+  padding-top: .5rem;
+  padding-bottom: 2rem;
+  margin: 0;
 }
 
 .shortMessage {
-  font-family: "Futura-LT", sans-serif;
-  font-size: 1.5rem;
-  line-height: 1.25;
+  font-family: 'Raleway-Regular', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin: 0;
+  padding-bottom: 2rem;
 }
 
 .categoryBadge {
-  font-size: 1rem;
-  font-family: "OpenSans", sans-serif;
+  font-size: .875rem;
+  font-family: "Raleway-Regular", sans-serif;
   z-index: 5;
   text-transform: uppercase;
 
   .published{
     position: relative;
     padding-left: 1.5rem;
+    color: #999999;
     &:before {
       position: absolute;
       width: .5rem;
       height: .5rem;
-      background-color: $black;
+      background-color: #999999;
       border-radius: .5rem;
       content: "";
       left: 8px;
-      top: 7px;
+      top: 4px;
     }
   }
+}
+
+.parallaxWrapper{
+  position: absolute !important;
+  overflow: visible !important;
+  top: -60%;
+  width: 100%;
+  height: 150%;
+}
+.parallaxWrapperChild{
+  position: relative;
 }
 
 .squareTopLeft{
@@ -62,13 +77,12 @@
   -webkit-transform: rotate(23deg);
   -ms-transform: rotate(23deg);
   transform: rotate(23deg);
-
 }
 
 .circleTopRight {
   position: absolute;
   top: 2%;
-  right: -36%;
+  right: -65%;
   width: 36vh;
   height: 36vh;
   margin-top: 104px;
@@ -79,7 +93,7 @@
 
 .circleBottomLeft {
   position: absolute;
-  left: -32%;
+  left: -62%;
   bottom: 8%;
   width: 26vh;
   height: 26vh;
@@ -91,7 +105,7 @@
 .triangleBottomRight {
   position: absolute;
   right: -10%;
-  bottom: 20%;
+  bottom: 0%;
   border-top: 28px solid #f437a8;
   border-right: 16px solid transparent;
   border-left: 16px solid transparent;

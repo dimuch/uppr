@@ -1,6 +1,94 @@
 @import "../../../styles/scss/common/colors.scss";
 
-.author{
-  min-width: 12rem;
+.authorWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
   text-align: center;
+  border: 1px solid $item-border;
+  background-color: rgba(0, 0, 0, .01);
+}
+
+.author {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.authorImg {
+  width: 115px;
+  height: 115px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  min-width: 112px;
+}
+
+.authorDescription {
+  padding-left: 2.5rem;
+  p{
+    font-family: Raleway-Regular, sans-serif;
+    font-size: .875rem;
+  }
+}
+
+.socialMedia {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid $item-border;
+}
+
+.socialLink {
+  margin-right: 1rem;
+  margin-left: 1rem;
+
+  a {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid transparent;
+  }
+
+  svg {
+    width: 1rem;
+  }
+
+  &:hover {
+    a {
+      border: 1px solid $item-border;
+    }
+  }
+}
+
+.authorLinks {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid $item-border;
+  background-color: rgba(0, 0, 0, .02);
+}
+
+.authorLink {
+  display: block;
+  width: 33%;
+  border: 1px solid transparent;
+  transition: width .3s ease-out, color .3s, border-color .3s;
+  p{
+    font-family: Raleway-Regular, sans-serif;
+    font-size: .875rem;
+  }
+
+  &:hover {
+    width: 50%;
+    border-bottom-color: #070d22;
+    color: #070d22;
+  }
 }

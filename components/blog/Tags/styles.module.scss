@@ -1,11 +1,12 @@
 @import "../../../styles/scss/common/colors.scss";
 
 .articleTags{
-  margin-top: 1rem;
+  padding-top: 1.5rem;
   padding-left: 0;
   display: flex;
   flex-wrap: wrap;
   max-width: 60rem;
+  margin: 0;
 }
 
 .tagItem{

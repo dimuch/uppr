@@ -2,6 +2,7 @@
 
 .screen {
   display: flex;
+  flex-wrap:wrap;
   flex-direction: row;
   align-items: center;
   margin-left: auto;
@@ -21,12 +22,13 @@
 .screenFirst {
   .leftColumn {
     width: 40%;
+    min-width: 385px;
     padding-top: 12%;
 
     h1 {
       display: inline;
       margin: 0;
-      font-size: 4rem;
+      font-size: 2.5rem;
       line-height: 1.1;
       font-family: 'Raleway-Bold', sans-serif;
 
@@ -88,16 +90,17 @@
   }
 
   .rightColumn {
-    width: 60%;
+    width: 50%;
+    min-width: 390px;
     text-align: right;
-    margin-right: 4rem;
     position: relative;
 
     .mainSectionImage {
       position: absolute;
-      left: 20%;
+      left: 15%;
+      top: 0;
       width: auto;
-      height: 600px;
+      height: 700px;
       z-index: 3;
       margin-left: 3rem;
     }
@@ -105,7 +108,7 @@
     .backgroundImage1 {
       position: absolute;
       top: 12rem;
-      left: -1rem;
+      left: -7rem;
       right: 0;
       margin: auto;
       z-index: 2;
@@ -117,7 +120,7 @@
       position: absolute;
       top: 15rem;
       left: auto;
-      right: -3rem;
+      right: -5rem;
       margin: auto;
       z-index: 3;
       height: 75px;
@@ -138,11 +141,12 @@
       position: absolute;
       top: 25.5rem;
       left: auto;
-      right: 1.5rem;
+      right: -3.5rem;
       margin: auto;
       z-index: 2;
       height: 160px;
       width: auto;
+      border-radius: 10px;
     }
   }
 }
