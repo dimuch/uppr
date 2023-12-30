@@ -135,7 +135,8 @@
 }
 
 .frameWithExampleAndTitle {
-  border: 1px solid $blog-four-sticky;
+  border: 1px solid transparent;
+  background: linear-gradient(white, white) padding-box, linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box;
   max-width: 60rem;
   margin: 1rem auto 2rem;
 
@@ -143,10 +144,10 @@
     padding: 0.5rem 0.5rem 0.5rem 1rem;
     margin: 0;
     text-align: left;
-    font-family: 'Futura-LT', sans-serif;
-    font-size: 1.25rem;
+    font-family: 'Raleway-Regular', sans-serif;
+    font-size: 1rem;
     color: #fff;
-    background-color: $blog-four-sticky;
+    background: linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box;
   }
 
   .exampleText {
