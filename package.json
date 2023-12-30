@@ -11,8 +11,8 @@
     "update:images": "node utils/resizer.js"
   },
   "engines" : {
-    "npm" : ">=9.6.6",
-    "node" : ">=20.2.0"
+    "npm" : ">=10.2.3",
+    "node" : ">=18.19.0"
   },
   "dependencies": {
     "@emotion/styled": "^11.10.5",

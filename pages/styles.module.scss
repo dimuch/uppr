@@ -2,28 +2,32 @@
 
 .screen {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
   width: 85%;
   max-width: 1200px;
-  min-height: 80%;
-  height: calc(100vh - 80px);
+  //min-height: calc(100vh - 80px);
 }
 
 .column {
-  height: 100%;
-  width: 50%;
   padding-top: 3rem;
 }
 
 .screenFirst {
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 40rem;
+  padding-top: 3rem;
+
   .leftColumn {
-    width: 40%;
-    min-width: 385px;
-    padding-top: 12%;
+    min-width: 360px;
+    max-width: 40%;
+    padding-top: 8rem;
+    justify-content: start;
 
     h1 {
       display: inline;
@@ -90,25 +94,25 @@
   }
 
   .rightColumn {
-    width: 50%;
     min-width: 390px;
+    min-height: 25rem;
     text-align: right;
     position: relative;
+    left: -12rem;
 
     .mainSectionImage {
       position: absolute;
-      left: 15%;
+      left: 0rem;
       top: 0;
       width: auto;
       height: 700px;
       z-index: 3;
-      margin-left: 3rem;
     }
 
     .backgroundImage1 {
       position: absolute;
       top: 12rem;
-      left: -7rem;
+      left: -10rem;
       right: 0;
       margin: auto;
       z-index: 2;
@@ -116,32 +120,33 @@
       height: 210px;
     }
 
-    .backgroundImage2{
+    .backgroundImage2 {
       position: absolute;
       top: 15rem;
       left: auto;
-      right: -5rem;
+      right: -12rem;
       margin: auto;
       z-index: 3;
       height: 75px;
       width: auto;
     }
 
-    .backgroundImage3{
+    .backgroundImage3 {
       position: absolute;
-      top: 26.25rem;
-      left: 5rem;
+      top: 26rem;
+      left: -4rem;
       right: auto;
       margin: auto;
       z-index: 3;
       height: 75px;
       width: auto;
     }
-    .backgroundImage4{
+
+    .backgroundImage4 {
       position: absolute;
-      top: 25.5rem;
+      top: 25rem;
       left: auto;
-      right: -3.5rem;
+      right: -12rem;
       margin: auto;
       z-index: 2;
       height: 160px;
@@ -163,7 +168,7 @@
   .phraseWrapper {
     width: 100%;
     padding-bottom: 5rem;
-    padding-top: 5rem;
+    padding-top: 10rem;
   }
 
   .quotes {
@@ -191,24 +196,52 @@
   }
 }
 
-.screenThird{
+.screenThird {
   height: auto;
   width: 100%;
   text-align: center;
   background-color: #c9dfff;
   margin-bottom: 8rem;
+
   .firstColumn {
     width: 20%;
   }
+
   .secondColumn {
     width: 50%;
     text-align: center;
-    img{
+
+    img {
       width: 70%;
       height: auto;
     }
   }
+
   .thirdColumn {
     width: 30%;
+  }
+}
+
+@media (max-width: 650px) {
+  .screen {
+    width: 100%;
+    overflow: hidden;
+  }
+  .column {
+    min-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .screenFirst {
+    flex-direction: column;
+
+    .leftColumn {
+      padding-top: 1rem;
+    }
+
+    .rightColumn {
+      left: -3rem;
+      min-height: 40rem;
+    }
   }
 }
