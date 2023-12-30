@@ -25,7 +25,6 @@ export default function TopFeaturedArticlesItems( {items} ) {
               item
               key={article.title}
               xs={12}
-              onClick={( e ) => updateArticleViews(article)}
             >
               <Grid
                 container

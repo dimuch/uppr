@@ -39,7 +39,6 @@ export default function Downloads({ items }) {
               className={"wrapper-download " + styles.wrapperDownload}
               alignItems={"center"}
               key={article.caption}
-              onClick={(e) => this.updateArticleViews(article)}
             >
               <Grid item xs={1} className="image">
                 <Icon />

@@ -6,12 +6,6 @@ import styles from './styles.module.scss';
 import TopFeaturedArticlesItems from './TopFeaturedArticlesITems';
 
 export default function TopFeaturedArticles({items, domainName}) {
-    const updateArticleViews = (article) => {
-    };
-
-    const width = window.innerWidth > 850 ? Math.round(window.innerWidth / 3) : window.innerWidth;
-    const height = Math.round(width * 4 / 7);
-
     return (
         <div className={'wrapper ' + styles.wrapper}>
             <div className={'uppr-section-title ' + styles.upprSectionTitle}>
