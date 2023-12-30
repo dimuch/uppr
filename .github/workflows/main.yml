@@ -58,6 +58,7 @@ jobs:
           KEY: ${{ secrets.SSH_KEY }}
           PORT: ${{ secrets.SSH_PORT }}
           script: |
+            nvm use 18.19.0
             cd /var/www/uppr.com.ua
             pm2 stop uppr.com.ua
             pm2 delete uppr.com.ua

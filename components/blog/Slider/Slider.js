@@ -1,8 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {ArrowCircleRightOutlined, ArrowCircleLeftOutlined} from '@mui/icons-material';
-
 import styles from './styles.module.scss';
 import loader from '../../common/loader/loader';
+import { ArrowLeft, ArrowRight } from '../../common/icons';
 
 function Slide({slideData, slideNode, location}) {
     const imageScaler = location === 'footer' ? 7 : 4.35;
@@ -83,7 +82,7 @@ export default function Slider({data, location = 'footer'}) {
             <div className={styles.stepBack}
                  onClick={(e) => makeSlide(-1)}
             >
-                <ArrowCircleLeftOutlined/>
+                <ArrowLeft/>
             </div>
             <div className={styles.wrapper} ref={wrapperNode}>
                 <div className={styles.slides}
@@ -105,7 +104,7 @@ export default function Slider({data, location = 'footer'}) {
             <div className={styles.stepForward}
                  onClick={(e) => makeSlide(1)}
             >
-                <ArrowCircleRightOutlined/>
+                <ArrowRight/>
             </div>
         </div>
     )
