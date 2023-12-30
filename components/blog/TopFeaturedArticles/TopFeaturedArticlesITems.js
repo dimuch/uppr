@@ -18,7 +18,7 @@ export default function TopFeaturedArticlesItems( {items} ) {
 
   return (
     <div className={'uppr-section-content ' + styles.upprSectionContent}>
-      <Grid container={true} spacing={3}>
+      <Grid container spacing={3}>
         {items.map(( article ) => {
           return (
             <Grid
@@ -28,7 +28,7 @@ export default function TopFeaturedArticlesItems( {items} ) {
               onClick={( e ) => updateArticleViews(article)}
             >
               <Grid
-                container={true}
+                container
                 spacing={1}
                 className={styles.articleContainer}
                 alignContent={'center'}

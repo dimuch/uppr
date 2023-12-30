@@ -46,7 +46,6 @@ export default function MainArticle({ items }) {
         />
       </div>
       <div
-        container={true}
         className={"uppr-article-details " + styles.upprArticleDetails}
       >
         <Grid item md={12} className="title">
@@ -58,9 +57,9 @@ export default function MainArticle({ items }) {
           <Typography>{mainArticleData.description}</Typography>
         </Grid>
         <Grid item md={12} className={"summary " + styles.summary}>
-          <Grid container={true} justifyContent={'space-between'}>
+          <Grid container justifyContent={'space-between'}>
             <Grid item md={10} className="left-part">
-              <Grid container={true}>
+              <Grid container>
                 <Typography
                   variant={"subtitle2"}
                   className={"summary-item " + styles.summaryItem}

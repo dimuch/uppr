@@ -13,9 +13,9 @@ export default function TopFeaturedArticles({items, domainName}) {
     const height = Math.round(width * 4 / 7);
 
     return (
-        <div container={true} className={'wrapper ' + styles.wrapper}>
+        <div className={'wrapper ' + styles.wrapper}>
             <div className={'uppr-section-title ' + styles.upprSectionTitle}>
-                <Grid container={true} alignItems="center">
+                <Grid container alignItems="center">
                     <Grid item md={12} xs={12}>
                         <Typography variant={'h5'}>Top featured</Typography>
                     </Grid>

@@ -13,13 +13,13 @@ export default function Downloads({ items }) {
   }
 
   return (
-    <div container={true} className={"wrapper " + styles.wrapper}>
+    <div className={"wrapper " + styles.wrapper}>
       <Grid
         item
         md={12}
         className={"uppr-section-title " + styles.upprSectionTitle}
       >
-        <Grid container={true} spacing={1} alignItems="center">
+        <Grid container spacing={1} alignItems="center">
           <Grid item md={12} xs={12}>
               <Typography variant={"h5"}>Downloads</Typography>
           </Grid>
@@ -34,7 +34,7 @@ export default function Downloads({ items }) {
           const Icon = Icons[article.icon];
           return (
             <Grid
-              container={true}
+              container
               spacing={3}
               className={"wrapper-download " + styles.wrapperDownload}
               alignItems={"center"}
