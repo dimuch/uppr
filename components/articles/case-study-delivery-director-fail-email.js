@@ -139,7 +139,7 @@ export default function CaseStudyDeliveryDirectorFailEmail({articleData}) {
 
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-                    <h3 className={styles.articlePhrase} style={{color: `#${articleData.article_color}`}}>
+                    <h3 className={styles.articlePhrase}>
                         Is &quot;It would be great if you…&quot; a universal evil?
                     </h3>
                 </div>

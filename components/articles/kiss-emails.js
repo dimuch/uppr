@@ -151,8 +151,8 @@ export default function KissEmails({articleData}) {
 
             <div className={styles.articleEvenSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-                    <h3 className={styles.articlePhrase} style={{color: `#${articleData.article_color}`}}>
-                        Професійний імейл — це імейл, який досить відповісти &quot;так&quot; або &quot;ні&quot;!
+                    <h3 className={styles.articlePhrase} >
+                        Професійний імейл — це імейл, на який досить відповісти &quot;так&quot; або &quot;ні&quot;!
                     </h3>
                 </div>
             </div>
@@ -201,7 +201,7 @@ export default function KissEmails({articleData}) {
 
             <div className={styles.articleEvenSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-                    <h3 className={styles.articlePhrase} style={{color: `#${articleData.article_color}`}}>
+                    <h3 className={styles.articlePhrase} >
                         Коротких та простих імейлів вам!
                     </h3>
                 </div>

@@ -34,9 +34,7 @@ export default function WatchingCartoonsInEnglishRio({articleData}) {
 
             <div className={styles.articleEvenSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-                    <h3 className={`${styles.articlePhrase}`}
-                        style={{color: `#${articleData.article_color}`}}
-                    >
+                    <h3 className={`${styles.articlePhrase}`}>
                         Дивитися можна не лише серіал &quot;Друзі&quot;:Р
                     </h3>
                 </div>
@@ -113,9 +111,7 @@ export default function WatchingCartoonsInEnglishRio({articleData}) {
 
             <div className={styles.articleEvenSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-                    <h3 className={`${styles.articlePhrase}`}
-                        style={{color: `#${articleData.article_color}`}}
-                    >
+                    <h3 className={`${styles.articlePhrase}`}>
                         Чудовий, яскравий, сонячний мультфільм з не менш крутими та сучасними діалогами, щоб
                         поповнити словник розмовної англійської.
                     </h3>
@@ -232,9 +228,7 @@ export default function WatchingCartoonsInEnglishRio({articleData}) {
 
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-                    <h3 className={`${styles.articlePhrase}`}
-                        style={{color: `#${articleData.article_color}`}}
-                    >
+                    <h3 className={`${styles.articlePhrase}`}>
                         Не кожен вміє так домовлятися;)!!!
                     </h3>
                 </div>

@@ -20,8 +20,7 @@
 }
 
 .articleOddSection, .articleEvenSection {
-  padding-top: 1rem;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
 }
 
 .articleOddSection {
@@ -33,37 +32,39 @@
 }
 
 .subTitle {
-  font-family: "Futura-PT", sans-serif;
-  font-size: 2.25rem;
+  font-family: "Raleway-SemiBold", sans-serif;
+  font-size: 1.5rem;
   line-height: 1.25;
-  text-align: center;
+  text-align: left;
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   margin: 0;
-  color: $text;
+  color: $text !important;
+  span {
+    color: $text !important;
+  }
 }
 
 .articleSubSubTitle {
-  font-family: "Futura-PT", sans-serif;
-  font-size: 1.75rem;
+  font-family: "Raleway-SemiBold", sans-serif;
+  font-size: 1.5rem;
   line-height: 1.5;
-  text-align: center;
+  text-align: left;
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: .5rem;
   margin: 0;
   color: $text;
 }
 
 .articleText {
-  font-family: "Futura-PT", sans-serif;
-  font-size: 1.25rem;
+  font-family: "Raleway-Regular", sans-serif;
+  font-size: 1rem;
   line-height: 1.5;
   color: $text;
   margin: 0;
-  padding-bottom: 1.25rem;
 
   b {
-    font-family: "Futura-Demi", sans-serif;
+    font-family: "Raleway-SemiBold", sans-serif;
   }
 }
 
@@ -85,13 +86,15 @@
 }
 
 .articlePhrase {
-  font-family: "Futura-PT", sans-serif;
-  font-size: 2.25rem;
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 1.125rem;
   line-height: 1.5;
-  text-align: center;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
   margin: 0;
+  text-align: left;
+  padding: 2rem;
+  border-left: 4px solid transparent;
+  color: $text !important;
+  background: linear-gradient(#f4f5f9, #f4f5f9) padding-box, linear-gradient(180deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box;
 }
 
 .delimiter {
@@ -200,7 +203,7 @@
 }
 
 .articleText + .articleList {
-  margin-top: -1.5rem;
+  //margin-top: -1.5rem;
 }
 
 .articleEvenSection + .articleEvenSection,
