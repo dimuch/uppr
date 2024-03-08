@@ -12,7 +12,7 @@
   },
   "engines" : {
     "npm" : ">=10.2.3",
-    "node" : ">=18.19.0"
+    "node" : ">=20.2.0"
   },
   "dependencies": {
     "@emotion/styled": "^11.10.5",
