@@ -19,8 +19,14 @@ export default function Author( {data} ) {
           />
         </div>
         <div className={styles.authorDescription}>
+          <p className={styles.authorName}>
+            Іванка Табачук
+          </p>
           <p>
-            Текст: Іванка Табачук
+            Допомагаю налагодити комунікацію в команді та з замовником, влаштуватися на класну роботу та бути більш ефективним у бізнес-середовищі!
+          </p>
+          <p>
+            Вірю, що спілкування - це наше все, а <i>better communication = bigger profit</i>.
           </p>
         </div>
       </div>
