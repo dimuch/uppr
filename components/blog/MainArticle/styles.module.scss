@@ -10,6 +10,7 @@
   background-color: $white;
 
   h3 {
+    font-family: 'Raleway-SemiBold', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: bold;
@@ -18,6 +19,7 @@
   p {
     margin-bottom: 1.5rem;
     color: $article-description;
+    font-family: 'Raleway-Regular', sans-serif;
   }
   .summary {
     padding-top: 1.25rem;
@@ -27,11 +29,13 @@
 
   .summaryItem {
     color: $article-description;
+    font-family: 'Raleway-Regular', sans-serif;
   }
 
   .readMore {
     text-align: right;
     color: $blog-four-sticky;
+    font-family: 'Raleway-Regular', sans-serif;
   }
 }
 

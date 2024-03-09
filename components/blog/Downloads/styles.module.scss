@@ -18,7 +18,7 @@
 
   h5 {
     font-size: 1rem;
-    font-weight: bold;
+    font-family: Raleway-Bold, sans-serif;
   }
 }
 
@@ -28,6 +28,11 @@
   svg {
     width: 1.5rem;
     height: 1.5rem;
+  }
+
+  a {
+    font-family: Raleway-Regular, sans-serif;
+    font-size: .8rem;
   }
 }
 

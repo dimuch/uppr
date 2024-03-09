@@ -18,7 +18,7 @@
 
   h5{
     font-size: 1rem;
-    font-weight: bold;
+    font-family: Raleway-Bold, sans-serif;
   }
 }
 
@@ -44,6 +44,9 @@
 .articleTitle{
   padding-left: .5rem;
   overflow: hidden;
+  p{
+    font-family: 'Raleway-SemiBold', sans-serif;
+  }
 }
 
 
