@@ -16,8 +16,9 @@
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 .authorImg {
@@ -25,19 +26,21 @@
   min-width: 112px;
   height: 110px;
   border-radius: 50%;
-  box-shadow: 21px 21px 40px -20px rgba(7,13,34,.69);
+  box-shadow: 21px 21px 40px -20px rgba(7,13,34,.4);
   overflow: hidden;
 }
 
 .authorDescription {
   padding-left: 3rem;
-  width: 77%;
+  width: 75%;
   text-align: left;
   p{
     font-family: Raleway-Regular, sans-serif;
     line-height: 1.25;
+    font-size: .82rem;
   }
   .authorName{
+    margin: 0;
     font-size: 1.5rem;
     font-family: Raleway-SemiBold, sans-serif;
   }
