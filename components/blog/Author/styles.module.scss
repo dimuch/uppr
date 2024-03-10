@@ -31,13 +31,14 @@
 }
 
 .authorDescription {
-  padding-left: 3rem;
-  width: 75%;
+  width: 67%;
+  margin-left: 3rem;
   text-align: left;
   p{
     font-family: Raleway-Regular, sans-serif;
     line-height: 1.25;
     font-size: .82rem;
+    margin-bottom: 0;
   }
   .authorName{
     margin: 0;
@@ -101,5 +102,16 @@
     width: 50%;
     border-bottom-color: #070d22;
     color: #070d22;
+  }
+}
+
+@media (max-width: 600px) {
+  .author {
+    justify-content: center;
+  }
+  .authorDescription {
+    margin-top: 2rem;
+    margin-left: 0;
+    width: 100%;
   }
 }
