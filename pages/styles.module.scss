@@ -10,7 +10,6 @@
   margin-right: auto;
   width: 85%;
   max-width: 1200px;
-  //min-height: calc(100vh - 80px);
 }
 
 .column {
@@ -22,6 +21,8 @@
   justify-content: space-between;
   min-height: 40rem;
   padding-top: 3rem;
+  background-image: url("../public/assets/world-map.svg");
+  background-position-x: 70%;
 
   .leftColumn {
     min-width: 360px;
@@ -102,10 +103,10 @@
 
     .mainSectionImage {
       position: absolute;
-      left: 0rem;
+      left: 7rem;
       top: 0;
       width: auto;
-      height: 700px;
+      height: 550px;
       z-index: 3;
     }
 
