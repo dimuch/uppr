@@ -119,7 +119,7 @@ const Index = ({top3Article}) => {
                     <TypeAnimation
                       sequence={[
                         300,
-                        'emails',
+                        'work emails',
                         () => setCursorIsLast(false),
                       ]}
                       speed={20}
@@ -166,13 +166,13 @@ const Index = ({top3Article}) => {
               height={imgDimensions?.height}
               alt={'Email example'}
             />
-            <img
-              className={`${styles.backgroundImage4}`}
-              src={loader({src: '/assets/images/others/slack4.png', width: imgDimensions.width})}
-              width={imgDimensions?.width}
-              height={imgDimensions?.height}
-              alt={'Email example'}
-            />
+            {/*<img*/}
+            {/*  className={`${styles.backgroundImage4}`}*/}
+            {/*  src={loader({src: '/assets/images/others/slack4.png', width: imgDimensions.width})}*/}
+            {/*  width={imgDimensions?.width}*/}
+            {/*  height={imgDimensions?.height}*/}
+            {/*  alt={'Email example'}*/}
+            {/*/>*/}
           </div>
 
         </div>
