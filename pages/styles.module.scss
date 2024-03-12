@@ -1,4 +1,11 @@
 @import "../styles/scss/common/colors";
+.upprHomePage {
+  background-image: url("../public/assets/world-map.svg");
+  background-repeat: no-repeat;
+  background-position-x: 100px;
+  background-position-y: 70px;
+  background-size: 100%;
+}
 
 .screen {
   display: flex;
@@ -21,8 +28,6 @@
   justify-content: space-between;
   min-height: 40rem;
   padding-top: 3rem;
-  background-image: url("../public/assets/world-map.svg");
-  background-position-x: 70%;
 
   .leftColumn {
     min-width: 360px;
@@ -33,7 +38,7 @@
     h1 {
       display: inline;
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 2.75rem;
       line-height: 1.1;
       font-family: 'Raleway-Bold', sans-serif;
 
