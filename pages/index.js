@@ -2,14 +2,19 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Header from '../components/common/header/Header';
 import GoogleStat from '../components/common/googleCtat/GoogleStat';
-import compStyles from "./styles.module.scss";
+import compStyles from './styles.module.scss';
 import Footer from '../components/common/footers/footer/Footer';
 import { getArticles } from '../services/blogData';
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 import loader from '../components/common/loader/loader';
 import Button from '@mui/material/Button';
 import { TypeAnimation } from 'react-type-animation';
 import FooterBullShit from '../components/common/footers/footer-bull-shit/Footer';
+import OthersArticles from '../components/blog/OthersArticles/OthersArticles';
+import { useHasMounted } from '../components/common/hooks/hasMounted';
+import SeeMorePostsLink from '../components/blog/SeeMorePosts/SeeMorePostsLink';
+import { Typography } from '@mui/material';
+import Stack from '@mui/material/Stack';
 
 const bagdeItems = [
   {
@@ -57,15 +62,17 @@ const howItWorks = [
   },
 ];
 
-const Index = ({top3Article}) => {
+const Index = ( {top3Article, latestArticle, otherLatestArticles} ) => {
   const [isCursor, setIsCursor] = useState(true);
   const [isLast, setIsLast] = useState(false);
   const [isCursorLast, setCursorIsLast] = useState(true);
+  const last3Articles = [latestArticle[0], otherLatestArticles[0], otherLatestArticles[1]];
 
   const [imgDimensions, setImgDimensions] = useState({width: 700, height: 400});
 
   useEffect(() => {
-    const width = window.innerWidth > 850 ? Math.round(window.innerWidth / 3) : window.innerWidth;
+    const windowInner = window?.innerWidth;
+    const width = windowInner > 850 ? Math.round(windowInner / 3) : windowInner;
     const height = Math.round(width * 4 / 7);
 
     setImgDimensions(() => ( {width, height} ));
@@ -166,16 +173,10 @@ const Index = ({top3Article}) => {
               height={imgDimensions?.height}
               alt={'Email example'}
             />
-            {/*<img*/}
-            {/*  className={`${styles.backgroundImage4}`}*/}
-            {/*  src={loader({src: '/assets/images/others/slack4.png', width: imgDimensions.width})}*/}
-            {/*  width={imgDimensions?.width}*/}
-            {/*  height={imgDimensions?.height}*/}
-            {/*  alt={'Email example'}*/}
-            {/*/>*/}
           </div>
 
         </div>
+
         <div className={`${styles.screen} ${styles.screenSecond}`}>
           <div
             className={styles.phraseWrapper}
@@ -194,6 +195,31 @@ const Index = ({top3Article}) => {
             </h4>
           </div>
         </div>
+
+        <div className={`${styles.screen} ${styles.screenThird}`}>
+          <Stack
+            direction={'row'}
+            sx={{
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              width: '100%',
+              marginBottom: '80px',
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: '34px',
+                fontFamily: 'Raleway-SemiBold, sans-serif',
+              }}
+            >
+              From My Blog
+            </Typography>
+            <SeeMorePostsLink/>
+          </Stack>
+          <div className={`${styles.othersArticles}`}>
+            <OthersArticles items={last3Articles}/>
+          </div>
+        </div>
       </div>
       <Footer
         top3Article={top3Article}
@@ -205,13 +231,13 @@ const Index = ({top3Article}) => {
 
 export default Index;
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps( context ) {
   const articles = await getArticles();
 
   context.res.setHeader(
     'Cache-Control',
     'public',
-  )
+  );
 
   return {
     props: {

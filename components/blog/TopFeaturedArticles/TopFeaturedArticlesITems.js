@@ -13,7 +13,8 @@ export default function TopFeaturedArticlesItems( {items} ) {
     return null;
   }
 
-  const width = window.innerWidth > 850 ? Math.round(window.innerWidth / 3) : window.innerWidth;
+  const windowInner = window?.innerWidth;
+  const width = windowInner > 850 ? Math.round(windowInner / 3) : windowInner;
   const height = Math.round(width * 4 / 7);
 
   return (

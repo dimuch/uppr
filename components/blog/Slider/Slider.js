@@ -4,8 +4,9 @@ import loader from '../../common/loader/loader';
 import { ArrowLeft, ArrowRight } from '../../common/icons';
 
 function Slide({slideData, slideNode, location}) {
+    const windowInner = window?.innerWidth;
     const imageScaler = location === 'footer' ? 7 : 4.35;
-    const width = window.innerWidth > 850 ? Math.round(window.innerWidth / imageScaler) : window.innerWidth / 2;
+    const width = windowInner > 850 ? Math.round(windowInner / imageScaler) : windowInner / 2;
     const height = Math.round(width * 4 / 7);
 
     return (

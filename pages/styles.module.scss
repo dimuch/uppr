@@ -5,6 +5,7 @@
   background-position-x: 100px;
   background-position-y: 70px;
   background-size: 100%;
+  padding-bottom: 6rem;
 }
 
 .screen {
@@ -169,7 +170,6 @@
   font-size: 4rem;
   line-height: 1.1;
   font-family: 'Raleway-Bold', sans-serif;
-  margin-bottom: 5rem;
 
   .phraseWrapper {
     width: 100%;
@@ -202,36 +202,19 @@
   }
 }
 
-.screenThird {
-  height: auto;
-  width: 100%;
-  text-align: center;
-  background-color: #c9dfff;
-  margin-bottom: 8rem;
-
-  .firstColumn {
-    width: 20%;
-  }
-
-  .secondColumn {
-    width: 50%;
-    text-align: center;
-
-    img {
-      width: 70%;
-      height: auto;
-    }
-  }
-
-  .thirdColumn {
-    width: 30%;
-  }
+.othersArticles {
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: min-content;
+    gap: 2rem;
 }
 
 @media (max-width: 650px) {
   .screen {
     width: 100%;
     overflow: hidden;
+    padding: 1rem;
   }
   .column {
     min-width: 100%;
@@ -249,5 +232,15 @@
       left: -3rem;
       min-height: 40rem;
     }
+  }
+
+  .othersArticles{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .othersArticles{
+    grid-template-columns: 1fr;
   }
 }

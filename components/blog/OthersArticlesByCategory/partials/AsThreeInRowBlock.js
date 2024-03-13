@@ -4,6 +4,7 @@ import {Typography} from '@mui/material';
 import OthersArticles from '../../OthersArticles/OthersArticles';
 import styles from './asThreeInRowStyles.module.scss'
 import {LoaderIcon} from '../../../common/icons';
+import SeeMorePostsButton from '../../SeeMorePosts/SeeMorePostsButton';
 
 export default function AsThreeInRowBlock({data}) {
     const {name, articles} = data;
@@ -53,20 +54,11 @@ export default function AsThreeInRowBlock({data}) {
 
             {
                 isShowMoreVisible && (
-                    <div className={styles.showMoreBtn}
-                         onClick={handleClick}>
-                        {
-                            isLoading && (
-                                <div className={styles.loader}>
-                                    <LoaderIcon/>
-                                </div>
-                            )
-                        }
-                        {
-                            !isLoading && <Typography>{!isShowMorePressed ? 'See all posts' : 'Show less'}</Typography>
-                        }
-                    </div>
-
+                  <SeeMorePostsButton
+                    isLoading={isLoading}
+                    handleClick={handleClick}
+                    isShowMorePressed={isShowMorePressed}
+                  />
                 )
             }
 
