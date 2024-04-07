@@ -72,7 +72,7 @@ const Index = ( {top3Article, latestArticle, otherLatestArticles} ) => {
 
   useEffect(() => {
     const windowInner = window?.innerWidth;
-    const width = windowInner > 850 ? Math.round(windowInner / 3) : windowInner;
+    const width = windowInner > 850 ? Math.round(windowInner) : windowInner;
     const height = Math.round(width * 4 / 7);
 
     setImgDimensions(() => ( {width, height} ));
@@ -156,32 +156,32 @@ const Index = ( {top3Article, latestArticle, otherLatestArticles} ) => {
           <div className={`${styles.column} ${styles.rightColumn}`}>
             <img
               className={styles.mainSectionImage}
-              src={loader({src: '/assets/images/others/lady.png', width: imgDimensions.width})}
+              src={loader({src: '/assets/images/others/main_index.png', width: imgDimensions.width})}
               width={imgDimensions?.width}
               height={imgDimensions?.height}
               alt={'Main UPPR page'}
             />
-            <img
-              className={`${styles.backgroundImage1}`}
-              src={loader({src: '/assets/images/others/email.png', width: imgDimensions.width})}
-              width={imgDimensions?.width}
-              height={imgDimensions?.height}
-              alt={'Email example'}
-            />
-            <img
-              className={`${styles.backgroundImage2}`}
-              src={loader({src: '/assets/images/others/email-2.png', width: imgDimensions.width})}
-              width={imgDimensions?.width}
-              height={imgDimensions?.height}
-              alt={'Email example'}
-            />
-            <img
-              className={`${styles.backgroundImage3}`}
-              src={loader({src: '/assets/images/others/gmail.png', width: imgDimensions.width})}
-              width={imgDimensions?.width}
-              height={imgDimensions?.height}
-              alt={'Email example'}
-            />
+            {/*<img*/}
+            {/*  className={`${styles.backgroundImage1}`}*/}
+            {/*  src={loader({src: '/assets/images/others/email.png', width: imgDimensions.width})}*/}
+            {/*  width={imgDimensions?.width}*/}
+            {/*  height={imgDimensions?.height}*/}
+            {/*  alt={'Email example'}*/}
+            {/*/>*/}
+            {/*<img*/}
+            {/*  className={`${styles.backgroundImage2}`}*/}
+            {/*  src={loader({src: '/assets/images/others/email-2.png', width: imgDimensions.width})}*/}
+            {/*  width={imgDimensions?.width}*/}
+            {/*  height={imgDimensions?.height}*/}
+            {/*  alt={'Email example'}*/}
+            {/*/>*/}
+            {/*<img*/}
+            {/*  className={`${styles.backgroundImage3}`}*/}
+            {/*  src={loader({src: '/assets/images/others/gmail.png', width: imgDimensions.width})}*/}
+            {/*  width={imgDimensions?.width}*/}
+            {/*  height={imgDimensions?.height}*/}
+            {/*  alt={'Email example'}*/}
+            {/*/>*/}
           </div>
 
         </div>
