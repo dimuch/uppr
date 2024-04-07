@@ -248,16 +248,6 @@ export default function SubjectLine({articleData}) {
                         Найефективніший інструмент KISS-імейлів?
                     </h2>
 
-                    <Image
-                        src="/assets/images/blog-articles/subject_line_8.jpg"
-                        width="1400"
-                        height="425"
-                        alt="Найефективніший інструмент KISS-імейлів?"
-                        style={{
-                            maxWidth: "100%",
-                            height: "auto"
-                        }} />
-
                     <p className={styles.articleText}>
                         І наостанок про тему листа: чому вона належить до найефективніших інструментів KISS-імейлів?
                         Тому, що правильно написана тема може допомогти:
@@ -329,16 +319,6 @@ export default function SubjectLine({articleData}) {
                             <i>[Your Name]</i>
                         </p>
                     </div>
-
-                    <Image
-                        src="/assets/images/blog-articles/subject_line_5.jpg"
-                        width="1400"
-                        height="425"
-                        alt="Найефективніший інструмент KISS-імейлів?"
-                        style={{
-                            maxWidth: "100%",
-                            height: "auto"
-                        }} />
 
                     <p className={styles.delimiter}></p>
 

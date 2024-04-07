@@ -157,16 +157,6 @@ export default function FollowUpLetterFriendlyReminder({articleData}) {
                         менш часо-затратним.
                     </p>
 
-                    <Image
-                        src="/assets/images/blog-articles/follow_up_letter_friendly_reminder_3.jpg"
-                        width="1400"
-                        height="425"
-                        alt="Невже з цим не можна нічого зробити?"
-                        style={{
-                            maxWidth: "100%",
-                            height: "auto"
-                        }} />
-
                 </div>
             </div>
 
