@@ -49,18 +49,6 @@ export default function SubjectLine({articleData}) {
                         Subject Line у стилі KISS
                     </h2>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/subject_line_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Subject Line у стилі KISS"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         Отже, які основні критерії <i>Subject Line</i> у стилі <i>KISS (Keep It Short&Simple)</i>?
                     </p>
@@ -92,18 +80,6 @@ export default function SubjectLine({articleData}) {
                         <b>4. <i>Keyword it.</i></b> Вона має містити ключові слова (по зменшенню важливості) для того,
                         щоб у разі потреби можна було швидко знайти та відфільтрувати ваш лист.
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/subject_line_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Subject Line у стилі KISS"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={styles.articleText}>
                         <b>PRO TIP:</b> мій улюблений інструмент для ефективної теми імейлу - [...].
@@ -165,18 +141,6 @@ export default function SubjectLine({articleData}) {
                     <h2 className={styles.subTitle}>
                         Тема може бути цілим листом!
                     </h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/subject_line_7.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Тема може бути цілим листом!"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={styles.articleText}>
                         Ще один класна “фішка” по <i>subject line</i>, яка явно недовикористана (і дарма) - це те, що

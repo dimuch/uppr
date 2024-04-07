@@ -20,18 +20,6 @@ export default function TenOddWordsInEmails({articleData}) {
                         Той випадок, коли less is more
                     </h2>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/ten_odd_words_in_emails_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Той випадок, коли less is more"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         300 мільйонів людей по всьому світу намагаються донести свою думку за допомогою максимум 140
                         символів. Емоджі в месенджерах плодяться з шаленою швидкістю, а самою популярною соцмережею
@@ -54,18 +42,6 @@ export default function TenOddWordsInEmails({articleData}) {
                     <h2 className={styles.subTitle}>
                         The most useless word in the English language:
                     </h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/ten_odd_words_in_emails_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="The most useless word in the English language"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <h3 className={styles.articleSubSubTitle}>
                         1. Very
@@ -210,18 +186,6 @@ export default function TenOddWordsInEmails({articleData}) {
             <div className={styles.articleEvenSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/ten_odd_words_in_emails_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Just"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <h3 className={styles.articleSubSubTitle}>
                         3. Just
                     </h3>
@@ -344,18 +308,6 @@ export default function TenOddWordsInEmails({articleData}) {
 
             <div className={styles.articleEvenSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/ten_odd_words_in_emails_6.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Really"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <h3 className={styles.articleSubSubTitle}>
                         4. Really

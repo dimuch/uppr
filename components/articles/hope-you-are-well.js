@@ -35,18 +35,6 @@ export default function HopeYouAreWell({articleData}) {
                         читається на початку чи не кожного імейлу.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/hope_you_are_well_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="hope you are well"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                 </div>
             </div>
 
@@ -98,18 +86,6 @@ export default function HopeYouAreWell({articleData}) {
                     <h2 className={styles.subTitle}>
                         Фраза-невидимка.
                     </h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/hope_you_are_well_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="hope you are well"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={styles.articleText}>
                         Взагалі досить зрозуміло, чому цю фразу та їй подібні так часто використовують - зі страху
@@ -171,18 +147,6 @@ export default function HopeYouAreWell({articleData}) {
                         познайомитися ближче.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/hope_you_are_well_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Щось щире та персональне"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         Щирість залежить від вашого ставлення та інтересу до людини. А персональне? Соцмережі вам у
                         поміч.
@@ -234,19 +198,6 @@ export default function HopeYouAreWell({articleData}) {
                         відправник
                         цінує мій час і докладає зусиль, щоб лист вийшов максимально коротким.
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/hope_you_are_well_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="I know you’re overloaded/overwhelmed/swamped"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
 
                     <p className={styles.articleText}>
                         Єдине правило: якщо ви уже написали цей <b><i>opener</i></b>, то будьте таки <b><i>brief</i></b>,

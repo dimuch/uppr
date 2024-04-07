@@ -68,18 +68,6 @@ export default function Asap({articleData}) {
                         Альтернативи
                     </h2>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/asap_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="asap альтернативи"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <h3 className={styles.articleSubSubTitle}>
                     </h3>
 
@@ -135,18 +123,6 @@ export default function Asap({articleData}) {
                         Мега ввічлива та емпатійна опція попереднього варіанту!
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/asap_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="знаючи дедлайн, можна планувати!"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         <b>#3. “It would be great/I would be grateful if you could address this by [date and time]”.</b>
                         <br/>
@@ -185,18 +161,6 @@ export default function Asap({articleData}) {
                             [task]?&quot;.</b>
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/asap_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="asap альтернативи"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         Отримаєте у відповідь:
                         <br/>
@@ -214,18 +178,6 @@ export default function Asap({articleData}) {
                         time-sensitive&quot;.</b> 4
                         прості слова, які і передають <b>need for speed,</b> не мають усіх недоліків <b>ASAP.</b>
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/asap_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="asap альтернативи"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={styles.articleText}>
                         <b>#7. &quot;I’d be grateful if you got to this [before X and Y]&quot;.</b>

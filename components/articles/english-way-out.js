@@ -22,18 +22,6 @@ export default function EnglishWayOut({articleData}) {
                         володіє англійською на достойному рівні, правда ж?
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/englishway_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Невже з цим не можна нічого зробити?"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         Припустимо, ми все ж таки неухильно вирішили займатися мовою. Але терпіння та мотивація
                         чомусь поступово
@@ -64,18 +52,6 @@ export default function EnglishWayOut({articleData}) {
                     <h2 className={styles.subTitle}>
                         №1: Розібратися зі своїм часом
                     </h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/englishway_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Потрібно, а не хочу!"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={styles.articleText}>
                         Поставте собі запитання: чи &quot;потрібно&quot; вам вивчити англійську? Те, що
@@ -155,18 +131,6 @@ export default function EnglishWayOut({articleData}) {
                         №3: Завести &quot;англійську&quot; в сумці
                     </h2>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/englishway_5.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Півгодини щодня - найкращий рецепт"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         <b>&quot;Little strokes fell great oaks&quot;</b> - чули такий вислів?
                     </p>
@@ -201,18 +165,6 @@ export default function EnglishWayOut({articleData}) {
                     <h2 className={styles.subTitle}>
                         №4: Усвідомити, що помилки - це нормально
                     </h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/englishway_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Усвідомити, що помилки - це нормально"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={styles.articleText}>
                         Часто можна почути: У мене мовний бар&apos;єр. &quot;Я роблю багато помилок і тому соромлюся

@@ -44,18 +44,6 @@ export default function FourStickyWorkSituations({articleData}) {
                         роботі.
                     </h2>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/four_sticky_situations_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Колега продовжує повторювати одну і ту саму помилку"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <h3 className={styles.articleSubSubTitle}>
                         #1 Колега продовжує повторювати одну і ту саму помилку
                     </h3>
@@ -97,18 +85,6 @@ export default function FourStickyWorkSituations({articleData}) {
                     <h3 className={styles.articleSubSubTitle}>
                         #2 Колега не дотримується дедлайну (уже вкотре) лист?
                     </h3>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/four_sticky_situations_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Колега не дотримується дедлайну (уже вкотре) лист?"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={styles.articleText}>
                         Що ви напишете їй/йому? Чи промовчите? Чи поскаржитеся босу/HRу?
@@ -165,18 +141,6 @@ export default function FourStickyWorkSituations({articleData}) {
                         Як не працювати по вечорах та на вихідних?
                     </h2>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/four_sticky_situations_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Як не перепрацювати"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <h3 className={styles.articleSubSubTitle}>
                         #3 Як не перепрацювати
                     </h3>
@@ -212,18 +176,6 @@ export default function FourStickyWorkSituations({articleData}) {
                             <br/>
                             Let me know as soon as you can, please.
                         </p>
-                    </div>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/four_sticky_situations_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Довгий незрозумілий імейл"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>

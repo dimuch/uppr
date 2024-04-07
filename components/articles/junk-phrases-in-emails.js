@@ -46,18 +46,6 @@ export default function JunkPhrasesInEmails({articleData}) {
                         Отже, самі &quot;капосні&quot; фрази у вашому листі:
                     </h2>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/junk_phrases_in_emails_5.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Отже, самі &quot;капосні&quot; фрази у вашому листі"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <h3 className={styles.articleSubSubTitle}>
                         I&apos;M WRITING TO
                     </h3>
@@ -110,18 +98,6 @@ export default function JunkPhrasesInEmails({articleData}) {
 
             <div className={styles.articleEvenSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/junk_phrases_in_emails_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="I&apos;M AFRAID"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <h3 className={styles.articleSubSubTitle}>
                         I&apos;M AFRAID
@@ -217,18 +193,6 @@ export default function JunkPhrasesInEmails({articleData}) {
                         Фокус на читача
                     </h2>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/junk_phrases_in_emails_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="I&apos;M AFRAID"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <h3 className={styles.articleSubSubTitle}>
                         I DO NOT KNOW
                     </h3>
@@ -296,19 +260,6 @@ export default function JunkPhrasesInEmails({articleData}) {
                             </p>
                         </li>
                     </ul>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/junk_phrases_in_emails_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="I&apos;M AFRAID"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                 </div>
             </div>
 

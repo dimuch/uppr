@@ -71,18 +71,6 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
                         Коли надсилаєте резюме переконайтеся, що там не написано:
                     </h2>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/ten_no_phrases_for_your_own_CV_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Усі так пишуть"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         <b>1.Excellent communication skills</b> - це не навик, про який потрібно говорити, це - само
                         собою
@@ -114,18 +102,6 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
                         це не те, про що навіть варто згадувати.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/ten_no_phrases_for_your_own_CV_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Detail-oriented"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         <b>5.Team player</b>. Якщо це не компанія однієї людини (а це досить рідке явище), то вам у
                         будь-якому
@@ -143,18 +119,6 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
                         конкретний приклад, коли ви продемонстрували ці навики і що було досягнуто.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/ten_no_phrases_for_your_own_CV_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Leadership abilities"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         <b>7.Creative.</b> Такі слова як creative,innovative, та exceptional – це лише ваша власна думка
                         про вас
@@ -169,18 +133,6 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
                         професій, наприклад, вчителя – це те, що саме собою зрозуміло, а для скажімо ІТ компанії -
                         взагалі байдуже у більшості випадків, тому не марнуйте місце у вашому резюме.
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/ten_no_phrases_for_your_own_CV_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Leadership abilities"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={styles.articleText}>
                         <b>9.Responsible for…</b> Читаючи це, одразу на думку спадає образ якогось посереднього

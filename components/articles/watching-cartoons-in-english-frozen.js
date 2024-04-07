@@ -51,18 +51,6 @@ export default function WatchingCartoonsInEnglishFrozen({articleData}) {
                         виступили Крістоф, людина з гір, однорогий олень та балакучий сніговик Олаф.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/watching_cartoons_in_english_frozen_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Frozen Heroes"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         От саме про мультики ми сьогодні поговоримо. Адже є багато плюсів, щоб провести вечір за чашкою
                         какао та
@@ -117,18 +105,6 @@ export default function WatchingCartoonsInEnglishFrozen({articleData}) {
                             Посилання на завдання
                         </a>
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/watching_cartoons_in_english_frozen_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Frozen Heroes"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={styles.articleText}>
                         А &quot;добрі люди&quot; на YouTube уже зробили підбірку найкращих моментів з Олафом, тому, якщо немає

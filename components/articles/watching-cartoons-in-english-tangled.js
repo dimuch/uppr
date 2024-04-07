@@ -28,17 +28,6 @@ export default function WatchingCartoonsInEnglishTangled({articleData}) {
                         наділене чарівною силою.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/watching_cartoons_in_english_tangled_5.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Tangled"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
                 </div>
             </div>
 
@@ -116,18 +105,6 @@ export default function WatchingCartoonsInEnglishTangled({articleData}) {
 
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/watching_cartoons_in_english_tangled_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Tangled"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <h3 className={styles.articleSubSubTitle}>
                         I&apos;m just teasing!
                     </h3>
@@ -167,18 +144,6 @@ export default function WatchingCartoonsInEnglishTangled({articleData}) {
                     <p className={styles.articleText}>
                         так і від Фліна:
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/watching_cartoons_in_english_tangled_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Tangled"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={styles.articleText}>
                         <b>Rapunzel:</b> I have made the decision to trust you.
@@ -248,19 +213,6 @@ export default function WatchingCartoonsInEnglishTangled({articleData}) {
                         <br/>
                         <b>Flynn Rider:</b> <i>[weakly]</i> You broke my smolder.
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/watching_cartoons_in_english_tangled_6.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Rio"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                 </div>
             </div>
 
@@ -353,19 +305,6 @@ export default function WatchingCartoonsInEnglishTangled({articleData}) {
                         послухати та виправити слова товстим шрифтом
                     </a> (Увага! Не всі слова неправильні).
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/watching_cartoons_in_english_tangled_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Rio"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         А ця <a href="/assets/downloads/rapunzel_I've_got_a_dream.pdf" target="_blank">
                         пісня хоч і складна для сприйняття з першого разу, але досить мотивуюча</a>, тому можу

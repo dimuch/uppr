@@ -38,18 +38,6 @@ export default function TenOddWordsInEmails2({articleData}) {
                         1. Sorry
                     </h3>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/ten_odd_words_in_emails_2_7.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Sorry"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         Як на мене, слово <i><b>&quot;sorry&quot;</b></i> настільки уже &quot;заюзане&quot; в сучасній комунікації, що
                         втратило свою
@@ -94,18 +82,6 @@ export default function TenOddWordsInEmails2({articleData}) {
                     <h2 className={styles.subTitle}>
                         No action is required? - What?
                     </h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/ten_odd_words_in_emails_2_5.jpg"
-                            width="1400"
-                            height="425"
-                            alt="No action is required? - What?"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <h3 className={styles.articleSubSubTitle}>
                         2. FYI
@@ -190,19 +166,6 @@ export default function TenOddWordsInEmails2({articleData}) {
                         Чи справді таке уже kind ваше kindly?
                     </h2>
 
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/ten_odd_words_in_emails_2_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Kindly"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <h3 className={styles.articleSubSubTitle}>
                         3. Kindly
                     </h3>
@@ -277,17 +240,6 @@ export default function TenOddWordsInEmails2({articleData}) {
                     <h2 className={styles.subTitle}>
                         It&apos;s really, really so!
                     </h2>
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/ten_odd_words_in_emails_2_6.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Really"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <h3 className={styles.articleSubSubTitle}>
                         4. Maybe

@@ -40,18 +40,6 @@ export default function ThanksInAdvance({articleData}) {
                         дбаєте про <i> ROR (ReturnOnRelationship)</i> - краще використовуйте альтернативи.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/thanks_in_advance_7.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Thanks in advance"
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
-
                     <p className={styles.articleText}>
                         Звісно, все залежить від контексту, але <i>&quot;Thank you in advance&quot;</i> досить часто читається
                         як <i>&quot;I expect you to do this&quot;</i>, і від цього нікуди не дінешся. Тому, щоб не звучати
@@ -83,18 +71,6 @@ export default function ThanksInAdvance({articleData}) {
                             </p>
                         </li>
                     </ul>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/thanks_in_advance_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Thanks in advance"
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
 
                     <ul className={`${styles.articleList}`}>
                         <li>
@@ -156,18 +132,6 @@ export default function ThanksInAdvance({articleData}) {
                     <h2 className={styles.subTitle}>
                         Але чи справді фраза &quot;thanks in advance&quot; є універсальним злом?
                     </h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/thanks_in_advance_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Але чи справді фраза 'thanks in advance' є універсальним злом?"
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         Так-от, є два випадки, коли я вважаю <i>&quot;thanks in advance&quot;</i> припустимим, і сама його
@@ -253,18 +217,6 @@ export default function ThanksInAdvance({articleData}) {
                         на приклад, як паршивенько може виглядати ось це <i>&quot;thanks in advance&quot;</i> у здавалося б
                         звичайному імейлі і тільки підлити масла у вогонь.
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/thanks_in_advance_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Але чи справді фраза 'thanks in advance' є універсальним злом?"
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
 
                     <p className={styles.articleText}>
                         Отже, <i>case study based on real events.</i>

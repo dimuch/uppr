@@ -26,18 +26,6 @@ export default function GetYourEmailsRead({articleData}) {
                         увагу читачів.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/get_your_emails_read_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Бути прочитаним — основна дилема багатьох авторів"
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
-
                     <p className={styles.articleText}>
                         А маркетологам та сейлзам дістається поповній. Як вони не вивертаються та що тільки не
                         вигадують, а <i>reply rates та open rates</i> тільки падають з року в рік. Виникає враження, що
@@ -109,18 +97,6 @@ export default function GetYourEmailsRead({articleData}) {
                         можливість &quot;запихнути&quot; туди різні каверзні моменти та зекономити час
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/get_your_emails_read_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Підсумуйте імейл в темі"
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
-
                     <h3 className={styles.articleSubSubTitle}>
                         4.Перефокусуйтеся
                     </h3>
@@ -140,19 +116,7 @@ export default function GetYourEmailsRead({articleData}) {
                         не цікаво читати, що <i>you need</i>, особливо вашим клієнтам. Людей цікавлять їхні проблеми,
                         їхня
                         ситуація, їхні завдання та цілі.
-                    </p>`
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/get_your_emails_read_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Перефокусуйтеся"
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
+                    </p>
 
                     <h3 className={styles.articleSubSubTitle}>
                         5.Один месидж — один імейл

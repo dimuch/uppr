@@ -63,18 +63,6 @@ export default function LearningEnglishWithBlogs({articleData}) {
                         стверджувати - щоденне його читання зовсім скоро і неминуче покращить ваші знання мови.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/learning_english_with_blogs_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Неминуче поліпшіть свою англійську."
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         Блог, який підходить саме вам в усьому: стилі написання, оформленні, тематиці не тільки надихне
                         вас і
@@ -130,18 +118,6 @@ export default function LearningEnglishWithBlogs({articleData}) {
                         Self-development
                     </h3>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/learning_english_with_blogs_5.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Пропоную кілька своїх ідей"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         <a href={'https://www.grammarly.com/blog'} target="_blank" rel="noreferrer">
                             www.grammarly.com/blog
@@ -161,18 +137,6 @@ export default function LearningEnglishWithBlogs({articleData}) {
                         здоровому
                         тілі.
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/learning_english_with_blogs_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Отже, самі &quot;капосні&quot; фрази у вашому листі"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         <a href={'https://blog.todoist.com'} target="_blank" rel="noreferrer">
@@ -200,18 +164,6 @@ export default function LearningEnglishWithBlogs({articleData}) {
                     <p className={`${styles.articleText}`}>
                         На особливу увагу заслуговує також:
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/learning_english_with_blogs_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Отже, самі &quot;капосні&quot; фрази у вашому листі"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         <a href={'https://tutsplus.com/tutorials'} target="_blank" rel="noreferrer">
@@ -257,18 +209,6 @@ export default function LearningEnglishWithBlogs({articleData}) {
                         фактами, подіями з сімейного життя, розповідає про стосунки з друзями і, звичайно, дарує смачні
                         рецепти.
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/learning_english_with_blogs_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Отже, самі &quot;капосні&quot; фрази у вашому листі"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         <a href={'https://blog.italki.com/'} target="_blank" rel="noreferrer">

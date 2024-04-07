@@ -65,18 +65,6 @@ export default function FollowUpLetterFriendlyReminder({articleData}) {
                         </a>.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/follow_up_letter_friendly_reminder_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Невже з цим не можна нічого зробити?"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         <b>Перше речення</b>. Оскільки ми говорили, що це має бути дружнє нагадування, то і тон повинен
                         бути відповідним,

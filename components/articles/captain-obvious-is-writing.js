@@ -104,18 +104,6 @@ export default function CaptainObviousIsWriting({articleData}) {
                         </li>
                     </ul>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/captain_obvious_is_writing_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Спасибі, Кеп!"
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
-
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         Насправді Кеп має ще й дві варіації — Штірліц та Вінні-Пух.
                     </p>
@@ -157,18 +145,6 @@ export default function CaptainObviousIsWriting({articleData}) {
                         клієнту знати? Мабуть, щоб запитати, чи представник зможе по zoom приєднатися?). <i>So my offer
                         is to postpone this date?</i> (нарешті, дочекалися основного).
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/captain_obvious_is_writing_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Улюблена фішка Капітана — заходити здалеку."
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
 
                     <p className={styles.articleText}>
                         А ще Капітан — мастак знімати з себе відповідальність, особливо у разі фейлу. Прикриваючись
@@ -257,18 +233,6 @@ export default function CaptainObviousIsWriting({articleData}) {
                         будь-яким способом та ціною вчинити добро.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/captain_obvious_is_writing_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Капітан=виправдун"
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
-
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         Але такий підхід скоріше викликає в адресата свідоме чи підсвідоме роздратування і відчуття, що
                         його інтелектуальними (та іншими) здібностями нехтують, не поважають.
@@ -348,18 +312,6 @@ export default function CaptainObviousIsWriting({articleData}) {
                     <h2 className={styles.subTitle}>
                         Отже, як позбутися цього багу?
                     </h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/captain_obvious_is_writing_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Капітан=виправдун"
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
 
                     <ul className={`${styles.articleList}`}>
                         <li className={`${styles.numberedList}`}>

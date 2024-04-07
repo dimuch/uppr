@@ -47,18 +47,6 @@ export default function VeryLooongEmails({articleData}) {
                         нагуглили. І повторюють по декілька разів, щоб точно &quot;дійшло&quot; до адресата.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/very_looong_emails_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Your email isn’t getting read because it is too long"
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
-
                     <p className={styles.articleText}>
                         1. <b>Але це <i>time waste</i> чистої води.</b> Подвійний причому. Ви марнуєте час, щоб написати
                         цей <i> bullsh*t</i>, протилежна сторона — щоб це прочитати. А ніхто, і ви в тому числі, не хоче
@@ -94,18 +82,6 @@ export default function VeryLooongEmails({articleData}) {
                         Моя відповідь, ні.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/very_looong_emails_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Зайняті люди пишуть короткі імейли"
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
-
                     <p className={styles.articleText}>
                         2. А ще подумайте, <b>хто зазвичай пише найкоротші імейли?</b> Зайняті люди. Так от, щоб про вас
                         так думали, казали та вважали вас таким, не потрібно постійно повторювати, що у вас немає часу
@@ -137,18 +113,6 @@ export default function VeryLooongEmails({articleData}) {
                         Якщо ваш імейл переходить до стадії дооовгого, то запитайте себе: може, краще поговорити з
                         людиною?
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/very_looong_emails_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Може, краще поговорити?"
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
 
                     <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
                         На мою думку, основні причини дооовгих імейлів:
@@ -183,18 +147,6 @@ export default function VeryLooongEmails({articleData}) {
                             </p>
                         </li>
                     </ul>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/very_looong_emails_5.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Зайняті люди пишуть короткі імейли"
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
 
                     <ul className={`${styles.articleList}`}>
                         <li className={styles.discList}>

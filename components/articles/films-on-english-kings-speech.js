@@ -104,18 +104,6 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                         вашої англійської.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/films_on_english_kings_speech_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Британська вимова, та культура, аристократизм та манірність, продумані діалоги та монологи..."
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         Фільм також наповнений чудовим саркастичним гумором та самоіронією.
                     </p>
@@ -156,18 +144,6 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                         family&apos;s been reduced
                         to those lowest, basest of all creatures. We&apos;ve become actors!
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/films_on_english_kings_speech_5.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Британська вимова, та культура, аристократизм та манірність, продумані діалоги та монологи..."
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={styles.articleText}>
                         Також не можу обійти увагою чудові вправи, які можуть допомогти покращити вимову та фонетику не
@@ -222,18 +198,6 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
                     <h2 className={styles.subTitle}>Bloody well</h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/films_on_english_kings_speech_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Bloody well"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={styles.articleText}>
                         І точно вивчите слово <b>bloody</b>, а також ще декілька лайливих фраз англійською. Без цього
@@ -327,18 +291,6 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                         Але звісно - це далеко не все.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/films_on_english_kings_speech_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Але і без формальних словечок теж не обійшлося."
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                 </div>
             </div>
 
@@ -383,18 +335,6 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                     <p className={styles.articleText}>
                         А якщо вирішили подивитися фільм повністю, робіть це з користю.
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/films_on_english_kings_speech_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Але і без формальних словечок теж не обійшлося."
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
                 </div>
             </div>
 

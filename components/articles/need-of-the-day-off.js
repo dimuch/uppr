@@ -20,18 +20,6 @@ export default function NeedOfTheDayOff({articleData}) {
                         {"{facepalm}"}
                     </h2>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/need_of_the_day_off_6.jpg"
-                            width="1400"
-                            height="425"
-                            alt="facepalm"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         Нещодавно давала нову задачку на каналі та в групах, чи ОК писати такий імейл, якщо потрібен day off?:
                     </p>
@@ -74,18 +62,6 @@ export default function NeedOfTheDayOff({articleData}) {
                     <h2 className={styles.subTitle}>
                         Якщо потрібен day off
                     </h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/need_of_the_day_off_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Якщо потрібен day off"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={styles.articleText}>
                         І перш, ніж перейти до безпосередньо шаблонів, давайте розглянемо декілька must-do правил для таких імейлів:
@@ -158,18 +134,6 @@ export default function NeedOfTheDayOff({articleData}) {
 
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/need_of_the_day_off_5.jpg"
-                            width="1400"
-                            height="425"
-                            alt="А тепер про шаблони"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         Універсальний шаблон важко скласти - дуже все залежить від контексту та ваших відносин з
                         командою і менеджером. Але поділюся з вами найкращим з того, що мені доводилося отримувати чи писати.
@@ -247,19 +211,6 @@ export default function NeedOfTheDayOff({articleData}) {
                             </p>
                         </li>
                     </ul>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/need_of_the_day_off_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="А тепер про шаблони"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
 
                     <p className={`${styles.articleText} ${styles.articleLink}`}>
                         Складання імейлу про day off не повинно стати стресом ні для вас, ні для вашого боса.

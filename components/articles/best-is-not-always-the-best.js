@@ -30,18 +30,6 @@ export default function BestIsNotAlwaysTheBest({articleData}) {
                         деякі з них.Вони допоможуть бути вам більш креативним та оригінальними. Але не перестарайтеся,
                         все має відповідати ситуації та підходити до певного контексту.
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/best_is_not_always_the_best_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Thanks? For what?"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
                 </div>
             </div>
 
@@ -93,18 +81,6 @@ export default function BestIsNotAlwaysTheBest({articleData}) {
             <div className={styles.articleEvenSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
                     <h2 className={styles.subTitle}>А для прихильників більш неформальної комунікації</h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/best_is_not_always_the_best_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="А для прихильників більш неформальної комунікації<"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
                 </div>
             </div>
 
@@ -142,18 +118,6 @@ export default function BestIsNotAlwaysTheBest({articleData}) {
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
                     <h2 className={styles.subTitle}>А коли дійсно є за що бути thank you</h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/best_is_not_always_the_best_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="А коли дійсно є за що бути thank you"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <h3 className={styles.articleSubSubTitle}>
                         І щоб виказати вдячність

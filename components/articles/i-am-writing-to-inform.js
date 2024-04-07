@@ -48,18 +48,6 @@ export default function IAmWritingToInform({articleData}) {
 
                     </div>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/i_am_writing_to_inform_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt=" So, Dear Mr Williams…"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         Як бачите, наш герой далеко не гуру імейлінгу. Чому? Адже по-книжному він усе правильно написав.
                         Яких саме &quot;багів&quot; наробив молодий спеціаліст і як потрібно було сформулювати ідеї?.
@@ -136,18 +124,6 @@ export default function IAmWritingToInform({articleData}) {
                     <h2 className={styles.subTitle}>
                         І апдейт листа.
                     </h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/i_am_writing_to_inform_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="І апдейт листа."
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={styles.articleText}>
                         А ось, як вийшло у мого студента апдейтнути лист (звісно ще є нюанси, але якщо не вдаватися у

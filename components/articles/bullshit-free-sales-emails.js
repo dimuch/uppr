@@ -20,18 +20,6 @@ export default function BullshitFreeSalesEmails({articleData}) {
                         Що ж зробити, щоб зменшити кількість bullsh*t?
                     </h2>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/bullshit_free_sales_emails_9.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Що ж зробити, щоб зменшити кількість bullsh*t?"
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
-
                     <h3 className={styles.articleSubSubTitle}>
                         1. Усвідомити, що sales - це не про вас, а про них.
                     </h3>
@@ -84,18 +72,6 @@ export default function BullshitFreeSalesEmails({articleData}) {
                     <h2 className={styles.subTitle}>
                         Основна помилка — одразу намагатися щось продати.
                     </h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/bullshit_free_sales_emails_6.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Основна помилка — одразу намагатися щось продати."
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
 
                     <p className={styles.articleText}>
                         Насправді, писати <i>sales emails</i> набагато складніше, ніж інші. Бо у вас немає жодних
@@ -155,18 +131,6 @@ export default function BullshitFreeSalesEmails({articleData}) {
                     <h2 className={styles.subTitle}>
                         І трохи практики.
                     </h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/bullshit_free_sales_emails_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="І трохи практики."
-                            style={{
-                                maxWidth: '100%',
-                                height: 'auto',
-                            }}/>
-                    </div>
 
                     <div className={styles.frameWithExampleAndTitle}>
                         <p className={styles.exampleTitle}>Типовий <i>sales bullshit</i> виглядає приблизно так:</p>

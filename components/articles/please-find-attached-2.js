@@ -69,18 +69,6 @@ export default function PleaseFindAttached2({articleData}) {
                         Чим коротше, тим краще
                     </h2>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/please_find_attached_2_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Якщо потрібен day off"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <h3 className={styles.articleSubSubTitle} id="file-without-explanation">
                         # 1. Просто прикріпіть файл без пояснення
                     </h3>
@@ -151,18 +139,6 @@ export default function PleaseFindAttached2({articleData}) {
                             <br/>
                             [Your Name]
                         </p>
-                    </div>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/please_find_attached_2_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Якщо потрібен day off"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
                     </div>
                 </div>
             </div>
@@ -264,18 +240,6 @@ export default function PleaseFindAttached2({articleData}) {
                             <br/>
                             [Name]
                         </p>
-                    </div>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/please_find_attached_2_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Якщо потрібен day off"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
                     </div>
                 </div>
             </div>

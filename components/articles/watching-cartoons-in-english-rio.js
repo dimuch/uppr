@@ -95,17 +95,6 @@ export default function WatchingCartoonsInEnglishRio({articleData}) {
                         незабутньою візуалізацією карнавалу. Це ж Ріо, як без карнавалу?
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/watching_cartoons_in_english_rio_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Rio"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
                 </div>
             </div>
 
@@ -167,18 +156,6 @@ export default function WatchingCartoonsInEnglishRio({articleData}) {
                         про когось
                         іншого))).
                     </p>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/watching_cartoons_in_english_rio_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Rio phrases"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={styles.articleText}>
                         <b>А діалог того ж Найджела з провідником мавп – просто вершина бізнес

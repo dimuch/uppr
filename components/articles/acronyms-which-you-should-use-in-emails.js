@@ -41,18 +41,6 @@ export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
                         актуальних у бізнес імейлінгу
                     </h2>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/acronyms_which_you_should_use_in_emails_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Акроніми актуальні у бізнес імейлінгу"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <h3 className={styles.articleSubSubTitle}>
                         EOM та NRN
                     </h3>
@@ -131,18 +119,6 @@ export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
                         </p>
                     </div>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/acronyms_which_you_should_use_in_emails_4.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Акроніми актуальні у бізнес імейлінгу"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <h3 className={styles.articleSubSubTitle}>
                         WFH
                     </h3>
@@ -187,18 +163,6 @@ export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
                         </p>
                     </div>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/acronyms_which_you_should_use_in_emails_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Акроніми актуальні у бізнес імейлінгу"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <h3 className={styles.articleSubSubTitle}>
                         TL;DR
                     </h3>
@@ -236,18 +200,6 @@ export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
                             So we’re good to launch this now or postpone everything to Thursday? <b>Y/N</b>
                             <br/>
                         </p>
-                    </div>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/acronyms_which_you_should_use_in_emails_5.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Акроніми актуальні у бізнес імейлінгу"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
                     </div>
 
                     <h3 className={styles.articleSubSubTitle}>

@@ -52,18 +52,6 @@ export default function PleaseFindAttached({articleData}) {
                         По-друге, ця фраза взагалі не потрібна в багатьох випадках. В імейлі і так видно, що там є атач.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/please_find_attached_1.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Короткі, “розмовні” імейлі - тренд!"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
-
                     <p className={styles.articleText}>
                         Але практично на кожній лекції, тренігу чи воркшопі, який я проводжу, неодмінно виникає тривала
                         дискусія, щодо списку застарілих кліше, коли серед них опиняється &quot;Please find attached&quot;. Ідею
@@ -87,18 +75,6 @@ export default function PleaseFindAttached({articleData}) {
                     <h2 className={styles.subTitle}>
                         Усі так пишуть
                     </h2>
-
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/please_find_attached_2.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Усі так пишуть"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
 
                     <p className={styles.articleText}>
                         Аргументація незгоди проста – фраза як фраза, і зовсім не застаріла, усі так пишуть, нейтіви в
@@ -144,17 +120,6 @@ export default function PleaseFindAttached({articleData}) {
                         Проте, це обширна тема і про неї варто окремо писати.
                     </p>
 
-                    <div className={styles.articlePicture}>
-                        <Image
-                            src="/assets/images/blog-articles/please_find_attached_3.jpg"
-                            width="1400"
-                            height="425"
-                            alt="Як не перепрацювати"
-                            style={{
-                                maxWidth: "100%",
-                                height: "auto"
-                            }} />
-                    </div>
                 </div>
             </div>
 
