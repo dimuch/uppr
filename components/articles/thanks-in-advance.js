@@ -147,7 +147,7 @@ export default function ThanksInAdvance({articleData}) {
                     </p>
 
                     <div className={styles.frameWithExampleAndTitle}
-                         style={{borderColor: `#${articleData.article_color}`}}>
+                         >
                         <p className={styles.exampleTitle}
                            style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -170,7 +170,7 @@ export default function ThanksInAdvance({articleData}) {
                     </p>
 
                     <div className={styles.frameWithExampleAndTitle}
-                         style={{borderColor: `#${articleData.article_color}`}}>
+                         >
                         <p className={styles.exampleTitle}
                            style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -190,7 +190,7 @@ export default function ThanksInAdvance({articleData}) {
                     </p>
 
                     <div className={styles.frameWithExampleAndTitle}
-                         style={{borderColor: `#${articleData.article_color}`}}>
+                         >
                         <p className={styles.exampleTitle}
                            style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -227,7 +227,7 @@ export default function ThanksInAdvance({articleData}) {
                     </p>
 
                     <div className={styles.frameWithExampleAndTitle}
-                         style={{borderColor: `#${articleData.article_color}`}}>
+                         >
                         <p className={styles.exampleTitle}
                            style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -271,7 +271,7 @@ export default function ThanksInAdvance({articleData}) {
                     </p>
 
                     <div className={styles.frameWithExampleAndTitle}
-                         style={{borderColor: `#${articleData.article_color}`}}>
+                         >
                         <p className={styles.exampleTitle}
                            style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>

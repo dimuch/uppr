@@ -29,7 +29,7 @@ export default function ToMeetOrNotToMeet({articleData}) {
                         час, і гроші) — напишіть його.
                     </p>
 
-                    <div className={styles.frameWithExampleAndTitle} style={{borderColor: `#${articleData.article_color}`}}>
+                    <div className={styles.frameWithExampleAndTitle}>
                         <p className={styles.exampleTitle} style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>
                             Hello Team,
@@ -119,7 +119,7 @@ export default function ToMeetOrNotToMeet({articleData}) {
                         А зробити це максимально &quot;екологічно&quot; можна наступним чином:
                     </p>
 
-                    <div className={styles.frameWithExampleAndTitle} style={{borderColor: `#${articleData.article_color}`}}>
+                    <div className={styles.frameWithExampleAndTitle} >
                         <p className={styles.exampleTitle} style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>
                             Hi [Name]
@@ -185,7 +185,7 @@ export default function ToMeetOrNotToMeet({articleData}) {
                         Turning the meeting into a call
                     </h3>
 
-                    <div className={styles.frameWithExampleAndTitle} style={{borderColor: `#${articleData.article_color}`}}>
+                    <div className={styles.frameWithExampleAndTitle} >
                         <p className={styles.exampleTitle} style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>
                             Hi [Client&apos;s Name],
@@ -223,7 +223,7 @@ export default function ToMeetOrNotToMeet({articleData}) {
                         Turning the meeting into an email
                     </h3>
 
-                    <div className={styles.frameWithExampleAndTitle} style={{borderColor: `#${articleData.article_color}`}}>
+                    <div className={styles.frameWithExampleAndTitle} >
                         <p className={styles.exampleTitle} style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>
                             Hi [Client&apos;s Name],
@@ -261,7 +261,7 @@ export default function ToMeetOrNotToMeet({articleData}) {
                         Rescheduling the meeting
                     </h3>
 
-                    <div className={styles.frameWithExampleAndTitle} style={{borderColor: `#${articleData.article_color}`}}>
+                    <div className={styles.frameWithExampleAndTitle} >
                         <p className={styles.exampleTitle} style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>
                             Hello [Client&apos;s Name],

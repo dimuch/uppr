@@ -21,7 +21,7 @@ export default function IAmWritingToInform({articleData}) {
                     </h2>
 
                     <div className={styles.frameWithExampleAndTitle}
-                         style={{borderColor: `#${articleData.article_color}`}}>
+                         >
                         <p className={styles.exampleTitle}
                            style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -132,7 +132,7 @@ export default function IAmWritingToInform({articleData}) {
                     </p>
 
                     <div className={styles.frameWithExampleAndTitle}
-                         style={{borderColor: `#${articleData.article_color}`}}>
+                         >
                         <p className={styles.exampleTitle}
                            style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>

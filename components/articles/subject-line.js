@@ -311,7 +311,7 @@ export default function SubjectLine({articleData}) {
                     </p>
 
                     <div className={styles.frameWithExampleAndTitle}
-                         style={{borderColor: `#${articleData.article_color}`}}>
+                         >
                         <p className={styles.exampleTitle}
                            style={{backgroundColor: `#${articleData.article_color}`}}>SL:Weekly progress report</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>

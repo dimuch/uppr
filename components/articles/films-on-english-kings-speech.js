@@ -166,7 +166,7 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                     </p>
 
                     <p className={`${styles.articleText} ${styles.frame}`}
-                       style={{borderColor: `#${articleData.article_color}`}}>
+                       >
                         <b>Lionel Logue:</b> Well, we need to have your <b>hubby</b>(муженьок) <b>pop by</b>(заглянути).
                         Uh,
                         Tuesday would be good. He can give me his personal details, I&apos;ll make a frank appraisal, and
@@ -185,7 +185,7 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                     </p>
 
                     <p className={`${styles.articleText} ${styles.frame}`}
-                       style={{borderColor: `#${articleData.article_color}`}}>
+                       >
                         <b>Myrtle Logue:</b> Will their Majesties be staying to dinner?
                         <br/>
                         <b>Queen Elizabeth:</b> We&apos;d love to - <b>such a treat</b> (так приємно) - but, ah... alas, a...<b>
@@ -206,7 +206,7 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                     </p>
 
                     <p className={`${styles.articleText} ${styles.frame}`}
-                       style={{borderColor: `#${articleData.article_color}`}}>
+                       >
                         <b>King George VI:</b> All that... work...<b>down the drain</b> (коту під хвіст:)) ). My own...
                         b... brother, I couldn&apos;t say a single w-word to him in reply.
                         <br/>
@@ -271,7 +271,7 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                     </h2>
 
                     <p className={`${styles.articleText} ${styles.frame}`}
-                       style={{borderColor: `#${articleData.article_color}`}}>
+                       >
                         <b>Lionel Logue:</b> Long pauses are good: they add solemnity(важність, урочистість) to great
                         occasions.
                         <br/>
@@ -302,7 +302,7 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                         з королівською парою.
                     </p>
                     <p className={`${styles.articleText} ${styles.frame}`}
-                       style={{borderColor: `#${articleData.article_color}`}}>
+                       >
                         <b>King George VI:</b> Logue, we can&apos;t stay here all day.
                         <br/>
                         <b>Lionel Logue:</b> Yes, we can.

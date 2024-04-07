@@ -36,6 +36,7 @@
   font-size: 1.5rem;
   line-height: 1.25;
   text-align: left;
+  padding-top: 1rem;
   padding-bottom: 1rem;
   margin: 0;
   color: $text !important;
@@ -118,7 +119,8 @@
 }
 
 .enlargedFont {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.25;
 }
 
 .numberedList {
@@ -138,7 +140,7 @@
 }
 
 .frameWithExampleAndTitle {
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   background: linear-gradient(white, white) padding-box, linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box;
   max-width: 60rem;
   margin: 1rem auto 2rem;
