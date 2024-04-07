@@ -98,7 +98,6 @@ const Index = ( {top3Article, latestArticle, otherLatestArticles} ) => {
       </Head>
       <div className={styles.upprHomePage}>
         <Header location={'/'} search/>
-        <div className={styles.background}></div>
         <div className={`${styles.screen} ${styles.screenFirst}`}>
           <div className={`${styles.column} ${styles.leftColumn}`}>
             <Stack>

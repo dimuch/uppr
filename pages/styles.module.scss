@@ -1,6 +1,6 @@
 @import "../styles/scss/common/colors";
 .upprHomePage {
-  background-image: url("../public/assets/world-map.svg");
+  //background-image: url("../public/assets/world-map.svg");
   background-repeat: no-repeat;
   background-position-x: 100px;
   background-position-y: 70px;
@@ -39,7 +39,7 @@
     h1 {
       display: inline;
       margin: 0;
-      font-size: 2.75rem;
+      font-size: 3rem;
       line-height: 1.1;
       font-family: 'Raleway-Bold', sans-serif;
 
@@ -109,8 +109,8 @@
 
     .mainSectionImage {
       position: absolute;
-      left: -2rem;
-      top: 0;
+      left: -4rem;
+      top: 2rem;
       width: auto;
       height: 550px;
       z-index: 3;
