@@ -62,21 +62,21 @@ export default function Author( {data} ) {
       </div>
       <div className={styles.authorLinks}>
           <a className={styles.authorLink}
-            href=""
+            href="/"
              target="_blank" rel="noreferrer"
           >
             <p>
-              Company website
+              My website
             </p>
           </a>
           <a className={styles.authorLink}
-            href=""
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=ivanka.tabachuk@gmail.com.com&su=Lets communicate&body=Hi i have a question"
              target="_blank" rel="noreferrer"
           >
             <p>Email me</p>
           </a>
           <a className={styles.authorLink}
-            href=""
+            href="/blog"
              target="_blank" rel="noreferrer"
           >
             <p>My articles</p>
