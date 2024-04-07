@@ -70,7 +70,7 @@ export default function Author( {data} ) {
             </p>
           </a>
           <a className={styles.authorLink}
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=ivanka.tabachuk@gmail.com.com&su=Lets communicate&body=Hi i have a question"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=ivanka.tabachuk@gmail.com.com&su=Lets communicate&body=Hi%0AI have a question"
              target="_blank" rel="noreferrer"
           >
             <p>Email me</p>
