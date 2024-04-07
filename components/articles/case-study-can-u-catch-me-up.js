@@ -19,8 +19,7 @@ export default function CaseStudyCanUCatchMeUp({articleData}) {
                         Отже, колега не встиг на ранішній stand-up meeting через затори на дорогах і пише вам:
                     </p>
 
-                    <div className={styles.frameWithExampleAndTitle}
-                         style={{borderColor: `#${articleData.article_color}`}}>
+                    <div className={styles.frameWithExampleAndTitle}>
                         <p className={styles.exampleTitle}
                            style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -104,8 +103,7 @@ export default function CaseStudyCanUCatchMeUp({articleData}) {
                         таке:
                     </p>
 
-                    <div className={styles.frameWithExampleAndTitle}
-                         style={{borderColor: `#${articleData.article_color}`}}>
+                    <div className={styles.frameWithExampleAndTitle}>
                         <p className={styles.exampleTitle}
                            style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>

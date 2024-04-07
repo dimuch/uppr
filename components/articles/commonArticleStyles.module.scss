@@ -138,7 +138,7 @@
 }
 
 .frameWithExampleAndTitle {
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   background: linear-gradient(white, white) padding-box, linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box;
   max-width: 60rem;
   margin: 1rem auto 2rem;
@@ -179,7 +179,6 @@
 
 .frame {
   padding: 1rem;
-  border: 2px dashed;
 }
 
 .articleLink {

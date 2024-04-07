@@ -24,8 +24,7 @@ export default function CaseStudyDeliveryDirectorFailEmail({articleData}) {
                         комунікацією):
                     </p>
 
-                    <div className={styles.frameWithExampleAndTitle}
-                         style={{borderColor: `#${articleData.article_color}`}}>
+                    <div className={styles.frameWithExampleAndTitle}>
                         <p className={styles.exampleTitle}
                            style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -166,8 +165,7 @@ export default function CaseStudyDeliveryDirectorFailEmail({articleData}) {
                         місяць. Вас запитують, на коли потрібно. Ви відповідаєте:
                     </p>
 
-                    <div className={styles.frameWithExampleAndTitle}
-                         style={{borderColor: `#${articleData.article_color}`}}>
+                    <div className={styles.frameWithExampleAndTitle}>
                         <p className={styles.exampleTitle}
                            style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>

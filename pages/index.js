@@ -101,43 +101,52 @@ const Index = ( {top3Article, latestArticle, otherLatestArticles} ) => {
         <div className={styles.background}></div>
         <div className={`${styles.screen} ${styles.screenFirst}`}>
           <div className={`${styles.column} ${styles.leftColumn}`}>
-            <h1
-              className={isCursor ? '' : styles.customTypeAnimationCursor1}
-            >
-              <TypeAnimation
-                sequence={[
-                  200,
-                  'There\'s a better way to write',
-                  () => {
-                    setIsCursor(false);
-                    setIsLast(true);
-                  },
-                ]}
-                speed={20}
-              />
-            </h1>
-            {
-              isLast && (
-                <>
-                  &nbsp;&nbsp;&nbsp;
-                  <h1
-                    className={isCursorLast ? styles.emailWord : `${styles.emailWord} ${styles.customTypeAnimationCursor2}`}
-                  >
-                    <TypeAnimation
-                      sequence={[
-                        300,
-                        'work emails',
-                        () => setCursorIsLast(false),
-                      ]}
-                      speed={20}
-                    />
-                  </h1>
-                </>
-              )
-            }
-            <h4>
-              Make your writing shine, wherever you write.
-            </h4>
+            <Stack>
+              <Stack
+                sx={{
+                  display: 'inline',
+                  minHeight:'110px',
+                }}
+              >
+                <h1
+                  className={isCursor ? '' : styles.customTypeAnimationCursor1}
+                >
+                  <TypeAnimation
+                    sequence={[
+                      200,
+                      'There\'s a better way to write',
+                      () => {
+                        setIsCursor(false);
+                        setIsLast(true);
+                      },
+                    ]}
+                    speed={20}
+                  />
+                </h1>
+                {
+                  isLast && (
+                    <>
+                      &nbsp;&nbsp;&nbsp;
+                      <h1
+                        className={isCursorLast ? styles.emailWord : `${styles.emailWord} ${styles.customTypeAnimationCursor2}`}
+                      >
+                        <TypeAnimation
+                          sequence={[
+                            300,
+                            'work emails',
+                            () => setCursorIsLast(false),
+                          ]}
+                          speed={20}
+                        />
+                      </h1>
+                    </>
+                  )
+                }
+              </Stack>
+              <h4>
+                Make your writing shine, wherever you write.
+              </h4>
+            </Stack>
             <Button
               variant="outlined"
             >

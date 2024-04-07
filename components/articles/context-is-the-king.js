@@ -19,8 +19,7 @@ export default function ContextIsTheKing({articleData}) {
                         От, наприклад, такий імейл:
                     </p>
 
-                    <div className={styles.frameWithExampleAndTitle}
-                         style={{borderColor: `#${articleData.article_color}`}}>
+                    <div className={styles.frameWithExampleAndTitle}>
                         <p className={styles.exampleTitle}
                            style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -150,8 +149,7 @@ export default function ContextIsTheKing({articleData}) {
                         От, наприклад, для організації зустрічі, часто починають імейл так:
                     </p>
 
-                    <div className={styles.frameWithExampleAndTitle}
-                         style={{borderColor: `#${articleData.article_color}`}}>
+                    <div className={styles.frameWithExampleAndTitle}>
                         <p className={styles.exampleTitle}
                            style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -187,8 +185,7 @@ export default function ContextIsTheKing({articleData}) {
                         Клієнта варто було б запитати, а не констатувати факт.
                     </p>
 
-                    <div className={styles.frameWithExampleAndTitle}
-                         style={{borderColor: `#${articleData.article_color}`}}>
+                    <div className={styles.frameWithExampleAndTitle}>
                         <p className={styles.exampleTitle}
                            style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
                         <p className={`${styles.articleText}  ${styles.exampleText}`}>

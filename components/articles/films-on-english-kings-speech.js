@@ -119,8 +119,8 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                     <p className={styles.articleText}>
                         Фільм також наповнений чудовим саркастичним гумором та самоіронією.
                     </p>
-                    <p className={`${styles.articleText} ${styles.frame}`}
-                       style={{borderColor: `#${articleData.article_color}`}}>
+                  <div className={styles.frameWithExampleAndTitle}>
+                    <p className={`${styles.articleText} ${styles.frame}`}>
                         <b>King George VI:</b> My physicians said it relaxes the... the... the throat.
                         <br/>
                         <b>Lionel Logue:</b> They&apos;re idiots.
@@ -141,13 +141,13 @@ export default function FilmsOnEnglishKingsSpeech({articleData}) {
                         <br/>
                         <br/>
                     </p>
+                  </div>
 
                     <p className={styles.articleText}>
                         Чи про королівську сім’ю та “царювання”;)):
                     </p>
 
-                    <p className={`${styles.articleText} ${styles.frame}`}
-                       style={{borderColor: `#${articleData.article_color}`}}>
+                    <p className={`${styles.articleText} ${styles.frame}`}>
                         <b>King George VI:</b> We&apos;re not a family, we&apos;re a firm.
                         <br/>
                         <b>King George VI:</b> In the past, all a King had to do was look respectable in uniform and not

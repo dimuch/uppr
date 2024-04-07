@@ -236,8 +236,7 @@ export default function ProfessionalFollowUpDontWriteATrash( {articleData} ) {
             пояси. Та ще один бенефіт використання телефону для фолоапів — це те, що після того, як ви не
             змогли додзвонитися, ви з чистою душею можете написати.
           </p>
-          <div className={styles.frameWithExampleAndTitle}
-               style={{borderColor: `#${articleData.article_color}`}}>
+          <div className={styles.frameWithExampleAndTitle}>
             <p className={styles.exampleTitle}
                style={{backgroundColor: `#${articleData.article_color}`}}><i>A phone call follow-up:</i></p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -260,8 +259,7 @@ export default function ProfessionalFollowUpDontWriteATrash( {articleData} ) {
             підсумок вашої бесіди, щоб зафіксувати рішення та <i>make it official</i>.
           </p>
 
-          <div className={styles.frameWithExampleAndTitle}
-               style={{borderColor: `#${articleData.article_color}`}}>
+          <div className={styles.frameWithExampleAndTitle}>
             <p className={styles.exampleTitle}
                style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
