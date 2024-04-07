@@ -102,17 +102,13 @@
 
   .rightColumn {
     min-width: 390px;
-    min-height: 25rem;
+    min-height: 35rem;
     text-align: right;
     position: relative;
-    left: -12rem;
 
     .mainSectionImage {
       position: absolute;
-      left: -4rem;
-      top: 2rem;
       width: auto;
-      height: 550px;
       z-index: 3;
     }
 
@@ -210,6 +206,36 @@
     gap: 2rem;
 }
 
+@media (min-width: 1024px) {
+  .rightColumn{
+    .mainSectionImage{
+      height: 550px;
+      left: -12rem;
+      top: 2rem;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .rightColumn{
+    .mainSectionImage{
+      height: 450px;
+      top: 6rem;
+      left: -6rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .screenFirst {
+    flex-direction: column;
+    align-items: center;
+    .leftColumn {
+      padding-top: 1rem;
+    }
+  }
+}
+
 @media (max-width: 650px) {
   .screen {
     width: 100%;
@@ -222,15 +248,8 @@
     padding-right: 1rem;
   }
   .screenFirst {
-    flex-direction: column;
-
-    .leftColumn {
-      padding-top: 1rem;
-    }
-
     .rightColumn {
-      left: -3rem;
-      min-height: 40rem;
+      min-height: 25rem;
     }
   }
 
@@ -240,6 +259,12 @@
 }
 
 @media (max-width: 500px) {
+  .rightColumn{
+    .mainSectionImage{
+      height: 300px;
+      left: 0;
+    }
+  }
   .othersArticles{
     grid-template-columns: 1fr;
   }

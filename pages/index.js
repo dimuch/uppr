@@ -160,27 +160,6 @@ const Index = ( {top3Article, latestArticle, otherLatestArticles} ) => {
               height={imgDimensions?.height}
               alt={'Main UPPR page'}
             />
-            {/*<img*/}
-            {/*  className={`${styles.backgroundImage1}`}*/}
-            {/*  src={loader({src: '/assets/images/others/email.png', width: imgDimensions.width})}*/}
-            {/*  width={imgDimensions?.width}*/}
-            {/*  height={imgDimensions?.height}*/}
-            {/*  alt={'Email example'}*/}
-            {/*/>*/}
-            {/*<img*/}
-            {/*  className={`${styles.backgroundImage2}`}*/}
-            {/*  src={loader({src: '/assets/images/others/email-2.png', width: imgDimensions.width})}*/}
-            {/*  width={imgDimensions?.width}*/}
-            {/*  height={imgDimensions?.height}*/}
-            {/*  alt={'Email example'}*/}
-            {/*/>*/}
-            {/*<img*/}
-            {/*  className={`${styles.backgroundImage3}`}*/}
-            {/*  src={loader({src: '/assets/images/others/gmail.png', width: imgDimensions.width})}*/}
-            {/*  width={imgDimensions?.width}*/}
-            {/*  height={imgDimensions?.height}*/}
-            {/*  alt={'Email example'}*/}
-            {/*/>*/}
           </div>
 
         </div>

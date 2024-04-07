@@ -67,11 +67,6 @@ export async function getServerSideProps( {res, resolvedUrl} ) {
   const articleURL = resolvedUrl.split('?')[0];
   const articleData = await getArticlesDataByIdDB(articleURL);
 
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=604800, stale-while-revalidate=59',
-  );
-
   return {
     props: {
       articleData: articleData,
