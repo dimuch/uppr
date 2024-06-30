@@ -1,5 +1,5 @@
-import React, {useCallback, useState} from 'react';
-import {List, ListItem, ListItemIcon, ListItemText} from '@mui/material';
+import React, { useState } from 'react';
+import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 
 import styles from './commonDownloadsStyles.module.scss';
 
@@ -8,76 +8,34 @@ import OrangeTopRightArea from './components/DownloadDetailsBlueArea';
 import DownloadDetailsWave from './components/DownloadDetailsWave';
 import loader from '../../common/loader/loader';
 import DownloadFaqAccordion from '../DownloadFaqAccordion/DownloadFaqAccordion';
-import {CheckCircle} from '@phosphor-icons/react';
+import { CaretRight, CheckCircle, CheckFat } from '@phosphor-icons/react';
 import DownloadPageExamplesSlider from '../DownloadPageExamplesSlider/DownloadPageExamplesSlider';
-import InstagramImages from "../../blog/InstagramImages/InstagramImages";
 
 const bookBullets = [
-  'How to make your updates more specific',
-  'What to include/exclude',
-  'Best practices of status updates',
-  'And lots of examples',
+  'Remind a customer of an upcoming renewal',
+  'Introduce a new CSM to an existing account',
+  'Reengage a disengaged customer',
+  'Follow up on "Net Promoter Score" responses',
+  'Highlight customer progress',
 ];
 const ARROW_COLOR = '#4f899c';
-
-const instaImagesConfig = [
-  {
-    link: '/assets/downloads/action_verbs_for_resume.pdf',
-    src: '/assets/images/downloads/action_verbs_for_resume_thumb.jpg',
-    width: '640',
-    height: '640',
-    alt: 'Action verbs for resume',
-    title: 'Action verbs for resume'
-  },
-  {
-    link: '/assets/downloads/Resume_Layout_Template_1.pdf',
-    src: '/assets/images/downloads/resume_layout_template_thumb.jpg',
-    width: '640',
-    height: '640',
-    alt: 'Resume Layout Template',
-    title: 'Resume Layout Template'
-  },
-  {
-    link: 'https://www.instagram.com/ivanna.tabachuk',
-    src: null,
-    width: null,
-    height: null,
-    alt: '@ivanna.tabachuk',
-  },
-  {
-    link: '/assets/downloads/Strong_words_instead_of_very.pdf',
-    src: '/assets/images/downloads/strong_words_instead_of_very_thumb.jpg',
-    width: '640',
-    height: '640',
-    alt: 'Strong words instead',
-    title: 'Strong words instead'
-  },
-  {
-    link: '/downloads/details/Guide_to_fine-tune_your_status_updates',
-    src: '/assets/images/downloads/guide_to_perfect_status_updates_thumb.jpg',
-    width: '640',
-    height: '640',
-    alt: 'Guide to fine-tune your status updates',
-    title: 'Guide to fine-tune your status updates'
-  },
-]
 
 const steps = [0, 1];
 const maxSteps = steps.length;
 
-const Ebook = ({data}) => {
-  const downloadFile = useCallback(() => {
+const Ebook = ({ data }) => {
+  const downloadFile = () => {
     const link = document.createElement('a');
     link.href = data.downloadLink;
     link.download = `${data.caption}.pdf`;
     link.click();
-  }, [data]);
+  };
 
   return (
     <div className={styles.download}>
       <div className={styles.screenFirstWrapper}>
         <div className={styles.blueTopRightArea}>
-          <OrangeTopRightArea/>
+          <OrangeTopRightArea />
         </div>
         <div className={styles.screenFirst}>
           <div className={styles.leftColumn}>
@@ -88,23 +46,10 @@ const Ebook = ({data}) => {
               <h1 className={styles.caption}>{data.caption}</h1>
             </div>
             <div className={styles.downloadDescription}>
-              {/*<p>{data.description}</p>*/}
-              <p>
-                Кінець дня/тижня/місяця і от знову: потрібно писати статуси по проєкту.
-                Нудно, марудно, але треба. І все б нічого аби ще знати, що писати і скільки, чого саме очікує клієнт і
-                менеджер.
-              </p>
-              <p>
-                Так от як саме поліпшити ваші апдейти, зекономити час та нерви, або просто переконатися, що ви follow
-                best practices, читайте у гайді.
-              </p>
+              <p>{data.description}</p>
             </div>
             <div className={styles.downloadButton}>
-              <StyledButtonGradient
-                onClick={downloadFile}
-              >
-                Завантажити
-              </StyledButtonGradient>
+              <StyledButtonGradient onClick={downloadFile}>Завантажити</StyledButtonGradient>
             </div>
           </div>
           <div className={styles.rightColumn}>
@@ -122,14 +67,14 @@ const Ebook = ({data}) => {
         </div>
 
         <div className={styles.waveArea}>
-          <DownloadDetailsWave/>
+          <DownloadDetailsWave />
         </div>
       </div>
 
       <div className={styles.screenSecondWrapper}>
         <div className={styles.screenSecond}>
           <div className={styles.leftColumn}>
-            <h2 className={styles.sectionCaption}>What&apos;s inside:</h2>
+            <h2 className={styles.sectionCaption}>In this guide, you&apos;ll find tips to:</h2>
             <List
               dense
               sx={{
@@ -140,7 +85,7 @@ const Ebook = ({data}) => {
                 return (
                   <ListItem key={bullet}>
                     <ListItemIcon>
-                      <CheckCircle size={32} weight="fill" color={ARROW_COLOR}/>
+                      <CheckCircle size={32} weight="fill" color={ARROW_COLOR} />
                     </ListItemIcon>
                     <ListItemText
                       primary={<p>{bullet}</p>}
@@ -171,26 +116,30 @@ const Ebook = ({data}) => {
       <div className={styles.screenThirdWrapper}>
         <div className={styles.screenThird}>
           <div className={styles.leftColumn}>
-            <h2 className={styles.sectionCaption}>
-              Aдекватні клієнти - це завжди про грамотно побудована комунікація
-            </h2>
+            <h2 className={styles.sectionCaption}>Level Up Your Customer Success Game</h2>
           </div>
 
           <div className={styles.rightColumn}>
             <p>
-              Якщо клієнт пише вам &quot;Any updates?&quot; — це означає, що ви зафейлили комунікацію.
-              Бо, якщо у клієнта виникає таке запитання, то це свідчить про те, що йому не вистачає інформації,
-              він/вона не в курсі й, відповідно, хвилюється. Отже, ви не комунікуєте правильно. Недогляд, що в
-              майбутньому коштуватиме вам довіри клієнта, як максимум, і грошей компанії, як мінімум 🙂.
+              Are you ready to revolutionize your customer success strategy and drive exceptional growth and retention?
+              In this comprehensive ebook, we unveil seven powerful playbooks that will transform the way you approach
+              customer success.
             </p>
             <p>
-              Тому найкраще, що можна зробити — це писати status updates регулярно та правильно. + Бути максимум
-              проактивним, обговорювати та письмово фіксувати всі домовленості та очікування. І тоді є шанс, що
-              розчарування та крах довіри не настане, навіть якщо і виникне проблема.
+              This guide is packed with actionable advice, step-by-step guidance, and proven strategies to bring
+              consistency and structure to your customer engagements while optimizing your operations for maximum
+              impact. With these powerful playbooks at your fingertips, you&apos;ll navigate through challenges
+              effortlessly, ensuring exceptional results and skyrocketing growth.
             </p>
-            <p>
-              Надіюся, це гайд допоможе вам та вашим клієнтам be aligned.
-            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.screenFourthWrapper}>
+        <div className={styles.screenFourth}>
+          <h2 className={styles.sectionCaption}>Frequently Asked Questions (FAQs)</h2>
+          <div className={styles.faqsItems}>
+            <DownloadFaqAccordion />
           </div>
         </div>
       </div>
@@ -202,22 +151,10 @@ const Ebook = ({data}) => {
           </div>
           <div className={styles.rightColumn}>
             <div className={styles.downloadButton}>
-              <StyledButtonGradient
-                isFullGradientButton
-                onClick={downloadFile}
-              >
-                Завантажити
-              </StyledButtonGradient>
+              <StyledButtonGradient>Завантажити</StyledButtonGradient>
             </div>
           </div>
         </div>
-      </div>
-
-      <div>
-        <InstagramImages
-          instaItems={instaImagesConfig}
-          sectionTitle={<h5 className={styles.sectionCaption}>Downloads</h5>}
-        />
       </div>
     </div>
   );

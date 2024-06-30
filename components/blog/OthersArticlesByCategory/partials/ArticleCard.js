@@ -15,6 +15,8 @@ export default function ArticleCard({ item, isDescription = true }) {
     return null;
   }
 
+  console.log('item', item);
+
   const windowInner = window?.innerWidth;
   const width = windowInner > 850 ? Math.round(windowInner / 3) : windowInner;
   const height = Math.round((width * 4) / 7);

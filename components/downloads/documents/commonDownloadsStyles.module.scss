@@ -14,8 +14,7 @@
     font-family: Raleway-SemiBold, sans-serif;
     font-size: 3rem;
     font-weight: 500;
-    line-height: 1.25;
-    text-transform: capitalize;
+    line-height: 1.5;
   }
 
   .sectionCaption {
@@ -28,7 +27,7 @@
 
   p {
     font-family: Raleway-Regular, sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.75;
   }
@@ -36,7 +35,7 @@
 
 .screenFirstWrapper {
   position: relative;
-  background-color: #f6f9fc;
+  background-color: #c9dfff;
   margin-bottom: 5%;
 
   .blueTopRightArea {
@@ -57,7 +56,7 @@
   position: relative;
   max-width: 68rem;
   margin: auto;
-  padding: 4rem 0 10rem;
+  padding: 4rem 0 15rem;
 
   .leftColumn {
     flex-grow: 1;
@@ -82,7 +81,7 @@
 
   .downloadDescription {
     margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     max-width: 33rem;
   }
 
@@ -93,9 +92,10 @@
   .downloadImage {
     width: 100%;
     height: auto;
-    padding-top: 4rem;
-    padding-left: 7rem;
-    padding-right: 7rem;
+    padding-top: 5rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+
   }
 }
 
@@ -119,6 +119,13 @@
     width: 55%;
     text-align: center;
   }
+
+  //.bookBullets {
+  //  li {
+  //    padding-left: 1rem;
+  //    margin: 1rem 0;
+  //  }
+  //}
 }
 
 .screenThirdWrapper {
@@ -140,7 +147,6 @@
 
   .rightColumn {
     width: 65%;
-    margin-top: -0.25rem;
   }
 
   .sectionCaption:after {
@@ -151,6 +157,29 @@
     display: block;
     width: 4.25rem;
     margin: 1rem 0;
+  }
+}
+
+.screenFourthWrapper {
+  position: relative;
+  background-color: #f6f9fc;
+}
+
+.screenFourth {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 68rem;
+  margin: auto;
+  padding: 2rem 0 3rem;
+
+  .sectionCaption {
+    padding: .5rem 0 1rem;
+    margin: auto;
+  }
+
+  .faqsItems {
+    padding: 2rem 0;
   }
 }
 
@@ -179,6 +208,5 @@
   .sectionCaption {
     padding: 3rem 0;
     margin: auto;
-    text-transform: capitalize;
   }
 }

@@ -43,9 +43,9 @@ export default function Downloads( { downloads, categories, top3Article } ) {
                 <Typography variant={'h5'}>Downloads</Typography>
               </Grid>
               <Grid item md={6} xs={12}>
-                {/*<CategoriesList*/}
-                {/*  items={categories}*/}
-                {/*/>*/}
+                <CategoriesList
+                  items={categories}
+                />
               </Grid>
             </Grid>
           </div>
