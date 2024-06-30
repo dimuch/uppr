@@ -2,7 +2,6 @@ import React from 'react';
 import {useRouter} from 'next/router'
 
 import styles from './styles.module.scss';
-import Link from 'next/link';
 
 const ALL = 'all';
 const ROOT_BLOG_PAGE = '/blog';
@@ -27,8 +26,8 @@ export default function CategoriesList({items, selectedCategory}) {
                     : `/blog/articles-by-category/${articleCategory.name.toLowerCase()}`
 
                 return (
-                    <li className={`${styles.categoryListItem} ${classCalc}`} key={articleCategory.id}>
-                        <a href={hrefLink} rel="noreferrer">
+                    <li key={articleCategory.id}>
+                        <a href={hrefLink} rel="noreferrer" className={`${styles.categoryListItem} ${classCalc}`} >
                             {articleCategory.name}
                         </a>
                     </li>

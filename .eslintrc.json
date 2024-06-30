@@ -2,6 +2,34 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "react-hooks/exhaustive-deps": "off",
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
+    "no-bitwise": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
+    "react/forbid-prop-types": [
+      "error",
+      {
+        "forbid": ["any"],
+        "checkContextTypes": true,
+        "checkChildContextTypes": true
+      }
+    ],
+    "object-curly-newline": "off",
+    "react/function-component-definition": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-underscore-dangle": "off",
+    "arrow-body-style": "off",
+    "arrow-parens": "off",
+    "import/export": "off",
+    "class-methods-use-this": "off",
+    "react/no-array-index-key": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/react-in-jsx-scope": "off",
+    "operator-linebreak": "off",
+    "consistent-return": "off",
+    "max-len": ["error", { "code": 120 }],
+    "react/jsx-one-expression-per-line": "off",
+    "implicit-arrow-linebreak": "off"
   }
 }

@@ -3,8 +3,14 @@ import loader from '../../common/loader/loader';
 import {Typography} from '@mui/material';
 
 import styles from './styles.module.scss';
+import { useHasMounted } from '../../common/hooks/hasMounted';
 
 export default function TopBlogImage () {
+  const hasMounted = useHasMounted();
+
+  if ( !hasMounted ) {
+    return null;
+  }
 
   const width = window.innerWidth;
   const height = Math.round(width / 1.5);

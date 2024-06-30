@@ -1,5 +1,5 @@
-"use strict";
-const mysql = require("mysql2");
+'use strict';
+const mysql = require('mysql2');
 
 const ITP_MYSQL_USER = process.env.ITP_MYSQL_USER;
 const ITP_MYSQL_PASSWORD = process.env.ITP_MYSQL_PASSWORD;
@@ -40,14 +40,14 @@ function makeConnectionDB() {
   return new Promise((resolve, reject) => {
     db_pool.getConnection(function (err, connection) {
       if (err) {
-        console.log("DB HAS BEEN DISCONNECTED\n", err);
+        console.log('DB HAS BEEN DISCONNECTED\n', err);
         reject(`DB HAS BEEN DISCONNECTED\n ${err}`);
         return;
       }
       connection.ping();
       connection.release();
       init = false;
-      resolve("DB CONNECTION IS READY");
+      resolve('DB CONNECTION IS READY');
     });
   });
 }
@@ -57,11 +57,11 @@ export async function dbCallWrapper(query, mapper) {
     db_pool.query(query, (err, rows, fields) => {
       if (err) {
         console.log('ERROR dbCallWrapper', err);
-        reject({data: []});
+        reject({ data: [] });
       }
 
       try {
-        let result = rows && rows[0] || [];
+        let result = (rows && rows[0]) || [];
 
         if (mapper) {
           result = mapper(rows);
@@ -75,7 +75,6 @@ export async function dbCallWrapper(query, mapper) {
     });
   });
 }
-
 
 function shutDownDB() {
   return new Promise((resolve, reject) => {
