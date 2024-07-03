@@ -42,14 +42,16 @@ export async function getDownloadsByCategoryDB(params = { category: 'all' }) {
 
   const getDownloadsByCategory = `${selectClause} ${whereClause} ${orderClause}`;
 
+  console.log('getDownloadsByCategory', getDownloadsByCategory);
+
   const mapper = dataDB => {
     return dataDB.map(item => {
       return {
         ...item,
         publishedDate: new Date(item.publishedDate).toString(),
-        image: item.download_image,
+        image: item.image,
         category: item.display_name,
-        isDirectDownload: item.is_direct_download,
+        isDirectDownload: item.isDirectDownload,
       };
     });
   };
@@ -63,7 +65,7 @@ export async function getDownloadsByCategoryDB(params = { category: 'all' }) {
   }
 }
 
-export async function getDownloadDataByCaptionDB(downloadCaption) {
+export async function   getDownloadDataByCaptionDB(downloadCaption) {
   const caption = downloadCaption.replaceAll('_', ' ');
   const selectClause = `
     SELECT * 

@@ -15,6 +15,7 @@
     font-size: 3rem;
     font-weight: 500;
     line-height: 1.5;
+    text-transform: capitalize;
   }
 
   .sectionCaption {
@@ -147,6 +148,7 @@
 
   .rightColumn {
     width: 65%;
+    margin-top: -0.25rem;
   }
 
   .sectionCaption:after {
@@ -208,5 +210,6 @@
   .sectionCaption {
     padding: 3rem 0;
     margin: auto;
+    text-transform: capitalize;
   }
 }

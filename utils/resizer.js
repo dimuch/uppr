@@ -49,6 +49,6 @@ const downloadsImagesResizing = () => {
   });
 };
 
-// blogResizing();
-// othersImagesResizing();
+blogResizing();
+othersImagesResizing();
 downloadsImagesResizing();
