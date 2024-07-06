@@ -11,6 +11,7 @@
   padding: 0 0 1.25rem 0;
   border-bottom: 1px solid $item-border;
   background-color: $page-background;
+
   svg {
     width: 1.5rem;
     height: 1.5rem;
@@ -34,7 +35,10 @@
     font-family: Raleway-Regular, sans-serif;
     font-size: .8rem;
     padding: .5rem 1rem;
-    &:hover{
+    display: block;
+    line-height: 1.5;
+
+    &:hover {
       background-color: #f8ffff;
       box-shadow: rgba(16, 24, 40, 0.06) 0px 1px 2px, rgba(16, 24, 40, 0.1) 0px 1px 3px;
     }
