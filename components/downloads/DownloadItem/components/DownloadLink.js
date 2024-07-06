@@ -9,9 +9,15 @@ export default function DownloadLink({ item }) {
     return null;
   }
 
+  console.log('item', item);
+
   if (item.isDirectDownload) {
     return (
-      <a className={styles.linkAsButton} href={item.downloadLink} target={'_blank'} rel={'noreferrer'}>
+      <a
+        className={styles.linkAsButton}
+        href={item.downloadLink}
+        target={'_blank'} rel={'noreferrer'}
+      >
         Завантажити
       </a>
     );

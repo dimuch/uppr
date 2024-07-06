@@ -3,15 +3,24 @@ import Button from '@mui/material/Button';
 
 // $text var
 const text = '#44546A';
+const buttonBackground='#f6f9fc';
 
-const gradientActive =
-  // eslint-disable-next-line max-len
-  'linear-gradient(white, white) padding-box, linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box';
+const gradientFullButtonActive =
+  'linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box';
+
+// eslint-disable-next-line max-len
+const gradientActive = `linear-gradient(to right, ${buttonBackground}, ${buttonBackground}) padding-box, linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box`;
+
 // eslint-disable-next-line max-len
 const gradientDisabled = `linear-gradient(white, white) padding-box, linear-gradient(to right, ${text}, ${text}) border-box`;
 
-const StyledButtonGradient = styled(Button)(({ theme }) => {
-  return {
+const getShouldForwardProp = (prop) => !['isFullGradientButton'].includes(prop);
+
+const StyledButtonGradient = styled(Button,  { shouldForwardProp: getShouldForwardProp })(
+  ({ theme:{palette}, isFullGradientButton  }) => {
+    const gradient = isFullGradientButton ? gradientFullButtonActive : gradientActive;
+    const captionColor = isFullGradientButton ? palette.common.white : text;
+    return {
     display: 'flex',
     alignContent: 'center',
     justifyContent: 'center',
@@ -22,12 +31,12 @@ const StyledButtonGradient = styled(Button)(({ theme }) => {
     fontFamily: 'Raleway-Regular, sans-serif',
     cursor: 'pointer',
     textTransform: 'capitalize',
-    color: text,
-    background: gradientActive,
+    color: captionColor,
+    background: gradient,
     border: '2px solid transparent',
 
     '&:hover': {
-      background: gradientActive,
+      background: gradient,
       border: '2px solid transparent',
     },
 

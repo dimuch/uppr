@@ -38,18 +38,21 @@ export async function getDownloadsByCategoryDB(params = { category: 'all' }) {
     ON Downloads.download_charge_type=DownloadsChargeTypes.id
   `;
   const whereClause = category !== 'all' ? `WHERE DownloadsChargeTypes.name='${category}'` : '';
-  const orderClause = `ORDER BY Downloads.caption ASC;`;
+  const orderClause = `ORDER BY Downloads.download_order ASC;`;
 
   const getDownloadsByCategory = `${selectClause} ${whereClause} ${orderClause}`;
+
+  console.log('getDownloadsByCategory', getDownloadsByCategory);
 
   const mapper = dataDB => {
     return dataDB.map(item => {
       return {
         ...item,
         publishedDate: new Date(item.publishedDate).toString(),
-        image: item.download_image,
+        image: item.image,
         category: item.display_name,
-        isDirectDownload: item.is_direct_download,
+        isDirectDownload: item.isDirectDownload,
+        downloadLink: item.download_link,
       };
     });
   };
@@ -63,7 +66,7 @@ export async function getDownloadsByCategoryDB(params = { category: 'all' }) {
   }
 }
 
-export async function getDownloadDataByCaptionDB(downloadCaption) {
+export async function   getDownloadDataByCaptionDB(downloadCaption) {
   const caption = downloadCaption.replaceAll('_', ' ');
   const selectClause = `
     SELECT * 
