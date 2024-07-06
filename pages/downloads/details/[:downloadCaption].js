@@ -68,8 +68,6 @@ export async function getServerSideProps(context) {
   try {
     const downloadData = await getDownloadDataByCaptionDB(downloadCaption);
 
-    console.log('downloadData', downloadData);
-
     return {
       props: {
         downloadData,

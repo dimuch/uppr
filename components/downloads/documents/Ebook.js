@@ -10,6 +10,7 @@ import loader from '../../common/loader/loader';
 import DownloadFaqAccordion from '../DownloadFaqAccordion/DownloadFaqAccordion';
 import {CheckCircle} from '@phosphor-icons/react';
 import DownloadPageExamplesSlider from '../DownloadPageExamplesSlider/DownloadPageExamplesSlider';
+import InstagramImages from "../../blog/InstagramImages/InstagramImages";
 
 const bookBullets = [
   'How to make your updates more specific',
@@ -18,6 +19,48 @@ const bookBullets = [
   'And lots of examples',
 ];
 const ARROW_COLOR = '#4f899c';
+
+const instaImagesConfig = [
+  {
+    link: '/assets/downloads/action_verbs_for_resume.pdf',
+    src: '/assets/images/downloads/action_verbs_for_resume_thumb.jpg',
+    width: '640',
+    height: '640',
+    alt: 'Action verbs for resume',
+    title: 'Action verbs for resume'
+  },
+  {
+    link: '/assets/downloads/Resume_Layout_Template_1.pdf',
+    src: '/assets/images/downloads/resume_layout_template_thumb.jpg',
+    width: '640',
+    height: '640',
+    alt: 'Resume Layout Template',
+    title: 'Resume Layout Template'
+  },
+  {
+    link: 'https://www.instagram.com/ivanna.tabachuk',
+    src: null,
+    width: null,
+    height: null,
+    alt: '@ivanna.tabachuk',
+  },
+  {
+    link: '/assets/downloads/Strong_words_instead_of_very.pdf',
+    src: '/assets/images/downloads/strong_words_instead_of_very_thumb.jpg',
+    width: '640',
+    height: '640',
+    alt: 'Strong words instead',
+    title: 'Strong words instead'
+  },
+  {
+    link: '/downloads/details/Guide_to_fine-tune_your_status_updates',
+    src: '/assets/images/downloads/guide_to_perfect_status_updates_thumb.jpg',
+    width: '640',
+    height: '640',
+    alt: 'Guide to fine-tune your status updates',
+    title: 'Guide to fine-tune your status updates'
+  },
+]
 
 const steps = [0, 1];
 const maxSteps = steps.length;
@@ -53,11 +96,15 @@ const Ebook = ({data}) => {
               </p>
               <p>
                 Так от як саме поліпшити ваші апдейти, зекономити час та нерви, або просто переконатися, що ви follow
-                best practices, читайте у гайді..
+                best practices, читайте у гайді.
               </p>
             </div>
             <div className={styles.downloadButton}>
-              <StyledButtonGradient onClick={downloadFile}>Завантажити</StyledButtonGradient>
+              <StyledButtonGradient
+                onClick={downloadFile}
+              >
+                Завантажити
+              </StyledButtonGradient>
             </div>
           </div>
           <div className={styles.rightColumn}>
@@ -148,15 +195,6 @@ const Ebook = ({data}) => {
         </div>
       </div>
 
-      <div className={styles.screenFourthWrapper}>
-        <div className={styles.screenFourth}>
-          <h2 className={styles.sectionCaption}>Frequently Asked Questions (FAQs)</h2>
-          <div className={styles.faqsItems}>
-            <DownloadFaqAccordion/>
-          </div>
-        </div>
-      </div>
-
       <div className={styles.screenFifthWrapper}>
         <div className={styles.screenFifth}>
           <div className={styles.leftColumn}>
@@ -164,10 +202,22 @@ const Ebook = ({data}) => {
           </div>
           <div className={styles.rightColumn}>
             <div className={styles.downloadButton}>
-              <StyledButtonGradient>Завантажити</StyledButtonGradient>
+              <StyledButtonGradient
+                isFullGradientButton
+                onClick={downloadFile}
+              >
+                Завантажити
+              </StyledButtonGradient>
             </div>
           </div>
         </div>
+      </div>
+
+      <div>
+        <InstagramImages
+          instaItems={instaImagesConfig}
+          sectionTitle={<h5 className={styles.sectionCaption}>Downloads</h5>}
+        />
       </div>
     </div>
   );

@@ -3,11 +3,12 @@ import styles from './styles.module.scss';
 import InstagramIcon from '../../common/icons/instagram-icon';
 import {Typography} from '@mui/material';
 
-export default function InstagramImages() {
+export default function InstagramImages({instaItems, sectionTitle}) {
   const wrapperRef = useRef();
   const [scrollTop, setScrollTop] = useState(0);
   const [top, setTop] = useState(0);
   const [screenHeight, setScreenHeight] = useState(0);
+
 
   useEffect(() => {
     const handleScroll = (event) => {
@@ -30,72 +31,64 @@ export default function InstagramImages() {
     `${styles.wrapper} ${styles.wrapperOpacityIn}` : `${styles.wrapper}`;
 
   return (
-      <div className={styles.section}>
-        <p className={styles.sectionTitle}>Instagram</p>
-        <div className={styles.sectionTitleSplitter}/>
-        <p className={styles.shadowTitle}>Follow</p>
+    <div className={styles.section}>
+      <p className={styles.sectionTitle}>{sectionTitle}</p>
+      <div className={styles.sectionTitleSplitter}/>
+      <p className={styles.shadowTitle}>Follow</p>
 
-        <div className={wrapperAnimateClass} ref={wrapperRef}>
-          <a href="https://www.instagram.com/p/CZJnrA_thVZ/"
-             target="_blank" rel="noreferrer"
-             className={styles.leftFirst}>
-            <img
-              src="/assets/images/blog-articles/instagram-5.jpg" width={640} height={640} alt={'image-4'}
-            />
-          </a>
-          <a href="https://www.instagram.com/p/CUrofxnLrCy/"
-             target="_blank" rel="noreferrer"
-             className={styles.leftFirst}
-          >
-            <img
-              src="/assets/images/blog-articles/instagram-2.jpg" width={640} height={640} alt={'image-1'}
-            />
-          </a>
-          <a href="https://www.instagram.com/p/CsgdEOdt1Y9/"
-             target="_blank" rel="noreferrer"
-             className={styles.leftSecond}>
-            <img
-              src="/assets/images/blog-articles/instagram-1.jpg" width={640} height={640} alt={'image-2'}
-            />
-          </a>
-          <a href="https://www.instagram.com/ivanna.tabachuk"
-             target="_blank" rel="noreferrer"
-             className={styles.centerImage}
-          >
-            <InstagramIcon/>
-            <Typography
-              className={styles.instaCaption}
-              variant={'h5'}
-            >
-              @ivanna.tabachuk
-            </Typography>
-          </a>
-          <a href="https://www.instagram.com/p/CaIB8pRLlJ9/"
-             target="_blank" rel="noreferrer"
-             className={styles.rightSecond}
-          >
-            <img
-              src="/assets/images/blog-articles/instagram-3.jpg" width={640} height={640} alt={'image-3'}
-            />
-          </a>
-          <a href="https://www.instagram.com/p/CY8hRtONw7T/"
-             target="_blank" rel="noreferrer"
-             className={styles.rightFirst}
-          >
-            <img
-              src="/assets/images/blog-articles/instagram-4.jpg" width={640} height={640} alt={'image-4'}
-            />
-          </a>
+      <div className={wrapperAnimateClass} ref={wrapperRef}>
+        {
+          instaItems?.length > 0 && instaItems.map((item, index) => {
+            if (!item?.src) {
+              return (
+                <a
+                  key={item.alt}
+                  href={item.link}
+                  target="_blank" rel="noreferrer"
+                  className={styles.centerImage}
+                >
+                  <InstagramIcon/>
+                  <Typography
+                    className={styles.instaCaption}
+                    variant={'h5'}
+                  >
+                    {item.alt}
+                  </Typography>
+                </a>
+              )
+            }
 
-          <a href="https://www.instagram.com/p/CYqsOzXIEPC/"
-             target="_blank" rel="noreferrer"
-             className={styles.rightFirst}
-          >
-            <img
-              src="/assets/images/blog-articles/instagram-6.jpg" width={640} height={640} alt={'image-4'}
-            />
-          </a>
-        </div>
+            return (
+              <a
+                key={item.alt + index}
+                href={item.link}
+                target="_blank" rel="noreferrer"
+                className={styles.leftFirst}>
+                <img
+                  src={item.src}
+                  width={item.width}
+                  height={item.height}
+                  alt={item.alt}
+                />
+                <Typography
+                  className={styles.instaCaption}
+                  variant={'h5'}
+                  sx={{
+                    color:'black',
+                    position: 'absolute',
+                    top: 'calc(100% + 16px)',
+                    bottom: '-2rem',
+                    width: '90%',
+                  }}
+                >
+                  {item?.title}
+                </Typography>
+              </a>
+            )
+
+          })
+        }
       </div>
+    </div>
   )
 }
