@@ -10,12 +10,9 @@ export const DEFAULT_ANSWERS = new Array(QUESTIONS_QUANTITY).fill([DEFAULT_TEST_
 export const DEFAULT_TEST_RESULT = {
   title: '',
   isTestSubmitted: false,
-}
+};
 
-export const isQuestionNumberDefault = (subQuestionNumber) => (
-  subQuestionNumber !== DEFAULT_TEST_ANSWER
-);
-
+export const isQuestionNumberDefault = subQuestionNumber => subQuestionNumber !== DEFAULT_TEST_ANSWER;
 
 const questions = [
   {
@@ -24,20 +21,14 @@ const questions = [
       <p className={styles.questionBody}>
         <i>
           Hi Julie,
-          <br/>
-          <br/>
+          <br />
+          <br />
           Big thanks for your job.
-          <br/>
-          I carefully examined the mockup and have several concerns. When can we discuss them?
+          <br />I carefully examined the mockup and have several concerns. When can we discuss them?
         </i>
       </p>
     ),
-    questionOptions: [
-      'Mockup',
-      'Design mockup',
-      'Discussion of the mockup',
-      'Great job',
-    ],
+    questionOptions: ['Mockup', 'Design mockup', 'Discussion of the mockup', 'Great job'],
   },
   {
     questionTitle: 'Choose the best opening for the email about recent updates.',
@@ -85,17 +76,15 @@ const questions = [
     questionOptions: [
       'Can you please have a look at my presentation?',
       'Would love your feedback on my presentation asap.',
-      'Could you please feedback on my presentation by [day]? I’d especially need your input on the stats included on slide four.',
+      'Could you please feedback on my presentation by [day]?' +
+        ' I’d especially need your input on the stats included on slide four.',
       'Please share your thoughts about my presentation.',
     ],
   },
   {
     questionTitle: 'Which is the better way to inform a customer about a mistake?',
     questionBody: DUMMY_COMPONENT,
-    questionOptions: [
-      'My colleague has made a mistake.',
-      'The mistake occurred.',
-    ],
+    questionOptions: ['My colleague has made a mistake.', 'The mistake occurred.'],
   },
   {
     questionTitle: 'What is the more effective and polite way to inform about the urgency?',
@@ -122,7 +111,8 @@ const questions = [
     questionBody: DUMMY_COMPONENT,
     questionOptions: [
       'Let’s launch the new campaign on Thursday. What do you, guys, think? Open to your ideas!',
-      'It seems like launching the new campaign on Thursday is the best option for everybody. Hope you are all Ok with that.',
+      'It seems like launching the new campaign on Thursday is the best option for everybody.' +
+        ' Hope you are all Ok with that.',
     ],
   },
   {
@@ -133,26 +123,21 @@ const questions = [
       {
         questionTitle: null,
         questionBody: DUMMY_COMPONENT,
-        questionOptions: [
-          'Thank you for your prompt reply.',
-          'Hope for your prompt reply.',
-        ],
+        questionOptions: ['Thank you for your prompt reply.', 'Hope for your prompt reply.'],
       },
       {
         questionTitle: null,
         questionBody: DUMMY_COMPONENT,
         questionOptions: [
-          'Can we please change the timing of our meeting? If 2 p.m. works for you, that would be great for me as well.',
+          'Can we please change the timing of our meeting? If 2 p.m. works for you,' +
+            ' that would be great for me as well.',
           'Unfortunately, we need to reschedule the meeting.',
         ],
       },
       {
         questionTitle: null,
         questionBody: DUMMY_COMPONENT,
-        questionOptions: [
-          'I am planning to do   ...   Is that okay?',
-          'Let me know if you have a different opinion.',
-        ],
+        questionOptions: ['I am planning to do   ...   Is that okay?', 'Let me know if you have a different opinion.'],
       },
       {
         questionTitle: null,
@@ -179,23 +164,19 @@ const questions = [
 export const emailEffectivenessTest = () => {
   const dividedItemsBy4 = get4items([], questions, 0);
   return dividedItemsBy4;
-}
+};
 
 export const getCorrectAnswers = () => {
-  return [
-    ...TEST_ANSWERS.slice(0,10),
-    [...TEST_ANSWERS.slice(10,14)],
-    ...TEST_ANSWERS.slice(14)
-  ];
-}
+  return [...TEST_ANSWERS.slice(0, 10), [...TEST_ANSWERS.slice(10, 14)], ...TEST_ANSWERS.slice(14)];
+};
 
 const get4items = (dividedItems = [], items = [], step) => {
-  if (step >= items.length/CHUNK) {
+  if (step >= items.length / CHUNK) {
     return dividedItems;
   }
   const start = step * CHUNK;
   dividedItems.push(items.slice(start, start + CHUNK));
-  return get4items(dividedItems, items, step+1);
-}
+  return get4items(dividedItems, items, step + 1);
+};
 
 export const allQuestions = () => questions;

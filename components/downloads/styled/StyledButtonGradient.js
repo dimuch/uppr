@@ -4,8 +4,8 @@ import Button from '@mui/material/Button';
 // $text var
 const text = '#44546A';
 
-// eslint-disable-next-line max-len
 const gradientActive =
+  // eslint-disable-next-line max-len
   'linear-gradient(white, white) padding-box, linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box';
 // eslint-disable-next-line max-len
 const gradientDisabled = `linear-gradient(white, white) padding-box, linear-gradient(to right, ${text}, ${text}) border-box`;

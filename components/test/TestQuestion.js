@@ -4,13 +4,19 @@ import FormControl from '@mui/material/FormControl';
 
 import TestOptionsList from '../../components/test/TestOptionsList';
 import TestQuestionTitle from './TestQuestionTitle';
-import {DEFAULT_ANSWERS, DEFAULT_TEST_ANSWER} from './service';
+import { DEFAULT_ANSWERS, DEFAULT_TEST_ANSWER } from './service';
 import ComplexTestQuestionComponent from './TestQuestionComponents/ComplexTestQuestionComponent';
 import SimpleTestQuestionComponent from './TestQuestionComponents/SimpleTestQuestionComponent';
 
 const randomKey = Math.random();
 
-export default function TestQuestion({question, questionNumber, answer, correctAnswer= DEFAULT_ANSWERS, onOptionSelect}) {
+export default function TestQuestion({
+  question,
+  questionNumber,
+  answer,
+  correctAnswer = DEFAULT_ANSWERS,
+  onOptionSelect,
+}) {
   if (question?.isComplex) {
     return (
       <ComplexTestQuestionComponent
@@ -21,7 +27,7 @@ export default function TestQuestion({question, questionNumber, answer, correctA
         answer={answer}
         correctAnswer={correctAnswer}
       />
-    )
+    );
   }
 
   return (
@@ -32,6 +38,5 @@ export default function TestQuestion({question, questionNumber, answer, correctA
       answer={answer}
       correctAnswer={correctAnswer}
     />
-  )
-
-};
+  );
+}
