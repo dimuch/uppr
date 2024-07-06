@@ -10,8 +10,13 @@ import { CaretLeft, CaretRight } from '@phosphor-icons/react';
 import { Box } from '@mui/material';
 
 const ARROW_COLOR = '#4f899c';
+let isInit = 0;
 
 const SliderArrow = props => {
+  if (!isInit) {
+    isInit++;
+    return;
+  }
   const { className, style, onClick, Icon } = props;
   return (
     <Box
