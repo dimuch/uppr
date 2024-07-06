@@ -70,4 +70,6 @@ async function getConnection() {
   return connection;
 }
 
-export { getConnection };
+module.exports = {
+  getConnection,
+};

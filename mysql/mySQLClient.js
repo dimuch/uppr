@@ -81,4 +81,8 @@ function shutDownDB() {
   });
 }
 
-export { getDBPoolData, dbCallWrapper, shutDownDB };
+module.exports = {
+  getDBPoolData,
+  dbCallWrapper,
+  shutDownDB,
+};
