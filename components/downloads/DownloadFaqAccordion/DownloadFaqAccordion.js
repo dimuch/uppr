@@ -8,7 +8,43 @@ import AccordionDetails from './components/AccordionDetails';
 
 import styles from './styles.module.scss';
 
-const DownloadFaqAccordion = ({ item }) => {
+const fourthSectionStyles = {
+//
+//   .screenFourthWrapper {
+//   position: relative;
+//   background-color: #f6f9fc;
+// }
+//   .screenFourth {
+//   display: flex;
+//   flex-direction: column;
+//   position: relative;
+//   max-width: 68rem;
+//   margin: auto;
+//   padding: 2rem 0 3rem;
+//
+// .sectionCaption {
+//     padding: .5rem 0 1rem;
+//     margin: auto;
+//   }
+//
+// .faqsItems {
+//     padding: 2rem 0;
+//   }
+// }
+}
+
+const template = {
+//   <div className={styles.screenFourthWrapper}>
+//         <div className={styles.screenFourth}>
+//           <h2 className={styles.sectionCaption}>Frequently Asked Questions (FAQs)</h2>
+//           <div className={styles.faqsItems}>
+//             <DownloadFaqAccordion/>
+//           </div>
+//         </div>
+//       </div>
+}
+
+const DownloadFaqAccordion = ({item}) => {
   // const hasMounted = useHasMounted();
   //
   // if ( !hasMounted ) {
