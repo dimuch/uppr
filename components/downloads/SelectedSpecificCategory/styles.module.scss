@@ -1,0 +1,45 @@
+@import "../../../styles/scss/common/colors.scss";
+
+.upprOthersArticles{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: min-content;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.upprAllArticles{
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: min-content;
+  gap: 3rem;
+}
+
+.upprSideBlock{
+  display: grid;
+  height: 100%;
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .upprOthersArticles{
+    grid-template-columns: 1fr;
+    margin-bottom: 0;
+  }
+  .upprSideBlock{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content;
+  }
+}
+
+@media (max-width: 650px) {
+  .upprOthersArticles{
+    grid-template-columns: 1fr;
+    margin-bottom: 0;
+  }
+  .upprSideBlock{
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content;
+  }
+}

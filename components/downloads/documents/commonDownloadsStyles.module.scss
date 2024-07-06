@@ -1,0 +1,184 @@
+@import "../../../styles/scss/common/colors.scss";
+
+
+.download {
+
+  h5 {
+    font-family: Raleway-SemiBold, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .caption {
+    font-family: Raleway-SemiBold, sans-serif;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.25;
+    text-transform: capitalize;
+  }
+
+  .sectionCaption {
+    font-family: Raleway-SemiBold, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  p {
+    font-family: Raleway-Regular, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.75;
+  }
+}
+
+.screenFirstWrapper {
+  position: relative;
+  background-color: #f6f9fc;
+  margin-bottom: 5%;
+
+  .blueTopRightArea {
+    position: absolute;
+    top: -5%;
+    right: -16%;
+  }
+
+  .waveArea {
+    position: absolute;
+    width: 100vw;
+    bottom: -1%;
+  }
+}
+
+.screenFirst {
+  display: flex;
+  position: relative;
+  max-width: 68rem;
+  margin: auto;
+  padding: 4rem 0 10rem;
+
+  .leftColumn {
+    flex-grow: 1;
+    width: 50%;
+  }
+
+  .rightColumn {
+    flex-grow: 1;
+    width: 50%;
+  }
+
+  .downloadChargeType {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .downloadCaption {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 33rem;
+  }
+
+  .downloadDescription {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 33rem;
+  }
+
+  .downloadButton {
+    margin-top: 1.75rem;
+  }
+
+  .downloadImage {
+    width: 100%;
+    height: auto;
+    padding-top: 4rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+}
+
+.screenSecondWrapper {
+  position: relative;
+}
+
+.screenSecond {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  max-width: 68rem;
+  margin: auto;
+  padding: 4rem 0 4rem;
+
+  .leftColumn {
+    width: 45%;
+  }
+
+  .rightColumn {
+    width: 55%;
+    text-align: center;
+  }
+}
+
+.screenThirdWrapper {
+  position: relative;
+}
+
+.screenThird {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  max-width: 68rem;
+  margin: auto;
+  padding: 2rem 0 3rem;
+
+  .leftColumn {
+    width: 35%;
+    padding-right: 2rem;
+  }
+
+  .rightColumn {
+    width: 65%;
+    margin-top: -0.25rem;
+  }
+
+  .sectionCaption:after {
+    content: '';
+    border-bottom: 0.5rem solid transparent;
+    background: linear-gradient(#f4f5f9, #f4f5f9) padding-box, linear-gradient(90deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box;
+    position: relative;
+    display: block;
+    width: 4.25rem;
+    margin: 1rem 0;
+  }
+}
+
+.screenFifthWrapper {
+  position: relative;
+}
+
+.screenFifth {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  max-width: 68rem;
+  margin: auto;
+  padding: 2rem 0 3rem;
+
+  .leftColumn {
+    width: 80%;
+    padding-right: 2rem;
+  }
+
+  .rightColumn {
+    width: 20%;
+  }
+
+  .sectionCaption {
+    padding: 3rem 0;
+    margin: auto;
+    text-transform: capitalize;
+  }
+}

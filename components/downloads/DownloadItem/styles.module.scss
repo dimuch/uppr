@@ -1,0 +1,108 @@
+@import "../../../styles/scss/common/colors.scss";
+
+
+.upprBlogPage {
+  position: relative;
+}
+
+.upprPageContent {
+  max-width: initial;
+  padding: 0;
+  overflow-x: clip;
+  background-color: $page-background;
+}
+
+.upprArticlesContent {
+  max-width: 1200px;
+  padding: 8rem 2rem 6rem 2rem;
+  margin: auto;
+
+  h5 {
+    font-size: 2rem;
+  }
+}
+
+.downloadsWrapper{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.downloads {
+  margin: 6rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.downloadLink {
+  display: block;
+  width: 33.333%;
+  padding: 1rem 1rem 3.5rem;
+}
+
+.downloadImage{
+  position: relative;
+  img{
+    width: 100%;
+    height: auto;
+  }
+
+  &:hover{
+
+  }
+}
+
+.downloadContent {
+  text-align: center;
+
+  .caption{
+    margin-top: 1.25rem;
+    margin-bottom: .5rem;
+  }
+}
+
+.linkAsButton{
+  display: block;
+  padding: 0.75rem 1rem;
+  min-width: 8rem;
+  border-radius: 2rem;
+  text-align: center;
+  font-family: "Futura-PT", sans-serif;
+  background-color: transparent;
+  transform: scale3d(0.7, 0.7, 1);
+  opacity: 0;
+  transition: all 0.35s ease-out;
+}
+
+.overlay{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -2px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: background-color 0.35s ease-out;
+  &:hover {
+    background-color: $image-overlay;
+
+    .linkAsButton{
+      opacity: 1;
+      background-color: $white;
+      transform: scale3d(1, 1, 1);
+    }
+  }
+}
+
+
+@media (max-width: 650px) {
+  .upprPageContent {
+    width: 100%;
+  }
+  .upprArticleCategories {
+    padding: 2rem 0;
+  }
+}

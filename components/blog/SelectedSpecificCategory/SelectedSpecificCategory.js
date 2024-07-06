@@ -7,9 +7,9 @@ import styles from './styles.module.scss';
 import InformationBlock from '../InformationBlock/InformationBlock';
 
 export default function SelectedSpecificCategory({
-                                                     tags,
-                                                     articlesByCategory,
-                                                 }) {
+   tags,
+   articlesByCategory,
+}) {
 
     const firstRowOthersArticles = useMemo(() => {
         return !tags?.length ? articlesByCategory?.slice(0, 3) : (articlesByCategory?.slice(0, 2) || []);

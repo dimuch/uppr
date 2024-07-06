@@ -1,57 +1,101 @@
-import {dbCallWrapper} from '../mysql/mySQLClient';
+import { dbCallWrapper } from '../mysql/mySQLClient';
 
-export async function getDownloadsByCategoryDB(params = {category: 'all'}) {
-  const {category} = params;
+export async function getDownloadsCategoriesDB() {
   const selectClause = `
     SELECT * 
-    FROM uppr_ssr.downloads AS Downloads
-    LEFT JOIN uppr_ssr.downloads_categories AS DownloadsCategories 
-    ON Downloads.download_category_id=DownloadsCategories.id
+    FROM uppr_ssr.downloads_charge_types AS DownloadChargeTypes
   `;
-  const whereClause = category !== 'all' ? `WHERE DownloadsCategories.name='${category}'` : '' ;
-  const orderClause = `ORDER BY Downloads.caption ASC;`;
+
+  const whereClause = '';
+  const orderClause = `ORDER BY DownloadChargeTypes.id ASC;`;
 
   const getDownloadsByCategory = `${selectClause} ${whereClause} ${orderClause}`;
 
-  const mapper = (dataDB) => {
+  const mapper = dataDB => {
+    return dataDB.map(item => {
+      return {
+        ...item,
+        title: item.display_name,
+      };
+    });
+  };
+
+  try {
+    const data = await dbCallWrapper(getDownloadsByCategory, mapper);
+    return { categories: data };
+  } catch (err) {
+    console.error('getDownloadsCategoriesDB ==>', err);
+    return { categories: [] };
+  }
+}
+
+export async function getDownloadsByCategoryDB(params = { category: 'all' }) {
+  const { category } = params;
+  const selectClause = `
+    SELECT * 
+    FROM uppr_ssr.downloads AS Downloads
+    LEFT JOIN uppr_ssr.downloads_charge_types AS DownloadsChargeTypes 
+    ON Downloads.download_charge_type=DownloadsChargeTypes.id
+  `;
+  const whereClause = category !== 'all' ? `WHERE DownloadsChargeTypes.name='${category}'` : '';
+  const orderClause = `ORDER BY Downloads.download_order ASC;`;
+
+  const getDownloadsByCategory = `${selectClause} ${whereClause} ${orderClause}`;
+
+  console.log('getDownloadsByCategory', getDownloadsByCategory);
+
+  const mapper = dataDB => {
     return dataDB.map(item => {
       return {
         ...item,
         publishedDate: new Date(item.publishedDate).toString(),
-        image: item.download_image,
+        image: item.image,
         category: item.display_name,
-      }
+        isDirectDownload: item.isDirectDownload,
+        downloadLink: item.download_link,
+      };
     });
-  }
+  };
 
   try {
     const data = await dbCallWrapper(getDownloadsByCategory, mapper);
-    return {downloads: data};
+    return { downloads: data };
   } catch (err) {
     console.error('getDownloadsByCategoryDB ==>', err);
-    return {downloads: []};
+    return { downloads: [] };
   }
-};
+}
 
-export async function getDownloadDataByCaptionDB(downloadURL) {
-  const downloadCaption = downloadURL.replaceAll('_', ' ');
+export async function   getDownloadDataByCaptionDB(downloadCaption) {
+  const caption = downloadCaption.replaceAll('_', ' ');
   const selectClause = `
     SELECT * 
     FROM uppr_ssr.downloads AS Downloads
+    LEFT JOIN uppr_ssr.authors AS Authors
+    ON Authors.id=Downloads.authorId
+    LEFT JOIN uppr_ssr.downloads_charge_types AS DownloadsChargeTypes
+    ON DownloadsChargeTypes.id=Downloads.download_charge_type
   `;
-  const whereClause = `WHERE Downloads.caption='${downloadCaption}'`;
-  const orderClause = `;`;
+  const whereClause = `WHERE LOWER(Downloads.caption)='${caption}'`;
+  const orderClause = ``;
 
-  const getDownloadsByCategory = `${selectClause} ${whereClause} ${orderClause}`;
+  const getDownloadsByCategory = `${selectClause} ${whereClause} ${orderClause} ;`;
+
+  const mapper = dataDB => {
+    const itemData = dataDB[0];
+    return {
+      ...itemData,
+      publishedDate: new Date(itemData.publishedDate).toString(),
+      downloadComponent: itemData?.['download_component'] || 'PageNotFound',
+      author: `${itemData?.name} ${itemData?.surname}`,
+      chargeTypeCaption: itemData.display_name,
+    };
+  };
 
   try {
-    const data = await dbCallWrapper(getDownloadsByCategory);
-    return {
-      ...data,
-      publishedDate: new Date(data.publishedDate).toString(),
-    };
+    return dbCallWrapper(getDownloadsByCategory, mapper);
   } catch (err) {
-    console.error('getDownloadsByCategoryDB ==>', err);
+    console.error('getDownloadDataByCaptionDB ==>', err);
     return {};
   }
-};
+}

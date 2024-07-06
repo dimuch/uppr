@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import Header from '../../../components/common/header/Header';
 import { getArticlesDataByIdDB } from '../../../services/blogData';
@@ -8,69 +8,62 @@ import GoogleStat from '../../../components/common/googleCtat/GoogleStat';
 
 const PAGE_NOT_FOUND = 'PageNotFound';
 
-export default function ArticlePageWrapper( {articleData} ) {
+export default function ArticlePageWrapper({ articleData }) {
   const ArticlePage = PageComponent[articleData.pageComponent];
 
   const hasMounted = useHasMounted();
 
-  if ( !hasMounted ) {
+  if (!hasMounted) {
     return null;
   }
 
-  if ( articleData.pageComponent === PAGE_NOT_FOUND ) {
-    return <ArticlePage/>;
+  if (articleData.pageComponent === PAGE_NOT_FOUND) {
+    return <ArticlePage />;
   }
 
   return (
     <>
       <Head>
         <title>{articleData.title} | UPPR Блог</title>
-        <meta name="description" content={articleData.description}/>
-        <meta name="keywords" content="education on-line, english, business, writing, skills, emails"/>
-        <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <meta name="viewport" content="width=device-width,initial-scale=1"/>
-        <meta name="apple-mobile-web-app-capable" content="yes"/>
-        <meta name="apple-mobile-web-app-status-bar-style" content="yes"/>
-        <link rel="apple-touch-icon" href="/favicon.png" type="image/x-icon"/>
-        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>
-        <link rel="icon" href="/favicon.png"/>
+        <meta name="description" content={articleData.description} />
+        <meta name="keywords" content="education on-line, english, business, writing, skills, emails" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
+        <link rel="apple-touch-icon" href="/favicon.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+        <link rel="icon" href="/favicon.png" />
 
-        <meta property="og:url" content={'https://uppr.com.ua' + articleData.link}/>
-        <meta property="og:type" content="website"/>
-        <meta property="article:author" content="https://www.facebook.com/ivanna.tabachuk"/>
-        <meta property="og:title" content={articleData.title + '| UPPR Блог'}/>
-        <meta property="og:description" content={articleData.description}/>
-        <meta property="og:image" content={'https://uppr.com.ua' + articleData.image}/>
-        <meta property="og:image:width" content="700"/>
-        <meta property="og:image:height" content="400"/>
-        <link rel="canonical" href={'https://uppr.com.ua' + articleData.link}/>
-        <meta name="google-site-verification" content="8Ui50OggqnZ5J1RPshJXelSAYWMPvFGWv32MSzHHlJU"/>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={addJsonLdData(articleData)}
-          key="product-jsonld"
-        />
+        <meta property="og:url" content={'https://uppr.com.ua' + articleData.link} />
+        <meta property="og:type" content="website" />
+        <meta property="article:author" content="https://www.facebook.com/ivanna.tabachuk" />
+        <meta property="og:title" content={articleData.title + '| UPPR Блог'} />
+        <meta property="og:description" content={articleData.description} />
+        <meta property="og:image" content={'https://uppr.com.ua' + articleData.image} />
+        <meta property="og:image:width" content="700" />
+        <meta property="og:image:height" content="400" />
+        <link rel="canonical" href={'https://uppr.com.ua' + articleData.link} />
+        <meta name="google-site-verification" content="8Ui50OggqnZ5J1RPshJXelSAYWMPvFGWv32MSzHHlJU" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={addJsonLdData(articleData)} key="product-jsonld" />
       </Head>
 
-      <Header search location={'/blog'}/>
-      <div style={{overflow: 'hidden'}}>
-        <ArticlePage articleData={articleData}/>
+      <Header search location={'/blog'} />
+      <div style={{ overflow: 'hidden' }}>
+        <ArticlePage articleData={articleData} />
       </div>
 
-      <GoogleStat/>
+      <GoogleStat />
     </>
   );
-};
+}
 
-export async function getServerSideProps( {res, resolvedUrl} ) {
+export async function getServerSideProps({ res, resolvedUrl }) {
   const articleURL = resolvedUrl.split('?')[0];
   const articleData = await getArticlesDataByIdDB(articleURL);
 
- res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=10'
-  )
+  res.setHeader('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=10');
 
   return {
     props: {
@@ -79,39 +72,39 @@ export async function getServerSideProps( {res, resolvedUrl} ) {
   };
 }
 
-function addJsonLdData( articleData ) {
+function addJsonLdData(articleData) {
   return {
     __html: JSON.stringify({
       '@context': 'https://schema.org/',
       '@type': 'BlogPosting',
-      'mainEntityOfPage': {
+      mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': `${articleData.link}`,
-        'relatedLink': 'https://uppr.com.ua/blog',
+        relatedLink: 'https://uppr.com.ua/blog',
       },
-      'headline': `${articleData.title} | UPPR Блог`,
-      'url': `${articleData.link}`,
-      'image': {
+      headline: `${articleData.title} | UPPR Блог`,
+      url: `${articleData.link}`,
+      image: {
         '@type': 'ImageObject',
-        'url': `${articleData.image}`,
-        'width': 700,
-        'height': 400,
+        url: `${articleData.image}`,
+        width: 700,
+        height: 400,
       },
-      'datePublished': `${articleData.published}`,
-      'author': {
+      datePublished: `${articleData.published}`,
+      author: {
         '@type': 'Person',
-        'name': `${articleData.author}`,
+        name: `${articleData.author}`,
       },
-      'publisher': {
+      publisher: {
         '@type': 'Organization',
-        'name': '[UP]PR',
-        'logo': {
+        name: '[UP]PR',
+        logo: {
           '@type': 'ImageObject',
-          'url': 'https://uppr.com.ua/assets/images/blog-articles/logo.jpg',
-          'width': 503,
+          url: 'https://uppr.com.ua/assets/images/blog-articles/logo.jpg',
+          width: 503,
         },
       },
-      'description': `${articleData.description}`,
+      description: `${articleData.description}`,
     }),
   };
 }

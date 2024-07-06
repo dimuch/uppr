@@ -1,6 +1,4 @@
 import React from 'react';
-import Image from "next/image";
-
 import ArticleHeader from '../blog/ArticleHeader/ArticleHeader';
 import ArticleFooter from '../blog/ArticleFooter/ArticleFooter';
 
