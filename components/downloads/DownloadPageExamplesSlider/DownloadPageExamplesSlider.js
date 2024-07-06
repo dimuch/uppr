@@ -53,13 +53,7 @@ const settings = {
   prevArrow: <SliderArrow Icon={CaretLeft} />,
 };
 
-let isInit = 0;
-
 const DownloadPageExamplesSlider = ({ items }) => {
-  if (!isInit) {
-    isInit++;
-    return;
-  }
   return (
     <Slider {...settings}>
       <Box>
