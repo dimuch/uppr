@@ -42,8 +42,6 @@ export async function getDownloadsByCategoryDB(params = { category: 'all' }) {
 
   const getDownloadsByCategory = `${selectClause} ${whereClause} ${orderClause}`;
 
-  console.log('getDownloadsByCategory', getDownloadsByCategory);
-
   const mapper = dataDB => {
     return dataDB.map(item => {
       return {
@@ -66,7 +64,7 @@ export async function getDownloadsByCategoryDB(params = { category: 'all' }) {
   }
 }
 
-export async function   getDownloadDataByCaptionDB(downloadCaption) {
+export async function getDownloadDataByCaptionDB(downloadCaption) {
   const caption = downloadCaption.replaceAll('_', ' ');
   const selectClause = `
     SELECT * 
