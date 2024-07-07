@@ -74,7 +74,7 @@ export async function getDownloadDataByCaptionDB(downloadCaption) {
     LEFT JOIN uppr_ssr.downloads_charge_types AS DownloadsChargeTypes
     ON DownloadsChargeTypes.id=Downloads.download_charge_type
   `;
-  const whereClause = `WHERE LOWER(Downloads.caption)='${caption}'`;
+  const whereClause = `WHERE LOWER(Downloads.caption)='${caption.toLowerCase()}'`;
   const orderClause = ``;
 
   const getDownloadsByCategory = `${selectClause} ${whereClause} ${orderClause} ;`;
