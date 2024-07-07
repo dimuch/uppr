@@ -54,6 +54,14 @@ const instaImagesConfig = [
     alt: 'Strong words instead',
     title: 'Strong words instead',
   },
+  {
+    link: '/downloads/details/guide_to_fine-tune_your_status_updates',
+    src: '/assets/images/downloads/guide_to_perfect_status_updates_thumb.jpg',
+    width: '640',
+    height: '640',
+    alt: 'Guide to fine-tune your status updates',
+    title: 'Guide to fine-tune your status updates',
+  },
 ];
 
 const UPDATE_STAT_INFO = '/api/downloads';
@@ -73,7 +81,7 @@ const Ebook = ({ data }) => {
 
   const downloadFile = useCallback(() => {
     const link = document.createElement('a');
-    link.href = data.downloadLink;
+    link.href = `${data.downloadLink}`;
     link.download = `${data.caption.toLowerCase()}.pdf`;
     link.click();
     onDownloadClick();

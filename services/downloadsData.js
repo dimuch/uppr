@@ -69,6 +69,7 @@ export async function getDownloadDataByCaptionDB(downloadCaption) {
 
   const selectClause = `
     SELECT Downloads.*, Downloads.id as downloadId, Downloads.downloaded_counter as downloadedCounter,
+      Downloads.download_link as downloadLink,
       Authors.*, DownloadsChargeTypes.*
     FROM uppr_ssr.downloads AS Downloads
     LEFT JOIN uppr_ssr.authors AS Authors
@@ -83,7 +84,6 @@ export async function getDownloadDataByCaptionDB(downloadCaption) {
 
   const mapper = dataDB => {
     const itemData = dataDB[0];
-    console.log('itemData', itemData);
 
     return {
       ...itemData,

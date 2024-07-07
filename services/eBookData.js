@@ -1,6 +1,6 @@
-import crypto from "crypto";
-import { getDBPoolData } from "../mysql/mySQLClient";
-import { createUUID } from "../helpers/uuid";
+import crypto from 'crypto';
+import { getDBPoolData } from '../mysql/mySQLClient';
+import { createUUID } from '../helpers/uuid';
 
 const privateKey = process.env.PAYMENT_PRIVATE_KEY;
 const publicKey = process.env.PAYMENT_PUBLIC_KEY;
@@ -12,9 +12,9 @@ export async function getPaymentFormInitParams(purchasedItemId = 1) {
 
   const rawData = {
     version: 3,
-    action: "pay",
-    amount: "5",
-    currency: "UAH",
+    action: 'pay',
+    amount: '5',
+    currency: 'UAH',
     description: `payment for e-book, order ${orderId}_${orderDate}`,
     order_id: `${orderId}_${orderDate}`,
     result_url: `http://127.0.0.1:3000/result/${resultPageId}`,
@@ -31,14 +31,12 @@ export function getPaymentFormParams(rawData) {
     public_key: publicKey,
   };
 
-  const base64Data = Buffer.from(JSON.stringify(rawDataWithCreds)).toString(
-    "base64"
-  );
+  const base64Data = Buffer.from(JSON.stringify(rawDataWithCreds)).toString('base64');
 
   const base64allTogether = `${privateKey}${base64Data}${privateKey}`;
 
-  const sha1Hash = crypto.createHash("sha1");
-  const signature = sha1Hash.update(base64allTogether).digest("base64");
+  const sha1Hash = crypto.createHash('sha1');
+  const signature = sha1Hash.update(base64allTogether).digest('base64');
 
   return { data: base64Data, signature };
 }
@@ -59,13 +57,12 @@ async function initNextOrderData(purchasedItemId) {
   return new Promise((resolve, reject) => {
     connection.query(updateOrderState, (err, rows, fields) => {
       if (err) {
-        console.log("updateOrderState ERROR", err);
+        console.log('updateOrderState ERROR', err);
         reject({ data: [] });
       }
 
       try {
-        const orderId = rows[0][0]["LAST_INSERT_ID()"];
-        console.log(orderId);
+        const orderId = rows[0][0]['LAST_INSERT_ID()'];
 
         resolve({ orderId: orderId, resultPageId });
       } catch (e) {
