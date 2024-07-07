@@ -63,6 +63,14 @@ export default function DownloadDetails({ downloadData }) {
 
 export async function getServerSideProps(context) {
   const downloadCaption = context.params[':downloadCaption']?.toLowerCase();
+  if (downloadCaption === 'undefined') {
+    return {
+      props: {
+        downloadData: {},
+      },
+    };
+  }
+
   try {
     context.res.setHeader('Cache-Control', 'public, stale-while-revalidate=59');
 

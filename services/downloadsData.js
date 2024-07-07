@@ -66,8 +66,10 @@ export async function getDownloadsByCategoryDB(params = { category: 'all' }) {
 
 export async function getDownloadDataByCaptionDB(downloadCaption) {
   const caption = downloadCaption.replaceAll('_', ' ');
+
   const selectClause = `
-    SELECT * 
+    SELECT Downloads.*, Downloads.id as downloadId, Downloads.downloaded_counter as downloadedCounter,
+      Authors.*, DownloadsChargeTypes.*
     FROM uppr_ssr.downloads AS Downloads
     LEFT JOIN uppr_ssr.authors AS Authors
     ON Authors.id=Downloads.authorId
@@ -81,6 +83,8 @@ export async function getDownloadDataByCaptionDB(downloadCaption) {
 
   const mapper = dataDB => {
     const itemData = dataDB[0];
+    console.log('itemData', itemData);
+
     return {
       ...itemData,
       publishedDate: new Date(itemData.publishedDate).toString(),
@@ -96,4 +100,14 @@ export async function getDownloadDataByCaptionDB(downloadCaption) {
     console.error('getDownloadDataByCaptionDB ==>', err);
     return {};
   }
+}
+
+export async function addInfoDownloadsStat(downloadId, downloadedCounter) {
+  const query = `
+    UPDATE uppr_ssr.downloads
+    SET downloaded_counter = ${downloadedCounter}
+    WHERE id = ${downloadId};
+  `;
+
+  return await dbCallWrapper(query);
 }

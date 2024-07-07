@@ -11,6 +11,8 @@ import DownloadFaqAccordion from '../DownloadFaqAccordion/DownloadFaqAccordion';
 import { CheckCircle } from '@phosphor-icons/react';
 import DownloadPageExamplesSlider from '../DownloadPageExamplesSlider/DownloadPageExamplesSlider';
 import InstagramImages from '../../blog/InstagramImages/InstagramImages';
+import { TEST_ANSWERS } from '../../test/service';
+import useMakeRequest, { POST_REQ_METHOD } from '../../common/hooks/makeRequest';
 
 const bookBullets = [
   'How to make your updates more specific',
@@ -54,15 +56,27 @@ const instaImagesConfig = [
   },
 ];
 
+const UPDATE_STAT_INFO = '/api/downloads';
+
 const steps = [0, 1];
 const maxSteps = steps.length;
 
 const Ebook = ({ data }) => {
+  const { makeRequest, isLoading, error, data: requestData } = useMakeRequest();
+
+  const onDownloadClick = async () => {
+    await makeRequest(UPDATE_STAT_INFO, POST_REQ_METHOD, {
+      downloadId: data.downloadId,
+      downloadedCounter: Number.parseInt(data.downloadedCounter) + 1,
+    });
+  };
+
   const downloadFile = useCallback(() => {
     const link = document.createElement('a');
     link.href = data.downloadLink;
     link.download = `${data.caption.toLowerCase()}.pdf`;
     link.click();
+    onDownloadClick();
   }, [data]);
 
   return (
@@ -80,7 +94,6 @@ const Ebook = ({ data }) => {
               <h1 className={styles.caption}>{data.caption}</h1>
             </div>
             <div className={styles.downloadDescription}>
-              {/*<p>{data.description}</p>*/}
               <p>
                 Кінець дня/тижня/місяця і от знову: потрібно писати статуси по проєкту. Нудно, марудно, але треба. І все
                 б нічого аби ще знати, що писати і скільки, чого саме очікує клієнт і менеджер.
