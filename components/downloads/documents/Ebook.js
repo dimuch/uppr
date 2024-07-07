@@ -52,14 +52,6 @@ const instaImagesConfig = [
     alt: 'Strong words instead',
     title: 'Strong words instead',
   },
-  {
-    link: '/downloads/details/guide_to_fine-tune_your_status_updates',
-    src: '/assets/images/downloads/guide_to_perfect_status_updates_thumb.jpg',
-    width: '640',
-    height: '640',
-    alt: 'Guide to fine-tune your status updates',
-    title: 'Guide to fine-tune your status updates',
-  },
 ];
 
 const steps = [0, 1];
