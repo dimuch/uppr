@@ -20,7 +20,7 @@
 
   .sectionCaption {
     font-family: Raleway-SemiBold, sans-serif;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 600;
     line-height: 1.5;
     margin: 0;
@@ -28,7 +28,7 @@
 
   p {
     font-family: Raleway-Regular, sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.75;
   }
@@ -134,12 +134,12 @@
   padding: 2rem 0 3rem;
 
   .leftColumn {
-    width: 35%;
-    padding-right: 2rem;
+    width: 41%;
+    padding-right: 5rem;
   }
 
   .rightColumn {
-    width: 65%;
+    width: 59%;
     margin-top: -0.25rem;
   }
 
@@ -179,6 +179,14 @@
   .sectionCaption {
     padding: 3rem 0;
     margin: auto;
-    text-transform: capitalize;
   }
+}
+
+.screenSixWrapper {
+  position: relative;
+}
+
+.screenSixth {
+  margin: auto;
+  padding-bottom: 25rem;
 }

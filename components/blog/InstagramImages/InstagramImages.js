@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import InstagramIcon from '../../common/icons/instagram-icon';
 import { Typography } from '@mui/material';
 
-export default function InstagramImages({ instaItems, sectionTitle }) {
+export default function InstagramImages({ instaItems, sectionTitle, shadowText = 'Follow' }) {
   const wrapperRef = useRef();
   const [scrollTop, setScrollTop] = useState(0);
   const [top, setTop] = useState(0);
@@ -33,7 +33,7 @@ export default function InstagramImages({ instaItems, sectionTitle }) {
     <div className={styles.section}>
       <p className={styles.sectionTitle}>{sectionTitle}</p>
       <div className={styles.sectionTitleSplitter} />
-      <p className={styles.shadowTitle}>Follow</p>
+      <p className={styles.shadowTitle}>{shadowText}</p>
 
       <div className={wrapperAnimateClass} ref={wrapperRef}>
         {instaItems?.length > 0 &&

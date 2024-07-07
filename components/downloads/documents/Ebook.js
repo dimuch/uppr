@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { List, ListItem, ListItemIcon, ListItemText, useTheme } from '@mui/material';
 
 import styles from './commonDownloadsStyles.module.scss';
 
@@ -13,6 +13,8 @@ import DownloadPageExamplesSlider from '../DownloadPageExamplesSlider/DownloadPa
 import InstagramImages from '../../blog/InstagramImages/InstagramImages';
 import { TEST_ANSWERS } from '../../test/service';
 import useMakeRequest, { POST_REQ_METHOD } from '../../common/hooks/makeRequest';
+import Footer from '../../common/footers/footer/Footer';
+import GoogleStat from '../../common/googleCtat/GoogleStat';
 
 const bookBullets = [
   'How to make your updates more specific',
@@ -40,7 +42,7 @@ const instaImagesConfig = [
     title: 'Resume Layout Template',
   },
   {
-    link: 'https://www.instagram.com/ivanna.tabachuk',
+    link: '',
     src: null,
     width: null,
     height: null,
@@ -70,6 +72,8 @@ const steps = [0, 1];
 const maxSteps = steps.length;
 
 const Ebook = ({ data }) => {
+  const theme = useTheme();
+  console.log(theme);
   const { makeRequest, isLoading, error, data: requestData } = useMakeRequest();
 
   const onDownloadClick = async () => {
@@ -179,7 +183,9 @@ const Ebook = ({ data }) => {
       <div className={styles.screenThirdWrapper}>
         <div className={styles.screenThird}>
           <div className={styles.leftColumn}>
-            <h2 className={styles.sectionCaption}>Aдекватні клієнти - це завжди про грамотно побудована комунікація</h2>
+            <h2 className={styles.sectionCaption}>
+              Aдекватні клієнти &mdash; це завжди про грамотно побудовану комунікацію
+            </h2>
           </div>
 
           <div className={styles.rightColumn}>
@@ -202,7 +208,7 @@ const Ebook = ({ data }) => {
       <div className={styles.screenFifthWrapper}>
         <div className={styles.screenFifth}>
           <div className={styles.leftColumn}>
-            <h5 className={styles.sectionCaption}>Get {data.caption}</h5>
+            <h5 className={styles.sectionCaption}>Start writing better status updates today</h5>
           </div>
           <div className={styles.rightColumn}>
             <div className={styles.downloadButton}>
@@ -214,12 +220,20 @@ const Ebook = ({ data }) => {
         </div>
       </div>
 
-      <div>
-        <InstagramImages
-          instaItems={instaImagesConfig}
-          sectionTitle={<h5 className={styles.sectionCaption}>Downloads</h5>}
-        />
+      <div className={styles.screenSixWrapper}>
+        <div className={styles.screenSixth}>
+          <InstagramImages
+            shadowText="Download"
+            instaItems={instaImagesConfig}
+            sectionTitle={
+              <h3 className={styles.sectionCaption} style={{ fontSize: '3rem' }}>
+                Download the latest and the greatest
+              </h3>
+            }
+          />
+        </div>
       </div>
+      <GoogleStat />
     </div>
   );
 };

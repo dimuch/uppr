@@ -17,12 +17,14 @@
   a {
     display: block;
     margin: auto .5rem;
-    img{
+
+    img {
       min-width: 12rem;
       max-width: 16rem;
       height: auto;
     }
-    &:hover{
+
+    &:hover {
       scale: 1.05;
     }
   }
@@ -57,24 +59,27 @@
     height: auto;
     background-image: linear-gradient(135deg, #ff9f2e, #f723c4);
     box-shadow: 0 10px 24px 0 rgba(244, 55, 168, 0.4);
+
     svg {
       opacity: .16;
-      path{
+
+      path {
         fill: $white;
       }
     }
-    &:hover{
+
+    &:hover {
       scale: 1.05;
     }
   }
 
-  .rightSecond{
+  .rightSecond {
     opacity: 0;
     transform: translate(-25%);
-    transition: all .25s ease-in  .2s, opacity .35s ease-in  .2s;
+    transition: all .25s ease-in .2s, opacity .35s ease-in .2s;
   }
 
-  .rightFirst{
+  .rightFirst {
     opacity: 0;
     transform: translate(-25%);
     transition: all .25s ease-in, opacity .35s ease-in;
@@ -100,20 +105,20 @@
     transition: all .25s ease-in, opacity .35s ease-in;
   }
 
-  .rightSecond{
+  .rightSecond {
     opacity: 1;
     transform: translate(0);
     transition: all .25s ease-in, opacity .35s ease-in;
   }
 
-  .rightFirst{
+  .rightFirst {
     opacity: 1;
     transform: translate(0);
-    transition: all .25s ease-in .2s, opacity .35s ease-in  .2s;
+    transition: all .25s ease-in .2s, opacity .35s ease-in .2s;
   }
 }
 
-.instaCaption{
+.instaCaption {
   position: absolute;
   color: $white;
   top: 45%;
@@ -121,7 +126,7 @@
   transform: translate(-50%);
 }
 
-.section{
+.section {
   margin-top: 3rem;
   margin-bottom: 5rem;
 }
@@ -131,18 +136,17 @@
   margin-bottom: 2.25rem;
   font-size: 3rem;
   font-family: 'Raleway-SemiBold', sans-serif;
-  text-transform: capitalize;
   text-align: center;
 }
 
-.sectionTitleSplitter{
+.sectionTitleSplitter {
   margin: auto;
   margin-bottom: 2rem;
   width: 2.5rem;
   border: 2px solid #cbd0df;
 }
 
-.shadowTitle{
+.shadowTitle {
   margin: 0 0 -35px 0;
   text-align: center;
   font-size: 8rem;
@@ -158,9 +162,9 @@
 }
 
 @media (max-width: 420px) {
-  .wrapper{
+  .wrapper {
     a {
-      img{
+      img {
         min-width: 10rem;
         max-width: 12rem;
         height: auto;

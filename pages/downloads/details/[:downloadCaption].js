@@ -9,8 +9,10 @@ import PageNotFound from '../../404';
 
 import GoogleStat from '../../../components/common/googleCtat/GoogleStat';
 import { getDownloadDataByCaptionDB } from '../../../services/downloadsData';
+import Footer from '../../../components/common/footers/footer/Footer';
+import { getArticles } from '../../../services/blogData';
 
-export default function DownloadDetails({ downloadData }) {
+export default function DownloadDetails({ downloadData, top3Article }) {
   const DownloadPage = DownloadDocuments[downloadData?.downloadComponent];
 
   const hasMounted = useHasMounted();
@@ -23,6 +25,7 @@ export default function DownloadDetails({ downloadData }) {
     return <PageNotFound redirectLink={'/downloads'} redirectPage={'Повернутись до завантажень'} />;
   }
 
+  console.log('top3Article', top3Article);
   return (
     <>
       <Head>
@@ -56,6 +59,7 @@ export default function DownloadDetails({ downloadData }) {
         <DownloadPage data={downloadData} />
       </div>
 
+      <Footer top3Article={top3Article} />
       <GoogleStat />
     </>
   );
@@ -73,11 +77,12 @@ export async function getServerSideProps(context) {
 
   try {
     context.res.setHeader('Cache-Control', 'public, stale-while-revalidate=59');
-
+    const articles = await getArticles();
     const downloadData = await getDownloadDataByCaptionDB(downloadCaption);
 
     return {
       props: {
+        top3Article: articles?.top3Article,
         downloadData,
       },
     };

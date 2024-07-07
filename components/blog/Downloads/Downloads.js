@@ -36,7 +36,7 @@ export default function Downloads({ items }) {
                 <Icon />
               </Grid>
               <Grid item xs={10} className="title">
-                <a href={`${article.downloadLink}`}>{article.caption}</a>
+                <a href={`${article?.detailsLink || article?.downloadLink}`}>{article.caption}</a>
               </Grid>
             </Grid>
           );
