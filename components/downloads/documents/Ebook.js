@@ -30,7 +30,7 @@ const instaImagesConfig = [
     title: 'Action verbs for resume',
   },
   {
-    link: '/assets/downloads/resume_Layout_Template_1.pdf',
+    link: '/assets/downloads/resume_layout_template_1.pdf',
     src: '/assets/images/downloads/resume_layout_template_thumb.jpg',
     width: '640',
     height: '640',
