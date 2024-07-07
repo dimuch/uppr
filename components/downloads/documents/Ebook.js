@@ -69,7 +69,7 @@ const Ebook = ({ data }) => {
   const downloadFile = useCallback(() => {
     const link = document.createElement('a');
     link.href = data.downloadLink;
-    link.download = `${data.caption}.pdf`;
+    link.download = `${data.caption.toLowerCase()}.pdf`;
     link.click();
   }, [data]);
 
