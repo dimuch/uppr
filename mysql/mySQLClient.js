@@ -53,7 +53,6 @@ function makeConnectionDB() {
 }
 
 export async function dbCallWrapper(query, mapper) {
-  console.log('query ====>', query);
   return new Promise((resolve, reject) => {
     db_pool.query(query, (err, rows, fields) => {
       if (err) {
