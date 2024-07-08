@@ -89,3 +89,5 @@ Allow: /blog/articles-by-category/hr
 Allow: /blog/articles-by-category/business%20english
 Allow: /blog/post-tag
 Allow: /test
+Allow: /downloads
+Allow: /downloads/details/guide_to_fine-tune_your_status_updates
