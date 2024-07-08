@@ -190,3 +190,92 @@
   margin: auto;
   padding-bottom: 25rem;
 }
+
+@media (max-width: 1024px) {
+  .screenFirstWrapper {
+    .screenFirst {
+      flex-direction: column;
+      padding-bottom: 2rem;
+    }
+
+    .leftColumn {
+      width: 100%;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .blueTopRightArea {
+      left: -10%;
+      right: auto;
+    }
+
+    .downloadCaption {
+      width: 30%;
+    }
+  }
+
+  .screenSecondWrapper {
+    .screenSecond {
+      flex-direction: column;
+      padding-bottom: 0rem;
+    }
+
+    .leftColumn, .rightColumn {
+      padding-left: 1rem;
+      padding-right: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .leftColumn {
+      width: 100%;
+    }
+
+    .rightColumn {
+      width: 85%;
+      margin: auto;
+    }
+
+  }
+
+  .screenThirdWrapper {
+    .screenThird {
+      flex-direction: column;
+      padding-bottom: 0rem;
+    }
+
+    .leftColumn, .rightColumn {
+      padding-left: 1rem;
+      padding-right: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .leftColumn, .rightColumn {
+      width: 100%;
+    }
+  }
+
+  .screenFifthWrapper {
+    .screenFifth {
+      flex-direction: column;
+      padding-bottom: 0rem;
+    }
+
+    .leftColumn, .rightColumn {
+      padding-left: 1rem;
+      padding-right: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .leftColumn, .rightColumn {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+    }
+
+    .downloadButton {
+      margin: auto;
+      text-align: center;
+      width: 80%;
+    }
+  }
+}

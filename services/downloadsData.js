@@ -105,7 +105,7 @@ export async function getDownloadDataByCaptionDB(downloadCaption) {
 export async function addInfoDownloadsStat(downloadId, downloadedCounter) {
   const query = `
     UPDATE uppr_ssr.downloads
-    SET downloaded_counter = ${downloadedCounter}
+    SET downloads.downloaded_counter = ${downloadedCounter}
     WHERE id = ${downloadId};
   `;
 

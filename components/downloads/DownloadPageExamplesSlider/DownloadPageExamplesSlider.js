@@ -33,6 +33,7 @@ const SliderArrow = props => {
         borderRadius: '50%',
         transition: '0.3s ease-in-out',
         boxShadow: '0 0 4px 0 rgba(0, 0, 0, 0.2)',
+        zIndex: 100,
         '& svg': {
           position: 'absolute',
           left: '6px',
