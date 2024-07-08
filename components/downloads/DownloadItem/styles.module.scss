@@ -22,7 +22,7 @@
   }
 }
 
-.downloadsWrapper{
+.downloadsWrapper {
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -40,16 +40,21 @@
   display: block;
   width: 33.333%;
   padding: 1rem 1rem 3.5rem;
+
+  @media (max-width: 650px) {
+    width: 100%;
+  }
 }
 
-.downloadImage{
+.downloadImage {
   position: relative;
-  img{
+
+  img {
     width: 100%;
     height: auto;
   }
 
-  &:hover{
+  &:hover {
 
   }
 }
@@ -57,13 +62,13 @@
 .downloadContent {
   text-align: center;
 
-  .caption{
+  .caption {
     margin-top: 1.25rem;
     margin-bottom: .5rem;
   }
 }
 
-.linkAsButton{
+.linkAsButton {
   display: block;
   padding: 0.75rem 1rem;
   min-width: 8rem;
@@ -76,7 +81,7 @@
   transition: all 0.35s ease-out;
 }
 
-.overlay{
+.overlay {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,10 +91,11 @@
   height: 100%;
   background-color: transparent;
   transition: background-color 0.35s ease-out;
+
   &:hover {
     background-color: $image-overlay;
 
-    .linkAsButton{
+    .linkAsButton {
       opacity: 1;
       background-color: $white;
       transform: scale3d(1, 1, 1);

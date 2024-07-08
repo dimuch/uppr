@@ -1,39 +1,37 @@
 import React from 'react';
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router';
 
 import styles from './styles.module.scss';
 
 const ALL = 'all';
 const ROOT_DOWNLOADS_PAGE = '/downloads';
 
-export default function CategoriesList({items, selectedCategory}) {
-    const router = useRouter();
-    const isRootDownloadPage = router.pathname === ROOT_DOWNLOADS_PAGE;
+export default function CategoriesList({ items, selectedCategory }) {
+  const router = useRouter();
+  const isRootDownloadPage = router.pathname === ROOT_DOWNLOADS_PAGE;
 
-    if (!items?.length) {
-        return null;
-    }
+  if (!items?.length) {
+    return null;
+  }
 
-    items[0].isSelected = isRootDownloadPage;
+  items[0].isSelected = isRootDownloadPage;
 
-    return (
-        <ul className={styles.categoryList}>
-            {items.map((articleCategory) => {
-                const categoryName = articleCategory.name.toLowerCase();
-                const isSelected = articleCategory.isSelected || categoryName === selectedCategory;
-                const classCalc = isSelected ? styles.selected : ' ';
-                const hrefLink = categoryName === ALL
-                    ? `/downloads`
-                    : `/downloads/by-category/${categoryName}`
+  return (
+    <ul className={styles.categoryList}>
+      {items.map(articleCategory => {
+        const categoryName = articleCategory.name.toLowerCase();
+        const isSelected = articleCategory.isSelected || categoryName === selectedCategory;
+        const classCalc = isSelected ? styles.selected : ' ';
+        const hrefLink = categoryName === ALL ? `/downloads` : `/downloads/by-category/${categoryName}`;
 
-                return (
-                    <li key={articleCategory.id}>
-                        <a href={hrefLink} rel="noreferrer" className={`${styles.categoryListItem} ${classCalc}`} >
-                            {articleCategory.title}
-                        </a>
-                    </li>
-                );
-            })}
-        </ul>
-    );
+        return (
+          <li key={articleCategory.id} style={{ margin: '1rem .5rem' }}>
+            <a href={hrefLink} rel="noreferrer" className={`${styles.categoryListItem} ${classCalc}`}>
+              {articleCategory.title}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  );
 }
