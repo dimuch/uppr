@@ -49,6 +49,8 @@ export default function DownloadDetails({ downloadData, top3Article }) {
         <meta property="og:image:width" content="1944" />
         <meta property="og:image:height" content="2750" />
         <link rel="canonical" href={'https://uppr.com.ua' + downloadData?.link} />
+        <link rel="image_src" href={'https://uppr.com.ua' + downloadData?.image} />
+
         <meta name="google-site-verification" content="8Ui50OggqnZ5J1RPshJXelSAYWMPvFGWv32MSzHHlJU" />
         <script type="application/ld+json" dangerouslySetInnerHTML={addJsonLdData(downloadData)} key="product-jsonld" />
       </Head>
