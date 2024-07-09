@@ -45,7 +45,13 @@ const Index = ({ top3Article, latestArticle, otherLatestArticles }) => {
         <link rel="apple-touch-icon" href="/favicon.png" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
         <link rel="icon" href="/favicon.png" />
-
+        <link rel="image_src" href="https://uppr.com.ua/assets/images/blog-articles/responsive/1200/image_main.webp" />
+        <meta property="og:title" content="UPPR Головна" />
+        <meta property="og:description" content="Ресурс про англійську мову та як писати email" />
+        <meta
+          property="og:image"
+          content="https://uppr.com.ua/assets/images/blog-articles/responsive/1200/image_main.webp"
+        />
         <meta name="google-site-verification" content="8Ui50OggqnZ5J1RPshJXelSAYWMPvFGWv32MSzHHlJU" />
       </Head>
       <div className={styles.upprHomePage}>
