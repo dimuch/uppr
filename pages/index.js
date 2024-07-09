@@ -27,6 +27,8 @@ const Index = ({ top3Article, latestArticle, otherLatestArticles }) => {
     const height = Math.round((width * 4) / 7);
 
     setImgDimensions(() => ({ width, height }));
+    const html = document.getElementsByTagName('html')[0];
+    html.setAttribute('prefix', 'og: http://ogp.me/ns#');
   }, []);
 
   return (
