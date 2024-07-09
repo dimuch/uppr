@@ -72,8 +72,6 @@ const steps = [0, 1];
 const maxSteps = steps.length;
 
 const Ebook = ({ data }) => {
-  const theme = useTheme();
-  console.log(theme);
   const { makeRequest, isLoading, error, data: requestData } = useMakeRequest();
 
   const onDownloadClick = async () => {

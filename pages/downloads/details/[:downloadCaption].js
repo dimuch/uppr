@@ -25,7 +25,6 @@ export default function DownloadDetails({ downloadData, top3Article }) {
     return <PageNotFound redirectLink={'/downloads'} redirectPage={'Повернутись до завантажень'} />;
   }
 
-  console.log('top3Article', top3Article);
   return (
     <>
       <Head>

@@ -2,68 +2,16 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Header from '../components/common/header/Header';
 import GoogleStat from '../components/common/googleCtat/GoogleStat';
-import compStyles from './styles.module.scss';
 import Footer from '../components/common/footers/footer/Footer';
 import { getArticles } from '../services/blogData';
 import styles from './styles.module.scss';
 import loader from '../components/common/loader/loader';
 import Button from '@mui/material/Button';
 import { TypeAnimation } from 'react-type-animation';
-import FooterBullShit from '../components/common/footers/footer-bull-shit/Footer';
 import OthersArticles from '../components/blog/OthersArticles/OthersArticles';
-import { useHasMounted } from '../components/common/hooks/hasMounted';
 import SeeMorePostsLink from '../components/blog/SeeMorePosts/SeeMorePostsLink';
 import { Typography } from '@mui/material';
 import Stack from '@mui/material/Stack';
-
-const bagdeItems = [
-  {
-    icon: 'icon-open-book',
-    firstLine: 'навчайся',
-    secondLine: 'за принципом Agile',
-  },
-  {
-    icon: 'icon-clock',
-    firstLine: 'встигай',
-    secondLine: 'усе за 1.5 години',
-  },
-  {
-    icon: 'icon-list',
-    firstLine: 'обирай',
-    secondLine: 'домашнє завдання',
-  },
-  {
-    icon: 'icon-settings-1',
-    firstLine: 'аналізуй',
-    secondLine: 'вивчений матеріал',
-  },
-  {
-    icon: 'icon-transfer',
-    firstLine: 'закріплюй',
-    secondLine: 'знання на практиці',
-  },
-];
-
-const howItWorks = [
-  {
-    icon: 'icon-mustache-icon',
-    content:
-      // eslint-disable-next-line max-len
-      'Відчуй на собі ефективність гнучкого Agile-принципу, який допомагає як в розробці програмного забезпечення, так і у навчанні. Готовий до змін та самовдосконалення? Тоді цей курс для Тебе!',
-  },
-  {
-    icon: 'icon-settings-1',
-    content:
-      // eslint-disable-next-line max-len
-      "Кожен модудь поділений на 5 етапів-ітерацій та передбачає проведення стендап-мітингів та ретроспективи.Це дає змогу отримати зворотній зв'язок та одразу вносити корективи у процес навчання.",
-  },
-  {
-    icon: 'icon-thumb-icon',
-    content:
-      // eslint-disable-next-line max-len
-      "Ніхто не стоїть над тобою з указкою та не нав'язує нудні вправи.Ти самостійно обираєш домашнє завдання і працюєш в комфортному для тебе режимі.",
-  },
-];
 
 const Index = ({ top3Article, latestArticle, otherLatestArticles }) => {
   const [isCursor, setIsCursor] = useState(true);
