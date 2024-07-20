@@ -1,48 +1,13 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-import Link from 'next/link';
-
-import {useWindowSize} from '../hooks/screenSize';
+import { useWindowSize } from '../hooks/screenSize';
+import { useClickOutside } from '../hooks/clickOutside';
+import { MenuIcon } from '../icons';
 
 import styles from './styles.module.scss';
-import {useClickOutside} from '../hooks/clickOutside';
-import {HomeIcon, MenuIcon} from '../icons';
+import MenuItems from './components/MenuItems';
 
-
-const MenuItems = ({location, isOpen}) => {
-  return (
-    <div className={`main-menu main-menu-desktop`}>
-      <ul className={`uppr-main-menu ${styles.upprMainMenu} ${isOpen ? styles.upprMobileMainMenu : ''}`}>
-        <li>
-          <Link href="/" className={location === '/' ? styles.active : ''}>
-            <HomeIcon className={styles.homeIcon} />
-          </Link>
-        </li>
-        <li>
-          <Link href="/blog" className={location === '/blog' ? styles.active : ''}>Блог</Link>
-        </li>
-        <li>
-          <Link href="/test" className={location === '/test' ? styles.active : ''}>
-            Test
-          </Link>
-        </li>
-        <li>
-          <Link href="https://englishplus.com.ua" target="_blank">Тренінг</Link>
-        </li>
-        <li>
-          <Link href="https://www.udemy.com/course/deschool-your-emails/" target="_blank">Онлайн курс</Link>
-        </li>
-        <li>
-          <Link href="/contact-us" className={location === '/contact-us' ? styles.active : ''}>
-            Контакти
-          </Link>
-        </li>
-      </ul>
-    </div>
-  )
-}
-
-const Menu = ({location}) => {
+const Menu = ({ location }) => {
   const inputRef = useRef();
   const screenSize = useWindowSize();
 
@@ -53,22 +18,22 @@ const Menu = ({location}) => {
   });
 
   const onClickInside = () => {
-    setResponsiveClass((prevState) => {
+    setResponsiveClass(prevState => {
       return {
         ...prevState,
         width: '40%',
         isOpen: true,
       };
-    })
-  }
+    });
+  };
 
   const onClickOutside = () => {
-    setResponsiveClass((prevState) => ({
+    setResponsiveClass(prevState => ({
       ...prevState,
       width: '40%',
       isOpen: false,
     }));
-  }
+  };
 
   useEffect(() => {
     if (!screenSize?.width) {
@@ -81,36 +46,22 @@ const Menu = ({location}) => {
       isVisible: isVisible,
       isOpen: false,
     }));
-  }, [screenSize.width])
+  }, [screenSize.width]);
 
   useClickOutside(inputRef, onClickOutside, onClickInside);
 
   if (responsiveClass.isVisible) {
     return (
-      <div className={`${styles.menuWrapper}`}
-           style={{width: responsiveClass.width}}
-           ref={inputRef}
-      >
+      <div className={`${styles.menuWrapper}`} style={{ width: responsiveClass.width }} ref={inputRef}>
         <div className={styles.menuIcon}>
-          <MenuIcon/>
+          <MenuIcon />
         </div>
-        {
-          responsiveClass.isOpen && (
-            <MenuItems
-              isOpen={responsiveClass.isOpen}
-              location={location}/>
-          )
-        }
+        {responsiveClass.isOpen && <MenuItems isOpen={responsiveClass.isOpen} location={location} />}
       </div>
-    )
+    );
   }
 
-  return (
-    <MenuItems
-      location={location}
-      isOpen={responsiveClass.isVisible}
-    />
-  );
+  return <MenuItems location={location} isOpen={responsiveClass.isVisible} />;
 };
 
 export default Menu;

@@ -5,25 +5,7 @@
   flex-direction: row;
   margin: 0;
   list-style: none;
-  li {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-    min-width: 4rem;
-    text-align: center;
-    &:first-of-type {
-      padding-left: 0;
-    }
 
-    &:last-of-type {
-      padding-right: 0;
-    }
-  }
-  & a {
-    font-size: 1rem;
-    text-decoration: none;
-    font-family: "Futura-LT", sans-serif;
-  }
-  
   svg {
     width: 1.25rem;
     height: 1.25rem;
@@ -35,7 +17,7 @@
     font-family: "Futura-Demi", sans-serif;
 
     svg {
-      path{
+      path {
         fill: currentColor;
       }
     }
@@ -43,7 +25,7 @@
 
 }
 
-.upprMobileMainMenu{
+.upprMobileMainMenu {
   position: absolute;
   display: block;
   padding-left: 0;
@@ -55,6 +37,7 @@
   top: -0.5rem;
   border: 1px solid $item-border;
   border-radius: .5rem;
+
   li {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -66,7 +49,7 @@
   }
 }
 
-.menuWrapper{
+.menuWrapper {
   display: flex;
   padding: 0.4rem 1rem 0.5rem;
   position: relative;
@@ -74,7 +57,7 @@
 }
 
 @media (max-width: 650px) {
-  .menuIcon{
+  .menuIcon {
     position: absolute;
     right: .5rem;
     width: 1.75rem;
