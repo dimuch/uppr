@@ -201,7 +201,9 @@ export default function TenOddWordsInEmails2({ articleData }) {
             звучить недоладно і в багатьох контекстах сприймається як:
           </p>
 
-          <table className={`${styles.table}`} style={{ color: `#${articleData.article_color}` }}>
+          <table className={`${styles.table}`} style={{
+ color: `#${articleData.article_color}` 
+}}>
             <tbody>
               <tr>
                 <td>поблажливо-зверхнє</td>

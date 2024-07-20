@@ -1,5 +1,5 @@
-import React, {useMemo} from 'react';
-import {Grid} from '@mui/material';
+import React, { useMemo } from 'react';
+import { Grid } from '@mui/material';
 
 import OthersArticles from '../OthersArticles/OthersArticles';
 

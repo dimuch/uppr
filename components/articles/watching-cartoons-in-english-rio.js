@@ -38,13 +38,19 @@ export default function WatchingCartoonsInEnglishRio({ articleData }) {
             Без образ для &quot;Друзів&quot;, але дивитися можна не лише фільми чи серіали, але й:
           </p>
           <ul className={`${styles.articleList}`}>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
               <p>YouTube блогерів (читайте в наступних постах наші рекомендації);</p>
             </li>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
               <p>TED (про найкращі TED talks теж напишемо пізніше);</p>
             </li>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
               <p>та мультфільми.</p>
             </li>
           </ul>
@@ -93,22 +99,30 @@ export default function WatchingCartoonsInEnglishRio({ articleData }) {
           <p className={styles.articleText}>Наприклад, можна внести до свого словника як conversation starter:</p>
 
           <ul className={`${styles.articleList}`}>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
               <p>
                 <b>- What&apos;s up, ...?</b> (як справи?)
               </p>
             </li>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
               <p>
                 <b>- Where you been hiding&apos; yourself, man?</b> (Де ти пропадав, друзяко?);
               </p>
             </li>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
               <p>
                 І запамятати <b>Hold up! Rewind!</b> (Зажди! Перемотай назад (повтори ще раз)!
               </p>
             </li>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
               <p>
                 Чи розпрощатися <b>See you around.</b>
               </p>
@@ -190,7 +204,9 @@ export default function WatchingCartoonsInEnglishRio({ articleData }) {
           </p>
 
           <ol className={`${styles.articleList}`}>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
               <p className={`${styles.articleText} ${styles.articleLink}`}>
                 Вправа:&nbsp;
                 <a
@@ -202,7 +218,9 @@ export default function WatchingCartoonsInEnglishRio({ articleData }) {
                 </a>
               </p>
             </li>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
               <p className={`${styles.articleText} ${styles.articleLink}`}>
                 Вправа:&nbsp;
                 <a
@@ -214,7 +232,9 @@ export default function WatchingCartoonsInEnglishRio({ articleData }) {
                 </a>
               </p>
             </li>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
               <p className={`${styles.articleText} ${styles.articleLink}`}>
                 Вправа:&nbsp;
                 <a

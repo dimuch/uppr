@@ -31,7 +31,9 @@ export default function PleaseFindAttached({ articleData }) {
       </div>
 
       <div className={styles.articleEvenSection}>
-        <h3 className={styles.articlePhrase} style={{ color: `#${articleData.article_color}` }}>
+        <h3 className={styles.articlePhrase} style={{
+ color: `#${articleData.article_color}` 
+}}>
           Короткі, &quot;розмовні&quot; імейлі - тренд!
         </h3>
       </div>

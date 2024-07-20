@@ -24,7 +24,9 @@ export default function ArticleCard({ item, isDescription = true }) {
         <Grid item xs={12}>
           <img
             className={styles.image}
-            src={loader({ src: item?.image, width: width })}
+            src={loader({
+ src: item?.image, width: width 
+})}
             alt={item?.title}
             width={width}
             height={height}
@@ -32,12 +34,16 @@ export default function ArticleCard({ item, isDescription = true }) {
         </Grid>
         <Grid item md={12}>
           <Grid container textAlign={'center'} alignItems={'center'} className={styles.upprArticleDetails}>
-            <Grid item className={styles.category} style={{ backgroundColor: `#${item?.categoryColor}` }}>
+            <Grid item className={styles.category} style={{
+ backgroundColor: `#${item?.categoryColor}` 
+}}>
               <Typography variant={'subtitle2'}>{item?.name?.toUpperCase()}</Typography>
             </Grid>
             <Grid item className={styles.title} sm={12}>
               <a href={item.link}>
-                <Typography textAlign={'center'} variant={'h3'} sx={{ ...linesLimiterConfig(2), minHeight: 76 }}>
+                <Typography textAlign={'center'} variant={'h3'} sx={{
+ ...linesLimiterConfig(2), minHeight: 76 
+}}>
                   {item.title}
                 </Typography>
               </a>

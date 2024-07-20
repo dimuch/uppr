@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head'
 
-import {useHasMounted} from '../../../components/common/hooks/hasMounted';
+import { useHasMounted } from '../../../components/common/hooks/hasMounted';
 
 import Header from '../../../components/common/header/Header';
 import TopBlogImage from '../../../components/blog/TopBlogImage/TopBlogImage';
@@ -80,7 +80,9 @@ export async function getServerSideProps(context) {
     )
 
     try {
-        const downloadsByCategory = await getDownloadsByCategoryDB({category: categoryName});
+        const downloadsByCategory = await getDownloadsByCategoryDB({
+ category: categoryName 
+});
         return {
             props: {
               ...downloadsByCategory,

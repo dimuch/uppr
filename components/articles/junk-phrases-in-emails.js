@@ -6,7 +6,7 @@ import ArticleFooter from '../blog/ArticleFooter/ArticleFooter';
 
 import styles from './commonArticleStyles.module.scss';
 
-export default function JunkPhrasesInEmails({articleData}) {
+export default function JunkPhrasesInEmails({ articleData }) {
     return (
         <div className={styles.article}>
             <div className={styles.maxWidthArticleTitleWrapper}>
@@ -90,7 +90,9 @@ export default function JunkPhrasesInEmails({articleData}) {
 
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-                    <h3 className={styles.articlePhrase} style={{color: `#${articleData.article_color}`}}>
+                    <h3 className={styles.articlePhrase} style={{
+ color: `#${articleData.article_color}` 
+}}>
                         Презентуйте факти прямолінійно.
                     </h3>
                 </div>
@@ -214,30 +216,50 @@ export default function JunkPhrasesInEmails({articleData}) {
                     </p>
 
                     <ul className={`${styles.articleList} ${styles.discList}`}>
-                        <li style={{color: `#${articleData.article_color}`}}>
-                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                        <li style={{
+ color: `#${articleData.article_color}` 
+}}>
+                            <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                                 I don&apos;t have enough information to answer your question.
                             </p>
                         </li>
-                        <li style={{color: `#${articleData.article_color}`}}>
-                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                        <li style={{
+ color: `#${articleData.article_color}` 
+}}>
+                            <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                                 I don&apos;t have the information I need to
                                 give an answer. But I&apos;ll find it.
                             </p>
                         </li>
-                        <li style={{color: `#${articleData.article_color}`}}>
-                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                        <li style={{
+ color: `#${articleData.article_color}` 
+}}>
+                            <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                                 I don&apos;t have the data at hand, but
                                 I&apos;ll get it to you later today.
                             </p>
                         </li>
-                        <li style={{color: `#${articleData.article_color}`}}>
-                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                        <li style={{
+ color: `#${articleData.article_color}` 
+}}>
+                            <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                                 Good question. I&apos;ll find out.
                             </p>
                         </li>
-                        <li style={{color: `#${articleData.article_color}`}}>
-                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                        <li style={{
+ color: `#${articleData.article_color}` 
+}}>
+                            <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                                 Based on what we know today, my thoughts
                                 are…
                             </p>
@@ -249,13 +271,21 @@ export default function JunkPhrasesInEmails({articleData}) {
                     </p>
 
                     <ul className={`${styles.articleList} ${styles.discList}`}>
-                        <li style={{color: `#${articleData.article_color}`}}>
-                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                        <li style={{
+ color: `#${articleData.article_color}` 
+}}>
+                            <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                                 Let&apos;s have a quick brainstorm.
                             </p>
                         </li>
-                        <li style={{color: `#${articleData.article_color}`}}>
-                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                        <li style={{
+ color: `#${articleData.article_color}` 
+}}>
+                            <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                                 I know an expert who can help with this.
                             </p>
                         </li>
@@ -298,11 +328,19 @@ export default function JunkPhrasesInEmails({articleData}) {
                     </p>
 
                     <ul className={`${styles.articleList} ${styles.discList}`}>
-                        <li style={{color: `#${articleData.article_color}`}}>I suggest we proceed with the project.</li>
-                        <li style={{color: `#${articleData.article_color}`}}>Let us discuss details at the meeting.</li>
-                        <li style={{color: `#${articleData.article_color}`}}>I&apos;ll look forward to your agreement.
+                        <li style={{
+ color: `#${articleData.article_color}` 
+}}>I suggest we proceed with the project.</li>
+                        <li style={{
+ color: `#${articleData.article_color}` 
+}}>Let us discuss details at the meeting.</li>
+                        <li style={{
+ color: `#${articleData.article_color}` 
+}}>I&apos;ll look forward to your agreement.
                         </li>
-                        <li style={{color: `#${articleData.article_color}`}}>I&apos;ll set up the schedule for our work
+                        <li style={{
+ color: `#${articleData.article_color}` 
+}}>I&apos;ll set up the schedule for our work
                             together.
                         </li>
                     </ul>

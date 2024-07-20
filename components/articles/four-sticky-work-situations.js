@@ -6,7 +6,7 @@ import ArticleFooter from '../blog/ArticleFooter/ArticleFooter';
 
 import styles from './commonArticleStyles.module.scss';
 
-export default function FourStickyWorkSituations({articleData}) {
+export default function FourStickyWorkSituations({ articleData }) {
     return (
         <div className={styles.article}>
             <div className={styles.maxWidthArticleTitleWrapper}>

@@ -4,11 +4,11 @@ import AsThreeInRowBlock from './partials/AsThreeInRowBlock';
 
 import styles from './styles.module.scss'
 import InstagramImages from '../InstagramImages/InstagramImages';
-import {instaImagesConfig} from "../InstagramImages/instagramImages.constants";
+import { instaImagesConfig } from "../InstagramImages/instagramImages.constants";
 
 
 
-export default function OthersArticlesByCategory({articlesByCategories}) {
+export default function OthersArticlesByCategory({ articlesByCategories }) {
   if (!articlesByCategories.length) {
     return null;
   }

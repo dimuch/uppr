@@ -17,7 +17,9 @@ export default function ContextIsTheKing({ articleData }) {
           <p className={styles.articleText}>От, наприклад, такий імейл:</p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>Thank you for the detailed email.</p>
@@ -131,7 +133,9 @@ export default function ContextIsTheKing({ articleData }) {
           </p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -166,7 +170,9 @@ export default function ContextIsTheKing({ articleData }) {
           </p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>

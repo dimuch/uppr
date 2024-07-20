@@ -28,7 +28,9 @@ export default function WatchingCartoonsInEnglishFrozen({ articleData }) {
 
       <div className={styles.articleEvenSection}>
         <div className={styles.maxWidthArticleSectionWrapper}>
-          <h3 className={`${styles.articlePhrase}`} style={{ color: `#${articleData.article_color}` }}>
+          <h3 className={`${styles.articlePhrase}`} style={{
+ color: `#${articleData.article_color}` 
+}}>
             &quot;Some people are worth melting for.&quot;
           </h3>
         </div>
@@ -65,7 +67,9 @@ export default function WatchingCartoonsInEnglishFrozen({ articleData }) {
 
       <div className={styles.articleEvenSection}>
         <div className={styles.maxWidthArticleSectionWrapper}>
-          <h3 className={`${styles.articlePhrase}`} style={{ color: `#${articleData.article_color}` }}>
+          <h3 className={`${styles.articlePhrase}`} style={{
+ color: `#${articleData.article_color}` 
+}}>
             І ще він так мило каже:
             <br />
             <i>&quot;Hi, I&apos;m Olaf and I like warm hugs.&quot;</i>
@@ -203,7 +207,9 @@ export default function WatchingCartoonsInEnglishFrozen({ articleData }) {
 
       <div className={styles.articleEvenSection}>
         <div className={styles.maxWidthArticleSectionWrapper}>
-          <h3 className={`${styles.articlePhrase}`} style={{ color: `#${articleData.article_color}` }}>
+          <h3 className={`${styles.articlePhrase}`} style={{
+ color: `#${articleData.article_color}` 
+}}>
             Не зважаючи на серйозність попереднього діалогу, в мультику є також дуже багато різних &quot;підколок&quot;.
           </h3>
         </div>
@@ -228,7 +234,9 @@ export default function WatchingCartoonsInEnglishFrozen({ articleData }) {
 
       <div className={styles.articleEvenSection}>
         <div className={styles.maxWidthArticleSectionWrapper}>
-          <h3 className={`${styles.articlePhrase}`} style={{ color: `#${articleData.article_color}` }}>
+          <h3 className={`${styles.articlePhrase}`} style={{
+ color: `#${articleData.article_color}` 
+}}>
             Шедевром також є і саундтрек до мультфільму, кіно версія якого виконана{' '}
             <u>
               <a href="https://en.wikipedia.org/wiki/Idina_Menzel" target="_blank" rel="noreferrer">

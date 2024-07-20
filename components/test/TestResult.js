@@ -20,7 +20,7 @@ const LEVELS_IMAGES = {
   'Senior' : '/assets/images/blog-articles/senior-email-level.jpg',
 }
 
-export default function TestResult({result, resetResults}) {
+export default function TestResult({ result, resetResults }) {
   const width = window.innerWidth;
   const height = Math.round(width / 1.5);
 
@@ -33,7 +33,9 @@ export default function TestResult({result, resetResults}) {
         <hr/>
         <div className={styles.testResultCaption}>
           <img
-            src={loader({src:imageHref, width: width})}
+            src={loader({
+ src:imageHref, width: width 
+})}
             alt="Main test result"
             width={width}
             height={height}

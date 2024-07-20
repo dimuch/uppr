@@ -3,7 +3,8 @@ import { useState } from 'react';
 const DEFAULT_REQ_METHOD = 'GET';
 export const POST_REQ_METHOD = 'POST';
 export const PUT_REQ_METHOD = 'PUT';
-const DEFAULT_REQ_PARAMS = {};
+const DEFAULT_REQ_PARAMS = {
+};
 
 const useMakeRequest = () => {
   const [data, setData] = useState();

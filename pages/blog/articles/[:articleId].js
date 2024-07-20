@@ -50,7 +50,9 @@ export default function ArticlePageWrapper({ articleData }) {
       </Head>
 
       <Header search location={'/blog'} />
-      <div style={{ overflow: 'hidden' }}>
+      <div style={{
+ overflow: 'hidden' 
+}}>
         <ArticlePage articleData={articleData} />
       </div>
 

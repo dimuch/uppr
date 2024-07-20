@@ -1,19 +1,19 @@
 import React from 'react';
 import Head from 'next/head'
 
-import {useHasMounted} from '../../../components/common/hooks/hasMounted';
+import { useHasMounted } from '../../../components/common/hooks/hasMounted';
 
 import Header from '../../../components/common/header/Header';
 import CategoriesList from '../../../components/blog/CategoriesList/CategoriesList';
 import SelectedSpecificCategory from '../../../components/blog/SelectedSpecificCategory/SelectedSpecificCategory';
 import TopBlogImage from '../../../components/blog/TopBlogImage/TopBlogImage';
 import PageNotFound from '../../404';
-import {getArticlesByCategoryNameDB, getArticlesCategoriesDB, getTagsDB} from '../../../services/blogData';
+import { getArticlesByCategoryNameDB, getArticlesCategoriesDB, getTagsDB } from '../../../services/blogData';
 
 import GoogleStat from '../../../components/common/googleCtat/GoogleStat';
 import styles from '../styles.module.scss';
 
-export default function ArticlePageWrapper({articlesByCategory, articleCategories, selectedCategory, tags}) {
+export default function ArticlePageWrapper({ articlesByCategory, articleCategories, selectedCategory, tags }) {
     const hasMounted = useHasMounted();
 
     if (!hasMounted) {

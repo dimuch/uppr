@@ -6,7 +6,7 @@ import ArticleFooter from '../blog/ArticleFooter/ArticleFooter';
 
 import styles from './commonArticleStyles.module.scss';
 
-export default function PhotoZvitSpalahDnipro({articleData}) {
+export default function PhotoZvitSpalahDnipro({ articleData }) {
     return (
         <div className={styles.article}>
             <div className={styles.maxWidthArticleTitleWrapper}>

@@ -32,7 +32,9 @@ export default function EnglishInKISSStyle({ articleData }) {
       <div className={styles.articleEvenSection}>
         <div className={styles.maxWidthArticleSectionWrapper}>
           <h2 className={styles.subTitle}>
-            <span style={{ color: `#${articleData.article_color}` }}>ASAP</span> насправді зовсім не так швидко як
+            <span style={{
+ color: `#${articleData.article_color}` 
+}}>ASAP</span> насправді зовсім не так швидко як
             хотілося б!!!
           </h2>
 
@@ -75,7 +77,9 @@ export default function EnglishInKISSStyle({ articleData }) {
         <div className={styles.maxWidthArticleSectionWrapper}>
           <h3
             className={`${styles.articleSubSubTitle} ${styles.articleLink}`}
-            style={{ color: `#${articleData.article_color}` }}
+            style={{
+ color: `#${articleData.article_color}` 
+}}
           >
             Можна в листах зустріти і TBD (To Be Determined) или TBA (To Be Announced), коли інформація по термінах та
             даті ще не відома. Маючи на увазі відпустку, пишуть не vacation, а PTO (paid time off), а якщо ви плануєте

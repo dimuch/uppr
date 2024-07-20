@@ -116,7 +116,9 @@ export default function GetYourEmailsRead({ articleData }) {
 
       <div className={styles.articleOddSection}>
         <div className={styles.maxWidthArticleSectionWrapper}>
-          <h3 className={styles.articlePhrase} style={{ color: `#${articleData.article_color}` }}>
+          <h3 className={styles.articlePhrase} style={{
+ color: `#${articleData.article_color}` 
+}}>
             Тон імейлу - це той секретний секрет, який вбереже вас від купи misunderstanding!
           </h3>
         </div>
@@ -167,7 +169,9 @@ export default function GetYourEmailsRead({ articleData }) {
 
       <div className={styles.articleOddSection}>
         <div className={styles.maxWidthArticleSectionWrapper}>
-          <h3 className={styles.articlePhrase} style={{ color: `#${articleData.article_color}` }}>
+          <h3 className={styles.articlePhrase} style={{
+ color: `#${articleData.article_color}` 
+}}>
             To err is human, to edit, divine
           </h3>
         </div>

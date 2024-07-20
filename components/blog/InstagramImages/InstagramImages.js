@@ -11,7 +11,9 @@ export default function InstagramImages({ instaItems, sectionTitle, shadowText =
 
   useEffect(() => {
     const handleScroll = event => {
-      const { top } = wrapperRef?.current?.getBoundingClientRect() || { top: 0 };
+      const { top } = wrapperRef?.current?.getBoundingClientRect() || {
+ top: 0 
+};
       const currentScreenHeight = window.innerHeight;
 
       setScreenHeight(currentScreenHeight);

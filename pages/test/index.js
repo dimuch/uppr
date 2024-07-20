@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 import Header from '../../components/common/header/Header';
 import Test from '../../components/test/Test';
-import {useHasMounted} from '../../components/common/hooks/hasMounted';
+import { useHasMounted } from '../../components/common/hooks/hasMounted';
 
 import GoogleStat from '../../components/common/googleCtat/GoogleStat';
 import styles from './styles.module.scss';
@@ -14,7 +14,7 @@ import Footer from '../../components/common/footers/footer/Footer';
 
 // const domainName = '';
 
-const TestPage = ({top3Article}) => {
+const TestPage = ({ top3Article }) => {
   const hasMounted = useHasMounted();
   if (!hasMounted) {
     return null;

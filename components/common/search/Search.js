@@ -72,7 +72,9 @@ const Search = ({}) => {
     <div
       className={`${styles.upprSearchWrapper} ${styles.responsiveSearch}`}
       ref={inputRef}
-      style={{ maxWidth: responsiveClass }}
+      style={{
+ maxWidth: responsiveClass 
+}}
     >
       <div
         className={`${styles.searchInputWrapper} ${!!searchResult.length ? styles.searchInputWrapperWithResult : ''}`}

@@ -3,8 +3,8 @@ import Slider from '../../Slider/Slider';
 
 import styles from '../styles.module.scss'
 
-export default function AsSlider({data}) {
-    const {name, articles} = data;
+export default function AsSlider({ data }) {
+    const { name, articles } = data;
 
     return (
         <>

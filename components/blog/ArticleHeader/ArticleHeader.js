@@ -10,20 +10,26 @@ import styles from './styles.module.scss';
 import { getDate } from '../../../helpers/getDate';
 
 export default function ArticleHeader({ articleData }) {
-  const [imgDimensions, setImgDimensions] = useState({ width: 700, height: 400 });
+  const [imgDimensions, setImgDimensions] = useState({
+ width: 700, height: 400 
+});
 
   useEffect(() => {
     const windowInner = window?.innerWidth;
     const width = windowInner > 850 ? Math.round(windowInner / 3) : windowInner;
     const height = Math.round((width * 4) / 7);
 
-    setImgDimensions(() => ({ width, height }));
+    setImgDimensions(() => ({
+ width, height 
+}));
   }, []);
 
   return (
     <div className={styles.titleWrapper}>
       <div className={`${styles.categoryBadge}`}>
-        <Link href={`/blog?search=${articleData.category.name}`} style={{ color: `#${articleData.category.color}` }}>
+        <Link href={`/blog?search=${articleData.category.name}`} style={{
+ color: `#${articleData.category.color}` 
+}}>
           {`${articleData.category.name}`}
         </Link>
         <span className={styles.published}>{getDate(new Date(articleData.published))}</span>
@@ -35,7 +41,9 @@ export default function ArticleHeader({ articleData }) {
       </div>
       <div className={styles.titleImage}>
         <img
-          src={loader({ src: articleData.image, width: imgDimensions.width })}
+          src={loader({
+ src: articleData.image, width: imgDimensions.width 
+})}
           width={imgDimensions?.width}
           height={imgDimensions?.height}
           alt={articleData.title}

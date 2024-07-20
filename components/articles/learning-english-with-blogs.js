@@ -58,23 +58,35 @@ export default function LearningEnglishWithBlogs({ articleData }) {
 
           <ol
             className={`${styles.articleList} ${styles.numberedList}`}
-            style={{ color: `#${articleData.article_color}` }}
+            style={{
+ color: `#${articleData.article_color}` 
+}}
           >
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 забезпечують регулярну практику - звичайно, тільки якщо тема вам дійсно цікава і вам хочеться читати цей
                 блог кожен день;
               </p>
             </li>
-            <li style={{ color: `#${articleData.article_color}` }}>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+            <li style={{
+ color: `#${articleData.article_color}` 
+}}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 допомагають запам&apos;ятати спеціалізовану лексику - якщо це блог про кулінарію, то зовсім скоро ви
                 станете профі в знанні назв всіх круп, ягід, м&apos;яса і приправ, а якщо про підприємництво - у
                 бізнес-англійській;
               </p>
             </li>
-            <li style={{ color: `#${articleData.article_color}` }}>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+            <li style={{
+ color: `#${articleData.article_color}` 
+}}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 дозволяють стати грамотним - навіть не маючи практики написання слів, ви самі того не відаючи, згодом
                 зможете писати їх правильно, оскільки запам&apos;ятали їх при читанні.
               </p>

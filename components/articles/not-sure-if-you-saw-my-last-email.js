@@ -5,7 +5,7 @@ import ArticleFooter from '../blog/ArticleFooter/ArticleFooter';
 
 import styles from './commonArticleStyles.module.scss';
 
-export default function NotSureIfYouSawMyLastEmail( {articleData} ) {
+export default function NotSureIfYouSawMyLastEmail( { articleData } ) {
   return (
     <div className={styles.article}>
       <div className={styles.maxWidthArticleTitleWrapper}>

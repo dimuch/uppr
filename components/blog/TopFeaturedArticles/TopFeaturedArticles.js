@@ -1,11 +1,11 @@
 import React from 'react';
 
-import {Grid, Typography} from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 
 import styles from './styles.module.scss';
 import TopFeaturedArticlesItems from './TopFeaturedArticlesITems';
 
-export default function TopFeaturedArticles({items, domainName}) {
+export default function TopFeaturedArticles({ items, domainName }) {
     return (
         <div className={'wrapper ' + styles.wrapper}>
             <div className={'uppr-section-title ' + styles.upprSectionTitle}>

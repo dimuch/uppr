@@ -73,7 +73,9 @@ const DownloadPageExamplesSlider = ({ items }) => {
           width={1182}
           height={1682}
           alt={`Page example ${1}`}
-          style={{ margin: 'auto' }}
+          style={{
+ margin: 'auto' 
+}}
         />
       </Box>
       <Box>
@@ -87,7 +89,9 @@ const DownloadPageExamplesSlider = ({ items }) => {
           width={1182}
           height={1682}
           alt={`Page example ${2}`}
-          style={{ margin: 'auto' }}
+          style={{
+ margin: 'auto' 
+}}
         />
       </Box>
     </Slider>

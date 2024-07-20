@@ -257,30 +257,42 @@ export default function HopeYouAreWell({ articleData }) {
 
           <ol
             className={`${styles.articleList} ${styles.numberedList}`}
-            style={{ color: `#${articleData.article_color}` }}
+            style={{
+ color: `#${articleData.article_color}` 
+}}
           >
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 Send you my best wishes.
               </p>
             </li>
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 Greetings from snowy Kyiv.
               </p>
             </li>
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 Greetings to you and [Name].
               </p>
             </li>
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 I hope you enjoyed your trip to ____.
               </p>
             </li>
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 Welcome back to work! I hope you had a wonderful vacation.
               </p>
             </li>

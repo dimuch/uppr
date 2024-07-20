@@ -8,6 +8,7 @@
     "start": "next start -p 3000",
     "export": "next export",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "update:images": "node utils/resizer.js"
   },
   "engines": {

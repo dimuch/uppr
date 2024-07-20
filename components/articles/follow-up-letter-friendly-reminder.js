@@ -73,7 +73,9 @@ export default function FollowUpLetterFriendlyReminder({ articleData }) {
 
       <div className={styles.articleOddSection}>
         <div className={styles.maxWidthArticleSectionWrapper}>
-          <h3 className={styles.articlePhrase} style={{ color: `#${articleData.article_color}` }}>
+          <h3 className={styles.articlePhrase} style={{
+ color: `#${articleData.article_color}` 
+}}>
             Для того, щоб привернути увагу до листа, в темі можна написати - <b>Response required</b>, а потім,
             наприклад, назву проекту стосовно якого буде іти мова.
           </h3>

@@ -211,20 +211,28 @@ export default function SubjectLine({ articleData }) {
 
           <ol
             className={`${styles.articleList} ${styles.numberedList}`}
-            style={{ color: `#${articleData.article_color}` }}
+            style={{
+ color: `#${articleData.article_color}` 
+}}
           >
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 Thanks for the mockup
               </p>
             </li>
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 Nuances in the mockup
               </p>
             </li>
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 Mockup discussion
               </p>
             </li>
@@ -288,7 +296,9 @@ export default function SubjectLine({ articleData }) {
           <p className={styles.articleText}>Наприклад:</p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               SL:Weekly progress report
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>

@@ -48,7 +48,9 @@ export default function ThankYouForTheInterview({ articleData }) {
         <div className={styles.maxWidthArticleSectionWrapper}>
           <h2 className={styles.subTitle}>Що писати?</h2>
 
-          <p className={`${styles.articleText}`} style={{ color: `#${articleData.article_color}` }}>
+          <p className={`${styles.articleText}`} style={{
+ color: `#${articleData.article_color}` 
+}}>
             В темі:
           </p>
 
@@ -67,7 +69,9 @@ export default function ThankYouForTheInterview({ articleData }) {
             </li>
           </ol>
 
-          <p className={`${styles.articleText}`} style={{ color: `#${articleData.article_color}` }}>
+          <p className={`${styles.articleText}`} style={{
+ color: `#${articleData.article_color}` 
+}}>
             У вступі:
           </p>
 
@@ -84,7 +88,9 @@ export default function ThankYouForTheInterview({ articleData }) {
             </li>
           </ol>
 
-          <p className={`${styles.articleText}`} style={{ color: `#${articleData.article_color}` }}>
+          <p className={`${styles.articleText}`} style={{
+ color: `#${articleData.article_color}` 
+}}>
             В основній частині:
           </p>
 
@@ -104,7 +110,9 @@ export default function ThankYouForTheInterview({ articleData }) {
             </li>
           </ol>
 
-          <p className={`${styles.articleText}`} style={{ color: `#${articleData.article_color}` }}>
+          <p className={`${styles.articleText}`} style={{
+ color: `#${articleData.article_color}` 
+}}>
             На завершення:
           </p>
 
@@ -134,7 +142,9 @@ export default function ThankYouForTheInterview({ articleData }) {
           </p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -167,7 +177,9 @@ export default function ThankYouForTheInterview({ articleData }) {
           <h2 className={styles.subTitle}>Після особистої співбесіди:</h2>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -203,7 +215,9 @@ export default function ThankYouForTheInterview({ articleData }) {
           <p className={`${styles.articleText}`}>Або</p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -247,7 +261,9 @@ export default function ThankYouForTheInterview({ articleData }) {
           <p className={styles.articleText}>Імейл можна сформулювати так:</p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -297,7 +313,9 @@ export default function ThankYouForTheInterview({ articleData }) {
           </p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>

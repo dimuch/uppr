@@ -21,40 +21,68 @@ export default function PleaseFindAttached2({ articleData }) {
 
           <ol
             className={`${styles.articleList} ${styles.numberedList}`}
-            style={{ color: `#${articleData.article_color}` }}
+            style={{
+ color: `#${articleData.article_color}` 
+}}
           >
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 <a href="#file-without-explanation">Файл без пояснення.</a>
               </p>
             </li>
-            <li style={{ color: `#${articleData.article_color}` }}>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+            <li style={{
+ color: `#${articleData.article_color}` 
+}}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 <a href="#here-is">&quot;Here is ...&quot;</a>
               </p>
             </li>
-            <li style={{ color: `#${articleData.article_color}` }}>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+            <li style={{
+ color: `#${articleData.article_color}` 
+}}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 <a href="#this-x-verb">&quot;This [Х] + verb ...&quot;</a>
               </p>
             </li>
-            <li style={{ color: `#${articleData.article_color}` }}>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+            <li style={{
+ color: `#${articleData.article_color}` 
+}}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 <a href="#i-am-sharing-x-with-you">&quot;I&apos;m sharing [X] with you.&quot;</a>
               </p>
             </li>
-            <li style={{ color: `#${articleData.article_color}` }}>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+            <li style={{
+ color: `#${articleData.article_color}` 
+}}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 <a href="#let-me-know">&quot;Let me know if you have any questions about the attached ….&quot;</a>
               </p>
             </li>
-            <li style={{ color: `#${articleData.article_color}` }}>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+            <li style={{
+ color: `#${articleData.article_color}` 
+}}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 <a href="#doc-promised-you">Here’s that document I promised you.</a>
               </p>
             </li>
-            <li style={{ color: `#${articleData.article_color}` }}>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+            <li style={{
+ color: `#${articleData.article_color}` 
+}}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 <a href="#empty-email">Порожній імейл</a>
               </p>
             </li>

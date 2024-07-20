@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './styles.module.scss';
 
-const UpprLogoText = ({onlyLogo, isInText, isInHeader}) => {
+const UpprLogoText = ({ onlyLogo, isInText, isInHeader }) => {
     let stylesLogo = '';
 
     if (isInText) {

@@ -1,13 +1,13 @@
-import React, {useMemo, useState} from 'react';
-import {Typography} from '@mui/material';
+import React, { useMemo, useState } from 'react';
+import { Typography } from '@mui/material';
 
 import OthersArticles from '../../OthersArticles/OthersArticles';
 import styles from './asThreeInRowStyles.module.scss'
-import {LoaderIcon} from '../../../common/icons';
+import { LoaderIcon } from '../../../common/icons';
 import SeeMorePostsButton from '../../SeeMorePosts/SeeMorePostsButton';
 
-export default function AsThreeInRowBlock({data}) {
-    const {name, articles} = data;
+export default function AsThreeInRowBlock({ data }) {
+    const { name, articles } = data;
     const [isShowMorePressed, setIsShowMorePressed] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 

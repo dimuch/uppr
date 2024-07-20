@@ -6,7 +6,7 @@ import ArticleFooter from '../blog/ArticleFooter/ArticleFooter';
 
 import styles from './commonArticleStyles.module.scss';
 
-export default function Asap({articleData}) {
+export default function Asap({ articleData }) {
     return (
         <div className={styles.article}>
             <div className={styles.maxWidthArticleTitleWrapper}>
@@ -18,13 +18,19 @@ export default function Asap({articleData}) {
                     <h2 className={styles.subTitle}>Will you share your feedback ASAP?</h2>
 
                     <ul className={`${styles.articleList}`}>
-                        <li className={styles.discList} style={{color: `#${articleData.article_color}`}}>
+                        <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
                             <p>&quot;Could you, please, return the signed agreement ASAP?&quot;</p>
                         </li>
-                        <li className={styles.discList} style={{color: `#${articleData.article_color}`}}>
+                        <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
                             <p>&quot;Will you share your feedback ASAP?&quot;</p>
                         </li>
-                        <li className={styles.discList} style={{color: `#${articleData.article_color}`}}>
+                        <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
                             <p>&quot;Get back to me ASAP&quot;</p>
                         </li>
                     </ul>

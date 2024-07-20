@@ -4,7 +4,7 @@ import ArticleFooter from '../blog/ArticleFooter/ArticleFooter';
 
 import styles from './commonArticleStyles.module.scss';
 
-export default function AcronymsWhichYouShouldUseInEmails({articleData}) {
+export default function AcronymsWhichYouShouldUseInEmails({ articleData }) {
     return (
         <div className={styles.article}>
             <div className={styles.maxWidthArticleTitleWrapper}>

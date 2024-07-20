@@ -6,7 +6,7 @@ import ArticleFooter from '../blog/ArticleFooter/ArticleFooter';
 
 import styles from './commonArticleStyles.module.scss';
 
-export default function EnglishWayOut({articleData}) {
+export default function EnglishWayOut({ articleData }) {
     return (
         <div className={styles.article}>
             <div className={styles.maxWidthArticleTitleWrapper}>
@@ -44,7 +44,9 @@ export default function EnglishWayOut({articleData}) {
 
 
             <div className={styles.articleEvenSection}>
-                <h3 className={styles.articlePhrase} style={{color: `#${articleData.article_color}`}}>
+                <h3 className={styles.articlePhrase} style={{
+ color: `#${articleData.article_color}` 
+}}>
                     &quot;Потрібно&quot;, а не &quot;хочу&quot;!
                 </h3>
 
@@ -120,7 +122,9 @@ export default function EnglishWayOut({articleData}) {
             </div>
 
             <div className={styles.articleOddSection}>
-                <h3 className={styles.articlePhrase} style={{color: `#${articleData.article_color}`}}>
+                <h3 className={styles.articlePhrase} style={{
+ color: `#${articleData.article_color}` 
+}}>
                     Півгодини щодня - найкращий рецепт.
                 </h3>
             </div>

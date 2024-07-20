@@ -50,7 +50,9 @@ export default function ThanksInAdvance({ articleData }) {
           <ul className={`${styles.articleList}`}>
             <li>
               <p className={styles.articleText}>
-                <i style={{ color: `#${articleData.article_color}` }}>1. CTA (Call To Action)</i>
+                <i style={{
+ color: `#${articleData.article_color}` 
+}}>1. CTA (Call To Action)</i>
                 <br />
                 Взагалі, як на мене, найкращий варіант завершення практично будь-якого листа - це <i>CTA</i>, який до
                 того ж статистично подвоює <i>response rate!</i>
@@ -62,7 +64,9 @@ export default function ThanksInAdvance({ articleData }) {
             </li>
             <li>
               <p className={styles.articleText}>
-                <i style={{ color: `#${articleData.article_color}` }}>2. Thanks for considering this/my request</i>
+                <i style={{
+ color: `#${articleData.article_color}` 
+}}>2. Thanks for considering this/my request</i>
                 <br />
                 Таке завершення може чудово спрацювати, оскільки немає нав&apos;язаних очікувань про обов&apos;язковість
                 виконання. Акцент на тому, що навіть думки &quot;стосовно&quot; і то будуть цінні. Але все одно
@@ -75,50 +79,66 @@ export default function ThanksInAdvance({ articleData }) {
           <ul className={`${styles.articleList}`}>
             <li>
               <p className={styles.articleText}>
-                <i style={{ color: `#${articleData.article_color}` }}>3. In any case, thank you</i>
+                <i style={{
+ color: `#${articleData.article_color}` 
+}}>3. In any case, thank you</i>
                 <br />
                 Ще один спосіб сказати, що <i>&quot;Whether you agree or not, I value your consideration&quot;</i>.
               </p>
             </li>
             <li>
               <p className={styles.articleText}>
-                <i style={{ color: `#${articleData.article_color}` }}>4. In the meantime, thanks (for your time).</i>
+                <i style={{
+ color: `#${articleData.article_color}` 
+}}>4. In the meantime, thanks (for your time).</i>
               </p>
             </li>
             <li>
               <p className={styles.articleText}>
-                <i style={{ color: `#${articleData.article_color}` }}>
+                <i style={{
+ color: `#${articleData.article_color}` 
+}}>
                   5. I’d really appreciate your help with X/this situation.
                 </i>
               </p>
             </li>
             <li>
               <p className={styles.articleText}>
-                <i style={{ color: `#${articleData.article_color}` }}>6. I’d be grateful if you could finish/do X.</i>
+                <i style={{
+ color: `#${articleData.article_color}` 
+}}>6. I’d be grateful if you could finish/do X.</i>
               </p>
             </li>
             <li>
               <p className={styles.articleText}>
-                <i style={{ color: `#${articleData.article_color}` }}>7. I hope this is possible.</i>
+                <i style={{
+ color: `#${articleData.article_color}` 
+}}>7. I hope this is possible.</i>
               </p>
             </li>
             <li>
               <p className={styles.articleText}>
-                <i style={{ color: `#${articleData.article_color}` }}>
+                <i style={{
+ color: `#${articleData.article_color}` 
+}}>
                   8. I hope you will be able to provide the information/help/support.
                 </i>
               </p>
             </li>
             <li>
               <p className={styles.articleText}>
-                <i style={{ color: `#${articleData.article_color}` }}>
+                <i style={{
+ color: `#${articleData.article_color}` 
+}}>
                   9. Please, let me know if this isn’t feasible for you (by [date]).
                 </i>
               </p>
             </li>
             <li>
               <p className={styles.articleText}>
-                <i style={{ color: `#${articleData.article_color}` }}>10. Thanks</i>
+                <i style={{
+ color: `#${articleData.article_color}` 
+}}>10. Thanks</i>
                 <br />І врешті-решт, можна просто написати &quot;дякую&quot;.
               </p>
             </li>
@@ -143,7 +163,9 @@ export default function ThanksInAdvance({ articleData }) {
           </p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -164,7 +186,9 @@ export default function ThanksInAdvance({ articleData }) {
           <p className={styles.articleText}>Або такий імейл може бути у формі reminder:</p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -184,7 +208,9 @@ export default function ThanksInAdvance({ articleData }) {
           </p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -221,7 +247,9 @@ export default function ThanksInAdvance({ articleData }) {
           </p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -264,7 +292,9 @@ export default function ThanksInAdvance({ articleData }) {
           </p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>

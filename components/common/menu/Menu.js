@@ -52,7 +52,9 @@ const Menu = ({ location }) => {
 
   if (responsiveClass.isVisible) {
     return (
-      <div className={`${styles.menuWrapper}`} style={{ width: responsiveClass.width }} ref={inputRef}>
+      <div className={`${styles.menuWrapper}`} style={{
+ width: responsiveClass.width 
+}} ref={inputRef}>
         <div className={styles.menuIcon}>
           <MenuIcon />
         </div>

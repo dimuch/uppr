@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 import { LoaderIcon } from '../../common/icons';
 import { Typography } from '@mui/material';
 
-export default function SeeMorePostsButton( {handleClick, isLoading, isShowMorePressed }) {
+export default function SeeMorePostsButton( { handleClick, isLoading, isShowMorePressed }) {
     return (
       <div className={styles.showMoreBtn}
            onClick={handleClick}>

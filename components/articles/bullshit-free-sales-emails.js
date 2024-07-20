@@ -6,7 +6,7 @@ import ArticleFooter from '../blog/ArticleFooter/ArticleFooter';
 
 import styles from './commonArticleStyles.module.scss';
 
-export default function BullshitFreeSalesEmails({articleData}) {
+export default function BullshitFreeSalesEmails({ articleData }) {
     return (
         <div className={styles.article}>
             <div className={styles.maxWidthArticleTitleWrapper}>
@@ -211,15 +211,21 @@ export default function BullshitFreeSalesEmails({articleData}) {
                     </p>
 
                     <ul className={`${styles.articleList} ${styles.enlargedFont}`}>
-                        <li className={styles.discList} style={{color: `#${articleData.article_color}`}}>
+                        <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
                             <p>
                                 😇 sure thing!
                             </p>
                         </li>
-                        <li className={styles.discList} style={{color: `#${articleData.article_color}`}}>
+                        <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
                             <p> 🤷‍♂️ neither here, nor there!</p>
                         </li>
-                        <li className={styles.discList} style={{color: `#${articleData.article_color}`}}>
+                        <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
                             😈 jeezy-peezy!
                         </li>
                     </ul>

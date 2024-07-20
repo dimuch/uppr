@@ -3,13 +3,19 @@ import React from 'react';
 import FormControl from '@mui/material/FormControl';
 import TestQuestionTitle from '../TestQuestionTitle';
 import TestQuestion from '../TestQuestion';
-import {DEFAULT_TEST_ANSWER} from '../service';
+import { DEFAULT_TEST_ANSWER } from '../service';
 import TestOptionsList from '../TestOptionsList';
 
 const randomKey = Math.random();
 
-export default function SimpleTestQuestionComponent({question, questionNumber, answer, correctAnswer, onOptionSelect}) {
-  const [mainQuestionNumber=0, subQuestionNumber = DEFAULT_TEST_ANSWER] = questionNumber.toString().split('_');
+export default function SimpleTestQuestionComponent({
+  question,
+  questionNumber,
+  answer,
+  correctAnswer,
+  onOptionSelect,
+}) {
+  const [mainQuestionNumber = 0, subQuestionNumber = DEFAULT_TEST_ANSWER] = questionNumber.toString().split('_');
   const QuestionBodyComp = question?.questionBody;
 
   return (
@@ -21,7 +27,7 @@ export default function SimpleTestQuestionComponent({question, questionNumber, a
           subQuestionNumber={subQuestionNumber}
         />
 
-        <QuestionBodyComp/>
+        <QuestionBodyComp />
 
         <TestOptionsList
           questionOptions={question.questionOptions}
@@ -33,5 +39,5 @@ export default function SimpleTestQuestionComponent({question, questionNumber, a
         />
       </FormControl>
     </li>
-  )
-};
+  );
+}

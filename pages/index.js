@@ -19,14 +19,18 @@ const Index = ({ top3Article, latestArticle, otherLatestArticles }) => {
   const [isCursorLast, setCursorIsLast] = useState(true);
   const last3Articles = [latestArticle[0], otherLatestArticles[0], otherLatestArticles[1]];
 
-  const [imgDimensions, setImgDimensions] = useState({ width: 700, height: 400 });
+  const [imgDimensions, setImgDimensions] = useState({
+ width: 700, height: 400 
+});
 
   useEffect(() => {
     const windowInner = window?.innerWidth;
     const width = windowInner > 850 ? Math.round(windowInner) : windowInner;
     const height = Math.round((width * 4) / 7);
 
-    setImgDimensions(() => ({ width, height }));
+    setImgDimensions(() => ({
+ width, height 
+}));
     const html = document.getElementsByTagName('html')[0];
     html.setAttribute('prefix', 'og: http://ogp.me/ns#');
   }, []);
@@ -98,7 +102,9 @@ const Index = ({ top3Article, latestArticle, otherLatestArticles }) => {
           <div className={`${styles.column} ${styles.rightColumn}`}>
             <img
               className={styles.mainSectionImage}
-              src={loader({ src: '/assets/images/others/main_index.png', width: imgDimensions.width })}
+              src={loader({
+ src: '/assets/images/others/main_index.png', width: imgDimensions.width 
+})}
               width={imgDimensions?.width}
               height={imgDimensions?.height}
               alt={'Main UPPR page'}

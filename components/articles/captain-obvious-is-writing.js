@@ -108,7 +108,9 @@ export default function CaptainObviousIsWriting({ articleData }) {
           </p>
 
           <p className={`${styles.articleText} ${styles.articleLink}`}>
-            <i style={{ color: `#${articleData.article_color}` }}>
+            <i style={{
+ color: `#${articleData.article_color}` 
+}}>
               In my last email, I promised to give you a discount of 15%. This is not possible now. Sorry about that,
               but not everything depends on me
             </i>{' '}
@@ -116,7 +118,9 @@ export default function CaptainObviousIsWriting({ articleData }) {
           </p>
 
           <p className={`${styles.articleText} ${styles.articleLink}`}>
-            <i style={{ color: `#${articleData.article_color}` }}>
+            <i style={{
+ color: `#${articleData.article_color}` 
+}}>
               Please, give me your feedback about how convenient the suggested options are for you or provide your
               variant, which is more convenient for you
             </i>{' '}

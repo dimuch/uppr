@@ -105,7 +105,9 @@ export default function TenOddWordsInEmails({ articleData }) {
             <i>that,</i> &nbsp; зберігаючи зміст, наприклад, &nbsp; i reported verbs.&nbsp; Порівняйте:
           </p>
 
-          <table className={`${styles.table}`} style={{ color: `#${articleData.article_color}` }}>
+          <table className={`${styles.table}`} style={{
+ color: `#${articleData.article_color}` 
+}}>
             <thead>
               <tr>
                 <th>Варіант №1</th>

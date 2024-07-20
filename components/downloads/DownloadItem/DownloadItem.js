@@ -1,11 +1,11 @@
-import React, {useMemo} from 'react';
+import React, { useMemo } from 'react';
 import styles from './styles.module.scss';
 import loader from '../../common/loader/loader';
 import { Typography } from '@mui/material';
 import { useHasMounted } from '../../common/hooks/hasMounted';
 import DownloadLink from './components/DownloadLink';
 
-export default function DownloadItem({item}) {
+export default function DownloadItem({ item }) {
   const hasMounted = useHasMounted();
 
   if ( !hasMounted ) {
@@ -28,7 +28,9 @@ export default function DownloadItem({item}) {
           />
         </div>
         <img
-          src={loader({src: item.image, width: width})}
+          src={loader({
+ src: item.image, width: width 
+})}
           alt={item.title}
           width={width}
           height={height}

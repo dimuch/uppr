@@ -32,7 +32,9 @@ export default function ArticlePageWrapper({ articlesByTags, articleTags }) {
   const [articles, setArticles] = useState(() => articlesByTags);
 
   const toggleSelectedTag = (tag, index) => {
-    const selectedTag = { ...tag, selected: !tag.selected };
+    const selectedTag = {
+ ...tag, selected: !tag.selected 
+};
     const updatedTags = new Map([...tags]);
     updatedTags.set(tag.name, selectedTag);
     setTags(updatedTags);

@@ -6,7 +6,7 @@ import ArticleFooter from '../blog/ArticleFooter/ArticleFooter';
 
 import styles from '../../components/articles/commonArticleStyles.module.scss';
 
-export default function TenNoPhrasesForYourOwnCV({articleData}) {
+export default function TenNoPhrasesForYourOwnCV({ articleData }) {
     return (
         <div className={styles.article}>
             <div className={styles.maxWidthArticleTitleWrapper}>
@@ -40,15 +40,21 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
                     </p>
 
                     <ol className={`${styles.articleList} ${styles.numberedList}`}
-                        style={{color: `#${articleData.article_color}`}}
+                        style={{
+ color: `#${articleData.article_color}` 
+}}
                     >
                         <li>
-                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                            <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                                 уберегти вас від таких от &quot;подразників&quot; у вигляді пустих фраз;
                             </p>
                         </li>
                         <li>
-                            <p className={styles.articleText} style={{color: `#${articleData.article_color}`}}>
+                            <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                                 рекрутерів - від руйнування нервових клітин.
                             </p>
                         </li>
@@ -163,7 +169,9 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
 
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-                    <h3 className={styles.articlePhrase} style={{color: `#${articleData.article_color}`}}>
+                    <h3 className={styles.articlePhrase} style={{
+ color: `#${articleData.article_color}` 
+}}>
                         Хоч і мала написати всього 10. Не можу втриматися і не написати ще одне &quot;слово&quot; –
                         спеціально для
                         ІТ-шників – ninja / unicorn / rock-star. Ще і досі зустрічаються ті, хто про себе так думає і
@@ -188,7 +196,9 @@ export default function TenNoPhrasesForYourOwnCV({articleData}) {
 
             <div className={styles.articleOddSection}>
                 <div className={styles.maxWidthArticleSectionWrapper}>
-                    <h3 className={styles.articlePhrase} style={{color: `#${articleData.article_color}`}}>
+                    <h3 className={styles.articlePhrase} style={{
+ color: `#${articleData.article_color}` 
+}}>
                         Отже, як для вас нелегким завданням є написати резюме чи пройти співбесіду, так і для ейчара -
                         розібрати кіпу резюме (з них мінімум 80% непідходящих) і не зійти з розуму.
                     </h3>

@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React, { useMemo } from 'react';
 import styles from './styles.module.scss';
 import OthersArticles from '../../blog/OthersArticles/OthersArticles';
 

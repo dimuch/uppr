@@ -1,4 +1,4 @@
-import {getArticlesByCategoryDB} from '../../../services/blogData';
+import { getArticlesByCategoryDB } from '../../../services/blogData';
 
 export default async function handler (req, res) {
     const articles = await getArticlesByCategoryDB();

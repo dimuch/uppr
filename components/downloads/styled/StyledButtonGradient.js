@@ -16,8 +16,10 @@ const gradientDisabled = `linear-gradient(white, white) padding-box, linear-grad
 
 const getShouldForwardProp = (prop) => !['isFullGradientButton'].includes(prop);
 
-const StyledButtonGradient = styled(Button,  { shouldForwardProp: getShouldForwardProp })(
-  ({ theme:{palette}, isFullGradientButton  }) => {
+const StyledButtonGradient = styled(Button,  {
+ shouldForwardProp: getShouldForwardProp 
+})(
+  ({ theme:{ palette }, isFullGradientButton  }) => {
     const gradient = isFullGradientButton ? gradientFullButtonActive : gradientActive;
     const captionColor = isFullGradientButton ? palette.common.white : text;
     return {

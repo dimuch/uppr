@@ -1,5 +1,5 @@
-import React, {useEffect, useMemo, useRef, useState} from 'react';
-import {useHasMounted} from '../common/hooks/hasMounted';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useHasMounted } from '../common/hooks/hasMounted';
 
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
@@ -18,7 +18,7 @@ import {
 } from './service';
 
 import DataLoader from '../common/dataLoader/DataLoader';
-import useMakeRequest, {POST_REQ_METHOD} from '../common/hooks/makeRequest';
+import useMakeRequest, { POST_REQ_METHOD } from '../common/hooks/makeRequest';
 
 import styles from './styles.module.scss';
 import PageNotFound from '../common/404/404';
@@ -27,19 +27,22 @@ import Footer from '../common/footers/footer/Footer';
 const domainName = '';
 const UPDATE_STAT_INFO = '/api/test'
 const random = Math.random();
-const DEFAULT_REDIRECTS_PARAMS = {redirectLink: '/test', redirectPage: 'Повернутись до тесту'};
+const DEFAULT_REDIRECTS_PARAMS = {
+ redirectLink: '/test', redirectPage: 'Повернутись до тесту' 
+};
 
 
 const Test = ({}) => {
   const hasMounted = useHasMounted();
-  const {makeRequest, isLoading, error, data} = useMakeRequest();
+  const { makeRequest, isLoading, error, data } = useMakeRequest();
 
   const [step, setStep] = useState(0);
   const questions = useMemo(() => emailEffectivenessTest(), []);
   const nextStepQuestions = useMemo(() => questions[step], [step, questions]);
 
   const [answers, setAnswer] = useState(DEFAULT_ANSWERS);
-  const [userResultParams, setUserResultParams] = useState({});
+  const [userResultParams, setUserResultParams] = useState({
+});
   const [result, setResult] = useState(DEFAULT_TEST_RESULT);
 
   const firstQuestionRef = useRef();
@@ -47,7 +50,9 @@ const Test = ({}) => {
   const onStepChange = (diff) => {
     setStep(() => (step + diff));
     setTimeout(() => {
-      firstQuestionRef.current.scrollIntoView({behavior: 'smooth'})
+      firstQuestionRef.current.scrollIntoView({
+ behavior: 'smooth' 
+})
     }, 200)
   }
 

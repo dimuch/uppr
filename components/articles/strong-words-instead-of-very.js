@@ -14,7 +14,9 @@ export default function StrongWordsInsteadOfVery({ articleData }) {
 
       <div className={styles.articleOddSection}>
         <div className={styles.maxWidthArticleSectionWrapper}>
-          <div className={styles.articleIframeContainer} style={{ height: 2200 }}>
+          <div className={styles.articleIframeContainer} style={{
+ height: 2200 
+}}>
             <iframe
               src="/assets/images/blog-articles/strong-words-instead-of-very.pdf#toolbar=0"
               type="application/pdf"

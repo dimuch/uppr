@@ -68,25 +68,35 @@ export default function EightyTwentyHowToLearnRight({ articleData }) {
           <p className={styles.articleText}>Спробуйте чесно і максимально конкретно відповісти на запитання:</p>
           <ol
             className={`${styles.articleList} ${styles.numberedList}`}
-            style={{ color: `#${articleData.article_color}` }}
+            style={{
+ color: `#${articleData.article_color}` 
+}}
           >
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 Для чого мені англійська?
               </p>
             </li>
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 З ким я зазвичай спілкуюся?
               </p>
             </li>
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 На які теми?
               </p>
             </li>
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 З чим саме виникають найбільші труднощі?
               </p>
             </li>
@@ -127,7 +137,9 @@ export default function EightyTwentyHowToLearnRight({ articleData }) {
 
       <div className={styles.articleEvenSection}>
         <div className={styles.maxWidthArticleSectionWrapper}>
-          <h3 className={styles.articlePhrase} style={{ color: `#${articleData.article_color}` }}>
+          <h3 className={styles.articlePhrase} style={{
+ color: `#${articleData.article_color}` 
+}}>
             До ваших 20% неодмінно додайте &quot;ходові&quot; вирази, наприклад, декілька способів вибачитися,
             подякувати, не погодитися, не образивши нікого.
           </h3>
@@ -196,20 +208,28 @@ export default function EightyTwentyHowToLearnRight({ articleData }) {
 
           <ol
             className={`${styles.articleList} ${styles.numberedList}`}
-            style={{ color: `#${articleData.article_color}` }}
+            style={{
+ color: `#${articleData.article_color}` 
+}}
           >
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 Вчитися мистецтву маленьких кроків – baby steps
               </p>
             </li>
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 Та плануванню.
               </p>
             </li>
             <li>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 І пам’ятайте: хваліть себе
               </p>
             </li>

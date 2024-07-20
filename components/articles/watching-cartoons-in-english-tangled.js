@@ -73,13 +73,19 @@ export default function WatchingCartoonsInEnglishTangled({ articleData }) {
 
       <div className={styles.articleEvenSection}>
         <div className={styles.maxWidthArticleSectionWrapper}>
-          <h3 className={`${styles.articlePhrase}`} style={{ color: `#${articleData.article_color}` }}>
+          <h3 className={`${styles.articlePhrase}`} style={{
+ color: `#${articleData.article_color}` 
+}}>
             Як мінімум декілька варіантів як називати блондинок:).
             <br />
             <br />
-            Flynn Rider: All right, <b style={{ color: '#172d4c' }}>Blondie</b>.
+            Flynn Rider: All right, <b style={{
+ color: '#172d4c' 
+}}>Blondie</b>.
             <br />
-            Flynn Rider: <b style={{ color: '#172d4c' }}>Goldie</b>, look at this!
+            Flynn Rider: <b style={{
+ color: '#172d4c' 
+}}>Goldie</b>, look at this!
           </h3>
         </div>
       </div>
@@ -189,7 +195,9 @@ export default function WatchingCartoonsInEnglishTangled({ articleData }) {
 
       <div className={styles.articleOddSection}>
         <div className={styles.maxWidthArticleSectionWrapper}>
-          <h3 className={`${styles.articlePhrase}`} style={{ color: `#${articleData.article_color}` }}>
+          <h3 className={`${styles.articlePhrase}`} style={{
+ color: `#${articleData.article_color}` 
+}}>
             And are you a bother? – hope not!)))
           </h3>
         </div>

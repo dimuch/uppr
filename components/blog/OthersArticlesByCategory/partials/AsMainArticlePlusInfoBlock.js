@@ -1,12 +1,12 @@
-import React, {useMemo} from 'react';
+import React, { useMemo } from 'react';
 
 import MainArticle from '../../MainArticle/MainArticle';
 import ArticleCard from './ArticleCard';
 
 import styles from './asMainArticlePlusInfoBlockStyles.module.scss'
 
-export default function AsMainArticlePlusInfoBlock({data}) {
-    const {name, articles} = data;
+export default function AsMainArticlePlusInfoBlock({ data }) {
+    const { name, articles } = data;
 
     const firstRowOthersArticles = useMemo(() => {
         return articles.slice(0, 2);

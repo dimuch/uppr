@@ -56,7 +56,9 @@ export default function DownloadDetails({ downloadData, top3Article }) {
       </Head>
 
       <Header search location={'/downloads'} />
-      <div style={{ overflow: 'hidden' }}>
+      <div style={{
+ overflow: 'hidden' 
+}}>
         <DownloadPage data={downloadData} />
       </div>
 
@@ -71,7 +73,8 @@ export async function getServerSideProps(context) {
   if (downloadCaption === 'undefined') {
     return {
       props: {
-        downloadData: {},
+        downloadData: {
+},
       },
     };
   }
@@ -91,7 +94,8 @@ export async function getServerSideProps(context) {
     console.log(`WRONG DOWNLOAD CAPTION: ${downloadCaption}`);
     return {
       props: {
-        downloadData: {},
+        downloadData: {
+},
       },
     };
   }

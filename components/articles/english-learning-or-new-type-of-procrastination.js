@@ -58,19 +58,29 @@ export default function EnglishLearningOrNewTypeOfProcrastination({ articleData 
           <p className={styles.articleText}>Можливості - поряд з вами:</p>
 
           <ul className={`${styles.articleList}`}>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
               Спілкуйтеся на зустрічах
             </li>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
               Готуйте презентації
             </li>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
               Коментуйте ідеї
             </li>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
               Записуйте відео
             </li>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
               Обговорюйте теми на розмовних клубах.
             </li>
           </ul>
@@ -103,7 +113,9 @@ export default function EnglishLearningOrNewTypeOfProcrastination({ articleData 
         <div className={styles.maxWidthArticleSectionWrapper}>
           <h3
             className={`${styles.articleSubSubTitle} ${styles.articleLink}`}
-            style={{ color: `#${articleData.article_color}` }}
+            style={{
+ color: `#${articleData.article_color}` 
+}}
           >
             Можна в листах зустріти і TBD (To Be Determined) или TBA (To Be Announced), коли інформація по термінах та
             даті ще не відома. Маючи на увазі відпустку, пишуть не vacation, а PTO (paid time off), а якщо ви плануєте

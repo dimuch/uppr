@@ -27,7 +27,9 @@ export default function CategoriesList({ items, selectedCategory }) {
             : `/blog/articles-by-category/${articleCategory.name.toLowerCase()}`;
 
         return (
-          <li key={articleCategory.id} style={{ margin: '1rem .5rem' }}>
+          <li key={articleCategory.id} style={{
+ margin: '1rem .5rem' 
+}}>
             <a href={hrefLink} rel="noreferrer" className={`${styles.categoryListItem} ${classCalc}`}>
               {articleCategory.name}
             </a>

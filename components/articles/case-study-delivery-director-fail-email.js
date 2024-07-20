@@ -27,7 +27,9 @@ export default function CaseStudyDeliveryDirectorFailEmail({ articleData }) {
           </p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -148,7 +150,9 @@ export default function CaseStudyDeliveryDirectorFailEmail({ articleData }) {
           </p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>

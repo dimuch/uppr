@@ -29,13 +29,21 @@ export default function FilmsOnEnglishKingsSpeech({ articleData }) {
           </p>
 
           <ol className={`${styles.articleList}`}>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 отримаєте задоволення;
               </p>
             </li>
-            <li className={styles.discList} style={{ color: `#${articleData.article_color}` }}>
-              <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+            <li className={styles.discList} style={{
+ color: `#${articleData.article_color}` 
+}}>
+              <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
                 збагатите свій вокабуляр розмовною лексикою (не задоволенням єдиним ;)).
               </p>
             </li>
@@ -51,7 +59,9 @@ export default function FilmsOnEnglishKingsSpeech({ articleData }) {
       <div className={styles.articleEvenSection}>
         <div className={styles.maxWidthArticleSectionWrapper}>
           <h2 className={styles.subTitle}>
-            <span style={{ color: `#${articleData.article_color}` }}>
+            <span style={{
+ color: `#${articleData.article_color}` 
+}}>
               Один - з Down Under, допомагає іншому, який на усіх дивиться down.
             </span>
           </h2>
@@ -326,7 +336,9 @@ export default function FilmsOnEnglishKingsSpeech({ articleData }) {
           </p>
 
           <ul className={`${styles.articleList} ${styles.articleLink} ${styles.discList}`}>
-            <li style={{ color: `#${articleData.article_color}` }}>
+            <li style={{
+ color: `#${articleData.article_color}` 
+}}>
               <p className={styles.articleText}>
                 <a
                   href="www.telegraph.co.uk/culture/film/8223897/The-Kings-Speech-the-real-story.html"
@@ -337,7 +349,9 @@ export default function FilmsOnEnglishKingsSpeech({ articleData }) {
                 </a>
               </p>
             </li>
-            <li style={{ color: `#${articleData.article_color}` }}>
+            <li style={{
+ color: `#${articleData.article_color}` 
+}}>
               <p className={styles.articleText}>
                 <a
                   href="www.telegraph.co.uk/culture/film/oscars/7155251/Colin-Firth-interview-for-A-Single-Man.html"

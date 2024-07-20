@@ -1,4 +1,4 @@
-import {getRelevantArticlesByCategory} from '../../../services/blogData';
+import { getRelevantArticlesByCategory } from '../../../services/blogData';
 
 export default async function handler (req, res) {
     const categoryId = req.query.id;

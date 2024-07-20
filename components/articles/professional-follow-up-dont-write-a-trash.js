@@ -5,7 +5,7 @@ import ArticleFooter from '../blog/ArticleFooter/ArticleFooter';
 
 import styles from './commonArticleStyles.module.scss';
 
-export default function ProfessionalFollowUpDontWriteATrash( {articleData} ) {
+export default function ProfessionalFollowUpDontWriteATrash( { articleData } ) {
   return (
     <div className={styles.article}>
       <div className={styles.maxWidthArticleTitleWrapper}>
@@ -238,7 +238,9 @@ export default function ProfessionalFollowUpDontWriteATrash( {articleData} ) {
           </p>
           <div className={styles.frameWithExampleAndTitle}>
             <p className={styles.exampleTitle}
-               style={{backgroundColor: `#${articleData.article_color}`}}><i>A phone call follow-up:</i></p>
+               style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}><i>A phone call follow-up:</i></p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
               <i>Hey Sarah</i>,
               <br/>
@@ -261,7 +263,9 @@ export default function ProfessionalFollowUpDontWriteATrash( {articleData} ) {
 
           <div className={styles.frameWithExampleAndTitle}>
             <p className={styles.exampleTitle}
-               style={{backgroundColor: `#${articleData.article_color}`}}>&nbsp;</p>
+               style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>&nbsp;</p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
               <i>Thanks for your time. Glad we got an opportunity to speak about X.</i>,
               <br/>

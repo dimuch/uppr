@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Grid, Typography } from "@mui/material";
 import { getDate } from "../../../helpers/getDate";
@@ -28,9 +28,13 @@ export default function MainArticle({ items }) {
     <div className={styles.mainArticleWrappper}
       onClick={(e) => updateArticleViews(mainArticleData)}
     >
-      <div style={{position:'relative'}}>
+      <div style={{
+ position:'relative' 
+}}>
         <div className={styles.category}
-              style={{backgroundColor: `#${mainArticleData.categoryColor}`}}
+              style={{
+ backgroundColor: `#${mainArticleData.categoryColor}` 
+}}
         >
           <Typography variant={'subtitle2'}>
             {mainArticleData?.name?.toUpperCase()}
@@ -39,7 +43,9 @@ export default function MainArticle({ items }) {
         </div>
         <img
           className={styles.image}
-          src={loader({src:mainArticleData.image, width: width})}
+          src={loader({
+ src:mainArticleData.image, width: width 
+})}
           width={width}
           height={height}
           alt={mainArticleData.title}

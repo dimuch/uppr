@@ -1,4 +1,4 @@
-import {sizes} from '../../../utils/imageSizes';
+import { sizes } from '../../../utils/imageSizes';
 
 export default function loader({ src, width, quality }){
     const srcParts = src.split('/');

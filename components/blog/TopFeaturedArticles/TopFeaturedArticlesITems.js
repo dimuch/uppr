@@ -7,7 +7,7 @@ import loader from '../../common/loader/loader';
 import styles from './styles.module.scss';
 import { useHasMounted } from '../../common/hooks/hasMounted';
 
-export default function TopFeaturedArticlesItems( {items} ) {
+export default function TopFeaturedArticlesItems( { items } ) {
   const hasMounted = useHasMounted();
   if (!hasMounted) {
     return null;
@@ -35,7 +35,9 @@ export default function TopFeaturedArticlesItems( {items} ) {
               >
                 <Grid item xs={5} sm={5} className={styles.articleImage}>
                   <img
-                    src={loader({src: article.image, width: width})}
+                    src={loader({
+ src: article.image, width: width 
+})}
                     width={width}
                     height={height}
                     alt={article.title}

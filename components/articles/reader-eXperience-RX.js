@@ -79,7 +79,9 @@ export default function ReaderEXperienceRX({ articleData }) {
 
       <div className={styles.articleOddSection}>
         <div className={styles.maxWidthArticleSectionWrapper}>
-          <h3 className={`${styles.articlePhrase}`} style={{ color: `#${articleData.article_color}` }}>
+          <h3 className={`${styles.articlePhrase}`} style={{
+ color: `#${articleData.article_color}` 
+}}>
             Чому б не почати сприймати себе <i>RX-дизайнером</i> власного тексту, і не намагатися стати найкращим в цій
             новій професії? Чому б не зробити себе на 100% відповідальним за якість своєї писанини та зрозумілість її
             аудиторії? Чому б, отримавши фідбек, не внести правки та зробити для себе висновки на майбутнє? В цій

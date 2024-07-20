@@ -1,11 +1,11 @@
 import React from 'react';
 
 import Link from 'next/link';
-import {Grid, Typography} from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import FollowMeBlock from '../FollowMeBlock/FollowMeBlock';
 import styles from './styles.module.scss';
 
-export default function InformationBlock({tags}) {
+export default function InformationBlock({ tags }) {
   return (
     <Grid
       item

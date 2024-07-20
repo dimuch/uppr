@@ -2,15 +2,17 @@ import React from 'react';
 import Head from 'next/head';
 
 import Header from '../../components/common/header/Header';
-import {useHasMounted} from '../../components/common/hooks/hasMounted';
+import { useHasMounted } from '../../components/common/hooks/hasMounted';
 
 import styles from './styles.module.scss';
 import TestResultsCompare from '../../components/test/TestResultCompare';
 import PageNotFound from '../../components/common/404/404';
 
-const DEFAULT_REDIRECTS_PARAMS = {redirectLink:'/test', redirectPage:'Повернутись до тесту'};
+const DEFAULT_REDIRECTS_PARAMS = {
+ redirectLink:'/test', redirectPage:'Повернутись до тесту' 
+};
 
-const TestPageResults = ({userAnswers}) => {
+const TestPageResults = ({ userAnswers }) => {
   const hasMounted = useHasMounted();
   if (!hasMounted) {
     return null;

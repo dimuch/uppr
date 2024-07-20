@@ -224,7 +224,9 @@ const Ebook = ({ data }) => {
             shadowText="Download"
             instaItems={instaImagesConfig}
             sectionTitle={
-              <h3 className={styles.sectionCaption} style={{ fontSize: '3rem' }}>
+              <h3 className={styles.sectionCaption} style={{
+ fontSize: '3rem' 
+}}>
                 Download the latest and the greatest
               </h3>
             }

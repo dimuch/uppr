@@ -27,7 +27,9 @@ export default function ToMeetOrNotToMeet({ articleData }) {
           </p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -112,7 +114,9 @@ export default function ToMeetOrNotToMeet({ articleData }) {
           <p className={styles.articleText}>А зробити це максимально &quot;екологічно&quot; можна наступним чином:</p>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -174,7 +178,9 @@ export default function ToMeetOrNotToMeet({ articleData }) {
           <h3 className={styles.articleSubSubTitle}>Turning the meeting into a call</h3>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -212,7 +218,9 @@ export default function ToMeetOrNotToMeet({ articleData }) {
           <h3 className={styles.articleSubSubTitle}>Turning the meeting into an email</h3>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>
@@ -252,7 +260,9 @@ export default function ToMeetOrNotToMeet({ articleData }) {
           <h3 className={styles.articleSubSubTitle}>Rescheduling the meeting</h3>
 
           <div className={styles.frameWithExampleAndTitle}>
-            <p className={styles.exampleTitle} style={{ backgroundColor: `#${articleData.article_color}` }}>
+            <p className={styles.exampleTitle} style={{
+ backgroundColor: `#${articleData.article_color}` 
+}}>
               &nbsp;
             </p>
             <p className={`${styles.articleText}  ${styles.exampleText}`}>

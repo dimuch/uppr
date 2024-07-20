@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import loader from '../../common/loader/loader';
-import {Typography} from '@mui/material';
+import { Typography } from '@mui/material';
 
-import {Wave} from '../../common/icons';
+import { Wave } from '../../common/icons';
 import styles from './styles.module.scss';
 import Button from '@mui/material/Button';
 
-export default function TopTestImage ({isPassTestButton}) {
+export default function TopTestImage ({ isPassTestButton }) {
 
   const [isTryTestVisible, setIsTryTestVisible] = useState(true);
   const width = window.innerWidth;
@@ -15,7 +15,9 @@ export default function TopTestImage ({isPassTestButton}) {
   return (
     <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
       <img
-          src={loader({src:'/assets/images/blog-articles/test-top-image.jpg', width: width})}
+          src={loader({
+ src:'/assets/images/blog-articles/test-top-image.jpg', width: width 
+})}
           alt="Main blog picture"
           width={width}
           height={height}

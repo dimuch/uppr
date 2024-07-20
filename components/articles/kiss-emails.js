@@ -88,22 +88,30 @@ export default function KissEmails({ articleData }) {
           <ul className={`${styles.articleList}`}>
             <li>
               <p className={styles.articleText}>
-                <i style={{ color: `#${articleData.article_color}` }}>1. примітивно або</i>
+                <i style={{
+ color: `#${articleData.article_color}` 
+}}>1. примітивно або</i>
               </p>
             </li>
             <li>
               <p className={styles.articleText}>
-                <i style={{ color: `#${articleData.article_color}` }}>2. непрофесійно або</i>
+                <i style={{
+ color: `#${articleData.article_color}` 
+}}>2. непрофесійно або</i>
               </p>
             </li>
             <li>
               <p className={styles.articleText}>
-                <i style={{ color: `#${articleData.article_color}` }}>3. неввічливо/претензійно або</i>
+                <i style={{
+ color: `#${articleData.article_color}` 
+}}>3. неввічливо/претензійно або</i>
               </p>
             </li>
             <li>
               <p className={styles.articleText}>
-                <i style={{ color: `#${articleData.article_color}` }}>4. неінформативно</i>
+                <i style={{
+ color: `#${articleData.article_color}` 
+}}>4. неінформативно</i>
               </p>
             </li>
           </ul>

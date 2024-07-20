@@ -4,8 +4,8 @@ import ArticleCard from './ArticleCard';
 import styles from '../styles.module.scss';
 
 
-export default function AsBlock({data}) {
-    const {name, articles} = data;
+export default function AsBlock({ data }) {
+    const { name, articles } = data;
     const splitArticlesBy5Qty = [];
     const chunkSize = 5;
     for (let i = 0; i < articles.length; i += chunkSize) {

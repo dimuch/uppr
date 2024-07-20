@@ -1,9 +1,9 @@
 import React from 'react';
 
-import {LoaderIcon} from '../icons';
+import { LoaderIcon } from '../icons';
 import styles from './styles.module.scss';
 
-const DataLoader = ({isLoading}) => {
+const DataLoader = ({ isLoading }) => {
   if (!isLoading) {
     return null;
   }

@@ -1,13 +1,13 @@
-import React, {useMemo} from 'react';
+import React, { useMemo } from 'react';
 
 import TopTestImage from '../blog/TopTestImage/TopTestImage';
 
 import styles from './styles.module.scss';
-import {allQuestions, DEFAULT_ANSWERS, getCorrectAnswers} from './service';
+import { allQuestions, DEFAULT_ANSWERS, getCorrectAnswers } from './service';
 import TestQuestion from './TestQuestion';
 
 
-export default function TestResultsCompare({answers = DEFAULT_ANSWERS}) {
+export default function TestResultsCompare({ answers = DEFAULT_ANSWERS }) {
   const correctAnswers = useMemo(() => getCorrectAnswers(), []);
   const questions = useMemo(() => allQuestions(), []);
 

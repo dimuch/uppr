@@ -44,7 +44,7 @@ const template = {
 //       </div>
 }
 
-const DownloadFaqAccordion = ({item}) => {
+const DownloadFaqAccordion = ({ item }) => {
   // const hasMounted = useHasMounted();
   //
   // if ( !hasMounted ) {

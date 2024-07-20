@@ -105,7 +105,9 @@ export default function VeryLooongEmails({ articleData }) {
             Якщо ваш імейл переходить до стадії дооовгого, то запитайте себе: може, краще поговорити з людиною?
           </p>
 
-          <p className={styles.articleText} style={{ color: `#${articleData.article_color}` }}>
+          <p className={styles.articleText} style={{
+ color: `#${articleData.article_color}` 
+}}>
             На мою думку, основні причини дооовгих імейлів:
           </p>
 

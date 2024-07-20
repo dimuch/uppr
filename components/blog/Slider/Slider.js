@@ -1,9 +1,9 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './styles.module.scss';
 import loader from '../../common/loader/loader';
 import { ArrowLeft, ArrowRight } from '../../common/icons';
 
-function Slide({slideData, slideNode, location}) {
+function Slide({ slideData, slideNode, location }) {
     const windowInner = window?.innerWidth;
     const imageScaler = location === 'footer' ? 7 : 4.35;
     const width = windowInner > 850 ? Math.round(windowInner / imageScaler) : windowInner / 2;
@@ -15,7 +15,9 @@ function Slide({slideData, slideNode, location}) {
                  ref={slideNode}
             >
                 <img
-                    src={loader({src:slideData.image, width: width})}
+                    src={loader({
+ src:slideData.image, width: width 
+})}
                     width={width}
                     height={height}
                     alt={slideData.title}
@@ -30,7 +32,7 @@ function Slide({slideData, slideNode, location}) {
     );
 }
 
-export default function Slider({data, location = 'footer'}) {
+export default function Slider({ data, location = 'footer' }) {
     const wrapperNode = useRef();
     const slideNode = useRef();
 
@@ -87,7 +89,9 @@ export default function Slider({data, location = 'footer'}) {
             </div>
             <div className={styles.wrapper} ref={wrapperNode}>
                 <div className={styles.slides}
-                     style={{left: slider.startOffset}}
+                     style={{
+ left: slider.startOffset 
+}}
                 >
                     {
                         slider?.slides.map((item, index) => {

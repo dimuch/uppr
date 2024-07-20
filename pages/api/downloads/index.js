@@ -8,9 +8,13 @@ export default async function handler(req, res) {
   await addInfoDownloadsStat(downloadId, downloadedCounter);
 
   try {
-    res.status(200).json({ data: '', message: '' });
+    res.status(200).json({
+ data: '', message: '' 
+});
   } catch (err) {
     console.log('Getting search result in articles', err);
-    res.status(400).json({ data: [], message: 'Error occurred' });
+    res.status(400).json({
+ data: [], message: 'Error occurred' 
+});
   }
 }

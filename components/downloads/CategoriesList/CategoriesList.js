@@ -25,7 +25,9 @@ export default function CategoriesList({ items, selectedCategory }) {
         const hrefLink = categoryName === ALL ? `/downloads` : `/downloads/by-category/${categoryName}`;
 
         return (
-          <li key={articleCategory.id} style={{ margin: '1rem .5rem' }}>
+          <li key={articleCategory.id} style={{
+ margin: '1rem .5rem' 
+}}>
             <a href={hrefLink} rel="noreferrer" className={`${styles.categoryListItem} ${classCalc}`}>
               {articleCategory.title}
             </a>

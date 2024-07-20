@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Grid, Typography} from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 
 import styles from './styles.module.scss';
 
@@ -9,7 +9,9 @@ import FacebookIcon from '../../common/icons/facebook-icon';
 import LinkedInIcon from '../../common/icons/linkedin-icon';
 import TelegramIcon2 from '../../common/icons/telegram-icon-2';
 
-export default function FollowMeBlock({showTitle = true, customStyles={socialSectionContent:''}}) {
+export default function FollowMeBlock({ showTitle = true, customStyles={
+ socialSectionContent:'' 
+} }) {
   const wrapperItemsBlockClassName =
     `uppr-section-content ${customStyles.socialSectionContent} ${styles.socialSectionContent}`;
 

@@ -17,7 +17,9 @@ export default function Author({ data }) {
       <div className={styles.author}>
         <div className={styles.authorImg}>
           <img
-            src={loader({ src: '/assets/images/others/ivanka.jpg', width: 110 })}
+            src={loader({
+ src: '/assets/images/others/ivanka.jpg', width: 110 
+})}
             alt="Іванка Табачук"
             width={112}
             height={125}

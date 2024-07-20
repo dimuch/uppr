@@ -7,7 +7,7 @@ import Header from '../header/Header';
 
 import styles from './404.module.scss';
 
-export default function PageNotFound({redirectPage, redirectLink}) {
+export default function PageNotFound({ redirectPage, redirectLink }) {
     return (
         <div className={styles.errorPage}>
             <Header search/>
