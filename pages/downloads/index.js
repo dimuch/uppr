@@ -102,7 +102,10 @@ export default function Downloads({ downloads, categories, top3Article }) {
           location={'/downloads'}
         />
         <div className={`uppr-page-content ${styles.upprPageContent}`}>
-          <TopBlogImage />
+          <TopBlogImage
+            caption={'My Downloads'}
+            description={'The best downloads!'}
+          />
 
           <div className={styles.upprArticlesContent}>
             <div className={styles.downloadsWrapper}>

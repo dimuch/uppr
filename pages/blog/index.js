@@ -38,26 +38,67 @@ export default function Blog({
     <>
       <Head>
         <title>{'UPPR | Блог'}</title>
-        <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
-        <link rel="apple-touch-icon" href="/favicon.png" type="image/x-icon" />
-        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-        <link rel="icon" href="/favicon.png" />
-        <meta property="og:title" content={'UPPR | Блог'} />
-        <meta property="og:description" content="The coolest blog ever about writing, emails" />
+        <meta
+          httpEquiv="Content-Type"
+          content="text/html; charset=UTF-8"
+        />
+        <meta
+          httpEquiv="X-UA-Compatible"
+          content="IE=edge,chrome=1"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1"
+        />
+        <meta
+          name="apple-mobile-web-app-capable"
+          content="yes"
+        />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="yes"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/favicon.png"
+          type="image/x-icon"
+        />
+        <link
+          rel="shortcut icon"
+          href="/favicon.png"
+          type="image/x-icon"
+        />
+        <link
+          rel="icon"
+          href="/favicon.png"
+        />
+        <meta
+          property="og:title"
+          content={'UPPR | Блог'}
+        />
+        <meta
+          property="og:description"
+          content="The coolest blog ever about writing, emails"
+        />
         <meta
           property="og:image"
           content="https://uppr.com.ua/assets/images/blog-articles/responsive/1200/image_main.webp"
         />
-        <meta property="og:url" content={`https://uppr.com.ua/blog`} />
+        <meta
+          property="og:url"
+          content={`https://uppr.com.ua/blog`}
+        />
       </Head>
       <div className={styles.upprBlogPage}>
-        <Header search location={'/blog'} />
+        <Header
+          search
+          location={'/blog'}
+        />
         <div className={`uppr-page-content ${styles.upprPageContent}`}>
-          <TopBlogImage />
+          <TopBlogImage
+            caption={'My Blog'}
+            description={'You are never too good to email better!'}
+          />
 
           <div className={`uppr-article-categories ${styles.upprArticleCategories}`}>
             <CategoriesList items={articleCategories} />
@@ -76,7 +117,10 @@ export default function Blog({
           </div>
         </div>
         <div className={styles.footer}>
-          <Footer top3Article={top3Article} domainName={domainName} />
+          <Footer
+            top3Article={top3Article}
+            domainName={domainName}
+          />
         </div>
       </div>
 
