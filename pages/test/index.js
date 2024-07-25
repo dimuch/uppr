@@ -14,7 +14,7 @@ const TestPage = ({ top3Article }) => {
   return (
     <>
       <Head>
-        <title>Email Level Test | UPPR</title>
+        <title>UPPR | Email Level Test</title>
         <meta
           name="description"
           content="Wanna check if your emails are effective and modern enough?"
@@ -97,10 +97,6 @@ const TestPage = ({ top3Article }) => {
         <link
           rel="image_src"
           content="https://uppr.com.ua/assets/images/blog-articles/responsive/1200/test.webp"
-        />
-        <meta
-          name="google-site-verification"
-          content="8Ui50OggqnZ5J1RPshJXelSAYWMPvFGWv32MSzHHlJU"
         />
       </Head>
 

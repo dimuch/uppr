@@ -14,7 +14,9 @@ import {
   QUESTIONS_QUANTITY,
   TEST_ANSWERS,
   DEFAULT_TEST_RESULT,
-  emailEffectivenessTest, isQuestionNumberDefault, DEFAULT_ANSWERS,
+  emailEffectivenessTest,
+  isQuestionNumberDefault,
+  DEFAULT_ANSWERS,
 } from './service';
 
 import DataLoader from '../common/dataLoader/DataLoader';
@@ -25,15 +27,14 @@ import PageNotFound from '../common/404/404';
 import Footer from '../common/footers/footer/Footer';
 
 const domainName = '';
-const UPDATE_STAT_INFO = '/api/test'
+const UPDATE_STAT_INFO = '/api/test';
 const random = Math.random();
 const DEFAULT_REDIRECTS_PARAMS = {
- redirectLink: '/test', redirectPage: 'Повернутись до тесту' 
+  redirectLink: '/test',
+  redirectPage: 'Повернутись до тесту',
 };
 
-
 const Test = ({}) => {
-  const hasMounted = useHasMounted();
   const { makeRequest, isLoading, error, data } = useMakeRequest();
 
   const [step, setStep] = useState(0);
@@ -47,14 +48,14 @@ const Test = ({}) => {
 
   const firstQuestionRef = useRef();
 
-  const onStepChange = (diff) => {
-    setStep(() => (step + diff));
+  const onStepChange = diff => {
+    setStep(() => step + diff);
     setTimeout(() => {
       firstQuestionRef.current.scrollIntoView({
- behavior: 'smooth' 
-})
-    }, 200)
-  }
+        behavior: 'smooth',
+      });
+    }, 200);
+  };
 
   const onOptionSelect = (index, questionNumber, subQuestionNumber) => {
     const copyAnswers = [...answers].map(item => [...item]);
@@ -62,14 +63,14 @@ const Test = ({}) => {
     copyAnswers[questionNumber][subIndex] = index;
     setAnswer(() => {
       return copyAnswers;
-    })
-  }
+    });
+  };
 
   const onTestSubmit = async () => {
-    const userAnswers = answers.flat(Infinity)
+    const userAnswers = answers.flat(Infinity);
     let userResult = 0;
     TEST_ANSWERS.forEach((answer, index) => {
-      userResult += (+(answer === userAnswers[index]));
+      userResult += +(answer === userAnswers[index]);
     });
 
     let title = 'Senior';
@@ -86,30 +87,29 @@ const Test = ({}) => {
       title,
       score: userResult,
       answer: userAnswers,
-    }))
+    }));
 
     await makeRequest(UPDATE_STAT_INFO, POST_REQ_METHOD, {
       answer: JSON.stringify(userAnswers),
       title,
       score: userResult,
     });
-  }
+  };
 
   useEffect(() => {
     if (!data) {
-      return
+      return;
     }
 
     setResult(() => ({
       ...userResultParams,
       isTestSubmitted: true,
     }));
-
   }, [data]);
 
   useEffect(() => {
     if (!error) {
-      return
+      return;
     }
   }, [error]);
 
@@ -117,18 +117,12 @@ const Test = ({}) => {
     setResult(DEFAULT_TEST_RESULT);
     setStep(0);
     setAnswer(DEFAULT_ANSWERS);
-  }
+  };
 
-  const selectedOptions = answers
-    .slice(0, step * CHUNK + CHUNK)
-    .filter(answer => answer[0] !== DEFAULT_TEST_ANSWER);
-  const isNextButtonAvailable = (step < questions.length - 1);
-  const isNextButtonDisabled = (selectedOptions.length !== (step + 1) * CHUNK);
-  const isSubmitButtonDisabled = (selectedOptions.length !== QUESTIONS_QUANTITY);
-
-  if (!hasMounted) {
-    return null;
-  }
+  const selectedOptions = answers.slice(0, step * CHUNK + CHUNK).filter(answer => answer[0] !== DEFAULT_TEST_ANSWER);
+  const isNextButtonAvailable = step < questions.length - 1;
+  const isNextButtonDisabled = selectedOptions.length !== (step + 1) * CHUNK;
+  const isSubmitButtonDisabled = selectedOptions.length !== QUESTIONS_QUANTITY;
 
   if (error) {
     return (
@@ -136,52 +130,52 @@ const Test = ({}) => {
         redirectLink={DEFAULT_REDIRECTS_PARAMS.redirectLink}
         redirectPage={DEFAULT_REDIRECTS_PARAMS.redirectPage}
       />
-    )
+    );
   }
 
-  return <>
-    <DataLoader isLoading={isLoading}/>
-    {
-      !result.isTestSubmitted && (
+  return (
+    <>
+      <DataLoader isLoading={isLoading} />
+      {!result.isTestSubmitted && (
         <div className={styles.upprPageContentWrapper}>
           <div className={`uppr-page-content ${styles.upprPageContent}`}>
-            <TopTestImage isPassTestButton={true}/>
+            <TopTestImage isPassTestButton={true} />
           </div>
           <div className={styles.wave}></div>
-          <div className={styles.upprContent} id="test" ref={firstQuestionRef}>
+          <div
+            className={styles.upprContent}
+            id="test"
+            ref={firstQuestionRef}
+          >
             <ol>
-              {
-                nextStepQuestions.map((nextQuestion, index) => {
-                  const questionNumber = (index + 1) + (step * CHUNK);
-                  return (
-                    <TestQuestion
-                      key={random + index}
-                      questionNumber={questionNumber}
-                      answer={answers[questionNumber - 1]}
-                      question={nextQuestion}
-                      onOptionSelect={onOptionSelect}
-                    />
-                  )
-                })
-              }
+              {nextStepQuestions.map((nextQuestion, index) => {
+                const questionNumber = index + 1 + step * CHUNK;
+                return (
+                  <TestQuestion
+                    key={random + index}
+                    questionNumber={questionNumber}
+                    answer={answers[questionNumber - 1]}
+                    question={nextQuestion}
+                    onOptionSelect={onOptionSelect}
+                  />
+                );
+              })}
             </ol>
 
-            <Stack spacing={2} direction="row" className={styles.stepButtons}>
-              {
-                (step !== 0) && (
-                  <Button
-                    variant="outlined"
-                    onClick={() => onStepChange(-1)}
-                  >
-                    Back
-                  </Button>
-                )
-              }
-              {
-                (step === 0) && (
-                  <>&nbsp;</>
-                )
-              }
+            <Stack
+              spacing={2}
+              direction="row"
+              className={styles.stepButtons}
+            >
+              {step !== 0 && (
+                <Button
+                  variant="outlined"
+                  onClick={() => onStepChange(-1)}
+                >
+                  Back
+                </Button>
+              )}
+              {step === 0 && <>&nbsp;</>}
               {isNextButtonAvailable && (
                 <Button
                   variant="outlined"
@@ -203,17 +197,15 @@ const Test = ({}) => {
             </Stack>
           </div>
         </div>
-      )
-    }
-    {
-      result.isTestSubmitted && (
+      )}
+      {result.isTestSubmitted && (
         <TestResult
           result={result}
           resetResults={resetResults}
         />
-      )
-    }
-  </>;
+      )}
+    </>
+  );
 };
 
 export default Test;

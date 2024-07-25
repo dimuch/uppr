@@ -88,7 +88,7 @@ export default function Downloads({ downloads, categories, top3Article }) {
         />
         <link
           rel="canonical"
-          href={'https://uppr.com.ua/downloads'}
+          href="https://uppr.com.ua/downloads"
         />
         <link
           rel="image_src"
