@@ -80,7 +80,7 @@ const TestPage = ({ top3Article }) => {
         />
         <meta
           property="og:image"
-          content="https://uppr.com.ua/assets/images/blog-articles/responsive/1200/test.jpg"
+          content="https://uppr.com.ua/assets/images/blog-articles/responsive/1200/test.webp"
         />
         <meta
           property="og:image:width"
