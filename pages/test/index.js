@@ -16,34 +16,6 @@ const TestPage = ({ top3Article }) => {
       <Head>
         <title>{'UPPR | Email Level Test'}</title>
         <meta
-          property="og:type"
-          content="website"
-        />
-        <meta
-          property="og:site_name"
-          content="UPPR"
-        />
-        <meta
-          property="og:title"
-          content="Email Level Test"
-        />
-        <meta
-          property="og:description"
-          content="Wanna check if your emails are effective and modern enough?"
-        />
-        <meta
-          property="og:url"
-          content="https://uppr.com.ua/test"
-        />
-        <meta
-          property="og:locale"
-          content="en_US"
-        />
-        <meta
-          property="og:image"
-          content="https://uppr.com.ua/assets/images/blog-articles/responsive/1680/test.webp"
-        />
-        <meta
           httpEquiv="Content-Type"
           content="text/html; charset=UTF-8"
         />
@@ -76,6 +48,47 @@ const TestPage = ({ top3Article }) => {
         <link
           rel="icon"
           href="/favicon.png"
+        />
+
+        <meta
+          property="og:url"
+          content="https://uppr.com.ua/test"
+        />
+        <meta
+          property="og:type"
+          content="website"
+        />
+        <meta
+          property="article:author"
+          content="https://www.facebook.com/ivanna.tabachuk"
+        />
+        <meta
+          property="og:title"
+          content="UPPR Email Level Test"
+        />
+        <meta
+          property="og:description"
+          content="Wanna check if your emails are effective and modern enough?"
+        />
+        <meta
+          property="og:image"
+          content="https://uppr.com.ua/assets/images/blog-articles/responsive/1200/test.webp"
+        />
+        <meta
+          property="og:image:width"
+          content="1200"
+        />
+        <meta
+          property="og:image:height"
+          content="450"
+        />
+        <link
+          rel="canonical"
+          href="https://uppr.com.ua/test"
+        />
+        <link
+          rel="image_src"
+          content="https://uppr.com.ua/assets/images/blog-articles/responsive/1200/test.webp"
         />
       </Head>
 
