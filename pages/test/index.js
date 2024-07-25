@@ -14,7 +14,15 @@ const TestPage = ({ top3Article }) => {
   return (
     <>
       <Head>
-        <title>{'UPPR | Email Level Test'}</title>
+        <title>Email Level Test | UPPR</title>
+        <meta
+          name="description"
+          content="Wanna check if your emails are effective and modern enough?"
+        />
+        <meta
+          name="keywords"
+          content="test, education on-line, english, business, writing, skills, emails"
+        />
         <meta
           httpEquiv="Content-Type"
           content="text/html; charset=UTF-8"
@@ -64,7 +72,7 @@ const TestPage = ({ top3Article }) => {
         />
         <meta
           property="og:title"
-          content="UPPR Email Level Test"
+          content="UPPR Email Level Test | UPPR"
         />
         <meta
           property="og:description"
@@ -72,7 +80,7 @@ const TestPage = ({ top3Article }) => {
         />
         <meta
           property="og:image"
-          content="https://uppr.com.ua/assets/images/blog-articles/responsive/1200/test.webp"
+          content="https://uppr.com.ua/assets/images/blog-articles/responsive/1200/test.jpg"
         />
         <meta
           property="og:image:width"
@@ -89,6 +97,10 @@ const TestPage = ({ top3Article }) => {
         <link
           rel="image_src"
           content="https://uppr.com.ua/assets/images/blog-articles/responsive/1200/test.webp"
+        />
+        <meta
+          name="google-site-verification"
+          content="8Ui50OggqnZ5J1RPshJXelSAYWMPvFGWv32MSzHHlJU"
         />
       </Head>
 

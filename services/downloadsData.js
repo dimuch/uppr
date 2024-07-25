@@ -22,14 +22,20 @@ export async function getDownloadsCategoriesDB() {
 
   try {
     const data = await dbCallWrapper(getDownloadsByCategory, mapper);
-    return { categories: data };
+    return {
+ categories: data 
+};
   } catch (err) {
     console.error('getDownloadsCategoriesDB ==>', err);
-    return { categories: [] };
+    return {
+ categories: [] 
+};
   }
 }
 
-export async function getDownloadsByCategoryDB(params = { category: 'all' }) {
+export async function getDownloadsByCategoryDB(params = {
+ category: 'all' 
+}) {
   const { category } = params;
   const selectClause = `
     SELECT * 
@@ -57,10 +63,14 @@ export async function getDownloadsByCategoryDB(params = { category: 'all' }) {
 
   try {
     const data = await dbCallWrapper(getDownloadsByCategory, mapper);
-    return { downloads: data };
+    return {
+ downloads: data 
+};
   } catch (err) {
     console.error('getDownloadsByCategoryDB ==>', err);
-    return { downloads: [] };
+    return {
+ downloads: [] 
+};
   }
 }
 
@@ -91,6 +101,7 @@ export async function getDownloadDataByCaptionDB(downloadCaption) {
       downloadComponent: itemData?.['download_component'] || 'PageNotFound',
       author: `${itemData?.name} ${itemData?.surname}`,
       chargeTypeCaption: itemData.display_name,
+      downloadLink: itemData.download_link,
     };
   };
 
@@ -98,7 +109,8 @@ export async function getDownloadDataByCaptionDB(downloadCaption) {
     return dbCallWrapper(getDownloadsByCategory, mapper);
   } catch (err) {
     console.error('getDownloadDataByCaptionDB ==>', err);
-    return {};
+    return {
+};
   }
 }
 

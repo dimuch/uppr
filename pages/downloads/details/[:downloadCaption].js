@@ -111,7 +111,7 @@ export default function DownloadDetails({ downloadData, top3Article }) {
         />
         <link
           rel="canonical"
-          href={'https://uppr.com.ua' + downloadData?.link}
+          href={'https://uppr.com.ua' + downloadData?.downloadLink}
         />
         <link
           rel="image_src"
