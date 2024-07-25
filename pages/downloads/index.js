@@ -11,7 +11,6 @@ import { Grid, Typography } from '@mui/material';
 import GoogleStat from '../../components/common/googleCtat/GoogleStat';
 import { getArticles } from '../../services/blogData';
 import Footer from '../../components/common/footers/footer/Footer';
-import CategoriesList from '../../components/downloads/CategoriesList/CategoriesList';
 import DownloadItem from '../../components/downloads/DownloadItem/DownloadItem';
 
 const domainName = '';
@@ -125,11 +124,7 @@ export default function Downloads({ downloads, categories, top3Article }) {
                   item
                   md={6}
                   xs={12}
-                >
-                  {/*<CategoriesList*/}
-                  {/*  items={categories}*/}
-                  {/*/>*/}
-                </Grid>
+                ></Grid>
               </Grid>
             </div>
 
