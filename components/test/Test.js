@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { useHasMounted } from '../common/hooks/hasMounted';
 
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
