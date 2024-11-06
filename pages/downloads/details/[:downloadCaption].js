@@ -1,8 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 
-import { useHasMounted } from '../../../components/common/hooks/hasMounted';
-
 import * as DownloadDocuments from '../../../components/downloads/documents';
 import Header from '../../../components/common/header/Header';
 import PageNotFound from '../../404';
@@ -14,12 +12,6 @@ import { getArticles } from '../../../services/blogData.js';
 
 export default function DownloadDetails({ downloadData, top3Article }) {
   const DownloadPage = DownloadDocuments[downloadData?.downloadComponent];
-
-  // const hasMounted = useHasMounted();
-  //
-  // if (!hasMounted) {
-  //   return null;
-  // }
 
   if (!DownloadPage) {
     return (
