@@ -59,7 +59,7 @@ const ModalComponent = ({ isModalOpen, data, toggleModal }) => {
               objectFit: 'cover',
             }}
           />
-          <Typography className={`${styles.modalTitle} ${styles.caption}`}>{data.title}</Typography>
+          <Typography className={`${styles.modalTitle}`}>{data.title}</Typography>
           <CaseStudyTag
             tagName={data.tagName}
             tagColor={data.tagColor}

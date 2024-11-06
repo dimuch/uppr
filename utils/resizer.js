@@ -4,9 +4,9 @@ const { sizes: imagesSizes } = require('./imageSizes');
 
 const destinationImagesDirectory = 'responsive';
 const sourceImagesDirectories = [
-  // './public/assets/images/blog-articles',
-  // './public/assets/images/others',
-  // './public/assets/images/downloads',
+  './public/assets/images/blog-articles',
+  './public/assets/images/others',
+  './public/assets/images/downloads',
   './public/assets/images/case-study',
 ];
 

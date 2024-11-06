@@ -17,8 +17,13 @@ const CaseStudyTag = ({ tagName, tagColor }) => {
       }}
     >
       <Typography
-        className={styles.tagText}
         component="span"
+        sx={{
+          fontFamily: 'Raleway-SemiBold, sans-serif',
+          fontSize: '.8rem',
+          fontWeight: 600,
+          lineHeight: 1,
+        }}
       >
         {tagName}
       </Typography>

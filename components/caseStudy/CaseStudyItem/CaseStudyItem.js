@@ -37,6 +37,7 @@ export default function CaseStudyItem({ item, onToggleModal }) {
             onClick={() => onToggleModal(item)}
             sx={{
               fontFamily: 'Raleway-Regular, sans-serif',
+              minHeight: '3rem',
             }}
           >
             {item.title}

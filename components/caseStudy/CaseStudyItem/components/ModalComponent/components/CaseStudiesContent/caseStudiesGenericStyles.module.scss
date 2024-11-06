@@ -32,36 +32,30 @@
     font-size: 1rem;
     line-height: 1.5;
     color: $text;
-    margin: 0;
+    margin-bottom: 8px;
   }
 
-  .tagText {
-    font-family: Raleway-SemiBold, sans-serif;
-    font-size: .8rem;
-    font-weight: 600;
-    line-height: 1;
-  }
+  .frameWithExampleAndTitle {
+    border: 1px solid transparent;
+    background: linear-gradient(white, white) padding-box, linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box;
+    max-width: 60rem;
+    margin: 1rem auto 2rem;
 
-  .modalTitle {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    text-align: center;
-    max-width: 60%;
-    margin: auto;
-    color: white;
-    align-self: center;
-  }
+    .exampleTitle {
+      padding: 0.5rem 0.5rem 0.5rem 1rem;
+      margin: 0;
+      text-align: left;
+      font-family: 'Raleway-Regular', sans-serif;
+      font-size: 1rem;
+      color: #fff;
+      background: linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box;
+    }
 
-  .modalContent {
-    padding: 0 !important;
-  }
-
-  .modalContentText {
-    color: $text !important;
-    padding: 36px 72px !important;
+    .exampleText {
+      padding: 1rem;
+      font-family: 'Futura-LT', sans-serif;
+      font-size: 1.15rem;
+    }
   }
 
   @media (max-width: 1024px) {
@@ -69,18 +63,9 @@
       font-size: 1.5rem;
       line-height: 1.5;
     }
-    .modalContentText {
-      padding: 1rem !important;
-    }
   }
 
   @media (max-width: 600px) {
-    .modalTitle {
-      left: 1rem;
-      right: auto;
-      top: 1rem;
-      bottom: auto;
-    }
     .caption {
       font-size: 1.25rem;
       line-height: 1.5;
