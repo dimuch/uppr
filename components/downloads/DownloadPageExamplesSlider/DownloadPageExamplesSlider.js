@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import styles from './styles.module.scss';
-import loader from '../../common/loader/loader';
+import loader from '../../common/loader/loader.js';
 import { CaretLeft, CaretRight } from '@phosphor-icons/react';
 import { Box } from '@mui/material';
 
@@ -45,7 +45,10 @@ const SliderArrow = props => {
         },
       }}
     >
-      <Icon size={28} weight="bold" />
+      <Icon
+        size={28}
+        weight="bold"
+      />
     </Box>
   );
 };
@@ -74,8 +77,8 @@ const DownloadPageExamplesSlider = ({ items }) => {
           height={1682}
           alt={`Page example ${1}`}
           style={{
- margin: 'auto' 
-}}
+            margin: 'auto',
+          }}
         />
       </Box>
       <Box>
@@ -90,8 +93,8 @@ const DownloadPageExamplesSlider = ({ items }) => {
           height={1682}
           alt={`Page example ${2}`}
           style={{
- margin: 'auto' 
-}}
+            margin: 'auto',
+          }}
         />
       </Box>
     </Slider>

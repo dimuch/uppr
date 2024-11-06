@@ -1,5 +1,5 @@
 import crypto from 'crypto';
-import { getDBPoolData } from '../mysql/mySQLClient';
+import { getDBPoolData } from '../mysql/mySQLClient.js';
 import { createUUID } from '../helpers/uuid';
 
 const privateKey = process.env.PAYMENT_PRIVATE_KEY;
@@ -22,7 +22,12 @@ export async function getPaymentFormInitParams(purchasedItemId = 1) {
 
   const { data, signature } = getPaymentFormParams(rawData);
 
-  return { data, signature, orderId, resultPageId };
+  return {
+    data,
+    signature,
+    orderId,
+    resultPageId,
+  };
 }
 
 export function getPaymentFormParams(rawData) {
@@ -38,7 +43,10 @@ export function getPaymentFormParams(rawData) {
   const sha1Hash = crypto.createHash('sha1');
   const signature = sha1Hash.update(base64allTogether).digest('base64');
 
-  return { data: base64Data, signature };
+  return {
+    data: base64Data,
+    signature,
+  };
 }
 
 async function initNextOrderData(purchasedItemId) {
@@ -58,15 +66,22 @@ async function initNextOrderData(purchasedItemId) {
     connection.query(updateOrderState, (err, rows, fields) => {
       if (err) {
         console.log('updateOrderState ERROR', err);
-        reject({ data: [] });
+        reject({
+          data: [],
+        });
       }
 
       try {
         const orderId = rows[0][0]['LAST_INSERT_ID()'];
 
-        resolve({ orderId: orderId, resultPageId });
+        resolve({
+          orderId: orderId,
+          resultPageId,
+        });
       } catch (e) {
-        reject({ data: [] });
+        reject({
+          data: [],
+        });
       }
     });
   });

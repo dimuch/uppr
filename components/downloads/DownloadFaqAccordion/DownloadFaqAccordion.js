@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import loader from '../../common/loader/loader';
+import loader from '../../common/loader/loader.js';
 import { Box, Typography } from '@mui/material';
 import { useHasMounted } from '../../common/hooks/hasMounted';
 import Accordion from './components/Accordion';
@@ -9,40 +9,40 @@ import AccordionDetails from './components/AccordionDetails';
 import styles from './styles.module.scss';
 
 const fourthSectionStyles = {
-//
-//   .screenFourthWrapper {
-//   position: relative;
-//   background-color: #f6f9fc;
-// }
-//   .screenFourth {
-//   display: flex;
-//   flex-direction: column;
-//   position: relative;
-//   max-width: 68rem;
-//   margin: auto;
-//   padding: 2rem 0 3rem;
-//
-// .sectionCaption {
-//     padding: .5rem 0 1rem;
-//     margin: auto;
-//   }
-//
-// .faqsItems {
-//     padding: 2rem 0;
-//   }
-// }
-}
+  //
+  //   .screenFourthWrapper {
+  //   position: relative;
+  //   background-color: #f6f9fc;
+  // }
+  //   .screenFourth {
+  //   display: flex;
+  //   flex-direction: column;
+  //   position: relative;
+  //   max-width: 68rem;
+  //   margin: auto;
+  //   padding: 2rem 0 3rem;
+  //
+  // .sectionCaption {
+  //     padding: .5rem 0 1rem;
+  //     margin: auto;
+  //   }
+  //
+  // .faqsItems {
+  //     padding: 2rem 0;
+  //   }
+  // }
+};
 
 const template = {
-//   <div className={styles.screenFourthWrapper}>
-//         <div className={styles.screenFourth}>
-//           <h2 className={styles.sectionCaption}>Frequently Asked Questions (FAQs)</h2>
-//           <div className={styles.faqsItems}>
-//             <DownloadFaqAccordion/>
-//           </div>
-//         </div>
-//       </div>
-}
+  //   <div className={styles.screenFourthWrapper}>
+  //         <div className={styles.screenFourth}>
+  //           <h2 className={styles.sectionCaption}>Frequently Asked Questions (FAQs)</h2>
+  //           <div className={styles.faqsItems}>
+  //             <DownloadFaqAccordion/>
+  //           </div>
+  //         </div>
+  //       </div>
+};
 
 const DownloadFaqAccordion = ({ item }) => {
   // const hasMounted = useHasMounted();
@@ -63,7 +63,10 @@ const DownloadFaqAccordion = ({ item }) => {
   return (
     <Box className={styles.accordion}>
       <Accordion>
-        <AccordionSummary aria-controls="panel1-content" id="panel1-header">
+        <AccordionSummary
+          aria-controls="panel1-content"
+          id="panel1-header"
+        >
           <Typography
             variant={'h3'}
             sx={{
@@ -89,7 +92,10 @@ const DownloadFaqAccordion = ({ item }) => {
         </AccordionDetails>
       </Accordion>
       <Accordion>
-        <AccordionSummary aria-controls="panel2-content" id="panel2-header">
+        <AccordionSummary
+          aria-controls="panel2-content"
+          id="panel2-header"
+        >
           <Typography
             variant={'h3'}
             sx={{

@@ -1,5 +1,5 @@
 import React from 'react';
-import loader from '../../common/loader/loader';
+import loader from '../../common/loader/loader.js';
 import styles from './styles.module.scss';
 import InstagramIcon from '../../common/icons/instagram-icon';
 import FacebookIcon from '../../common/icons/facebook-icon';
@@ -18,8 +18,9 @@ export default function Author({ data }) {
         <div className={styles.authorImg}>
           <img
             src={loader({
- src: '/assets/images/others/ivanka.jpg', width: 110 
-})}
+              src: '/assets/images/others/ivanka.jpg',
+              width: 110,
+            })}
             alt="Іванка Табачук"
             width={112}
             height={125}
@@ -38,34 +39,65 @@ export default function Author({ data }) {
       </div>
       <div className={styles.socialMedia}>
         <div className={styles.socialLink}>
-          <a href="https://www.instagram.com/ivanna.tabachuk" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.instagram.com/ivanna.tabachuk"
+            target="_blank"
+            rel="noreferrer"
+          >
             <InstagramIcon />
           </a>
         </div>
         <div className={styles.socialLink}>
-          <a href="https://www.facebook.com/ivanna.tabachuk" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.facebook.com/ivanna.tabachuk"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FacebookIcon />
           </a>
         </div>
         <div className={styles.socialLink}>
-          <a href="https://www.linkedin.com/in/ivannatabachuk" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.linkedin.com/in/ivannatabachuk"
+            target="_blank"
+            rel="noreferrer"
+          >
             <LinkedInIcon />
           </a>
         </div>
         <div className={styles.socialLink}>
-          <a href="https://t.me/emailingskills" target="_blank" rel="noreferrer">
+          <a
+            href="https://t.me/emailingskills"
+            target="_blank"
+            rel="noreferrer"
+          >
             <TelegramIcon2 />
           </a>
         </div>
       </div>
       <div className={styles.authorLinks}>
-        <a className={styles.authorLink} href="/" target="_blank" rel="noreferrer">
+        <a
+          className={styles.authorLink}
+          href="/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <p>My website</p>
         </a>
-        <a className={styles.authorLink} href={EMAIL_LINK} target="_blank" rel="noreferrer">
+        <a
+          className={styles.authorLink}
+          href={EMAIL_LINK}
+          target="_blank"
+          rel="noreferrer"
+        >
           <p>Email me</p>
         </a>
-        <a className={styles.authorLink} href="/blog" target="_blank" rel="noreferrer">
+        <a
+          className={styles.authorLink}
+          href="/blog"
+          target="_blank"
+          rel="noreferrer"
+        >
           <p>My articles</p>
         </a>
       </div>

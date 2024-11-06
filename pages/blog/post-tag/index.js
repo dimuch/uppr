@@ -10,7 +10,7 @@ import useMakeRequest from '../../../components/common/hooks/makeRequest';
 import SelectedSpecificCategory from '../../../components/blog/SelectedSpecificCategory/SelectedSpecificCategory';
 import { LoaderIcon } from '../../../components/common/icons';
 
-import { getArticlesByTagsNameDB, getTagsDB } from '../../../services/blogData';
+import { getArticlesByTagsNameDB, getTagsDB } from '../../../services/blogData.js';
 import TopBlogImage from '../../../components/blog/TopBlogImage/TopBlogImage';
 
 import GoogleStat from '../../../components/common/googleCtat/GoogleStat';
@@ -33,8 +33,9 @@ export default function ArticlePageWrapper({ articlesByTags, articleTags }) {
 
   const toggleSelectedTag = (tag, index) => {
     const selectedTag = {
- ...tag, selected: !tag.selected 
-};
+      ...tag,
+      selected: !tag.selected,
+    };
     const updatedTags = new Map([...tags]);
     updatedTags.set(tag.name, selectedTag);
     setTags(updatedTags);
@@ -68,28 +69,65 @@ export default function ArticlePageWrapper({ articlesByTags, articleTags }) {
   }
 
   if (!articlesByTags?.length) {
-    return <PageNotFound redirectLink={'/blog'} redirectPage={'Повернутись до блогу'} />;
+    return (
+      <PageNotFound
+        redirectLink={'/blog'}
+        redirectPage={'Повернутись до блогу'}
+      />
+    );
   }
 
   return (
     <>
       <Head>
         <title>Статті по тегах</title>
-        <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
-        <link rel="apple-touch-icon" href="/favicon.png" type="image/x-icon" />
-        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-        <link rel="icon" href="/favicon.png" />
+        <meta
+          httpEquiv="Content-Type"
+          content="text/html; charset=UTF-8"
+        />
+        <meta
+          httpEquiv="X-UA-Compatible"
+          content="IE=edge,chrome=1"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1"
+        />
+        <meta
+          name="apple-mobile-web-app-capable"
+          content="yes"
+        />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="yes"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/favicon.png"
+          type="image/x-icon"
+        />
+        <link
+          rel="shortcut icon"
+          href="/favicon.png"
+          type="image/x-icon"
+        />
+        <link
+          rel="icon"
+          href="/favicon.png"
+        />
       </Head>
       <div className={styles.upprBlogPage}>
-        <Header search location={'/blog'} />
+        <Header
+          search
+          location={'/blog'}
+        />
         <div className={`uppr-page-content ${styles.upprPageContent}`}>
           <TopBlogImage />
           <div className={`uppr-article-categories ${styles.upprArticleCategories}`}>
-            <TagsAsSwitchers items={tags} toggleSelectedTag={toggleSelectedTag} />
+            <TagsAsSwitchers
+              items={tags}
+              toggleSelectedTag={toggleSelectedTag}
+            />
           </div>
 
           {isLoading && (
@@ -100,7 +138,10 @@ export default function ArticlePageWrapper({ articlesByTags, articleTags }) {
 
           {!isLoading && (
             <div className={`uppr-articles-content ${styles.upprArticlesContent}`}>
-              <SelectedSpecificCategory articlesByCategory={articles} tags={[]} />
+              <SelectedSpecificCategory
+                articlesByCategory={articles}
+                tags={[]}
+              />
             </div>
           )}
         </div>

@@ -18,6 +18,11 @@ const menuItems = [
     id: Math.random(),
   },
   {
+    caption: 'Case Study',
+    href: '/case-study',
+    id: Math.random(),
+  },
+  {
     caption: 'Test',
     href: '/test',
     id: Math.random(),
@@ -32,11 +37,11 @@ const menuItems = [
     href: 'https://www.udemy.com/course/deschool-your-emails/',
     id: Math.random(),
   },
-  {
-    caption: 'Контакти',
-    href: '/contact-us',
-    id: Math.random(),
-  },
+  // {
+  //   caption: 'Контакти',
+  //   href: '/contact-us',
+  //   id: Math.random(),
+  // },
 ];
 
 export { menuItems };

@@ -5,20 +5,20 @@ import MiddleEmailLevel from './userMailLevelComponents/MiddleEmailLevel';
 import SeniorEmailLevel from './userMailLevelComponents/SeniorEmailLevel';
 
 import styles from './styles.module.scss';
-import loader from '../common/loader/loader';
+import loader from '../common/loader/loader.js';
 import Link from 'next/link';
 
 const LEVELS = {
-  'Junior' : JuniorEmailLevel,
-  'Middle' : MiddleEmailLevel,
-  'Senior' : SeniorEmailLevel,
-}
+  Junior: JuniorEmailLevel,
+  Middle: MiddleEmailLevel,
+  Senior: SeniorEmailLevel,
+};
 
 const LEVELS_IMAGES = {
-  'Junior' : '/assets/images/blog-articles/junior-email-level.jpg',
-  'Middle' : '/assets/images/blog-articles/middle-email-level.jpg',
-  'Senior' : '/assets/images/blog-articles/senior-email-level.jpg',
-}
+  Junior: '/assets/images/blog-articles/junior-email-level.jpg',
+  Middle: '/assets/images/blog-articles/middle-email-level.jpg',
+  Senior: '/assets/images/blog-articles/senior-email-level.jpg',
+};
 
 export default function TestResult({ result, resetResults }) {
   const width = window.innerWidth;
@@ -30,12 +30,13 @@ export default function TestResult({ result, resetResults }) {
   return (
     <div className={styles.testResult}>
       <div className={styles.testResultBody}>
-        <hr/>
+        <hr />
         <div className={styles.testResultCaption}>
           <img
             src={loader({
- src:imageHref, width: width 
-})}
+              src: imageHref,
+              width: width,
+            })}
             alt="Main test result"
             width={width}
             height={height}
@@ -63,5 +64,5 @@ export default function TestResult({ result, resetResults }) {
         </div>
       </div>
     </div>
-  )
-};
+  );
+}

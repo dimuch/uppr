@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import loader from '../../common/loader/loader';
+import loader from '../../common/loader/loader.js';
 
 import { Wave } from '../../common/icons';
 import styles from './styles.module.scss';

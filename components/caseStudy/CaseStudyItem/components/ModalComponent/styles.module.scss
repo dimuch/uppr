@@ -1,0 +1,89 @@
+@import "../../../../../styles/scss/common/colors";
+
+.dialog {
+  h5 {
+    font-family: Raleway-SemiBold, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    color: $text !important;
+  }
+
+  .caption {
+    font-family: Raleway-SemiBold, sans-serif;
+    font-size: 2.0rem;
+    font-weight: 500;
+    line-height: 1.25;
+    text-transform: capitalize;
+  }
+
+  .sectionCaption {
+    font-family: Raleway-SemiBold, sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    font-weight: 600;
+    padding: 1rem 0;
+    margin: 0;
+    color: $text !important;
+  }
+
+  p {
+    font-family: Raleway-Regular, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: $text;
+    margin: 0;
+  }
+
+  .tagText {
+    font-family: Raleway-SemiBold, sans-serif;
+    font-size: .8rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .modalTitle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    max-width: 60%;
+    margin: auto;
+    color: white;
+    align-self: center;
+  }
+
+  .modalContent {
+    padding: 0 !important;
+  }
+
+  .modalContentText {
+    color: $text !important;
+    padding: 36px 72px !important;
+  }
+
+  @media (max-width: 1024px) {
+    .caption {
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+    .modalContentText {
+      padding: 1rem !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .modalTitle {
+      left: 1rem;
+      right: auto;
+      top: 1rem;
+      bottom: auto;
+    }
+    .caption {
+      font-size: 1.25rem;
+      line-height: 1.5;
+    }
+  }
+}

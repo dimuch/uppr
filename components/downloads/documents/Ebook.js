@@ -6,14 +6,11 @@ import styles from './commonDownloadsStyles.module.scss';
 import StyledButtonGradient from '../styled/StyledButtonGradient';
 import OrangeTopRightArea from './components/DownloadDetailsBlueArea';
 import DownloadDetailsWave from './components/DownloadDetailsWave';
-import loader from '../../common/loader/loader';
-import DownloadFaqAccordion from '../DownloadFaqAccordion/DownloadFaqAccordion';
+import loader from '../../common/loader/loader.js';
 import { CheckCircle } from '@phosphor-icons/react';
 import DownloadPageExamplesSlider from '../DownloadPageExamplesSlider/DownloadPageExamplesSlider';
 import InstagramImages from '../../blog/InstagramImages/InstagramImages';
-import { TEST_ANSWERS } from '../../test/service';
 import useMakeRequest, { POST_REQ_METHOD } from '../../common/hooks/makeRequest';
-import Footer from '../../common/footers/footer/Footer';
 import GoogleStat from '../../common/googleCtat/GoogleStat';
 
 const bookBullets = [
@@ -150,7 +147,11 @@ const Ebook = ({ data }) => {
                 return (
                   <ListItem key={bullet}>
                     <ListItemIcon>
-                      <CheckCircle size={32} weight="fill" color={ARROW_COLOR} />
+                      <CheckCircle
+                        size={32}
+                        weight="fill"
+                        color={ARROW_COLOR}
+                      />
                     </ListItemIcon>
                     <ListItemText
                       primary={<p>{bullet}</p>}
@@ -210,7 +211,10 @@ const Ebook = ({ data }) => {
           </div>
           <div className={styles.rightColumn}>
             <div className={styles.downloadButton}>
-              <StyledButtonGradient isFullGradientButton onClick={downloadFile}>
+              <StyledButtonGradient
+                isFullGradientButton
+                onClick={downloadFile}
+              >
                 Завантажити
               </StyledButtonGradient>
             </div>
@@ -224,9 +228,12 @@ const Ebook = ({ data }) => {
             shadowText="Download"
             instaItems={instaImagesConfig}
             sectionTitle={
-              <h3 className={styles.sectionCaption} style={{
- fontSize: '3rem' 
-}}>
+              <h3
+                className={styles.sectionCaption}
+                style={{
+                  fontSize: '3rem',
+                }}
+              >
                 Download the latest and the greatest
               </h3>
             }

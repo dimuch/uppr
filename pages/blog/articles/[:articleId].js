@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Header from '../../../components/common/header/Header';
-import { getArticlesDataByIdDB } from '../../../services/blogData';
+import { getArticlesDataByIdDB } from '../../../services/blogData.js';
 import * as PageComponent from '../../../components/articles';
 import { useHasMounted } from '../../../components/common/hooks/hasMounted';
 import GoogleStat from '../../../components/common/googleCtat/GoogleStat';
@@ -25,34 +25,105 @@ export default function ArticlePageWrapper({ articleData }) {
     <>
       <Head>
         <title>{articleData.title} | UPPR Блог</title>
-        <meta name="description" content={articleData.description} />
-        <meta name="keywords" content="education on-line, english, business, writing, skills, emails" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
-        <link rel="apple-touch-icon" href="/favicon.png" type="image/x-icon" />
-        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-        <link rel="icon" href="/favicon.png" />
+        <meta
+          name="description"
+          content={articleData.description}
+        />
+        <meta
+          name="keywords"
+          content="education on-line, english, business, writing, skills, emails"
+        />
+        <meta
+          httpEquiv="Content-Type"
+          content="text/html; charset=UTF-8"
+        />
+        <meta
+          httpEquiv="X-UA-Compatible"
+          content="IE=edge,chrome=1"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1"
+        />
+        <meta
+          name="apple-mobile-web-app-capable"
+          content="yes"
+        />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="yes"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/favicon.png"
+          type="image/x-icon"
+        />
+        <link
+          rel="shortcut icon"
+          href="/favicon.png"
+          type="image/x-icon"
+        />
+        <link
+          rel="icon"
+          href="/favicon.png"
+        />
 
-        <meta property="og:url" content={'https://uppr.com.ua' + articleData.link} />
-        <meta property="og:type" content="website" />
-        <meta property="article:author" content="https://www.facebook.com/ivanna.tabachuk" />
-        <meta property="og:title" content={articleData.title + '| UPPR Блог'} />
-        <meta property="og:description" content={articleData.description} />
-        <meta property="og:image" content={'https://uppr.com.ua' + articleData.image} />
-        <meta property="og:image:width" content="700" />
-        <meta property="og:image:height" content="400" />
-        <link rel="canonical" href={'https://uppr.com.ua' + articleData.link} />
-        <meta name="google-site-verification" content="8Ui50OggqnZ5J1RPshJXelSAYWMPvFGWv32MSzHHlJU" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={addJsonLdData(articleData)} key="product-jsonld" />
+        <meta
+          property="og:url"
+          content={'https://uppr.com.ua' + articleData.link}
+        />
+        <meta
+          property="og:type"
+          content="website"
+        />
+        <meta
+          property="article:author"
+          content="https://www.facebook.com/ivanna.tabachuk"
+        />
+        <meta
+          property="og:title"
+          content={articleData.title + '| UPPR Блог'}
+        />
+        <meta
+          property="og:description"
+          content={articleData.description}
+        />
+        <meta
+          property="og:image"
+          content={'https://uppr.com.ua' + articleData.image}
+        />
+        <meta
+          property="og:image:width"
+          content="700"
+        />
+        <meta
+          property="og:image:height"
+          content="400"
+        />
+        <link
+          rel="canonical"
+          href={'https://uppr.com.ua' + articleData.link}
+        />
+        <meta
+          name="google-site-verification"
+          content="8Ui50OggqnZ5J1RPshJXelSAYWMPvFGWv32MSzHHlJU"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={addJsonLdData(articleData)}
+          key="product-jsonld"
+        />
       </Head>
 
-      <Header search location={'/blog'} />
-      <div style={{
- overflow: 'hidden' 
-}}>
+      <Header
+        search
+        location={'/blog'}
+      />
+      <div
+        style={{
+          overflow: 'hidden',
+        }}
+      >
         <ArticlePage articleData={articleData} />
       </div>
 

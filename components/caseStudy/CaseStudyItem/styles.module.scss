@@ -1,0 +1,70 @@
+@import "../../../styles/scss/common/colors.scss";
+
+.downloadLink {
+  display: block;
+  width: 33.333%;
+  padding: 1rem 1rem 3.5rem;
+
+  @media (max-width: 650px) {
+    width: 100%;
+  }
+}
+
+.downloadImage {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &:hover {
+
+  }
+}
+
+.downloadContent {
+  text-align: center;
+
+  .caption {
+    margin-top: 1.25rem;
+    margin-bottom: .5rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -2px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: background-color 0.25s ease-out;
+
+  &:hover {
+    background-color: $image-overlay;
+    cursor: pointer;
+
+    .linkAsButton {
+      opacity: 1;
+      background-color: $white;
+      transform: scale3d(1, 1, 1);
+    }
+  }
+}
+
+
+@media (max-width: 650px) {
+  .upprPageContent {
+    width: 100%;
+  }
+  .upprArticleCategories {
+    padding: 2rem 0;
+  }
+}

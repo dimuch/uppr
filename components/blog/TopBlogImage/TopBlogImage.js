@@ -1,5 +1,5 @@
 import React from 'react';
-import loader from '../../common/loader/loader';
+import loader from '../../common/loader/loader.js';
 import { Typography } from '@mui/material';
 
 import styles from './styles.module.scss';

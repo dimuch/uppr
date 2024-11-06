@@ -20,8 +20,9 @@ const Index = ({ top3Article, latestArticle, otherLatestArticles }) => {
   const last3Articles = [latestArticle[0], otherLatestArticles[0], otherLatestArticles[1]];
 
   const [imgDimensions, setImgDimensions] = useState({
- width: 700, height: 400 
-});
+    width: 700,
+    height: 400,
+  });
 
   useEffect(() => {
     const windowInner = window?.innerWidth;
@@ -29,8 +30,9 @@ const Index = ({ top3Article, latestArticle, otherLatestArticles }) => {
     const height = Math.round((width * 4) / 7);
 
     setImgDimensions(() => ({
- width, height 
-}));
+      width,
+      height,
+    }));
     const html = document.getElementsByTagName('html')[0];
     html.setAttribute('prefix', 'og: http://ogp.me/ns#');
   }, []);
@@ -39,27 +41,74 @@ const Index = ({ top3Article, latestArticle, otherLatestArticles }) => {
     <>
       <Head>
         <title>UPPR Головна</title>
-        <meta name="description" content="Ресурс про англійську мову та як писати email" />
-        <meta name="keywords" content="education on-line, english, business, writing, skills, emails" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
-        <link rel="apple-touch-icon" href="/favicon.png" type="image/x-icon" />
-        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-        <link rel="icon" href="/favicon.png" />
-        <link rel="image_src" href="https://uppr.com.ua/assets/images/blog-articles/responsive/1200/image_main.webp" />
-        <meta property="og:title" content="UPPR Головна" />
-        <meta property="og:description" content="Ресурс про англійську мову та як писати email" />
+        <meta
+          name="description"
+          content="Ресурс про англійську мову та як писати email"
+        />
+        <meta
+          name="keywords"
+          content="education on-line, english, business, writing, skills, emails"
+        />
+        <meta
+          httpEquiv="Content-Type"
+          content="text/html; charset=UTF-8"
+        />
+        <meta
+          httpEquiv="X-UA-Compatible"
+          content="IE=edge,chrome=1"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1"
+        />
+        <meta
+          name="apple-mobile-web-app-capable"
+          content="yes"
+        />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="yes"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/favicon.png"
+          type="image/x-icon"
+        />
+        <link
+          rel="shortcut icon"
+          href="/favicon.png"
+          type="image/x-icon"
+        />
+        <link
+          rel="icon"
+          href="/favicon.png"
+        />
+        <link
+          rel="image_src"
+          href="https://uppr.com.ua/assets/images/blog-articles/responsive/1200/image_main.webp"
+        />
+        <meta
+          property="og:title"
+          content="UPPR Головна"
+        />
+        <meta
+          property="og:description"
+          content="Ресурс про англійську мову та як писати email"
+        />
         <meta
           property="og:image"
           content="https://uppr.com.ua/assets/images/blog-articles/responsive/1200/image_main.webp"
         />
-        <meta name="google-site-verification" content="8Ui50OggqnZ5J1RPshJXelSAYWMPvFGWv32MSzHHlJU" />
+        <meta
+          name="google-site-verification"
+          content="8Ui50OggqnZ5J1RPshJXelSAYWMPvFGWv32MSzHHlJU"
+        />
       </Head>
       <div className={styles.upprHomePage}>
-        <Header location={'/'} search />
+        <Header
+          location={'/'}
+          search
+        />
         <div className={`${styles.screen} ${styles.screenFirst}`}>
           <div className={`${styles.column} ${styles.leftColumn}`}>
             <Stack>
@@ -90,7 +139,10 @@ const Index = ({ top3Article, latestArticle, otherLatestArticles }) => {
                         isCursorLast ? styles.emailWord : `${styles.emailWord} ${styles.customTypeAnimationCursor2}`
                       }
                     >
-                      <TypeAnimation sequence={[300, 'work emails', () => setCursorIsLast(false)]} speed={20} />
+                      <TypeAnimation
+                        sequence={[300, 'work emails', () => setCursorIsLast(false)]}
+                        speed={20}
+                      />
                     </h1>
                   </>
                 )}
@@ -103,8 +155,9 @@ const Index = ({ top3Article, latestArticle, otherLatestArticles }) => {
             <img
               className={styles.mainSectionImage}
               src={loader({
- src: '/assets/images/others/main_index.png', width: imgDimensions.width 
-})}
+                src: '/assets/images/others/main_index.png',
+                width: imgDimensions.width,
+              })}
               width={imgDimensions?.width}
               height={imgDimensions?.height}
               alt={'Main UPPR page'}

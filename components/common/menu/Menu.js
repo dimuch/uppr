@@ -52,18 +52,32 @@ const Menu = ({ location }) => {
 
   if (responsiveClass.isVisible) {
     return (
-      <div className={`${styles.menuWrapper}`} style={{
- width: responsiveClass.width 
-}} ref={inputRef}>
+      <div
+        className={`${styles.menuWrapper}`}
+        style={{
+          width: responsiveClass.width,
+        }}
+        ref={inputRef}
+      >
         <div className={styles.menuIcon}>
           <MenuIcon />
         </div>
-        {responsiveClass.isOpen && <MenuItems isOpen={responsiveClass.isOpen} location={location} />}
+        {responsiveClass.isOpen && (
+          <MenuItems
+            isOpen={responsiveClass.isOpen}
+            location={location}
+          />
+        )}
       </div>
     );
   }
 
-  return <MenuItems location={location} isOpen={responsiveClass.isVisible} />;
+  return (
+    <MenuItems
+      location={location}
+      isOpen={responsiveClass.isVisible}
+    />
+  );
 };
 
 export default Menu;

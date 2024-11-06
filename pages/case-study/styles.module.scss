@@ -1,0 +1,46 @@
+@import "../../styles/scss/common/colors.scss";
+
+.upprBlogPage {
+  position: relative;
+}
+
+.upprPageContent {
+  max-width: initial;
+  padding: 0;
+  overflow-x: clip;
+  background-color: $page-background;
+}
+
+.upprArticlesContent {
+  max-width: 1200px;
+  padding: 8rem 2rem 6rem 2rem;
+  margin: auto;
+
+  h5 {
+    font-size: 2rem;
+  }
+}
+
+.downloadsWrapper {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.downloads {
+  margin: 2rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@media (max-width: 650px) {
+  .upprPageContent {
+    width: 100%;
+  }
+  .upprArticleCategories {
+    padding: 2rem 0;
+  }
+}
+

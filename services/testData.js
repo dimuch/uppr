@@ -1,4 +1,4 @@
-import {dbCallWrapper} from '../mysql/mySQLClient';
+import { dbCallWrapper } from '../mysql/mySQLClient.js';
 
 export async function addInfoEmailLevelStat(answer, title, score) {
   const query = `

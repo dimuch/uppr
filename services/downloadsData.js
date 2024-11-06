@@ -1,4 +1,4 @@
-import { dbCallWrapper } from '../mysql/mySQLClient';
+import { dbCallWrapper } from '../mysql/mySQLClient.js';
 
 export async function getDownloadsCategoriesDB() {
   const selectClause = `
@@ -23,19 +23,21 @@ export async function getDownloadsCategoriesDB() {
   try {
     const data = await dbCallWrapper(getDownloadsByCategory, mapper);
     return {
- categories: data 
-};
+      categories: data,
+    };
   } catch (err) {
     console.error('getDownloadsCategoriesDB ==>', err);
     return {
- categories: [] 
-};
+      categories: [],
+    };
   }
 }
 
-export async function getDownloadsByCategoryDB(params = {
- category: 'all' 
-}) {
+export async function getDownloadsByCategoryDB(
+  params = {
+    category: 'all',
+  },
+) {
   const { category } = params;
   const selectClause = `
     SELECT * 
@@ -64,13 +66,13 @@ export async function getDownloadsByCategoryDB(params = {
   try {
     const data = await dbCallWrapper(getDownloadsByCategory, mapper);
     return {
- downloads: data 
-};
+      downloads: data,
+    };
   } catch (err) {
     console.error('getDownloadsByCategoryDB ==>', err);
     return {
- downloads: [] 
-};
+      downloads: [],
+    };
   }
 }
 

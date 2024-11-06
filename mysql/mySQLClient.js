@@ -20,12 +20,6 @@ const db_pool = mysql.createPool({
   connectionLimit: 10,
 });
 
-module.exports = {
-  getDBPoolData,
-  dbCallWrapper,
-  shutDownDB,
-};
-
 let init = true;
 
 function getDBPoolData() {
@@ -52,12 +46,14 @@ function makeConnectionDB() {
   });
 }
 
-export async function dbCallWrapper(query, mapper) {
+async function dbCallWrapper(query, mapper) {
   return new Promise((resolve, reject) => {
     db_pool.query(query, (err, rows, fields) => {
       if (err) {
         console.log('ERROR dbCallWrapper', err);
-        reject({ data: [] });
+        reject({
+ data: [] 
+});
       }
 
       try {
@@ -86,3 +82,5 @@ function shutDownDB() {
     });
   });
 }
+
+export { getDBPoolData, dbCallWrapper, shutDownDB };

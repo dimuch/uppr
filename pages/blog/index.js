@@ -12,7 +12,7 @@ import {
   getArticlesCategoriesDB,
   getDownloadsDB,
   getTagsDB,
-} from '../../services/blogData';
+} from '../../services/blogData.js';
 
 import GoogleStat from '../../components/common/googleCtat/GoogleStat';
 import Footer from '../../components/common/footers/footer/Footer';

@@ -8,9 +8,9 @@ import Header from '../../../components/common/header/Header';
 import PageNotFound from '../../404';
 
 import GoogleStat from '../../../components/common/googleCtat/GoogleStat';
-import { getDownloadDataByCaptionDB } from '../../../services/downloadsData';
+import { getDownloadDataByCaptionDB } from '../../../services/downloadsData.js';
 import Footer from '../../../components/common/footers/footer/Footer';
-import { getArticles } from '../../../services/blogData';
+import { getArticles } from '../../../services/blogData.js';
 
 export default function DownloadDetails({ downloadData, top3Article }) {
   const DownloadPage = DownloadDocuments[downloadData?.downloadComponent];

@@ -1,41 +1,41 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import Header from "../../components/common/header/Header";
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import Header from '../../components/common/header/Header';
 
-import { getPaymentFormInitParams } from "../../services/eBookData";
+import { getPaymentFormInitParams } from '../../services/eBookData.js';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
-const encType = "application/x-www-form-urlencoded";
-const action = "https://www.liqpay.ua/api/3/checkout";
+const encType = 'application/x-www-form-urlencoded';
+const action = 'https://www.liqpay.ua/api/3/checkout';
 
 export default function Ebook({ data, signature, orderId, resultPageId }) {
-  const [userEmail, setUserEmail] = useState("");
+  const [userEmail, setUserEmail] = useState('');
   const paymentSubmitBtnRef = useRef();
 
   const isDisabled = useMemo(() => {
     if (!userEmail) true;
 
-    return !(userEmail?.length > 0 && userEmail.includes("@"));
+    return !(userEmail?.length > 0 && userEmail.includes('@'));
   }, [userEmail]);
 
-  const onChange = (e) => {
+  const onChange = e => {
     const value = e.target.value;
     setUserEmail(() => value);
   };
 
-  const onSubmitForm = async (e) => {
+  const onSubmitForm = async e => {
     e.preventDefault();
 
-    ("onSubmitForm ===>>");
+    ('onSubmitForm ===>>');
 
     const params = {
-      method: "POST",
+      method: 'POST',
       body: new URLSearchParams({
         data,
         signature,
       }),
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
     };
 
@@ -46,7 +46,7 @@ export default function Ebook({ data, signature, orderId, resultPageId }) {
     }
   };
 
-  const processPayment = async (e) => {
+  const processPayment = async e => {
     e.preventDefault();
 
     paymentSubmitBtnRef.current.click();
@@ -68,7 +68,10 @@ export default function Ebook({ data, signature, orderId, resultPageId }) {
 
   return (
     <div className={styles.upprEBookPage}>
-      <Header search location={"/e-book"} />
+      <Header
+        search
+        location={'/e-book'}
+      />
 
       {/*<form onSubmit={processPayment}>*/}
       {/*  <label htmlFor="email">*/}
@@ -99,8 +102,7 @@ export default function Ebook({ data, signature, orderId, resultPageId }) {
 }
 
 export async function getServerSideProps() {
-  const { data, signature, orderId, resultPageId } =
-    await getPaymentFormInitParams();
+  const { data, signature, orderId, resultPageId } = await getPaymentFormInitParams();
 
   return {
     props: {
