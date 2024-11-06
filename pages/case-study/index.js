@@ -44,7 +44,7 @@ export default function Downloads({ caseStudy, top3Article }) {
         />
         <div className={`uppr-page-content ${styles.upprPageContent}`}>
           <TopBlogImage
-            caption={'Case Studies'}
+            caption={'Case Study'}
             description={'Turning Missteps into Mastery'}
             imgUrl={'/assets/images/case-study/case-study-top.jpg'}
           />
@@ -61,7 +61,7 @@ export default function Downloads({ caseStudy, top3Article }) {
                   md={6}
                   xs={12}
                 >
-                  <Typography variant={'h5'}>Case Studies</Typography>
+                  <Typography variant={'h5'}>Case Study</Typography>
                 </Grid>
                 <Grid
                   item

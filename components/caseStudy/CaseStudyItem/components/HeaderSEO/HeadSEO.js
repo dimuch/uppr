@@ -42,7 +42,7 @@ const HeadSEO = () => {
 
       <meta
         property="og:url"
-        content={'https://uppr.com.ua/caseStudy'}
+        content={'https://uppr.com.ua/case-study'}
       />
       <meta
         property="og:type"
@@ -58,11 +58,11 @@ const HeadSEO = () => {
       />
       <meta
         property="og:description"
-        content={'Case studies for your daily cases'}
+        content={'Case Study for your daily cases'}
       />
       <meta
         property="og:image"
-        content={'https://uppr.com.ua/assets/images/blog-articles/responsive/1200/image_main.webp'}
+        content={'https://uppr.com.ua/assets/images/case-study/responsive/1200/case-study-top.webp'}
       />
       <meta
         property="og:image:width"
@@ -78,7 +78,7 @@ const HeadSEO = () => {
       />
       <link
         rel="image_src"
-        href="https://uppr.com.ua/assets/images/blog-articles/responsive/1200/image_main.webp"
+        href="https://uppr.com.uaassets/images/case-study/responsive/1200/case-study-top.webp"
       />
     </Head>
   );
