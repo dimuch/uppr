@@ -4,7 +4,7 @@ import Head from 'next/head';
 const HeadSEO = () => {
   return (
     <Head>
-      <title>{'UPPR | Case Study'}</title>
+      <title>UPPR | Case Study</title>
       <meta
         httpEquiv="Content-Type"
         content="text/html; charset=UTF-8"
@@ -42,7 +42,7 @@ const HeadSEO = () => {
 
       <meta
         property="og:url"
-        content={'https://uppr.com.ua/case-study'}
+        content="https://uppr.com.ua/case-study"
       />
       <meta
         property="og:type"
@@ -54,15 +54,15 @@ const HeadSEO = () => {
       />
       <meta
         property="og:title"
-        content={'UPPR Case study'}
+        content="UPPR Case study"
       />
       <meta
         property="og:description"
-        content={'Case Study for your daily cases'}
+        content="Case Study for your daily cases"
       />
       <meta
         property="og:image"
-        content={'https://uppr.com.ua/assets/images/case-study/responsive/1200/case-study-top.webp'}
+        content="https://uppr.com.ua/assets/images/case-study/responsive/1200/case-study-top.webp"
       />
       <meta
         property="og:image:width"
