@@ -5,7 +5,9 @@ import { Typography } from '@mui/material';
 import styles from './styles.module.scss';
 import { useHasMounted } from '../../common/hooks/hasMounted';
 
-export default function TopBlogImage({ caption, description }) {
+const DEFAULT_TOP_IMAGE_URL = '/assets/images/blog-articles/image_main.jpg';
+
+export default function TopBlogImage({ caption, description, imgUrl }) {
   const hasMounted = useHasMounted();
 
   if (!hasMounted) {
@@ -19,10 +21,10 @@ export default function TopBlogImage({ caption, description }) {
     <div className={`uppr-blog-main-picture ${styles.upprBlogMainPicture}`}>
       <img
         src={loader({
-          src: '/assets/images/blog-articles/image_main.jpg',
+          src: imgUrl || DEFAULT_TOP_IMAGE_URL,
           width: width,
         })}
-        alt="Main blog picture"
+        alt={caption}
         width={width}
         height={height}
       />

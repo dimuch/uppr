@@ -46,6 +46,7 @@ export default function Downloads({ caseStudy, top3Article }) {
           <TopBlogImage
             caption={'Case Studies'}
             description={'Turning Missteps into Mastery'}
+            imgUrl={'/assets/images/case-study/case-study-top.jpg'}
           />
 
           <div className={styles.upprArticlesContent}>

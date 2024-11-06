@@ -54,11 +54,11 @@ const HeadSEO = () => {
       />
       <meta
         property="og:title"
-        content={'UPPR Downloads'}
+        content={'UPPR Case study'}
       />
       <meta
         property="og:description"
-        content={'Case studies for '}
+        content={'Case studies for your daily cases'}
       />
       <meta
         property="og:image"
@@ -74,7 +74,7 @@ const HeadSEO = () => {
       />
       <link
         rel="canonical"
-        href="https://uppr.com.ua/downloads"
+        href="https://uppr.com.ua/case-study"
       />
       <link
         rel="image_src"

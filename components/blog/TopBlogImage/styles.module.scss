@@ -6,9 +6,10 @@
   min-height: 421px;
   overflow: hidden;
 
-  span{
+  span {
     display: initial !important;
   }
+
   img {
     position: absolute;
     margin: auto;
@@ -19,7 +20,7 @@
   }
 }
 
-.titleTextWrapper{
+.titleTextWrapper {
   position: absolute;
   margin: auto;
   height: 100%;
@@ -31,16 +32,18 @@
   align-items: center;
   color: $white;
   background: linear-gradient(180deg, rgba(22, 26, 37, 0.4), rgba(22, 26, 37, 0.4));
-  .pageTitleSeparator{
+
+  .pageTitleSeparator {
     width: 2.5rem;
     height: .25rem;
     background-color: white;
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
+    font-family: "Raleway-Bold", sans-serif;
   }
 
-  .pageSubTitle{
-    font-family: "OpenSansSemiBold", sans-serif;
+  .pageSubTitle {
+    font-family: "Raleway-Regular", sans-serif;
   }
 }
 
@@ -54,6 +57,7 @@
   .upprBlogMainPicture {
     min-height: 200px;
     padding: 15% 0 14%;
+
     img {
       scale: 1.5;
     }
@@ -61,10 +65,10 @@
 }
 
 @media (max-width: 420px) {
-  .pageTitle{
+  .pageTitle {
     font-size: 1.5rem !important;
   }
-  .pageSubTitle{
+  .pageSubTitle {
     font-size: .8rem !important;
   }
 }
