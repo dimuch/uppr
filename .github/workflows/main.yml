@@ -28,17 +28,17 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install npm
-        run: npm install npm -g
+      - name: Install yarn
+        run: npm install yarn -g
 
       - name: Cloning repo
         run: cd ../ && rm -rf uppr && mkdir uppr && cd uppr && git clone https://github.com/dimuch/uppr.git .
 
       - name: Install dependencies
-        run: npm install && npm install sharp
+        run: yarn install && yarn add sharp
 
       - name: Build sources
-        run: sudo npm run build
+        run: sudo yarn run build
 
       - name: Deploy to server
         uses: appleboy/scp-action@master
@@ -62,4 +62,4 @@ jobs:
             cd /var/www/uppr.com.ua
             pm2 stop uppr.com.ua
             pm2 delete uppr.com.ua
-            pm2 start --time npm --name "uppr.com.ua" -- start 
+            pm2 start --time yarn --name "uppr.com.ua" -- start 

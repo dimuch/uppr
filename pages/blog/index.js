@@ -101,7 +101,7 @@ export default function Blog({
           />
 
           <div className={`uppr-article-categories ${styles.upprArticleCategories}`}>
-            {/*<CategoriesList items={articleCategories} />*/}
+            <CategoriesList items={articleCategories} />
           </div>
 
           <div className={`uppr-articles-content ${styles.upprArticlesContent}`}>
