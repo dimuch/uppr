@@ -35,6 +35,7 @@ jobs:
           KEY: ${{ secrets.SSH_KEY }}
           PORT: ${{ secrets.SSH_PORT }}
           script: |
+            nvm use 20.2.0
             cd /var/www/uppr.com.ua
             npm run update:images
             pm2 stop uppr.com.ua

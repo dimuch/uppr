@@ -62,4 +62,4 @@ jobs:
             cd /var/www/uppr.com.ua
             pm2 stop uppr.com.ua
             pm2 delete uppr.com.ua
-            pm2 start --time yarn --name "uppr.com.ua" -- start 
+            pm2 start --time npm --name "uppr.com.ua" -- start 
