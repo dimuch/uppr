@@ -36,7 +36,7 @@ jobs:
           PORT: ${{ secrets.SSH_PORT }}
           script: |
             cd /var/www/uppr.com.ua
-            yarn run update:images
+            npm run update:images
             pm2 stop uppr.com.ua
             pm2 delete uppr.com.ua
-            pm2 start yarn --name "uppr.com.ua" -- start
+            pm2 start npm --name "uppr.com.ua" -- start
