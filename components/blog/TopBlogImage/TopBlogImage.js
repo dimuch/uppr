@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import loader from '../../common/loader/loader.js';
 import { Typography } from '@mui/material';
