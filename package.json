@@ -10,40 +10,41 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "update:images": "node utils/resizer.js",
-    "cache:clear": "yarn cache clean --force",
-    "reset": "yarn run cache:clear && rm -rf node_modules && yarn install"
+    "cache:clear": "npm cache clean --force",
+    "reset": "npm run cache:clear && rm -rf node_modules && npm install",
+    "type-check": "tsc --noEmit"
   },
   "engines": {
     "npm": ">=10.2.3",
-    "yarn": ">=1.22.19",
-    "node": ">=20.2.0"
+    "node": ">=22.12.0"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
-    "@emotion/styled": "^11.10.5",
-    "@mui/material": "^5.11.5",
+    "@emotion/styled": "^11.13.5",
+    "@mui/material": "^5.16.7",
     "@napi-rs/canvas": "^0.1.58",
-    "@phosphor-icons/react": "^2.1.5",
-    "clsx": "^1.2.1",
-    "copy-webpack-plugin": "^11.0.0",
-    "eslint": "^8.32.0",
-    "eslint-config-next": "^13.5.3",
-    "image-minimizer-webpack-plugin": "^3.8.1",
-    "mysql2": "^3.11.2",
-    "next": "13.5.6",
-    "node-loader": "^2.0.0",
-    "npm": "^9.3.1",
-    "prettier": "^3.2.5",
+    "@phosphor-icons/react": "^2.1.7",
+    "clsx": "^2.1.1",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.1.0",
+    "mysql2": "^3.11.5",
+    "next": "^15.1.0",
+    "prettier": "^3.4.2",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-parallax-mouse": "^2.1.0",
     "react-slick": "^0.30.2",
     "react-type-animation": "^3.2.0",
-    "sass": "^1.57.1",
-    "sharp": "^0.32.6",
+    "sass": "^1.82.0",
+    "sharp": "^0.33.5",
     "slick-carousel": "^1.8.1",
-    "ssh2": "^1.11.0"
+    "ssh2": "^1.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.7.2"
   }
 }
