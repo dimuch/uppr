@@ -1,3 +1,5 @@
+'use client';
+
 // Hook
 import { useEffect, useState } from 'react';
 
