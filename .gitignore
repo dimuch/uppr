@@ -43,3 +43,6 @@ yarn.lock
 #static images
 /public/assets/images/blog-articles/responsive/**/*
 !/public/assets/images/blog-articles/responsive/placeholder.txt
+
+# AI thinking and analysis
+/.ai-thinking
