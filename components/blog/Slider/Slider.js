@@ -1,13 +1,27 @@
+'use client';
+
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './styles.module.scss';
 import loader from '../../common/loader/loader.js';
 import { ArrowLeft, ArrowRight } from '../../common/icons';
 
 function Slide({ slideData, slideNode, location }) {
-  const windowInner = window?.innerWidth;
-  const imageScaler = location === 'footer' ? 7 : 4.35;
-  const width = windowInner > 850 ? Math.round(windowInner / imageScaler) : windowInner / 2;
-  const height = Math.round((width * 4) / 7);
+  const [imgDimensions, setImgDimensions] = useState({
+    width: 700,
+    height: 400,
+  });
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const windowInner = window.innerWidth;
+      const imageScaler = location === 'footer' ? 7 : 4.35;
+      const width = windowInner > 850 ? Math.round(windowInner / imageScaler) : windowInner / 2;
+      const height = Math.round((width * 4) / 7);
+      setImgDimensions({ width, height });
+    }
+  }, [location]);
+
+  const { width, height } = imgDimensions;
 
   return (
     <a
@@ -30,13 +44,7 @@ function Slide({ slideData, slideNode, location }) {
           alt={slideData.title}
         />
         <div className={`${styles.slideTitle} ${styles[location]}`}>
-          <a
-            href={slideData.link}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {slideData.title}
-          </a>
+          {slideData.title}
         </div>
       </div>
     </a>
