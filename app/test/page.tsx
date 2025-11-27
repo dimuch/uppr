@@ -4,7 +4,7 @@ import Header from '../../components/common/header/Header';
 import Test from '../../components/test/Test';
 import { getArticles } from '../../services/blogData';
 import Footer from '../../components/common/footers/footer/Footer';
-import styles from '../../pages/test/styles.module.scss';
+import styles from './styles.module.scss';
 
 export const metadata: Metadata = {
   title: 'UPPR | Email Level Test',

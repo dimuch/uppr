@@ -8,11 +8,12 @@ import * as PageComponent from '../../../../components/articles';
 const PAGE_NOT_FOUND = 'PageNotFound';
 
 type Props = {
-  params: { articleId: string };
+  params: Promise<{ articleId: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const articleURL = `/blog/articles/${params.articleId}`;
+  const { articleId } = await params;
+  const articleURL = `/blog/articles/${articleId}`;
   const articleData = await getArticlesDataByIdDB(articleURL);
 
   if (!articleData || articleData.pageComponent === PAGE_NOT_FOUND) {
@@ -54,7 +55,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ArticlePage({ params }: Props) {
-  const articleURL = `/blog/articles/${params.articleId}`;
+  const { articleId } = await params;
+  const articleURL = `/blog/articles/${articleId}`;
   const articleData = await getArticlesDataByIdDB(articleURL);
 
   if (!articleData || articleData.pageComponent === PAGE_NOT_FOUND) {

@@ -1,0 +1,271 @@
+@import "../styles/scss/common/colors";
+.upprHomePage {
+  //background-image: url("../public/assets/world-map.svg");
+  background-repeat: no-repeat;
+  background-position-x: 100px;
+  background-position-y: 70px;
+  background-size: 100%;
+  padding-bottom: 6rem;
+}
+
+.screen {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  max-width: 1200px;
+}
+
+.column {
+  padding-top: 3rem;
+}
+
+.screenFirst {
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 40rem;
+  padding-top: 3rem;
+
+  .leftColumn {
+    min-width: 360px;
+    max-width: 40%;
+    padding-top: 8rem;
+    justify-content: start;
+
+    h1 {
+      display: inline;
+      margin: 0;
+      font-size: 3rem;
+      line-height: 1.1;
+      font-family: 'Raleway-Bold', sans-serif;
+
+      &.emailWord {
+        background-image: linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9));
+        background-size: 100%;
+        background-repeat: repeat;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .customTypeAnimationCursor1,
+    .customTypeAnimationCursor2 {
+      span {
+        &:after {
+          content: '';
+        }
+      }
+    }
+
+    h4 {
+      margin: 0;
+      padding-top: 3rem;
+      font-family: 'Raleway-Regular', sans-serif;
+      font-size: 1.25rem;
+      line-height: 1.5;
+    }
+
+    button {
+      margin-top: 4rem;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      padding: .75rem 1.75rem;
+      border-radius: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.25;
+      font-family: Raleway-Regular, sans-serif;
+      cursor: pointer;
+      text-transform: capitalize;
+      color: $text;
+      background: linear-gradient(white, white) padding-box,
+      linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box;
+      border: 2px solid transparent;
+
+      &:hover {
+        background: linear-gradient(white, white) padding-box,
+        linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9)) border-box;
+        border: 2px solid transparent;
+      }
+
+      &:disabled {
+        background: linear-gradient(white, white) padding-box,
+        linear-gradient(to right, $text, $text) border-box;
+        border: 2px solid transparent;
+      }
+    }
+  }
+
+  .rightColumn {
+    min-width: 390px;
+    min-height: 35rem;
+    text-align: right;
+    position: relative;
+
+    .mainSectionImage {
+      position: absolute;
+      width: auto;
+      z-index: 3;
+    }
+
+    .backgroundImage1 {
+      position: absolute;
+      top: 5rem;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: 2;
+      width: auto;
+      height: 210px;
+    }
+
+    .backgroundImage2 {
+      position: absolute;
+      top: 10rem;
+      left: auto;
+      right: -15rem;
+      margin: auto;
+      z-index: 3;
+      height: 75px;
+      width: auto;
+    }
+
+    .backgroundImage3 {
+      position: absolute;
+      top: 21rem;
+      left: 0rem;
+      right: auto;
+      margin: auto;
+      z-index: 3;
+      height: 75px;
+      width: auto;
+    }
+
+    .backgroundImage4 {
+      position: absolute;
+      top: 19rem;
+      left: auto;
+      right: -13rem;
+      margin: auto;
+      z-index: 2;
+      height: 160px;
+      width: auto;
+      border-radius: 10px;
+    }
+  }
+}
+
+.screenSecond {
+  height: auto;
+  width: 100%;
+  text-align: center;
+  font-size: 4rem;
+  line-height: 1.1;
+  font-family: 'Raleway-Bold', sans-serif;
+
+  .phraseWrapper {
+    width: 100%;
+    padding-bottom: 5rem;
+    padding-top: 3rem;
+  }
+
+  .quotes {
+    background-image: linear-gradient(135deg, rgba(255, 77, 174, 0.9), rgba(66, 104, 255, 0.9));
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4rem;
+    line-height: 1.1;
+    font-family: 'Raleway-Bold', sans-serif;
+  }
+
+  h2 {
+    display: inline;
+    font-size: 3rem;
+    line-height: 1.1;
+    font-family: 'Raleway-Bold', sans-serif;
+  }
+
+  h4 {
+    font-size: 1rem;
+    font-style: italic;
+    font-family: 'Raleway-Regular', sans-serif;
+  }
+}
+
+.othersArticles {
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: min-content;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .rightColumn{
+    .mainSectionImage{
+      height: 550px;
+      left: -12rem;
+      top: 2rem;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .rightColumn{
+    .mainSectionImage{
+      height: 450px;
+      top: 6rem;
+      left: -6rem;
+    }
+  }
+}
+
+@media (max-width: 820px) {
+  .screenFirst {
+    flex-direction: column;
+    align-items: center;
+    .leftColumn {
+      padding-top: 1rem;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .screen {
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem;
+  }
+  .column {
+    min-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .screenFirst {
+    .rightColumn {
+      min-height: 25rem;
+    }
+  }
+
+  .othersArticles{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .rightColumn{
+    .mainSectionImage{
+      height: 300px;
+      left: 0;
+    }
+  }
+  .othersArticles{
+    grid-template-columns: 1fr;
+  }
+}
