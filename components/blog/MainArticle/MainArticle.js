@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useState } from 'react';
 
 import { Grid, Typography } from '@mui/material';
@@ -13,6 +15,19 @@ export default function MainArticle({ items }) {
     published: getDate(new Date(items[0].published)),
   });
 
+  const [imgDimensions, setImgDimensions] = useState({
+    width: 700,
+    height: 400,
+  });
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const width = Math.round((window.innerWidth * 2) / 3);
+      const height = Math.round((width * 4) / 7);
+      setImgDimensions({ width, height });
+    }
+  }, []);
+
   const updateArticleViews = mainArticleData => {
     mainArticleData.views += 1;
   };
@@ -21,8 +36,7 @@ export default function MainArticle({ items }) {
     return null;
   }
 
-  const width = Math.round((window.innerWidth * 2) / 3);
-  const height = Math.round((width * 4) / 7);
+  const { width, height } = imgDimensions;
 
   return (
     <div

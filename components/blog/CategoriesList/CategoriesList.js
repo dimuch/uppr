@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 import styles from './styles.module.scss';
 
@@ -9,8 +9,8 @@ const ALL = 'all';
 const ROOT_BLOG_PAGE = '/blog';
 
 export default function CategoriesList({ items, selectedCategory }) {
-  const router = useRouter();
-  const isRootBlogPage = router.pathname === ROOT_BLOG_PAGE;
+  const pathname = usePathname();
+  const isRootBlogPage = pathname === ROOT_BLOG_PAGE;
 
   if (!items?.length) {
     return null;

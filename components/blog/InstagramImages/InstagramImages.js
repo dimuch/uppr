@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './styles.module.scss';
 import InstagramIcon from '../../common/icons/instagram-icon';

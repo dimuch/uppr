@@ -62,18 +62,16 @@ export default function ArticleCard({ item, isDescription = true }) {
               className={styles.title}
               sm={12}
             >
-              <a href={item.link}>
-                <Typography
-                  textAlign={'center'}
-                  variant={'h3'}
-                  sx={{
-                    ...linesLimiterConfig(2),
-                    minHeight: 76,
-                  }}
-                >
-                  {item.title}
-                </Typography>
-              </a>
+              <Typography
+                textAlign={'center'}
+                variant={'h3'}
+                sx={{
+                  ...linesLimiterConfig(2),
+                  minHeight: 76,
+                }}
+              >
+                {item.title}
+              </Typography>
             </Grid>
             {isDescription && (
               <Grid
