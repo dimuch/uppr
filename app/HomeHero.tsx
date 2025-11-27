@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import { TypeAnimation } from 'react-type-animation';
 import Stack from '@mui/material/Stack';
 import loader from '../components/common/loader/loader';
-import styles from '../pages/styles.module.scss';
+import styles from './styles.module.scss';
 
 export default function HomeHero() {
   const [isCursor, setIsCursor] = useState(true);
