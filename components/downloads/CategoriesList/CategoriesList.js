@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 import styles from './styles.module.scss';
 
@@ -7,8 +9,8 @@ const ALL = 'all';
 const ROOT_DOWNLOADS_PAGE = '/downloads';
 
 export default function CategoriesList({ items, selectedCategory }) {
-  const router = useRouter();
-  const isRootDownloadPage = router.pathname === ROOT_DOWNLOADS_PAGE;
+  const pathname = usePathname();
+  const isRootDownloadPage = pathname === ROOT_DOWNLOADS_PAGE;
 
   if (!items?.length) {
     return null;

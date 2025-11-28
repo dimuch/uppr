@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useMemo } from 'react';
 import styles from './styles.module.scss';
 import loader from '../../common/loader/loader.js';
