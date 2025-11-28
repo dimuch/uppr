@@ -12,8 +12,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="uk" prefix="og: http://ogp.me/ns#">
-      <body>
+    <html lang="uk" prefix="og: http://ogp.me/ns#" suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <GoogleStat />
         {children}
       </body>

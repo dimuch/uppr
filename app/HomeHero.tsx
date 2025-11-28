@@ -11,6 +11,7 @@ export default function HomeHero() {
   const [isCursor, setIsCursor] = useState(true);
   const [isLast, setIsLast] = useState(false);
   const [isCursorLast, setCursorIsLast] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   const [imgDimensions, setImgDimensions] = useState({
     width: 700,
@@ -18,6 +19,7 @@ export default function HomeHero() {
   });
 
   useEffect(() => {
+    setMounted(true);
     const windowInner = window?.innerWidth;
     const width = windowInner > 850 ? Math.round(windowInner) : windowInner;
     const height = Math.round((width * 4) / 7);
@@ -27,6 +29,41 @@ export default function HomeHero() {
       height,
     }));
   }, []);
+
+  // Prevent hydration mismatch by not rendering animations until mounted
+  if (!mounted) {
+    return (
+      <div className={`${styles.screen} ${styles.screenFirst}`}>
+        <div className={`${styles.column} ${styles.leftColumn}`}>
+          <Stack>
+            <Stack
+              sx={{
+                display: 'inline',
+                minHeight: '110px',
+              }}
+            >
+              <h1>There's a better way to write work emails</h1>
+            </Stack>
+            <h4>Make your writing shine, wherever you write.</h4>
+          </Stack>
+          <Button variant="outlined">Get started</Button>
+        </div>
+        <div className={`${styles.column} ${styles.rightColumn}`}>
+          <img
+            className={styles.mainSectionImage}
+            src={loader({
+              src: '/assets/images/others/main_index.png',
+              width: 700,
+              quality: 90,
+            })}
+            width={700}
+            height={400}
+            alt={'Main UPPR page'}
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={`${styles.screen} ${styles.screenFirst}`}>
