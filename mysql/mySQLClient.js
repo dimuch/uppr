@@ -17,7 +17,8 @@ const db_pool = mysql.createPool({
   database: ITP_MYSQL_DATABASE,
   multipleStatements: true,
   waitForConnections: true,
-  connectionLimit: 10,
+  connectionLimit: 50, // Increased from 10 to 50 for App Router parallel fetches
+  queueLimit: 0,
 });
 
 let init = true;
