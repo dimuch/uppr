@@ -33,18 +33,18 @@ export default function PostTagClient({ articlesByTags, articleTags }) {
   };
 
   useEffect(() => {
+    if (!isChanged) {
+      return undefined;
+    }
+
     const updatedTagQueryString = Array.from(tags.values())
       .filter(tag => tag.selected)
       .map(tag => tag.name)
       .join(',');
 
-    if (!isChanged) {
-      return undefined;
-    }
-
     const reqUrl = SEARCH_REQ_URL + updatedTagQueryString;
     makeRequest(reqUrl);
-  }, [isChanged, makeRequest, tags]);
+  }, [isChanged]); // Only depend on isChanged, not tags or makeRequest
 
   useEffect(() => {
     if (!data) {
