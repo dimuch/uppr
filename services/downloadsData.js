@@ -97,6 +97,11 @@ export async function getDownloadDataByCaptionDB(downloadCaption) {
   const mapper = dataDB => {
     const itemData = dataDB[0];
 
+    // If no data found, return null
+    if (!itemData) {
+      return null;
+    }
+
     return {
       ...itemData,
       publishedDate: new Date(itemData.publishedDate).toString(),

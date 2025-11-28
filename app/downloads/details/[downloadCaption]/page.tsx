@@ -13,11 +13,10 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { downloadCaption } = await params;
-  const downloadLink = `/downloads/details/${downloadCaption}`;
   
   let downloadData;
   try {
-    downloadData = await getDownloadDataByCaptionDB(downloadLink);
+    downloadData = await getDownloadDataByCaptionDB(downloadCaption);
   } catch (e) {
     return {
       title: 'Download Not Found | UPPR Downloads',
@@ -63,11 +62,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function DownloadDetailsPage({ params }: Props) {
   const { downloadCaption } = await params;
-  const downloadLink = `/downloads/details/${downloadCaption}`;
 
   let downloadData;
   try {
-    downloadData = await getDownloadDataByCaptionDB(downloadLink);
+    downloadData = await getDownloadDataByCaptionDB(downloadCaption);
   } catch (e) {
     console.log(`WRONG DOWNLOAD CAPTION: ${downloadCaption}`);
     notFound();
