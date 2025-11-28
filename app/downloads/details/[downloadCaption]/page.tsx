@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import * as DownloadDocuments from '../../../../components/downloads/documents';
 import Header from '../../../../components/common/header/Header';
-import { getDownloadDataByCaptionDB, getDownloadsDB } from '../../../../services/downloadsData.js';
+import { getDownloadDataByCaptionDB, getDownloadsByCategoryDB } from '../../../../services/downloadsData.js';
 import Footer from '../../../../components/common/footers/footer/Footer';
 import { getArticles } from '../../../../services/blogData.js';
 
@@ -98,7 +98,7 @@ export default async function DownloadDetailsPage({ params }: Props) {
 
 // Generate static params for all downloads at build time
 export async function generateStaticParams() {
-  const downloads = await getDownloadsDB();
+  const { downloads } = await getDownloadsByCategoryDB({ category: 'all' });
 
   return downloads.map((download: any) => ({
     downloadCaption: download.downloadLink.split('/').pop(),
