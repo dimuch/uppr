@@ -1,0 +1,14 @@
+@import "../styles.module";
+
+.upprArticleCategories{
+  padding: 5rem 0 4rem;
+}
+
+.loader {
+  max-width: 10%;
+  margin: auto;
+  color: $primary-200;
+  svg {
+    fill: currentColor;
+  }
+}
