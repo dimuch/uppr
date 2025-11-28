@@ -1,4 +1,4 @@
-import React from 'react';
+    import React from 'react';
 import PageNotFound from '../../../components/common/404/404';
 
 export default function NotFound() {
