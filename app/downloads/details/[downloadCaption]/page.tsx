@@ -67,7 +67,7 @@ export default async function DownloadDetailsPage({ params }: Props) {
   try {
     downloadData = await getDownloadDataByCaptionDB(downloadCaption);
   } catch (e) {
-    console.log(`WRONG DOWNLOAD CAPTION: ${downloadCaption}`);
+    console.log(`WRONG DOWNLOAD CAPTION: ${downloadCaption}`, e);
     notFound();
   }
 
@@ -87,7 +87,7 @@ export default async function DownloadDetailsPage({ params }: Props) {
     <>
       <Header search location={'/downloads'} />
       <div style={{ overflow: 'hidden' }}>
-        <DownloadPage downloadData={downloadData} />
+        <DownloadPage data={downloadData} />
       </div>
       <Footer top3Article={top3Article} />
     </>
