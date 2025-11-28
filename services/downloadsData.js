@@ -77,7 +77,8 @@ export async function getDownloadsByCategoryDB(
 }
 
 export async function getDownloadDataByCaptionDB(downloadCaption) {
-  const caption = downloadCaption.replaceAll('_', ' ');
+  // Build the full download link from the caption
+  const downloadLink = `/downloads/details/${downloadCaption}`;
 
   const selectClause = `
     SELECT Downloads.*, Downloads.id as downloadId, Downloads.downloaded_counter as downloadedCounter,
@@ -89,7 +90,7 @@ export async function getDownloadDataByCaptionDB(downloadCaption) {
     LEFT JOIN uppr_ssr.downloads_charge_types AS DownloadsChargeTypes
     ON DownloadsChargeTypes.id=Downloads.download_charge_type
   `;
-  const whereClause = `WHERE LOWER(Downloads.caption)='${caption.toLowerCase()}'`;
+  const whereClause = `WHERE LOWER(Downloads.download_link)='${downloadLink.toLowerCase()}'`;
   const orderClause = ``;
 
   const getDownloadsByCategory = `${selectClause} ${whereClause} ${orderClause} ;`;
@@ -106,8 +107,8 @@ export async function getDownloadDataByCaptionDB(downloadCaption) {
       ...itemData,
       publishedDate: new Date(itemData.publishedDate).toString(),
       downloadComponent: itemData?.['download_component'] || 'PageNotFound',
-      author: `${itemData?.name} ${itemData?.surname}`,
-      chargeTypeCaption: itemData.display_name,
+      author: `${itemData?.name || ''} ${itemData?.sername || ''}`.trim(),
+      chargeTypeCaption: itemData?.display_name || 'Free',
       downloadLink: itemData.download_link,
     };
   };
@@ -116,8 +117,7 @@ export async function getDownloadDataByCaptionDB(downloadCaption) {
     return dbCallWrapper(getDownloadsByCategory, mapper);
   } catch (err) {
     console.error('getDownloadDataByCaptionDB ==>', err);
-    return {
-};
+    return null;
   }
 }
 
