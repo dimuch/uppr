@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import { Grid } from '@mui/material';
+// Grid removed - not used in this component
 import MainArticle from '../MainArticle/MainArticle';
 import TopFeaturedArticles from '../TopFeaturedArticles/TopFeaturedArticles';
 import Downloads from '../Downloads/Downloads';

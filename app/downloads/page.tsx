@@ -4,7 +4,8 @@ import { getDownloadsByCategoryDB, getDownloadsCategoriesDB } from '../../servic
 import Header from '../../components/common/header/Header';
 import TopBlogImage from '../../components/blog/TopBlogImage/TopBlogImage';
 import styles from './styles.module.scss';
-import { Grid, Typography } from '@mui/material';
+import Grid2 from '@mui/material/Grid2';
+import { Typography } from '@mui/material';
 import { getArticles } from '../../services/blogData';
 import Footer from '../../components/common/footers/footer/Footer';
 import DownloadItem from '../../components/downloads/DownloadItem/DownloadItem';
@@ -58,12 +59,16 @@ export default async function DownloadsPage() {
 
         <div className={styles.upprArticlesContent}>
           <div className={styles.downloadsWrapper}>
-            <Grid container spacing={1} alignItems="center">
-              <Grid item md={6} xs={12}>
+            <Grid2 container spacing={1} alignItems="center">
+              <Grid2 size={{
+ md: 6, xs: 12 
+}}>
                 <Typography variant={'h5'}>Downloads</Typography>
-              </Grid>
-              <Grid item md={6} xs={12}></Grid>
-            </Grid>
+              </Grid2>
+              <Grid2 size={{
+ md: 6, xs: 12 
+}}></Grid2>
+            </Grid2>
           </div>
 
           <div className={styles.downloads}>

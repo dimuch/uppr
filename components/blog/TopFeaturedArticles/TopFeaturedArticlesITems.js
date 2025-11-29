@@ -2,7 +2,8 @@
 
 import React from 'react';
 
-import { Grid, Typography } from '@mui/material';
+import Grid2 from '@mui/material/Grid2';
+import { Typography } from '@mui/material';
 
 import loader from '../../common/loader/loader.js';
 
@@ -21,27 +22,28 @@ export default function TopFeaturedArticlesItems({ items }) {
 
   return (
     <div className={'uppr-section-content ' + styles.upprSectionContent}>
-      <Grid
+      <Grid2
         container
         spacing={3}
       >
         {items.map(article => {
           return (
-            <Grid
-              item
+            <Grid2
               key={article.title}
-              xs={12}
+              size={{
+ xs: 12 
+}}
             >
-              <Grid
+              <Grid2
                 container
                 spacing={1}
                 className={styles.articleContainer}
                 alignContent={'center'}
               >
-                <Grid
-                  item
-                  xs={5}
-                  sm={5}
+                <Grid2
+                  size={{
+ xs: 5, sm: 5 
+}}
                   className={styles.articleImage}
                 >
                   <img
@@ -57,22 +59,22 @@ export default function TopFeaturedArticlesItems({ items }) {
                       height: 'auto',
                     }}
                   />
-                </Grid>
-                <Grid
-                  item
-                  xs={5}
-                  sm={7}
+                </Grid2>
+                <Grid2
+                  size={{
+ xs: 5, sm: 7 
+}}
                   className={styles.articleTitle}
                 >
                   <a href={article.link}>
                     <Typography>{article.title}</Typography>
                   </a>
-                </Grid>
-              </Grid>
-            </Grid>
+                </Grid2>
+              </Grid2>
+            </Grid2>
           );
         })}
-      </Grid>
+      </Grid2>
     </div>
   );
 }

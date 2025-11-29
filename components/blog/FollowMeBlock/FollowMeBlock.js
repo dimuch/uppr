@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Grid, Typography } from '@mui/material';
+import Grid2 from '@mui/material/Grid2';
+import { Typography } from '@mui/material';
 
 import styles from './styles.module.scss';
 
@@ -19,13 +20,15 @@ export default function FollowMeBlock({ showTitle = true, customStyles={
     <>
       {
         showTitle && (
-          <Grid container alignItems="center"
+          <Grid2 container alignItems="center"
                 className={styles.upprSectionTitle}
           >
-            <Grid item md={12} xs={12}>
+            <Grid2 size={{
+ md: 12, xs: 12 
+}}>
               <Typography variant={'h5'}>Follow Me</Typography>
-            </Grid>
-          </Grid>
+            </Grid2>
+          </Grid2>
         )
       }
 

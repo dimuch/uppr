@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useMemo } from 'react';
-import { Grid } from '@mui/material';
+// Grid removed - not used in this component
 
 import OthersArticles from '../OthersArticles/OthersArticles';
 

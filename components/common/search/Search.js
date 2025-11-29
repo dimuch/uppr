@@ -6,7 +6,8 @@ import styles from './styles.module.scss';
 import useMakeRequest from '../hooks/makeRequest';
 import { LoaderIcon, SearchIcon } from '../icons';
 import Image from 'next/image';
-import { Grid, Typography } from '@mui/material';
+import Grid2 from '@mui/material/Grid2';
+import { Typography } from '@mui/material';
 import { linesLimiterConfig } from '../../../helpers/linesLimiterConfig';
 
 import { useClickOutside } from '../hooks/clickOutside';
@@ -88,8 +89,10 @@ const Search = ({}) => {
         <div className={`${styles.searchResult} ${!!searchResult.length ? styles.searchResultWithResult : ''}`}>
           {searchResult.map(article => {
             return (
-              <Grid container className={styles.searchResultItem} key={article.title} alignItems={'center'}>
-                <Grid item md={4}>
+              <Grid2 container className={styles.searchResultItem} key={article.title} alignItems={'center'}>
+                <Grid2 size={{
+ md: 4 
+}}>
                   <Image
                     className={styles.searchResultItemImage}
                     src={article.image}
@@ -101,15 +104,17 @@ const Search = ({}) => {
                       height: 'auto',
                     }}
                   />
-                </Grid>
-                <Grid item md={8}>
+                </Grid2>
+                <Grid2 size={{
+ md: 8 
+}}>
                   <a href={article.link} target="_blank" rel="noreferrer" className={styles.searchResultItemLink}>
                     <Typography variant={'subtitle2'} sx={linesLimiterConfig(2)}>
                       {article.title}
                     </Typography>
                   </a>
-                </Grid>
-              </Grid>
+                </Grid2>
+              </Grid2>
             );
           })}
         </div>

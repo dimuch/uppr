@@ -21,7 +21,7 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.5",
-    "@mui/material": "^5.16.7",
+    "@mui/material": "^6.0.0",
     "@napi-rs/canvas": "^0.1.58",
     "@phosphor-icons/react": "^2.1.7",
     "clsx": "^2.1.1",

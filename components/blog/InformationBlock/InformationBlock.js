@@ -1,24 +1,26 @@
 import React from 'react';
 
 import Link from 'next/link';
-import { Grid, Typography } from '@mui/material';
+import Grid2 from '@mui/material/Grid2';
+import { Typography } from '@mui/material';
 import FollowMeBlock from '../FollowMeBlock/FollowMeBlock';
 import styles from './styles.module.scss';
 
 export default function InformationBlock({ tags }) {
   return (
-    <Grid
-      item
-      md={4}
-    >
-      <Grid container alignItems="center"
+    <Grid2 size={{
+ md: 4 
+}}>
+      <Grid2 container alignItems="center"
             className={styles.upprSectionTitle}
       >
-        <Grid item md={12} xs={12}>
+        <Grid2 size={{
+ md: 12, xs: 12 
+}}>
           <Typography variant={'h5'}>Tags</Typography>
-        </Grid>
-      </Grid>
-      <Grid
+        </Grid2>
+      </Grid2>
+      <Grid2
         container
         justifyContent={'flex-start'}
         alignItems={'center'}
@@ -27,7 +29,7 @@ export default function InformationBlock({ tags }) {
         {
           tags.map(item => {
             return (
-              <Grid item key={item.name}
+              <Grid2 key={item.name}
                     className={styles.tagItem}
               >
                 <Link href={`/blog/post-tag?selectedTag=${item.name}`}>
@@ -35,17 +37,16 @@ export default function InformationBlock({ tags }) {
                     {item.name}
                   </Typography>
                 </Link>
-              </Grid>
+              </Grid2>
             )
           })
         }
-      </Grid>
-      <Grid
-        item
-        md={4}
-      >
+      </Grid2>
+      <Grid2 size={{
+ md: 4 
+}}>
         <FollowMeBlock showTitle/>
-      </Grid>
-    </Grid>
+      </Grid2>
+    </Grid2>
   )
 }

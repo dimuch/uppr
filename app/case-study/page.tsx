@@ -3,7 +3,8 @@ import { Metadata } from 'next';
 import Header from '../../components/common/header/Header';
 import TopBlogImage from '../../components/blog/TopBlogImage/TopBlogImage';
 import styles from './styles.module.scss';
-import { Grid, Typography } from '@mui/material';
+import Grid2 from '@mui/material/Grid2';
+import { Typography } from '@mui/material';
 import Footer from '../../components/common/footers/footer/Footer';
 import { getCaseStudiesAll } from '../../services/caseStudy.js';
 import { getArticles } from '../../services/blogData';
@@ -53,12 +54,16 @@ export default async function CaseStudyPage() {
 
         <div className={styles.upprArticlesContent}>
           <div className={styles.downloadsWrapper}>
-            <Grid container spacing={1} alignItems="center">
-              <Grid item md={6} xs={12}>
+            <Grid2 container spacing={1} alignItems="center">
+              <Grid2 size={{
+ md: 6, xs: 12 
+}}>
                 <Typography variant={'h5'}>Case Study</Typography>
-              </Grid>
-              <Grid item md={6} xs={12}></Grid>
-            </Grid>
+              </Grid2>
+              <Grid2 size={{
+ md: 6, xs: 12 
+}}></Grid2>
+            </Grid2>
           </div>
 
           <CaseStudyClient caseStudy={caseStudy} />

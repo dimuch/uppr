@@ -2,7 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 
-import { Grid, Typography } from '@mui/material';
+import Grid2 from '@mui/material/Grid2';
+import { Typography } from '@mui/material';
 import { getDate } from '../../../helpers/getDate';
 
 import loader from '../../common/loader/loader.js';
@@ -71,48 +72,44 @@ export default function MainArticle({ items }) {
         />
       </div>
       <div className={'uppr-article-details ' + styles.upprArticleDetails}>
-        <Grid
-          item
-          md={12}
-          className="title"
-        >
+        <Grid2 size={{
+ md: 12 
+}} className="title">
           <a href={mainArticleData.link}>
             <Typography variant={'h3'}>{mainArticleData.title}</Typography>
           </a>
-        </Grid>
-        <Grid
-          item
-          md={12}
-          className="description"
-        >
+        </Grid2>
+        <Grid2 size={{
+ md: 12 
+}} className="description">
           <Typography>{mainArticleData.description}</Typography>
-        </Grid>
-        <Grid
-          item
-          md={12}
-          className={'summary ' + styles.summary}
-        >
-          <Grid
+        </Grid2>
+        <Grid2 size={{
+ md: 12 
+}} className={'summary ' + styles.summary}>
+          <Grid2
             container
             justifyContent={'space-between'}
           >
-            <Grid
-              item
-              md={10}
+            <Grid2
+              size={{
+ md: 10 
+}}
               className="left-part"
             >
-              <Grid container>
+              <Grid2 container>
                 <Typography
                   variant={'subtitle2'}
                   className={'summary-item ' + styles.summaryItem}
                 >
                   {mainArticleData.published}
                 </Typography>
-              </Grid>
-            </Grid>
-            <Grid
-              item
-              md={2}
+              </Grid2>
+            </Grid2>
+            <Grid2
+              size={{
+ md: 2 
+}}
               className="right-part"
             >
               <a href={mainArticleData.link}>
@@ -123,9 +120,9 @@ export default function MainArticle({ items }) {
                   Читати &rarr;
                 </Typography>
               </a>
-            </Grid>
-          </Grid>
-        </Grid>
+            </Grid2>
+          </Grid2>
+        </Grid2>
       </div>
     </div>
   );

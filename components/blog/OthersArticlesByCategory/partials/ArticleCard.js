@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import Grid2 from '@mui/material/Grid2';
+import { Typography } from '@mui/material';
 
 import loader from '../../../common/loader/loader.js';
 import { getDate } from '../../../../helpers/getDate';
@@ -23,10 +24,9 @@ export default function ArticleCard({ item, isDescription = true }) {
   return (
     <a href={item?.link}>
       <div className={styles.wrapper}>
-        <Grid
-          item
-          xs={12}
-        >
+        <Grid2 size={{
+ xs: 12 
+}}>
           <img
             className={styles.image}
             src={loader({
@@ -37,30 +37,29 @@ export default function ArticleCard({ item, isDescription = true }) {
             width={width}
             height={height}
           />
-        </Grid>
-        <Grid
-          item
-          md={12}
-        >
-          <Grid
+        </Grid2>
+        <Grid2 size={{
+ md: 12 
+}}>
+          <Grid2
             container
             textAlign={'center'}
             alignItems={'center'}
             className={styles.upprArticleDetails}
           >
-            <Grid
-              item
+            <Grid2
               className={styles.category}
               style={{
                 backgroundColor: `#${item?.categoryColor}`,
               }}
             >
               <Typography variant={'subtitle2'}>{item?.name?.toUpperCase()}</Typography>
-            </Grid>
-            <Grid
-              item
+            </Grid2>
+            <Grid2
               className={styles.title}
-              sm={12}
+              size={{
+ sm: 12 
+}}
             >
               <Typography
                 textAlign={'center'}
@@ -72,20 +71,22 @@ export default function ArticleCard({ item, isDescription = true }) {
               >
                 {item.title}
               </Typography>
-            </Grid>
+            </Grid2>
             {isDescription && (
-              <Grid
-                item
+              <Grid2
                 className="description"
-                md={12}
+                size={{
+ md: 12 
+}}
                 sx={linesLimiterConfig(3)}
               >
                 <Typography>{item.description}</Typography>
-              </Grid>
+              </Grid2>
             )}
-            <Grid
-              item
-              md={12}
+            <Grid2
+              size={{
+ md: 12 
+}}
               className={'summary ' + styles.summary}
             >
               <Typography
@@ -94,9 +95,9 @@ export default function ArticleCard({ item, isDescription = true }) {
               >
                 {getDate(new Date(item.published))}
               </Typography>
-            </Grid>
-          </Grid>
-        </Grid>
+            </Grid2>
+          </Grid2>
+        </Grid2>
       </div>
     </a>
   );
