@@ -35,7 +35,7 @@ jobs:
         run: cd ../ && rm -rf uppr && mkdir uppr && cd uppr && git clone https://github.com/dimuch/uppr.git .
 
       - name: Install dependencies
-        run: npm install && npm install sharp
+        run: npm install --legacy-peer-deps && npm install sharp --legacy-peer-deps
 
       - name: Build sources
         run: sudo npm run build
