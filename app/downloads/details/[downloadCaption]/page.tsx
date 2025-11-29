@@ -13,7 +13,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { downloadCaption } = await params;
-  
+
   let downloadData;
   try {
     downloadData = await getDownloadDataByCaptionDB(downloadCaption);

@@ -57,7 +57,7 @@ export default function PostTagClient({ articlesByTags, articleTags }: PostTagCl
       .join(',');
 
     // Update the URL with the new selected tags
-    const newUrl = updatedTagQueryString 
+    const newUrl = updatedTagQueryString
       ? `/blog/post-tag?selectedTag=${updatedTagQueryString}`
       : '/blog/post-tag';
     router.push(newUrl, {

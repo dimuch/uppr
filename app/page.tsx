@@ -39,14 +39,14 @@ export default async function HomePage() {
   // Fetch data directly in the Server Component
   const articles = await getArticles();
   const { top3Article, latestArticle, otherLatestArticles } = articles;
-  
+
   const last3Articles = [latestArticle[0], otherLatestArticles[0], otherLatestArticles[1]];
 
   return (
     <>
       <div className={styles.upprHomePage}>
         <Header location={'/'} search />
-        
+
         <HomeHero />
 
         <div className={`${styles.screen} ${styles.screenSecond}`}>

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export default async function PostTagPage({ searchParams }: Props) {
   const params = await searchParams;
   const tagName = params.selectedTag || '';
-  
+
   // Fetch data in parallel
   const [articleTags, articlesByTags] = await Promise.all([
     getTagsDB(tagName),
