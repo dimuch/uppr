@@ -88,3 +88,6 @@ export default async function HomePage() {
   );
 }
 
+// Force dynamic rendering to avoid database access during build
+export const dynamic = 'force-dynamic';
+

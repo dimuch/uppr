@@ -15,6 +15,6 @@ export default function Error({ error, reset }: ErrorProps) {
   }
 
   // Use the same 404 component as the old 500 page did
-  return <PageNotFound />;
+  return <PageNotFound redirectLink="/blog" redirectPage="Повернутись до блогу" />;
 }
 

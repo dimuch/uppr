@@ -81,3 +81,6 @@ export default async function BlogPage() {
   );
 }
 
+// Force dynamic rendering to avoid database access during build
+export const dynamic = 'force-dynamic';
+

@@ -54,7 +54,7 @@ export default async function DownloadsPage() {
     <div className={styles.upprBlogPage}>
       <Header search location={'/downloads'} />
       <div className={`uppr-page-content ${styles.upprPageContent}`}>
-        <TopBlogImage caption={'My Downloads'} description={'The best downloads!'} />
+        <TopBlogImage caption={'My Downloads'} description={'The best downloads!'} imgUrl={undefined} />
 
         <div className={styles.upprArticlesContent}>
           <div className={styles.downloadsWrapper}>
@@ -79,6 +79,6 @@ export default async function DownloadsPage() {
   );
 }
 
-// Enable ISR with 1 week revalidation
-export const revalidate = 604800;
+// Force dynamic rendering to avoid database access during build
+export const dynamic = 'force-dynamic';
 

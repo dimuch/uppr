@@ -76,18 +76,6 @@ export default async function BlogCategoryPage({ params }: Props) {
   );
 }
 
-// Generate static params for all categories at build time
-export async function generateStaticParams() {
-  const categories = await getArticlesCategoriesDB();
-  
-  // Filter out 'All' category and return category names
-  return categories
-    .filter(category => category.name !== 'All')
-    .map(category => ({
-      categoryName: category.name,
-    }));
-}
-
-// Enable ISR with 1 week revalidation
-export const revalidate = 604800; // 1 week in seconds
+// Force dynamic rendering to avoid database access during build
+export const dynamic = 'force-dynamic'; // 1 week in seconds
 

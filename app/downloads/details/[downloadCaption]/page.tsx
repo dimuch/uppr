@@ -98,17 +98,6 @@ export default async function DownloadDetailsPage({ params }: Props) {
   );
 }
 
-// Generate static params for all downloads at build time
-export async function generateStaticParams() {
-  const { downloads } = await getDownloadsByCategoryDB({
-    category: 'all',
-  });
-
-  return downloads.map((download: any) => ({
-    downloadCaption: download.downloadLink.split('/').pop() || '',
-  }));
-}
-
-// Enable ISR with 1 week revalidation
-export const revalidate = 604800;
+// Force dynamic rendering to avoid database access during build
+export const dynamic = 'force-dynamic';
 

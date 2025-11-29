@@ -8,10 +8,20 @@ import styles from './styles.module.scss';
 
 const PAGE_NOT_FOUND = 'PageNotFound';
 
-export default function CaseStudyClient({ caseStudy }) {
-  const [modalComponentData, setModalComponentData] = useState();
+interface CaseStudyItem {
+  id: string | number;
+  Component?: string;
+  [key: string]: any;
+}
 
-  const toggleModal = item => {
+interface CaseStudyClientProps {
+  caseStudy: CaseStudyItem[];
+}
+
+export default function CaseStudyClient({ caseStudy }: CaseStudyClientProps) {
+  const [modalComponentData, setModalComponentData] = useState<CaseStudyItem | undefined>(undefined);
+
+  const toggleModal = (item?: CaseStudyItem) => {
     setModalComponentData(item);
   };
 
