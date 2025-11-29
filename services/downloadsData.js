@@ -79,6 +79,8 @@ export async function getDownloadsByCategoryDB(
 export async function getDownloadDataByCaptionDB(downloadCaption) {
   // Build the full download link from the caption
   const downloadLink = `/downloads/details/${downloadCaption}`;
+  // Also try with trailing slash
+  const downloadLinkWithSlash = `${downloadLink}/`;
 
   const selectClause = `
     SELECT Downloads.*, Downloads.id as downloadId, Downloads.downloaded_counter as downloadedCounter,
@@ -92,19 +94,21 @@ export async function getDownloadDataByCaptionDB(downloadCaption) {
   `;
   // Escape single quotes in the download link to prevent SQL injection
   const escapedDownloadLink = downloadLink.replace(/'/g, "''");
-  const whereClause = `WHERE LOWER(Downloads.download_link)='${escapedDownloadLink.toLowerCase()}'`;
+  const escapedDownloadLinkWithSlash = downloadLinkWithSlash.replace(/'/g, "''");
+  // Try exact match first, then with trailing slash
+  const whereClause = `WHERE LOWER(TRIM(Downloads.download_link)) IN ('${escapedDownloadLink.toLowerCase()}', '${escapedDownloadLinkWithSlash.toLowerCase()}')`;
   const orderClause = ``;
 
   const getDownloadsByCategory = `${selectClause} ${whereClause} ${orderClause} ;`;
 
-  console.log(`[getDownloadDataByCaptionDB] Querying for download_link: ${downloadLink.toLowerCase()}`);
+  console.log(`[getDownloadDataByCaptionDB] Querying for download_link: ${downloadLink.toLowerCase()} or ${downloadLinkWithSlash.toLowerCase()}`);
 
   const mapper = dataDB => {
     const itemData = dataDB[0];
 
     // If no data found, return null
     if (!itemData) {
-      console.log(`[getDownloadDataByCaptionDB] No data found for download_link: ${downloadLink}`);
+      console.log(`[getDownloadDataByCaptionDB] No data found for download_link: ${downloadLink} or ${downloadLinkWithSlash}`);
       return null;
     }
 
