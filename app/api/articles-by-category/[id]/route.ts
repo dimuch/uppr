@@ -13,8 +13,12 @@ export async function GET(request: Request, { params }: Props) {
   } catch (error) {
     console.error('Error fetching articles by category ID:', error);
     return NextResponse.json(
-      { error: 'Failed to fetch articles' },
-      { status: 500 }
+      {
+        error: 'Failed to fetch articles',
+      },
+      {
+        status: 500,
+      }
     );
   }
 }

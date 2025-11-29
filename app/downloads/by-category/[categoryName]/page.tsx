@@ -4,9 +4,13 @@ import { notFound } from 'next/navigation';
 import Header from '../../../../components/common/header/Header';
 import TopBlogImage from '../../../../components/blog/TopBlogImage/TopBlogImage';
 import styles from '../../styles.module.scss';
-import { getDownloadsByCategoryDB, getDownloadsCategoriesDB } from '../../../../services/downloadsData.js';
+import {
+  getDownloadsByCategoryDB,
+  getDownloadsCategoriesDB,
+} from '../../../../services/downloadsData.js';
 import CategoriesList from '../../../../components/downloads/CategoriesList/CategoriesList';
-import SelectedSpecificCategory from '../../../../components/downloads/SelectedSpecificCategory/SelectedSpecificCategory';
+import SelectedSpecificCategory
+  from '../../../../components/downloads/SelectedSpecificCategory/SelectedSpecificCategory';
 
 type Props = {
   params: Promise<{ categoryName: string }>;

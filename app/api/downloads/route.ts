@@ -20,7 +20,9 @@ export async function POST(request: Request) {
         data: [],
         message: 'Error occurred',
       },
-      { status: 400 }
+      {
+        status: 400,
+      }
     );
   }
 }

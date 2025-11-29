@@ -17,7 +17,10 @@ function Slide({ slideData, slideNode, location }) {
       const imageScaler = location === 'footer' ? 7 : 4.35;
       const width = windowInner > 850 ? Math.round(windowInner / imageScaler) : windowInner / 2;
       const height = Math.round((width * 4) / 7);
-      setImgDimensions({ width, height });
+      setImgDimensions({
+        width,
+        height,
+      });
     }
   }, [location]);
 
