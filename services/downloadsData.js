@@ -90,18 +90,30 @@ export async function getDownloadDataByCaptionDB(downloadCaption) {
     LEFT JOIN uppr_ssr.downloads_charge_types AS DownloadsChargeTypes
     ON DownloadsChargeTypes.id=Downloads.download_charge_type
   `;
-  const whereClause = `WHERE LOWER(Downloads.download_link)='${downloadLink.toLowerCase()}'`;
+  // Escape single quotes in the download link to prevent SQL injection
+  const escapedDownloadLink = downloadLink.replace(/'/g, "''");
+  const whereClause = `WHERE LOWER(Downloads.download_link)='${escapedDownloadLink.toLowerCase()}'`;
   const orderClause = ``;
 
   const getDownloadsByCategory = `${selectClause} ${whereClause} ${orderClause} ;`;
+
+  console.log(`[getDownloadDataByCaptionDB] Querying for download_link: ${downloadLink.toLowerCase()}`);
 
   const mapper = dataDB => {
     const itemData = dataDB[0];
 
     // If no data found, return null
     if (!itemData) {
+      console.log(`[getDownloadDataByCaptionDB] No data found for download_link: ${downloadLink}`);
       return null;
     }
+
+    console.log(`[getDownloadDataByCaptionDB] Found download:`, {
+      id: itemData.id,
+      caption: itemData.caption,
+      download_link: itemData.download_link,
+      download_component: itemData?.['download_component'],
+    });
 
     return {
       ...itemData,
@@ -116,7 +128,8 @@ export async function getDownloadDataByCaptionDB(downloadCaption) {
   try {
     return dbCallWrapper(getDownloadsByCategory, mapper);
   } catch (err) {
-    console.error('getDownloadDataByCaptionDB ==>', err);
+    console.error('getDownloadDataByCaptionDB ERROR ==>', err);
+    console.error('Query was:', getDownloadsByCategory);
     return null;
   }
 }

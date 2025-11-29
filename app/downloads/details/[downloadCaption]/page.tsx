@@ -71,17 +71,19 @@ export default async function DownloadDetailsPage({ params }: Props) {
   try {
     downloadData = await getDownloadDataByCaptionDB(downloadCaption);
   } catch (e) {
-    console.log(`WRONG DOWNLOAD CAPTION: ${downloadCaption}`, e);
+    console.error(`ERROR fetching download data for caption: ${downloadCaption}`, e);
     notFound();
   }
 
   if (!downloadData) {
+    console.error(`Download data not found for caption: ${downloadCaption}`);
     notFound();
   }
 
   const DownloadPage = DownloadDocuments[downloadData.downloadComponent];
 
   if (!DownloadPage) {
+    console.error(`Download component not found: ${downloadData.downloadComponent}. Available components:`, Object.keys(DownloadDocuments));
     notFound();
   }
 
