@@ -10,9 +10,17 @@ export async function getArticlesCategoriesDB() {
         reject({
           data: [],
         });
+        return;
       }
 
       try {
+        if (!rows || !rows[0]) {
+          reject({
+            data: [],
+          });
+          return;
+        }
+
         const data = [
           {
             id: 0,
@@ -135,9 +143,17 @@ async function getLatestArticlesByCategoryDB(category) {
         reject({
           data: [],
         });
+        return;
       }
 
       try {
+        if (!rows || !rows[0]) {
+          reject({
+            data: [],
+          });
+          return;
+        }
+
         const data = rows[0].map(item => {
           return {
             ...item,
@@ -167,9 +183,17 @@ async function getTop3ArticlesWithoutMainDB() {
         reject({
           data: [],
         });
+        return;
       }
 
       try {
+        if (!rows || !rows[0]) {
+          reject({
+            data: [],
+          });
+          return;
+        }
+
         const data = rows[0].map(item => {
           return {
             ...item,
@@ -249,9 +273,17 @@ export async function getArticleTagsById(articleId) {
         reject({
           tags: [],
         });
+        return;
       }
 
       try {
+        if (!rows || !rows[0]) {
+          reject({
+            tags: [],
+          });
+          return;
+        }
+
         const data = rows[0].map(item => item.name);
 
         resolve({
@@ -278,9 +310,18 @@ export async function getArticleCategoryById(articleId) {
           category: {
 },
         });
+        return;
       }
 
       try {
+        if (!rows || !rows[0] || !rows[0][0]) {
+          reject({
+            category: {
+},
+          });
+          return;
+        }
+
         const data = rows[0].map(item => item);
 
         resolve({
@@ -311,9 +352,17 @@ export async function getRelevantArticlesByCategory(categoryId) {
         reject({
           relevantArticles: [],
         });
+        return;
       }
 
       try {
+        if (!rows || !rows[0]) {
+          reject({
+            relevantArticles: [],
+          });
+          return;
+        }
+
         const data = rows[0].map(item => ({
           ...item,
           published: new Date(item.published).toString(),
@@ -342,9 +391,15 @@ export async function getArticlesByCategoryNameDB(categoryName) {
         reject({
           relevantArticles: [],
         });
+        return;
       }
 
       try {
+        if (!rows || !rows[0]) {
+          reject([]);
+          return;
+        }
+
         const data = rows[0].map(item => ({
           ...item,
           published: new Date(item.published).toString(),
@@ -413,9 +468,17 @@ export async function getArticlesByTagsNameDB(tags = '') {
         reject({
           data: [],
         });
+        return;
       }
 
       try {
+        if (!rows) {
+          reject({
+            data: [],
+          });
+          return;
+        }
+
         const data = rows.map(item => ({
           ...item,
           published: new Date(item.published).toString(),
