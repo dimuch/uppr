@@ -12,7 +12,8 @@
     "update:images": "node utils/resizer.js",
     "cache:clear": "npm cache clean --force",
     "reset": "npm run cache:clear && rm -rf node_modules && npm install --legacy-peer-deps",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "checks": "npm run lint && npm run type-check"
   },
   "engines": {
     "npm": ">=10.2.3",

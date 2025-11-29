@@ -6,7 +6,7 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const searchText = searchParams.get('text') || '';
 
-    const result = await searchInArticlesParamsDB(searchText);
+    const [result] = await searchInArticlesParamsDB(searchText);
 
     return NextResponse.json({
       data: result,

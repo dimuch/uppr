@@ -20,7 +20,7 @@ const Search = ({}) => {
   const [searchText, setSearchText] = useState('');
   const [searchResult, setSearchResult] = useState([]);
 
-  const inputRef = useRef();
+  const inputRef = useRef(null);
 
   const screenSize = useWindowSize();
   const [responsiveClass, setResponsiveClass] = useState('65%');
@@ -76,7 +76,7 @@ const Search = ({}) => {
       className={`${styles.upprSearchWrapper} ${styles.responsiveSearch}`}
       ref={inputRef}
       style={{
- maxWidth: responsiveClass 
+ maxWidth: responsiveClass
 }}
     >
       <div
@@ -91,7 +91,7 @@ const Search = ({}) => {
             return (
               <Grid2 container className={styles.searchResultItem} key={article.title} alignItems={'center'}>
                 <Grid2 size={{
- md: 4 
+ md: 4
 }}>
                   <Image
                     className={styles.searchResultItemImage}
@@ -106,7 +106,7 @@ const Search = ({}) => {
                   />
                 </Grid2>
                 <Grid2 size={{
- md: 8 
+ md: 8
 }}>
                   <a href={article.link} target="_blank" rel="noreferrer" className={styles.searchResultItemLink}>
                     <Typography variant={'subtitle2'} sx={linesLimiterConfig(2)}>

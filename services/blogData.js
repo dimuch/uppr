@@ -498,7 +498,5 @@ export async function getArticlesByTagsNameDB(tags = '') {
 //search articles by search text
 export async function searchInArticlesParamsDB(searchText) {
   const searchInArticlesParams = `CALL searchInArticlesParams('${searchText}')`;
-  const data = await dbCallWrapper(searchInArticlesParams);
-
-  return data;
+  return await dbCallWrapper(searchInArticlesParams);
 }
