@@ -11,7 +11,7 @@
     "lint:fix": "next lint --fix",
     "update:images": "node utils/resizer.js",
     "cache:clear": "npm cache clean --force",
-    "reset": "npm run cache:clear && rm -rf node_modules && npm install",
+    "reset": "npm run cache:clear && rm -rf node_modules && npm install --legacy-peer-deps",
     "type-check": "tsc --noEmit"
   },
   "engines": {
