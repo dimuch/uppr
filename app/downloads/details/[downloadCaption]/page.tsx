@@ -83,7 +83,10 @@ export default async function DownloadDetailsPage({ params }: Props) {
   const DownloadPage = DownloadDocuments[downloadData.downloadComponent];
 
   if (!DownloadPage) {
-    console.error(`Download component not found: ${downloadData.downloadComponent}. Available components:`, Object.keys(DownloadDocuments));
+    console.error(
+      `Download component not found: ${downloadData.downloadComponent}. Available components:`,
+      Object.keys(DownloadDocuments)
+    );
     notFound();
   }
 
