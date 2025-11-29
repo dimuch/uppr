@@ -1,4 +1,4 @@
-@import "colors.scss";
+@use "colors" as *;
 
 body {
   line-height: 1;

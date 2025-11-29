@@ -1,4 +1,4 @@
-@import "../../styles/scss/common/colors";
+@use "../../styles/scss/common/colors" as *;
 
 .upprPage {
   position: relative;

@@ -1,4 +1,4 @@
-@import "../styles/scss/common/colors";
+@use "../styles/scss/common/colors" as *;
 .upprHomePage {
   //background-image: url("../public/assets/world-map.svg");
   background-repeat: no-repeat;

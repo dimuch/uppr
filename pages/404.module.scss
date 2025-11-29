@@ -1,4 +1,4 @@
-@import "../styles/scss/common/colors";
+@use "../styles/scss/common/colors" as *;
 
 .errorPage{
   background-color: #f3f5f7;

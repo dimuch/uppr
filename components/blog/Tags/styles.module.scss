@@ -1,4 +1,4 @@
-@import "../../../styles/scss/common/colors.scss";
+@use "../../../styles/scss/common/colors" as *;
 
 .articleTags{
   padding-top: 1.5rem;

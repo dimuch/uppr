@@ -1,4 +1,4 @@
-@import "../Tags/styles.module";
+@use "../Tags/styles.module" as *;
 
 .articleTags {
   justify-content: center;

@@ -1,7 +1,7 @@
-@import "./common/reset";
-@import "./common/colors";
-@import "./common/fonts";
-@import "./common/page";
+@use "./common/reset" as *;
+@use "./common/colors" as *;
+@use "./common/fonts" as *;
+@use "./common/page" as *;
 
 body{
   font-size: 16px;

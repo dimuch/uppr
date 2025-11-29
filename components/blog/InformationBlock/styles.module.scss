@@ -1,4 +1,4 @@
-@import "../../../styles/scss/common/colors.scss";
+@use "../../../styles/scss/common/colors" as *;
 
 .upprSectionTitle {
   padding: 0 0 1.25rem .5rem;
