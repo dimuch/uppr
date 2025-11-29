@@ -17,7 +17,9 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { categoryName } = await params;
+  const { categoryName: rawCategoryName } = await params;
+  // Decode URL-encoded category name (e.g., "case%20study" -> "case study")
+  const categoryName = decodeURIComponent(rawCategoryName);
 
   return {
     title: `Категорія ${categoryName} | UPPR Блог`,
@@ -31,7 +33,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogCategoryPage({ params }: Props) {
-  const { categoryName } = await params;
+  const { categoryName: rawCategoryName } = await params;
+  // Decode URL-encoded category name (e.g., "case%20study" -> "case study")
+  const categoryName = decodeURIComponent(rawCategoryName);
 
   // Fetch data in parallel
   const [articleCategories, tags] = await Promise.all([
@@ -56,7 +60,7 @@ export default async function BlogCategoryPage({ params }: Props) {
     <div className={styles.upprBlogPage}>
       <Header search location={'/blog'} />
       <div className={`uppr-page-content ${styles.upprPageContent}`}>
-        <TopBlogImage />
+        <TopBlogImage caption={''} description={''} imgUrl={undefined} />
         <div className={`uppr-article-categories ${styles.upprArticleCategories}`}>
           <CategoriesList items={articleCategories} selectedCategory={categoryName} />
         </div>
@@ -64,7 +68,6 @@ export default async function BlogCategoryPage({ params }: Props) {
         <div className={`uppr-articles-content ${styles.upprArticlesContent}`}>
           <SelectedSpecificCategory
             articlesByCategory={articlesByCategory}
-            selectedCategory={categoryName}
             tags={tags}
           />
         </div>
