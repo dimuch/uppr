@@ -42,7 +42,7 @@ export default function HomeHero() {
                 minHeight: '110px',
               }}
             >
-              <h1>There's a better way to write work emails</h1>
+              <h1>There&apos;s a better way to write work emails</h1>
             </Stack>
             <h4>Make your writing shine, wherever you write.</h4>
           </Stack>

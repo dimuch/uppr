@@ -86,7 +86,11 @@ export default async function DownloadDetailsPage({ params }: Props) {
   return (
     <>
       <Header search location={'/downloads'} />
-      <div style={{ overflow: 'hidden' }}>
+      <div
+        style={{
+          overflow: 'hidden',
+        }}
+      >
         <DownloadPage data={downloadData} />
       </div>
       <Footer top3Article={top3Article} />
@@ -96,10 +100,12 @@ export default async function DownloadDetailsPage({ params }: Props) {
 
 // Generate static params for all downloads at build time
 export async function generateStaticParams() {
-  const { downloads } = await getDownloadsByCategoryDB({ category: 'all' });
+  const { downloads } = await getDownloadsByCategoryDB({
+    category: 'all',
+  });
 
   return downloads.map((download: any) => ({
-    downloadCaption: download.downloadLink.split('/').pop(),
+    downloadCaption: download.downloadLink.split('/').pop() || '',
   }));
 }
 

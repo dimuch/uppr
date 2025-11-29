@@ -16,8 +16,12 @@ export async function GET(request: Request) {
   } catch (error) {
     console.error('Error fetching articles by tags:', error);
     return NextResponse.json(
-      { error: 'Failed to fetch articles' },
-      { status: 500 }
+      {
+        error: 'Failed to fetch articles',
+      },
+      {
+        status: 500,
+      }
     );
   }
 }

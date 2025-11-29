@@ -24,7 +24,10 @@ export default function MainArticle({ items }) {
     if (typeof window !== 'undefined') {
       const width = Math.round((window.innerWidth * 2) / 3);
       const height = Math.round((width * 4) / 7);
-      setImgDimensions({ width, height });
+      setImgDimensions({
+        width,
+        height,
+      });
     }
   }, []);
 

@@ -19,7 +19,9 @@ export async function GET(request: Request) {
         data: [],
         message: 'Error occurred',
       },
-      { status: 400 }
+      {
+        status: 400,
+      }
     );
   }
 }

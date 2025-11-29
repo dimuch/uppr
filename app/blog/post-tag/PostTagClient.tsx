@@ -49,7 +49,9 @@ export default function PostTagClient({ articlesByTags, articleTags }) {
     const newUrl = updatedTagQueryString 
       ? `/blog/post-tag?selectedTag=${updatedTagQueryString}`
       : '/blog/post-tag';
-    router.push(newUrl, { scroll: false });
+    router.push(newUrl, {
+      scroll: false,
+    });
 
     const reqUrl = SEARCH_REQ_URL + updatedTagQueryString;
     makeRequest(reqUrl);
