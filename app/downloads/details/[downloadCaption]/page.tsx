@@ -12,7 +12,9 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { downloadCaption } = await params;
+  const { downloadCaption: rawDownloadCaption } = await params;
+  // Decode URL-encoded download caption (e.g., "guide%20to" -> "guide to")
+  const downloadCaption = decodeURIComponent(rawDownloadCaption);
   
   let downloadData;
   try {
@@ -61,7 +63,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function DownloadDetailsPage({ params }: Props) {
-  const { downloadCaption } = await params;
+  const { downloadCaption: rawDownloadCaption } = await params;
+  // Decode URL-encoded download caption (e.g., "guide%20to" -> "guide to")
+  const downloadCaption = decodeURIComponent(rawDownloadCaption);
 
   let downloadData;
   try {
