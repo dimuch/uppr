@@ -23,13 +23,13 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22.12.0
 
       - name: Install npm
-        run: npm install npm -g
+        run: npm install -g npm@11.6.4
 
       - name: Cloning repo
         run: cd ../ && rm -rf uppr && mkdir uppr && cd uppr && git clone https://github.com/dimuch/uppr.git .
@@ -58,8 +58,9 @@ jobs:
           KEY: ${{ secrets.SSH_KEY }}
           PORT: ${{ secrets.SSH_PORT }}
           script: |
-            nvm use 20.2.0
+            nvm use 22.12.0
             cd /var/www/uppr.com.ua
             pm2 stop uppr.com.ua
             pm2 delete uppr.com.ua
             pm2 start --time npm --name "uppr.com.ua" -- start 
+  
