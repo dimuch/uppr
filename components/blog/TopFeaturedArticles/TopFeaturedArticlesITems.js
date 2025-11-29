@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import Grid2 from '@mui/material/Grid2';
+import Grid2 from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 
 import loader from '../../common/loader/loader.js';

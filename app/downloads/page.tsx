@@ -4,7 +4,7 @@ import { getDownloadsByCategoryDB, getDownloadsCategoriesDB } from '../../servic
 import Header from '../../components/common/header/Header';
 import TopBlogImage from '../../components/blog/TopBlogImage/TopBlogImage';
 import styles from './styles.module.scss';
-import Grid2 from '@mui/material/Grid2';
+import Grid2 from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 import { getArticles } from '../../services/blogData';
 import Footer from '../../components/common/footers/footer/Footer';

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Link from 'next/link';
-import Grid2 from '@mui/material/Grid2';
+import Grid2 from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 import FollowMeBlock from '../FollowMeBlock/FollowMeBlock';
 import styles from './styles.module.scss';

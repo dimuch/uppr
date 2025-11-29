@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Header from '../../components/common/header/Header';
 import TopBlogImage from '../../components/blog/TopBlogImage/TopBlogImage';
 import styles from './styles.module.scss';
-import Grid2 from '@mui/material/Grid2';
+import Grid2 from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 import Footer from '../../components/common/footers/footer/Footer';
 import { getCaseStudiesAll } from '../../services/caseStudy.js';
