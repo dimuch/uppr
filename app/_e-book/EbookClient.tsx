@@ -1,32 +1,38 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+'use client';
+
+import React, { useMemo, useRef, useState } from 'react';
 import Header from '../../components/common/header/Header';
-
-import { getPaymentFormInitParams } from '../../services/eBookData.js';
-
 import styles from './styles.module.scss';
 
 const encType = 'application/x-www-form-urlencoded';
 const action = 'https://www.liqpay.ua/api/3/checkout';
 
-export default function Ebook({ data, signature, orderId, resultPageId }) {
+interface EbookClientProps {
+  data: string;
+  signature: string;
+  orderId: string;
+  resultPageId: string;
+}
+
+export default function EbookClient({ data, signature, orderId, resultPageId }: EbookClientProps) {
   const [userEmail, setUserEmail] = useState('');
-  const paymentSubmitBtnRef = useRef();
+  const paymentSubmitBtnRef = useRef<HTMLButtonElement>(null);
 
   const isDisabled = useMemo(() => {
-    if (!userEmail) true;
+    if (!userEmail) return true;
 
     return !(userEmail?.length > 0 && userEmail.includes('@'));
   }, [userEmail]);
 
-  const onChange = e => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setUserEmail(() => value);
   };
 
-  const onSubmitForm = async e => {
+  const onSubmitForm = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    ('onSubmitForm ===>>');
+    console.log('onSubmitForm ===>>');
 
     const params = {
       method: 'POST',
@@ -41,15 +47,18 @@ export default function Ebook({ data, signature, orderId, resultPageId }) {
 
     try {
       const res = await fetch(action, params);
+      console.log('Payment response:', res);
     } catch (e) {
       console.log(e);
     }
   };
 
-  const processPayment = async e => {
+  const processPayment = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    paymentSubmitBtnRef.current.click();
+    if (paymentSubmitBtnRef.current) {
+      paymentSubmitBtnRef.current.click();
+    }
 
     // const params = {
     //   method: "POST",
@@ -68,10 +77,7 @@ export default function Ebook({ data, signature, orderId, resultPageId }) {
 
   return (
     <div className={styles.upprEBookPage}>
-      <Header
-        search
-        location={'/e-book'}
-      />
+      <Header search location={'/e-book'} />
 
       {/*<form onSubmit={processPayment}>*/}
       {/*  <label htmlFor="email">*/}
@@ -101,15 +107,3 @@ export default function Ebook({ data, signature, orderId, resultPageId }) {
   );
 }
 
-export async function getServerSideProps() {
-  const { data, signature, orderId, resultPageId } = await getPaymentFormInitParams();
-
-  return {
-    props: {
-      data,
-      signature,
-      orderId,
-      resultPageId,
-    },
-  };
-}
