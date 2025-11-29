@@ -52,13 +52,12 @@ async function dbCallWrapper(query, mapper) {
     db_pool.query(query, (err, rows, fields) => {
       if (err) {
         console.log('ERROR dbCallWrapper', err);
-        reject({
- data: [] 
-});
+        reject(err);
+        return;
       }
 
       try {
-        let result = (rows && rows[0]) || [];
+        let result = rows || [];
 
         if (mapper) {
           result = mapper(rows);
@@ -67,7 +66,7 @@ async function dbCallWrapper(query, mapper) {
         resolve(result);
       } catch (err) {
         console.log('ERROR dbCallWrapper', err);
-        reject([]);
+        reject(err);
       }
     });
   });
