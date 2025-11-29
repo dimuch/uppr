@@ -70,6 +70,6 @@ export default async function CaseStudyPage() {
   );
 }
 
-// Enable ISR with 1 week revalidation
-export const revalidate = 604800;
+// Force dynamic rendering to avoid database access during build
+export const dynamic = 'force-dynamic';
 

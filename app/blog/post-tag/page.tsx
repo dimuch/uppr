@@ -42,13 +42,13 @@ export default async function PostTagPage({ searchParams }: Props) {
     <div className={styles.upprBlogPage}>
       <Header search location={'/blog'} />
       <div className={`uppr-page-content ${styles.upprPageContent}`}>
-        <TopBlogImage />
+        <TopBlogImage caption={''} description={''} imgUrl={undefined} />
         <PostTagClient articlesByTags={articlesByTags} articleTags={articleTags} />
       </div>
     </div>
   );
 }
 
-// Enable ISR with 1 week revalidation
-export const revalidate = 604800;
+// Force dynamic rendering to avoid database access during build
+export const dynamic = 'force-dynamic';
 

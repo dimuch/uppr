@@ -10,21 +10,32 @@ import styles from './styles.module.scss';
 
 const SEARCH_REQ_URL = '/api/articles-by-tags?selectedTag=';
 
-export default function PostTagClient({ articlesByTags, articleTags }) {
+interface Tag {
+  name: string;
+  selected?: boolean;
+  [key: string]: any;
+}
+
+interface PostTagClientProps {
+  articlesByTags: any[];
+  articleTags: Tag[];
+}
+
+export default function PostTagClient({ articlesByTags, articleTags }: PostTagClientProps) {
   const { makeRequest, isLoading, error, data } = useMakeRequest();
   const router = useRouter();
   const searchParams = useSearchParams();
 
   const articleTagsAsMap = useMemo(() => {
-    const mappedTags = articleTags.map(tag => [tag.name, tag]);
-    return new Map(mappedTags);
+    const mappedTags: [string, Tag][] = articleTags.map((tag: Tag) => [tag.name, tag]);
+    return new Map<string, Tag>(mappedTags);
   }, [articleTags]);
 
   const [isChanged, setIsChanged] = useState(0);
-  const [tags, setTags] = useState(() => articleTagsAsMap);
-  const [articles, setArticles] = useState(() => articlesByTags);
+  const [tags, setTags] = useState<Map<string, Tag>>(() => articleTagsAsMap);
+  const [articles, setArticles] = useState<any[]>(() => articlesByTags);
 
-  const toggleSelectedTag = (tag, index) => {
+  const toggleSelectedTag = (tag: Tag, index: number) => {
     const selectedTag = {
       ...tag,
       selected: !tag.selected,
@@ -41,8 +52,8 @@ export default function PostTagClient({ articlesByTags, articleTags }) {
     }
 
     const updatedTagQueryString = Array.from(tags.values())
-      .filter(tag => tag.selected)
-      .map(tag => tag.name)
+      .filter((tag: Tag) => tag.selected)
+      .map((tag: Tag) => tag.name)
       .join(',');
 
     // Update the URL with the new selected tags

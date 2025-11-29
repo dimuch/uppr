@@ -8,7 +8,7 @@ export async function GET(request: Request) {
 
     if (!searchedTags.length) {
       const { latestArticle, otherLatestArticles: articles } = await getArticles();
-      return NextResponse.json([].concat(latestArticle, articles));
+      return NextResponse.json(latestArticle ? [latestArticle, ...articles] : articles);
     }
 
     const articles = await getArticlesByTagsNameDB(searchedTags);

@@ -58,15 +58,15 @@ export default async function DownloadsCategoryPage({ params }: Props) {
     <div className={styles.upprBlogPage}>
       <Header search location={'/downloads'} />
       <div className={`uppr-page-content ${styles.upprPageContent}`}>
-        <TopBlogImage />
+        <TopBlogImage caption={''} description={''} imgUrl={undefined} />
         <div className={`uppr-article-categories ${styles.upprArticleCategories}`}>
           <CategoriesList items={categories} selectedCategory={categoryName} />
         </div>
 
         <div className={`uppr-articles-content ${styles.upprArticlesContent}`}>
           <SelectedSpecificCategory
-            downloadsByCategory={downloads}
-            selectedCategory={categoryName}
+            articlesByCategory={downloads}
+            tags={[]}
           />
         </div>
       </div>
@@ -74,19 +74,6 @@ export default async function DownloadsCategoryPage({ params }: Props) {
   );
 }
 
-// Generate static params for all categories at build time
-export async function generateStaticParams() {
-  const categoriesData = await getDownloadsCategoriesDB();
-  const { categories } = categoriesData;
-
-  // Filter out 'All' category and return category names
-  return categories
-    .filter((category: any) => category.name !== 'All')
-    .map((category: any) => ({
-      categoryName: category.name,
-    }));
-}
-
-// Enable ISR with 1 week revalidation
-export const revalidate = 604800;
+// Force dynamic rendering to avoid database access during build
+export const dynamic = 'force-dynamic';
 

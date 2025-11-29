@@ -123,3 +123,6 @@ export default async function ArticlePage({ params }: Props) {
   );
 }
 
+// Force dynamic rendering to avoid database access during build
+export const dynamic = 'force-dynamic';
+
