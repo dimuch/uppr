@@ -12,7 +12,7 @@ import {
   getTagsDB,
 } from '../../services/blogData.js';
 import Footer from '../../components/common/footers/footer/Footer';
-import styles from '../../pages/blog/styles.module.scss';
+import styles from './styles.module.scss';
 
 export const metadata: Metadata = {
   title: 'UPPR | Блог',

@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Header from '../components/common/header/Header';
 import Footer from '../components/common/footers/footer/Footer';
 import { getArticles } from '../services/blogData';
-import styles from '../pages/styles.module.scss';
+import styles from './styles.module.scss';
 import { Typography } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import OthersArticles from '../components/blog/OthersArticles/OthersArticles';
