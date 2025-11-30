@@ -132,6 +132,7 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
               onChange={handleChange('title')}
               fullWidth
               required
+              autoFocus
               error={!!errors.title}
               helperText={errors.title}
               aria-required="true"
