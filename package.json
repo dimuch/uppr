@@ -1,6 +1,6 @@
 {
   "name": "uppr-nextjs",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -23,14 +23,11 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.5",
     "@mui/material": "^7.3.5",
-    "@napi-rs/canvas": "^0.1.58",
     "@phosphor-icons/react": "^2.1.7",
-    "clsx": "^2.1.1",
     "eslint-config-next": "^16.0.5",
     "mysql2": "^3.11.5",
     "next": "^16.0.5",
     "prettier": "^3.4.2",
-    "prop-types": "^15.8.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-parallax-mouse": "^2.1.0",
