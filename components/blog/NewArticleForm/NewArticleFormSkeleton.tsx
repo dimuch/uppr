@@ -87,13 +87,13 @@ const NewArticleFormSkeleton: React.FC = () => {
           >
             <Skeleton
               variant="rectangular"
-              width={{ xs: '100%', sm: 120 }}
               height={36}
+              sx={{ width: { xs: '100%', sm: 120 } }}
             />
             <Skeleton
               variant="rectangular"
-              width={{ xs: '100%', sm: 120 }}
               height={36}
+              sx={{ width: { xs: '100%', sm: 120 } }}
             />
           </Box>
         </Box>
