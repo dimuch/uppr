@@ -76,39 +76,38 @@ export async function getDownloadsByCategoryDB(
   }
 }
 
-export async function getDownloadDataByCaptionDB(downloadCaption) {
-  // Build the full download link from the caption
-  const downloadLink = `/downloads/details/${downloadCaption}`;
-  // Also try with trailing slash
-  const downloadLinkWithSlash = `${downloadLink}/`;
-
+export async function getDownloadDataByCaptionDB(rawDownloadCaption) {
+  const downloadCaption = decodeURIComponent(rawDownloadCaption).replaceAll('_', ' ');
   const selectClause = `
-    SELECT Downloads.*, Downloads.id as downloadId, Downloads.downloaded_counter as downloadedCounter,
-      Downloads.download_link as downloadLink,
-      Authors.*, DownloadsChargeTypes.*
-    FROM uppr_ssr.downloads AS Downloads
-    LEFT JOIN uppr_ssr.authors AS Authors
-    ON Authors.id=Downloads.authorId
-    LEFT JOIN uppr_ssr.downloads_charge_types AS DownloadsChargeTypes
-    ON DownloadsChargeTypes.id=Downloads.download_charge_type
+      SELECT Downloads.*,
+             Downloads.id                 as downloadId,
+             Downloads.downloaded_counter as downloadedCounter,
+             Downloads.download_link      as downloadLink,
+             Authors.*,
+             DownloadsChargeTypes.*
+      FROM uppr_ssr.downloads AS Downloads
+               LEFT JOIN uppr_ssr.authors AS Authors
+                         ON Authors.id = Downloads.authorId
+               LEFT JOIN uppr_ssr.downloads_charge_types AS DownloadsChargeTypes
+                         ON DownloadsChargeTypes.id = Downloads.download_charge_type
   `;
-  // Escape single quotes in the download link to prevent SQL injection
-  const escapedDownloadLink = downloadLink.replace(/'/g, "''");
-  const escapedDownloadLinkWithSlash = downloadLinkWithSlash.replace(/'/g, "''");
   // Try exact match first, then with trailing slash
-  const whereClause = `WHERE LOWER(TRIM(Downloads.download_link)) IN ('${escapedDownloadLink.toLowerCase()}', '${escapedDownloadLinkWithSlash.toLowerCase()}')`;
+  const whereClause = `WHERE LOWER(TRIM(Downloads.caption)) = LOWER(TRIM('${downloadCaption}'))`;
   const orderClause = ``;
 
   const getDownloadsByCategory = `${selectClause} ${whereClause} ${orderClause} ;`;
 
-  console.log(`[getDownloadDataByCaptionDB] Querying for download_link: ${downloadLink.toLowerCase()} or ${downloadLinkWithSlash.toLowerCase()}`);
+
+  console.log('getDownloadsByCategory', getDownloadsByCategory);
+
+  console.log(`[getDownloadDataByCaptionDB] Querying for download_link: ${downloadCaption.toLowerCase()}`);
 
   const mapper = dataDB => {
     const itemData = dataDB[0];
 
     // If no data found, return null
     if (!itemData) {
-      console.log(`[getDownloadDataByCaptionDB] No data found for download_link: ${downloadLink} or ${downloadLinkWithSlash}`);
+      console.log(`[getDownloadDataByCaptionDB] No data found for download_link: ${downloadCaption}`);
       return null;
     }
 

@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import * as DownloadDocuments from '../../../../components/downloads/documents';
 import Header from '../../../../components/common/header/Header';
-import { getDownloadDataByCaptionDB, getDownloadsByCategoryDB } from '../../../../services/downloadsData.js';
+import { getDownloadDataByCaptionDB } from '../../../../services/downloadsData.js';
 import Footer from '../../../../components/common/footers/footer/Footer';
 import { getArticles } from '../../../../services/blogData.js';
 
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { downloadCaption: rawDownloadCaption } = await params;
   // Decode URL-encoded download caption (e.g., "guide%20to" -> "guide to")
   const downloadCaption = decodeURIComponent(rawDownloadCaption);
-  
+
   let downloadData;
   try {
     downloadData = await getDownloadDataByCaptionDB(downloadCaption);
@@ -65,7 +65,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function DownloadDetailsPage({ params }: Props) {
   const { downloadCaption: rawDownloadCaption } = await params;
   // Decode URL-encoded download caption (e.g., "guide%20to" -> "guide to")
-  const downloadCaption = decodeURIComponent(rawDownloadCaption);
+  const downloadCaption = decodeURIComponent(rawDownloadCaption).replaceAll('_', ' ');
+
+  console.log('downloadCaption ====>', downloadCaption);
+
 
   let downloadData;
   try {
