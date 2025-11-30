@@ -71,9 +71,10 @@ export const articleFormSchema = z.object({
     }, 'Publishing date must be a valid date and cannot be in the future'),
   
   category: z
-    .string()
-    .min(1, 'Category is required')
-    .refine((val) => val !== '' && val !== '0', 'Please select a valid category'),
+    .union([z.string(), z.number()])
+    .transform((val) => String(val))
+    .refine((val) => val !== '' && val !== '0', 'Please select a valid category')
+    .pipe(z.string().min(1, 'Category is required')),
   
   tag: z
     .array(z.string())

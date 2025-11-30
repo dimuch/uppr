@@ -53,9 +53,13 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (field: string) => (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | { target: { value: string | string[] } }
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | { target: { value: string | string[] | number } }
   ) => {
-    const value = event.target.value;
+    let value = event.target.value;
+    // Convert category to string if it's a number
+    if (field === 'category' && typeof value === 'number') {
+      value = String(value);
+    }
     setFormData(prev => ({
       ...prev,
       [field]: value,
@@ -411,7 +415,10 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
               id="category-select"
               name="category"
               value={formData.category}
-              onChange={(e: SelectChangeEvent<string>) => handleChange('category')({ target: { value: e.target.value } })}
+              onChange={(e: SelectChangeEvent<string>) => {
+                const value = String(e.target.value); // Ensure it's always a string
+                handleChange('category')({ target: { value } });
+              }}
               displayEmpty
               aria-required="true"
               aria-describedby={errors.category ? 'category-error' : undefined}
@@ -420,7 +427,7 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
               aria-label="Select article category"
             >
               {categoryOptions.map((category) => (
-                <MenuItem key={category.id} value={category.id}>
+                <MenuItem key={category.id} value={String(category.id)}>
                   {category.name}
                 </MenuItem>
               ))}
