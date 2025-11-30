@@ -2,8 +2,8 @@ import { dbCallWrapper } from '../mysql/mySQLClient.js';
 
 export async function getDownloadsCategoriesDB() {
   const selectClause = `
-    SELECT * 
-    FROM uppr_ssr.downloads_charge_types AS DownloadChargeTypes
+      SELECT *
+      FROM uppr_ssr.downloads_charge_types AS DownloadChargeTypes
   `;
 
   const whereClause = '';
@@ -38,12 +38,12 @@ export async function getDownloadsByCategoryDB(
     category: 'all',
   },
 ) {
-  const { category } = params;
+  const {category} = params;
   const selectClause = `
-    SELECT * 
-    FROM uppr_ssr.downloads AS Downloads
-    LEFT JOIN uppr_ssr.downloads_charge_types AS DownloadsChargeTypes 
-    ON Downloads.download_charge_type=DownloadsChargeTypes.id
+      SELECT *
+      FROM uppr_ssr.downloads AS Downloads
+               LEFT JOIN uppr_ssr.downloads_charge_types AS DownloadsChargeTypes
+                         ON Downloads.download_charge_type = DownloadsChargeTypes.id
   `;
   const whereClause = category !== 'all' ? `WHERE DownloadsChargeTypes.name='${category}'` : '';
   const orderClause = `ORDER BY Downloads.download_order ASC;`;
@@ -97,11 +97,6 @@ export async function getDownloadDataByCaptionDB(rawDownloadCaption) {
 
   const getDownloadsByCategory = `${selectClause} ${whereClause} ${orderClause} ;`;
 
-
-  console.log('getDownloadsByCategory', getDownloadsByCategory);
-
-  console.log(`[getDownloadDataByCaptionDB] Querying for download_link: ${downloadCaption.toLowerCase()}`);
-
   const mapper = dataDB => {
     const itemData = dataDB[0];
 
@@ -110,13 +105,6 @@ export async function getDownloadDataByCaptionDB(rawDownloadCaption) {
       console.log(`[getDownloadDataByCaptionDB] No data found for download_link: ${downloadCaption}`);
       return null;
     }
-
-    console.log(`[getDownloadDataByCaptionDB] Found download:`, {
-      id: itemData.id,
-      caption: itemData.caption,
-      download_link: itemData.download_link,
-      download_component: itemData?.['download_component'],
-    });
 
     return {
       ...itemData,
@@ -139,9 +127,9 @@ export async function getDownloadDataByCaptionDB(rawDownloadCaption) {
 
 export async function addInfoDownloadsStat(downloadId, downloadedCounter) {
   const query = `
-    UPDATE uppr_ssr.downloads
-    SET downloads.downloaded_counter = ${downloadedCounter}
-    WHERE id = ${downloadId};
+      UPDATE uppr_ssr.downloads
+      SET downloads.downloaded_counter = ${downloadedCounter}
+      WHERE id = ${downloadId};
   `;
 
   return await dbCallWrapper(query);
