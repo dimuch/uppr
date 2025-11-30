@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Metadata } from 'next';
 import Header from '../../components/common/header/Header';
 import TopBlogImage from '../../components/blog/TopBlogImage/TopBlogImage';
@@ -12,6 +12,7 @@ import {
   getTagsDB,
 } from '../../services/blogData.js';
 import Footer from '../../components/common/footers/footer/Footer';
+import SuccessToast from '../../components/blog/SuccessToast/SuccessToast';
 import styles from './styles.module.scss';
 
 export const metadata: Metadata = {
@@ -77,6 +78,9 @@ export default async function BlogPage() {
       <div className={styles.footer}>
         <Footer top3Article={top3Article} />
       </div>
+      <Suspense fallback={null}>
+        <SuccessToast />
+      </Suspense>
     </div>
   );
 }

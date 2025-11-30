@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   TextField,
   Select,
@@ -11,6 +12,8 @@ import {
   Typography,
   FormHelperText,
   SelectChangeEvent,
+  Snackbar,
+  Alert,
 } from '@mui/material';
 import { validateArticleForm } from '../../../services/articleFormValidation';
 
@@ -32,6 +35,7 @@ interface NewArticleFormProps {
 }
 
 const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     title: '',
     shortDescription: '',
@@ -45,6 +49,8 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (field: string) => (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | { target: { value: string | string[] } }
@@ -83,8 +89,10 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
     }
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    
+    if (isSubmitting) return;
     
     // Check if file is actually selected
     const formDataToValidate = {
@@ -122,8 +130,41 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
     
     // Form is valid, proceed with submission
     if (validationResult.sanitizedData) {
-      console.log('Form submitted with sanitized data:', validationResult.sanitizedData);
-      // TODO: Submit form data to API
+      setIsSubmitting(true);
+      
+      try {
+        // Submit form data to API
+        const response = await fetch('/api/articles/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(validationResult.sanitizedData),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || 'Failed to submit article');
+        }
+        
+        // Logout user to reset auth state
+        try {
+          await fetch('/api/auth/logout', {
+            method: 'POST',
+          });
+        } catch (logoutError) {
+          console.error('Logout error:', logoutError);
+        }
+        
+        // Navigate to blog page with success parameter
+        router.push('/blog?success=article-submitted');
+        
+      } catch (error) {
+        console.error('Submission error:', error);
+        setErrors({ general: error instanceof Error ? error.message : 'Failed to submit article. Please try again.' });
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -606,12 +647,13 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
             <Button
               type="submit"
               variant="contained"
+              disabled={isSubmitting}
               sx={{
                 minWidth: { xs: '100%', sm: '120px' },
               }}
               aria-label="Submit new article"
             >
-              Submit
+              {isSubmitting ? 'Submitting...' : 'Submit'}
             </Button>
           </Box>
         </Box>
