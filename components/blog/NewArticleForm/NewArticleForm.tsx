@@ -12,6 +12,7 @@ import {
   FormHelperText,
   SelectChangeEvent,
 } from '@mui/material';
+import { validateArticleForm } from '../../../services/articleFormValidation';
 
 interface Category {
   id: number;
@@ -42,6 +43,7 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
     markdownContent: '',
   });
 
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleChange = (field: string) => (
@@ -65,17 +67,64 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
+      setSelectedFile(file);
       setFormData(prev => ({
         ...prev,
         mainImage: file.name,
       }));
+      // Clear error when file is selected
+      if (errors.mainImage) {
+        setErrors(prev => {
+          const newErrors = { ...prev };
+          delete newErrors.mainImage;
+          return newErrors;
+        });
+      }
     }
   };
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    // Form validation and submission logic will go here
-    console.log('Form submitted:', formData);
+    
+    // Check if file is actually selected
+    const formDataToValidate = {
+      ...formData,
+      mainImage: selectedFile ? selectedFile.name : '',
+    };
+    
+    // Validate form data
+    const validationResult = validateArticleForm(formDataToValidate);
+    
+    if (!validationResult.isValid) {
+      // Set errors to display validation messages
+      setErrors(validationResult.errors);
+      
+      // Scroll to first error field
+      const firstErrorField = Object.keys(validationResult.errors)[0];
+      if (firstErrorField) {
+        const errorElement = document.getElementById(
+          firstErrorField === 'tag' ? 'tag-select' :
+          firstErrorField === 'category' ? 'category-select' :
+          firstErrorField === 'mainImage' ? 'main-image-input' :
+          firstErrorField === 'shortDescription' ? 'short-description' :
+          firstErrorField === 'markdownContent' ? 'markdown-content' :
+          firstErrorField === 'publishingDate' ? 'publishing-date' :
+          firstErrorField === 'author' ? 'article-author' :
+          'article-title'
+        );
+        if (errorElement) {
+          errorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          errorElement.focus();
+        }
+      }
+      return;
+    }
+    
+    // Form is valid, proceed with submission
+    if (validationResult.sanitizedData) {
+      console.log('Form submitted with sanitized data:', validationResult.sanitizedData);
+      // TODO: Submit form data to API
+    }
   };
 
   const handleCancel = () => {
@@ -90,6 +139,7 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
       mainImage: '',
       markdownContent: '',
     });
+    setSelectedFile(null);
     setErrors({});
   };
 
@@ -122,6 +172,7 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                 mb: 1,
                 fontWeight: 500,
                 fontSize: '0.875rem',
+                color: errors.title ? 'error.main' : 'text.primary',
               }}
             >
               Title <span aria-label="required">*</span>
@@ -146,11 +197,6 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                 },
               }}
             />
-            {errors.title && (
-              <FormHelperText id="title-error" role="alert" aria-live="polite">
-                {errors.title}
-              </FormHelperText>
-            )}
           </FormControl>
         </Box>
 
@@ -166,6 +212,7 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                 mb: 1,
                 fontWeight: 500,
                 fontSize: '0.875rem',
+                color: errors.shortDescription ? 'error.main' : 'text.primary',
               }}
             >
               Short Description <span aria-label="required">*</span>
@@ -191,11 +238,6 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                 },
               }}
             />
-            {errors.shortDescription && (
-              <FormHelperText id="short-description-error" role="alert" aria-live="polite">
-                {errors.shortDescription}
-              </FormHelperText>
-            )}
           </FormControl>
         </Box>
 
@@ -218,6 +260,7 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                 mb: 1,
                 fontWeight: 500,
                 fontSize: '0.875rem',
+                color: errors.author ? 'error.main' : 'text.primary',
               }}
             >
               Author <span aria-label="required">*</span>
@@ -241,11 +284,6 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                 },
               }}
             />
-            {errors.author && (
-              <FormHelperText id="author-error" role="alert" aria-live="polite">
-                {errors.author}
-              </FormHelperText>
-            )}
           </FormControl>
         </Box>
 
@@ -260,9 +298,10 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                 mb: 1,
                 fontWeight: 500,
                 fontSize: '0.875rem',
+                color: errors.publishingDate ? 'error.main' : 'text.primary',
               }}
             >
-              Publishing Date <span aria-label="required">*</span>
+              Publishing Date (dd/mm/yyyy) <span aria-label="required">*</span>
             </Typography>
             <TextField
               id="publishing-date"
@@ -281,14 +320,24 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
               slotProps={{
                 htmlInput: {
                   'aria-label': 'Select publishing date',
+                  placeholder: '',
+                },
+              }}
+              sx={{
+                '& input[type="date"]::-webkit-calendar-picker-indicator': {
+                  cursor: 'pointer',
+                },
+                '& input[type="date"]::before': {
+                  content: '""',
+                },
+                '& input[type="date"]:invalid::-webkit-datetime-edit': {
+                  color: 'transparent',
+                },
+                '& input[type="date"]:focus::-webkit-datetime-edit': {
+                  color: 'inherit',
                 },
               }}
             />
-            {errors.publishingDate && (
-              <FormHelperText id="publishing-date-error" role="alert" aria-live="polite">
-                {errors.publishingDate}
-              </FormHelperText>
-            )}
           </FormControl>
         </Box>
         </Box>
@@ -312,6 +361,7 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                 mb: 1,
                 fontWeight: 500,
                 fontSize: '0.875rem',
+                color: errors.category ? 'error.main' : 'text.primary',
               }}
             >
               Category <span aria-label="required">*</span>
@@ -328,9 +378,6 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
               aria-labelledby="category-label"
               aria-label="Select article category"
             >
-              <MenuItem value="" disabled>
-                <em>Select a category</em>
-              </MenuItem>
               {categoryOptions.map((category) => (
                 <MenuItem key={category.id} value={category.id}>
                   {category.name}
@@ -356,6 +403,7 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                 mb: 1,
                 fontWeight: 500,
                 fontSize: '0.875rem',
+                color: errors.tag ? 'error.main' : 'text.primary',
               }}
             >
               Tags <span aria-label="required">*</span>
@@ -382,7 +430,7 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
               }}
               renderValue={(selected: string[]) => {
                 if (selected.length === 0) {
-                  return <em>Select tags</em>;
+                  return '';
                 }
                 return selected
                   .map((tagId) => tags.find((tag) => tag.id.toString() === tagId)?.name)
@@ -422,6 +470,7 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                 mb: 1,
                 fontWeight: 500,
                 fontSize: '0.875rem',
+                color: errors.mainImage ? 'error.main' : 'text.primary',
               }}
             >
               Main Article Image <span aria-label="required">*</span>
@@ -456,7 +505,6 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                 />
                 <TextField
                   value={formData.mainImage || ''}
-                  placeholder="No file chosen"
                   fullWidth
                   InputProps={{
                     readOnly: true,
@@ -498,6 +546,7 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                 mb: 1,
                 fontWeight: 500,
                 fontSize: '0.875rem',
+                color: errors.markdownContent ? 'error.main' : 'text.primary',
               }}
             >
               Article Content (Markdown) <span aria-label="required">*</span>
@@ -529,11 +578,6 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                 },
               }}
             />
-            {errors.markdownContent && (
-              <FormHelperText id="markdown-content-error" role="alert" aria-live="polite">
-                {errors.markdownContent}
-              </FormHelperText>
-            )}
           </FormControl>
         </Box>
 
