@@ -10,6 +10,7 @@ import {
   Box,
   Typography,
   FormHelperText,
+  SelectChangeEvent,
 } from '@mui/material';
 
 interface Category {
@@ -139,8 +140,10 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
               aria-describedby={errors.title ? 'title-error' : undefined}
               aria-invalid={!!errors.title}
               aria-labelledby="article-title-label"
-              inputProps={{
-                'aria-label': 'Article title',
+              slotProps={{
+                htmlInput: {
+                  'aria-label': 'Article title',
+                },
               }}
             />
             {errors.title && (
@@ -182,8 +185,10 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
               aria-describedby={errors.shortDescription ? 'short-description-error' : undefined}
               aria-invalid={!!errors.shortDescription}
               aria-labelledby="short-description-label"
-              inputProps={{
-                'aria-label': 'Short description of the article',
+              slotProps={{
+                htmlInput: {
+                  'aria-label': 'Short description of the article',
+                },
               }}
             />
             {errors.shortDescription && (
@@ -230,8 +235,10 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
               aria-describedby={errors.author ? 'author-error' : undefined}
               aria-invalid={!!errors.author}
               aria-labelledby="article-author-label"
-              inputProps={{
-                'aria-label': 'Article author name',
+              slotProps={{
+                htmlInput: {
+                  'aria-label': 'Article author name',
+                },
               }}
             />
             {errors.author && (
@@ -267,15 +274,14 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
               required
               error={!!errors.publishingDate}
               helperText={errors.publishingDate}
-              InputLabelProps={{
-                shrink: false,
-              }}
               aria-required="true"
               aria-describedby={errors.publishingDate ? 'publishing-date-error' : undefined}
               aria-invalid={!!errors.publishingDate}
               aria-labelledby="publishing-date-label"
-              inputProps={{
-                'aria-label': 'Select publishing date',
+              slotProps={{
+                htmlInput: {
+                  'aria-label': 'Select publishing date',
+                },
               }}
             />
             {errors.publishingDate && (
@@ -314,7 +320,7 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
               id="category-select"
               name="category"
               value={formData.category}
-              onChange={(e) => handleChange('category')({ target: { value: e.target.value } })}
+              onChange={(e: SelectChangeEvent<string>) => handleChange('category')({ target: { value: e.target.value } })}
               displayEmpty
               aria-required="true"
               aria-describedby={errors.category ? 'category-error' : undefined}
@@ -354,20 +360,31 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
             >
               Tags <span aria-label="required">*</span>
             </Typography>
-            <Select
+            <Select<string[]>
               id="tag-select"
               name="tag"
               multiple
               value={formData.tag}
-              onChange={(e) => {
+              onChange={(e: SelectChangeEvent<string[]>) => {
                 const value = typeof e.target.value === 'string' ? [e.target.value] : e.target.value;
-                handleChange('tag')({ target: { value } });
+                setFormData(prev => ({
+                  ...prev,
+                  tag: value,
+                }));
+                // Clear error when user starts selecting
+                if (errors.tag) {
+                  setErrors(prev => {
+                    const newErrors = { ...prev };
+                    delete newErrors.tag;
+                    return newErrors;
+                  });
+                }
               }}
-              renderValue={(selected) => {
-                if ((selected as string[]).length === 0) {
+              renderValue={(selected: string[]) => {
+                if (selected.length === 0) {
                   return <em>Select tags</em>;
                 }
-                return (selected as string[])
+                return selected
                   .map((tagId) => tags.find((tag) => tag.id.toString() === tagId)?.name)
                   .filter(Boolean)
                   .join(', ');
@@ -451,8 +468,10 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                       cursor: 'pointer',
                     },
                   }}
-                  inputProps={{
-                    'aria-label': 'Selected image file name',
+                  slotProps={{
+                    htmlInput: {
+                      'aria-label': 'Selected image file name',
+                    },
                   }}
                 />
               </Box>
@@ -498,8 +517,10 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
               aria-describedby={errors.markdownContent ? 'markdown-content-error' : 'markdown-content-helper'}
               aria-invalid={!!errors.markdownContent}
               aria-labelledby="markdown-content-label"
-              inputProps={{
-                'aria-label': 'Article content in Markdown format',
+              slotProps={{
+                htmlInput: {
+                  'aria-label': 'Article content in Markdown format',
+                },
               }}
               sx={{
                 '& .MuiInputBase-input': {
@@ -531,7 +552,6 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
               type="button"
               variant="outlined"
               onClick={handleCancel}
-              fullWidth={false}
               sx={{
                 minWidth: { xs: '100%', sm: '120px' },
               }}
@@ -542,7 +562,6 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
             <Button
               type="submit"
               variant="contained"
-              fullWidth={false}
               sx={{
                 minWidth: { xs: '100%', sm: '120px' },
               }}
