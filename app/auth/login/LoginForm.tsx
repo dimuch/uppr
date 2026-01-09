@@ -8,10 +8,8 @@ import {
   Button,
   Typography,
   Container,
-  Alert,
   CircularProgress,
   FormControl,
-  FormHelperText,
 } from '@mui/material';
 
 export default function LoginForm() {
@@ -159,9 +157,6 @@ export default function LoginForm() {
               },
             }}
           />
-          <FormHelperText sx={{ color: 'text.secondary', mt: 1 }}>
-            Enter the 6-digit code from your Google Authenticator app
-          </FormHelperText>
         </FormControl>
 
         <Button
@@ -173,12 +168,6 @@ export default function LoginForm() {
         >
           {loading ? <CircularProgress size={24} /> : 'Login'}
         </Button>
-
-        {error && (
-          <Alert severity="error" sx={{ mt: 2 }}>
-            {error}
-          </Alert>
-        )}
       </Box>
     </Container>
   );
