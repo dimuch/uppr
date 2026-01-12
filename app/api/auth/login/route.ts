@@ -15,15 +15,23 @@ export async function POST(request: Request) {
 
     if (!username || typeof username !== 'string' || username.trim().length === 0) {
       return NextResponse.json(
-        { error: 'Username is required' },
-        { status: 400 }
+        {
+ error: 'Username is required' 
+},
+        {
+ status: 400 
+}
       );
     }
 
     if (!token || typeof token !== 'string' || token.trim().length === 0) {
       return NextResponse.json(
-        { error: 'TOTP token is required' },
-        { status: 400 }
+        {
+ error: 'TOTP token is required' 
+},
+        {
+ status: 400 
+}
       );
     }
 
@@ -34,8 +42,12 @@ export async function POST(request: Request) {
     const user = await getUserByUsername(normalizedUsername);
     if (!user || !user.totp_secret) {
       return NextResponse.json(
-        { error: 'Invalid credentials' },
-        { status: 401 }
+        {
+ error: 'Invalid credentials' 
+},
+        {
+ status: 401 
+}
       );
     }
 
@@ -49,8 +61,12 @@ export async function POST(request: Request) {
 
     if (!verified) {
       return NextResponse.json(
-        { error: 'Invalid TOTP token' },
-        { status: 401 }
+        {
+ error: 'Invalid TOTP token' 
+},
+        {
+ status: 401 
+}
       );
     }
 
@@ -71,8 +87,12 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('Login error:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
+      {
+ error: 'Internal server error' 
+},
+      {
+ status: 500 
+}
     );
   }
 }

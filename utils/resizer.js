@@ -26,13 +26,13 @@ const resizeImage = async (file, imageSize, sourceDirectory) => {
     const source = `${sourceDirectory}/${file}`;
     const destination = `${destinationFolder}/${file}`;
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       try {
         fs.copyFileSync(source, destination);
         console.log(`${file} ==> ok`);
         resolve(true);
       } catch (err) {
-        console.log(`${file} ==> error`);
+        console.log(`${file} ==> error`, err);
         resolve(false);
       }
     });

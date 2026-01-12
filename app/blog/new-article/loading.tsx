@@ -22,7 +22,9 @@ export default function Loading() {
       </div>
       <div className={styles.footer}>
         {/* Footer skeleton or empty footer during loading */}
-        <div style={{ minHeight: '200px' }} />
+        <div style={{
+ minHeight: '200px' 
+}} />
       </div>
     </div>
   );

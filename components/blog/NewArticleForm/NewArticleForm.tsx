@@ -48,7 +48,8 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
   });
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<Record<string, string>>({
+});
   const [showSuccessToast, setShowSuccessToast] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -67,7 +68,9 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
     // Clear error when user starts typing
     if (errors[field]) {
       setErrors(prev => {
-        const newErrors = { ...prev };
+        const newErrors = {
+ ...prev 
+};
         delete newErrors[field];
         return newErrors;
       });
@@ -85,7 +88,9 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
       // Clear error when file is selected
       if (errors.mainImage) {
         setErrors(prev => {
-          const newErrors = { ...prev };
+          const newErrors = {
+ ...prev 
+};
           delete newErrors.mainImage;
           return newErrors;
         });
@@ -125,7 +130,9 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
           'article-title'
         );
         if (errorElement) {
-          errorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          errorElement.scrollIntoView({
+ behavior: 'smooth', block: 'center' 
+});
           errorElement.focus();
         }
       }
@@ -166,7 +173,9 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
         
       } catch (error) {
         console.error('Submission error:', error);
-        setErrors({ general: error instanceof Error ? error.message : 'Failed to submit article. Please try again.' });
+        setErrors({
+ general: error instanceof Error ? error.message : 'Failed to submit article. Please try again.' 
+});
         setIsSubmitting(false);
       }
     }
@@ -185,7 +194,8 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
       markdownContent: '',
     });
     setSelectedFile(null);
-    setErrors({});
+    setErrors({
+});
   };
 
   // Filter out "All" category (id: 0) from dropdown options
@@ -200,11 +210,15 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
         width: '100%',
         maxWidth: '1200px',
         margin: '0 auto',
-        padding: { xs: '2rem 1rem', sm: '2rem', md: '3rem' },
+        padding: {
+ xs: '2rem 1rem', sm: '2rem', md: '3rem' 
+},
       }}
       aria-label="New article form"
     >
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+      <Box sx={{
+ display: 'flex', flexDirection: 'column', gap: 3 
+}}>
         {/* Title Field - Full Width */}
         <Box>
           <FormControl fullWidth>
@@ -290,11 +304,15 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
         <Box
           sx={{
             display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
+            flexDirection: {
+ xs: 'column', md: 'row' 
+},
             gap: 3,
           }}
         >
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{
+ flex: 1 
+}}>
           <FormControl fullWidth>
             <Typography
               component="label"
@@ -332,7 +350,9 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
           </FormControl>
         </Box>
 
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{
+ flex: 1 
+}}>
           <FormControl fullWidth>
             <Typography
               component="label"
@@ -391,11 +411,15 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
         <Box
           sx={{
             display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
+            flexDirection: {
+ xs: 'column', md: 'row' 
+},
             gap: 3,
           }}
         >
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{
+ flex: 1 
+}}>
           <FormControl fullWidth required error={!!errors.category}>
             <Typography
               component="label"
@@ -417,7 +441,11 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
               value={formData.category}
               onChange={(e: SelectChangeEvent<string>) => {
                 const value = String(e.target.value); // Ensure it's always a string
-                handleChange('category')({ target: { value } });
+                handleChange('category')({
+ target: {
+ value 
+} 
+});
               }}
               displayEmpty
               aria-required="true"
@@ -440,7 +468,9 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
           </FormControl>
         </Box>
 
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{
+ flex: 1 
+}}>
           <FormControl fullWidth required error={!!errors.tag}>
             <Typography
               component="label"
@@ -470,7 +500,9 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                 // Clear error when user starts selecting
                 if (errors.tag) {
                   setErrors(prev => {
-                    const newErrors = { ...prev };
+                    const newErrors = {
+ ...prev 
+};
                     delete newErrors.tag;
                     return newErrors;
                   });
@@ -545,7 +577,9 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                   type="file"
                   accept="image/*"
                   onChange={handleFileChange}
-                  style={{ display: 'none' }}
+                  style={{
+ display: 'none' 
+}}
                   aria-required="true"
                   aria-describedby={errors.mainImage ? 'main-image-error' : 'main-image-helper'}
                   aria-invalid={!!errors.mainImage}
@@ -634,10 +668,14 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
           <Box
             sx={{
               display: 'flex',
-              justifyContent: { xs: 'stretch', sm: 'flex-end' },
+              justifyContent: {
+ xs: 'stretch', sm: 'flex-end' 
+},
               gap: 2,
               mt: 2,
-              flexDirection: { xs: 'column', sm: 'row' },
+              flexDirection: {
+ xs: 'column', sm: 'row' 
+},
             }}
           >
             <Button
@@ -645,7 +683,9 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
               variant="outlined"
               onClick={handleCancel}
               sx={{
-                minWidth: { xs: '100%', sm: '120px' },
+                minWidth: {
+ xs: '100%', sm: '120px' 
+},
               }}
               aria-label="Cancel and reset form"
             >
@@ -656,7 +696,9 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
               variant="contained"
               disabled={isSubmitting}
               sx={{
-                minWidth: { xs: '100%', sm: '120px' },
+                minWidth: {
+ xs: '100%', sm: '120px' 
+},
               }}
               aria-label="Submit new article"
             >

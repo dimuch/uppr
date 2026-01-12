@@ -49,7 +49,9 @@ export default function LoginForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, token }),
+        body: JSON.stringify({
+ username, token 
+}),
       });
 
       const data = await response.json();
@@ -69,7 +71,9 @@ export default function LoginForm() {
   };
 
   return (
-    <Container maxWidth="sm" sx={{ py: 8, minHeight: '60vh' }}>
+    <Container maxWidth="sm" sx={{
+ py: 8, minHeight: '60vh' 
+}}>
       <Box
         component="form"
         onSubmit={handleSubmit}
@@ -164,7 +168,9 @@ export default function LoginForm() {
           variant="contained"
           fullWidth
           disabled={loading || !username || token.length !== 6}
-          sx={{ mt: 2 }}
+          sx={{
+ mt: 2 
+}}
         >
           {loading ? <CircularProgress size={24} /> : 'Login'}
         </Button>

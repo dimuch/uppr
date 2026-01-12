@@ -10,7 +10,9 @@ function updateArticleIndex(componentName, fileName) {
 
         if (!fs.existsSync(indexPath)) {
             console.warn('index.js not found, skipping export update');
-            return { success: false, error: 'index.js not found' };
+            return {
+ success: false, error: 'index.js not found' 
+};
         }
 
         const indexContent = fs.readFileSync(indexPath, 'utf8');
@@ -19,7 +21,9 @@ function updateArticleIndex(componentName, fileName) {
         const exportPattern = new RegExp(`export\\s+\\{\\s*default\\s+as\\s+${componentName}\\s*\\}\\s+from`, 'i');
         if (exportPattern.test(indexContent)) {
             console.log(`Export for ${componentName} already exists`);
-            return { success: true, skipped: true };
+            return {
+ success: true, skipped: true 
+};
         }
 
         // Generate export statement

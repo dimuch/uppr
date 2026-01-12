@@ -19,7 +19,8 @@ const SuccessToast: React.FC = () => {
       // Remove the query parameter from URL without reload
       const url = new URL(window.location.href);
       url.searchParams.delete('success');
-      window.history.replaceState({}, '', url.toString());
+      window.history.replaceState({
+}, '', url.toString());
       
       // Auto-hide after 3.5 seconds
       const timer = setTimeout(() => {
@@ -39,7 +40,9 @@ const SuccessToast: React.FC = () => {
       open={open}
       autoHideDuration={3500}
       onClose={handleClose}
-      anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      anchorOrigin={{
+ vertical: 'bottom', horizontal: 'right' 
+}}
       sx={{
         '& .MuiSnackbar-root': {
           bottom: '24px',

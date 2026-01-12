@@ -1,7 +1,7 @@
 const mysql = require('mysql2');
 const fs = require('fs');
 
-const {Client} = require('ssh2');
+const { Client } = require('ssh2');
 
 const sshClient = new Client();
 

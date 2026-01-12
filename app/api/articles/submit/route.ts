@@ -20,14 +20,20 @@ export async function POST(request: Request) {
           error: 'Validation failed',
           errors: validationResult.errors,
         },
-        { status: 400 }
+        {
+ status: 400 
+}
       );
     }
 
     if (!validationResult.sanitizedData) {
       return NextResponse.json(
-        { error: 'Invalid form data' },
-        { status: 400 }
+        {
+ error: 'Invalid form data' 
+},
+        {
+ status: 400 
+}
       );
     }
 
@@ -50,7 +56,9 @@ export async function POST(request: Request) {
           error: 'Failed to generate article component',
           details: componentResult.error,
         },
-        { status: 500 }
+        {
+ status: 500 
+}
       );
     }
 
@@ -139,8 +147,12 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('Article submission error:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
+      {
+ error: 'Internal server error' 
+},
+      {
+ status: 500 
+}
     );
   }
 }

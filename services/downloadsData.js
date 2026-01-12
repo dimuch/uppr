@@ -38,7 +38,7 @@ export async function getDownloadsByCategoryDB(
     category: 'all',
   },
 ) {
-  const {category} = params;
+  const { category } = params;
   const selectClause = `
       SELECT *
       FROM uppr_ssr.downloads AS Downloads

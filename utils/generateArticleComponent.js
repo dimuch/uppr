@@ -41,7 +41,7 @@ function titleToFileName(title) {
  * - Links ([text](url) -> <a> with articleLink)
  * - Colored spans (convert back to classNames)
  */
-function markdownToJSX(markdown, articleColor = 'FF603B') {
+function markdownToJSX(markdown) {
     let jsx = '';
     let sectionCount = 0;
     const sections = ['articleOddSection', 'articleEvenSection'];
@@ -244,7 +244,9 @@ function saveArticleComponent(title, markdownContent, articleColor = 'FF603B') {
 
         // Ensure directory exists
         if (!fs.existsSync(componentsDir)) {
-            fs.mkdirSync(componentsDir, { recursive: true });
+            fs.mkdirSync(componentsDir, {
+ recursive: true 
+});
         }
 
         // Write file

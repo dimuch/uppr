@@ -80,13 +80,13 @@ const Search = ({}) => {
 }}
     >
       <div
-        className={`${styles.searchInputWrapper} ${!!searchResult.length ? styles.searchInputWrapperWithResult : ''}`}
+        className={`${styles.searchInputWrapper} ${searchResult.length ? styles.searchInputWrapperWithResult : ''}`}
       >
         <input name="search" placeholder="Search..." onChange={makeSearch} value={searchText} />
         <div className={styles.searchIcon}>{isLoading ? <LoaderIcon /> : <SearchIcon />}</div>
       </div>
       {!!searchResult.length && (
-        <div className={`${styles.searchResult} ${!!searchResult.length ? styles.searchResultWithResult : ''}`}>
+        <div className={`${styles.searchResult} ${searchResult.length ? styles.searchResultWithResult : ''}`}>
           {searchResult.map(article => {
             return (
               <Grid2 container className={styles.searchResultItem} key={article.title} alignItems={'center'}>

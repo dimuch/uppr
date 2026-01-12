@@ -14,7 +14,9 @@ const sanitizeString = (value: string): string => {
   
   // Remove HTML tags and XSS attempts using DOMPurify if available
   if (typeof window !== 'undefined' && DOMPurify) {
-    sanitized = DOMPurify.sanitize(value, { ALLOWED_TAGS: [] });
+    sanitized = DOMPurify.sanitize(value, {
+ ALLOWED_TAGS: [] 
+});
   } else {
     // Fallback: basic HTML tag removal
     sanitized = value.replace(/<[^>]*>/g, '');
@@ -123,12 +125,14 @@ export const validateArticleForm = (formData: {
     
     return {
       isValid: true,
-      errors: {},
+      errors: {
+},
       sanitizedData,
     };
   } catch (error) {
     if (error instanceof z.ZodError) {
-      const errors: Record<string, string> = {};
+      const errors: Record<string, string> = {
+};
       
       // Map Zod errors to field names
       error.issues.forEach((issue) => {

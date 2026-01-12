@@ -38,12 +38,18 @@ export async function POST(request: Request) {
         const providedToken = queryToken || headerToken || bodyToken;
         if (!providedToken || providedToken !== setupSecret) {
           return NextResponse.json(
-            { error: 'Invalid admin token' },
-            { status: 403 }
+            {
+ error: 'Invalid admin token' 
+},
+            {
+ status: 403 
+}
           );
         }
       }
-      return NextResponse.json({ success: true, message: 'Token verified' });
+      return NextResponse.json({
+ success: true, message: 'Token verified' 
+});
     }
     
     // If AUTH_SETUP_SECRET is set, require admin token
@@ -52,16 +58,24 @@ export async function POST(request: Request) {
       
       if (!providedToken || providedToken !== setupSecret) {
         return NextResponse.json(
-          { error: 'Unauthorized: Admin token required. Access to setup is restricted.' },
-          { status: 403 }
+          {
+ error: 'Unauthorized: Admin token required. Access to setup is restricted.' 
+},
+          {
+ status: 403 
+}
         );
       }
     }
 
     if (!username || typeof username !== 'string' || username.trim().length === 0) {
       return NextResponse.json(
-        { error: 'Username is required' },
-        { status: 400 }
+        {
+ error: 'Username is required' 
+},
+        {
+ status: 400 
+}
       );
     }
 
@@ -75,8 +89,12 @@ export async function POST(request: Request) {
 
     if (!secret.base32 || !secret.otpauth_url) {
       return NextResponse.json(
-        { error: 'Failed to generate TOTP secret' },
-        { status: 500 }
+        {
+ error: 'Failed to generate TOTP secret' 
+},
+        {
+ status: 500 
+}
       );
     }
 
@@ -87,8 +105,12 @@ export async function POST(request: Request) {
     } catch (qrError) {
       console.error('QR code generation error:', qrError);
       return NextResponse.json(
-        { error: 'Failed to generate QR code' },
-        { status: 500 }
+        {
+ error: 'Failed to generate QR code' 
+},
+        {
+ status: 500 
+}
       );
     }
 
@@ -100,8 +122,12 @@ export async function POST(request: Request) {
       const updated = await updateUserTotpSecret(existingUser.id, secret.base32);
       if (!updated) {
         return NextResponse.json(
-          { error: 'Failed to update user TOTP secret' },
-          { status: 500 }
+          {
+ error: 'Failed to update user TOTP secret' 
+},
+          {
+ status: 500 
+}
         );
       }
     } else {
@@ -109,8 +135,12 @@ export async function POST(request: Request) {
       const newUser = await createUser(normalizedUsername, secret.base32);
       if (!newUser) {
         return NextResponse.json(
-          { error: 'Failed to create user' },
-          { status: 500 }
+          {
+ error: 'Failed to create user' 
+},
+          {
+ status: 500 
+}
         );
       }
     }
@@ -124,8 +154,12 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('Setup error:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
+      {
+ error: 'Internal server error' 
+},
+      {
+ status: 500 
+}
     );
   }
 }

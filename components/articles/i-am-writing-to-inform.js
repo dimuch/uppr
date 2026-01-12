@@ -6,7 +6,7 @@ import ArticleFooter from '../blog/ArticleFooter/ArticleFooter';
 
 import styles from './commonArticleStyles.module.scss';
 
-// eslint-disable-next-line max-len
+ 
 const MEDIUM_LINK =
   'https://medium.com/@ivanka.tabachuk/case-study-i-am-writing-to-inform-or-old-school-classics-f390700eb0a6';
 

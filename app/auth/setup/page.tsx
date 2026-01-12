@@ -63,7 +63,9 @@ export default function SetupPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username: '__verify_token__', adminToken: token }),
+        body: JSON.stringify({
+ username: '__verify_token__', adminToken: token 
+}),
       });
 
       // If we get a 403, token is invalid
@@ -109,7 +111,9 @@ export default function SetupPage() {
           'Content-Type': 'application/json',
           'x-admin-token': adminToken,
         },
-        body: JSON.stringify({ username, adminToken }),
+        body: JSON.stringify({
+ username, adminToken 
+}),
       });
 
       const data = await response.json();
@@ -141,7 +145,9 @@ export default function SetupPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, token: verificationToken }),
+        body: JSON.stringify({
+ username, token: verificationToken 
+}),
       });
 
       const data = await response.json();
@@ -168,12 +174,18 @@ export default function SetupPage() {
   return (
     <div>
       <Header search location="/auth/setup" />
-      <Container maxWidth="md" sx={{ py: 8, minHeight: '60vh' }}>
-        <Typography variant="h4" component="h1" gutterBottom sx={{ mb: 4 }}>
+      <Container maxWidth="md" sx={{
+ py: 8, minHeight: '60vh' 
+}}>
+        <Typography variant="h4" component="h1" gutterBottom sx={{
+ mb: 4 
+}}>
           Setup Google Authenticator
         </Typography>
 
-        <Stepper activeStep={activeStep} sx={{ mb: 4 }}>
+        <Stepper activeStep={activeStep} sx={{
+ mb: 4 
+}}>
           {steps.map((label) => (
             <Step key={label}>
               <StepLabel>{label}</StepLabel>
@@ -182,14 +194,18 @@ export default function SetupPage() {
         </Stepper>
 
         {error && (
-          <Alert severity="error" onClose={() => setError('')} sx={{ mb: 3 }}>
+          <Alert severity="error" onClose={() => setError('')} sx={{
+ mb: 3 
+}}>
             {error}
           </Alert>
         )}
 
         {/* Step 0: Enter Admin Token */}
         {activeStep === 0 && !tokenVerified && (
-          <Paper sx={{ p: 4 }}>
+          <Paper sx={{
+ p: 4 
+}}>
             <Box
               component="form"
               onSubmit={handleTokenSubmit}
@@ -238,7 +254,9 @@ export default function SetupPage() {
 
         {/* Step 1: Enter Username */}
         {activeStep === 1 && tokenVerified && (
-          <Paper sx={{ p: 4 }}>
+          <Paper sx={{
+ p: 4 
+}}>
             <Box
               component="form"
               onSubmit={handleUsernameSubmit}
@@ -282,7 +300,9 @@ export default function SetupPage() {
 
         {/* Step 2: Scan QR Code */}
         {activeStep === 2 && (
-          <Paper sx={{ p: 4 }}>
+          <Paper sx={{
+ p: 4 
+}}>
             <Box
               sx={{
                 display: 'flex',
@@ -309,7 +329,9 @@ export default function SetupPage() {
                 />
               )}
 
-              <Box sx={{ width: '100%', mt: 2 }}>
+              <Box sx={{
+ width: '100%', mt: 2 
+}}>
                 <Typography variant="body2" color="text.secondary" gutterBottom>
                   Or enter this key manually:
                 </Typography>
@@ -327,11 +349,15 @@ export default function SetupPage() {
                 </Paper>
               </Box>
 
-              <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>
+              <Typography variant="body2" color="text.secondary" sx={{
+ mt: 2 
+}}>
                 After scanning, click Next and enter the 6-digit code from the app.
               </Typography>
 
-              <Box sx={{ display: 'flex', gap: 2, width: '100%', mt: 2 }}>
+              <Box sx={{
+ display: 'flex', gap: 2, width: '100%', mt: 2 
+}}>
                 <Button
                   variant="outlined"
                   onClick={() => {
@@ -357,7 +383,9 @@ export default function SetupPage() {
 
         {/* Step 3: Verify Setup */}
         {activeStep === 3 && !setupComplete && (
-          <Paper sx={{ p: 4 }}>
+          <Paper sx={{
+ p: 4 
+}}>
             <Box
               component="form"
               onSubmit={handleVerify}
@@ -396,7 +424,9 @@ export default function SetupPage() {
                 }}
               />
 
-              <Box sx={{ display: 'flex', gap: 2 }}>
+              <Box sx={{
+ display: 'flex', gap: 2 
+}}>
                 <Button
                   variant="outlined"
                   onClick={() => {
@@ -423,7 +453,9 @@ export default function SetupPage() {
 
         {/* Setup Complete */}
         {setupComplete && (
-          <Paper sx={{ p: 4 }}>
+          <Paper sx={{
+ p: 4 
+}}>
             <Box
               sx={{
                 display: 'flex',
@@ -433,7 +465,9 @@ export default function SetupPage() {
                 textAlign: 'center',
               }}
             >
-              <Alert severity="success" sx={{ width: '100%' }}>
+              <Alert severity="success" sx={{
+ width: '100%' 
+}}>
                 Setup completed successfully!
               </Alert>
 
@@ -445,7 +479,9 @@ export default function SetupPage() {
               <Button
                 variant="contained"
                 onClick={handleGoToLogin}
-                sx={{ mt: 2 }}
+                sx={{
+ mt: 2 
+}}
               >
                 Go to Login
               </Button>

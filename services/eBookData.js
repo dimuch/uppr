@@ -79,6 +79,7 @@ async function initNextOrderData(purchasedItemId) {
           resultPageId,
         });
       } catch (e) {
+        console.log('error', e);
         reject({
           data: [],
         });
