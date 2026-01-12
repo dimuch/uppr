@@ -46,3 +46,6 @@ yarn.lock
 
 # AI thinking and analysis
 /.ai-thinking
+
+
+./package-lock.json
