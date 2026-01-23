@@ -1,16 +1,10 @@
 'use client';
 
-import React, { useState, useEffect, startTransition } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import React from 'react';
 import CaseStudyItem from '../../components/caseStudy/CaseStudyItem/CaseStudyItem';
-import ModalComponent from '../../components/caseStudy/CaseStudyItem/components/ModalComponent/ModalComponent';
-import PageNotFound from '../../components/common/404/404';
-import { titleToSlug, slugToTitle } from '../../utils/caseStudySlug.js';
 import styles from './styles.module.scss';
 
-const PAGE_NOT_FOUND = 'PageNotFound';
-
-interface CaseStudyItem {
+interface CaseStudyItemType {
   id: string | number;
   Component?: string;
   title?: string;
@@ -18,99 +12,21 @@ interface CaseStudyItem {
 }
 
 interface CaseStudyClientProps {
-  caseStudy: CaseStudyItem[];
-  initialSlug?: string;
-  initialCaseStudyData?: CaseStudyItem;
+  caseStudy: CaseStudyItemType[];
 }
 
-export default function CaseStudyClient({ 
-  caseStudy, 
-  initialSlug, 
-  initialCaseStudyData 
-}: CaseStudyClientProps) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const [modalComponentData, setModalComponentData] = useState<CaseStudyItem | undefined>(
-    initialCaseStudyData || undefined
-  );
-
-  // Check if we're on a slug route and open modal accordingly
-  useEffect(() => {
-    const isSlugRoute = pathname && pathname.startsWith('/case-study/') && pathname !== '/case-study';
-    
-    if (isSlugRoute) {
-      // If we have initialCaseStudyData from server, use it
-      if (initialCaseStudyData) {
-        setModalComponentData(initialCaseStudyData);
-      } else {
-        // Otherwise, find it from the caseStudy array based on the slug
-        const slug = pathname.replace('/case-study/', '');
-        const title = slugToTitle(slug);
-        const foundCaseStudy = caseStudy.find(item => 
-          item.title && titleToSlug(item.title) === slug
-        );
-        if (foundCaseStudy) {
-          setModalComponentData(foundCaseStudy);
-        }
-      }
-    } else {
-      setModalComponentData(undefined);
-    }
-  }, [pathname, initialCaseStudyData, caseStudy]);
-
-  const handleItemClick = (item: CaseStudyItem) => {
-    // Open modal immediately (optimistic update) to prevent flash
-    setModalComponentData(item);
-    // Then update URL in a non-blocking way
-    const slug = titleToSlug(item.title);
-    startTransition(() => {
-      router.push(`/case-study/${slug}`);
-    });
-  };
-
-  const toggleModal = (item?: CaseStudyItem) => {
-    if (item) {
-      // This shouldn't be called directly anymore, but keep for safety
-      handleItemClick(item);
-    } else {
-      // Close modal and navigate back to list
-      startTransition(() => {
-        router.push('/case-study');
-      });
-      setModalComponentData(undefined);
-    }
-  };
-
-  const isModalOpen = Boolean(modalComponentData);
-
-  if (modalComponentData && modalComponentData.Component === PAGE_NOT_FOUND) {
-    return (
-      <PageNotFound
-        redirectLink={'/blog'}
-        redirectPage={'Повернутись до блогу'}
-      />
-    );
-  }
-
+export default function CaseStudyClient({ caseStudy }: CaseStudyClientProps) {
   return (
-    <>
-      <div className={styles.downloads}>
-        {caseStudy.map(item => {
-          return (
-            <CaseStudyItem
-              key={item.id}
-              item={item}
-              onItemClick={handleItemClick}
-            />
-          );
-        })}
-      </div>
-      <ModalComponent
-        isModalOpen={isModalOpen}
-        toggleModal={() => toggleModal()}
-        data={modalComponentData}
-      />
-    </>
+    <div className={styles.downloads}>
+      {caseStudy.map(item => {
+        return (
+          <CaseStudyItem
+            key={item.id}
+            item={item}
+          />
+        );
+      })}
+    </div>
   );
 }
 

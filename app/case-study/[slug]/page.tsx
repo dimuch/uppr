@@ -3,14 +3,15 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Header from '../../../components/common/header/Header';
 import TopBlogImage from '../../../components/blog/TopBlogImage/TopBlogImage';
-import styles from '../styles.module.scss';
-import Grid2 from '@mui/material/Grid';
-import { Typography } from '@mui/material';
 import Footer from '../../../components/common/footers/footer/Footer';
-import { getCaseStudiesAll, getCaseStudyByTitle } from '../../../services/caseStudy.js';
+import { getCaseStudyByTitle, getCaseStudiesAll } from '../../../services/caseStudy.js';
 import { slugToTitle } from '../../../utils/caseStudySlug.js';
 import { getArticles } from '../../../services/blogData';
 import CaseStudyClient from '../CaseStudyClient';
+import ModalComponent from '../../../components/caseStudy/CaseStudyItem/components/ModalComponent/ModalComponent';
+import styles from '../styles.module.scss';
+import Grid2 from '@mui/material/Grid';
+import { Typography } from '@mui/material';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -62,7 +63,6 @@ export default async function CaseStudySlugPage({ params }: Props) {
   const { slug } = await params;
   const title = slugToTitle(slug);
 
-  // Fetch data in parallel
   const [caseStudyData, articlesData, selectedCaseStudy] = await Promise.all([
     getCaseStudiesAll(),
     getArticles(),
@@ -101,14 +101,11 @@ export default async function CaseStudySlugPage({ params }: Props) {
             </Grid2>
           </div>
 
-          <CaseStudyClient 
-            caseStudy={caseStudy} 
-            initialSlug={slug}
-            initialCaseStudyData={selectedCaseStudy}
-          />
+          <CaseStudyClient caseStudy={caseStudy} />
         </div>
       </div>
 
+      <ModalComponent isModalOpen={true} data={selectedCaseStudy} />
       <Footer top3Article={top3Article} />
     </div>
   );

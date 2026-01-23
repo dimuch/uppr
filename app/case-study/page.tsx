@@ -32,7 +32,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function CaseStudyPage() {
+type Props = {
+  children?: React.ReactNode;
+};
+
+export default async function CaseStudyPage({ children }: Props) {
   // Fetch data in parallel
   const [caseStudyData, articlesData] = await Promise.all([
     getCaseStudiesAll(),
@@ -56,13 +60,13 @@ export default async function CaseStudyPage() {
           <div className={styles.downloadsWrapper}>
             <Grid2 container spacing={1} alignItems="center">
               <Grid2 size={{
- md: 6, xs: 12 
-}}>
+                md: 6, xs: 12 
+              }}>
                 <Typography variant={'h5'}>Case Study</Typography>
               </Grid2>
               <Grid2 size={{
- md: 6, xs: 12 
-}}></Grid2>
+                md: 6, xs: 12 
+              }}></Grid2>
             </Grid2>
           </div>
 

@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import React from 'react';
+import Link from 'next/link';
 import styles from './styles.module.scss';
 import loader from '../../common/loader/loader.js';
 import { Typography } from '@mui/material';
 import { useHasMounted } from '../../common/hooks/hasMounted';
 import { titleToSlug } from '../../../utils/caseStudySlug.js';
 
-export default function CaseStudyItem({ item, onItemClick }) {
+export default function CaseStudyItem({ item }) {
   const hasMounted = useHasMounted();
-  const router = useRouter();
 
   if (!hasMounted) {
     return null;
@@ -19,24 +18,10 @@ export default function CaseStudyItem({ item, onItemClick }) {
   const slug = titleToSlug(item.title);
   const href = `/case-study/${slug}`;
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    // Open modal immediately (optimistic update)
-    if (onItemClick) {
-      onItemClick(item);
-    }
-    // Then update URL without causing full page reload
-    router.push(href);
-  };
-
   return (
     <div className={styles.downloadLink}>
       <div className={styles.downloadImage}>
-        <div
-          className={styles.overlay}
-          onClick={handleClick}
-          style={{ cursor: 'pointer' }}
-        />
+        <Link href={href} scroll={false} className={styles.overlay} />
         <img
           src={loader({
             src: item.imageThumb,
@@ -49,16 +34,17 @@ export default function CaseStudyItem({ item, onItemClick }) {
       </div>
       <div className={styles.downloadContent}>
         <div className={styles.caption}>
-          <Typography
-            onClick={handleClick}
-            sx={{
-              fontFamily: 'Raleway-Regular, sans-serif',
-              minHeight: '3rem',
-              cursor: 'pointer',
-            }}
-          >
-            {item.title}
-          </Typography>
+          <Link href={href} scroll={false} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Typography
+              sx={{
+                fontFamily: 'Raleway-Regular, sans-serif',
+                minHeight: '3rem',
+                cursor: 'pointer',
+              }}
+            >
+              {item.title}
+            </Typography>
+          </Link>
         </div>
       </div>
     </div>

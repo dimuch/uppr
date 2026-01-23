@@ -1,4 +1,7 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './styles.module.scss';
 import {
   Box,
@@ -16,12 +19,31 @@ import CaseStudyTag from './components/CaseStudyTag';
 import { X } from '@phosphor-icons/react';
 import * as CaseStudyComponents from './components/CaseStudiesContent';
 
-const ModalComponent = ({ isModalOpen, data, toggleModal }) => {
+const ModalComponent = ({ isModalOpen, data }) => {
   const hasMounted = useHasMounted();
+  const router = useRouter();
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
-  if (!hasMounted || !isModalOpen) {
+  // Handle ESC key to close
+  useEffect(() => {
+    if (!isModalOpen) return;
+    
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        router.back();
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isModalOpen, router]);
+
+  const handleClose = () => {
+    router.back();
+  };
+
+  if (!hasMounted || !isModalOpen || !data) {
     return null;
   }
 
@@ -31,7 +53,7 @@ const ModalComponent = ({ isModalOpen, data, toggleModal }) => {
 
   return (
     <Dialog
-      onClose={toggleModal}
+      onClose={handleClose}
       open={isModalOpen}
       maxWidth={'md'}
       fullScreen={fullScreen}
@@ -39,7 +61,7 @@ const ModalComponent = ({ isModalOpen, data, toggleModal }) => {
       slotProps={{
         backdrop: {
           sx: {
-            backgroundColor: 'rgba(0, 0, 0, 0.7)', // Dark backdrop with 70% opacity
+            backgroundColor: 'rgba(0, 0, 0, 0.7)',
           },
         },
       }}
@@ -73,7 +95,7 @@ const ModalComponent = ({ isModalOpen, data, toggleModal }) => {
           />
           <IconButton
             aria-label="close"
-            onClick={toggleModal}
+            onClick={handleClose}
             sx={{
               position: 'absolute',
               right: 8,
