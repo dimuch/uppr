@@ -47,8 +47,8 @@ yarn.lock
 ./package-lock.json
 
 #static images
-./public/assets/images/blog-articles/responsive/**/*
-!/public/assets/images/blog-articles/responsive/placeholder.txt
-./public/assets/images/case-study/responsive/**/*
-./public/assets/images/downloads/responsive/**/*
-./public/assets/images/others/responsive/**/*
+public/assets/images/blog-articles/responsive/**/*
+!public/assets/images/blog-articles/responsive/placeholder.txt
+public/assets/images/case-study/responsive/**/*
+public/assets/images/downloads/responsive/**/*
+public/assets/images/others/responsive/**/*
