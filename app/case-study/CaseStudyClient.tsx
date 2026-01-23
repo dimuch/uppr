@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, startTransition } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import CaseStudyItem from '../../components/caseStudy/CaseStudyItem/CaseStudyItem';
 import ModalComponent from '../../components/caseStudy/CaseStudyItem/components/ModalComponent/ModalComponent';
@@ -58,14 +58,25 @@ export default function CaseStudyClient({
     }
   }, [pathname, initialCaseStudyData, caseStudy]);
 
+  const handleItemClick = (item: CaseStudyItem) => {
+    // Open modal immediately (optimistic update) to prevent flash
+    setModalComponentData(item);
+    // Then update URL in a non-blocking way
+    const slug = titleToSlug(item.title);
+    startTransition(() => {
+      router.push(`/case-study/${slug}`);
+    });
+  };
+
   const toggleModal = (item?: CaseStudyItem) => {
     if (item) {
-      // Navigate to the slug route
-      const slug = titleToSlug(item.title);
-      router.push(`/case-study/${slug}`);
+      // This shouldn't be called directly anymore, but keep for safety
+      handleItemClick(item);
     } else {
       // Close modal and navigate back to list
-      router.push('/case-study');
+      startTransition(() => {
+        router.push('/case-study');
+      });
       setModalComponentData(undefined);
     }
   };
@@ -89,6 +100,7 @@ export default function CaseStudyClient({
             <CaseStudyItem
               key={item.id}
               item={item}
+              onItemClick={handleItemClick}
             />
           );
         })}
