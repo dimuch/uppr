@@ -44,7 +44,7 @@ yarn.lock
 /.ai-thinking
 
 
-./package-lock.json
+package-lock.json
 
 #static images
 public/assets/images/blog-articles/responsive/**/*
