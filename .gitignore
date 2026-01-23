@@ -49,3 +49,4 @@ yarn.lock
 
 
 ./package-lock.json
+./public/assets/images/blog-articles/**/*
