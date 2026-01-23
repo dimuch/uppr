@@ -36,6 +36,13 @@ const ModalComponent = ({ isModalOpen, data, toggleModal }) => {
       maxWidth={'md'}
       fullScreen={fullScreen}
       className={`${styles.dialog}`}
+      slotProps={{
+        backdrop: {
+          sx: {
+            backgroundColor: 'rgba(0, 0, 0, 0.7)', // Dark backdrop with 70% opacity
+          },
+        },
+      }}
     >
       <DialogContent className={styles.modalContent}>
         <Box

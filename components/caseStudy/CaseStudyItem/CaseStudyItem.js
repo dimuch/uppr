@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import styles from './styles.module.scss';
 import loader from '../../common/loader/loader.js';
 import { Typography } from '@mui/material';
 import { useHasMounted } from '../../common/hooks/hasMounted';
+import { titleToSlug } from '../../../utils/caseStudySlug.js';
 
-export default function CaseStudyItem({ item, onToggleModal }) {
+export default function CaseStudyItem({ item }) {
   const hasMounted = useHasMounted();
 
   if (!hasMounted) {
@@ -13,14 +15,13 @@ export default function CaseStudyItem({ item, onToggleModal }) {
 
   const width = window.innerWidth > 875 ? Math.round(window.innerWidth / 3) : window.innerWidth;
   const height = Math.round((width * 22) / 27);
+  const slug = titleToSlug(item.title);
+  const href = `/case-study/${slug}`;
 
   return (
     <div className={styles.downloadLink}>
       <div className={styles.downloadImage}>
-        <div
-          className={styles.overlay}
-          onClick={() => onToggleModal(item)}
-        />
+        <Link href={href} className={styles.overlay} />
         <img
           src={loader({
             src: item.imageThumb,
@@ -33,31 +34,19 @@ export default function CaseStudyItem({ item, onToggleModal }) {
       </div>
       <div className={styles.downloadContent}>
         <div className={styles.caption}>
-          <Typography
-            onClick={() => onToggleModal(item)}
-            sx={{
-              fontFamily: 'Raleway-Regular, sans-serif',
-              minHeight: '3rem',
-            }}
-          >
-            {item.title}
-          </Typography>
+          <Link href={href} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Typography
+              sx={{
+                fontFamily: 'Raleway-Regular, sans-serif',
+                minHeight: '3rem',
+                cursor: 'pointer',
+              }}
+            >
+              {item.title}
+            </Typography>
+          </Link>
         </div>
       </div>
     </div>
   );
-}
-
-export async function getServerSideProps({ res, resolvedUrl }) {
-  const articleURL = resolvedUrl.split('?')[0];
-
-  // const articleData = await getArticlesDataByIdDB(articleURL);
-
-  res.setHeader('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=10');
-
-  return {
-    props: {
-      // articleData: articleData,
-    },
-  };
 }
