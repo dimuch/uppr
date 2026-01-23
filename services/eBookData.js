@@ -63,7 +63,7 @@ async function initNextOrderData(purchasedItemId) {
 
   const connection = getDBPoolData();
   return new Promise((resolve, reject) => {
-    connection.query(updateOrderState, (err, rows, fields) => {
+    connection.query(updateOrderState, (err, rows) => {
       if (err) {
         console.log('updateOrderState ERROR', err);
         reject({
