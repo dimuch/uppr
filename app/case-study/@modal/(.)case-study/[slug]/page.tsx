@@ -1,8 +1,8 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
-import { getCaseStudyByTitle } from '../../../../services/caseStudy.js';
-import { slugToTitle } from '../../../../utils/caseStudySlug.js';
-import ModalComponent from '../../../../components/caseStudy/CaseStudyItem/components/ModalComponent/ModalComponent';
+import { getCaseStudyByTitle } from '../../../../../services/caseStudy.js';
+import { slugToTitle } from '../../../../../utils/caseStudySlug.js';
+import ModalComponent from '../../../../../components/caseStudy/CaseStudyItem/components/ModalComponent/ModalComponent';
 
 type Props = {
   params: Promise<{ slug: string }>;
