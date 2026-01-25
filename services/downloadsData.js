@@ -45,10 +45,11 @@ export async function getDownloadsByCategoryDB(
                LEFT JOIN uppr_ssr.downloads_charge_types AS DownloadsChargeTypes
                          ON Downloads.download_charge_type = DownloadsChargeTypes.id
   `;
-  const whereClause = category !== 'all' ? `WHERE DownloadsChargeTypes.name='${category}'` : '';
+  const whereClause = category !== 'all' ? `WHERE DownloadsChargeTypes.name=?` : '';
   const orderClause = `ORDER BY Downloads.download_order ASC;`;
 
   const getDownloadsByCategory = `${selectClause} ${whereClause} ${orderClause}`;
+  const queryParams = category !== 'all' ? [category] : [];
 
   const mapper = dataDB => {
     return dataDB.map(item => {
@@ -64,7 +65,7 @@ export async function getDownloadsByCategoryDB(
   };
 
   try {
-    const data = await dbCallWrapper(getDownloadsByCategory, mapper);
+    const data = await dbCallWrapper(getDownloadsByCategory, mapper, queryParams);
     return {
       downloads: data,
     };
@@ -91,8 +92,8 @@ export async function getDownloadDataByCaptionDB(rawDownloadCaption) {
                LEFT JOIN uppr_ssr.downloads_charge_types AS DownloadsChargeTypes
                          ON DownloadsChargeTypes.id = Downloads.download_charge_type
   `;
-  // Try exact match first, then with trailing slash
-  const whereClause = `WHERE LOWER(TRIM(Downloads.caption)) = LOWER(TRIM('${downloadCaption}'))`;
+  // Use parameterized query for security
+  const whereClause = `WHERE LOWER(TRIM(Downloads.caption)) = LOWER(TRIM(?))`;
   const orderClause = ``;
 
   const getDownloadsByCategory = `${selectClause} ${whereClause} ${orderClause} ;`;
@@ -117,7 +118,7 @@ export async function getDownloadDataByCaptionDB(rawDownloadCaption) {
   };
 
   try {
-    return dbCallWrapper(getDownloadsByCategory, mapper);
+    return dbCallWrapper(getDownloadsByCategory, mapper, [downloadCaption]);
   } catch (err) {
     console.error('getDownloadDataByCaptionDB ERROR ==>', err);
     console.error('Query was:', getDownloadsByCategory);
@@ -128,9 +129,9 @@ export async function getDownloadDataByCaptionDB(rawDownloadCaption) {
 export async function addInfoDownloadsStat(downloadId, downloadedCounter) {
   const query = `
       UPDATE uppr_ssr.downloads
-      SET downloads.downloaded_counter = ${downloadedCounter}
-      WHERE id = ${downloadId};
+      SET downloads.downloaded_counter = ?
+      WHERE id = ?;
   `;
 
-  return await dbCallWrapper(query);
+  return await dbCallWrapper(query, null, [downloadedCounter, downloadId]);
 }

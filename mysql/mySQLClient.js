@@ -47,9 +47,9 @@ function makeConnectionDB() {
   });
 }
 
-async function dbCallWrapper(query, mapper) {
+async function dbCallWrapper(query, mapper, params = []) {
   return new Promise((resolve, reject) => {
-    db_pool.query(query, (err, rows, fields) => {
+    db_pool.query(query, params, (err, rows, fields) => {
       if (err) {
         console.log('ERROR dbCallWrapper', err);
         reject(err);

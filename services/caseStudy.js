@@ -72,7 +72,8 @@ export async function getCaseStudyByTitle(title) {
     LEFT JOIN uppr_ssr.${HELPER_TABLE_NAMES.AUTHORS} AS ${HELPER_TABLE_NAMES.AUTHORS} 
     ON ${HELPER_TABLE_NAMES.AUTHORS}.id=${MAIN_TABLE_NAME}.case_study_authorId
   `;
-  const whereClause = `WHERE LOWER(TRIM(${MAIN_TABLE_NAME}.case_study_caption)) = LOWER(TRIM('${title.replace(/'/g, "''")}'))`;
+  // Use parameterized query for security (no need to escape quotes)
+  const whereClause = `WHERE LOWER(TRIM(${MAIN_TABLE_NAME}.case_study_caption)) = LOWER(TRIM(?))`;
   const orderClause = ``;
 
   const getCaseStudy = `${selectClause} ${whereClause} ${orderClause}`;
@@ -97,7 +98,7 @@ export async function getCaseStudyByTitle(title) {
   };
 
   try {
-    const data = await dbCallWrapper(getCaseStudy, mapper);
+    const data = await dbCallWrapper(getCaseStudy, mapper, [title]);
     return data;
   } catch (err) {
     console.error('getCaseStudyByTitle ==>', err);

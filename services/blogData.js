@@ -73,10 +73,10 @@ export async function getArticles(
 }
 
 export function getDownloadsDB(isAllDownloads = true) {
-  const getDownloads = `CALL getDownloads(${isAllDownloads})`;
+  const getDownloads = `CALL getDownloads(?)`;
   const connection = getDBPoolData();
   return new Promise((resolve, reject) => {
-    connection.query(getDownloads, (err, rows, fields) => {
+    connection.query(getDownloads, [isAllDownloads], (err, rows, fields) => {
       if (err) {
         console.log('getDownloadsDB ERROR', err);
         reject({
@@ -134,10 +134,10 @@ export function getTagsDB(preselectedTag = '') {
 
 //getLatestArticlesByCategoryDB
 async function getLatestArticlesByCategoryDB(category) {
-  const getLatestArticle = `CALL getLatestArticlesByCategory(${category})`;
+  const getLatestArticle = `CALL getLatestArticlesByCategory(?)`;
   const connection = getDBPoolData();
   return new Promise((resolve, reject) => {
-    connection.query(getLatestArticle, (err, rows, fields) => {
+    connection.query(getLatestArticle, [category], (err, rows, fields) => {
       if (err) {
         console.log('getLatestArticlesByCategoryDB ERROR', err);
         reject({
@@ -236,10 +236,10 @@ export async function getArticlesDataByIdDB(articleURL) {
 
 //getArticleBaseDataById
 export async function getArticleBaseDataByURL(articleURL) {
-  const getArticlesDataById = `CALL getArticleBaseDataByURL('${articleURL}')`;
+  const getArticlesDataById = `CALL getArticleBaseDataByURL(?)`;
   const connection = getDBPoolData();
   return new Promise((resolve, reject) => {
-    connection.query(getArticlesDataById, (err, rows, fields) => {
+    connection.query(getArticlesDataById, [articleURL], (err, rows, fields) => {
       if (err) {
         console.log('getArticleBaseDataByURL ERROR', err);
         resolve(null);
@@ -264,10 +264,10 @@ export async function getArticleBaseDataByURL(articleURL) {
 
 //getArticlesTagsById
 export async function getArticleTagsById(articleId) {
-  const getArticleTagsById = `CALL getArticleTagsById(${articleId})`;
+  const getArticleTagsById = `CALL getArticleTagsById(?)`;
   const connection = getDBPoolData();
   return new Promise((resolve, reject) => {
-    connection.query(getArticleTagsById, (err, rows, fields) => {
+    connection.query(getArticleTagsById, [articleId], (err, rows, fields) => {
       if (err) {
         console.log('getArticleTagsById ERROR', err);
         reject({
@@ -300,10 +300,10 @@ export async function getArticleTagsById(articleId) {
 
 //getArticlesCategoryById
 export async function getArticleCategoryById(articleId) {
-  const getArticleCategoryById = `CALL getArticleCategoryById(${articleId})`;
+  const getArticleCategoryById = `CALL getArticleCategoryById(?)`;
   const connection = getDBPoolData();
   return new Promise((resolve, reject) => {
-    connection.query(getArticleCategoryById, (err, rows, fields) => {
+    connection.query(getArticleCategoryById, [articleId], (err, rows, fields) => {
       if (err) {
         console.log('getArticleCategoryById ERROR', err);
         reject({
@@ -343,10 +343,10 @@ export async function getArticleCategoryById(articleId) {
 
 //getRelevantArticlesByCategory
 export async function getRelevantArticlesByCategory(categoryId) {
-  const getRelevantArticlesByCategoryId = `CALL getRelevantArticlesByCategoryId(${categoryId})`;
+  const getRelevantArticlesByCategoryId = `CALL getRelevantArticlesByCategoryId(?)`;
   const connection = getDBPoolData();
   return new Promise((resolve, reject) => {
-    connection.query(getRelevantArticlesByCategoryId, (err, rows, fields) => {
+    connection.query(getRelevantArticlesByCategoryId, [categoryId], (err, rows, fields) => {
       if (err) {
         console.log('getRelevantArticlesByCategory ERROR', err);
         reject({
@@ -382,10 +382,10 @@ export async function getRelevantArticlesByCategory(categoryId) {
 
 //getRelevantArticlesByCategory
 export async function getArticlesByCategoryNameDB(categoryName) {
-  const getRelevantArticlesByCategoryName = `CALL getRelevantArticlesByCategoryName('${categoryName}')`;
+  const getRelevantArticlesByCategoryName = `CALL getRelevantArticlesByCategoryName(?)`;
   const connection = getDBPoolData();
   return new Promise((resolve, reject) => {
-    connection.query(getRelevantArticlesByCategoryName, (err, rows, fields) => {
+    connection.query(getRelevantArticlesByCategoryName, [categoryName], (err, rows, fields) => {
       if (err) {
         console.log('getArticlesByCategoryNameDB ERROR', err);
         reject({
@@ -431,14 +431,7 @@ export async function getArticlesByCategoryDB() {
 
 //getArticlesByTagsNameDB
 export async function getArticlesByTagsNameDB(tags = '') {
-  const tagsAsString = !tags
-    ? []
-    : tags
-        ?.split(',')
-        .map(tag => {
-          return `'${tag}'`;
-        })
-        .join(',');
+  const tagArray = !tags ? [] : tags.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0);
 
   const selectClause = `
     SELECT DISTINCT Articles.id, Articles.article_color, Articles.title, Articles.englishTitle,
@@ -455,14 +448,16 @@ export async function getArticlesByTagsNameDB(tags = '') {
     LEFT JOIN uppr_ssr.categories AS Categories
     ON ArticlesByCategories.article_category = Categories.id
   `;
-  const whereClause = tagsAsString.length > 0 ? `WHERE Tags.name IN (${tagsAsString})` : ``;
+  // Use parameterized query with placeholders for IN clause
+  const placeholders = tagArray.map(() => '?').join(',');
+  const whereClause = tagArray.length > 0 ? `WHERE Tags.name IN (${placeholders})` : ``;
   const orderClause = `ORDER BY Articles.published DESC;`;
 
   const getArticlesByTagsName = `${selectClause} ${whereClause} ${orderClause}`;
 
   const connection = await getDBPoolData();
   return new Promise((resolve, reject) => {
-    connection.query(getArticlesByTagsName, (err, rows, fields) => {
+    connection.query(getArticlesByTagsName, tagArray, (err, rows, fields) => {
       if (err) {
         console.log('getArticlesByTagsNameDB ERROR', err);
         reject({
@@ -497,6 +492,6 @@ export async function getArticlesByTagsNameDB(tags = '') {
 
 //search articles by search text
 export async function searchInArticlesParamsDB(searchText) {
-  const searchInArticlesParams = `CALL searchInArticlesParams('${searchText}')`;
-  return await dbCallWrapper(searchInArticlesParams);
+  const searchInArticlesParams = `CALL searchInArticlesParams(?)`;
+  return await dbCallWrapper(searchInArticlesParams, null, [searchText]);
 }

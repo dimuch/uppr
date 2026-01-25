@@ -59,11 +59,11 @@ async function initNextOrderData(purchasedItemId) {
 
   // console.log("resultPageId", resultPageId);
 
-  const updateOrderState = `CALL updateOrderState('${purchasedItemId}', '${resultPageId}', 0, '')`;
+  const updateOrderState = `CALL updateOrderState(?, ?, ?, ?)`;
 
   const connection = getDBPoolData();
   return new Promise((resolve, reject) => {
-    connection.query(updateOrderState, (err, rows) => {
+    connection.query(updateOrderState, [purchasedItemId, resultPageId, 0, ''], (err, rows) => {
       if (err) {
         console.log('updateOrderState ERROR', err);
         reject({
