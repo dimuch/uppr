@@ -51,7 +51,7 @@ export async function POST(request: Request) {
 		const articleColor = 'FF603B'; // Default color, can be fetched from category if needed
 
 		// Dynamic import for CommonJS modules
-		const { saveArticleComponent } = await import('../../../../utils/generateArticleComponent.js');
+		const { saveArticleComponent, titleToPageComponent, titleToSlug, titleToImageName } = await import('../../../../utils/generateArticleComponent.js');
 		const { updateArticleIndex } = await import('../../../../utils/updateArticleIndex.js');
 
 		const componentResult = saveArticleComponent(title, markdownContent, articleColor);
@@ -88,20 +88,16 @@ export async function POST(request: Request) {
 			console.log('Component export added to index.js');
 		}
 
-		// Save article to the articles table (link matches existing pattern: /blog/articles/{slug})
-		const articleSlug = (componentResult.fileName ?? '').replace(/\.js$/, '');
+		// Save article to the articles table (link and image use CYRILLIC_TO_LATIN, no length limit)
+		const articleSlug = titleToSlug(title);
 		const articleLink = `/blog/articles/${articleSlug}`;
 		const publishedMySQL = new Date(publishingDate)
 			.toISOString()
 			.slice(0, 19)
 			.replace('T', ' ');
 
-		// Image path: /assets/images/blog-articles/ + name from title (max 40 chars, spaces → _)
-		const imageNameFromTitle = title
-			.trim()
-			.replace(/\s+/g, '_')
-			.replace(/[/\\:*?"<>|]/g, '')
-			.slice(0, 40);
+		// Image path: /assets/images/blog-articles/ + name from title (transliterated, spaces → _)
+		const imageNameFromTitle = titleToImageName(title);
 		const articleImagePath = `/assets/images/blog-articles/${imageNameFromTitle}_main.jpg`;
 
 		try {
@@ -116,7 +112,7 @@ export async function POST(request: Request) {
 				views: '0000000000',
 				is_section_main_image: 0,
 				author,
-				pageComponent: componentResult.componentName,
+				pageComponent: titleToPageComponent(title),
 			});
 		} catch (dbError: unknown) {
 			const message = dbError && typeof dbError === 'object' && 'error' in dbError
