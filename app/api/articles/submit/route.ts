@@ -1,9 +1,16 @@
 import { NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { getCurrentUser } from '../../../../lib/auth.js';
 import { validateArticleForm } from '../../../../services/articleFormValidation';
 import { sendEmail } from '../../../../lib/email.js';
 import { insertArticleToDB, insertArticleTags, insertArticleCategory } from '../../../../services/blogData.js';
+
+/** Comma-separated usernames allowed to submit articles (empty = any authenticated user). */
+const ALLOWED_USERNAMES = (process.env.ALLOWED_ARTICLE_SUBMIT_USERNAMES ?? '')
+	.split(',')
+	.map((s) => s.trim().toLowerCase())
+	.filter(Boolean);
 
 const BLOG_ARTICLES_IMAGE_DIR = path.join(process.cwd(), 'public', 'assets', 'images', 'blog-articles');
 
@@ -28,6 +35,27 @@ function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise
 export async function POST(request: Request) {
 	try {
 		console.log('[articles/submit] POST start');
+
+		// Require authenticated user
+		const user = await getCurrentUser();
+		if (!user) {
+			return NextResponse.json(
+				{ error: 'Unauthorized', message: 'Authentication required to submit articles.' },
+				{ status: 401 }
+			);
+		}
+
+		// Optionally restrict to allowed usernames
+		if (ALLOWED_USERNAMES.length > 0) {
+			const usernameLower = String(user.username ?? '').toLowerCase();
+			if (!ALLOWED_USERNAMES.includes(usernameLower)) {
+				return NextResponse.json(
+					{ error: 'Forbidden', message: 'You are not allowed to submit articles.' },
+					{ status: 403 }
+				);
+			}
+		}
+
 		const contentType = request.headers.get('content-type') ?? '';
 		let body: Record<string, unknown>;
 		let uploadedFile: File | null = null;
