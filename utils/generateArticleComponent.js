@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const fsPromises = fs.promises;
 
 /**
  * Convert title to component name (PascalCase), always in Latin.
@@ -116,27 +117,41 @@ function titleToImageName(title) {
     .replace(/[/\\:*?"<>|]/g, '');
 }
 
+// Match "### 1." or "### 1 " (ordered list item)
+const ORDERED_LIST_LINE = /^###\s+\d+[.\s]\s*(.*)$/;
+// Match "### - " or "### * " (unordered list item)
+const UNORDERED_LIST_LINE = /^###\s+[-*]\s+(.*)$/;
+
 /**
  * Parse markdown content and convert to JSX
  * Handles:
  * - Headings (## -> h2 with subTitle)
- * - Lists (- -> ul with articleList, li with discList)
+ * - Ordered list (### 1., ### 2. -> ol with articleList + numberedList)
+ * - Unordered list (### - or ### * -> ul; - -> ul with articleList, li with discList)
  * - Paragraphs (-> p with articleText)
  * - Bold text (**text** -> <b>text</b>)
  * - Links ([text](url) -> <a> with articleLink)
  * - Colored spans (convert back to classNames)
  */
 function markdownToJSX(markdown) {
+  const input = typeof markdown === 'string' ? markdown : String(markdown ?? '');
+  if (input.length > 2 * 1024 * 1024) {
+    throw new Error('markdownToJSX: content too large (max 2MB)');
+  }
   let jsx = '';
   let sectionCount = 0;
   const sections = ['articleOddSection', 'articleEvenSection'];
   let currentSectionOpen = false;
 
-  // Split by lines and process
-  const lines = markdown.split('\n');
+  const lines = input.split('\n');
   let i = 0;
+  const totalLines = lines.length;
+  console.log('[markdownToJSX] start lines=', totalLines);
 
   while (i < lines.length) {
+    if (i > 0 && i % 100 === 0) {
+      console.log('[markdownToJSX] progress line', i, '/', totalLines);
+    }
     const line = lines[i].trim();
 
     if (!line) {
@@ -145,7 +160,7 @@ function markdownToJSX(markdown) {
     }
 
     // Check if it's a heading
-    if (line.startsWith('## ')) {
+    if (line.startsWith('## ') && !line.startsWith('### ')) {
       const headingText = line.replace(/^##\s+/, '').trim();
 
       // Close previous section if open
@@ -165,7 +180,63 @@ function markdownToJSX(markdown) {
       continue;
     }
 
-    // Check if it's a list item
+    // Check if it's an ordered list (### 1., ### 2., etc.) (use match to avoid regex state)
+    const orderedMatch = line.match(ORDERED_LIST_LINE);
+    if (orderedMatch) {
+      jsx += `                    <ol className={\`\${styles.articleList} \${styles.numberedList}\`}>\n`;
+      while (i < lines.length) {
+        const itemLine = lines[i].trim();
+        const match = itemLine.match(ORDERED_LIST_LINE);
+        if (!match) break;
+        const content = match[1].trim();
+        let listText = content;
+        const spanMatch = content.match(/<span[^>]*>(.*?)<\/span>/);
+        if (spanMatch) {
+          listText = spanMatch[1];
+        } else {
+          listText = content.replace(/<[^>]*>/g, '');
+        }
+        listText = listText.replace(/&quot;/g, '"');
+        jsx += `                        <li className={styles.discList} style={{\n`;
+        jsx += `                            color: \`#\${articleData.article_color}\`\n`;
+        jsx += `                        }}>\n`;
+        jsx += `                            <p>${escapeJSX(listText)}</p>\n`;
+        jsx += `                        </li>\n`;
+        i++;
+      }
+      jsx += `                    </ol>\n\n`;
+      continue;
+    }
+
+    // Check if it's an unordered list with ### - or ### *
+    const unorderedMatch = line.match(UNORDERED_LIST_LINE);
+    if (unorderedMatch) {
+      jsx += `                    <ul className={\`\${styles.articleList}\`}>\n`;
+      while (i < lines.length) {
+        const itemLine = lines[i].trim();
+        const match = itemLine.match(UNORDERED_LIST_LINE);
+        if (!match) break;
+        const content = match[1].trim();
+        let listText = content;
+        const spanMatch = content.match(/<span[^>]*>(.*?)<\/span>/);
+        if (spanMatch) {
+          listText = spanMatch[1];
+        } else {
+          listText = content.replace(/<[^>]*>/g, '');
+        }
+        listText = listText.replace(/&quot;/g, '"');
+        jsx += `                        <li className={styles.discList} style={{\n`;
+        jsx += `                            color: \`#\${articleData.article_color}\`\n`;
+        jsx += `                        }}>\n`;
+        jsx += `                            <p>${escapeJSX(listText)}</p>\n`;
+        jsx += `                        </li>\n`;
+        i++;
+      }
+      jsx += `                    </ul>\n\n`;
+      continue;
+    }
+
+    // Check if it's a list item (plain - )
     if (line.startsWith('- ')) {
       jsx += `                    <ul className={\`\${styles.articleList}\`}>\n`;
 
@@ -199,11 +270,11 @@ function markdownToJSX(markdown) {
       continue;
     }
 
-    // Regular paragraph - collect until empty line or heading
+    // Regular paragraph - collect until empty line, heading, or ### list
     let paragraphLines = [];
     while (i < lines.length) {
       const currentLine = lines[i].trim();
-      if (!currentLine || currentLine.startsWith('## ')) {
+      if (!currentLine || currentLine.startsWith('## ') || currentLine.startsWith('### ')) {
         break;
       }
       paragraphLines.push(currentLine);
@@ -259,6 +330,7 @@ function markdownToJSX(markdown) {
     jsx += `                </div>\n            </div>\n`;
   }
 
+  console.log('[markdownToJSX] end');
   return jsx;
 }
 
@@ -317,29 +389,26 @@ function generateArticleComponent(title, markdownContent, articleColor = 'FF603B
 }
 
 /**
- * Save component file to filesystem
+ * Save component file to filesystem (async to avoid blocking the event loop).
+ * Calls generateArticleComponent once and reuses the result.
  */
-function saveArticleComponent(title, markdownContent, articleColor = 'FF603B') {
+async function saveArticleComponent(title, markdownContent, articleColor = 'FF603B') {
   try {
-    const { fileName, content } = generateArticleComponent(title, markdownContent, articleColor);
+    console.log('[saveArticleComponent] calling generateArticleComponent');
+    const result = generateArticleComponent(title, markdownContent, articleColor);
+    console.log('[saveArticleComponent] generateArticleComponent done, writing file');
+    const { fileName, content, componentName } = result;
     const componentsDir = path.join(process.cwd(), 'components', 'articles');
     const filePath = path.join(componentsDir, fileName);
 
-    // Ensure directory exists
-    if (!fs.existsSync(componentsDir)) {
-      fs.mkdirSync(componentsDir, {
-        recursive: true
-      });
-    }
-
-    // Write file
-    fs.writeFileSync(filePath, content, 'utf8');
+    await fsPromises.mkdir(componentsDir, { recursive: true });
+    await fsPromises.writeFile(filePath, content, 'utf8');
 
     return {
       success: true,
       fileName,
       filePath,
-      componentName: generateArticleComponent(title, markdownContent, articleColor).componentName,
+      componentName,
     };
   } catch (error) {
     console.error('Error saving article component:', error);

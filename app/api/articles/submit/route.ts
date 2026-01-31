@@ -7,6 +7,18 @@ import { insertArticleToDB, insertArticleTags, insertArticleCategory } from '../
 
 const BLOG_ARTICLES_IMAGE_DIR = path.join(process.cwd(), 'public', 'assets', 'images', 'blog-articles');
 
+const DB_OP_TIMEOUT_MS = 15000;
+const SAVE_COMPONENT_TIMEOUT_MS = 30000;
+
+function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise<T> {
+	return Promise.race([
+		promise,
+		new Promise<never>((_, reject) =>
+			setTimeout(() => reject(new Error(`${label} timed out after ${ms}ms`)), ms)
+		),
+	]);
+}
+
 /**
  * POST /api/articles/submit
  * Submit a new article, generate React component, and send email notification.
@@ -15,12 +27,15 @@ const BLOG_ARTICLES_IMAGE_DIR = path.join(process.cwd(), 'public', 'assets', 'im
  */
 export async function POST(request: Request) {
 	try {
+		console.log('[articles/submit] POST start');
 		const contentType = request.headers.get('content-type') ?? '';
 		let body: Record<string, unknown>;
 		let uploadedFile: File | null = null;
 
 		if (contentType.includes('multipart/form-data')) {
+			console.log('[articles/submit] parsing FormData');
 			const formData = await request.formData();
+			console.log('[articles/submit] FormData parsed');
 			const tagRaw = formData.get('tag');
 			const tag = typeof tagRaw === 'string'
 				? (() => { try { return JSON.parse(tagRaw) as string[]; } catch { return []; } })()
@@ -38,7 +53,9 @@ export async function POST(request: Request) {
 			const file = formData.get('mainImage');
 			uploadedFile = file instanceof File && file.size > 0 ? file : null;
 		} else {
+			console.log('[articles/submit] parsing JSON body');
 			body = (await request.json()) as Record<string, unknown>;
+			console.log('[articles/submit] JSON parsed');
 		}
 
 		// Validate form data
@@ -75,6 +92,7 @@ export async function POST(request: Request) {
 				}
 			);
 		}
+		console.log('[articles/submit] validation ok');
 
 		const {
 			title,
@@ -92,10 +110,18 @@ export async function POST(request: Request) {
 		const articleColor = 'FF603B'; // Default color, can be fetched from category if needed
 
 		// Dynamic import for CommonJS modules
+		console.log('[articles/submit] loading generateArticleComponent');
 		const { saveArticleComponent, titleToPageComponent, titleToSlug, titleToImageName } = await import('../../../../utils/generateArticleComponent.js');
 		const { updateArticleIndex } = await import('../../../../utils/updateArticleIndex.js');
+		console.log('[articles/submit] imports loaded');
 
-		const componentResult = saveArticleComponent(title, markdownContent, articleColor);
+		console.log('[articles/submit] saving component...');
+		const componentResult = await withTimeout(
+			saveArticleComponent(title, markdownContent, articleColor),
+			SAVE_COMPONENT_TIMEOUT_MS,
+			'saveArticleComponent'
+		);
+		console.log('[articles/submit] component saved', componentResult.success ? 'ok' : componentResult.error);
 
 		if (!componentResult.success) {
 			console.error('Failed to generate article component:', componentResult.error);
@@ -145,6 +171,7 @@ export async function POST(request: Request) {
 
 		// Save uploaded image to public/assets/images/blog-articles (original file from request)
 		if (uploadedFile) {
+			console.log('[articles/submit] saving uploaded image...');
 			const ext = path.extname(uploadedFile.name).toLowerCase() || '.jpg';
 			const safeExt = /^\.(jpe?g|png|gif|webp)$/.test(ext) ? ext : '.jpg';
 			const fileName = `${imageNameFromTitle}_main${safeExt}`;
@@ -172,24 +199,31 @@ export async function POST(request: Request) {
 			} catch (resizeErr) {
 				console.warn('Responsive image resize failed for', fileName, resizeErr);
 			}
+			console.log('[articles/submit] image saved and resized');
 		}
 
 		let articleInsertId: number;
 		try {
-			const insertResult = await insertArticleToDB({
-				article_color: articleColor,
-				title,
-				englishTitle: '',
-				published: publishedMySQL,
-				link: articleLink,
-				description: shortDescription,
-				image: articleImagePath,
-				views: '0000000000',
-				is_section_main_image: 0,
-				author,
-				pageComponent: titleToPageComponent(title),
-			});
+			console.log('[articles/submit] inserting article (DB)...');
+			const insertResult = await withTimeout(
+				insertArticleToDB({
+					article_color: articleColor,
+					title,
+					englishTitle: '',
+					published: publishedMySQL,
+					link: articleLink,
+					description: shortDescription,
+					image: articleImagePath,
+					views: '0000000000',
+					is_section_main_image: 0,
+					author,
+					pageComponent: titleToPageComponent(title),
+				}),
+				DB_OP_TIMEOUT_MS,
+				'insertArticleToDB'
+			);
 			articleInsertId = insertResult.insertId ?? 0;
+			console.log('[articles/submit] article inserted, id:', articleInsertId);
 		} catch (dbError: unknown) {
 			const message = dbError && typeof dbError === 'object' && 'error' in dbError
 				? String((dbError as { error: string }).error)
@@ -203,8 +237,18 @@ export async function POST(request: Request) {
 
 		if (articleInsertId) {
 			try {
-				await insertArticleTags(articleInsertId, tag);
-				await insertArticleCategory(articleInsertId, category);
+				console.log('[articles/submit] inserting tags and category...');
+				await withTimeout(
+					insertArticleTags(articleInsertId, tag),
+					DB_OP_TIMEOUT_MS,
+					'insertArticleTags'
+				);
+				await withTimeout(
+					insertArticleCategory(articleInsertId, category),
+					DB_OP_TIMEOUT_MS,
+					'insertArticleCategory'
+				);
+				console.log('[articles/submit] tags and category inserted');
 			} catch (linkError: unknown) {
 				const message = linkError && typeof linkError === 'object' && 'error' in linkError
 					? String((linkError as { error: string }).error)
@@ -292,11 +336,7 @@ export async function POST(request: Request) {
 				filePath: componentResult.filePath,
 			},
 		});
-		setImmediate(() => {
-			import('../../../../lib/gitPushAndRestart.js').then(({ gitPushAndRestart }) =>
-				gitPushAndRestart(filesForGit, commitMessage)
-			).catch((err: unknown) => console.error('gitPushAndRestart error', err));
-		});
+
 		return jsonResponse;
 	} catch (error) {
 		console.error('Article submission error:', error);
