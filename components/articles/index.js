@@ -43,4 +43,6 @@ export { default as ProfessionalFollowUpDontWriteATrash } from './professional-f
 export { default as CaseStudyFollowupFailEmailTypicalBug } from './case-study-followup-failemail-typical-bug';
 export { default as ReaderEXperienceRX } from './reader-eXperience-RX';
 
+export { default as TitleUkrainskouTaEngliash } from './title-ta-engliash';
+export { default as AgentToAgentCommunication } from './agent-to-agent-communication';
 export { default as PageNotFound } from '../common/404/404';

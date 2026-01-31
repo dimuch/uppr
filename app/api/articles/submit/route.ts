@@ -3,7 +3,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { validateArticleForm } from '../../../../services/articleFormValidation';
 import { sendEmail } from '../../../../lib/email.js';
-import { insertArticleToDB } from '../../../../services/blogData.js';
+import { insertArticleToDB, insertArticleTags, insertArticleCategory } from '../../../../services/blogData.js';
 
 const BLOG_ARTICLES_IMAGE_DIR = path.join(process.cwd(), 'public', 'assets', 'images', 'blog-articles');
 
@@ -83,6 +83,7 @@ export async function POST(request: Request) {
 			markdownContent,
 			publishingDate,
 			category,
+			tag,
 			mainImage,
 		} = validationResult.sanitizedData;
 
@@ -173,8 +174,9 @@ export async function POST(request: Request) {
 			}
 		}
 
+		let articleInsertId: number;
 		try {
-			await insertArticleToDB({
+			const insertResult = await insertArticleToDB({
 				article_color: articleColor,
 				title,
 				englishTitle: '',
@@ -187,6 +189,7 @@ export async function POST(request: Request) {
 				author,
 				pageComponent: titleToPageComponent(title),
 			});
+			articleInsertId = insertResult.insertId ?? 0;
 		} catch (dbError: unknown) {
 			const message = dbError && typeof dbError === 'object' && 'error' in dbError
 				? String((dbError as { error: string }).error)
@@ -196,6 +199,22 @@ export async function POST(request: Request) {
 				{ error: 'Failed to save article to database', details: message },
 				{ status: 500 }
 			);
+		}
+
+		if (articleInsertId) {
+			try {
+				await insertArticleTags(articleInsertId, tag);
+				await insertArticleCategory(articleInsertId, category);
+			} catch (linkError: unknown) {
+				const message = linkError && typeof linkError === 'object' && 'error' in linkError
+					? String((linkError as { error: string }).error)
+					: 'Failed to save article tags/category';
+				console.error('insertArticleTags/insertArticleCategory failed:', linkError);
+				return NextResponse.json(
+					{ error: 'Failed to save article tags or category', details: message },
+					{ status: 500 }
+				);
+			}
 		}
 
 		console.log('Article submitted and saved to DB:', {

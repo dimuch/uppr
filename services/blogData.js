@@ -539,3 +539,54 @@ export async function insertArticleToDB(article) {
     });
   });
 }
+
+/**
+ * Insert article–tag links into article_tags (for submitted article).
+ * @param {number} articleId - New article id (insertId)
+ * @param {string[]|number[]} tagIds - Tag ids from the form (e.g. ['1', '2'])
+ * @returns {Promise<{ success: boolean, error?: string }>}
+ */
+export async function insertArticleTags(articleId, tagIds) {
+  if (!articleId || !tagIds || tagIds.length === 0) {
+    return { success: true };
+  }
+  const connection = getDBPoolData();
+  const values = tagIds.map((id) => [articleId, Number(id)]);
+  const placeholders = values.map(() => '(?, ?)').join(', ');
+  const flatParams = values.flat();
+  const insert = `INSERT INTO article_tags (article_id, atricle_tag_id) VALUES ${placeholders}`;
+  return new Promise((resolve, reject) => {
+    connection.query(insert, flatParams, (err) => {
+      if (err) {
+        console.log('insertArticleTags ERROR', err);
+        reject({ success: false, error: err.message });
+        return;
+      }
+      resolve({ success: true });
+    });
+  });
+}
+
+/**
+ * Insert article–category link into articles_by_categories (for submitted article).
+ * @param {number} articleId - New article id (insertId)
+ * @param {string|number} categoryId - Category id from the form
+ * @returns {Promise<{ success: boolean, error?: string }>}
+ */
+export async function insertArticleCategory(articleId, categoryId) {
+  if (!articleId || categoryId === undefined || categoryId === null || categoryId === '') {
+    return { success: true };
+  }
+  const connection = getDBPoolData();
+  const insert = `INSERT INTO articles_by_categories (article_id, article_category) VALUES (?, ?)`;
+  return new Promise((resolve, reject) => {
+    connection.query(insert, [articleId, Number(categoryId)], (err) => {
+      if (err) {
+        console.log('insertArticleCategory ERROR', err);
+        reject({ success: false, error: err.message });
+        return;
+      }
+      resolve({ success: true });
+    });
+  });
+}
