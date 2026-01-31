@@ -140,11 +140,14 @@ export async function POST(request: Request) {
 		const imageNameFromTitle = titleToImageName(title);
 		let articleImagePath = `/assets/images/blog-articles/${imageNameFromTitle}_main.jpg`;
 
+		let savedFileName: string | null = null;
+
 		// Save uploaded image to public/assets/images/blog-articles (original file from request)
 		if (uploadedFile) {
 			const ext = path.extname(uploadedFile.name).toLowerCase() || '.jpg';
 			const safeExt = /^\.(jpe?g|png|gif|webp)$/.test(ext) ? ext : '.jpg';
 			const fileName = `${imageNameFromTitle}_main${safeExt}`;
+			savedFileName = fileName;
 			const filePath = path.join(BLOG_ARTICLES_IMAGE_DIR, fileName);
 			await fs.mkdir(BLOG_ARTICLES_IMAGE_DIR, { recursive: true });
 			const buffer = Buffer.from(await uploadedFile.arrayBuffer());
@@ -245,7 +248,23 @@ export async function POST(request: Request) {
 			}
 		}
 
-		return NextResponse.json({
+		// Build list of new files for git; then push and optionally restart (production)
+		const filesForGit: string[] = [
+			'components/articles/index.js',
+		];
+		if (componentResult.filePath) {
+			filesForGit.push(path.relative(process.cwd(), componentResult.filePath));
+		}
+		if (savedFileName) {
+			filesForGit.push(path.relative(process.cwd(), path.join(BLOG_ARTICLES_IMAGE_DIR, savedFileName)));
+			const { sizes: imagesSizes } = await import('../../../../utils/imageSizes.js');
+			const webpName = savedFileName.replace(/\.[^.]+$/, '.webp');
+			for (const size of imagesSizes as number[]) {
+				filesForGit.push(path.join('public', 'assets', 'images', 'blog-articles', 'responsive', String(size), webpName));
+			}
+		}
+		const commitMessage = `Add article: ${title}`;
+		const jsonResponse = NextResponse.json({
 			success: true,
 			message: 'Article submitted successfully',
 			component: {
@@ -254,6 +273,12 @@ export async function POST(request: Request) {
 				filePath: componentResult.filePath,
 			},
 		});
+		setImmediate(() => {
+			import('../../../../lib/gitPushAndRestart.js').then(({ gitPushAndRestart }) =>
+				gitPushAndRestart(filesForGit, commitMessage)
+			).catch((err: unknown) => console.error('gitPushAndRestart error', err));
+		});
+		return jsonResponse;
 	} catch (error) {
 		console.error('Article submission error:', error);
 		return NextResponse.json(
