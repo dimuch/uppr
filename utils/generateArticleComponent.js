@@ -119,40 +119,6 @@ function titleToImageName(title) {
 }
 
 /**
- * Render inline token children to JSX string (bold, links, text).
- */
-function renderInlineToJSX(children) {
-  if (!children || children.length === 0) return '';
-  let out = '';
-  for (let i = 0; i < children.length; i++) {
-    const t = children[i];
-    if (t.type === 'text') {
-      out += escapeJSX(t.content || '');
-    } else if (t.type === 'strong_open') {
-      out += '<b>';
-    } else if (t.type === 'strong_close') {
-      out += '</b>';
-    } else if (t.type === 'em_open') {
-      out += '<em>';
-    } else if (t.type === 'em_close') {
-      out += '</em>';
-    } else if (t.type === 'link_open') {
-      const href = (t.attrs && t.attrs.find((a) => a[0] === 'href')) ? t.attrs.find((a) => a[0] === 'href')[1] : '#';
-      out += `<a href="${escapeJSX(href)}" target="_blank" rel="noreferrer">`;
-    } else if (t.type === 'link_close') {
-      out += '</a>';
-    } else if (t.type === 'code_inline') {
-      out += escapeJSX(t.content || '');
-    } else if (t.type === 'html_inline' && t.content) {
-      // Preserve allowed inline HTML (e.g. colored spans stripped to content later)
-      const stripped = t.content.replace(/<span[^>]*>([^<]*)<\/span>/g, '$1');
-      out += escapeJSX(stripped);
-    }
-  }
-  return out;
-}
-
-/**
  * Normalize inline HTML from editor (colored spans) before parsing: strip or convert to plain.
  */
 function normalizeEditorMarkdown(input) {
@@ -163,9 +129,7 @@ function normalizeEditorMarkdown(input) {
 }
 
 /**
- * Parse markdown content and convert to JSX using markdown-it.
- * Preserves: section wrappers (articleOddSection/articleEvenSection), subTitle, articleText,
- * articleList, numberedList, discList, and inline bold/links.
+ * Convert markdown to HTML using markdown-it, then to JSX-safe string (class → className).
  */
 function markdownToJSX(markdown) {
   const input = typeof markdown === 'string' ? markdown : String(markdown ?? '');
@@ -175,116 +139,11 @@ function markdownToJSX(markdown) {
 
   const normalized = normalizeEditorMarkdown(input);
   const md = new MarkdownIt({ html: true });
-  const tokens = md.parse(normalized, {});
+  const html = md.render(normalized);
 
-  let jsx = '';
-  let sectionCount = 0;
-  const sections = ['articleOddSection', 'articleEvenSection'];
-  let currentSectionOpen = false;
-  let inListItemDepth = 0;
-
-  for (let i = 0; i < tokens.length; i++) {
-    const token = tokens[i];
-
-    if (token.type === 'heading_open' && token.tag === 'h2') {
-      if (currentSectionOpen && sectionCount > 0) {
-        jsx += `                </div>\n            </div>\n\n`;
-      }
-      const sectionClass = sections[sectionCount % 2];
-      sectionCount++;
-      currentSectionOpen = true;
-      jsx += `            <div className={styles.${sectionClass}}>\n`;
-      jsx += `                <div className={styles.maxWidthArticleSectionWrapper}>\n`;
-      jsx += `                    <h2 className={styles.subTitle}>`;
-      i++;
-      if (i < tokens.length && tokens[i].type === 'inline' && tokens[i].children) {
-        jsx += renderInlineToJSX(tokens[i].children);
-      }
-      jsx += `</h2>\n\n`;
-      continue;
-    }
-
-    if (token.type === 'heading_close' && token.tag === 'h2') {
-      continue;
-    }
-
-    if (token.type === 'paragraph_open') {
-      if (inListItemDepth > 0) {
-        jsx += `                        <p>`;
-      } else {
-        jsx += `                    <p className={styles.articleText}>\n                        `;
-      }
-      continue;
-    }
-
-    if (token.type === 'paragraph_close') {
-      jsx += `</p>\n`;
-      if (inListItemDepth === 0) jsx += '\n';
-      continue;
-    }
-
-    if (token.type === 'inline' && token.children) {
-      jsx += renderInlineToJSX(token.children);
-      continue;
-    }
-
-    if (token.type === 'ordered_list_open') {
-      jsx += `                    <ol className={\`\${styles.articleList} \${styles.numberedList}\`}>\n`;
-      continue;
-    }
-    if (token.type === 'ordered_list_close') {
-      jsx += `                    </ol>\n\n`;
-      continue;
-    }
-    if (token.type === 'bullet_list_open') {
-      jsx += `                    <ul className={\`\${styles.articleList}\`}>\n`;
-      continue;
-    }
-    if (token.type === 'bullet_list_close') {
-      jsx += `                    </ul>\n\n`;
-      continue;
-    }
-    if (token.type === 'list_item_open') {
-      inListItemDepth++;
-      jsx += `                        <li className={styles.discList} style={{\n`;
-      jsx += `                            color: \`#\${articleData.article_color}\`\n`;
-      jsx += `                        }}>\n`;
-      continue;
-    }
-    if (token.type === 'list_item_close') {
-      inListItemDepth--;
-      jsx += `                        </li>\n`;
-      continue;
-    }
-  }
-
-  if (currentSectionOpen) {
-    jsx += `                </div>\n            </div>\n`;
-  }
-
-  return jsx;
-}
-
-/**
- * Escape JSX special characters (but preserve HTML tags we want to keep).
- * Decodes common entities from editor (e.g. &quot;) so they can be re-escaped correctly.
- */
-function escapeJSX(text) {
-  if (typeof text !== 'string') return '';
-  // Don't escape if it already contains HTML tags we want to preserve
-  if (text.includes('<b>') || text.includes('<a>') || text.includes('<br')) {
-    return text;
-  }
-  const decoded = text
-    .replace(/&quot;/g, '"')
-    .replace(/&mdash;/g, '—')
-    .replace(/&nbsp;/g, ' ');
-  return decoded
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#x27;');
+  // Make HTML valid in JSX: class → className
+  const jsxSafe = html.replace(/\s+class=/g, ' className=').trim();
+  return jsxSafe ? `\n            ${jsxSafe.split('\n').join('\n            ')}\n            ` : '';
 }
 
 /**
@@ -293,7 +152,7 @@ function escapeJSX(text) {
 function generateArticleComponent(title, markdownContent, articleColor = 'FF603B') {
   const componentName = titleToComponentName(title);
   const fileName = titleToFileName(title);
-  const jsxContent = markdownToJSX(markdownContent, articleColor);
+  const jsxContent = markdownToJSX(markdownContent);
 
   const componentTemplate = `
     import React from 'react';
