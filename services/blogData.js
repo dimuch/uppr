@@ -308,7 +308,7 @@ export async function getArticleCategoryById(articleId) {
         console.log('getArticleCategoryById ERROR', err);
         reject({
           category: {
-},
+          },
         });
         return;
       }
@@ -317,7 +317,7 @@ export async function getArticleCategoryById(articleId) {
         if (!rows || !rows[0] || !rows[0][0]) {
           reject({
             category: {
-},
+            },
           });
           return;
         }
@@ -334,7 +334,7 @@ export async function getArticleCategoryById(articleId) {
       } catch (e) {
         reject({
           category: {
-},
+          },
         });
       }
     });
@@ -494,4 +494,48 @@ export async function getArticlesByTagsNameDB(tags = '') {
 export async function searchInArticlesParamsDB(searchText) {
   const searchInArticlesParams = `CALL searchInArticlesParams(?)`;
   return await dbCallWrapper(searchInArticlesParams, null, [searchText]);
+}
+
+/**
+ * Insert a new article into the articles table.
+ * Used when submitting a new article via /api/articles/submit.
+ * @param {Object} article - Article fields: article_color, title, englishTitle, published, link, description, image, views, is_section_main_image, author, pageComponent
+ * @returns {Promise<{ success: boolean, insertId?: number, error?: string }>}
+ */
+export async function insertArticleToDB(article) {
+  const insertArticle = `
+    INSERT INTO articles (
+      article_color, title, englishTitle, published, link, description,
+      image, views, is_section_main_image, author, pageComponent
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `;
+  const params = [
+    article.article_color,
+    article.title,
+    article.englishTitle ?? '',
+    article.published,
+    article.link,
+    article.description,
+    article.image,
+    article.views ?? '0000000000',
+    article.is_section_main_image ?? 0,
+    article.author,
+    article.pageComponent,
+  ];
+  const connection = getDBPoolData();
+  return new Promise((resolve, reject) => {
+    connection.query(insertArticle, params, (err, result) => {
+      if (err) {
+        console.log('insertArticleToDB ERROR', err);
+        reject({ success: false, error: err.message });
+        return;
+      }
+      try {
+        resolve({ success: true, insertId: result?.insertId });
+      } catch (e) {
+        console.log('insertArticleToDB CATCH', e);
+        reject({ success: false, error: e?.message ?? 'Unknown error' });
+      }
+    });
+  });
 }

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { validateArticleForm } from '../../../../services/articleFormValidation';
 import { sendEmail } from '../../../../lib/email.js';
+import { insertArticleToDB } from '../../../../services/blogData.js';
 
 /**
  * POST /api/articles/submit
@@ -14,28 +15,36 @@ export async function POST(request: Request) {
 
 		if (!validationResult.isValid) {
 			return NextResponse.json(
-					{
-						error: 'Validation failed',
-						errors: validationResult.errors,
-					},
-					{
-						status: 400
-					}
+				{
+					error: 'Validation failed',
+					errors: validationResult.errors,
+				},
+				{
+					status: 400
+				}
 			);
 		}
 
 		if (!validationResult.sanitizedData) {
 			return NextResponse.json(
-					{
-						error: 'Invalid form data'
-					},
-					{
-						status: 400
-					}
+				{
+					error: 'Invalid form data'
+				},
+				{
+					status: 400
+				}
 			);
 		}
 
-		const { title, markdownContent, publishingDate, category } = validationResult.sanitizedData;
+		const {
+			title,
+			shortDescription,
+			author,
+			markdownContent,
+			publishingDate,
+			category,
+			mainImage,
+		} = validationResult.sanitizedData;
 
 		// Generate and save React component from markdown
 		// Use a default article color (can be customized per category later)
@@ -50,13 +59,13 @@ export async function POST(request: Request) {
 		if (!componentResult.success) {
 			console.error('Failed to generate article component:', componentResult.error);
 			return NextResponse.json(
-					{
-						error: 'Failed to generate article component',
-						details: componentResult.error,
-					},
-					{
-						status: 500
-					}
+				{
+					error: 'Failed to generate article component',
+					details: componentResult.error,
+				},
+				{
+					status: 500
+				}
 			);
 		}
 
@@ -68,8 +77,8 @@ export async function POST(request: Request) {
 
 		// Update index.js to export the new component
 		const indexResult = updateArticleIndex(
-				componentResult.componentName,
-				componentResult.fileName
+			componentResult.componentName,
+			componentResult.fileName
 		);
 
 		if (!indexResult.success && !indexResult.skipped) {
@@ -79,13 +88,42 @@ export async function POST(request: Request) {
 			console.log('Component export added to index.js');
 		}
 
-		// TODO: Save article to database here
-		// Include: title, markdownContent, publishingDate, category, tag, author, mainImage
-		// Also save: componentName (for pageComponent field), fileName
-		console.log('Article submitted:', {
+		// Save article to the articles table (link matches existing pattern: /blog/articles/{slug})
+		const articleSlug = (componentResult.fileName ?? '').replace(/\.js$/, '');
+		const articleLink = `/blog/articles/${articleSlug}`;
+		const publishedMySQL = new Date(publishingDate)
+			.toISOString()
+			.slice(0, 19)
+			.replace('T', ' ');
+
+		try {
+			await insertArticleToDB({
+				article_color: articleColor,
+				title,
+				englishTitle: '',
+				published: publishedMySQL,
+				link: articleLink,
+				description: shortDescription,
+				image: mainImage,
+				views: '0000000000',
+				is_section_main_image: 0,
+				author,
+				pageComponent: componentResult.componentName,
+			});
+		} catch (dbError: unknown) {
+			const message = dbError && typeof dbError === 'object' && 'error' in dbError
+				? String((dbError as { error: string }).error)
+				: 'Failed to save article to database';
+			console.error('insertArticleToDB failed:', dbError);
+			return NextResponse.json(
+				{ error: 'Failed to save article to database', details: message },
+				{ status: 500 }
+			);
+		}
+
+		console.log('Article submitted and saved to DB:', {
 			title,
-			markdownContent: markdownContent.substring(0, 100) + '...',
-			publishingDate,
+			link: articleLink,
 			componentName: componentResult.componentName,
 			fileName: componentResult.fileName,
 		});
@@ -96,9 +134,9 @@ export async function POST(request: Request) {
 		if (adminEmails) {
 			// Parse email addresses (comma or semicolon separated)
 			const emailList = adminEmails
-					.split(/[,;]/)
-					.map(email => email.trim())
-					.filter(email => email.length > 0);
+				.split(/[,;]/)
+				.map(email => email.trim())
+				.filter(email => email.length > 0);
 
 			if (emailList.length > 0) {
 				const submissionDate = new Date().toLocaleString('en-US', {
@@ -145,12 +183,12 @@ export async function POST(request: Request) {
 	} catch (error) {
 		console.error('Article submission error:', error);
 		return NextResponse.json(
-				{
-					error: 'Internal server error'
-				},
-				{
-					status: 500
-				}
+			{
+				error: 'Internal server error'
+			},
+			{
+				status: 500
+			}
 		);
 	}
 }
