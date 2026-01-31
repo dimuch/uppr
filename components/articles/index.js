@@ -46,4 +46,6 @@ export { default as ReaderEXperienceRX } from './reader-eXperience-RX';
 export { default as TitleUkrainskouTaEngliash } from './title-ta-engliash';
 export { default as AgentToAgentCommunication } from './agent-to-agent-communication';
 export { default as Fgsfgsfg } from './fgsfgsfg';
+export { default as FgfsdGsdfGsdfG } from './fgfsd-gsdf-gsdf-g';
+export { default as EtreRioqweRwerDfAdsf } from './etre-rioqwe-rwer-df-adsf';
 export { default as PageNotFound } from '../common/404/404';

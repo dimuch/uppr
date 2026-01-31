@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const fsPromises = fs.promises;
+const MarkdownIt = require('markdown-it');
 
 /**
  * Convert title to component name (PascalCase), always in Latin.
@@ -117,233 +118,168 @@ function titleToImageName(title) {
     .replace(/[/\\:*?"<>|]/g, '');
 }
 
-// Match "### 1." or "### 1 " (ordered list item)
-const ORDERED_LIST_LINE = /^###\s+\d+[.\s]\s*(.*)$/;
-// Match "### - " or "### * " (unordered list item)
-const UNORDERED_LIST_LINE = /^###\s+[-*]\s+(.*)$/;
+/**
+ * Render inline token children to JSX string (bold, links, text).
+ */
+function renderInlineToJSX(children) {
+  if (!children || children.length === 0) return '';
+  let out = '';
+  for (let i = 0; i < children.length; i++) {
+    const t = children[i];
+    if (t.type === 'text') {
+      out += escapeJSX(t.content || '');
+    } else if (t.type === 'strong_open') {
+      out += '<b>';
+    } else if (t.type === 'strong_close') {
+      out += '</b>';
+    } else if (t.type === 'em_open') {
+      out += '<em>';
+    } else if (t.type === 'em_close') {
+      out += '</em>';
+    } else if (t.type === 'link_open') {
+      const href = (t.attrs && t.attrs.find((a) => a[0] === 'href')) ? t.attrs.find((a) => a[0] === 'href')[1] : '#';
+      out += `<a href="${escapeJSX(href)}" target="_blank" rel="noreferrer">`;
+    } else if (t.type === 'link_close') {
+      out += '</a>';
+    } else if (t.type === 'code_inline') {
+      out += escapeJSX(t.content || '');
+    } else if (t.type === 'html_inline' && t.content) {
+      // Preserve allowed inline HTML (e.g. colored spans stripped to content later)
+      const stripped = t.content.replace(/<span[^>]*>([^<]*)<\/span>/g, '$1');
+      out += escapeJSX(stripped);
+    }
+  }
+  return out;
+}
 
 /**
- * Parse markdown content and convert to JSX
- * Handles:
- * - Headings (## -> h2 with subTitle)
- * - Ordered list (### 1., ### 2. -> ol with articleList + numberedList)
- * - Unordered list (### - or ### * -> ul; - -> ul with articleList, li with discList)
- * - Paragraphs (-> p with articleText)
- * - Bold text (**text** -> <b>text</b>)
- * - Links ([text](url) -> <a> with articleLink)
- * - Colored spans (convert back to classNames)
+ * Normalize inline HTML from editor (colored spans) before parsing: strip or convert to plain.
+ */
+function normalizeEditorMarkdown(input) {
+  return input
+    .replace(/<span style="color: #44546A; font-weight: bold;">([^<]+)<\/span>/g, '**$1**')
+    .replace(/<span style="color: #4b6bf5;">\[([^\]]+)\]\(([^)]+)\)<\/span>/g, '[$1]($2)')
+    .replace(/<span style="color: #44546A[^"]*">([^<]+)<\/span>/g, '$1');
+}
+
+/**
+ * Parse markdown content and convert to JSX using markdown-it.
+ * Preserves: section wrappers (articleOddSection/articleEvenSection), subTitle, articleText,
+ * articleList, numberedList, discList, and inline bold/links.
  */
 function markdownToJSX(markdown) {
   const input = typeof markdown === 'string' ? markdown : String(markdown ?? '');
   if (input.length > 2 * 1024 * 1024) {
     throw new Error('markdownToJSX: content too large (max 2MB)');
   }
+
+  const normalized = normalizeEditorMarkdown(input);
+  const md = new MarkdownIt({ html: true });
+  const tokens = md.parse(normalized, {});
+
   let jsx = '';
   let sectionCount = 0;
   const sections = ['articleOddSection', 'articleEvenSection'];
   let currentSectionOpen = false;
+  let inListItemDepth = 0;
 
-  const lines = input.split('\n');
-  let i = 0;
-  const totalLines = lines.length;
-  console.log('[markdownToJSX] start lines=', totalLines);
+  for (let i = 0; i < tokens.length; i++) {
+    const token = tokens[i];
 
-  while (i < lines.length) {
-    if (i > 0 && i % 100 === 0) {
-      console.log('[markdownToJSX] progress line', i, '/', totalLines);
-    }
-    const line = lines[i].trim();
-
-    if (!line) {
-      i++;
-      continue;
-    }
-
-    // Check if it's a heading
-    if (line.startsWith('## ') && !line.startsWith('### ')) {
-      const headingText = line.replace(/^##\s+/, '').trim();
-
-      // Close previous section if open
+    if (token.type === 'heading_open' && token.tag === 'h2') {
       if (currentSectionOpen && sectionCount > 0) {
         jsx += `                </div>\n            </div>\n\n`;
       }
-
-      // Open new section
       const sectionClass = sections[sectionCount % 2];
       sectionCount++;
       currentSectionOpen = true;
-
       jsx += `            <div className={styles.${sectionClass}}>\n`;
       jsx += `                <div className={styles.maxWidthArticleSectionWrapper}>\n`;
-      jsx += `                    <h2 className={styles.subTitle}>${escapeJSX(headingText)}</h2>\n\n`;
+      jsx += `                    <h2 className={styles.subTitle}>`;
       i++;
+      if (i < tokens.length && tokens[i].type === 'inline' && tokens[i].children) {
+        jsx += renderInlineToJSX(tokens[i].children);
+      }
+      jsx += `</h2>\n\n`;
       continue;
     }
 
-    // Check if it's an ordered list (### 1., ### 2., etc.) (use match to avoid regex state)
-    const orderedMatch = line.match(ORDERED_LIST_LINE);
-    if (orderedMatch) {
-      jsx += `                    <ol className={\`\${styles.articleList} \${styles.numberedList}\`}>\n`;
-      while (i < lines.length) {
-        const itemLine = lines[i].trim();
-        const match = itemLine.match(ORDERED_LIST_LINE);
-        if (!match) break;
-        const content = match[1].trim();
-        let listText = content;
-        const spanMatch = content.match(/<span[^>]*>(.*?)<\/span>/);
-        if (spanMatch) {
-          listText = spanMatch[1];
-        } else {
-          listText = content.replace(/<[^>]*>/g, '');
-        }
-        listText = listText.replace(/&quot;/g, '"');
-        jsx += `                        <li className={styles.discList} style={{\n`;
-        jsx += `                            color: \`#\${articleData.article_color}\`\n`;
-        jsx += `                        }}>\n`;
-        jsx += `                            <p>${escapeJSX(listText)}</p>\n`;
-        jsx += `                        </li>\n`;
-        i++;
+    if (token.type === 'heading_close' && token.tag === 'h2') {
+      continue;
+    }
+
+    if (token.type === 'paragraph_open') {
+      if (inListItemDepth > 0) {
+        jsx += `                        <p>`;
+      } else {
+        jsx += `                    <p className={styles.articleText}>\n                        `;
       }
+      continue;
+    }
+
+    if (token.type === 'paragraph_close') {
+      jsx += `</p>\n`;
+      if (inListItemDepth === 0) jsx += '\n';
+      continue;
+    }
+
+    if (token.type === 'inline' && token.children) {
+      jsx += renderInlineToJSX(token.children);
+      continue;
+    }
+
+    if (token.type === 'ordered_list_open') {
+      jsx += `                    <ol className={\`\${styles.articleList} \${styles.numberedList}\`}>\n`;
+      continue;
+    }
+    if (token.type === 'ordered_list_close') {
       jsx += `                    </ol>\n\n`;
       continue;
     }
-
-    // Check if it's an unordered list with ### - or ### *
-    const unorderedMatch = line.match(UNORDERED_LIST_LINE);
-    if (unorderedMatch) {
+    if (token.type === 'bullet_list_open') {
       jsx += `                    <ul className={\`\${styles.articleList}\`}>\n`;
-      while (i < lines.length) {
-        const itemLine = lines[i].trim();
-        const match = itemLine.match(UNORDERED_LIST_LINE);
-        if (!match) break;
-        const content = match[1].trim();
-        let listText = content;
-        const spanMatch = content.match(/<span[^>]*>(.*?)<\/span>/);
-        if (spanMatch) {
-          listText = spanMatch[1];
-        } else {
-          listText = content.replace(/<[^>]*>/g, '');
-        }
-        listText = listText.replace(/&quot;/g, '"');
-        jsx += `                        <li className={styles.discList} style={{\n`;
-        jsx += `                            color: \`#\${articleData.article_color}\`\n`;
-        jsx += `                        }}>\n`;
-        jsx += `                            <p>${escapeJSX(listText)}</p>\n`;
-        jsx += `                        </li>\n`;
-        i++;
-      }
+      continue;
+    }
+    if (token.type === 'bullet_list_close') {
       jsx += `                    </ul>\n\n`;
       continue;
     }
-
-    // Check if it's a list item (plain - )
-    if (line.startsWith('- ')) {
-      jsx += `                    <ul className={\`\${styles.articleList}\`}>\n`;
-
-      // Collect all list items
-      while (i < lines.length && lines[i].trim().startsWith('- ')) {
-        const itemLine = lines[i].trim();
-        const content = itemLine.replace(/^-\s+/, '').trim();
-
-        // Extract text from span if present, otherwise use content as-is
-        let listText = content;
-        const spanMatch = content.match(/<span[^>]*>(.*?)<\/span>/);
-        if (spanMatch) {
-          listText = spanMatch[1];
-        } else {
-          // Remove any HTML tags
-          listText = content.replace(/<[^>]*>/g, '');
-        }
-
-        // Clean up quotes
-        listText = listText.replace(/&quot;/g, '"');
-
-        jsx += `                        <li className={styles.discList} style={{\n`;
-        jsx += `                            color: \`#\${articleData.article_color}\`\n`;
-        jsx += `                        }}>\n`;
-        jsx += `                            <p>${escapeJSX(listText)}</p>\n`;
-        jsx += `                        </li>\n`;
-        i++;
-      }
-
-      jsx += `                    </ul>\n\n`;
+    if (token.type === 'list_item_open') {
+      inListItemDepth++;
+      jsx += `                        <li className={styles.discList} style={{\n`;
+      jsx += `                            color: \`#\${articleData.article_color}\`\n`;
+      jsx += `                        }}>\n`;
       continue;
     }
-
-    // Regular paragraph - collect until empty line, heading, or ### list
-    let paragraphLines = [];
-    while (i < lines.length) {
-      const currentLine = lines[i].trim();
-      if (!currentLine || currentLine.startsWith('## ') || currentLine.startsWith('### ')) {
-        break;
-      }
-      paragraphLines.push(currentLine);
-      i++;
-    }
-
-    if (paragraphLines.length > 0) {
-      let paragraphContent = paragraphLines.join(' ');
-
-      // Convert colored spans with bold back to <b> tags
-      paragraphContent = paragraphContent.replace(
-        /<span style="color: #44546A; font-weight: bold;">([^<]+)<\/span>/g,
-        '<b>$1</b>'
-      );
-
-      // Convert markdown bold (**text**) to <b> tags
-      paragraphContent = paragraphContent.replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');
-
-      // Convert markdown links with colored span
-      paragraphContent = paragraphContent.replace(
-        /<span style="color: #4b6bf5;">\[([^\]]+)\]\(([^)]+)\)<\/span>/g,
-        '<a href="$2" target="_blank" rel="noreferrer">$1</a>'
-      );
-
-      // Convert regular markdown links
-      paragraphContent = paragraphContent.replace(
-        /\[([^\]]+)\]\(([^)]+)\)/g,
-        '<a href="$2" target="_blank" rel="noreferrer">$1</a>'
-      );
-
-      // Remove regular colored spans (keep content)
-      paragraphContent = paragraphContent.replace(
-        /<span style="color: #44546A[^"]*">([^<]+)<\/span>/g,
-        '$1'
-      );
-
-      // Clean up HTML entities
-      paragraphContent = paragraphContent.replace(/&quot;/g, '"');
-      paragraphContent = paragraphContent.replace(/&mdash;/g, '—');
-      paragraphContent = paragraphContent.replace(/&nbsp;/g, ' ');
-
-      // Handle line breaks in markdown (double space or <br/>)
-      paragraphContent = paragraphContent.replace(/\s{2,}/g, ' ');
-
-      jsx += `                    <p className={styles.articleText}>\n`;
-      jsx += `                        ${paragraphContent}\n`;
-      jsx += `                    </p>\n\n`;
+    if (token.type === 'list_item_close') {
+      inListItemDepth--;
+      jsx += `                        </li>\n`;
+      continue;
     }
   }
 
-  // Close last section if open
   if (currentSectionOpen) {
     jsx += `                </div>\n            </div>\n`;
   }
 
-  console.log('[markdownToJSX] end');
   return jsx;
 }
 
 /**
- * Escape JSX special characters (but preserve HTML tags we want to keep)
+ * Escape JSX special characters (but preserve HTML tags we want to keep).
+ * Decodes common entities from editor (e.g. &quot;) so they can be re-escaped correctly.
  */
 function escapeJSX(text) {
+  if (typeof text !== 'string') return '';
   // Don't escape if it already contains HTML tags we want to preserve
   if (text.includes('<b>') || text.includes('<a>') || text.includes('<br')) {
     return text;
   }
-
-  return text
+  const decoded = text
+    .replace(/&quot;/g, '"')
+    .replace(/&mdash;/g, '—')
+    .replace(/&nbsp;/g, ' ');
+  return decoded
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
