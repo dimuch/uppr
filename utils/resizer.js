@@ -2,13 +2,14 @@ const fs = require('fs');
 const sharp = require('sharp');
 const { sizes: imagesSizes } = require('./imageSizes');
 
-const destinationImagesDirectory = 'responsive';
 const sourceImagesDirectories = [
   './public/assets/images/blog-articles',
   './public/assets/images/others',
   './public/assets/images/downloads',
   './public/assets/images/case-study',
 ];
+
+const destinationImagesDirectory = 'responsive';
 
 const resizeImage = async (file, imageSize, sourceDirectory) => {
   const destinationFolder = `${sourceDirectory}/${destinationImagesDirectory}/${imageSize}`;
@@ -56,4 +57,11 @@ const imageResizing = () => {
   });
 };
 
-imageResizing();
+module.exports = { resizeImage, imageResizing };
+
+// Run batch resize only when script is executed directly (e.g. node resizer.js).
+// When imported by API (e.g. article submit), only resizeImage() is called for
+// the single uploaded file — do not rewrite/recreate other images.
+if (require.main === module) {
+  imageResizing();
+}

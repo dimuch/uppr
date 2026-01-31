@@ -150,6 +150,24 @@ export async function POST(request: Request) {
 			const buffer = Buffer.from(await uploadedFile.arrayBuffer());
 			await fs.writeFile(filePath, buffer);
 			articleImagePath = `/assets/images/blog-articles/${fileName}`;
+
+			// Create responsive images only for this uploaded file (fileName = user-selected image).
+			// Resizer batch job does not run when imported; only resizeImage(fileName, ...) is called.
+			try {
+				const { resizeImage } = await import('../../../../utils/resizer.js');
+				const { sizes: imagesSizes } = await import('../../../../utils/imageSizes.js');
+				const results = await Promise.allSettled(
+					imagesSizes.map((imageSize: number) =>
+						resizeImage(fileName, imageSize, BLOG_ARTICLES_IMAGE_DIR)
+					)
+				);
+				const failed = results.filter((r) => r.status === 'rejected');
+				if (failed.length > 0) {
+					console.warn('Some responsive image sizes failed for', fileName, failed);
+				}
+			} catch (resizeErr) {
+				console.warn('Responsive image resize failed for', fileName, resizeErr);
+			}
 		}
 
 		try {

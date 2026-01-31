@@ -2,20 +2,27 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * Convert title to component name (PascalCase)
+ * Convert title to component name (PascalCase), always in Latin.
+ * Cyrillic is transliterated via CYRILLIC_TO_LATIN so componentName is valid English.
  * Example: "Will you share your feedback ASAP?" -> "WillYouShareYourFeedbackAsap"
+ * Example: "4 делікатних ситуації" -> "4DelikatnyhSituacii"
  */
 function titleToComponentName(title) {
-  return title
-    .split(/[\s\-_]+/)
-    .map(word => {
-      // Handle special cases like "ASAP" -> "Asap"
+  const t = transliterate(title.trim());
+  const words = t
+    .replace(/[^a-zA-Z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean);
+  const pascalCase = words
+    .map((word) => {
+      if (!word.length) return '';
       if (word.toUpperCase() === word && word.length > 1) {
         return word.charAt(0) + word.slice(1).toLowerCase();
       }
       return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
     })
     .join('');
+  return pascalCase.replace(/[^A-Za-z0-9]/g, '') || 'Article';
 }
 
 /**
