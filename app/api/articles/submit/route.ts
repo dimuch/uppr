@@ -96,6 +96,14 @@ export async function POST(request: Request) {
 			.slice(0, 19)
 			.replace('T', ' ');
 
+		// Image path: /assets/images/blog-articles/ + name from title (max 40 chars, spaces → _)
+		const imageNameFromTitle = title
+			.trim()
+			.replace(/\s+/g, '_')
+			.replace(/[/\\:*?"<>|]/g, '')
+			.slice(0, 40);
+		const articleImagePath = `/assets/images/blog-articles/${imageNameFromTitle}_main.jpg`;
+
 		try {
 			await insertArticleToDB({
 				article_color: articleColor,
@@ -104,7 +112,7 @@ export async function POST(request: Request) {
 				published: publishedMySQL,
 				link: articleLink,
 				description: shortDescription,
-				image: mainImage,
+				image: articleImagePath,
 				views: '0000000000',
 				is_section_main_image: 0,
 				author,
