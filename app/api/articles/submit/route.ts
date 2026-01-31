@@ -1,17 +1,57 @@
 import { NextResponse } from 'next/server';
+import { promises as fs } from 'fs';
+import path from 'path';
 import { validateArticleForm } from '../../../../services/articleFormValidation';
 import { sendEmail } from '../../../../lib/email.js';
 import { insertArticleToDB } from '../../../../services/blogData.js';
 
+const BLOG_ARTICLES_IMAGE_DIR = path.join(process.cwd(), 'public', 'assets', 'images', 'blog-articles');
+
 /**
  * POST /api/articles/submit
- * Submit a new article, generate React component, and send email notification
+ * Submit a new article, generate React component, and send email notification.
+ * Accepts JSON or FormData (multipart); when FormData, saves uploaded image to
+ * public/assets/images/blog-articles.
  */
 export async function POST(request: Request) {
 	try {
-		const body = await request.json();
+		const contentType = request.headers.get('content-type') ?? '';
+		let body: Record<string, unknown>;
+		let uploadedFile: File | null = null;
+
+		if (contentType.includes('multipart/form-data')) {
+			const formData = await request.formData();
+			const tagRaw = formData.get('tag');
+			const tag = typeof tagRaw === 'string'
+				? (() => { try { return JSON.parse(tagRaw) as string[]; } catch { return []; } })()
+				: Array.isArray(tagRaw) ? tagRaw : [];
+			body = {
+				title: formData.get('title') ?? '',
+				shortDescription: formData.get('shortDescription') ?? '',
+				author: formData.get('author') ?? '',
+				publishingDate: formData.get('publishingDate') ?? '',
+				category: formData.get('category') ?? '',
+				tag,
+				mainImage: (formData.get('mainImage') as File | null)?.name ?? '',
+				markdownContent: formData.get('markdownContent') ?? '',
+			};
+			const file = formData.get('mainImage');
+			uploadedFile = file instanceof File && file.size > 0 ? file : null;
+		} else {
+			body = (await request.json()) as Record<string, unknown>;
+		}
+
 		// Validate form data
-		const validationResult = validateArticleForm(body);
+		const validationResult = validateArticleForm({
+			title: String(body.title ?? ''),
+			shortDescription: String(body.shortDescription ?? ''),
+			author: String(body.author ?? ''),
+			publishingDate: String(body.publishingDate ?? ''),
+			category: String(body.category ?? ''),
+			tag: Array.isArray(body.tag) ? (body.tag as string[]) : [],
+			mainImage: String(body.mainImage ?? ''),
+			markdownContent: String(body.markdownContent ?? ''),
+		});
 
 		if (!validationResult.isValid) {
 			return NextResponse.json(
@@ -98,7 +138,19 @@ export async function POST(request: Request) {
 
 		// Image path: /assets/images/blog-articles/ + name from title (transliterated, spaces → _)
 		const imageNameFromTitle = titleToImageName(title);
-		const articleImagePath = `/assets/images/blog-articles/${imageNameFromTitle}_main.jpg`;
+		let articleImagePath = `/assets/images/blog-articles/${imageNameFromTitle}_main.jpg`;
+
+		// Save uploaded image to public/assets/images/blog-articles (original file from request)
+		if (uploadedFile) {
+			const ext = path.extname(uploadedFile.name).toLowerCase() || '.jpg';
+			const safeExt = /^\.(jpe?g|png|gif|webp)$/.test(ext) ? ext : '.jpg';
+			const fileName = `${imageNameFromTitle}_main${safeExt}`;
+			const filePath = path.join(BLOG_ARTICLES_IMAGE_DIR, fileName);
+			await fs.mkdir(BLOG_ARTICLES_IMAGE_DIR, { recursive: true });
+			const buffer = Buffer.from(await uploadedFile.arrayBuffer());
+			await fs.writeFile(filePath, buffer);
+			articleImagePath = `/assets/images/blog-articles/${fileName}`;
+		}
 
 		try {
 			await insertArticleToDB({

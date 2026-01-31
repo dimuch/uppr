@@ -1,7 +1,7 @@
 'use client';
 
-import React, {useState} from 'react';
-import {useRouter} from 'next/navigation';
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import {
     TextField,
     Select,
@@ -15,7 +15,7 @@ import {
     Snackbar,
     Alert,
 } from '@mui/material';
-import {validateArticleForm} from '../../../services/articleFormValidation';
+import { validateArticleForm } from '../../../services/articleFormValidation';
 
 interface Category {
     id: number;
@@ -34,7 +34,7 @@ interface NewArticleFormProps {
     tags: Tag[];
 }
 
-const NewArticleForm: React.FC<NewArticleFormProps> = ({categories, tags}) => {
+const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => {
     const router = useRouter();
     const [formData, setFormData] = useState({
         title: '',
@@ -145,13 +145,23 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({categories, tags}) => {
             setIsSubmitting(true);
 
             try {
-                // Submit form data to API
+                // Submit as FormData so the uploaded image file is sent to the API
+                const formDataToSend = new FormData();
+                const { title, shortDescription, author, publishingDate, category, tag, markdownContent } = validationResult.sanitizedData;
+                formDataToSend.append('title', title);
+                formDataToSend.append('shortDescription', shortDescription);
+                formDataToSend.append('author', author);
+                formDataToSend.append('publishingDate', publishingDate);
+                formDataToSend.append('category', category);
+                formDataToSend.append('tag', JSON.stringify(tag));
+                formDataToSend.append('markdownContent', markdownContent);
+                if (selectedFile) {
+                    formDataToSend.append('mainImage', selectedFile);
+                }
+
                 const response = await fetch('/api/articles/submit', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(validationResult.sanitizedData),
+                    body: formDataToSend,
                 });
 
                 const data = await response.json();
