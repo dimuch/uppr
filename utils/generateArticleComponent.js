@@ -128,8 +128,47 @@ function normalizeEditorMarkdown(input) {
     .replace(/<span style="color: #44546A[^"]*">([^<]+)<\/span>/g, '$1');
 }
 
+/** Escape quotes for JSX: " " and straight " → &quot; */
+function escapeQuotes(text) {
+  if (typeof text !== 'string') return '';
+  return text
+    .replace(/\u201C/g, '&quot;')  // "
+    .replace(/\u201D/g, '&quot;')  // "
+    .replace(/"/g, '&quot;');
+}
+
+/** Render inline token children to JSX (bold, italic, links) and escape quotes. */
+function renderInlineToJSX(children) {
+  if (!children || children.length === 0) return '';
+  let out = '';
+  for (let i = 0; i < children.length; i++) {
+    const t = children[i];
+    if (t.type === 'text') {
+      out += escapeQuotes(t.content || '');
+    } else if (t.type === 'strong_open') {
+      out += '<b>';
+    } else if (t.type === 'strong_close') {
+      out += '</b>';
+    } else if (t.type === 'em_open') {
+      out += '<i>';
+    } else if (t.type === 'em_close') {
+      out += '</i>';
+    } else if (t.type === 'link_open') {
+      const href = (t.attrs && t.attrs.find((a) => a[0] === 'href')) ? t.attrs.find((a) => a[0] === 'href')[1] : '#';
+      out += `<a href="${escapeQuotes(href)}" target="_blank" rel="noreferrer">`;
+    } else if (t.type === 'link_close') {
+      out += '</a>';
+    } else if (t.type === 'code_inline') {
+      out += escapeQuotes(t.content || '');
+    }
+  }
+  return out;
+}
+
 /**
- * Convert markdown to HTML using markdown-it, then to JSX-safe string (class → className).
+ * Convert markdown to JSX using markdown-it tokens.
+ * Layout: odd/even sections (articleOddSection/articleEvenSection), each starting on h1/h2 with maxWidthArticleSectionWrapper.
+ * h3-only blocks get a section without wrapper (articlePhrase). Classes: subTitle (h1,h2), articlePhrase (h3), articleText (p), articleList (ul/ol), discList (li). Quotes → &quot;.
  */
 function markdownToJSX(markdown) {
   const input = typeof markdown === 'string' ? markdown : String(markdown ?? '');
@@ -139,11 +178,136 @@ function markdownToJSX(markdown) {
 
   const normalized = normalizeEditorMarkdown(input);
   const md = new MarkdownIt({ html: true });
-  const html = md.render(normalized);
+  const tokens = md.parse(normalized, {});
 
-  // Make HTML valid in JSX: class → className
-  const jsxSafe = html.replace(/\s+class=/g, ' className=').trim();
-  return jsxSafe ? `\n            ${jsxSafe.split('\n').join('\n            ')}\n            ` : '';
+  let jsx = '';
+  let sectionCount = 0;
+  const sections = ['articleOddSection', 'articleEvenSection'];
+  let sectionOpen = false;
+  let sectionHasWrapper = false;
+  let inListItemDepth = 0;
+
+  function ensureSectionWithWrapper() {
+    if (!sectionOpen) {
+      const sectionClass = sections[sectionCount % 2];
+      sectionCount++;
+      sectionOpen = true;
+      sectionHasWrapper = true;
+      jsx += `\n      <div className={styles.${sectionClass}}>\n        <div className={styles.maxWidthArticleSectionWrapper}>\n`;
+    } else if (!sectionHasWrapper) {
+      jsx += `\n        <div className={styles.maxWidthArticleSectionWrapper}>\n`;
+      sectionHasWrapper = true;
+    }
+  }
+
+  function closeSection() {
+    if (sectionOpen) {
+      if (sectionHasWrapper) jsx += `        </div>\n`;
+      jsx += `      </div>\n`;
+      sectionOpen = false;
+      sectionHasWrapper = false;
+    }
+  }
+
+  for (let i = 0; i < tokens.length; i++) {
+    const token = tokens[i];
+
+    // h1 or h2: start new section with wrapper, subTitle
+    if (token.type === 'heading_open' && (token.tag === 'h1' || token.tag === 'h2')) {
+      closeSection();
+      const sectionClass = sections[sectionCount % 2];
+      sectionCount++;
+      sectionOpen = true;
+      sectionHasWrapper = true;
+      jsx += `\n      <div className={styles.${sectionClass}}>\n        <div className={styles.maxWidthArticleSectionWrapper}>\n          <${token.tag} className={styles.subTitle}>`;
+      i++;
+      if (i < tokens.length && tokens[i].type === 'inline' && tokens[i].children) {
+        jsx += renderInlineToJSX(tokens[i].children);
+      }
+      jsx += `</${token.tag}>\n`;
+      continue;
+    }
+    if (token.type === 'heading_close' && (token.tag === 'h1' || token.tag === 'h2')) continue;
+
+    // h3: section without wrapper if no section open, else inside current section; articlePhrase + color
+    if (token.type === 'heading_open' && token.tag === 'h3') {
+      if (!sectionOpen) {
+        closeSection();
+        const sectionClass = sections[sectionCount % 2];
+        sectionCount++;
+        sectionOpen = true;
+        sectionHasWrapper = false;
+        jsx += `\n      <div className={styles.${sectionClass}}>\n        <h3 className={styles.articlePhrase} style={{\n color: \`#\${articleData.article_color}\`\n}}>\n          `;
+      } else {
+        jsx += `\n        <h3 className={styles.articlePhrase} style={{\n color: \`#\${articleData.article_color}\`\n}}>\n          `;
+      }
+      i++;
+      if (i < tokens.length && tokens[i].type === 'inline' && tokens[i].children) {
+        jsx += renderInlineToJSX(tokens[i].children);
+      }
+      jsx += `\n        </h3>\n`;
+      continue;
+    }
+    if (token.type === 'heading_close' && token.tag === 'h3') continue;
+
+    // hr: section break
+    if (token.type === 'hr') {
+      closeSection();
+      continue;
+    }
+
+    // paragraph
+    if (token.type === 'paragraph_open') {
+      ensureSectionWithWrapper();
+      jsx += inListItemDepth > 0
+        ? `            <p className={styles.articleText}>`
+        : `          <p className={styles.articleText}>\n            `;
+      continue;
+    }
+    if (token.type === 'paragraph_close') {
+      jsx += inListItemDepth > 0 ? `\n            </p>\n` : `\n          </p>\n`;
+      continue;
+    }
+    if (token.type === 'inline' && token.children) {
+      jsx += renderInlineToJSX(token.children);
+      continue;
+    }
+
+    // ordered list
+    if (token.type === 'ordered_list_open') {
+      ensureSectionWithWrapper();
+      jsx += `          <ol className={\`\${styles.articleList} \${styles.numberedList}\`}>\n`;
+      continue;
+    }
+    if (token.type === 'ordered_list_close') {
+      jsx += `          </ol>\n`;
+      continue;
+    }
+
+    // bullet list: always emit <ul> and </ul> (no empty-list skip to avoid missing </ul>)
+    if (token.type === 'bullet_list_open') {
+      ensureSectionWithWrapper();
+      jsx += `          <ul className={\`\${styles.articleList} \${styles.discList}\`}>\n`;
+      continue;
+    }
+    if (token.type === 'bullet_list_close') {
+      jsx += `          </ul>\n`;
+      continue;
+    }
+    if (token.type === 'list_item_open') {
+      inListItemDepth++;
+      jsx += `            <li className={styles.discList} style={{\n color: \`#\${articleData.article_color}\`\n}}>\n              `;
+      continue;
+    }
+    if (token.type === 'list_item_close') {
+      inListItemDepth--;
+      jsx += `\n            </li>\n`;
+      continue;
+    }
+  }
+
+  closeSection();
+  return jsx.trim() ? `\n${jsx.trim()}\n            ` : '';
 }
 
 /**
