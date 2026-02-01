@@ -169,10 +169,11 @@ export default function LoginForm() {
                     fullWidth
                     disabled={loading || !username || token.length !== 6}
                     sx={{
-                        mt: 2
+                        mt: 2,
+                        height: 56,
                     }}
                 >
-                    {loading ? <CircularProgress size={24}/> : 'Login'}
+                    {loading ? <CircularProgress size={24} /> : 'Login'}
                 </Button>
             </Box>
         </Container>
