@@ -3,8 +3,18 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { getCurrentUser } from '../../../../lib/auth.js';
 import { validateArticleForm } from '../../../../services/articleFormValidation';
-import { sendEmail } from '../../../../lib/email.js';
+import { sendNewArticleNotification } from '../../../../lib/email.js';
 import { insertArticleToDB, insertArticleTags, insertArticleCategory } from '../../../../services/blogData.js';
+import {
+	saveArticleComponent,
+	titleToPageComponent,
+	titleToSlug,
+	titleToImageName
+} from '../../../../utils/generateArticleComponent.js';
+import { updateArticleIndex } from '../../../../utils/updateArticleIndex.js';
+import { resizeImage } from '../../../../utils/resizer.js';
+import { sizes as imagesSizes} from '../../../../utils/imageSizes.js';
+import { withTimeout} from '../../../../utils/updateWithTimeout.js';
 
 /** Comma-separated usernames allowed to submit articles (empty = any authenticated user). */
 const ALLOWED_USERNAMES = (process.env.ALLOWED_ARTICLE_SUBMIT_USERNAMES ?? '')
@@ -16,15 +26,6 @@ const BLOG_ARTICLES_IMAGE_DIR = path.join(process.cwd(), 'public', 'assets', 'im
 
 const DB_OP_TIMEOUT_MS = 15000;
 const SAVE_COMPONENT_TIMEOUT_MS = 30000;
-
-function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise<T> {
-	return Promise.race([
-		promise,
-		new Promise<never>((_, reject) =>
-			setTimeout(() => reject(new Error(`${label} timed out after ${ms}ms`)), ms)
-		),
-	]);
-}
 
 /**
  * POST /api/articles/submit
@@ -39,9 +40,12 @@ export async function POST(request: Request) {
 		// Require authenticated user
 		const user = await getCurrentUser();
 		if (!user) {
-			return NextResponse.json(
-				{ error: 'Unauthorized', message: 'Authentication required to submit articles.' },
-				{ status: 401 }
+			return NextResponse.json({
+				error: 'Unauthorized', message: 'Authentication required to submit articles.'
+			},
+				{
+					status: 401
+				}
 			);
 		}
 
@@ -49,9 +53,12 @@ export async function POST(request: Request) {
 		if (ALLOWED_USERNAMES.length > 0) {
 			const usernameLower = String(user.username ?? '').toLowerCase();
 			if (!ALLOWED_USERNAMES.includes(usernameLower)) {
-				return NextResponse.json(
-					{ error: 'Forbidden', message: 'You are not allowed to submit articles.' },
-					{ status: 403 }
+				return NextResponse.json({
+					error: 'Forbidden', message: 'You are not allowed to submit articles.'
+				},
+					{
+						status: 403
+					}
 				);
 			}
 		}
@@ -66,7 +73,13 @@ export async function POST(request: Request) {
 			console.log('[articles/submit] FormData parsed');
 			const tagRaw = formData.get('tag');
 			const tag = typeof tagRaw === 'string'
-				? (() => { try { return JSON.parse(tagRaw) as string[]; } catch { return []; } })()
+				? (() => {
+					try {
+						return JSON.parse(tagRaw) as string[];
+					} catch {
+						return [];
+					}
+				})()
 				: Array.isArray(tagRaw) ? tagRaw : [];
 			body = {
 				title: formData.get('title') ?? '',
@@ -99,11 +112,10 @@ export async function POST(request: Request) {
 		});
 
 		if (!validationResult.isValid) {
-			return NextResponse.json(
-				{
-					error: 'Validation failed',
-					errors: validationResult.errors,
-				},
+			return NextResponse.json({
+				error: 'Validation failed',
+				errors: validationResult.errors,
+			},
 				{
 					status: 400
 				}
@@ -137,12 +149,7 @@ export async function POST(request: Request) {
 		// Use a default article color (can be customized per category later)
 		const articleColor = 'FF603B'; // Default color, can be fetched from category if needed
 
-		// Dynamic import for CommonJS modules
 		console.log('[articles/submit] loading generateArticleComponent');
-		const { saveArticleComponent, titleToPageComponent, titleToSlug, titleToImageName } = await import('../../../../utils/generateArticleComponent.js');
-		const { updateArticleIndex } = await import('../../../../utils/updateArticleIndex.js');
-		console.log('[articles/submit] imports loaded');
-
 		console.log('[articles/submit] saving component...');
 		const componentResult = await withTimeout(
 			saveArticleComponent(title, markdownContent, articleColor),
@@ -213,8 +220,6 @@ export async function POST(request: Request) {
 			// Create responsive images only for this uploaded file (fileName = user-selected image).
 			// Resizer batch job does not run when imported; only resizeImage(fileName, ...) is called.
 			try {
-				const { resizeImage } = await import('../../../../utils/resizer.js');
-				const { sizes: imagesSizes } = await import('../../../../utils/imageSizes.js');
 				const results = await Promise.allSettled(
 					imagesSizes.map((imageSize: number) =>
 						resizeImage(fileName, imageSize, BLOG_ARTICLES_IMAGE_DIR)
@@ -296,66 +301,10 @@ export async function POST(request: Request) {
 			fileName: componentResult.fileName,
 		});
 
-		// Send email notification
-		const adminEmails = process.env.ADMIN_NOTIFICATION_EMAILS;
+		// Send email notification (fire-and-forget; does not block response)
+		sendNewArticleNotification({ title, markdownContent });
 
-		if (adminEmails) {
-			// Parse email addresses (comma or semicolon separated)
-			const emailList = adminEmails
-				.split(/[,;]/)
-				.map(email => email.trim())
-				.filter(email => email.length > 0);
-
-			if (emailList.length > 0) {
-				const submissionDate = new Date().toLocaleString('en-US', {
-					year: 'numeric',
-					month: 'long',
-					day: 'numeric',
-					hour: '2-digit',
-					minute: '2-digit',
-					timeZoneName: 'short',
-				});
-
-				const emailSubject = `New Article added, ${title}`;
-				const emailText = `
-          Hello!
-          
-          New article was just added:
-          
-          Title: ${title}
-          Date: ${submissionDate}
-          Content: ${markdownContent}
-        `;
-
-				// Send email (don't await to avoid blocking response)
-				sendEmail({
-					to: emailList,
-					subject: emailSubject,
-					text: emailText,
-				}).catch(error => {
-					console.error('Email notification failed:', error);
-					// Don't fail the request if email fails
-				});
-			}
-		}
-
-		// Build list of new files for git; then push and optionally restart (production)
-		const filesForGit: string[] = [
-			'components/articles/index.js',
-		];
-		if (componentResult.filePath) {
-			filesForGit.push(path.relative(process.cwd(), componentResult.filePath));
-		}
-		if (savedFileName) {
-			filesForGit.push(path.relative(process.cwd(), path.join(BLOG_ARTICLES_IMAGE_DIR, savedFileName)));
-			const { sizes: imagesSizes } = await import('../../../../utils/imageSizes.js');
-			const webpName = savedFileName.replace(/\.[^.]+$/, '.webp');
-			for (const size of imagesSizes as number[]) {
-				filesForGit.push(path.join('public', 'assets', 'images', 'blog-articles', 'responsive', String(size), webpName));
-			}
-		}
-		const commitMessage = `Add article: ${title}`;
-		const jsonResponse = NextResponse.json({
+		return NextResponse.json({
 			success: true,
 			message: 'Article submitted successfully',
 			component: {
@@ -364,8 +313,6 @@ export async function POST(request: Request) {
 				filePath: componentResult.filePath,
 			},
 		});
-
-		return jsonResponse;
 	} catch (error) {
 		console.error('Article submission error:', error);
 		return NextResponse.json(

@@ -125,9 +125,7 @@ export const validateArticleForm = (formData: {
 
         return {
             isValid: true,
-            errors: {
-
-            },
+            errors: {},
             sanitizedData,
         };
     } catch (error) {
