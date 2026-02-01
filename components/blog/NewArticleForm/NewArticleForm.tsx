@@ -32,7 +32,24 @@ interface NewArticleFormProps {
     tags: Tag[];
 }
 
-const getTodayDateString = () => new Date().toISOString().slice(0, 10);
+/** Default publishing date/time as YYYY-MM-DD HH:mm:ss (local time, seconds :00). */
+function getDefaultPublishingDateTime(): string {
+    const d = new Date();
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    const h = String(d.getHours()).padStart(2, '0');
+    const min = String(d.getMinutes()).padStart(2, '0');
+    return `${y}-${m}-${day} ${h}:${min}:00`;
+}
+
+/** Normalize datetime-local value to YYYY-MM-DD HH:mm:ss for the server. */
+function normalizePublishingDate(value: string): string {
+    const s = String(value).trim().replace('T', ' ');
+    if (/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/.test(s)) return s;
+    if (/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/.test(s)) return `${s}:00`;
+    return s;
+}
 
 const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => {
     const router = useRouter();
@@ -40,7 +57,7 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
         title: '',
         shortDescription: '',
         author: '',
-        publishingDate: getTodayDateString(),
+        publishingDate: getDefaultPublishingDateTime(),
         articleColor: 'FF603B',
         category: '',
         tag: [] as string[],
@@ -61,6 +78,10 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
         // Convert category to string if it's a number
         if (field === 'category' && typeof value === 'number') {
             value = String(value);
+        }
+        // Keep publishing date as YYYY-MM-DD HH:mm:ss for the server
+        if (field === 'publishingDate' && typeof value === 'string') {
+            value = normalizePublishingDate(value);
         }
         setFormData(prev => ({
             ...prev,
@@ -200,7 +221,7 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
             title: '',
             shortDescription: '',
             author: '',
-            publishingDate: getTodayDateString(),
+            publishingDate: getDefaultPublishingDateTime(),
             articleColor: 'FF603B',
             category: '',
             tag: [],
@@ -506,13 +527,13 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                                     color: errors.publishingDate ? 'error.main' : 'text.primary',
                                 }}
                             >
-                                Publishing Date (dd/mm/yyyy) <span aria-label="required">*</span>
+                                Publishing Date &amp; time <span aria-label="required">*</span>
                             </Typography>
                             <TextField
                                 id="publishing-date"
                                 name="publishingDate"
-                                type="date"
-                                value={formData.publishingDate}
+                                type="datetime-local"
+                                value={formData.publishingDate.replace(' ', 'T')}
                                 onChange={handleChange('publishingDate')}
                                 fullWidth
                                 required
@@ -529,16 +550,16 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                                     },
                                 }}
                                 sx={{
-                                    '& input[type="date"]::-webkit-calendar-picker-indicator': {
+                                    '& input[type="datetime-local"]::-webkit-calendar-picker-indicator': {
                                         cursor: 'pointer',
                                     },
-                                    '& input[type="date"]::before': {
+                                    '& input[type="datetime-local"]::before': {
                                         content: '""',
                                     },
-                                    '& input[type="date"]:invalid::-webkit-datetime-edit': {
+                                    '& input[type="datetime-local"]:invalid::-webkit-datetime-edit': {
                                         color: 'transparent',
                                     },
-                                    '& input[type="date"]:focus::-webkit-datetime-edit': {
+                                    '& input[type="datetime-local"]:focus::-webkit-datetime-edit': {
                                         color: 'inherit',
                                     },
                                 }}

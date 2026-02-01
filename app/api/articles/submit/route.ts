@@ -17,6 +17,7 @@ import { sizes as imagesSizes } from '../../../../utils/imageSizes.js';
 import { withTimeout } from '../../../../utils/updateWithTimeout.js';
 import { scheduleBuildAndPm2Restart } from '../../../../lib/gitPushAndRestart.js';
 import { addArticleToSitemapAndRobots } from '../../../../lib/sitemapAndRobots.js';
+import { formatDateTimeForMySQL } from '../../../../utils/formatDateTimeForMySQL';
 
 /** Comma-separated usernames allowed to submit articles (empty = any authenticated user). */
 const ALLOWED_USERNAMES = (process.env.ALLOWED_ARTICLE_SUBMIT_USERNAMES ?? '')
@@ -204,15 +205,10 @@ export async function POST(request: Request) {
 		}
 
 		// Save article to the articles table (link and image use CYRILLIC_TO_LATIN, no length limit)
-		// Published value saved to DB = payload publishingDate + 5 minutes
+		// Published value saved to DB = payload publishingDate + 5 minutes, format YYYY-MM-DD HH:mm:ss for comparison with NOW()
 		const articleLink = `/blog/articles/${articleSlug}`;
-		const publishedDateFromPayload = new Date(publishingDate);
-		const publishedDateForDB = new Date(publishedDateFromPayload.getTime() + 5 * 60 * 1000);
-		const publishedMySQL = publishedDateForDB
-			.toISOString()
-			.slice(0, 19)
-			.replace('T', ' ');
-
+		const publishedDateForDB = new Date(publishingDate);
+		const publishedMySQL = formatDateTimeForMySQL(publishedDateForDB);
 		// Image path: /assets/images/blog-articles/ + name from title (transliterated, spaces → _)
 		const imageNameFromTitle = titleToImageName(title);
 		let articleImagePath = `/assets/images/blog-articles/${imageNameFromTitle}_main.jpg`;
@@ -322,7 +318,7 @@ export async function POST(request: Request) {
 		});
 
 		// Schedule build + PM2 restart after 5s (production only)
-		scheduleBuildAndPm2Restart(5000);
+		scheduleBuildAndPm2Restart(15000);
 
 		return NextResponse.json({
 			success: true,
