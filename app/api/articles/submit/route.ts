@@ -318,7 +318,7 @@ export async function POST(request: Request) {
 		});
 
 		// Schedule build + PM2 restart after 5s (production only)
-		scheduleBuildAndPm2Restart(15000);
+		// scheduleBuildAndPm2Restart(15000);
 
 		return NextResponse.json({
 			success: true,
