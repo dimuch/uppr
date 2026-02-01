@@ -313,8 +313,10 @@ export async function POST(request: Request) {
 			fileName: componentResult.fileName,
 		});
 
-		// Send email notification
-		await sendNewArticleNotification({ title, markdownContent });
+		// Send email notification in background (do not block response; SMTP can timeout on server)
+		sendNewArticleNotification({ title, markdownContent }).catch((err) => {
+			console.error('[articles/submit] Email notification failed:', err);
+		});
 
 		// Schedule build + PM2 restart after 5s (production only)
 		scheduleBuildAndPm2Restart(5000);
