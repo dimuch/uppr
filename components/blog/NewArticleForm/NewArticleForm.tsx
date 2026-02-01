@@ -147,12 +147,13 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
             try {
                 // Submit as FormData so the uploaded image file is sent to the API
                 const formDataToSend = new FormData();
-                const { title, shortDescription, author, publishingDate, category, tag, markdownContent } =
+                const { title, shortDescription, author, publishingDate, articleColor, category, tag, markdownContent } =
                     validationResult.sanitizedData;
                 formDataToSend.append('title', title);
                 formDataToSend.append('shortDescription', shortDescription);
                 formDataToSend.append('author', author);
                 formDataToSend.append('publishingDate', publishingDate);
+                formDataToSend.append('articleColor', articleColor); // hex without #
                 formDataToSend.append('category', category);
                 formDataToSend.append('tag', JSON.stringify(tag));
                 formDataToSend.append('markdownContent', markdownContent);
