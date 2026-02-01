@@ -204,8 +204,11 @@ export async function POST(request: Request) {
 		}
 
 		// Save article to the articles table (link and image use CYRILLIC_TO_LATIN, no length limit)
+		// Published value saved to DB = payload publishingDate + 5 minutes
 		const articleLink = `/blog/articles/${articleSlug}`;
-		const publishedMySQL = new Date(publishingDate)
+		const publishedDateFromPayload = new Date(publishingDate);
+		const publishedDateForDB = new Date(publishedDateFromPayload.getTime() + 5 * 60 * 1000);
+		const publishedMySQL = publishedDateForDB
 			.toISOString()
 			.slice(0, 19)
 			.replace('T', ' ');
