@@ -1,4 +1,4 @@
-import {z} from 'zod';
+import { z } from 'zod';
 
 // DOMPurify for client-side sanitization
 let DOMPurify: any;
@@ -69,8 +69,17 @@ export const articleFormSchema = z.object({
         .min(1, 'Publishing date is required')
         .refine((date) => {
             const dateObj = new Date(date);
-            return !isNaN(dateObj.getTime()) && dateObj <= new Date();
-        }, 'Publishing date must be a valid date and cannot be in the future'),
+            return !isNaN(dateObj.getTime());
+        }, 'Publishing date must be a valid date'),
+
+    articleColor: z
+        .string()
+        .optional()
+        .default('FF603B')
+        .transform((val) => {
+            const v = (val || 'FF603B').trim().replace(/^#/, '');
+            return /^[0-9A-Fa-f]{6}$/.test(v) ? v : 'FF603B';
+        }),
 
     category: z
         .union([z.string(), z.number()])
@@ -114,6 +123,7 @@ export const validateArticleForm = (formData: {
     shortDescription: string;
     author: string;
     publishingDate: string;
+    articleColor?: string;
     category: string;
     tag: string[];
     mainImage: string;

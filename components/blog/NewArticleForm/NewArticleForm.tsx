@@ -12,8 +12,6 @@ import {
     Typography,
     FormHelperText,
     SelectChangeEvent,
-    Snackbar,
-    Alert,
 } from '@mui/material';
 import { validateArticleForm } from '../../../services/articleFormValidation';
 
@@ -34,13 +32,16 @@ interface NewArticleFormProps {
     tags: Tag[];
 }
 
+const getTodayDateString = () => new Date().toISOString().slice(0, 10);
+
 const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => {
     const router = useRouter();
     const [formData, setFormData] = useState({
         title: '',
         shortDescription: '',
         author: '',
-        publishingDate: '',
+        publishingDate: getTodayDateString(),
+        articleColor: 'FF603B',
         category: '',
         tag: [] as string[],
         mainImage: '',
@@ -49,7 +50,6 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
 
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [errors, setErrors] = useState<Record<string, string>>({});
-    const [showSuccessToast, setShowSuccessToast] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (field: string) => (
@@ -147,7 +147,8 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
             try {
                 // Submit as FormData so the uploaded image file is sent to the API
                 const formDataToSend = new FormData();
-                const { title, shortDescription, author, publishingDate, category, tag, markdownContent } = validationResult.sanitizedData;
+                const { title, shortDescription, author, publishingDate, category, tag, markdownContent } =
+                    validationResult.sanitizedData;
                 formDataToSend.append('title', title);
                 formDataToSend.append('shortDescription', shortDescription);
                 formDataToSend.append('author', author);
@@ -198,7 +199,8 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
             title: '',
             shortDescription: '',
             author: '',
-            publishingDate: '',
+            publishingDate: getTodayDateString(),
+            articleColor: 'FF603B',
             category: '',
             tag: [],
             mainImage: '',
@@ -266,6 +268,84 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                                 },
                             }}
                         />
+                    </FormControl>
+                </Box>
+
+                {/* Main Image Upload - Full Width */}
+                <Box>
+                    <FormControl fullWidth required error={!!errors.mainImage}>
+                        <Typography
+                            component="label"
+                            htmlFor="main-image-input"
+                            id="main-image-label"
+                            sx={{
+                                display: 'block',
+                                mb: 1,
+                                fontWeight: 500,
+                                fontSize: '0.875rem',
+                                color: errors.mainImage ? 'error.main' : 'text.primary',
+                            }}
+                        >
+                            Main Article Image <span aria-label="required">*</span>
+                        </Typography>
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                gap: 1,
+                            }}
+                        >
+                            <Box
+                                component="label"
+                                htmlFor="main-image-input"
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    cursor: 'pointer',
+                                }}
+                            >
+                                <input
+                                    id="main-image-input"
+                                    name="mainImage"
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={handleFileChange}
+                                    style={{
+                                        display: 'none'
+                                    }}
+                                    aria-required="true"
+                                    aria-describedby={errors.mainImage ? 'main-image-error' : 'main-image-helper'}
+                                    aria-invalid={!!errors.mainImage}
+                                    aria-labelledby="main-image-label"
+                                />
+                                <TextField
+                                    value={formData.mainImage || ''}
+                                    fullWidth
+                                    InputProps={{
+                                        readOnly: true,
+                                    }}
+                                    onClick={() => document.getElementById('main-image-input')?.click()}
+                                    sx={{
+                                        cursor: 'pointer',
+                                        '& .MuiInputBase-root': {
+                                            cursor: 'pointer',
+                                        },
+                                    }}
+                                    slotProps={{
+                                        htmlInput: {
+                                            'aria-label': 'Selected image file name',
+                                        },
+                                    }}
+                                />
+                            </Box>
+                            <FormHelperText
+                                id={errors.mainImage ? 'main-image-error' : 'main-image-helper'}
+                                role={errors.mainImage ? 'alert' : undefined}
+                                aria-live={errors.mainImage ? 'polite' : undefined}
+                            >
+                                {errors.mainImage || 'Click to select an image file for the article'}
+                            </FormHelperText>
+                        </Box>
                     </FormControl>
                 </Box>
 
@@ -357,6 +437,55 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                                     },
                                 }}
                             />
+                        </FormControl>
+                    </Box>
+
+                    <Box sx={{
+                        flex: 1
+                    }}>
+                        <FormControl fullWidth>
+                            <Typography
+                                component="label"
+                                htmlFor="article-color-picker"
+                                id="article-color-label"
+                                sx={{
+                                    display: 'block',
+                                    mb: 1,
+                                    fontWeight: 500,
+                                    fontSize: '0.875rem',
+                                    color: errors.articleColor ? 'error.main' : 'text.primary',
+                                }}
+                            >
+                                Article colour
+                            </Typography>
+                            <Box
+                                id="article-color"
+                                sx={{
+                                    width: '100%',
+                                    height: 56,
+                                }}
+                            >
+                                <input
+                                    id="article-color-picker"
+                                    name="articleColor"
+                                    type="color"
+                                    value={`#${formData.articleColor}`}
+                                    onChange={(e) => {
+                                        const hex = e.target.value.replace(/^#/, '');
+                                        setFormData(prev => ({ ...prev, articleColor: hex }));
+                                    }}
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        padding: '2px 4px',
+                                        border: '1px solid #ccc',
+                                        borderRadius: 4,
+                                        cursor: 'pointer',
+                                        boxSizing: 'border-box',
+                                    }}
+                                    aria-labelledby="article-color-label"
+                                />
+                            </Box>
                         </FormControl>
                     </Box>
 
@@ -546,84 +675,6 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                             )}
                         </FormControl>
                     </Box>
-                </Box>
-
-                {/* Main Image Upload - Full Width */}
-                <Box>
-                    <FormControl fullWidth required error={!!errors.mainImage}>
-                        <Typography
-                            component="label"
-                            htmlFor="main-image-input"
-                            id="main-image-label"
-                            sx={{
-                                display: 'block',
-                                mb: 1,
-                                fontWeight: 500,
-                                fontSize: '0.875rem',
-                                color: errors.mainImage ? 'error.main' : 'text.primary',
-                            }}
-                        >
-                            Main Article Image <span aria-label="required">*</span>
-                        </Typography>
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                gap: 1,
-                            }}
-                        >
-                            <Box
-                                component="label"
-                                htmlFor="main-image-input"
-                                sx={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    cursor: 'pointer',
-                                }}
-                            >
-                                <input
-                                    id="main-image-input"
-                                    name="mainImage"
-                                    type="file"
-                                    accept="image/*"
-                                    onChange={handleFileChange}
-                                    style={{
-                                        display: 'none'
-                                    }}
-                                    aria-required="true"
-                                    aria-describedby={errors.mainImage ? 'main-image-error' : 'main-image-helper'}
-                                    aria-invalid={!!errors.mainImage}
-                                    aria-labelledby="main-image-label"
-                                />
-                                <TextField
-                                    value={formData.mainImage || ''}
-                                    fullWidth
-                                    InputProps={{
-                                        readOnly: true,
-                                    }}
-                                    onClick={() => document.getElementById('main-image-input')?.click()}
-                                    sx={{
-                                        cursor: 'pointer',
-                                        '& .MuiInputBase-root': {
-                                            cursor: 'pointer',
-                                        },
-                                    }}
-                                    slotProps={{
-                                        htmlInput: {
-                                            'aria-label': 'Selected image file name',
-                                        },
-                                    }}
-                                />
-                            </Box>
-                            <FormHelperText
-                                id={errors.mainImage ? 'main-image-error' : 'main-image-helper'}
-                                role={errors.mainImage ? 'alert' : undefined}
-                                aria-live={errors.mainImage ? 'polite' : undefined}
-                            >
-                                {errors.mainImage || 'Click to select an image file for the article'}
-                            </FormHelperText>
-                        </Box>
-                    </FormControl>
                 </Box>
 
                 {/* Markdown Content - Full Width */}

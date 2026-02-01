@@ -13,8 +13,8 @@ import {
 } from '../../../../utils/generateArticleComponent.js';
 import { updateArticleIndex } from '../../../../utils/updateArticleIndex.js';
 import { resizeImage } from '../../../../utils/resizer.js';
-import { sizes as imagesSizes} from '../../../../utils/imageSizes.js';
-import { withTimeout} from '../../../../utils/updateWithTimeout.js';
+import { sizes as imagesSizes } from '../../../../utils/imageSizes.js';
+import { withTimeout } from '../../../../utils/updateWithTimeout.js';
 
 /** Comma-separated usernames allowed to submit articles (empty = any authenticated user). */
 const ALLOWED_USERNAMES = (process.env.ALLOWED_ARTICLE_SUBMIT_USERNAMES ?? '')
@@ -86,6 +86,7 @@ export async function POST(request: Request) {
 				shortDescription: formData.get('shortDescription') ?? '',
 				author: formData.get('author') ?? '',
 				publishingDate: formData.get('publishingDate') ?? '',
+				articleColor: formData.get('articleColor') ?? '',
 				category: formData.get('category') ?? '',
 				tag,
 				mainImage: (formData.get('mainImage') as File | null)?.name ?? '',
@@ -105,6 +106,7 @@ export async function POST(request: Request) {
 			shortDescription: String(body.shortDescription ?? ''),
 			author: String(body.author ?? ''),
 			publishingDate: String(body.publishingDate ?? ''),
+			articleColor: String(body.articleColor ?? ''),
 			category: String(body.category ?? ''),
 			tag: Array.isArray(body.tag) ? (body.tag as string[]) : [],
 			mainImage: String(body.mainImage ?? ''),
@@ -143,11 +145,11 @@ export async function POST(request: Request) {
 			category,
 			tag,
 			mainImage,
+			articleColor: payloadArticleColor,
 		} = validationResult.sanitizedData;
 
-		// Generate and save React component from markdown
-		// Use a default article color (can be customized per category later)
-		const articleColor = 'FF603B'; // Default color, can be fetched from category if needed
+		// Use article colour from payload or default
+		const articleColor = payloadArticleColor ?? 'FF603B';
 
 		console.log('[articles/submit] loading generateArticleComponent');
 		console.log('[articles/submit] saving component...');
