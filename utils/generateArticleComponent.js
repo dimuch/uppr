@@ -168,7 +168,7 @@ function renderInlineToJSX(children) {
 /**
  * Convert markdown to JSX using markdown-it tokens.
  * Layout: odd/even sections (articleOddSection/articleEvenSection), each starting on h1/h2 with maxWidthArticleSectionWrapper.
- * h3-only blocks get a section without wrapper (articlePhrase). Classes: subTitle (h1,h2), articlePhrase (h3), articleText (p), articleList (ul/ol), discList (li). Quotes → &quot;.
+ * h3-only blocks get a section without wrapper (subTitle). Classes: subTitle (h1,h2), subTitle (h3), articleText (p), articleList (ul/ol), discList (li). Quotes → &quot;.
  */
 function markdownToJSX(markdown) {
   const input = typeof markdown === 'string' ? markdown : String(markdown ?? '');
@@ -229,7 +229,7 @@ function markdownToJSX(markdown) {
     }
     if (token.type === 'heading_close' && (token.tag === 'h1' || token.tag === 'h2')) continue;
 
-    // h3: section without wrapper if no section open, else inside current section; articlePhrase + color
+    // h3: section without wrapper if no section open, else inside current section; subTitle + color
     if (token.type === 'heading_open' && token.tag === 'h3') {
       if (!sectionOpen) {
         closeSection();
@@ -237,9 +237,9 @@ function markdownToJSX(markdown) {
         sectionCount++;
         sectionOpen = true;
         sectionHasWrapper = false;
-        jsx += `\n      <div className={styles.${sectionClass}}>\n        <h3 className={styles.articlePhrase} style={{\n color: \`#\${articleData.article_color}\`\n}}>\n          `;
+        jsx += `\n      <div className={styles.${sectionClass}}>\n        <h3 className={styles.subTitle} style={{\n color: \`#\${articleData.article_color}\`\n}}>\n          `;
       } else {
-        jsx += `\n        <h3 className={styles.articlePhrase} style={{\n color: \`#\${articleData.article_color}\`\n}}>\n          `;
+        jsx += `\n        <h3 className={styles.subTitle} style={{\n color: \`#\${articleData.article_color}\`\n}}>\n          `;
       }
       i++;
       if (i < tokens.length && tokens[i].type === 'inline' && tokens[i].children) {
