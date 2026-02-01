@@ -45,6 +45,7 @@ yarn.lock
 
 
 package-lock.json
+next-env.d.ts
 
 #static images
 public/assets/images/blog-articles/responsive/**/*
