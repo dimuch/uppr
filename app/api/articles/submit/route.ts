@@ -16,6 +16,7 @@ import { resizeImage } from '../../../../utils/resizer.js';
 import { sizes as imagesSizes } from '../../../../utils/imageSizes.js';
 import { withTimeout } from '../../../../utils/updateWithTimeout.js';
 import { scheduleBuildAndPm2Restart } from '../../../../lib/gitPushAndRestart.js';
+import { addArticleToSitemapAndRobots } from '../../../../lib/sitemapAndRobots.js';
 
 /** Comma-separated usernames allowed to submit articles (empty = any authenticated user). */
 const ALLOWED_USERNAMES = (process.env.ALLOWED_ARTICLE_SUBMIT_USERNAMES ?? '')
@@ -193,8 +194,16 @@ export async function POST(request: Request) {
 			console.log('Component export added to index.js');
 		}
 
-		// Save article to the articles table (link and image use CYRILLIC_TO_LATIN, no length limit)
+		// Update sitemap.txt and robots.txt with the new article URL
 		const articleSlug = titleToSlug(title);
+		const sitemapRobotsResult = await addArticleToSitemapAndRobots(articleSlug);
+		if (sitemapRobotsResult.success) {
+			console.log('[articles/submit] sitemap.txt and robots.txt updated with new article');
+		} else {
+			console.warn('Failed to update sitemap.txt or robots.txt:', sitemapRobotsResult.error);
+		}
+
+		// Save article to the articles table (link and image use CYRILLIC_TO_LATIN, no length limit)
 		const articleLink = `/blog/articles/${articleSlug}`;
 		const publishedMySQL = new Date(publishingDate)
 			.toISOString()
@@ -306,7 +315,7 @@ export async function POST(request: Request) {
 
 		// Send email notification
 		await sendNewArticleNotification({ title, markdownContent });
-		
+
 		// Schedule build + PM2 restart after 5s (production only)
 		scheduleBuildAndPm2Restart(5000);
 
