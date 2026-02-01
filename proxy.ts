@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { verifyToken } from './lib/auth.js';
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Protect /auth/setup route - require admin token in URL
@@ -11,11 +11,11 @@ export async function middleware(request: NextRequest) {
 
 
     const setupSecret = process.env.AUTH_SETUP_SECRET;
-    
+
     // If AUTH_SETUP_SECRET is set, require admin token in URL
     if (setupSecret) {
       const adminToken = request.nextUrl.searchParams.get('adminToken');
-      
+
       if (!adminToken || adminToken !== setupSecret) {
         // Redirect to a restricted access page or show error
         const errorUrl = new URL('/auth/setup', request.url);
@@ -71,4 +71,3 @@ export const config = {
     '/blog/new-article/:path*',
   ],
 };
-
