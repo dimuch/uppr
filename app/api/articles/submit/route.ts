@@ -15,7 +15,6 @@ import { updateArticleIndex } from '../../../../utils/updateArticleIndex.js';
 import { resizeImage } from '../../../../utils/resizer.js';
 import { sizes as imagesSizes } from '../../../../utils/imageSizes.js';
 import { withTimeout } from '../../../../utils/updateWithTimeout.js';
-import { scheduleBuildAndPm2Restart } from '../../../../lib/gitPushAndRestart.js';
 import { addArticleToSitemapAndRobots } from '../../../../lib/sitemapAndRobots.js';
 import { formatDateTimeForMySQL } from '../../../../utils/formatDateTimeForMySQL';
 
@@ -182,19 +181,6 @@ export async function POST(request: Request) {
 			filePath: componentResult.filePath,
 		});
 
-		// Update index.js to export the new component
-		const indexResult = updateArticleIndex(
-			componentResult.componentName,
-			componentResult.fileName
-		);
-
-		if (!indexResult.success && !indexResult.skipped) {
-			console.warn('Failed to update article index:', indexResult.error);
-			// Don't fail the request, just log a warning
-		} else if (indexResult.exportAdded) {
-			console.log('Component export added to index.js');
-		}
-
 		// Update sitemap.txt and robots.txt with the new article URL
 		const articleSlug = titleToSlug(title);
 		const sitemapRobotsResult = await addArticleToSitemapAndRobots(articleSlug);
@@ -317,8 +303,18 @@ export async function POST(request: Request) {
 			console.error('[articles/submit] Email notification failed:', err);
 		});
 
-		// Schedule build + PM2 restart after 5s (production only)
-		// scheduleBuildAndPm2Restart(15000);
+		// Update index.js to export the new component
+		const indexResult = updateArticleIndex(
+				componentResult.componentName,
+				componentResult.fileName
+		);
+
+		if (!indexResult.success && !indexResult.skipped) {
+			console.warn('Failed to update article index:', indexResult.error);
+			// Don't fail the request, just log a warning
+		} else if (indexResult.exportAdded) {
+			console.log('Component export added to index.js');
+		}
 
 		return NextResponse.json({
 			success: true,
