@@ -16,7 +16,7 @@ import { resizeImage } from '../../../../utils/resizer.js';
 import { sizes as imagesSizes } from '../../../../utils/imageSizes.js';
 import { withTimeout } from '../../../../utils/updateWithTimeout.js';
 import { addArticleToSitemapAndRobots } from '../../../../lib/sitemapAndRobots.js';
-import { formatDateTimeForMySQL } from '../../../../utils/formatDateTimeForMySQL';
+import { formatDateTimeForMySQLUTC } from '../../../../utils/formatDateTimeForMySQL';
 
 /** Comma-separated usernames allowed to submit articles (empty = any authenticated user). */
 const ALLOWED_USERNAMES = (process.env.ALLOWED_ARTICLE_SUBMIT_USERNAMES ?? '')
@@ -191,11 +191,12 @@ export async function POST(request: Request) {
 		}
 
 		// Save article to the articles table (link and image use CYRILLIC_TO_LATIN, no length limit)
-		// Published value: payload publishingDate in server timezone + 5 min, format YYYY-MM-DD HH:mm:ss
+		// Published value: payload publishingDate is UTC; parse as UTC, add 5 min, store as UTC
 		const articleLink = `/blog/articles/${articleSlug}`;
-		const publishedDateForDB = new Date(publishingDate);
-		publishedDateForDB.setMinutes(publishedDateForDB.getMinutes() + 5);
-		const publishedMySQL = formatDateTimeForMySQL(publishedDateForDB);
+		const publishingDateUTC = publishingDate.replace(' ', 'T') + 'Z';
+		const publishedDateForDB = new Date(publishingDateUTC);
+		publishedDateForDB.setUTCMinutes(publishedDateForDB.getUTCMinutes() + 5);
+		const publishedMySQL = formatDateTimeForMySQLUTC(publishedDateForDB);
 		// Image path: /assets/images/blog-articles/ + name from title (transliterated, spaces → _)
 		const imageNameFromTitle = titleToImageName(title);
 		let articleImagePath = `/assets/images/blog-articles/${imageNameFromTitle}_main.jpg`;

@@ -11,3 +11,17 @@ export function formatDateTimeForMySQL(date: Date): string {
 	const s = String(date.getSeconds()).padStart(2, '0');
 	return `${y}-${m}-${d} ${h}:${min}:${s}`;
 }
+
+/**
+ * Format Date as YYYY-MM-DD HH:mm:ss in UTC for MySQL datetime column.
+ * Use when the payload sends UTC and the DB should store UTC.
+ */
+export function formatDateTimeForMySQLUTC(date: Date): string {
+	const y = date.getUTCFullYear();
+	const m = String(date.getUTCMonth() + 1).padStart(2, '0');
+	const d = String(date.getUTCDate()).padStart(2, '0');
+	const h = String(date.getUTCHours()).padStart(2, '0');
+	const min = String(date.getUTCMinutes()).padStart(2, '0');
+	const s = String(date.getUTCSeconds()).padStart(2, '0');
+	return `${y}-${m}-${d} ${h}:${min}:${s}`;
+}

@@ -51,6 +51,25 @@ function normalizePublishingDate(value: string): string {
     return s;
 }
 
+/**
+ * Convert a local datetime string (YYYY-MM-DD HH:mm:ss) to UTC and return
+ * as YYYY-MM-DD HH:mm:ss for the payload. User's timezone is the browser's local timezone.
+ */
+function localDateTimeStringToUTC(localStr: string): string {
+    const s = normalizePublishingDate(localStr);
+    const [datePart, timePart] = s.split(' ');
+    const [y, m, day] = datePart.split('-').map(Number);
+    const [h, min, sec = 0] = (timePart ?? '00:00:00').split(':').map(Number);
+    const d = new Date(y, m - 1, day, h, min, sec);
+    const uy = d.getUTCFullYear();
+    const um = String(d.getUTCMonth() + 1).padStart(2, '0');
+    const ud = String(d.getUTCDate()).padStart(2, '0');
+    const uh = String(d.getUTCHours()).padStart(2, '0');
+    const umin = String(d.getUTCMinutes()).padStart(2, '0');
+    const us = String(d.getUTCSeconds()).padStart(2, '0');
+    return `${uy}-${um}-${ud} ${uh}:${umin}:${us}`;
+}
+
 const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => {
     const router = useRouter();
     const [formData, setFormData] = useState({
@@ -173,7 +192,7 @@ const NewArticleForm: React.FC<NewArticleFormProps> = ({ categories, tags }) => 
                 formDataToSend.append('title', title);
                 formDataToSend.append('shortDescription', shortDescription);
                 formDataToSend.append('author', author);
-                formDataToSend.append('publishingDate', publishingDate);
+                formDataToSend.append('publishingDate', localDateTimeStringToUTC(publishingDate));
                 formDataToSend.append('articleColor', articleColor); // hex without #
                 formDataToSend.append('category', category);
                 formDataToSend.append('tag', JSON.stringify(tag));
