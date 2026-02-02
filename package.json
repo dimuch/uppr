@@ -16,7 +16,7 @@
     "reset": "npm run cache:clear && rm -rf node_modules && npm install",
     "type-check": "tsc --noEmit",
     "checks": "npm run lint && npm run type-check",
-    "restart": "npm run build && pm2 reload 1"
+    "restart": "npm run build && pm2 reload uppr"
   },
   "engines": {
     "npm": ">=10.2.3",
