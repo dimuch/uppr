@@ -61,17 +61,19 @@ const watcher = new metawatch.DirectoryWatcher();
 watcher.watch('./components/articles');
 
 watcher.on('change', (fileName) => {
-  console.log('File changed:', fileName);
-  const build = spawn("npm", ["run", "restart"], {
-    stdio: "inherit",
-    shell: true
-  });
+  console.log('File changed ==> ', fileName);
+  if (fileName === 'components/articles/index.js') {
+    const build = spawn("npm", ["run", "restart"], {
+      stdio: "inherit",
+      shell: true
+    });
 
-  build.on("exit", code => {
-    console.log(`Build process exited with code ${code}`);
-  });
+    build.on("exit", code => {
+      console.log(`Build process exited with code ${code}`);
+    });
 
-  build.on("error", err => {
-    console.error("Build process error:", err);
-  });
+    build.on("error", err => {
+      console.error("Build process error:", err);
+    });
+  }
 });
