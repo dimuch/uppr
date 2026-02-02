@@ -191,9 +191,10 @@ export async function POST(request: Request) {
 		}
 
 		// Save article to the articles table (link and image use CYRILLIC_TO_LATIN, no length limit)
-		// Published value saved to DB = payload publishingDate + 5 minutes, format YYYY-MM-DD HH:mm:ss for comparison with NOW()
+		// Published value: payload publishingDate in server timezone + 5 min, format YYYY-MM-DD HH:mm:ss
 		const articleLink = `/blog/articles/${articleSlug}`;
 		const publishedDateForDB = new Date(publishingDate);
+		publishedDateForDB.setMinutes(publishedDateForDB.getMinutes() + 5);
 		const publishedMySQL = formatDateTimeForMySQL(publishedDateForDB);
 		// Image path: /assets/images/blog-articles/ + name from title (transliterated, spaces → _)
 		const imageNameFromTitle = titleToImageName(title);
@@ -305,8 +306,8 @@ export async function POST(request: Request) {
 
 		// Update index.js to export the new component
 		const indexResult = updateArticleIndex(
-				componentResult.componentName,
-				componentResult.fileName
+			componentResult.componentName,
+			componentResult.fileName
 		);
 
 		if (!indexResult.success && !indexResult.skipped) {
