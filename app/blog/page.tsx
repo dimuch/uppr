@@ -85,6 +85,6 @@ export default async function BlogPage() {
   );
 }
 
-// Force dynamic rendering to avoid database access during build
-export const dynamic = 'force-dynamic';
+// Static at build time; revalidate every hour to pick up new content
+export const revalidate = 3600;
 
