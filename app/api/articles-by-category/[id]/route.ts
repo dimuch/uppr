@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { getRelevantArticlesByCategory } from '../../../../services/blogData.js';
 
+// Static at build time; revalidate every hour to pick up new content
+export const revalidate = 3600;
+
 type Props = {
   params: Promise<{ id: string }>;
 };
